@@ -158,7 +158,7 @@ adding custom tags, model predictions and more.
 
 [Explore the library](user_guide/basics.html)
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset("my_dataset")
