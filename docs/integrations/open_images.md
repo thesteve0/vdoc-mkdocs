@@ -210,7 +210,7 @@ reference implementation available via the
 ### Overview [¶](\#overview "Permalink to this headline")
 
 Open Images-style evaluation provides additional features not found in
-[COCO-style evaluation](../user_guide/evaluation.html#evaluating-detections-coco) that you may find
+[COCO-style evaluation](../fiftyone_concepts/evaluation.html#evaluating-detections-coco) that you may find
 useful when evaluating your custom datasets.
 
 The two primary differences are:
@@ -393,7 +393,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../user_guide/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
 the results of Open Images-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -426,9 +426,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../user_guide/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../user_guide/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
 
 ## Open Images Challenge [¶](\#open-images-challenge "Permalink to this headline")
 
@@ -439,8 +439,8 @@ used in the
 [Open Images detection challenges](https://storage.googleapis.com/openimages/web/evaluation.html).
 you can use it to compute the official mAP for your model while also enjoying
 the benefits of working in the FiftyOne ecosystem, including
-[using views](../user_guide/using_views.html#using-views) to manipulate your dataset and visually
-exploring your model’s predictions in the [FiftyOne App](../user_guide/app.html#fiftyone-app)!
+[using views](../fiftyone_concepts/using_views.html#using-views) to manipulate your dataset and visually
+exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app)!
 
 In order to compute the official Open Images mAP for a model, your dataset
 **must** include the appropriate positive and negative sample-level labels, and

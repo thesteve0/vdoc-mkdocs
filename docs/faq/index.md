@@ -21,7 +21,7 @@ FiftyOne in all common local, remote, cloud, and notebook environments.
 
 ## Which web browsers does the FiftyOne App support? [¶](\#which-web-browsers-does-the-fiftyone-app-support "Permalink to this headline")
 
-The [FiftyOne App](../user_guide/app.html#fiftyone-app) fully supports Chrome, Firefox, and
+The [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) fully supports Chrome, Firefox, and
 Safari.
 
 You may find success using browsers like Edge, Opera, or Chromium, but your
@@ -30,7 +30,7 @@ mileage will vary. Internet Explorer is explicitly unsupported at this time.
 ## Why isn’t the App opening? Not connected to a session? [¶](\#why-isn-t-the-app-opening-not-connected-to-a-session "Permalink to this headline")
 
 When you call [`fo.launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app") to
-launch the [FiftyOne App](../user_guide/app.html#fiftyone-app), the App will launch
+launch the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app), the App will launch
 asynchronously and return control to your Python process. The App will then
 remain connected until the process exits.
 
@@ -57,7 +57,7 @@ opened.
 
 ## Why can’t I open the App from a script on Windows? [¶](\#why-can-t-i-open-the-app-from-a-script-on-windows "Permalink to this headline")
 
-If you are a Windows user launching the [FiftyOne App](../user_guide/app.html#fiftyone-app) from
+If you are a Windows user launching the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) from
 a script, you should use the pattern below to avoid
 [multiprocessing issues](https://stackoverflow.com/q/20360686), since the App
 is served via a separate process:
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
 ```
 
-See [this section](../user_guide/app.html#creating-an-app-session) for more details.
+See [this section](../fiftyone_concepts/app.html#creating-an-app-session) for more details.
 
 ## Can I use FiftyOne in a notebook? [¶](\#can-i-use-fiftyone-in-a-notebook "Permalink to this headline")
 
@@ -94,8 +94,8 @@ information about running FiftyOne in notebooks.
 Except for [Google Colab](https://colab.research.google.com) and
 [Databricks](https://docs.databricks.com/en/notebooks/index.html) which have
 built-in App configuration, when working in a cloud notebook a
-[proxy\_url](../user_guide/config.html#configuring-proxy-url) should be set in your
-[FiftyOne App config](../user_guide/config.html#configuring-fiftyone-app).
+[proxy\_url](../fiftyone_concepts/config.html#configuring-proxy-url) should be set in your
+[FiftyOne App config](../fiftyone_concepts/config.html#configuring-fiftyone-app).
 
 ## Can I use FiftyOne in a remote notebook? [¶](\#can-i-use-fiftyone-in-a-remote-notebook "Permalink to this headline")
 
@@ -107,16 +107,16 @@ instructions to achieve this.
 
 ## Can I restrict access to my remote App instance? [¶](\#can-i-restrict-access-to-my-remote-app-instance "Permalink to this headline")
 
-By default, [remote App sessions](../user_guide/app.html#remote-session) will listen to any
+By default, [remote App sessions](../fiftyone_concepts/app.html#remote-session) will listen to any
 connection to their ports. However, if desired, you can restrict access to an
 App session to a particular IP address or hostname by
 [following these instructions](../environments/index.html#restricting-app-address).
 
 ## Why aren’t plots appearing in my notebook? [¶](\#why-aren-t-plots-appearing-in-my-notebook "Permalink to this headline")
 
-If you are trying to [view plots](../user_guide/plots.html#interactive-plots) in a Jupyter
+If you are trying to [view plots](../fiftyone_concepts/plots.html#interactive-plots) in a Jupyter
 notebook but nothing appears after you call `plot.show()`, then you likely need
-to [follow these instructions](../user_guide/plots.html#working-in-notebooks) to install the
+to [follow these instructions](../fiftyone_concepts/plots.html#working-in-notebooks) to install the
 proper packages and/or Jupyter notebook extensions.
 
 If the proper packages are installed but plots are still not displaying, try
@@ -133,7 +133,7 @@ po.init_notebook_mode(connected=True)
 
 Yes! If you install FiftyOne on both your remote server and local machine, then
 you can [load a dataset remotely](../environments/index.html#remote-data) and then explore it via an
-[App session on your local machine](../user_guide/app.html#creating-an-app-session).
+[App session on your local machine](../fiftyone_concepts/app.html#creating-an-app-session).
 
 ## Can I access data stored in the cloud? [¶](\#can-i-access-data-stored-in-the-cloud "Permalink to this headline")
 
@@ -189,24 +189,24 @@ installation instructions.
 FiftyOne provides support for all of the following label types for both image
 and video datasets:
 
-- [Classifications](../user_guide/using_datasets.html#classification)
+- [Classifications](../fiftyone_concepts/using_datasets.html#classification)
 
-- [Multilabel classifications](../user_guide/using_datasets.html#multilabel-classification)
+- [Multilabel classifications](../fiftyone_concepts/using_datasets.html#multilabel-classification)
 
-- [Object detections](../user_guide/using_datasets.html#object-detection)
+- [Object detections](../fiftyone_concepts/using_datasets.html#object-detection)
 
-- [Instance segmentations](../user_guide/using_datasets.html#instance-segmentation)
+- [Instance segmentations](../fiftyone_concepts/using_datasets.html#instance-segmentation)
 
-- [Polylines and polygons](../user_guide/using_datasets.html#polylines)
+- [Polylines and polygons](../fiftyone_concepts/using_datasets.html#polylines)
 
-- [Keypoints](../user_guide/using_datasets.html#keypoints)
+- [Keypoints](../fiftyone_concepts/using_datasets.html#keypoints)
 
-- [Semantic segmentations](../user_guide/using_datasets.html#semantic-segmentation)
+- [Semantic segmentations](../fiftyone_concepts/using_datasets.html#semantic-segmentation)
 
-- [Geolocation data](../user_guide/using_datasets.html#geolocation)
+- [Geolocation data](../fiftyone_concepts/using_datasets.html#geolocation)
 
 
-Check out [this guide](../user_guide/dataset_creation/index.html#loading-custom-datasets) for simple recipes to
+Check out [this guide](../fiftyone_concepts/dataset_creation/index.html#loading-custom-datasets) for simple recipes to
 load labels in these formats.
 
 ## What happened to my datasets from previous sessions? [¶](\#what-happened-to-my-datasets-from-previous-sessions "Permalink to this headline")
@@ -230,7 +230,7 @@ dataset.persistent = True
 
 ```
 
-See [this page](../user_guide/using_datasets.html#dataset-persistence) for more details about dataset
+See [this page](../fiftyone_concepts/using_datasets.html#dataset-persistence) for more details about dataset
 persistence.
 
 Note
@@ -242,8 +242,8 @@ labels), so your source files on disk are never deleted!
 
 Although **adding** samples to datasets immediately writes them to the
 database, remember that any **edits** that you make to a
-[sample](../user_guide/using_datasets.html#adding-sample-fields) or its
-[frame labels](../user_guide/using_datasets.html#video-datasets) will not be written to the database until
+[sample](../fiftyone_concepts/using_datasets.html#adding-sample-fields) or its
+[frame labels](../fiftyone_concepts/using_datasets.html#video-datasets) will not be written to the database until
 you call [`sample.save()`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample.save "fiftyone.core.sample.Sample.save").
 
 Similarly, **setting** the properties of a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") object will be immediately
@@ -252,8 +252,8 @@ saved, but you must call
 **edit** fields such as [`info`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.info "fiftyone.core.dataset.Dataset.info") or
 [`classes`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.classes "fiftyone.core.dataset.Dataset.classes") in-place.
 
-Refer to [this section](../user_guide/using_datasets.html#adding-sample-fields) for more details about
-modifying samples and [this section](../user_guide/using_datasets.html#storing-info) for more details about
+Refer to [this section](../fiftyone_concepts/using_datasets.html#adding-sample-fields) for more details about
+modifying samples and [this section](../fiftyone_concepts/using_datasets.html#storing-info) for more details about
 storing dataset-level information.
 
 ```
@@ -283,9 +283,9 @@ Yes! Here’s a couple options:
 
 **Option 1: Export and share**
 
-You can easily [export a dataset](../user_guide/export_datasets.html#exporting-datasets) in one line of
+You can easily [export a dataset](../fiftyone_concepts/export_datasets.html#exporting-datasets) in one line of
 code, zip it, and share the zip with your collaborator, who can then
-[load it in a few lines of code](../user_guide/dataset_creation/datasets.html#loading-datasets-from-disk).
+[load it in a few lines of code](../fiftyone_concepts/dataset_creation/datasets.html#loading-datasets-from-disk).
 
 **Option 2: Sharing a remote session**
 
@@ -343,17 +343,17 @@ doing this.
 
 Another option is to connect multiple App instances to a single remote session.
 
-First, [create a remote session](../user_guide/app.html#remote-session) on the system that
+First, [create a remote session](../fiftyone_concepts/app.html#remote-session) on the system that
 houses the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") using either the CLI or Python:
 
 Then one or more users can use the CLI on their local machine to
-[connect to the remote session](../user_guide/app.html#remote-app-local-machine).
+[connect to the remote session](../fiftyone_concepts/app.html#remote-app-local-machine).
 
 Note
 
 When multiple App instances are connected to the same [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session"), any
 actions taken that affect the session (e.g.,
-[loading a view](../user_guide/app.html#app-create-view)) will be reflected in all connected
+[loading a view](../fiftyone_concepts/app.html#app-create-view)) will be reflected in all connected
 App instances.
 
 ## Can I connect to multiple remote sessions? [¶](\#can-i-connect-to-multiple-remote-sessions "Permalink to this headline")
@@ -369,7 +369,7 @@ created on different remote systems (e.g., an EC2 instance and a remote server
 that you own), using commands similar to:
 
 On your local machine, you can
-[connect to these remote sessions](../user_guide/app.html#remote-app-local-machine) using a
+[connect to these remote sessions](../fiftyone_concepts/app.html#remote-app-local-machine) using a
 different local port `XXXX` and `YYYY` for each.
 
 If you do not have FiftyOne installed on your local machine, open a new
@@ -424,7 +424,7 @@ Yes, you can create multiple remote sessions on the same remote machine by
 specifying different ports for each [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") that you create:
 
 On your local machine(s), you can now
-[connect to the remote sessions](../user_guide/app.html#remote-app-local-machine). Connections
+[connect to the remote sessions](../fiftyone_concepts/app.html#remote-app-local-machine). Connections
 can be set up using port forwarding in the following way:
 
 ```
@@ -472,8 +472,8 @@ fiftyone app connect \
 
 Yes, you can configure FiftyOne to connect to your own MongoDB instance by
 setting the `database_uri` property of your
-[FiftyOne config](../user_guide/config.html#configuring-fiftyone). Refer to
-[this page](../user_guide/config.html#configuring-mongodb-connection) for more information.
+[FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone). Refer to
+[this page](../fiftyone_concepts/config.html#configuring-mongodb-connection) for more information.
 
 ## Too many open files in system? [¶](\#too-many-open-files-in-system "Permalink to this headline")
 
@@ -506,7 +506,7 @@ project.
 Note
 
 You can disable tracking by setting the `do_not_track` flag of your
-[FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+[FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
 
 - Frequently Asked Questions
   - [Can I open the FiftyOne App in a browser?](#can-i-open-the-fiftyone-app-in-a-browser)

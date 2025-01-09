@@ -64,7 +64,7 @@ export FIFTYONE_PLUGINS_DIR=/path/to/your/plugins
 ```
 
 You can also permanently configure this directory by adding it to your
-[FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+[FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
 
 ```
 {
@@ -424,13 +424,13 @@ fiftyone plugins delete --all
 Certain plugins support configuration. For those plugins, you can store:
 
 - System-wide plugin settings under the `plugins` key of your
-[App config](../user_guide/config.html#configuring-fiftyone-app)
+[App config](../fiftyone_concepts/config.html#configuring-fiftyone-app)
 
 - Dataset-specific plugin settings for any subset of the above values on a
-[dataset’s App config](../user_guide/using_datasets.html#dataset-app-config).
+[dataset’s App config](../fiftyone_concepts/using_datasets.html#dataset-app-config).
 
 
-See the [configuring plugins](../user_guide/config.html#configuring-plugins) page for more
+See the [configuring plugins](../fiftyone_concepts/config.html#configuring-plugins) page for more
 information.
 
 ## Plugin secrets [¶](\#plugin-secrets "Permalink to this headline")
@@ -492,22 +492,22 @@ def execute(self, ctx):
 ## Using panels [¶](\#using-panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App Spaces](../user_guide/app.html#app-spaces) and interactively manipulate to explore your
+[App Spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 FiftyOne natively includes the following Panels:
 
-- [Samples panel](../user_guide/app.html#app-samples-panel): the media grid that loads by
+- [Samples panel](../fiftyone_concepts/app.html#app-samples-panel): the media grid that loads by
 default when you launch the App
 
-- [Histograms panel](../user_guide/app.html#app-histograms-panel): a dashboard of histograms
+- [Histograms panel](../fiftyone_concepts/app.html#app-histograms-panel): a dashboard of histograms
 for the fields of your dataset
 
-- [Embeddings panel](../user_guide/app.html#app-embeddings-panel): a canvas for working with
+- [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel): a canvas for working with
 [embeddings visualizations](../brain.html#brain-embeddings-visualization)
 
-- [Map panel](../user_guide/app.html#app-map-panel): visualizes the geolocation data of
+- [Map panel](../fiftyone_concepts/app.html#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
 
 
@@ -520,7 +520,7 @@ Click the `+` icon next to the “Samples” tab to open a new panel:
 Note
 
 Did you know? You can also programmatically configure spaces
-[in Python](../user_guide/app.html#app-spaces-python).
+[in Python](../fiftyone_concepts/app.html#app-spaces-python).
 
 ## Using operators [¶](\#using-operators "Permalink to this headline")
 
@@ -850,7 +850,7 @@ plugin makes it easy:
 ![../_images/evaluation.gif](../_images/evaluation.gif)
 
 Need to compute embedding for your dataset so you can visualize them in the
-[Embeddings panel](../user_guide/app.html#app-embeddings-panel)? Kick off the task with the
+[Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
@@ -889,7 +889,7 @@ This command starts a service that will continuously check for any queued
 delegated operations and execute them serially in its process.
 
 You must also ensure that the
-[allow\_legacy\_orchestrators](../user_guide/config.html#configuring-fiftyone) config flag is set
+[allow\_legacy\_orchestrators](../fiftyone_concepts/config.html#configuring-fiftyone) config flag is set
 in the environment where you run the App/SDK, e.g. by setting:
 
 ```

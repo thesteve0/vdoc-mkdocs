@@ -137,7 +137,7 @@ Otherwise, tags will be added to all samples in your current view (i.e.,
 all potential issues).
 
 You can use the “sample tags” filter in the
-[App’s sidebar](../user_guide/app.html#app-fields-sidebar) to retrieve, review, and act on all
+[App’s sidebar](../fiftyone_concepts/app.html#app-fields-sidebar) to retrieve, review, and act on all
 samples that you’ve previously tagged.
 
 The review status indicator in the top-right corner of the panel indicates

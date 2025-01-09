@@ -91,17 +91,17 @@ with other work!
 FiftyOne also includes a number of builtin features that are implemented as
 plugins. For example, [Panels](developing_plugins.html#plugins-design-panels) are miniature
 full-featured data applications that you can open in
-[App Spaces](../user_guide/app.html#app-spaces) and interactively manipulate to explore your
+[App Spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 Does your dataset have geolocation data? Use the
-[Map panel](../user_guide/app.html#app-map-panel) to view it:
+[Map panel](../fiftyone_concepts/app.html#app-map-panel) to view it:
 
 ![../_images/app-map-panel.gif](../_images/app-map-panel.gif)
 
 Want to [visualize embeddings](../brain.html#brain-embeddings-visualization) in the
-App? Just open the [Embeddings panel](../user_guide/app.html#app-embeddings-panel):
+App? Just open the [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel):
 
 ![../_images/brain-object-visualization.gif](../_images/brain-object-visualization.gif)
 

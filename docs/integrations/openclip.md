@@ -31,7 +31,7 @@ pip install timm --upgrade
 ## Model zoo [¶](\#model-zoo "Permalink to this headline")
 
 You can load the original ViT-B-32 OpenAI pretrained model from the
-[FiftyOne Model Zoo](../model_zoo/index.html#model-zoo) as follows:
+[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo) as follows:
 
 ```
 import fiftyone.zoo as foz
@@ -204,7 +204,7 @@ view = dataset.sort_by_similarity(query, k=25, brain_key="sim_metaclip")
 Note
 
 Did you know? You can also perform text similarity queries directly
-[in the App](../user_guide/app.html#app-text-similarity)!
+[in the App](../fiftyone_concepts/app.html#app-text-similarity)!
 
 - OpenCLIP Integration
   - [Setup](#setup)

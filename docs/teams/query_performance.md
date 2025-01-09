@@ -92,12 +92,12 @@ initial filters on, and we recommend consulting with your deployment admin
 before creating multiple indexes simultaneously.
 
 You can also create and manage custom indexes
-[via the SDK](../user_guide/app.html#app-optimizing-query-performance).
+[via the SDK](../fiftyone_concepts/app.html#app-optimizing-query-performance).
 
 ### Creating summary fields [¶](\#creating-summary-fields "Permalink to this headline")
 
 The Query Performance panel also allows you to create
-[summary fields](../user_guide/using_datasets.html#summary-fields), which are sample-level fields that
+[summary fields](../fiftyone_concepts/using_datasets.html#summary-fields), which are sample-level fields that
 allow you to efficiently perform queries on large datasets where directly
 querying the underlying field is prohibitively slow due to the number of
 objects/frames in the field.
@@ -116,11 +116,11 @@ Warning
 For large datasets, creating summary fields can take a few minutes.
 
 You can also create and manage summary fields
-[via the SDK](../user_guide/using_datasets.html#summary-fields).
+[via the SDK](../fiftyone_concepts/using_datasets.html#summary-fields).
 
 ### Updating summary fields [¶](\#updating-summary-fields "Permalink to this headline")
 
-Since a [summary field](../user_guide/using_datasets.html#summary-fields) is derived from the contents of
+Since a [summary field](../fiftyone_concepts/using_datasets.html#summary-fields) is derived from the contents of
 another field, it must be updated whenever there have been modifications to its
 source field.
 

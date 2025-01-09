@@ -72,7 +72,7 @@ Automatically scan your data for quality issues and take action to resolve them.
 
 Evaluate your models and interactively and visually analyze their performance.
 
-[Evaluate models](../user_guide/app.html#app-model-evaluation-panel)
+[Evaluate models](../fiftyone_concepts/app.html#app-model-evaluation-panel)
 
 ### Query Performance **NEW**
 

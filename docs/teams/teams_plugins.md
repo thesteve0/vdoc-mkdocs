@@ -329,7 +329,7 @@ plugin makes it easy:
 ![../_images/evaluation.gif](../_images/evaluation.gif)
 
 Need to compute embedding for your dataset so you can visualize them in the
-[Embeddings panel](../user_guide/app.html#app-embeddings-panel)? Kick off the task with the
+[Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 

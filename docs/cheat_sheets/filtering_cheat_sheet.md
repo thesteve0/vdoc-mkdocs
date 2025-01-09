@@ -11,7 +11,7 @@ Contents
 # Filtering Cheat Sheet [¶](\#filtering-cheat-sheet "Permalink to this headline")
 
 This cheat sheet shows how to perform common matching and filtering operations
-in FiftyOne using [dataset views](../user_guide/using_views.html#using-views).
+in FiftyOne using [dataset views](../fiftyone_concepts/using_views.html#using-views).
 
 ## Strings and pattern matching [¶](\#strings-and-pattern-matching "Permalink to this headline")
 

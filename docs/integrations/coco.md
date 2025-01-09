@@ -255,7 +255,7 @@ python -m json.tool /tmp/coco.json
 
 We can now use
 [`Dataset.from_dir()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.from_dir "fiftyone.core.dataset.Dataset.from_dir") to load the
-[COCO-formatted labels](../user_guide/dataset_creation/datasets.html#cocodetectiondataset-import) into a new FiftyOne
+[COCO-formatted labels](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) into a new FiftyOne
 dataset:
 
 ```
@@ -343,7 +343,7 @@ analyze predictions.
 You can also explicitly request that COCO-style evaluation be used by setting
 the `method` parameter to `"coco"`.
 
-See [this page](../user_guide/evaluation.html#evaluating-detections) for more information about using
+See [this page](../fiftyone_concepts/evaluation.html#evaluating-detections) for more information about using
 FiftyOne to analyze object detection models.
 
 Note
@@ -523,7 +523,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../user_guide/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
 the results of COCO-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -556,9 +556,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../user_guide/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../user_guide/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
 
 ## mAP protocol [¶](\#map-protocol "Permalink to this headline")
 

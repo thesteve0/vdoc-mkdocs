@@ -10,7 +10,7 @@ Contents
 
 # Views Cheat Sheet [¶](\#views-cheat-sheet "Permalink to this headline")
 
-This cheat sheet shows how to use [dataset views](../user_guide/using_views.html#using-views) to
+This cheat sheet shows how to use [dataset views](../fiftyone_concepts/using_views.html#using-views) to
 retrieve the specific subset of data you’re looking for.
 
 ## The six basic operations [¶](\#the-six-basic-operations "Permalink to this headline")
@@ -62,7 +62,7 @@ given identifier.
 
 Selection is similar to matching/filtering, but with a simpler syntax that
 supports specific selection criteria (common identifiers like IDs and tags)
-rather than arbitrary [expressions](../user_guide/using_views.html#querying-samples).
+rather than arbitrary [expressions](../fiftyone_concepts/using_views.html#querying-samples).
 
 |     |
 | --- |
@@ -311,8 +311,8 @@ view expressions.
 
 ### Frames and groups [¶](\#frames-and-groups "Permalink to this headline")
 
-When working with [frame-level](../user_guide/using_views.html#video-views) and
-[group-level](../user_guide/groups.html#groups-filtering) data in FiftyOne, all applicable view
+When working with [frame-level](../fiftyone_concepts/using_views.html#video-views) and
+[group-level](../fiftyone_concepts/groups.html#groups-filtering) data in FiftyOne, all applicable view
 stages naturally support querying against frame- or group-level fields by
 prepending `"frames."` or `"groups."` to field paths, respectively.
 
@@ -410,7 +410,7 @@ View stages:
 
 ### Images to evaluation patches [¶](\#images-to-evaluation-patches "Permalink to this headline")
 
-If you have [run evaluation](../user_guide/evaluation.html#evaluating-detections) on predictions from
+If you have [run evaluation](../fiftyone_concepts/evaluation.html#evaluating-detections) on predictions from
 an object detection model, then you can use
 [`to_evaluation_patches()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_evaluation_patches "fiftyone.core.collections.SampleCollection.to_evaluation_patches")
 to transform the dataset (or a view into it) into a new view that contains one

@@ -431,7 +431,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../user_guide/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
 the results of ActivityNet-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -485,9 +485,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../user_guide/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../user_guide/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
 
 ## ActivityNet Challenge [¶](\#activitynet-challenge "Permalink to this headline")
 
@@ -498,8 +498,8 @@ used in the
 [ActivityNet challenges](http://activity-net.org/challenges/2021/index.html).
 you can use it to compute the official mAP for your model while also enjoying
 the benefits of working in the FiftyOne ecosystem, including
-[using views](../user_guide/using_views.html#using-views) to manipulate your dataset and visually
-exploring your model’s predictions in the [FiftyOne App](../user_guide/app.html#fiftyone-app)!
+[using views](../fiftyone_concepts/using_views.html#using-views) to manipulate your dataset and visually
+exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app)!
 
 The example snippet below loads the
 [ActivityNet 200](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200) dataset and runs the

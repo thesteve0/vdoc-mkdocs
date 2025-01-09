@@ -22,7 +22,7 @@ Note
 
 **API connections are currently in beta.** The recommended stable solution
 is to use your Teams deployment’s
-[MongoDB connection](../user_guide/config.html#configuring-mongodb-connection).
+[MongoDB connection](../fiftyone_concepts/config.html#configuring-mongodb-connection).
 
 ## Configuring an API connection [¶](\#configuring-an-api-connection "Permalink to this headline")
 
@@ -43,7 +43,7 @@ export FIFTYONE_API_KEY==YYYYYYYY
 ```
 
 See
-[this page](../user_guide/config.html#configuring-fiftyone) for more information about using your
+[this page](../fiftyone_concepts/config.html#configuring-fiftyone) for more information about using your
 FiftyOne config.
 
 ## Generating an API key [¶](\#generating-an-api-key "Permalink to this headline")

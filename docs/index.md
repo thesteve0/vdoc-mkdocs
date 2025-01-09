@@ -72,7 +72,7 @@ learn how:
 
 [![Google Colab](https://voxel51.com/images/integrations/colab-128.png)](environments/index.html#notebooks "Google Colab")
 
-[![Plotly](https://voxel51.com/images/integrations/plotly-128.png)](user_guide/plots.html "Plotly")
+[![Plotly](https://voxel51.com/images/integrations/plotly-128.png)](fiftyone_concepts/plots.html "Plotly")
 
 [![CVAT](https://voxel51.com/images/integrations/cvat-128.png)](integrations/cvat.html "CVAT")
 
@@ -104,7 +104,7 @@ to learn about new features as they come out.
 
 Surveys show that machine learning engineers spend over half of their time wrangling data, but it doesn't have to be that way. Use FiftyOne's powerful dataset import and manipulation capabilities to manage your data with ease.
 
-[Learn how to load data into FiftyOne](user_guide/dataset_creation/index.html)
+[Learn how to load data into FiftyOne](fiftyone_concepts/dataset_creation/index.html)
 
 ![](_static/images/homepage_curate.gif)
 
@@ -128,7 +128,7 @@ Are you using embeddings to analyze your data and models? Use FiftyOne's embeddi
 
 Many datasets have location metadata, but visualizing location-based datasets has traditionally required closed source or cloud-based tools. FiftyOne provides native support for storing, visualizing, and querying datasets by location.
 
-[Visualize your location data](user_guide/plots.html#geolocation-plots)
+[Visualize your location data](fiftyone_concepts/plots.html#geolocation-plots)
 
 ![](_static/images/homepage_location.gif)
 
@@ -156,7 +156,7 @@ FiftyOne’s core library provides a structured yet dynamic representation to
 explore your datasets. You can efficiently query and manipulate your dataset by
 adding custom tags, model predictions and more.
 
-[Explore the library](user_guide/basics.html)
+[Explore the library](fiftyone_concepts/basics.html)
 
 ```python
 import fiftyone as fo
@@ -183,7 +183,7 @@ your datasets. FiftyOne supports loading datasets in a variety of common
 formats out-of-the-box, and it also provides the extensibility to load
 datasets in custom formats.
 
-Check out [loading datasets](user_guide/dataset_creation/index.html) to see
+Check out [loading datasets](fiftyone_concepts/dataset_creation/index.html) to see
 how to load your data into FiftyOne.
 
 ### FiftyOne App [¶](\#fiftyone-app "Permalink to this headline")
@@ -193,7 +193,7 @@ and rapidly gain intuition into your datasets. You can visualize labels like
 bounding boxes and segmentations overlaid on the samples; sort, query and
 slice your dataset into any subset of interest; and more.
 
-[See more of the App](user_guide/app.html)
+[See more of the App](fiftyone_concepts/app.html)
 
 ![fiftyone-app](_images/homepage_app.png)
 
@@ -263,7 +263,7 @@ It provides native access to hundreds of pre-trained models, and it also
 supports downloading arbitrary public or private models whose definitions are
 provided via GitHub repositories or URLs.
 
-[Check out the Model Zoo](model_zoo/index.html)
+[Check out the Model Zoo](data_and_models/model_zoo/index.html)
 
 ```
 import fiftyone as fo
@@ -303,7 +303,7 @@ your current ML workflows
 - Check out the [cheat sheets](cheat_sheets/index.html) for topics you may
 want to master quickly
 
-- Consult the [user guide](user_guide/index.html) for detailed instructions on
+- Consult the [user guide](fiftyone_concepts/index.html) for detailed instructions on
 how to accomplish various tasks with FiftyOne
 
 

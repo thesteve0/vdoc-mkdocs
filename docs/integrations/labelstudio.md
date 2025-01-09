@@ -31,21 +31,21 @@ FiftyOne provides an API to create projects, upload data, define label schemas,
 and download annotations using Label Studio, all programmatically in Python.
 All of the following label types are supported for image datasets:
 
-- [Classification](../user_guide/using_datasets.html#classification)
+- [Classification](../fiftyone_concepts/using_datasets.html#classification)
 
-- [Multilabel classification](../user_guide/using_datasets.html#multilabel-classification)
+- [Multilabel classification](../fiftyone_concepts/using_datasets.html#multilabel-classification)
 
-- [Detections](../user_guide/using_datasets.html#object-detection)
+- [Detections](../fiftyone_concepts/using_datasets.html#object-detection)
 
-- [Instance segmentations](../user_guide/using_datasets.html#instance-segmentation)
+- [Instance segmentations](../fiftyone_concepts/using_datasets.html#instance-segmentation)
 
-- [Polygons and polylines](../user_guide/using_datasets.html#polylines)
+- [Polygons and polylines](../fiftyone_concepts/using_datasets.html#polylines)
 
-- [Keypoints](../user_guide/using_datasets.html#keypoints)
+- [Keypoints](../fiftyone_concepts/using_datasets.html#keypoints)
 
-- [Scalar fields](../user_guide/using_datasets.html#adding-sample-fields)
+- [Scalar fields](../fiftyone_concepts/using_datasets.html#adding-sample-fields)
 
-- [Semantic segmentation](../user_guide/using_datasets.html#semantic-segmentation)
+- [Semantic segmentation](../fiftyone_concepts/using_datasets.html#semantic-segmentation)
 
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
@@ -53,10 +53,10 @@ All of the following label types are supported for image datasets:
 The basic workflow to use Label Studio to add or edit labels on your FiftyOne
 datasets is as follows:
 
-1. Load a [labeled or unlabeled dataset](../user_guide/dataset_creation/index.html#loading-datasets) into FiftyOne
+1. Load a [labeled or unlabeled dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
 
-2. Explore the dataset using the [App](../user_guide/app.html#fiftyone-app) or
-[dataset views](../user_guide/using_views.html#using-views) to locate either unlabeled samples that
+2. Explore the dataset using the [App](../fiftyone_concepts/app.html#fiftyone-app) or
+[dataset views](../fiftyone_concepts/using_views.html#using-views) to locate either unlabeled samples that
 you wish to annotate or labeled samples whose annotations you want to edit
 
 3. Use the
@@ -218,7 +218,7 @@ export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=labelstudio
 ```
 
 or by setting the `default_backend` parameter of your
-[annotation config](../user_guide/annotation.html#annotation-config) located at
+[annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
 ```
@@ -247,7 +247,7 @@ export FIFTYONE_LABELSTUDIO_API_KEY=...
 **FiftyOne annotation config**
 
 You can also store your credentials in your
-[annotation config](../user_guide/annotation.html#annotation-config) located at
+[annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
 ```
@@ -318,7 +318,7 @@ export FIFTYONE_LABELSTUDIO_URL=http://localhost:8080
 ```
 
 - Store the `url` of your server in your
-[annotation config](../user_guide/annotation.html#annotation-config) at
+[annotation config](../fiftyone_concepts/annotation.html#annotation-config) at
 `~/.fiftyone/annotation_config.json`:
 
 
@@ -559,7 +559,7 @@ properties of your dataset will be used, if available
 Warning
 
 The Label Studio integration does not yet support
-[annotating label attributes](../user_guide/annotation.html#annotation-label-attributes).
+[annotating label attributes](../fiftyone_concepts/annotation.html#annotation-label-attributes).
 
 ## Loading annotations [¶](\#loading-annotations "Permalink to this headline")
 

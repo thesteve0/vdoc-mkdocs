@@ -60,7 +60,7 @@ If you want to work with video datasets, you’ll also need to install
 
 Dive right into FiftyOne by opening a Python shell and running the snippet
 below, which downloads a [small dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) and
-launches the [FiftyOne App](../user_guide/app.html#fiftyone-app) so you can explore it!
+launches the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) so you can explore it!
 
 ```
 import fiftyone as fo
@@ -73,7 +73,7 @@ session = fo.launch_app(dataset)
 
 Note that if you are running this code in a script, you must include
 [`session.wait()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.wait "fiftyone.core.session.Session.wait") to block execution
-until you close the App. See [this page](../user_guide/app.html#creating-an-app-session) for
+until you close the App. See [this page](../fiftyone_concepts/app.html#creating-an-app-session) for
 more information.
 
 ## Troubleshooting [¶](\#troubleshooting "Permalink to this headline")
@@ -178,8 +178,8 @@ a dataset for the first time in a newer version of FiftyOne.
 Note
 
 If you are working with a
-[custom/shared MongoDB database](../user_guide/config.html#configuring-mongodb-connection), you
-can use [database admin privileges](../user_guide/config.html#database-migrations) to control
+[custom/shared MongoDB database](../fiftyone_concepts/config.html#configuring-mongodb-connection), you
+can use [database admin privileges](../fiftyone_concepts/config.html#database-migrations) to control
 which clients are allowed to upgrade your FiftyOne deployment.
 
 ## Downgrading FiftyOne [¶](\#downgrading-fiftyone "Permalink to this headline")
@@ -220,8 +220,8 @@ FiftyOne v0.7.3 or earlier.
 Note
 
 If you are working with a
-[custom/shared MongoDB database](../user_guide/config.html#configuring-mongodb-connection), you
-can use [database admin privileges](../user_guide/config.html#database-migrations) to control
+[custom/shared MongoDB database](../fiftyone_concepts/config.html#configuring-mongodb-connection), you
+can use [database admin privileges](../fiftyone_concepts/config.html#database-migrations) to control
 which clients are allowed to downgrade your FiftyOne deployment.
 
 ## Uninstalling FiftyOne [¶](\#uninstalling-fiftyone "Permalink to this headline")

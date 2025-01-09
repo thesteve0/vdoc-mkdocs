@@ -46,22 +46,22 @@ components.
 ### Panels [¶](\#panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App spaces](../user_guide/app.html#app-spaces) and interactively manipulate to explore your
+[App spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 FiftyOne natively includes the following Panels:
 
-- [Samples panel](../user_guide/app.html#app-samples-panel): the media grid that loads by
+- [Samples panel](../fiftyone_concepts/app.html#app-samples-panel): the media grid that loads by
 default when you launch the App
 
-- [Histograms panel](../user_guide/app.html#app-histograms-panel): a dashboard of histograms
+- [Histograms panel](../fiftyone_concepts/app.html#app-histograms-panel): a dashboard of histograms
 for the fields of your dataset
 
-- [Embeddings panel](../user_guide/app.html#app-embeddings-panel): a canvas for working with
+- [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel): a canvas for working with
 [embeddings visualizations](../brain.html#brain-embeddings-visualization)
 
-- [Map panel](../user_guide/app.html#app-map-panel): visualizes the geolocation data of
+- [Map panel](../fiftyone_concepts/app.html#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
 
 
@@ -760,7 +760,7 @@ values
 
 - `ctx.view` \- the current [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") instance
 
-- `ctx.spaces` \- the current [Spaces layout](../user_guide/app.html#app-spaces) in the App
+- `ctx.spaces` \- the current [Spaces layout](../fiftyone_concepts/app.html#app-spaces) in the App
 
 - `ctx.current_sample` \- the ID of the active sample in the App modal, if any
 
@@ -1404,7 +1404,7 @@ method as demonstrated below:
 ## Developing panels [¶](\#developing-panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App spaces](../user_guide/app.html#app-spaces) and interactively manipulate to explore your
+[App spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
@@ -1818,11 +1818,11 @@ def config(self):
 The `surfaces` key defines the panel’s scope:
 
 - Grid panels can be accessed from the `+` button in the App’s
-[grid view](../user_guide/app.html#app-fields-sidebar), which allows you to build macro
+[grid view](../fiftyone_concepts/app.html#app-fields-sidebar), which allows you to build macro
 experiences that work with entire datasets or views
 
 - Modal panels can be accessed from the `+` button in the App’s
-[modal view](../user_guide/app.html#app-sample-view), which allows you to build interactions
+[modal view](../fiftyone_concepts/app.html#app-sample-view), which allows you to build interactions
 that focus on individual samples and scenarios
 
 
@@ -2127,7 +2127,7 @@ creating and using global stores whose keys do not utilize TTLs.
 
 ### Saved workspaces [¶](\#saved-workspaces "Permalink to this headline")
 
-[Saved workspaces](../user_guide/app.html#app-workspaces) may contain any number of Python
+[Saved workspaces](../fiftyone_concepts/app.html#app-workspaces) may contain any number of Python
 panels!
 
 When a workspace is saved, the current [panel state](#panel-state) of any
@@ -2940,15 +2940,15 @@ function MyPanel() {
 Plugins may support two styles of configuration settings:
 
 - System-wide plugin settings under the `plugins` key of your
-[App config](../user_guide/config.html#configuring-fiftyone-app)
+[App config](../fiftyone_concepts/config.html#configuring-fiftyone-app)
 
 - Dataset-specific plugin settings for any subset of the above values on a
-[dataset’s App config](../user_guide/using_datasets.html#dataset-app-config).
+[dataset’s App config](../fiftyone_concepts/using_datasets.html#dataset-app-config).
 
 
 Plugin settings are used, for example, to allow the user to configure the
 default camera position of FiftyOne’s builtin
-[3D visualizer](../user_guide/app.html#app-3d-visualizer-config).
+[3D visualizer](../fiftyone_concepts/app.html#app-3d-visualizer-config).
 
 Here’s an example of a system-wide plugin setting:
 
@@ -2985,7 +2985,7 @@ const { mysetting } = fop.useSettings("my-plugin");
 
 Note
 
-See the [this page](../user_guide/config.html#configuring-plugins) page for more information
+See the [this page](../fiftyone_concepts/config.html#configuring-plugins) page for more information
 about configuring plugins.
 
 ### Querying FiftyOne [¶](\#querying-fiftyone "Permalink to this headline")
@@ -3115,8 +3115,8 @@ task and executes it when resources are available
 ### Storing custom runs [¶](\#storing-custom-runs "Permalink to this headline")
 
 When users execute builtin methods like
-[annotation](../user_guide/annotation.html#fiftyone-annotation),
-[evaluation](../user_guide/evaluation.html#evaluating-models), and
+[annotation](../fiftyone_concepts/annotation.html#fiftyone-annotation),
+[evaluation](../fiftyone_concepts/evaluation.html#evaluating-models), and
 [brain methods](../brain.html#fiftyone-brain) on their datasets, certain configuration
 and results information is stored on the dataset that can be accessed later;
 for example, see [managing brain runs](../brain.html#brain-managing-runs).

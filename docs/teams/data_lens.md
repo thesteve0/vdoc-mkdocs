@@ -1064,7 +1064,7 @@ samples.append(self.convert_to_sample(row))
 
 Here we are converting our sample data from its storage format to a FiftyOne
 [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"). This is where we’ll add features
-to our samples, such as [labels](../user_guide/using_datasets.html#using-labels).
+to our samples, such as [labels](../fiftyone_concepts/using_datasets.html#using-labels).
 
 As we can see from this example, we can make our Data Lens search experience
 as powerful as it needs to be. We can leverage internal libraries and services,

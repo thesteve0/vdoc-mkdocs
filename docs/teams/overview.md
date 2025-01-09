@@ -50,10 +50,10 @@ would with open source FiftyOne:
 
 | Application | Workflows |
 | --- | --- |
-| Data ingestion | [Loading data into FiftyOne](../user_guide/dataset_creation/index.html#loading-datasets) |
-| Data curation | [Using the FiftyOne App](../user_guide/app.html#fiftyone-app)<br>[Creating views into datasets](../user_guide/using_views.html#using-views)<br>[Embedding-based dataset analysis](https://voxel51.com/docs/fiftyone/tutorials/image_embeddings.html)<br>[Visual similarity](../brain.html#brain-similarity) and [dataset uniqueness](../brain.html#brain-image-uniqueness) |
-| Annotation | [Using the annotation API](../user_guide/annotation.html#fiftyone-annotation) |
-| Model training and evaluation | [Exporting data for model training](../user_guide/export_datasets.html#exporting-datasets)<br>[Adding model predictions to FiftyOne](https://voxel51.com/docs/fiftyone/tutorials/evaluate_detections.html#Add-predictions-to-dataset)<br>[Evaluating models in FiftyOne](../user_guide/evaluation.html#evaluating-models)<br>[Using interactive plots to explore results](../user_guide/plots.html#interactive-plots) |
+| Data ingestion | [Loading data into FiftyOne](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) |
+| Data curation | [Using the FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app)<br>[Creating views into datasets](../fiftyone_concepts/using_views.html#using-views)<br>[Embedding-based dataset analysis](https://voxel51.com/docs/fiftyone/tutorials/image_embeddings.html)<br>[Visual similarity](../brain.html#brain-similarity) and [dataset uniqueness](../brain.html#brain-image-uniqueness) |
+| Annotation | [Using the annotation API](../fiftyone_concepts/annotation.html#fiftyone-annotation) |
+| Model training and evaluation | [Exporting data for model training](../fiftyone_concepts/export_datasets.html#exporting-datasets)<br>[Adding model predictions to FiftyOne](https://voxel51.com/docs/fiftyone/tutorials/evaluate_detections.html#Add-predictions-to-dataset)<br>[Evaluating models in FiftyOne](../fiftyone_concepts/evaluation.html#evaluating-models)<br>[Using interactive plots to explore results](../fiftyone_concepts/plots.html#interactive-plots) |
 
 ## System architecture [¶](\#system-architecture "Permalink to this headline")
 

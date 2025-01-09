@@ -139,7 +139,7 @@ downgrade to.
 
 Any datasets that you have created via open source FiftyOne can be migrated to
 your Teams deployment by exporting them in
-[FiftyOneDataset](../user_guide/export_datasets.html#fiftyonedataset-export) format:
+[FiftyOneDataset](../fiftyone_concepts/export_datasets.html#fiftyonedataset-export) format:
 
 ```
 # Open source SDK
@@ -192,9 +192,9 @@ Note
 
 By default, the above method only uploads the media in the `filepath`
 field of your samples. If your dataset contains other media fields (e.g.
-[thumbnails](../user_guide/using_datasets.html#dataset-app-config-media-fields),
-[segmentations](../user_guide/using_datasets.html#semantic-segmentation), or
-[heatmaps](../user_guide/using_datasets.html#heatmaps)) simply run the above command multiple times,
+[thumbnails](../fiftyone_concepts/using_datasets.html#dataset-app-config-media-fields),
+[segmentations](../fiftyone_concepts/using_datasets.html#semantic-segmentation), or
+[heatmaps](../fiftyone_concepts/using_datasets.html#heatmaps)) simply run the above command multiple times,
 using the `media_field` argument to specify the appropriate fields to
 upload.
 

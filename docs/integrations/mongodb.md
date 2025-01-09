@@ -38,7 +38,7 @@ FiftyOne datasets and use this to query your data is as follows:
 
 1. Configure a MongoDB Atlas cluster
 
-2. Load a [dataset](../user_guide/dataset_creation/index.html#loading-datasets) into FiftyOne
+2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
 
 3. Compute embedding vectors for samples or patches in your dataset, or select
 a model to use to generate embeddings
@@ -60,7 +60,7 @@ Note
 
 You must [configure](#mongodb-setup) a MongoDB Atlas 7.0 or later
 cluster and provide its
-[connection string](../user_guide/config.html#configuring-mongodb-connection) to run this
+[connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection) to run this
 example:
 
 ```
@@ -138,7 +138,7 @@ to use MongoDB 7, you must upgrade to an M10 cluster, which starts at $0.08/hour
 ### Configuring your connection string [¶](\#configuring-your-connection-string "Permalink to this headline")
 
 You can connect FiftyOne to your MongoDB Atlas cluster by simply providing its
-[connection string](../user_guide/config.html#configuring-mongodb-connection):
+[connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection):
 
 ```
 export FIFTYONE_DATABASE_NAME=fiftyone
@@ -581,7 +581,7 @@ in the index, they will never be included in the result.
 
 This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
-[constructing views](../user_guide/using_views.html#using-views) that contain the images of
+[constructing views](../fiftyone_concepts/using_views.html#using-views) that contain the images of
 interest.
 
 Note

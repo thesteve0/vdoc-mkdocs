@@ -14,7 +14,7 @@ We’ve collaborated with the
 [PyTorch Lightning](https://github.com/PyTorchLightning/pytorch-lightning)
 team to make it easy to train
 [Lightning Flash](https://github.com/PyTorchLightning/lightning-flash) tasks
-on your [FiftyOne datasets](../user_guide/using_datasets.html#using-datasets) and add predictions from your
+on your [FiftyOne datasets](../fiftyone_concepts/using_datasets.html#using-datasets) and add predictions from your
 Flash models to your FiftyOne datasets for visualization and analysis, all in
 just a few lines of code!
 
@@ -67,7 +67,7 @@ install the appropriate extras when you use a feature that requires them.
 
 You can easily train or finetune a Flash
 [`Task`](https://lightning-flash.readthedocs.io/en/latest/api/generated/flash.core.model.Task.html#flash.core.model.Task "(in Flash)") on your
-[FiftyOne datasets](../user_guide/using_datasets.html#using-datasets) with just a few lines of code using
+[FiftyOne datasets](../fiftyone_concepts/using_datasets.html#using-datasets) with just a few lines of code using
 Flash’s builtin
 `DataModule.from_fiftyone()`
 method, which is implemented for each of the Flash tasks shown below.
@@ -271,10 +271,10 @@ If you use Lightning Flash’s
 [image embeddings tasks](https://lightning-flash.readthedocs.io/en/latest/reference/image_embedder.html#image-embedder "(in Flash)") to generate feature
 vectors for your image datasets, then use can easily leverage FiftyOne’s
 [dimensionality reduction](../brain.html#brain-embeddings-visualization) and
-[interactive plotting](../user_guide/plots.html#embeddings-plots) capabilities to visualize your
+[interactive plotting](../fiftyone_concepts/plots.html#embeddings-plots) capabilities to visualize your
 Flash model’s embeddings and execute powerful workflows like
 [cluster analysis](../tutorials/image_embeddings.html) and
-[similarity search](../user_guide/app.html#app-similarity), all in only a few lines of code!
+[similarity search](../fiftyone_concepts/app.html#app-similarity), all in only a few lines of code!
 
 ```
 import numpy as np

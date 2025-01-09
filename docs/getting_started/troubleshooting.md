@@ -141,7 +141,7 @@ pip install ipython
 
 FiftyOne includes a `fiftyone-db` package wheel for your operating system and
 hardware. If you have not
-[configured your own database connection](../user_guide/config.html#configuring-mongodb-connection),
+[configured your own database connection](../fiftyone_concepts/config.html#configuring-mongodb-connection),
 then FiftyOne’s database service will attempt to start up on import using the
 MongoDB distribution provided by `fiftyone-db`. If the database fails to start,
 importing `fiftyone` will result in exceptions being raised.
@@ -207,7 +207,7 @@ sudo apt install libssl-dev
 ```
 
 If you still face issues with imports, you can follow
-[these instructions](../user_guide/config.html#configuring-mongodb-connection) to configure
+[these instructions](../fiftyone_concepts/config.html#configuring-mongodb-connection) to configure
 FiftyOne to use a MongoDB instance that you have installed yourself.
 
 ### Troubleshooting Windows imports [¶](\#troubleshooting-windows-imports "Permalink to this headline")

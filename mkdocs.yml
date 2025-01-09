@@ -1,14 +1,53 @@
 site_name: Voxel51 Documentation
 theme:
   name: material
+  features:
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
 repo_url: https://github.com/thesteve0/vdoc-mkdocs
 markdown_extensions:
+  - pymdownx.highlight:
+      line_spans: __span
+      pygments_lang_class: true
+  - toc:
+      permalink: true
   - admonition
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.details
-  - pymdownx.highlight:      
-      line_spans: __span
-      pygments_lang_class: true
-
+extra:
+  version:
+    provider: mike
+nav:
+  - Home: index.md
+  - "Getting started":
+      - Installing: getting_started/install.md
+      - Virtualenvs: getting_started/virtualenv.md
+      - Troubleshooting: getting_started/troubleshooting.md
+  - FiftyOne Concepts:
+      - fiftyone_concepts/index.md
+      - Basics: fiftyone_concepts/basics.md
+  - "Data and Models":
+    - data_and_models/index.md
+    - Zoo Datasets:
+        - Dataset Zoo: data_and_models/dataset_zoo/index.md
+        - Built-In Zoo Datasets: data_and_models/dataset_zoo/datasets.md
+        - Remotely-Sourced Zoo Datasets: data_and_models/dataset_zoo/remote.md
+        - Zoo Data API: data_and_models/dataset_zoo/api.md
+    - Hugging Face Datasets: data_and_models/hugging_face_data.md
+#
+#      - Set up:
+#      - Datasets, Samples, and Fields:
+#      - App tour:
+#  -
+#  - How Do I:
+#  - Tutorials:
+#  - Data and Models:
+#  - Integrations:
+#  - Reference:
+#  - Community:
+#  - FiftyOne Enterpise (teams):
+#  - Releases:
+#  - FAQ:

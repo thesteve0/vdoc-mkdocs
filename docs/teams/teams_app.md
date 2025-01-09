@@ -11,7 +11,7 @@ Contents
 # FiftyOne Teams App [¶](\#fiftyone-teams-app "Permalink to this headline")
 
 The FiftyOne Teams App allows you to visualize, browse, and interact with your
-individual datasets like you can with the [FiftyOne App](../user_guide/app.html#fiftyone-app),
+individual datasets like you can with the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app),
 but with expanded features for organizing, permissionsing, versioning, and
 sharing your team’s datasets, all from a centralized web portal.
 
@@ -110,7 +110,7 @@ automate this process via [cloud functions](cloud_media.html#teams-cloud-functio
 Click on a dataset from the homepage to open the dataset’s “Samples” tab.
 
 From the Samples tab you can visualize, tag, filter, and explore your dataset
-just as you would via the [FiftyOne App](../user_guide/app.html#fiftyone-app).
+just as you would via the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app).
 
 ![samples-page](../_images/samples_page.png)
 

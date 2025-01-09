@@ -65,7 +65,7 @@ After installing the Teams Python SDK in your virtual environment, you’ll need
 to configure two things:
 
 - Your team’s [API connection](api_connection.html#teams-api-connection) or
-[MongoDB connection](../user_guide/config.html#configuring-mongodb-connection)
+[MongoDB connection](../fiftyone_concepts/config.html#configuring-mongodb-connection)
 
 - The [cloud credentials](#teams-cloud-credentials) to access your
 cloud-backed media
@@ -168,8 +168,8 @@ credentials for use by all app users](#teams-cloud-storage-page).
 ### Cross-origin resource sharing (CORS) [¶](\#cross-origin-resource-sharing-cors "Permalink to this headline")
 
 If your datasets include cloud-backed
-[point clouds](../user_guide/using_datasets.html#point-cloud-datasets) or
-[segmentation maps](../user_guide/using_datasets.html#semantic-segmentation), you may need to configure
+[point clouds](../fiftyone_concepts/using_datasets.html#point-cloud-datasets) or
+[segmentation maps](../fiftyone_concepts/using_datasets.html#semantic-segmentation), you may need to configure
 cross-origin resource sharing (CORS) for your cloud buckets. Details are
 provided below for each cloud platform.
 

@@ -37,7 +37,7 @@ datasets and use this to query your data is as follows:
 
 1. Start a Redis service locally
 
-2. Load a [dataset](../user_guide/dataset_creation/index.html#loading-datasets) into FiftyOne
+2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
 
 3. Compute embedding vectors for samples or patches in your dataset, or select
 a model to use to generate embeddings
@@ -644,7 +644,7 @@ in the index, they will never be included in the result.
 
 This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
-[constructing views](../user_guide/using_views.html#using-views) that contain the images of
+[constructing views](../fiftyone_concepts/using_views.html#using-views) that contain the images of
 interest.
 
 ### Accessing the Redis client [¶](\#accessing-the-redis-client "Permalink to this headline")

@@ -36,7 +36,7 @@ model = fout.load_torch_hub_image_model(
 The function returns a
 `TorchImageModel` instance that
 wraps the raw Torch model in FiftyOne’s
-[Model interface](../model_zoo/design.html#model-zoo-design-overview), which means that you can
+[Model interface](../data_and_models/model_zoo/design.html#model-zoo-design-overview), which means that you can
 directly pass the model to builtin methods like
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
 [`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"),
@@ -59,9 +59,9 @@ print(dataset.first().resnet18.shape)  # (1000,)
 Note
 
 In the above example, the `resnet18` field is populated with raw logits.
-Refer to [this page](../model_zoo/design.html#model-zoo-custom-models) to see how to configure
+Refer to [this page](../data_and_models/model_zoo/design.html#model-zoo-custom-models) to see how to configure
 output processors to automatically parse model outputs into FiftyOne
-[label types](../user_guide/using_datasets.html#using-labels).
+[label types](../fiftyone_concepts/using_datasets.html#using-labels).
 
 ### Utilities [¶](\#utilities "Permalink to this headline")
 
@@ -158,7 +158,7 @@ dataset.count("yolov5.detections")  # 26
 Note
 
 Did you know? Ultralytics YOLOv5 is natively available in the
-[FiftyOne Model Zoo](../model_zoo/models.html#model-zoo-yolov5m-coco-torch). You should also
+[FiftyOne Model Zoo](../data_and_models/model_zoo/models.html#model-zoo-yolov5m-coco-torch). You should also
 check out the [Ultralytics integration](ultralytics.html#ultralytics-integration)!
 
 ### Example: DINOv2 [¶](\#example-dinov2 "Permalink to this headline")
@@ -198,14 +198,14 @@ print(embeddings.shape)  # (10, 384)
 Note
 
 Did you know? DINOv2 is natively available in the
-[FiftyOne Model Zoo](../model_zoo/models.html#model-zoo-dinov2-vitb14-torch)!
+[FiftyOne Model Zoo](../data_and_models/model_zoo/models.html#model-zoo-dinov2-vitb14-torch)!
 
 ## Adding Hub models to your local zoo [¶](\#adding-hub-models-to-your-local-zoo "Permalink to this headline")
 
-You can add PyTorch Hub models to your [local model zoo](../model_zoo/api.html#model-zoo-add)
+You can add PyTorch Hub models to your [local model zoo](../data_and_models/model_zoo/api.html#model-zoo-add)
 and then load and use them via the [`fiftyone.zoo`](../api/fiftyone.zoo.html#module-fiftyone.zoo "fiftyone.zoo") package and the CLI
 using the same syntax that you would with the
-[publicly available models](../model_zoo/models.html#model-zoo-models):
+[publicly available models](../data_and_models/model_zoo/models.html#model-zoo-models):
 
 ```
 import fiftyone as fo

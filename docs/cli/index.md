@@ -774,7 +774,7 @@ fiftyone datasets delete --non-persistent
 
 Tools for migrating the FiftyOne database.
 
-See [this page](../user_guide/config.html#database-migrations) for more information about migrating
+See [this page](../fiftyone_concepts/config.html#database-migrations) for more information about migrating
 FiftyOne deployments.
 
 ```
