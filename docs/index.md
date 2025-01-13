@@ -3,7 +3,7 @@
 **The open-source tool for building high-quality datasets and computer vision models**
 
 Nothing hinders the success of machine learning systems more than poor quality
-data. And without the right tools, improving a model can be time-consuming and
+data. Without the right tools, improving a model can be time-consuming and
 inefficient.
 
 FiftyOne supercharges your machine learning workflows by enabling you to
