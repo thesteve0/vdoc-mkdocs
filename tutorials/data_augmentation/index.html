@@ -1,0 +1,1248 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Augmenting Datasets with Albumentations ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#augmenting-datasets-with-albumentations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Augmenting Datasets with Albumentations ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-augmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Data Augmentation? ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-perils-of-blind-data-augmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Perils of Blind Data Augmentation ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-transformations-with-albumentations-and-fiftyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Transformations with Albumentations and FiftyOne ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Transformations with Albumentations and FiftyOne ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-augmentations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Augmentations ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isolating-the-augmented-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isolating the Augmented Samples ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspecting-the-generating-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspecting the Generating Transformation ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composing Transformations ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/data_augmentation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="augmenting-datasets-with-albumentations">Augmenting Datasets with Albumentations <a href="#Augmenting-Datasets-with-Albumentations" title="Permalink to this headline">¶</a><a class="headerlink" href="#augmenting-datasets-with-albumentations" title="Permanent link">&para;</a></h1>
+<p>Traditionally, <a href="(https://en.wikipedia.org/wiki/Data_augmentation)">data augmentation</a> is performed on-the-fly during training. This is great… <em>if</em> you know exactly what augmentations you want to apply to your dataset.</p>
+<p>However, if you’re just getting started with a new dataset, you may not know what augmentations are appropriate for your data. Should you include rotations? How much blurring is reasonable? Does it make sense to employ random cropping? These questions just scratch the surface.</p>
+<p>When effective, data augmentation can significantly boost model performance by reducing overfitting and turning a small set of collected data into a much larger and more diverse data moat. But when left unchecked, data augmentation transformations can completely confuse your model, burying the original high quality data in a glut of digital garbage.</p>
+<p>In this walkthrough, you’ll learn how to apply data augmentation to your dataset using the <a href="https://albumentations.ai/">Albumentations</a> library, and how to ensure those augmentations are appropriate for your data.</p>
+<p>It covers the following:</p>
+<ul>
+<li>
+<p>What is data augmentation?</p>
+</li>
+<li>
+<p>The perils of blind data augmentation</p>
+</li>
+<li>
+<p>Testing transformations on your dataset</p>
+</li>
+</ul>
+<h2 id="what-is-data-augmentation">What is Data Augmentation? <a href="#What-is-Data-Augmentation?" title="Permalink to this headline">¶</a><a class="headerlink" href="#what-is-data-augmentation" title="Permanent link">&para;</a></h2>
+<p><img alt="792e4b04cbef46c38a4b252b0f298a5b" src="../../_images/augmentations_illustration.png" /></p>
+<p>Illustration of data augmentation applied to a single natural image</p>
+<p>Broadly speaking, <a href="https://en.wikipedia.org/wiki/Data_augmentation">data augmentation</a> is any process that involves increasing the size of the training set by modifying the original data. Typically, data augmentation is used to fill expected gaps in the original data and reduce overfitting to the specific data that you were able to collect and curate. It is also a <a href="https://www.picsellia.com/post/improve-imbalanced-datasets-in-computer-vision">handy technique for mitigating class\
+imbalance</a>: by augmenting the number of samples for underrepresented classes, you can restore balance to the training distribution. Often, augmentations can account for 90% of the training data, or even more.</p>
+<p>In the context of computer vision, modifications can be made via geometric transformations like rotations and reflections, transformations which blur or add noise, or transformations that simulate different lighting conditions, such as changing the brightness, contrast, or saturation. For most of these augmentations, if you just need to transform the raw images, then torchvision’s <code>transforms</code> module is a great solution. If you want to take your labels (bounding boxes, masks, and keypoints)
+along for the ride, then you’ll need a purpose-built image augmentation library, such as <a href="https://albumentations.ai/">Albumentations</a>, <a href="https://imgaug.readthedocs.io/en/latest/">imgaug</a>, or <a href="https://augmentor.readthedocs.io/en/master/">Augmentor</a>.</p>
+<p>There are also more sophisticated image augmentation techniques for changing the scenery, background, and weather conditions in images. If you’re interested in this level of control over your augmentations, check out <a href="https://www.kopikat.co/">Kopikat</a> and Stability AI’s <a href="https://clipdrop.co/real-estate/sky-replacer">Sky Replacer</a>.</p>
+<p>While data augmentation itself does not include completely synthetic data generation, augmentation is often used in conjunction with synthetic data generation approaches. Synthetic data from <a href="https://www.nvidia.com/en-us/omniverse/">NVIDIA Omniverse</a> can be <a href="https://blogs.nvidia.com/blog/what-is-synthetic-data/">orders of magnitude cheaper</a> than collecting similar data in the field — combining this with (computationally inexpensive) data augmentation can lead to still further cost savings!</p>
+<h2 id="the-perils-of-blind-data-augmentation">The Perils of Blind Data Augmentation <a href="#The-Perils-of-Blind-Data-Augmentation" title="Permalink to this headline">¶</a><a class="headerlink" href="#the-perils-of-blind-data-augmentation" title="Permanent link">&para;</a></h2>
+<p>When applied irresponsibly, data augmentations can degrade model performance and have severe real–world consequences. Some transformations clearly push beyond the bounds of the desired data distribution — too much blurring makes an image unrecognizable; vertically flipping a portrait (leading to an upside down face) is clearly undesirable for most use cases.</p>
+<p>But the damage done by blindly boosting dataset size can be far more subtle and pernicious. Let’s look at two examples, to make this explicit.</p>
+<p>Suppose you’re working for a wildlife conservation organization, using computer vision to count the number of <a href="https://animalia.bio/blue-throated-macaw">blue-throated macaws</a>. At last count, there were <a href="https://animalia.bio/blue-throated-macaw?collection=35#:~:text=Recent%20population%20and%20range%20estimates,individuals%20remain%20in%20the%20wild.">only around 350 in the wild</a>, so you only have a few images to start with, and you want to augment your data.</p>
+<p><img alt="2968f881dbda4bd5bb002d87a02b67ab" src="../../_images/augmentations_blue_throated_macaw.png" /></p>
+<p>Blue-throated macaw. Image courtesy of wikimedia commons</p>
+<p>Your field cameras take pretty high-resolution images, so you augment the data by randomly cropping 600x600 patches from your original images. When you randomly crop, some of the resulting augmentations look like this:</p>
+<p><img alt="e3b586e4c4804e918e923887aa81a122" src="../../_images/augmentations_macaw_crops.png" /></p>
+<p>600x600 pixel random crops of the image above</p>
+<p>But there’s a problem. If you use this to train your model, the model might incorrectly tag <a href="https://animalia.bio/blue-and-gold-macaw">blue-and-gold macaws</a> — which are far more abundant ( <a href="https://en.wikipedia.org/wiki/Blue-and-yellow_macaw#:~:text=The%20species%20is%20therefore%20listed,CITES%20Appendix%20II%2C%20trade%20restricted.">more than 10,000 in the wild</a>), share an overlapping geographic range and apart from their head look pretty similar. This might significantly throw off your
+population estimates.</p>
+<p><img alt="c82487ffa71b416eb15025df92e97aa6" src="../../_images/augmentations_blue_and_yellow_macaw.png" /></p>
+<p>Blue and yellow macaw. Image courtesy of Ketian Chen</p>
+<p>To hammer this idea home, let’s look at another example. Suppose you’re building a model to detect pneumonia from chest X-rays. Typically, pneumonia shows up in these images as an abnormally opaque region within the chest, so teaching a neural net to diagnose it should be possible, but you only have hundreds of images — far too few to train your desired model.</p>
+<p>One of the augmentations you are interested in performing is changing the contrast in the images. Each lab from which you are receiving data sends you X-ray images with different amounts of contrast, so it seems reasonable to turn each image into a set of images across the spectrum of contrast.</p>
+<p>But there’s a problem here too. Turning the contrast up or down may be viable for some images. However, too high of a contrast can also change the perceived diagnosis. Consider the image on the left side below, of a non-pneumatic patient from the <a href="https://try.fiftyone.ai/datasets/chestx-ray14/samples">ChestX-ray14 dataset</a>. Now look at the image on the right, after the contrast has been increased and a region made substantially more opaque. If we retained the training label from the left, we
+would be telling the model that images like this are non-pneumatic. This could potentially cause confusion and result in false negative diagnoses.</p>
+<p><img alt="01dac98f8ff249958ffe8b7b3378a3ae" src="../../_images/augmentations_lung_contrast_comparison.png" /></p>
+<p>Left: Lung without pneumonia (image from ChestX-ray14 dataset). Right: Contrast-heightened augmentation of left image</p>
+<h2 id="testing-transformations-with-albumentations-and-fiftyone">Testing Transformations with Albumentations and FiftyOne <a href="#Testing-Transformations-with-Albumentations-and-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#testing-transformations-with-albumentations-and-fiftyone" title="Permanent link">&para;</a></h2>
+<p>The examples highlighted in the last section may not apply in your use case, but there are countless ways that augmentations can make a mess out of high quality data. Albumentations has <a href="https://albumentations.ai/docs/getting_started/transforms_and_targets/">80+ transformations</a>, many of which give you multiple control knobs to turn. And these transformations can be composed, altogether amounting to a massive space of possible augmentations.</p>
+<p>To ensure that your augmentations are reasonable, in domain, and add diversity to your dataset, it is absolutely essential that you test out your transformations before including them in a training loop.</p>
+<p>Fortunately, the <a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin">Albumentations plugin for FiftyOne</a> allows you to do just this! In particular, you can:</p>
+<ul>
+<li>
+<p><a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#applying-augmentations">Apply Albumentations transformations</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#view-last-augmentation">View samples generated by last augmentation</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#saving-augmentations">Save augmentations to the dataset</a>, and</p>
+</li>
+<li>
+<p><a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#saving-transformations">Save transformations you found useful</a></p>
+</li>
+</ul>
+<p>The augmentation transforms not only the raw image, but also any <a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#view-last-augmentation:~:text=following%20label%20types%3A-,Object%20Detection,-Keypoint%20Detection">Object Detections</a>, <a href="https://docs.voxel51.com/user_guide/using_datasets.html#keypoints">Keypoints</a>, <a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#view-last-augmentation:~:text=Instance%20Segmentation">Instance\
+Segmentations</a>, <a href="https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#view-last-augmentation:~:text=Semantic%20Segmentation">Semantic Segmentations</a>, and <a href="https://docs.voxel51.com/user_guide/using_datasets.html#heatmaps">Heatmap</a> labels on the transformed samples.</p>
+<h3 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>To get started, first make sure you have FiftyOne and Albumentations installed:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">fiftyone</span> <span class="n">albumentations</span>
+</span></code></pre></div>
+<p>Then download the Albumentations plugin with FiftyOne’s plugin CLI syntax:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="n">fiftyone</span> <span class="n">plugins</span> <span class="n">download</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jacobmarks</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">-</span><span class="n">albumentations</span><span class="o">-</span><span class="n">plugin</span>
+</span></code></pre></div>
+<p>For this walkthrough, we’ll pretend that our goal is to train a vision model for an autonomous vehicle application, but we are starting from just a handful of labeled images. In particular, we’ll take just the first 10 images from the <a href="https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html#kitti">KITTI</a> dataset, which contains left stereo images from road scenes.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;kitti&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-3-5"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="dc77c869e9f6465e8f45a575fb4c03b3" src="../../_images/augmentations_initial_dataset.png" /></p>
+<p>Subset of 10 images from the train split of the KITTI dataset, visualized in the FiftyOne App</p>
+<p>To make things more fun — and to show that this plugin allows you to experiment with all different types of labels — let’s add some pose estimation keypoints with <a href="https://docs.ultralytics.com/">Ultralytics</a>, and some relative depth maps with Hugging Face’s <a href="https://huggingface.co/docs/transformers/index">Transformers</a> library:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">transformers</span> <span class="n">ultralytics</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="c1">## Add depth maps</span>
+</span><span id="__span-6-2"><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForDepthEstimation</span>
+</span><span id="__span-6-3"><span class="n">depth_model</span> <span class="o">=</span> <span class="n">AutoModelForDepthEstimation</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+</span><span id="__span-6-4">    <span class="s2">&quot;Intel/dpt-large&quot;</span>
+</span><span id="__span-6-5"><span class="p">)</span>
+</span><span id="__span-6-6"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">depth_model</span><span class="p">,</span> <span class="s2">&quot;depth&quot;</span><span class="p">)</span>
+</span><span id="__span-6-7">
+</span><span id="__span-6-8"><span class="c1">## Add keypoints</span>
+</span><span id="__span-6-9"><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+</span><span id="__span-6-10"><span class="n">pose_model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s1">&#39;yolov8x-pose.pt&#39;</span><span class="p">)</span>
+</span><span id="__span-6-11"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">pose_model</span><span class="p">,</span> <span class="s2">&quot;keypoints&quot;</span><span class="p">)</span>
+</span><span id="__span-6-12">
+</span><span id="__span-6-13"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Dataset with labels" src="../../_images/augmentations_dataset_with_labels.gif" /></p>
+<h3 id="creating-augmentations">Creating Augmentations <a href="#Creating-Augmentations" title="Permalink to this headline">¶</a><a class="headerlink" href="#creating-augmentations" title="Permanent link">&para;</a></h3>
+<p>Pressing the backtick “`” key on the keyboard, and typing “augment” in. Press the <code>augment_with_albumentations</code> option. This is an operator in the FiftyOne Plugin system, and by interacting with the UI-based input form, we will be able to specify what transform we want to apply.</p>
+<p>Let’s try a simple example of randomly cropping boxes out of each image. To do so, we will use the <code>RandomCropFromBorders</code> transform from Albumentations:</p>
+<p><img alt="Random crop from borders" src="../../_images/augmentations_compose_transforms.gif" /></p>
+<p>Notice how as we interact with the input form, the contents dynamically change. In this case, when we select the transformation we want to apply, we are greeted with input items for each argument taken by that transform function. This is made possible through the use of Python’s <code>inspect</code> module — each argument is processed (input and output) in semi-automated fashion by utilizing the docstrings and function signatures of Albumentations’ transformations.</p>
+<p>Also notice that we chose to generate just one augmentation per sample from this transform — hence going from 10 to 20 samples. For transformations which involve randomness, it can be helpful to generate multiple augmentations to investigate the broader range of possible generations.</p>
+<h3 id="isolating-the-augmented-samples">Isolating the Augmented Samples <a href="#Isolating-the-Augmented-Samples" title="Permalink to this headline">¶</a><a class="headerlink" href="#isolating-the-augmented-samples" title="Permanent link">&para;</a></h3>
+<p>If we wanted to isolate the samples we just generated, as opposed to viewing them in line with the original samples, we could do so by invoking the <code>view_last_albumentations_run operator</code>:</p>
+<p><img alt="Random crop from borders" src="../../_images/augmentations_compose_transforms.gif" /></p>
+<p>If we want to keep them, then we can save the augmentations to the dataset with the <code>save_albumentations_augmentations</code> operator. Otherwise, they will be treated as temporary — for the purposes of experimentation — and deleted when you next generate augmentations.</p>
+<h3 id="inspecting-the-generating-transformation">Inspecting the Generating Transformation <a href="#Inspecting-the-Generating-Transformation" title="Permalink to this headline">¶</a><a class="headerlink" href="#inspecting-the-generating-transformation" title="Permanent link">&para;</a></h3>
+<p>Perhaps even more importantly, running <code>get_last_albumentations_run_info</code> will display for us a formatted compilation of all of the parameters used to construct the prior transformation and generate these augmentations:</p>
+<p><img alt="Random crop from borders" src="../../_images/augmentations_compose_transforms.gif" /></p>
+<p>If we are satisfied with this transformation and the hyperparameters employed, we can save it, either for composition with other transforms in our exploration, or to use in your inference pipelines:</p>
+<p><img alt="Random crop from borders" src="../../_images/augmentations_compose_transforms.gif" /></p>
+<h3 id="composing-transformations">Composing Transformations <a href="#Composing-Transformations" title="Permalink to this headline">¶</a><a class="headerlink" href="#composing-transformations" title="Permanent link">&para;</a></h3>
+<p>In production-grade inference pipelines, augmentations are often generated by composing multiple augmentation transformations to each base sample. For instance, you might apply a random brightness shift, followed by a random crop, and finally some sort of blur. Let’s see this in action:</p>
+<p><img alt="Random crop from borders" src="../../_images/augmentations_compose_transforms.gif" /></p>
+<p>This is of course just one combination, and yet even this indicates that perhaps if we want to combine cropping with brightness changes, we should be intentional about the minimum size of the cropped region or the maximum amount of darkening we add. And this will all depend on the particular application!</p>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Whether you’re building a low-latency embedded vision model for real-time detection or you’re building the next state of the art multimodal foundation model, it almost goes without saying that data augmentation is an essential ingredient in the training process. Yet far too often, we treat data augmentation as a black-box component and heuristically determine what transformations to apply.</p>
+<p>But if you’re optimizing your model architecture, and painstakingly pouring over your ground truth data to ensure the highest quality, there’s no reason not to take the same care with your data augmentation. I hope this post hammers home the importance of understanding what transformations you are applying, and gives you the tools you need to start treating data augmentation like data curation!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

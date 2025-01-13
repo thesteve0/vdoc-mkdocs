@@ -1,0 +1,1680 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Convert Dataset Formats ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#convert-dataset-formats" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Convert Dataset Formats ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download datasets ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fiftyone-convert-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      The fiftyone convert command ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-cifar-10-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert CIFAR-10 dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-kitti-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert KITTI dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/recipes/convert_datasets.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="convert-dataset-formats">Convert Dataset Formats <a href="#Convert-Dataset-Formats" title="Permalink to this headline">¶</a><a class="headerlink" href="#convert-dataset-formats" title="Permanent link">&para;</a></h1>
+<p>This recipe demonstrates how to use FiftyOne to convert datasets on disk between common formats.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>If you haven’t already, install FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<p>This notebook contains bash commands. To run it as a notebook, you must install the <a href="https://github.com/takluyver/bash_kernel">Jupyter bash kernel</a> via the command below.</p>
+<p>Alternatively, you can just copy + paste the code blocks into your shell.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="n">pip</span> <span class="n">install</span> <span class="n">bash_kernel</span>
+</span><span id="__span-3-2"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">bash_kernel</span><span class="o">.</span><span class="n">install</span>
+</span></code></pre></div>
+<p>In this recipe we’ll use the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html">FiftyOne Dataset Zoo</a> to download some open source datasets to work with.</p>
+<p>Specifically, we’ll need <a href="https://www.tensorflow.org/">TensorFlow</a> and <a href="https://www.tensorflow.org/datasets">TensorFlow Datasets</a> installed to <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html#customizing-your-ml-backend">access the datasets</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">pip</span> <span class="n">install</span> <span class="n">tensorflow</span> <span class="n">tensorflow</span><span class="o">-</span><span class="n">datasets</span>
+</span></code></pre></div>
+<h2 id="download-datasets">Download datasets <a href="#Download-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#download-datasets" title="Permanent link">&para;</a></h2>
+<p>Download the test split of the <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 dataset</a> from the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html">FiftyOne Dataset Zoo</a> using the command below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="c1"># Download the test split of CIFAR-10</span>
+</span><span id="__span-7-2"><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">download</span> <span class="n">cifar10</span> <span class="o">--</span><span class="n">split</span> <span class="n">test</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;test&#39;</span> <span class="n">to</span> <span class="s1">&#39;~/fiftyone/cifar10/test&#39;</span>
+</span><span id="__span-8-2"><span class="n">Downloading</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">toronto</span><span class="o">.</span><span class="n">edu</span><span class="o">/~</span><span class="n">kriz</span><span class="o">/</span><span class="n">cifar</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">python</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">to</span> <span class="o">~/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">/</span><span class="n">tmp</span><span class="o">-</span><span class="n">download</span><span class="o">/</span><span class="n">cifar</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">python</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</span><span id="__span-8-3"><span class="mi">170500096</span><span class="n">it</span> <span class="p">[</span><span class="mi">00</span><span class="p">:</span><span class="mi">04</span><span class="p">,</span> <span class="mf">35887670.65</span><span class="n">it</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-8-4"><span class="n">Extracting</span> <span class="o">~/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">/</span><span class="n">tmp</span><span class="o">-</span><span class="n">download</span><span class="o">/</span><span class="n">cifar</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">python</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">to</span> <span class="o">~/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">/</span><span class="n">tmp</span><span class="o">-</span><span class="n">download</span>
+</span><span id="__span-8-5"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███</span><span class="o">|</span> <span class="mi">10000</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">5.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.8</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-8-6"><span class="n">Dataset</span> <span class="n">info</span> <span class="n">written</span> <span class="n">to</span> <span class="s1">&#39;~/fiftyone/cifar10/info.json&#39;</span>
+</span></code></pre></div>
+<p>Download the validation split of the <a href="http://www.cvlibs.net/datasets/kitti">KITTI dataset</a> from the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html">FiftyOne Dataset Zoo</a> using the command below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="c1"># Download the validation split of KITTI</span>
+</span><span id="__span-10-2"><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">download</span> <span class="n">kitti</span> <span class="o">--</span><span class="n">split</span> <span class="n">validation</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="n">Split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span></code></pre></div>
+<h2 id="the-fiftyone-convert-command">The fiftyone convert command <a href="#The-fiftyone-convert-command" title="Permalink to this headline">¶</a><a class="headerlink" href="#the-fiftyone-convert-command" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://voxel51.com/docs/fiftyone/cli/index.html">FiftyOne CLI</a> provides a number of utilities for importing and exporting datasets in a variety of common (or custom) formats.</p>
+<p>Specifically, the <code>fiftyone convert</code> command provides a convenient way to convert datasets on disk between formats by specifying the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.types.html#fiftyone.types.dataset_types.Dataset">fiftyone.types.Dataset</a> type of the input and desired output.</p>
+<p>FiftyOne provides a collection of <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#supported-formats">builtin types</a> that you can use to read/write datasets in common formats out-of-the-box:</p>
+<table>
+<thead>
+<tr>
+<th>Dataset format</th>
+<th>Import Supported?</th>
+<th>Export Supported?</th>
+<th>Conversion Supported?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#imagedirectory">ImageDirectory</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#videodirectory">VideoDirectory</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyoneimageclassificationdataset">FiftyOneImageClassificationDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#imageclassificationdirectorytree">ImageClassificationDirectoryTree</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#tfimageclassificationdataset">TFImageClassificationDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyoneimagedetectiondataset">FiftyOneImageDetectionDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#cocodetectiondataset">COCODetectionDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#vocdetectiondataset">VOCDetectionDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#kittidetectiondataset">KITTIDetectionDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#yolodataset">YOLODataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#tfobjectdetectiondataset">TFObjectDetectionDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#cvatimagedataset">CVATImageDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#cvatvideodataset">CVATVideoDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyoneimagelabelsdataset">FiftyOneImageLabelsDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyonevideolabelsdataset">FiftyOneVideoLabelsDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#bdddataset">BDDDataset</a></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, you can define your own <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#custom-formats">custom dataset types</a> to read/write datasets in your own formats.</p>
+<p>The usage of the <code>fiftyone convert</code> command is as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">fiftyone</span> <span class="n">convert</span> <span class="o">-</span><span class="n">h</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="n">usage</span><span class="p">:</span> <span class="n">fiftyone</span> <span class="n">convert</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">INPUT_TYPE</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">OUTPUT_TYPE</span>
+</span><span id="__span-14-2">                        <span class="p">[</span><span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="n">INPUT_DIR</span><span class="p">]</span>
+</span><span id="__span-14-3">                        <span class="p">[</span><span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]]</span>
+</span><span id="__span-14-4">                        <span class="p">[</span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">OUTPUT_DIR</span><span class="p">]</span>
+</span><span id="__span-14-5">                        <span class="p">[</span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span><span class="p">]</span>
+</span><span id="__span-14-6">
+</span><span id="__span-14-7"><span class="n">Convert</span> <span class="n">datasets</span> <span class="n">on</span> <span class="n">disk</span> <span class="n">between</span> <span class="n">supported</span> <span class="n">formats</span><span class="o">.</span>
+</span><span id="__span-14-8">
+</span><span id="__span-14-9">    <span class="n">Examples</span><span class="p">::</span>
+</span><span id="__span-14-10">
+</span><span id="__span-14-11">        <span class="c1"># Convert an image classification directory tree to TFRecords format</span>
+</span><span id="__span-14-12">        <span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-14-13">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">image</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">directory</span><span class="o">-</span><span class="n">tree</span> \
+</span><span id="__span-14-14">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageClassificationDirectoryTree</span> \
+</span><span id="__span-14-15">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">tf</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">dataset</span> \
+</span><span id="__span-14-16">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">TFImageClassificationDataset</span>
+</span><span id="__span-14-17">
+</span><span id="__span-14-18">        <span class="c1"># Convert a COCO detection dataset to CVAT image format</span>
+</span><span id="__span-14-19">        <span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-14-20">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">coco</span><span class="o">-</span><span class="n">detection</span><span class="o">-</span><span class="n">dataset</span> \
+</span><span id="__span-14-21">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">COCODetectionDataset</span> \
+</span><span id="__span-14-22">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">cvat</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">dataset</span> \
+</span><span id="__span-14-23">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">CVATImageDataset</span>
+</span><span id="__span-14-24">
+</span><span id="__span-14-25">        <span class="c1"># Perform a customized conversion via optional kwargs</span>
+</span><span id="__span-14-26">        <span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-14-27">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">coco</span><span class="o">-</span><span class="n">detection</span><span class="o">-</span><span class="n">dataset</span> \
+</span><span id="__span-14-28">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">COCODetectionDataset</span> \
+</span><span id="__span-14-29">            <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span> \
+</span><span id="__span-14-30">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">cvat</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="n">dataset</span> \
+</span><span id="__span-14-31">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">TFObjectDetectionDataset</span> \
+</span><span id="__span-14-32">            <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">force_rgb</span><span class="o">=</span><span class="kc">True</span> \
+</span><span id="__span-14-33">            <span class="o">--</span><span class="n">overwrite</span>
+</span><span id="__span-14-34">
+</span><span id="__span-14-35"><span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+</span><span id="__span-14-36">  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+</span><span id="__span-14-37">  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="n">INPUT_DIR</span>
+</span><span id="__span-14-38">                        <span class="n">the</span> <span class="n">directory</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">dataset</span>
+</span><span id="__span-14-39">  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]</span>
+</span><span id="__span-14-40">                        <span class="n">additional</span> <span class="n">keyword</span> <span class="n">arguments</span> <span class="k">for</span> <span class="err">`</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">convert_dataset</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">input_kwargs</span><span class="o">=</span><span class="p">)</span><span class="err">`</span>
+</span><span id="__span-14-41">  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="n">OUTPUT_DIR</span>
+</span><span id="__span-14-42">                        <span class="n">the</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">which</span> <span class="n">to</span> <span class="n">write</span> <span class="n">the</span> <span class="n">output</span> <span class="n">dataset</span>
+</span><span id="__span-14-43">  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">kwargs</span> <span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="p">[</span><span class="n">KEY</span><span class="o">=</span><span class="n">VAL</span> <span class="o">...</span><span class="p">]</span>
+</span><span id="__span-14-44">                        <span class="n">additional</span> <span class="n">keyword</span> <span class="n">arguments</span> <span class="k">for</span> <span class="err">`</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">convert_dataset</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">output_kwargs</span><span class="o">=</span><span class="p">)</span><span class="err">`</span>
+</span><span id="__span-14-45">  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">overwrite</span>       <span class="n">whether</span> <span class="n">to</span> <span class="n">overwrite</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">output</span> <span class="n">directory</span>
+</span><span id="__span-14-46">
+</span><span id="__span-14-47"><span class="n">required</span> <span class="n">arguments</span><span class="p">:</span>
+</span><span id="__span-14-48">  <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">INPUT_TYPE</span>
+</span><span id="__span-14-49">                        <span class="n">the</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Dataset</span> <span class="nb">type</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">dataset</span>
+</span><span id="__span-14-50">  <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">OUTPUT_TYPE</span>
+</span><span id="__span-14-51">                        <span class="n">the</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Dataset</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">output</span>
+</span></code></pre></div>
+<h2 id="convert-cifar-10-dataset">Convert CIFAR-10 dataset <a href="#Convert-CIFAR-10-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#convert-cifar-10-dataset" title="Permanent link">&para;</a></h2>
+<p>When you downloaded the test split of the CIFAR-10 dataset above, it was written to disk as a dataset in <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyoneimageclassificationdataset">fiftyone.types.FiftyOneImageClassificationDataset</a> format.</p>
+<p>You can verify this by printing information about the downloaded dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">info</span> <span class="n">cifar10</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">description</span> <span class="o">*****</span>
+</span><span id="__span-17-2"><span class="n">The</span> <span class="n">CIFAR</span><span class="o">-</span><span class="mi">10</span> <span class="n">dataset</span> <span class="n">consists</span> <span class="n">of</span> <span class="mi">60000</span> <span class="mi">32</span> <span class="n">x</span> <span class="mi">32</span> <span class="n">color</span> <span class="n">images</span> <span class="ow">in</span> <span class="mi">10</span>
+</span><span id="__span-17-3">    <span class="n">classes</span><span class="p">,</span> <span class="k">with</span> <span class="mi">6000</span> <span class="n">images</span> <span class="n">per</span> <span class="n">class</span><span class="o">.</span> <span class="n">There</span> <span class="n">are</span> <span class="mi">50000</span> <span class="n">training</span> <span class="n">images</span> <span class="ow">and</span>
+</span><span id="__span-17-4">    <span class="mi">10000</span> <span class="n">test</span> <span class="n">images</span><span class="o">.</span>
+</span><span id="__span-17-5">
+</span><span id="__span-17-6">    <span class="n">Dataset</span> <span class="n">size</span><span class="p">:</span>
+</span><span id="__span-17-7">        <span class="mf">132.40</span> <span class="n">MiB</span>
+</span><span id="__span-17-8">
+</span><span id="__span-17-9">    <span class="n">Source</span><span class="p">:</span>
+</span><span id="__span-17-10">        <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">toronto</span><span class="o">.</span><span class="n">edu</span><span class="o">/~</span><span class="n">kriz</span><span class="o">/</span><span class="n">cifar</span><span class="o">.</span><span class="n">html</span>
+</span><span id="__span-17-11">
+</span><span id="__span-17-12"><span class="o">*****</span> <span class="n">Supported</span> <span class="n">splits</span> <span class="o">*****</span>
+</span><span id="__span-17-13"><span class="n">test</span><span class="p">,</span> <span class="n">train</span>
+</span><span id="__span-17-14">
+</span><span id="__span-17-15"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">location</span> <span class="o">*****</span>
+</span><span id="__span-17-16"><span class="o">~/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span>
+</span><span id="__span-17-17">
+</span><span id="__span-17-18"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">info</span> <span class="o">*****</span>
+</span><span id="__span-17-19"><span class="p">{</span>
+</span><span id="__span-17-20">    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;cifar10&quot;</span><span class="p">,</span>
+</span><span id="__span-17-21">    <span class="s2">&quot;zoo_dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.zoo.datasets.torch.CIFAR10Dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-17-22">    <span class="s2">&quot;dataset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.types.dataset_types.FiftyOneImageClassificationDataset&quot;</span><span class="p">,</span>
+</span><span id="__span-17-23">    <span class="s2">&quot;num_samples&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+</span><span id="__span-17-24">    <span class="s2">&quot;downloaded_splits&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-17-25">        <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-17-26">            <span class="s2">&quot;split&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+</span><span id="__span-17-27">            <span class="s2">&quot;num_samples&quot;</span><span class="p">:</span> <span class="mi">10000</span>
+</span><span id="__span-17-28">        <span class="p">}</span>
+</span><span id="__span-17-29">    <span class="p">},</span>
+</span><span id="__span-17-30">    <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-17-31">        <span class="s2">&quot;airplane&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-32">        <span class="s2">&quot;automobile&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-33">        <span class="s2">&quot;bird&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-34">        <span class="s2">&quot;cat&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-35">        <span class="s2">&quot;deer&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-36">        <span class="s2">&quot;dog&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-37">        <span class="s2">&quot;frog&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-38">        <span class="s2">&quot;horse&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-39">        <span class="s2">&quot;ship&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-40">        <span class="s2">&quot;truck&quot;</span>\
+</span><span id="__span-17-41">    <span class="p">]</span>
+</span><span id="__span-17-42"><span class="p">}</span>
+</span></code></pre></div>
+<p>The snippet below uses <code>fiftyone convert</code> to convert the test split of the CIFAR-10 dataset to <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#imageclassificationdirectorytree">fiftyone.types.ImageClassificationDirectoryTree</a> format, which stores classification datasets on disk in a directory tree structure with images organized per-class:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="o">&lt;</span><span class="n">dataset_dir</span><span class="o">&gt;</span>
+</span><span id="__span-18-2"><span class="err">├──</span> <span class="o">&lt;</span><span class="n">classA</span><span class="o">&gt;/</span>
+</span><span id="__span-18-3"><span class="err">│</span>   <span class="err">├──</span> <span class="o">&lt;</span><span class="n">image1</span><span class="o">&gt;.&lt;</span><span class="n">ext</span><span class="o">&gt;</span>
+</span><span id="__span-18-4"><span class="err">│</span>   <span class="err">├──</span> <span class="o">&lt;</span><span class="n">image2</span><span class="o">&gt;.&lt;</span><span class="n">ext</span><span class="o">&gt;</span>
+</span><span id="__span-18-5"><span class="err">│</span>   <span class="err">└──</span> <span class="o">...</span>
+</span><span id="__span-18-6"><span class="err">├──</span> <span class="o">&lt;</span><span class="n">classB</span><span class="o">&gt;/</span>
+</span><span id="__span-18-7"><span class="err">│</span>   <span class="err">├──</span> <span class="o">&lt;</span><span class="n">image1</span><span class="o">&gt;.&lt;</span><span class="n">ext</span><span class="o">&gt;</span>
+</span><span id="__span-18-8"><span class="err">│</span>   <span class="err">├──</span> <span class="o">&lt;</span><span class="n">image2</span><span class="o">&gt;.&lt;</span><span class="n">ext</span><span class="o">&gt;</span>
+</span><span id="__span-18-9"><span class="err">│</span>   <span class="err">└──</span> <span class="o">...</span>
+</span><span id="__span-18-10"><span class="err">└──</span> <span class="o">...</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">INPUT_DIR</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">find</span> <span class="n">cifar10</span> <span class="o">--</span><span class="n">split</span> <span class="n">test</span><span class="p">)</span>
+</span><span id="__span-20-2"><span class="n">OUTPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="nb">dir</span><span class="o">-</span><span class="n">tree</span>
+</span><span id="__span-20-3">
+</span><span id="__span-20-4"><span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-20-5">    <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">INPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">FiftyOneImageClassificationDataset</span> \
+</span><span id="__span-20-6">    <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">OUTPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageClassificationDirectoryTree</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="n">Loading</span> <span class="n">dataset</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;~/fiftyone/cifar10/test&#39;</span>
+</span><span id="__span-21-2"><span class="n">Input</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.FiftyOneImageClassificationDataset&#39;</span>
+</span><span id="__span-21-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███</span><span class="o">|</span> <span class="mi">10000</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">4.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">2.4</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-21-4"><span class="n">Import</span> <span class="n">complete</span>
+</span><span id="__span-21-5"><span class="n">Exporting</span> <span class="n">dataset</span> <span class="n">to</span> <span class="s1">&#39;/tmp/fiftyone/cifar10-dir-tree&#39;</span>
+</span><span id="__span-21-6"><span class="n">Export</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.ImageClassificationDirectoryTree&#39;</span>
+</span><span id="__span-21-7"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███</span><span class="o">|</span> <span class="mi">10000</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">6.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.7</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-21-8"><span class="n">Export</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>Let’s verify that the conversion happened as expected:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="nb">dir</span><span class="o">-</span><span class="n">tree</span><span class="o">/</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="n">total</span> <span class="mi">0</span>
+</span><span id="__span-24-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">12</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">384</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span>
+</span><span id="__span-24-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>     <span class="mi">3</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">96</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="o">..</span>
+</span><span id="__span-24-4"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">airplane</span>
+</span><span id="__span-24-5"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">automobile</span>
+</span><span id="__span-24-6"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">bird</span>
+</span><span id="__span-24-7"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">cat</span>
+</span><span id="__span-24-8"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">deer</span>
+</span><span id="__span-24-9"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">dog</span>
+</span><span id="__span-24-10"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">frog</span>
+</span><span id="__span-24-11"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">horse</span>
+</span><span id="__span-24-12"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">ship</span>
+</span><span id="__span-24-13"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="n">truck</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="nb">dir</span><span class="o">-</span><span class="n">tree</span><span class="o">/</span><span class="n">airplane</span><span class="o">/</span> <span class="o">|</span> <span class="n">head</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">total</span> <span class="mi">8000</span>
+</span><span id="__span-27-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">1002</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">31</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="o">.</span>
+</span><span id="__span-27-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">12</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">384</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">08</span> <span class="o">..</span>
+</span><span id="__span-27-4"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.2</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000004.</span><span class="n">jpg</span>
+</span><span id="__span-27-5"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.1</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000011.</span><span class="n">jpg</span>
+</span><span id="__span-27-6"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.1</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000022.</span><span class="n">jpg</span>
+</span><span id="__span-27-7"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.3</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000028.</span><span class="n">jpg</span>
+</span><span id="__span-27-8"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.2</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000045.</span><span class="n">jpg</span>
+</span><span id="__span-27-9"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.2</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000053.</span><span class="n">jpg</span>
+</span><span id="__span-27-10"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>     <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mf">1.3</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">23</span> <span class="mf">000075.</span><span class="n">jpg</span>
+</span></code></pre></div>
+<p>Now let’s convert the classification directory tree to <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#tfimageclassificationdataset">TFRecords</a> format!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">INPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="nb">dir</span><span class="o">-</span><span class="n">tree</span>
+</span><span id="__span-29-2"><span class="n">OUTPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="n">tfrecords</span>
+</span><span id="__span-29-3">
+</span><span id="__span-29-4"><span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-29-5">    <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">INPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageClassificationDirectoryTree</span> \
+</span><span id="__span-29-6">    <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">OUTPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">TFImageClassificationDataset</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="n">Loading</span> <span class="n">dataset</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;/tmp/fiftyone/cifar10-dir-tree&#39;</span>
+</span><span id="__span-30-2"><span class="n">Input</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.ImageClassificationDirectoryTree&#39;</span>
+</span><span id="__span-30-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███</span><span class="o">|</span> <span class="mi">10000</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">4.0</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">2.5</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-30-4"><span class="n">Import</span> <span class="n">complete</span>
+</span><span id="__span-30-5"><span class="n">Exporting</span> <span class="n">dataset</span> <span class="n">to</span> <span class="s1">&#39;/tmp/fiftyone/cifar10-tfrecords&#39;</span>
+</span><span id="__span-30-6"><span class="n">Export</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.TFImageClassificationDataset&#39;</span>
+</span><span id="__span-30-7">   <span class="mi">0</span><span class="o">%</span> <span class="o">||--|</span>     <span class="mi">1</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">23.2</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mf">3.9</span><span class="n">m</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">43.2</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">15.187387</span><span class="p">:</span> <span class="n">I</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">platform</span><span class="o">/</span><span class="n">cpu_feature_guard</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">143</span><span class="p">]</span> <span class="n">Your</span> <span class="n">CPU</span> <span class="n">supports</span> <span class="n">instructions</span> <span class="n">that</span> <span class="n">this</span> <span class="n">TensorFlow</span> <span class="n">binary</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">compiled</span> <span class="n">to</span> <span class="n">use</span><span class="p">:</span> <span class="n">AVX2</span> <span class="n">FMA</span>
+</span><span id="__span-30-8"><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">15.201384</span><span class="p">:</span> <span class="n">I</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">compiler</span><span class="o">/</span><span class="n">xla</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">service</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">168</span><span class="p">]</span> <span class="n">XLA</span> <span class="n">service</span> <span class="mh">0x7f83df428f60</span> <span class="n">initialized</span> <span class="k">for</span> <span class="n">platform</span> <span class="n">Host</span> <span class="p">(</span><span class="n">this</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">guarantee</span> <span class="n">that</span> <span class="n">XLA</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="p">)</span><span class="o">.</span> <span class="n">Devices</span><span class="p">:</span>
+</span><span id="__span-30-9"><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mf">15.201405</span><span class="p">:</span> <span class="n">I</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">compiler</span><span class="o">/</span><span class="n">xla</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">service</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">176</span><span class="p">]</span>   <span class="n">StreamExecutor</span> <span class="n">device</span> <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Host</span><span class="p">,</span> <span class="n">Default</span> <span class="n">Version</span>
+</span><span id="__span-30-10"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███</span><span class="o">|</span> <span class="mi">10000</span><span class="o">/</span><span class="mi">10000</span> <span class="p">[</span><span class="mf">8.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.3</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-30-11"><span class="n">Export</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>Let’s verify that the conversion happened as expected:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">cifar10</span><span class="o">-</span><span class="n">tfrecords</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="n">total</span> <span class="mi">29696</span>
+</span><span id="__span-33-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">96</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">.</span>
+</span><span id="__span-33-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">4</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">128</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">..</span>
+</span><span id="__span-33-4"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">14</span><span class="n">M</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="n">tf</span><span class="o">.</span><span class="n">records</span>
+</span></code></pre></div>
+<h2 id="convert-kitti-dataset">Convert KITTI dataset <a href="#Convert-KITTI-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#convert-kitti-dataset" title="Permanent link">&para;</a></h2>
+<p>When you downloaded the validation split of the KITTI dataset above, it was written to disk as a dataset in <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/datasets.html#fiftyoneimagedetectiondataset">fiftyone.types.FiftyOneImageDetectionDataset</a> format.</p>
+<p>You can verify this by printing information about the downloaded dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">info</span> <span class="n">kitti</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">description</span> <span class="o">*****</span>
+</span><span id="__span-36-2"><span class="n">KITTI</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">suite</span> <span class="n">of</span> <span class="n">vision</span> <span class="n">tasks</span> <span class="n">built</span> <span class="n">using</span> <span class="n">an</span> <span class="n">autonomous</span>
+</span><span id="__span-36-3">    <span class="n">driving</span> <span class="n">platform</span><span class="o">.</span>
+</span><span id="__span-36-4">
+</span><span id="__span-36-5">    <span class="n">The</span> <span class="n">full</span> <span class="n">benchmark</span> <span class="n">contains</span> <span class="n">many</span> <span class="n">tasks</span> <span class="n">such</span> <span class="k">as</span> <span class="n">stereo</span><span class="p">,</span> <span class="n">optical</span> <span class="n">flow</span><span class="p">,</span> <span class="n">visual</span>
+</span><span id="__span-36-6">    <span class="n">odometry</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span> <span class="n">This</span> <span class="n">dataset</span> <span class="n">contains</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">detection</span> <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-36-7">    <span class="n">including</span> <span class="n">the</span> <span class="n">monocular</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">bounding</span> <span class="n">boxes</span><span class="o">.</span> <span class="n">The</span> <span class="n">dataset</span> <span class="n">contains</span>
+</span><span id="__span-36-8">    <span class="mi">7481</span> <span class="n">training</span> <span class="n">images</span> <span class="n">annotated</span> <span class="k">with</span> <span class="mi">3</span><span class="n">D</span> <span class="n">bounding</span> <span class="n">boxes</span><span class="o">.</span> <span class="n">A</span> <span class="n">full</span> <span class="n">description</span>
+</span><span id="__span-36-9">    <span class="n">of</span> <span class="n">the</span> <span class="n">annotations</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">README</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">development</span> <span class="n">kit</span>
+</span><span id="__span-36-10">    <span class="n">on</span> <span class="n">the</span> <span class="n">KITTI</span> <span class="n">homepage</span><span class="o">.</span>
+</span><span id="__span-36-11">
+</span><span id="__span-36-12">    <span class="n">Dataset</span> <span class="n">size</span><span class="p">:</span>
+</span><span id="__span-36-13">        <span class="mf">5.27</span> <span class="n">GiB</span>
+</span><span id="__span-36-14">
+</span><span id="__span-36-15">    <span class="n">Source</span><span class="p">:</span>
+</span><span id="__span-36-16">        <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">cvlibs</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">kitti</span>
+</span><span id="__span-36-17">
+</span><span id="__span-36-18"><span class="o">*****</span> <span class="n">Supported</span> <span class="n">splits</span> <span class="o">*****</span>
+</span><span id="__span-36-19"><span class="n">test</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">validation</span>
+</span><span id="__span-36-20">
+</span><span id="__span-36-21"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">location</span> <span class="o">*****</span>
+</span><span id="__span-36-22"><span class="o">~/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span>
+</span><span id="__span-36-23">
+</span><span id="__span-36-24"><span class="o">*****</span> <span class="n">Dataset</span> <span class="n">info</span> <span class="o">*****</span>
+</span><span id="__span-36-25"><span class="p">{</span>
+</span><span id="__span-36-26">    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;kitti&quot;</span><span class="p">,</span>
+</span><span id="__span-36-27">    <span class="s2">&quot;zoo_dataset&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.zoo.datasets.tf.KITTIDataset&quot;</span><span class="p">,</span>
+</span><span id="__span-36-28">    <span class="s2">&quot;dataset_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.types.dataset_types.FiftyOneImageDetectionDataset&quot;</span><span class="p">,</span>
+</span><span id="__span-36-29">    <span class="s2">&quot;num_samples&quot;</span><span class="p">:</span> <span class="mi">423</span><span class="p">,</span>
+</span><span id="__span-36-30">    <span class="s2">&quot;downloaded_splits&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-36-31">        <span class="s2">&quot;validation&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-36-32">            <span class="s2">&quot;split&quot;</span><span class="p">:</span> <span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-36-33">            <span class="s2">&quot;num_samples&quot;</span><span class="p">:</span> <span class="mi">423</span>
+</span><span id="__span-36-34">        <span class="p">}</span>
+</span><span id="__span-36-35">    <span class="p">},</span>
+</span><span id="__span-36-36">    <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-36-37">        <span class="s2">&quot;Car&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-38">        <span class="s2">&quot;Van&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-39">        <span class="s2">&quot;Truck&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-40">        <span class="s2">&quot;Pedestrian&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-41">        <span class="s2">&quot;Person_sitting&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-42">        <span class="s2">&quot;Cyclist&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-43">        <span class="s2">&quot;Tram&quot;</span><span class="p">,</span>\
+</span><span id="__span-36-44">        <span class="s2">&quot;Misc&quot;</span>\
+</span><span id="__span-36-45">    <span class="p">]</span>
+</span><span id="__span-36-46"><span class="p">}</span>
+</span></code></pre></div>
+<p>The snippet below uses <code>fiftyone convert</code> to convert the test split of the CIFAR-10 dataset to <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#cocodetectiondataset">fiftyone.types.COCODetectionDataset</a> format, which writes the dataset to disk with annotations in <a href="https://cocodataset.org/#format-data">COCO format</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="p">[</span><span class="mi">13</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="n">INPUT_DIR</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">fiftyone</span> <span class="n">zoo</span> <span class="n">datasets</span> <span class="n">find</span> <span class="n">kitti</span> <span class="o">--</span><span class="n">split</span> <span class="n">validation</span><span class="p">)</span>
+</span><span id="__span-38-2"><span class="n">OUTPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span>
+</span><span id="__span-38-3">
+</span><span id="__span-38-4"><span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-38-5">    <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">INPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">FiftyOneImageDetectionDataset</span> \
+</span><span id="__span-38-6">    <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">OUTPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">COCODetectionDataset</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">Loading</span> <span class="n">dataset</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;~/fiftyone/kitti/validation&#39;</span>
+</span><span id="__span-39-2"><span class="n">Input</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.FiftyOneImageDetectionDataset&#39;</span>
+</span><span id="__span-39-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████</span><span class="o">|</span> <span class="mi">423</span><span class="o">/</span><span class="mi">423</span> <span class="p">[</span><span class="mf">1.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">351.0</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-39-4"><span class="n">Import</span> <span class="n">complete</span>
+</span><span id="__span-39-5"><span class="n">Exporting</span> <span class="n">dataset</span> <span class="n">to</span> <span class="s1">&#39;/tmp/fiftyone/kitti-coco&#39;</span>
+</span><span id="__span-39-6"><span class="n">Export</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.COCODetectionDataset&#39;</span>
+</span><span id="__span-39-7"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████</span><span class="o">|</span> <span class="mi">423</span><span class="o">/</span><span class="mi">423</span> <span class="p">[</span><span class="mf">4.4</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">96.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-39-8"><span class="n">Export</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>Let’s verify that the conversion happened as expected:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span><span class="o">/</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="n">total</span> <span class="mi">880</span>
+</span><span id="__span-42-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">4</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">128</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">.</span>
+</span><span id="__span-42-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">5</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">160</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">..</span>
+</span><span id="__span-42-4"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">425</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">13</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="n">data</span>
+</span><span id="__span-42-5"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">437</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="n">labels</span><span class="o">.</span><span class="n">json</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="p">[</span><span class="mi">15</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span><span class="o">/</span><span class="n">data</span> <span class="o">|</span> <span class="n">head</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="n">total</span> <span class="mi">171008</span>
+</span><span id="__span-45-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">425</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">13</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">.</span>
+</span><span id="__span-45-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">4</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">128</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="o">..</span>
+</span><span id="__span-45-4"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">195</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000001.</span><span class="n">jpg</span>
+</span><span id="__span-45-5"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">191</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000002.</span><span class="n">jpg</span>
+</span><span id="__span-45-6"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">167</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000003.</span><span class="n">jpg</span>
+</span><span id="__span-45-7"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">196</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000004.</span><span class="n">jpg</span>
+</span><span id="__span-45-8"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">224</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000005.</span><span class="n">jpg</span>
+</span><span id="__span-45-9"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">195</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000006.</span><span class="n">jpg</span>
+</span><span id="__span-45-10"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">177</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">24</span> <span class="mf">000007.</span><span class="n">jpg</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="p">[</span><span class="mi">19</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span><span class="o">/</span><span class="n">labels</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="mi">20</span>
+</span><span id="__span-47-2"><span class="n">echo</span> <span class="s2">&quot;...&quot;</span>
+</span><span id="__span-47-3"><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span><span class="o">/</span><span class="n">labels</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">|</span> <span class="n">tail</span> <span class="o">-</span><span class="mi">20</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="p">{</span>
+</span><span id="__span-48-2">    <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-48-3">        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-48-4">        <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-48-5">        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Exported from FiftyOne&quot;</span><span class="p">,</span>
+</span><span id="__span-48-6">        <span class="s2">&quot;contributor&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-48-7">        <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://voxel51.com/fiftyone&quot;</span><span class="p">,</span>
+</span><span id="__span-48-8">        <span class="s2">&quot;date_created&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-07-14T11:24:40&quot;</span>
+</span><span id="__span-48-9">    <span class="p">},</span>
+</span><span id="__span-48-10">    <span class="s2">&quot;licenses&quot;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__span-48-11">    <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-48-12">        <span class="p">{</span>\
+</span><span id="__span-48-13">            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>\
+</span><span id="__span-48-14">            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Car&quot;</span><span class="p">,</span>\
+</span><span id="__span-48-15">            <span class="s2">&quot;supercategory&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span>\
+</span><span id="__span-48-16">        <span class="p">},</span>\
+</span><span id="__span-48-17">        <span class="p">{</span>\
+</span><span id="__span-48-18">            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>\
+</span><span id="__span-48-19">            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cyclist&quot;</span><span class="p">,</span>\
+</span><span id="__span-48-20">            <span class="s2">&quot;supercategory&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span>\
+</span><span id="__span-48-21"><span class="o">...</span>\
+</span><span id="__span-48-22">            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mf">4545.8</span><span class="p">,</span>\
+</span><span id="__span-48-23">            <span class="s2">&quot;segmentation&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>\
+</span><span id="__span-48-24">            <span class="s2">&quot;iscrowd&quot;</span><span class="p">:</span> <span class="mi">0</span>\
+</span><span id="__span-48-25">        <span class="p">},</span>\
+</span><span id="__span-48-26">        <span class="p">{</span>\
+</span><span id="__span-48-27">            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3196</span><span class="p">,</span>\
+</span><span id="__span-48-28">            <span class="s2">&quot;image_id&quot;</span><span class="p">:</span> <span class="mi">422</span><span class="p">,</span>\
+</span><span id="__span-48-29">            <span class="s2">&quot;category_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>\
+</span><span id="__span-48-30">            <span class="s2">&quot;bbox&quot;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-48-31">                <span class="mf">367.2</span><span class="p">,</span>\
+</span><span id="__span-48-32">                <span class="mf">107.3</span><span class="p">,</span>\
+</span><span id="__span-48-33">                <span class="mf">36.2</span><span class="p">,</span>\
+</span><span id="__span-48-34">                <span class="mf">105.2</span>\
+</span><span id="__span-48-35">            <span class="p">],</span>\
+</span><span id="__span-48-36">            <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="mf">3808.2</span><span class="p">,</span>\
+</span><span id="__span-48-37">            <span class="s2">&quot;segmentation&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>\
+</span><span id="__span-48-38">            <span class="s2">&quot;iscrowd&quot;</span><span class="p">:</span> <span class="mi">0</span>\
+</span><span id="__span-48-39">        <span class="p">}</span>\
+</span><span id="__span-48-40">    <span class="p">]</span>
+</span><span id="__span-48-41"><span class="p">}</span>
+</span></code></pre></div>
+<p>Now let’s convert from COCO format to <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#cvatimageformat">CVAT Image format</a> format!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="p">[</span><span class="mi">20</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="n">INPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">coco</span>
+</span><span id="__span-50-2"><span class="n">OUTPUT_DIR</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">cvat</span>
+</span><span id="__span-50-3">
+</span><span id="__span-50-4"><span class="n">fiftyone</span> <span class="n">convert</span> \
+</span><span id="__span-50-5">    <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">INPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="nb">input</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">COCODetectionDataset</span> \
+</span><span id="__span-50-6">    <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">dir</span> <span class="err">$</span><span class="p">{</span><span class="n">OUTPUT_DIR</span><span class="p">}</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">type</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">CVATImageDataset</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="n">Loading</span> <span class="n">dataset</span> <span class="kn">from</span><span class="w"> </span><span class="s1">&#39;/tmp/fiftyone/kitti-coco&#39;</span>
+</span><span id="__span-51-2"><span class="n">Input</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.COCODetectionDataset&#39;</span>
+</span><span id="__span-51-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████</span><span class="o">|</span> <span class="mi">423</span><span class="o">/</span><span class="mi">423</span> <span class="p">[</span><span class="mf">2.0</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">206.4</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-51-4"><span class="n">Import</span> <span class="n">complete</span>
+</span><span id="__span-51-5"><span class="n">Exporting</span> <span class="n">dataset</span> <span class="n">to</span> <span class="s1">&#39;/tmp/fiftyone/kitti-cvat&#39;</span>
+</span><span id="__span-51-6"><span class="n">Export</span> <span class="nb">format</span> <span class="s1">&#39;fiftyone.types.dataset_types.CVATImageDataset&#39;</span>
+</span><span id="__span-51-7"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████</span><span class="o">|</span> <span class="mi">423</span><span class="o">/</span><span class="mi">423</span> <span class="p">[</span><span class="mf">1.3</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">323.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-51-8"><span class="n">Export</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>Let’s verify that the conversion happened as expected:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="p">[</span><span class="mi">21</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="n">ls</span> <span class="o">-</span><span class="n">lah</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">cvat</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="n">total</span> <span class="mi">584</span>
+</span><span id="__span-54-2"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">4</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">128</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="o">.</span>
+</span><span id="__span-54-3"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>    <span class="mi">6</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">192</span><span class="n">B</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="o">..</span>
+</span><span id="__span-54-4"><span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">425</span> <span class="n">voxel51</span>  <span class="n">wheel</span>    <span class="mi">13</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="n">data</span>
+</span><span id="__span-54-5"><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--</span>    <span class="mi">1</span> <span class="n">voxel51</span>  <span class="n">wheel</span>   <span class="mi">289</span><span class="n">K</span> <span class="n">Jul</span> <span class="mi">14</span> <span class="mi">11</span><span class="p">:</span><span class="mi">25</span> <span class="n">labels</span><span class="o">.</span><span class="n">xml</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><span class="p">[</span><span class="mi">22</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">cvat</span><span class="o">/</span><span class="n">labels</span><span class="o">.</span><span class="n">xml</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="mi">20</span>
+</span><span id="__span-56-2"><span class="n">echo</span> <span class="s2">&quot;...&quot;</span>
+</span><span id="__span-56-3"><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">/</span><span class="n">kitti</span><span class="o">-</span><span class="n">cvat</span><span class="o">/</span><span class="n">labels</span><span class="o">.</span><span class="n">xml</span> <span class="o">|</span> <span class="n">tail</span> <span class="o">-</span><span class="mi">20</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><span class="o">&lt;</span><span class="err">?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="err">?</span><span class="o">&gt;</span>
+</span><span id="__span-57-2"><span class="o">&lt;</span><span class="n">annotations</span><span class="o">&gt;</span>
+</span><span id="__span-57-3">    <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.1</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span><span id="__span-57-4">    <span class="o">&lt;</span><span class="n">meta</span><span class="o">&gt;</span>
+</span><span id="__span-57-5">        <span class="o">&lt;</span><span class="n">task</span><span class="o">&gt;</span>
+</span><span id="__span-57-6">            <span class="o">&lt;</span><span class="n">size</span><span class="o">&gt;</span><span class="mi">423</span><span class="o">&lt;/</span><span class="n">size</span><span class="o">&gt;</span>
+</span><span id="__span-57-7">            <span class="o">&lt;</span><span class="n">mode</span><span class="o">&gt;</span><span class="n">annotation</span><span class="o">&lt;/</span><span class="n">mode</span><span class="o">&gt;</span>
+</span><span id="__span-57-8">            <span class="o">&lt;</span><span class="n">labels</span><span class="o">&gt;</span>
+</span><span id="__span-57-9">                <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+</span><span id="__span-57-10">                    <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Car</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</span><span id="__span-57-11">                    <span class="o">&lt;</span><span class="n">attributes</span><span class="o">&gt;</span>
+</span><span id="__span-57-12">                    <span class="o">&lt;/</span><span class="n">attributes</span><span class="o">&gt;</span>
+</span><span id="__span-57-13">                <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+</span><span id="__span-57-14">                <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+</span><span id="__span-57-15">                    <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Cyclist</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</span><span id="__span-57-16">                    <span class="o">&lt;</span><span class="n">attributes</span><span class="o">&gt;</span>
+</span><span id="__span-57-17">                    <span class="o">&lt;/</span><span class="n">attributes</span><span class="o">&gt;</span>
+</span><span id="__span-57-18">                <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+</span><span id="__span-57-19">                <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+</span><span id="__span-57-20">                    <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Misc</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+</span><span id="__span-57-21"><span class="o">...</span>
+</span><span id="__span-57-22">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;360&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;116&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;402&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;212&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-23">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-24">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;396&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;120&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;430&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;212&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-25">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-26">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;413&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;112&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;483&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;212&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-27">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-28">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;585&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;80&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;646&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;215&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-29">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-30">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;635&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;94&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;688&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;212&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-31">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-32">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;422&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;85&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;469&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;210&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-33">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-34">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;457&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;93&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;520&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;213&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-35">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-36">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;505&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;101&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;548&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;206&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-37">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-38">        <span class="o">&lt;</span><span class="n">box</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pedestrian&quot;</span> <span class="n">xtl</span><span class="o">=</span><span class="s2">&quot;367&quot;</span> <span class="n">ytl</span><span class="o">=</span><span class="s2">&quot;107&quot;</span> <span class="n">xbr</span><span class="o">=</span><span class="s2">&quot;403&quot;</span> <span class="n">ybr</span><span class="o">=</span><span class="s2">&quot;212&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-57-39">        <span class="o">&lt;/</span><span class="n">box</span><span class="o">&gt;</span>
+</span><span id="__span-57-40">    <span class="o">&lt;/</span><span class="n">image</span><span class="o">&gt;</span>
+</span><span id="__span-57-41"><span class="o">&lt;/</span><span class="n">annotations</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h2 id="cleanup">Cleanup <a href="#Cleanup" title="Permalink to this headline">¶</a><a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h2>
+<p>You can cleanup the files generated by this recipe by running the command below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">fiftyone</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

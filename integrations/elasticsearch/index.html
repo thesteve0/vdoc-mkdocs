@@ -1,0 +1,1726 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Elasticsearch Vector Search Integration ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elasticsearch-vector-search-integration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Elasticsearch Vector Search Integration ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic recipe ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-elasticsearch-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing the Elasticsearch client ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-elasticsearch-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the Elasticsearch backend ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-config-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elasticsearch config parameters ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-brain-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing brain runs ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-similarity-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a similarity index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-patch-similarity-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a patch similarity index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-to-an-existing-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect to an existing index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addremove-embeddings-from-an-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add/remove embeddings from an index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-embeddings-from-an-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieve embeddings from an index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#querying-a-elasticsearch-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Querying a Elasticsearch index ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-elasticsearch-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the Elasticsearch client ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced usage ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/integrations/elasticsearch.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="elasticsearch-vector-search-integration">Elasticsearch Vector Search Integration <a href="#elasticsearch-vector-search-integration" title="Permalink to this headline">¶</a><a class="headerlink" href="#elasticsearch-vector-search-integration" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.elastic.co/enterprise-search/vector-search">Elasticsearch</a> is
+one of the most popular search platforms available, and we’ve made it easy to
+use Elasticsearch’s vector search capabilities on your computer vision data
+directly from FiftyOne!</p>
+<p>Follow these <a href="#elasticsearch-setup">simple instructions</a> to get started
+using Elasticsearch + FiftyOne.</p>
+<p>FiftyOne provides an API to create Elasticsearch indexes, upload vectors, and
+run similarity queries, both <a href="#elasticsearch-query">programmatically</a> in
+Python and via point-and-click in the App.</p>
+<p>Note</p>
+<p>Did you know? You can
+<a href="../brain.html#brain-similarity-text">search by natural language</a> using
+Elasticsearch similarity indexes!</p>
+<p><img alt="image-similarity" src="../../_images/brain-image-similarity.gif" /></p>
+<h2 id="basic-recipe">Basic recipe <a href="#basic-recipe" title="Permalink to this headline">¶</a><a class="headerlink" href="#basic-recipe" title="Permanent link">&para;</a></h2>
+<p>The basic workflow to use Elasticsearch to create a similarity index on your
+FiftyOne datasets and use this to query your data is as follows:</p>
+<ol>
+<li>
+<p>Connect to or start an Elasticsearch server</p>
+</li>
+<li>
+<p>Load a <a href="../fiftyone_concepts/dataset_creation/index.html#loading-datasets">dataset</a> into FiftyOne</p>
+</li>
+<li>
+<p>Compute embedding vectors for samples or patches in your dataset, or select
+a model to use to generate embeddings</p>
+</li>
+<li>
+<p>Use the <code>compute_similarity()</code>
+method to generate a Elasticsearch similarity index for the samples or
+object patches in a dataset by setting the parameter
+<code>backend="elasticsearch"</code> and specifying a <code>brain_key</code> of your choice</p>
+</li>
+<li>
+<p>Use this Elasticsearch similarity index to query your data with
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity" title="fiftyone.core.collections.SampleCollection.sort_by_similarity"><code>sort_by_similarity()</code></a></p>
+</li>
+<li>
+<p>If desired, delete the index</p>
+</li>
+</ol>
+<p>The example below demonstrates this workflow.</p>
+<p>Note</p>
+<p>You must have access to
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html">an Elasticsearch server</a>
+and install the
+<a href="https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html">Elasticsearch Python client</a>
+to run this example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">pip</span> <span class="n">install</span> <span class="n">elasticsearch</span>
+</span></code></pre></div>
+<p>Note that, if you are using a custom Elasticsearch server, you can store
+your credentials as described in <a href="#elasticsearch-setup">this section</a>
+to avoid entering them manually each time you interact with your
+Elasticsearch index.</p>
+<p>First let’s load a dataset into FiftyOne and compute embeddings for the samples:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-1-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-1-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-1-4">
+</span><span id="__span-1-5"><span class="c1"># Step 1: Load your data into FiftyOne</span>
+</span><span id="__span-1-6"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-1-7">
+</span><span id="__span-1-8"><span class="c1"># Steps 2 and 3: Compute embeddings and create a similarity index</span>
+</span><span id="__span-1-9"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-1-10">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-1-11">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-1-12">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-1-13"><span class="p">)</span>
+</span></code></pre></div>
+<p>Once the similarity index has been generated, we can query our data in FiftyOne
+by specifying the <code>brain_key</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="c1"># Step 4: Query your data</span>
+</span><span id="__span-2-2"><span class="n">query</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">id</span>  <span class="c1"># query by sample ID</span>
+</span><span id="__span-2-3"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by_similarity</span><span class="p">(</span>
+</span><span id="__span-2-4">    <span class="n">query</span><span class="p">,</span>
+</span><span id="__span-2-5">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6">    <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># limit to 10 most similar samples</span>
+</span><span id="__span-2-7"><span class="p">)</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9"><span class="c1"># Step 5 (optional): Cleanup</span>
+</span><span id="__span-2-10">
+</span><span id="__span-2-11"><span class="c1"># Delete the Elasticsearch index</span>
+</span><span id="__span-2-12"><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</span><span id="__span-2-13">
+</span><span id="__span-2-14"><span class="c1"># Delete run record from FiftyOne</span>
+</span><span id="__span-2-15"><span class="n">dataset</span><span class="o">.</span><span class="n">delete_brain_run</span><span class="p">(</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Skip to <a href="#elasticsearch-examples">this section</a> for a variety of
+common Elasticsearch query patterns.</p>
+<h2 id="setup">Setup <a href="#setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>The easiest way to get started with Elasticsearch is to
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html#run-elasticsearch">install locally via Docker</a>.</p>
+<h3 id="installing-the-elasticsearch-client">Installing the Elasticsearch client <a href="#installing-the-elasticsearch-client" title="Permalink to this headline">¶</a><a class="headerlink" href="#installing-the-elasticsearch-client" title="Permanent link">&para;</a></h3>
+<p>In order to use the Elasticsearch backend, you must also install the
+<a href="https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/getting-started-python.html">Elasticsearch Python client</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="n">pip</span> <span class="n">install</span> <span class="n">elasticsearch</span>
+</span></code></pre></div>
+<h3 id="using-the-elasticsearch-backend">Using the Elasticsearch backend <a href="#using-the-elasticsearch-backend" title="Permalink to this headline">¶</a><a class="headerlink" href="#using-the-elasticsearch-backend" title="Permanent link">&para;</a></h3>
+<p>By default, calling
+<code>compute_similarity()</code> or
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity" title="fiftyone.core.collections.SampleCollection.sort_by_similarity"><code>sort_by_similarity()</code></a>
+will use an sklearn backend.</p>
+<p>To use the Elasticsearch backend, simply set the optional <code>backend</code> parameter of
+<code>compute_similarity()</code> to
+<code>"elasticsearch"</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-4-2">
+</span><span id="__span-4-3"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Alternatively, you can permanently configure FiftyOne to use the Elasticsearch
+backend by setting the following environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">export</span> <span class="n">FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND</span><span class="o">=</span><span class="n">elasticsearch</span>
+</span></code></pre></div>
+<p>or by setting the <code>default_similarity_backend</code> parameter of your
+<a href="../brain.html#brain-config">brain config</a> located at <code>~/.fiftyone/brain_config.json</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">{</span>
+</span><span id="__span-6-2">    <span class="s2">&quot;default_similarity_backend&quot;</span><span class="p">:</span> <span class="s2">&quot;elasticsearch&quot;</span>
+</span><span id="__span-6-3"><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="authentication">Authentication <a href="#authentication" title="Permalink to this headline">¶</a><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<p>If you are using a custom Elasticsearch server, you can provide your
+credentials in a
+<a href="https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/connecting.html#connecting">variety of ways</a>.</p>
+<p><strong>Environment variables (recommended)</strong></p>
+<p>The recommended way to configure your Elasticsearch credentials is to store
+them in the environment variables shown below, which are automatically accessed
+by FiftyOne whenever a connection to Elasticsearch is made.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="n">export</span> <span class="n">FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_HOSTS</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">9200</span>
+</span><span id="__span-7-2"><span class="n">export</span> <span class="n">FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_USERNAME</span><span class="o">=</span><span class="n">XXXXXXXX</span>
+</span><span id="__span-7-3"><span class="n">export</span> <span class="n">FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_PASSWORD</span><span class="o">=</span><span class="n">XXXXXXXX</span>
+</span></code></pre></div>
+<p>This is only one example of variables that can be used to authenticate an
+Elasticsearch client. Find more information
+<a href="https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/connecting.html#connecting">here.</a></p>
+<p><strong>FiftyOne Brain config</strong></p>
+<p>You can also store your credentials in your <a href="../brain.html#brain-config">brain config</a>
+located at <code>~/.fiftyone/brain_config.json</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">{</span>
+</span><span id="__span-8-2">    <span class="s2">&quot;similarity_backends&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-8-3">        <span class="s2">&quot;elasticsearch&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-8-4">            <span class="s2">&quot;hosts&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:9200&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5">            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+</span><span id="__span-8-6">            <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXXXXX&quot;</span>
+</span><span id="__span-8-7">        <span class="p">}</span>
+</span><span id="__span-8-8">    <span class="p">}</span>
+</span><span id="__span-8-9"><span class="p">}</span>
+</span></code></pre></div>
+<p>Note that this file will not exist until you create it.</p>
+<p><strong>Keyword arguments</strong></p>
+<p>You can manually provide credentials as keyword arguments each time you call
+methods like <code>compute_similarity()</code>
+that require connections to Elasticsearch:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-9-2">
+</span><span id="__span-9-3"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-9-4">    <span class="o">...</span>
+</span><span id="__span-9-5">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-9-6">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-9-7">    <span class="n">hosts</span><span class="o">=</span><span class="s2">&quot;http://localhost:9200&quot;</span><span class="p">,</span>
+</span><span id="__span-9-8">    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+</span><span id="__span-9-9">    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+</span><span id="__span-9-10"><span class="p">)</span>
+</span></code></pre></div>
+<p>Note that, when using this strategy, you must manually provide the credentials
+when loading an index later via
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results" title="fiftyone.core.collections.SampleCollection.load_brain_results"><code>load_brain_results()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_brain_results</span><span class="p">(</span>
+</span><span id="__span-10-2">    <span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-10-3">    <span class="n">hosts</span><span class="o">=</span><span class="s2">&quot;http://localhost:9200&quot;</span><span class="p">,</span>
+</span><span id="__span-10-4">    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+</span><span id="__span-10-5">    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">,</span>
+</span><span id="__span-10-6"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="elasticsearch-config-parameters">Elasticsearch config parameters <a href="#elasticsearch-config-parameters" title="Permalink to this headline">¶</a><a class="headerlink" href="#elasticsearch-config-parameters" title="Permanent link">&para;</a></h3>
+<p>The Elasticsearch backend supports a variety of query parameters that can be
+used to customize your similarity queries. These parameters include:</p>
+<ul>
+<li>
+<p><strong>index_name</strong> ( <em>None</em>): the name of the Elasticsearch vector search index
+to use or create. If not specified, a new unique name is generated automatically</p>
+</li>
+<li>
+<p><strong>metric</strong> ( <em>“cosine”</em>): the distance/similarity metric to use when
+creating a new index. The supported values are
+<code>("cosine", "dotproduct", "euclidean", "innerproduct")</code></p>
+</li>
+</ul>
+<p>For detailed information on these parameters, see the
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/dense-vector.html#dense-vector-similarity">Elasticsearch documentation</a>.</p>
+<p>You can specify these parameters via any of the strategies described in the
+previous section. Here’s an example of a <a href="../brain.html#brain-config">brain config</a>
+that includes all of the available parameters:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="p">{</span>
+</span><span id="__span-11-2">    <span class="s2">&quot;similarity_backends&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-11-3">        <span class="s2">&quot;elasticsearch&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-11-4">            <span class="s2">&quot;index_name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-index&quot;</span><span class="p">,</span>
+</span><span id="__span-11-5">            <span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;cosine&quot;</span>
+</span><span id="__span-11-6">        <span class="p">}</span>
+</span><span id="__span-11-7">    <span class="p">}</span>
+</span><span id="__span-11-8"><span class="p">}</span>
+</span></code></pre></div>
+<p>However, typically these parameters are directly passed to
+<code>compute_similarity()</code> to configure
+a specific new index:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-12-2">    <span class="o">...</span>
+</span><span id="__span-12-3">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-12-4">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-12-5">    <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;your-index&quot;</span><span class="p">,</span>
+</span><span id="__span-12-6">    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cosine&quot;</span><span class="p">,</span>
+</span><span id="__span-12-7"><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="managing-brain-runs">Managing brain runs <a href="#managing-brain-runs" title="Permalink to this headline">¶</a><a class="headerlink" href="#managing-brain-runs" title="Permanent link">&para;</a></h2>
+<p>FiftyOne provides a variety of methods that you can use to manage brain runs.</p>
+<p>For example, you can call
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs" title="fiftyone.core.collections.SampleCollection.list_brain_runs"><code>list_brain_runs()</code></a>
+to see the available brain keys on a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-13-2">
+</span><span id="__span-13-3"><span class="c1"># List all brain runs</span>
+</span><span id="__span-13-4"><span class="n">dataset</span><span class="o">.</span><span class="n">list_brain_runs</span><span class="p">()</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6"><span class="c1"># Only list similarity runs</span>
+</span><span id="__span-13-7"><span class="n">dataset</span><span class="o">.</span><span class="n">list_brain_runs</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">fob</span><span class="o">.</span><span class="n">Similarity</span><span class="p">)</span>
+</span><span id="__span-13-8">
+</span><span id="__span-13-9"><span class="c1"># Only list specific similarity runs</span>
+</span><span id="__span-13-10"><span class="n">dataset</span><span class="o">.</span><span class="n">list_brain_runs</span><span class="p">(</span>
+</span><span id="__span-13-11">    <span class="nb">type</span><span class="o">=</span><span class="n">fob</span><span class="o">.</span><span class="n">Similarity</span><span class="p">,</span>
+</span><span id="__span-13-12">    <span class="n">patches_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-13-13">    <span class="n">supports_prompts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-13-14"><span class="p">)</span>
+</span></code></pre></div>
+<p>Or, you can use
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info" title="fiftyone.core.collections.SampleCollection.get_brain_info"><code>get_brain_info()</code></a>
+to retrieve information about the configuration of a brain run:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="n">info</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_brain_info</span><span class="p">(</span><span class="n">brain_key</span><span class="p">)</span>
+</span><span id="__span-14-2"><span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Use <a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results" title="fiftyone.core.collections.SampleCollection.load_brain_results"><code>load_brain_results()</code></a>
+to load the <code>SimilarityIndex</code> instance for a brain run.</p>
+<p>You can use
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run" title="fiftyone.core.collections.SampleCollection.rename_brain_run"><code>rename_brain_run()</code></a>
+to rename the brain key associated with an existing similarity results run:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">dataset</span><span class="o">.</span><span class="n">rename_brain_run</span><span class="p">(</span><span class="n">brain_key</span><span class="p">,</span> <span class="n">new_brain_key</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Finally, you can use
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run" title="fiftyone.core.collections.SampleCollection.delete_brain_run"><code>delete_brain_run()</code></a>
+to delete the record of a similarity index computation from your FiftyOne
+dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="n">dataset</span><span class="o">.</span><span class="n">delete_brain_run</span><span class="p">(</span><span class="n">brain_key</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Calling
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run" title="fiftyone.core.collections.SampleCollection.delete_brain_run"><code>delete_brain_run()</code></a>
+only deletes the <strong>record</strong> of the brain run from your FiftyOne dataset; it
+will not delete any associated Elasticsearch index, which you can do as
+follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="c1"># Delete the Elasticsearch index</span>
+</span><span id="__span-17-2"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_brain_results</span><span class="p">(</span><span class="n">brain_key</span><span class="p">)</span>
+</span><span id="__span-17-3"><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="examples">Examples <a href="#examples" title="Permalink to this headline">¶</a><a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>This section demonstrates how to perform some common vector search workflows on
+a FiftyOne dataset using the Elasticsearch backend.</p>
+<p>Note</p>
+<p>All of the examples below assume you have configured your Elasticsearch
+server as described in <a href="#elasticsearch-setup">this section</a>.</p>
+<h3 id="create-a-similarity-index">Create a similarity index <a href="#create-a-similarity-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#create-a-similarity-index" title="Permanent link">&para;</a></h3>
+<p>In order to create a new Elasticsearch similarity index, you need to specify
+either the <code>embeddings</code> or <code>model</code> argument to
+<code>compute_similarity()</code>. Here’s a few
+possibilities:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-18-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-18-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-18-4">
+</span><span id="__span-18-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-18-6"><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;clip-vit-base32-torch&quot;</span>
+</span><span id="__span-18-7"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+</span><span id="__span-18-8"><span class="n">brain_key</span> <span class="o">=</span> <span class="s2">&quot;elasticsearch_index&quot;</span>
+</span><span id="__span-18-9">
+</span><span id="__span-18-10"><span class="c1"># Option 1: Compute embeddings on the fly from model name</span>
+</span><span id="__span-18-11"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-18-12">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-18-13">    <span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+</span><span id="__span-18-14">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-18-15">    <span class="n">brain_key</span><span class="o">=</span><span class="n">brain_key</span><span class="p">,</span>
+</span><span id="__span-18-16"><span class="p">)</span>
+</span><span id="__span-18-17">
+</span><span id="__span-18-18"><span class="c1"># Option 2: Compute embeddings on the fly from model instance</span>
+</span><span id="__span-18-19"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-18-20">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-18-21">    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span><span id="__span-18-22">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-18-23">    <span class="n">brain_key</span><span class="o">=</span><span class="n">brain_key</span><span class="p">,</span>
+</span><span id="__span-18-24"><span class="p">)</span>
+</span><span id="__span-18-25">
+</span><span id="__span-18-26"><span class="c1"># Option 3: Pass precomputed embeddings as a numpy array</span>
+</span><span id="__span-18-27"><span class="n">embeddings</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">compute_embeddings</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</span><span id="__span-18-28"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-18-29">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-18-30">    <span class="n">embeddings</span><span class="o">=</span><span class="n">embeddings</span><span class="p">,</span>
+</span><span id="__span-18-31">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-18-32">    <span class="n">brain_key</span><span class="o">=</span><span class="n">brain_key</span><span class="p">,</span>
+</span><span id="__span-18-33"><span class="p">)</span>
+</span><span id="__span-18-34">
+</span><span id="__span-18-35"><span class="c1"># Option 4: Pass precomputed embeddings by field name</span>
+</span><span id="__span-18-36"><span class="n">dataset</span><span class="o">.</span><span class="n">compute_embeddings</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">embeddings_field</span><span class="o">=</span><span class="s2">&quot;embeddings&quot;</span><span class="p">)</span>
+</span><span id="__span-18-37"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-18-38">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-18-39">    <span class="n">embeddings</span><span class="o">=</span><span class="s2">&quot;embeddings&quot;</span><span class="p">,</span>
+</span><span id="__span-18-40">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-18-41">    <span class="n">brain_key</span><span class="o">=</span><span class="n">brain_key</span><span class="p">,</span>
+</span><span id="__span-18-42"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="create-a-patch-similarity-index">Create a patch similarity index <a href="#create-a-patch-similarity-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#create-a-patch-similarity-index" title="Permanent link">&para;</a></h3>
+<p>You can also create a similarity index for
+<a href="../brain.html#brain-object-similarity">object patches</a> within your dataset by
+including the <code>patches_field</code> argument to
+<code>compute_similarity()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-19-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-19-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-19-4">
+</span><span id="__span-19-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-19-6">
+</span><span id="__span-19-7"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-19-8">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-19-9">    <span class="n">patches_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-19-10">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-19-11">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-19-12">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_patches&quot;</span><span class="p">,</span>
+</span><span id="__span-19-13"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="connect-to-an-existing-index">Connect to an existing index <a href="#connect-to-an-existing-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#connect-to-an-existing-index" title="Permanent link">&para;</a></h3>
+<p>If you have already created a Elasticsearch index storing the embedding vectors
+for the samples or patches in your dataset, you can connect to it by passing
+the <code>index_name</code> to
+<code>compute_similarity()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-20-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-20-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-20-4">
+</span><span id="__span-20-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-20-6">
+</span><span id="__span-20-7"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-20-8">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-20-9">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>      <span class="c1"># zoo model used (if applicable)</span>
+</span><span id="__span-20-10">    <span class="n">embeddings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>                   <span class="c1"># don&#39;t compute embeddings</span>
+</span><span id="__span-20-11">    <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;your-index&quot;</span><span class="p">,</span>            <span class="c1"># the existing Elasticsearch index</span>
+</span><span id="__span-20-12">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-20-13">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-20-14"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="addremove-embeddings-from-an-index">Add/remove embeddings from an index <a href="#add-remove-embeddings-from-an-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#addremove-embeddings-from-an-index" title="Permanent link">&para;</a></h3>
+<p>You can use
+<code>add_to_index()</code>
+and
+<code>remove_from_index()</code>
+to add and remove embeddings from an existing Elasticsearch index.</p>
+<p>These methods can come in handy if you modify your FiftyOne dataset and need
+to update the Elasticsearch index to reflect these changes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-21-2">
+</span><span id="__span-21-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-21-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-21-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-21-6">
+</span><span id="__span-21-7"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-21-8">
+</span><span id="__span-21-9"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-21-10">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-21-11">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-21-12">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-21-13">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-21-14"><span class="p">)</span>
+</span><span id="__span-21-15"><span class="nb">print</span><span class="p">(</span><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">total_index_size</span><span class="p">)</span>  <span class="c1"># 200</span>
+</span><span id="__span-21-16">
+</span><span id="__span-21-17"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-21-18"><span class="n">ids</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+</span><span id="__span-21-19">
+</span><span id="__span-21-20"><span class="c1"># Delete 10 samples from a dataset</span>
+</span><span id="__span-21-21"><span class="n">dataset</span><span class="o">.</span><span class="n">delete_samples</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</span><span id="__span-21-22">
+</span><span id="__span-21-23"><span class="c1"># Delete the corresponding vectors from the index</span>
+</span><span id="__span-21-24"><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">remove_from_index</span><span class="p">(</span><span class="n">sample_ids</span><span class="o">=</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-21-25">
+</span><span id="__span-21-26"><span class="c1"># Add 20 samples to a dataset</span>
+</span><span id="__span-21-27"><span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="n">fo</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;tmp</span><span class="si">%d</span><span class="s2">.jpg&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+</span><span id="__span-21-28"><span class="n">sample_ids</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">add_samples</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</span><span id="__span-21-29">
+</span><span id="__span-21-30"><span class="c1"># Add corresponding embeddings to the index</span>
+</span><span id="__span-21-31"><span class="n">embeddings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+</span><span id="__span-21-32"><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">add_to_index</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">sample_ids</span><span class="p">)</span>
+</span><span id="__span-21-33">
+</span><span id="__span-21-34"><span class="nb">print</span><span class="p">(</span><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">total_index_size</span><span class="p">)</span>  <span class="c1"># 210</span>
+</span></code></pre></div>
+<h3 id="retrieve-embeddings-from-an-index">Retrieve embeddings from an index <a href="#retrieve-embeddings-from-an-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#retrieve-embeddings-from-an-index" title="Permanent link">&para;</a></h3>
+<p>You can use
+<code>get_embeddings()</code>
+to retrieve embeddings from a Elasticsearch index by ID:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-22-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-22-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-22-4">
+</span><span id="__span-22-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-22-6">
+</span><span id="__span-22-7"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-22-8">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-22-9">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-22-10">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-22-11">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-22-12"><span class="p">)</span>
+</span><span id="__span-22-13">
+</span><span id="__span-22-14"><span class="c1"># Retrieve embeddings for the entire dataset</span>
+</span><span id="__span-22-15"><span class="n">ids</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+</span><span id="__span-22-16"><span class="n">embeddings</span><span class="p">,</span> <span class="n">sample_ids</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">get_embeddings</span><span class="p">(</span><span class="n">sample_ids</span><span class="o">=</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-22-17"><span class="nb">print</span><span class="p">(</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (200, 512)</span>
+</span><span id="__span-22-18"><span class="nb">print</span><span class="p">(</span><span class="n">sample_ids</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (200,)</span>
+</span><span id="__span-22-19">
+</span><span id="__span-22-20"><span class="c1"># Retrieve embeddings for a view</span>
+</span><span id="__span-22-21"><span class="n">ids</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+</span><span id="__span-22-22"><span class="n">embeddings</span><span class="p">,</span> <span class="n">sample_ids</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">get_embeddings</span><span class="p">(</span><span class="n">sample_ids</span><span class="o">=</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-22-23"><span class="nb">print</span><span class="p">(</span><span class="n">embeddings</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (10, 512)</span>
+</span><span id="__span-22-24"><span class="nb">print</span><span class="p">(</span><span class="n">sample_ids</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># (10,)</span>
+</span></code></pre></div>
+<h3 id="querying-a-elasticsearch-index">Querying a Elasticsearch index <a href="#querying-a-elasticsearch-index" title="Permalink to this headline">¶</a><a class="headerlink" href="#querying-a-elasticsearch-index" title="Permanent link">&para;</a></h3>
+<p>You can query a Elasticsearch index by appending a
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity" title="fiftyone.core.collections.SampleCollection.sort_by_similarity"><code>sort_by_similarity()</code></a>
+stage to any dataset or view. The query can be any of the following:</p>
+<ul>
+<li>
+<p>An ID (sample or patch)</p>
+</li>
+<li>
+<p>A query vector of same dimension as the index</p>
+</li>
+<li>
+<p>A list of IDs (samples or patches)</p>
+</li>
+<li>
+<p>A text prompt (if <a href="../brain.html#brain-similarity-text">supported by the model</a>)</p>
+</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-23-2">
+</span><span id="__span-23-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-23-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-23-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-23-6">
+</span><span id="__span-23-7"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-23-8">
+</span><span id="__span-23-9"><span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-23-10">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-23-11">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-23-12">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-23-13">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-23-14"><span class="p">)</span>
+</span><span id="__span-23-15">
+</span><span id="__span-23-16"><span class="c1"># Query by vector</span>
+</span><span id="__span-23-17"><span class="n">query</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>  <span class="c1"># matches the dimension of CLIP embeddings</span>
+</span><span id="__span-23-18"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">)</span>
+</span><span id="__span-23-19">
+</span><span id="__span-23-20"><span class="c1"># Query by sample ID</span>
+</span><span id="__span-23-21"><span class="n">query</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">id</span>
+</span><span id="__span-23-22"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">)</span>
+</span><span id="__span-23-23">
+</span><span id="__span-23-24"><span class="c1"># Query by a list of IDs</span>
+</span><span id="__span-23-25"><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">dataset</span><span class="o">.</span><span class="n">last</span><span class="p">()</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+</span><span id="__span-23-26"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">)</span>
+</span><span id="__span-23-27">
+</span><span id="__span-23-28"><span class="c1"># Query by text prompt</span>
+</span><span id="__span-23-29"><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;a photo of a dog&quot;</span>
+</span><span id="__span-23-30"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by_similarity</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Performing a similarity search on a <a href="../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView" title="fiftyone.core.view.DatasetView"><code>DatasetView</code></a> will <strong>only</strong> return
+results from the view; if the view contains samples that were not included
+in the index, they will never be included in the result.</p>
+<p>This means that you can index an entire <a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a> once and then perform
+searches on subsets of the dataset by
+<a href="../fiftyone_concepts/using_views.html#using-views">constructing views</a> that contain the images of
+interest.</p>
+<h3 id="accessing-the-elasticsearch-client">Accessing the Elasticsearch client <a href="#accessing-the-elasticsearch-client" title="Permalink to this headline">¶</a><a class="headerlink" href="#accessing-the-elasticsearch-client" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>client</code> property of a Elasticsearch index to directly access
+the underlying Elasticsearch client instance and use its methods as desired:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-24-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-24-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-24-4">
+</span><span id="__span-24-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-24-6">
+</span><span id="__span-24-7"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-24-8">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-24-9">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-24-10">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-24-11">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-24-12"><span class="p">)</span>
+</span><span id="__span-24-13">
+</span><span id="__span-24-14"><span class="n">elasticsearch_client</span> <span class="o">=</span> <span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">client</span>
+</span><span id="__span-24-15"><span class="nb">print</span><span class="p">(</span><span class="n">elasticsearch_client</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="advanced-usage">Advanced usage <a href="#advanced-usage" title="Permalink to this headline">¶</a><a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h3>
+<p>As <a href="#elasticsearch-config-parameters">previously mentioned</a>, you can
+customize your Elasticsearch indexes by providing optional parameters to
+<code>compute_similarity()</code>.</p>
+<p>Here’s an example of creating a similarity index backed by a customized
+Elasticsearch index. Just for fun, we’ll specify a custom index name, use dot
+product similarity, and populate the index for only a subset of our dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-25-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-25-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-25-4">
+</span><span id="__span-25-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-25-6">
+</span><span id="__span-25-7"><span class="c1"># Create a custom Elasticsearch index</span>
+</span><span id="__span-25-8"><span class="n">elasticsearch_index</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span>
+</span><span id="__span-25-9">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-25-10">    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-25-11">    <span class="n">embeddings</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># we&#39;ll add embeddings below</span>
+</span><span id="__span-25-12">    <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;dotproduct&quot;</span><span class="p">,</span>
+</span><span id="__span-25-13">    <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;elasticsearch_index&quot;</span><span class="p">,</span>
+</span><span id="__span-25-14">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;elasticsearch&quot;</span><span class="p">,</span>
+</span><span id="__span-25-15">    <span class="n">index_name</span><span class="o">=</span><span class="s2">&quot;custom-quickstart-index&quot;</span><span class="p">,</span>
+</span><span id="__span-25-16"><span class="p">)</span>
+</span><span id="__span-25-17">
+</span><span id="__span-25-18"><span class="c1"># Add embeddings for a subset of the dataset</span>
+</span><span id="__span-25-19"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-25-20"><span class="n">embeddings</span><span class="p">,</span> <span class="n">sample_ids</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">compute_embeddings</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</span><span id="__span-25-21"><span class="n">elasticsearch_index</span><span class="o">.</span><span class="n">add_to_index</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">sample_ids</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

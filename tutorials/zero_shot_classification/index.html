@@ -1,0 +1,1583 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Zero-Shot Image Classification with Multimodal Models and FiftyOne ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zero-shot-image-classification-with-multimodal-models-and-fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Zero-Shot Image Classification with Multimodal Models and FiftyOne ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-shot-image-classification-with-the-fiftyone-zero-shot-prediction-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Shot Image Classification with the FiftyOne Zero-Shot Prediction Plugin ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-shot-image-classification-with-the-fiftyone-model-zoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Shot Image Classification with the FiftyOne Model Zoo ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zero-Shot Image Classification with the FiftyOne Model Zoo ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-recipe-for-loading-a-zero-shot-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Recipe for Loading a Zero-Shot Model ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-shot-image-classification-with-openai-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Shot Image Classification with OpenAI CLIP ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-shot-image-classification-with-openclip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Shot Image Classification with OpenCLIP ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-shot-image-classification-with-hugging-face-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero-Shot Image Classification with Hugging Face Transformers ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluating-zero-shot-image-classification-predictions-with-fiftyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating Zero-Shot Image Classification Predictions with FiftyOne ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluating Zero-Shot Image Classification Predictions with FiftyOne ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-fiftyones-evaluation-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using FiftyOne’s Evaluation API ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-insights-using-aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      High-Level Insights using Aggregations ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-insights-using-viewexpressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Insights using ViewExpressions ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/zero_shot_classification.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="zero-shot-image-classification-with-multimodal-models-and-fiftyone">Zero-Shot Image Classification with Multimodal Models and FiftyOne <a href="#Zero-Shot-Image-Classification-with-Multimodal-Models-and-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-multimodal-models-and-fiftyone" title="Permanent link">&para;</a></h1>
+<p>Traditionally, computer vision models are trained to predict a fixed set of categories. For image classification, for instance, many standard models are trained on the ImageNet dataset, which contains 1,000 categories. All images <em>must</em> be assigned to one of these 1,000 categories, and the model is trained to predict the correct category for each image.</p>
+<p>For object detection, many popular models like YOLOv5, YOLOv8, and YOLO-NAS are trained on the MS COCO dataset, which contains 80 categories. In other words, the model is trained to detect objects in any of these categories, and ignore all other objects.</p>
+<p>Thanks to the recent advances in multimodal models, it is now possible to perform zero-shot learning, which allows us to predict categories that were <em>not</em> seen during training. This can be especially useful when:</p>
+<ul>
+<li>
+<p>We want to roughly pre-label images with a new set of categories</p>
+</li>
+<li>
+<p>Obtaining labeled data for all categories is impractical or impossible.</p>
+</li>
+<li>
+<p>The categories are changing over time, and we want to predict new categories without retraining the model.</p>
+</li>
+</ul>
+<p>In this walkthrough, you will learn how to apply and evaluate zero-shot image classification models to your data with FiftyOne, Hugging Face <a href="https://docs.voxel51.com/integrations/huggingface.html">Transformers</a>, and <a href="https://docs.voxel51.com/integrations/openclip.html">OpenCLIP</a>!</p>
+<p>It covers the following:</p>
+<ul>
+<li>
+<p>Loading zero-shot image classification models from Hugging Face and OpenCLIP with the <a href="https://docs.voxel51.com/user_guide/model_zoo/index.html">FiftyOne Model Zoo</a></p>
+</li>
+<li>
+<p>Using the models to predict categories for images in your dataset</p>
+</li>
+<li>
+<p>Evaluating the predictions with FiftyOne</p>
+</li>
+</ul>
+<p>We are going to illustrate how to work with many multimodal models:</p>
+<ul>
+<li>
+<p><a href="https://arxiv.org/abs/2103.00020">OpenAI CLIP</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2211.06679v2">AltCLIP</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2102.05918">ALIGN</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2305.07017">CLIPA</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2303.15343">SigLIP</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2309.16671">MetaCLIP</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2303.15389v1">EVA-CLIP</a></p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2309.17425">Data Filtering Network (DFN)</a></p>
+</li>
+</ul>
+<p>For a breakdown of what each model brings to the table, check out our <a href="https://github.com/jacobmarks/awesome-clip-papers?tab=readme-ov-file">🕶️ comprehensive collection of Awesome CLIP Papers</a>.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>For this walkthrough, we will use the <a href="https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html#caltech-256">Caltech-256 dataset</a>, which contains 30,607 images across 257 categories. We will use 1000 randomly selected images from the dataset for demonstration purposes. The zero-shot models were not explicitly trained on the Caltech-256 dataset, so we will use this as a test of the models’ zero-shot capabilities. Of course, you can use any dataset you like!</p>
+<p>💡 Your results may depend on how similar your dataset is to the training data of the zero-shot models.</p>
+<p>Before we start, let’s install the required packages:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="n">fiftyone</span> <span class="n">transformers</span> <span class="n">timm</span> <span class="n">open_clip_torch</span>
+</span></code></pre></div>
+<p>Now let’s import the relevant modules and load the dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-2-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-2-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-2-4"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-4-2">    <span class="s2">&quot;caltech256&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3">    <span class="n">max_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+</span><span id="__span-4-4">    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-4-5">    <span class="n">persistent</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-4-6"><span class="p">)</span>
+</span><span id="__span-4-7"><span class="n">dataset</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;CLIP-Comparison&quot;</span>
+</span><span id="__span-4-8">
+</span><span id="__span-4-9"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Initial Dataset" src="../../_images/zero_shot_classification_initial_dataset.png" /></p>
+<p>Here, we are using the <code>shuffle=True</code> option to randomly select 1000 images from the dataset, and are persisting the dataset to disk so that we can use it in future sessions. We also change the name of the dataset to reflect the experiment we are running.</p>
+<p>Finally, let’s use the dataset’s <code>distinct()</code> method to get a list of the distinct categories in the dataset, which we will give to the zero-shot models to predict:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="n">classes</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;ground_truth.label&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="zero-shot-image-classification-with-the-fiftyone-zero-shot-prediction-plugin">Zero-Shot Image Classification with the FiftyOne Zero-Shot Prediction Plugin <a href="#Zero-Shot-Image-Classification-with-the-FiftyOne-Zero-Shot-Prediction-Plugin" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-the-fiftyone-zero-shot-prediction-plugin" title="Permanent link">&para;</a></h2>
+<p>In a moment, we’ll switch gears to a more explicit demonstration of how to load and apply zero-shot models in FiftyOne. This programmatic approach is useful for more advanced use cases, and illustrates how to use the models in a more flexible manner.</p>
+<p>For simpler scenarios, check out the <a href="https://github.com/jacobmarks/zero-shot-prediction-plugin">FiftyOne Zero-Shot Prediction Plugin</a>, which provides a convenient graphical interface for applying zero-shot models to your dataset. The plugin supports all of the models we are going to use in this walkthrough, and is a great way to quickly experiment with zero-shot models in FiftyOne. In addition to classificaion, the plugin also supports zero-shot object detection, instance segmentation, and
+semantic segmentation.</p>
+<p>If you have the <a href="https://github.com/voxel51/fiftyone-plugins">FiftyOne Plugin Utils Plugin</a> installed, you can install the Zero-Shot Prediction Plugin from the FiftyOne App:</p>
+<p><img alt="Installing Zero-Shot Prediction Plugin" src="../../_images/zero_shot_classification_install_plugin.gif" /></p>
+<p>If not, you can install the plugin from the command line:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="n">fiftyone</span> <span class="n">plugins</span> <span class="n">download</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jacobmarks</span><span class="o">/</span><span class="n">zero</span><span class="o">-</span><span class="n">shot</span><span class="o">-</span><span class="n">prediction</span><span class="o">-</span><span class="n">plugin</span>
+</span></code></pre></div>
+<p>Once the plugin is installed, you can run zero-shot models from the FiftyOne App by pressing the backtick key (‘`’) to open the command palette, selecting <code>zero-shot-predict</code> or <code>zero-shot-classify</code> from the dropdown, and following the prompts:</p>
+<p><img alt="Running Zero-Shot Prediction Plugin" src="../../_images/zero_shot_classification_run_plugin.gif" /></p>
+<h2 id="zero-shot-image-classification-with-the-fiftyone-model-zoo">Zero-Shot Image Classification with the FiftyOne Model Zoo <a href="#Zero-Shot-Image-Classification-with-the-FiftyOne-Model-Zoo" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-the-fiftyone-model-zoo" title="Permanent link">&para;</a></h2>
+<p>In this section, we will show how to explicitly load and apply a variety of zero-shot classification models to your dataset with FiftyOne. Our models will come from three places:</p>
+<ol>
+<li>
+<p>OpenAI’s <a href="https://github.com/openai/CLIP">CLIP</a> model, which is natively supported by FiftyOne</p>
+</li>
+<li>
+<p><a href="https://github.com/mlfoundations/open_clip">OpenCLIP</a>, which is a collection of open-source CLIP-style models</p>
+</li>
+<li>
+<p>Hugging Face’s <a href="https://huggingface.co/docs/transformers/index">Transformers library</a>, which provides a wide variety of zero-shot models</p>
+</li>
+</ol>
+<p>All of these models can be loaded from the FiftyOne Model Zoo via the <code>load_zoo_model()</code> function, although the arguments you pass to the function will depend on the model you are loading!</p>
+<h3 id="basic-recipe-for-loading-a-zero-shot-model">Basic Recipe for Loading a Zero-Shot Model <a href="#Basic-Recipe-for-Loading-a-Zero-Shot-Model" title="Permalink to this headline">¶</a><a class="headerlink" href="#basic-recipe-for-loading-a-zero-shot-model" title="Permanent link">&para;</a></h3>
+<p>Regardless of the model you are loading, the basic recipe for loading a zero-shot model is as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-8-2">    <span class="s2">&quot;&lt;zoo-model-name&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-3">    <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-8-4">    <span class="o">**</span><span class="n">kwargs</span>
+</span><span id="__span-8-5"><span class="p">)</span>
+</span></code></pre></div>
+<p>The zoo model name is the name under which the model is registered in the FiftyOne Model Zoo.</p>
+<ul>
+<li>
+<p><code>"clip-vit-base32-torch"</code> specifies the natively supported CLIP model, CLIP-ViT-B/32</p>
+</li>
+<li>
+<p><code>"open-clip-torch"</code> specifies that you want to load a specific model (architecture and pretrained checkpoint) from the OpenCLIP library. You can then specify the architecture with <code>clip_model="&lt;clip-architecture&gt;"</code> and the checkpoint with <code>pretrained="&lt;checkpoint-name&gt;"</code>. We will see examples of this in a moment. For a list of allowed architecture-checkpoint pairs, check out this <a href="https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv">results table</a> from the
+OpenCLIP documentation. The <code>name</code> column contains the value for <code>clip_model</code>.</p>
+</li>
+<li>
+<p><code>"zero-shot-classification-transformer-torch"</code> specifies that you want to a zero-shot image classification model from the Hugging Face Transformers library. You can then specify the model via the <code>name_or_path</code> argument, which should be the repository name or model identifier of the model you want to load. Again, we will see examples of this in a moment.</p>
+</li>
+</ul>
+<p>💡 While we won’t be exploring this degree of freedom, all of these models accept a <code>text_prompt</code> keyword argument, which allows you to override the prompt template used to embed the class names. Zero-shot classification results can vary based on this text!</p>
+<p>Once we have our model loaded (and classes set), we can use it like any other image classification model in FiftyOne by calling the dataset’s <code>apply_model()</code> method:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span>
+</span><span id="__span-9-2">    <span class="n">model</span><span class="p">,</span>
+</span><span id="__span-9-3">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;&lt;where-to-store-predictions&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-9-4"><span class="p">)</span>
+</span></code></pre></div>
+<p>For efficiency, we will also set our default batch size to 32, which will speed up the predictions:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="n">fo</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">default_batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+</span></code></pre></div>
+<h3 id="zero-shot-image-classification-with-openai-clip">Zero-Shot Image Classification with OpenAI CLIP <a href="#Zero-Shot-Image-Classification-with-OpenAI-CLIP" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-openai-clip" title="Permanent link">&para;</a></h3>
+<p>Starting off with the natively supported CLIP model, we can load and apply it to our dataset as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">clip</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-13-2">    <span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3">    <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-13-4"><span class="p">)</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">clip</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;clip&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>If we would like, after adding our predictions in the specified field, we can add some high-level information detailing what the field contains:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">field</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_field</span><span class="p">(</span><span class="s2">&quot;clip&quot;</span><span class="p">)</span>
+</span><span id="__span-15-2"><span class="n">field</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;OpenAI CLIP predictions&quot;</span>
+</span><span id="__span-15-3"><span class="n">field</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s2">&quot;CLIP-ViT-B-32&quot;</span><span class="p">}</span>
+</span><span id="__span-15-4"><span class="n">field</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>To see the FiftyOne App, open a tab in your browser and navigate to <code>http://localhost:5151</code>!</p>
+<p>We will then see this information when we hover over the “clip” field in the FiftyOne App. This can be useful if you want to use shorthand field names, or if you want to provide additional context to other users of the dataset.</p>
+<p>For the rest of the tutorial, we will omit this step for brevity, but you can add this information to any field in your dataset!</p>
+<h3 id="zero-shot-image-classification-with-openclip">Zero-Shot Image Classification with OpenCLIP <a href="#Zero-Shot-Image-Classification-with-OpenCLIP" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-openclip" title="Permanent link">&para;</a></h3>
+<p>To make life interesting, we will be running inference with 5 different OpenCLIP models:</p>
+<ul>
+<li>
+<p>CLIPA</p>
+</li>
+<li>
+<p>Data Filtering Network (DFN)</p>
+</li>
+<li>
+<p>EVA-CLIP</p>
+</li>
+<li>
+<p>MetaCLIP</p>
+</li>
+<li>
+<p>SigLIP</p>
+</li>
+</ul>
+<p>To reduce the repetition, we’re just going to create a dictionary for the <code>clip_model</code> and <code>pretrained</code> arguments, and then loop through the dictionary to load and apply the models to our dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="n">open_clip_args</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-19-2">    <span class="s2">&quot;clipa&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-19-3">        <span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s1">&#39;hf-hub:UCSC-VLAA/ViT-L-14-CLIPA-datacomp1B&#39;</span><span class="p">,</span>
+</span><span id="__span-19-4">        <span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="__span-19-5">        <span class="p">},</span>
+</span><span id="__span-19-6">    <span class="s2">&quot;dfn&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-19-7">        <span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s1">&#39;ViT-B-16&#39;</span><span class="p">,</span>
+</span><span id="__span-19-8">        <span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="s1">&#39;dfn2b&#39;</span><span class="p">,</span>
+</span><span id="__span-19-9">        <span class="p">},</span>
+</span><span id="__span-19-10">    <span class="s2">&quot;eva02_clip&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-19-11">        <span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s1">&#39;EVA02-B-16&#39;</span><span class="p">,</span>
+</span><span id="__span-19-12">        <span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="s1">&#39;merged2b_s8b_b131k&#39;</span><span class="p">,</span>
+</span><span id="__span-19-13">        <span class="p">},</span>
+</span><span id="__span-19-14">    <span class="s2">&quot;metaclip&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-19-15">        <span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s1">&#39;ViT-B-32-quickgelu&#39;</span><span class="p">,</span>
+</span><span id="__span-19-16">        <span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="s1">&#39;metaclip_400m&#39;</span><span class="p">,</span>
+</span><span id="__span-19-17">        <span class="p">},</span>
+</span><span id="__span-19-18">    <span class="s2">&quot;siglip&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-19-19">        <span class="s2">&quot;clip_model&quot;</span><span class="p">:</span> <span class="s1">&#39;hf-hub:timm/ViT-B-16-SigLIP&#39;</span><span class="p">,</span>
+</span><span id="__span-19-20">        <span class="s2">&quot;pretrained&quot;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="__span-19-21">        <span class="p">},</span>
+</span><span id="__span-19-22">    <span class="p">}</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">args</span> <span class="ow">in</span> <span class="n">open_clip_args</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-21-2">    <span class="n">clip_model</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="s2">&quot;clip_model&quot;</span><span class="p">]</span>
+</span><span id="__span-21-3">    <span class="n">pretrained</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="s2">&quot;pretrained&quot;</span><span class="p">]</span>
+</span><span id="__span-21-4">    <span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-21-5">        <span class="s2">&quot;open-clip-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-21-6">        <span class="n">clip_model</span><span class="o">=</span><span class="n">clip_model</span><span class="p">,</span>
+</span><span id="__span-21-7">        <span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span><span class="p">,</span>
+</span><span id="__span-21-8">        <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-21-9">    <span class="p">)</span>
+</span><span id="__span-21-10">
+</span><span id="__span-21-11">    <span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="zero-shot-image-classification-with-hugging-face-transformers">Zero-Shot Image Classification with Hugging Face Transformers <a href="#Zero-Shot-Image-Classification-with-Hugging-Face-Transformers" title="Permalink to this headline">¶</a><a class="headerlink" href="#zero-shot-image-classification-with-hugging-face-transformers" title="Permanent link">&para;</a></h3>
+<p>Finally, we will load and apply zero-shot image classification model sfrom the Hugging Face Transformers library. Once again, we will loop through a dictionary of model names and apply the models to our dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">[</span><span class="mi">15</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">transformer_model_repo_ids</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-23-2">    <span class="s2">&quot;altclip&quot;</span><span class="p">:</span> <span class="s2">&quot;BAAI/AltCLIP&quot;</span><span class="p">,</span>
+</span><span id="__span-23-3">    <span class="s2">&quot;align&quot;</span><span class="p">:</span> <span class="s2">&quot;kakaobrain/align-base&quot;</span>
+</span><span id="__span-23-4"><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">repo_id</span> <span class="ow">in</span> <span class="n">transformer_model_repo_ids</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-25-2">    <span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-25-3">        <span class="s2">&quot;zero-shot-classification-transformer-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-25-4">        <span class="n">name_or_path</span><span class="o">=</span><span class="n">repo_id</span><span class="p">,</span>
+</span><span id="__span-25-5">        <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-25-6">    <span class="p">)</span>
+</span><span id="__span-25-7">
+</span><span id="__span-25-8">    <span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="evaluating-zero-shot-image-classification-predictions-with-fiftyone">Evaluating Zero-Shot Image Classification Predictions with FiftyOne <a href="#Evaluating-Zero-Shot-Image-Classification-Predictions-with-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluating-zero-shot-image-classification-predictions-with-fiftyone" title="Permanent link">&para;</a></h2>
+<h3 id="using-fiftyones-evaluation-api">Using FiftyOne’s Evaluation API <a href="#Using-FiftyOne’s-Evaluation-API" title="Permalink to this headline">¶</a><a class="headerlink" href="#using-fiftyones-evaluation-api" title="Permanent link">&para;</a></h3>
+<p>Now that we have applied all of our zero-shot models to our dataset, we can evaluate the predictions with FiftyOne! As a first step, let’s use FiftyOne’s <a href="https://docs.voxel51.com/user_guide/evaluation.html">Evaluation API</a> to assign True/False labels to the predictions based on whether they match the ground truth labels.</p>
+<p>First, we will use the dataset’s schema to get a list of all of the fields that contain predictions:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">classification_fields</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span>
+</span><span id="__span-27-2">    <span class="n">dataset</span><span class="o">.</span><span class="n">get_field_schema</span><span class="p">(</span>
+</span><span id="__span-27-3">        <span class="n">ftype</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">,</span> <span class="n">embedded_doc_type</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">Classification</span>
+</span><span id="__span-27-4">    <span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</span><span id="__span-27-5"><span class="p">)</span>
+</span><span id="__span-27-6">
+</span><span id="__span-27-7"><span class="n">prediction_fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">classification_fields</span> <span class="k">if</span> <span class="n">f</span> <span class="o">!=</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Then, we will loop through these prediction fields and apply the dataset’s <code>evaluate_classifications()</code> method to each one, evaluating against the <code>ground_truth</code> field:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">prediction_fields</span><span class="p">:</span>
+</span><span id="__span-29-2">    <span class="n">eval_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">_eval&quot;</span>
+</span><span id="__span-29-3">    <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_classifications</span><span class="p">(</span>
+</span><span id="__span-29-4">        <span class="n">pf</span><span class="p">,</span>
+</span><span id="__span-29-5">        <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-29-6">        <span class="n">eval_key</span><span class="o">=</span><span class="n">eval_key</span><span class="p">,</span>
+</span><span id="__span-29-7">    <span class="p">)</span>
+</span></code></pre></div>
+<p>We can then easily filter the dataset based on which models predicted the ground truth labels correctly, either programmatically in Python, or in the FiftyOne App. For example, here is how we could specify the view into the dataset containing all samples where SigLIP predicted the ground truth label correctly and CLIP did not:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span><span class="mi">16</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;CLIP-Comparison&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="p">[</span><span class="mi">17</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="n">siglip_not_clip_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match</span><span class="p">((</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;siglip_eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;clip_eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">[</span><span class="mi">20</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="n">num_siglip_not_clip</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">siglip_not_clip_view</span><span class="p">)</span>
+</span><span id="__span-35-2"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There were </span><span class="si">{</span><span class="n">num_siglip_not_clip</span><span class="si">}</span><span class="s2"> samples where the SigLIP model predicted correctly and the CLIP model did not.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="n">There</span> <span class="n">were</span> <span class="mi">57</span> <span class="n">samples</span> <span class="n">where</span> <span class="n">the</span> <span class="n">SigLIP</span> <span class="n">model</span> <span class="n">predicted</span> <span class="n">correctly</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">CLIP</span> <span class="n">model</span> <span class="n">did</span> <span class="ow">not</span><span class="o">.</span>
+</span></code></pre></div>
+<p>Here is how we would accomplish the same thing in the FiftyOne App:</p>
+<p><img alt="Samples where SigLIP is Right and CLIP isn’t" src="../../_images/zero_shot_classification_siglip_not_clip_view.gif" /></p>
+<h3 id="high-level-insights-using-aggregations">High-Level Insights using Aggregations <a href="#High-Level-Insights-using-Aggregations" title="Permalink to this headline">¶</a><a class="headerlink" href="#high-level-insights-using-aggregations" title="Permanent link">&para;</a></h3>
+<p>With the predictions evaluated, we can use FiftyOne’s <a href="https://docs.voxel51.com/user_guide/using_aggregations.html?highlight=aggregation">aggregation</a> capabilities to get high-level insights into the performance of the zero-shot models.</p>
+<p>This will allow us to answer questions like:</p>
+<ul>
+<li>
+<p>Which model was “correct” most often?</p>
+</li>
+<li>
+<p>What models were most or least confident in their predictions?</p>
+</li>
+</ul>
+<p>For the first question, we can use the <code>count_values()</code> aggregation on the evaluation fields for our predictions, which will give us a count of the number of times each model was correct or incorrect. As an example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="p">[</span><span class="mi">22</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;clip_eval&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="p">[</span><span class="mi">22</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">{</span><span class="kc">False</span><span class="p">:</span> <span class="mi">197</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="mi">803</span><span class="p">}</span>
+</span></code></pre></div>
+<p>Looping over our prediction fields and turning these raw counts into percentages, we can get a high-level view of the performance of our models:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="p">[</span><span class="mi">25</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">prediction_fields</span><span class="p">:</span>
+</span><span id="__span-42-2">    <span class="n">eval_results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">_eval&quot;</span><span class="p">)</span>
+</span><span id="__span-42-3">    <span class="n">percent_correct</span> <span class="o">=</span> <span class="n">eval_results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">eval_results</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span><span id="__span-42-4">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">:  </span><span class="si">{</span><span class="n">percent_correct</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> correct&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="n">align</span><span class="p">:</span>  <span class="mf">83.7</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-2"><span class="n">altclip</span><span class="p">:</span>  <span class="mf">87.6</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-3"><span class="n">clip</span><span class="p">:</span>  <span class="mf">80.3</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-4"><span class="n">clipa</span><span class="p">:</span>  <span class="mf">88.9</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-5"><span class="n">dfn</span><span class="p">:</span>  <span class="mf">91.0</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-6"><span class="n">eva02_clip</span><span class="p">:</span>  <span class="mf">85.6</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-7"><span class="n">metaclip</span><span class="p">:</span>  <span class="mf">84.3</span><span class="o">%</span> <span class="n">correct</span>
+</span><span id="__span-43-8"><span class="n">siglip</span><span class="p">:</span>  <span class="mf">64.9</span><span class="o">%</span> <span class="n">correct</span>
+</span></code></pre></div>
+<p>At least on this dataset, it looks like the DFN model was the clear winner, with the highest percentage of correct predictions. The other strong performers were CLIPA and AltCLIP.</p>
+<p>To answer the second question, we can use the <code>mean()</code> aggregation to get the average confidence of each model’s predictions. This will give us a sense of how confident each model was in its predictions:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="p">[</span><span class="mi">26</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">prediction_fields</span><span class="p">:</span>
+</span><span id="__span-45-2">    <span class="n">mean_conf</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">.confidence&quot;</span><span class="p">))</span>
+</span><span id="__span-45-3">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean confidence for </span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mean_conf</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">align</span><span class="p">:</span> <span class="mf">0.774</span>
+</span><span id="__span-46-2"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">altclip</span><span class="p">:</span> <span class="mf">0.883</span>
+</span><span id="__span-46-3"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">clip</span><span class="p">:</span> <span class="mf">0.770</span>
+</span><span id="__span-46-4"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">clipa</span><span class="p">:</span> <span class="mf">0.912</span>
+</span><span id="__span-46-5"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">dfn</span><span class="p">:</span> <span class="mf">0.926</span>
+</span><span id="__span-46-6"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">eva02_clip</span><span class="p">:</span> <span class="mf">0.843</span>
+</span><span id="__span-46-7"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">metaclip</span><span class="p">:</span> <span class="mf">0.824</span>
+</span><span id="__span-46-8"><span class="n">Mean</span> <span class="n">confidence</span> <span class="k">for</span> <span class="n">siglip</span><span class="p">:</span> <span class="mf">0.673</span>
+</span></code></pre></div>
+<p>For the most part, mean model confidence seems pretty strongly correlated with model accuracy. The DFN model, which was the most accurate, also had the highest mean confidence!</p>
+<h3 id="advanced-insights-using-viewexpressions">Advanced Insights using ViewExpressions <a href="#Advanced-Insights-using-ViewExpressions" title="Permalink to this headline">¶</a><a class="headerlink" href="#advanced-insights-using-viewexpressions" title="Permanent link">&para;</a></h3>
+<p>These high-level insights are useful, but as always, they only tell part of the story. To get a more nuanced understanding of the performance of our zero-shot models — and how the models interface with our data — we can use FiftyOne’s <a href="https://docs.voxel51.com/user_guide/using_views.html#filtering">ViewExpressions</a> to construct rich views of our data.</p>
+<p>One thing we might want to see is where all of the models were correct or incorrect. To probe these questions, we can construct a list with one <code>ViewExpression</code> for each model, and then use the <code>any()</code> and <code>all()</code> methods:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="p">[</span><span class="mi">27</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="n">exprs</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pf</span><span class="si">}</span><span class="s2">_eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">prediction_fields</span><span class="p">]</span>
+</span></code></pre></div>
+<p>First, let’s see how many samples every model got correct:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="p">[</span><span class="mi">28</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="n">all_right_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">F</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">exprs</span><span class="p">))</span>
+</span><span id="__span-50-2"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_right_view</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples were right for all models&quot;</span><span class="p">)</span>
+</span><span id="__span-50-3">
+</span><span id="__span-50-4"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">all_right_view</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="mi">498</span> <span class="n">samples</span> <span class="n">were</span> <span class="n">right</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">models</span>
+</span><span id="__span-51-2"><span class="n">Session</span> <span class="n">launched</span><span class="o">.</span> <span class="n">Run</span> <span class="err">`</span><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="err">`</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">App</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">cell</span> <span class="n">output</span><span class="o">.</span>
+</span></code></pre></div>
+<p>The fact that about half of the time, all of the models are “correct” and in agreement is good validation of both our data quality and the capabilities of our zero-shot models!</p>
+<p>How about when all of the models are incorrect?</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="p">[</span><span class="mi">29</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="n">all_wrong_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="o">~</span><span class="n">F</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">exprs</span><span class="p">))</span>
+</span><span id="__span-53-2"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_wrong_view</span><span class="p">)</span><span class="si">}</span><span class="s2"> samples were wrong for all models&quot;</span><span class="p">)</span>
+</span><span id="__span-53-3">
+</span><span id="__span-53-4"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">all_wrong_view</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="mi">45</span> <span class="n">samples</span> <span class="n">were</span> <span class="n">wrong</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">models</span>
+</span><span id="__span-54-2"><span class="n">Session</span> <span class="n">launched</span><span class="o">.</span> <span class="n">Run</span> <span class="err">`</span><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span><span class="err">`</span> <span class="n">to</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">App</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">cell</span> <span class="n">output</span><span class="o">.</span>
+</span></code></pre></div>
+<p><img alt="All Wrong View" src="../../_images/zero_shot_classification_all_wrong_view.png" /></p>
+<p>The samples where all of the models are supposedly incorrect are interesting and merit further investigation. It could be that the ground truth labels are incorrect, or that the images are ambiguous and difficult to classify. It could also be that the zero-shot models are not well-suited to the dataset, or that the models are not well-suited to the task. In any case, these samples are worth a closer look!</p>
+<p>Looking at some of these samples in the FiftyOne App, we can see that some of the ground truth labels are indeed ambiguous or incorrect. Take the second image, for example. It is labeled as <code>"treadmill"</code>, while all but one of the zero-shot models predict <code>"horse"</code>. To a human, the image does indeed look like a horse, and the ground truth label is likely incorrect.</p>
+<p>The seventh image is a prime example of ambiguity. The ground truth label is <code>"sneaker"</code>, but almost all of the zero-shot models predict <code>"tennis-shoes"</code>. It is difficult to say which label is correct, and it is likely that the ground truth label is not specific enough to be useful.</p>
+<p>To get a more precise view into the relative quality of our zero-shot models, we would need to handle these edge cases and re-evaluate on the improved dataset.</p>
+<p>💡 This is a great example of how the combination of zero-shot models and FiftyOne can be used to iteratively improve the quality of your data and your models!</p>
+<p>Before we wrap up, let’s construct one even more nuanced view of our data: the samples where just <em>one</em> of the models was correct. This will really help us understand the strengths and weaknesses of each model.</p>
+<p>To construct this view, we will copy the array of expressions, remove one model from the array, and see where that model was correct and the others were not. We will then loop through the models, and find the samples where each <em>any</em> of these conditions is met:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">prediction_fields</span><span class="p">)</span>
+</span><span id="__span-56-2"><span class="n">sub_exprs</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-56-3"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-56-4">    <span class="n">tmp_exprs</span> <span class="o">=</span> <span class="n">exprs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-56-5">    <span class="n">expr</span> <span class="o">=</span> <span class="n">tmp_exprs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-56-6">    <span class="n">sub_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">expr</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">F</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">tmp_exprs</span><span class="p">)))</span>
+</span><span id="__span-56-7">
+</span><span id="__span-56-8"><span class="n">one_right_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">F</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">sub_exprs</span><span class="p">))</span>
+</span><span id="__span-56-9">
+</span><span id="__span-56-10"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">one_right_view</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="One Right View" src="../../_images/zero_shot_classification_one_right_view.png" /></p>
+<p>Looking at these samples in the FiftyOne App, a few things stand out:</p>
+<ul>
+<li>
+<p>First, the vast majority of these samples are primarily images of people’s faces. A lot of the “wrong” predictions are related to people, faces, or facial features, like <code>"eye-glasses"</code>, <code>"iris"</code>, <code>"yarmulke"</code>, and <code>"human-skeleton"</code>. This is a good reminder that zero-shot models are not perfect, and that they are not well-suited to all types of images.</p>
+</li>
+<li>
+<p>Second, of all 22 samples where only one model was correct, 11 of them were correctly predicted by the DFN model. This is more validation of the DFN model’s strong performance on this dataset.</p>
+</li>
+</ul>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Zero-shot image classification is a powerful tool for predicting categories that were not seen during training. But it is not a panacea, and it is important to understand the strengths and weaknesses of zero-shot models, and how they interface with your data.</p>
+<p>In this walkthrough, we showed how to not only apply a variety of zero-shot image classification models to your data, but also how to evaluate them and choose the best model for your use case.</p>
+<p>The same principles can be applied to other types of zero-shot models, like zero-shot object detection, instance segmentation, and semantic segmentation. If you’re interested in these use cases, check out the <a href="https://github.com/jacobmarks/zero-shot-prediction-plugin">FiftyOne Zero-Shot Prediction Plugin</a>.</p>
+<p>For zero-shot object detection, here are some resources to get you started:</p>
+<ul>
+<li>
+<p><a href="https://docs.voxel51.com/integrations/ultralytics.html#open-vocabulary-detection">YOLO-World</a> from Ultralytics</p>
+</li>
+<li>
+<p><a href="https://docs.voxel51.com/integrations/huggingface.html#zero-shot-object-detection">Zero-Shot Detection Transformers</a> from Hugging Face</p>
+</li>
+<li>
+<p><a href="https://docs.voxel51.com/tutorials/evaluate_detections.html">Evaluating Object Detections</a> tutorial</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1866 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Annotating Datasets with CVAT ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#annotating-datasets-with-cvat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Annotating Datasets with CVAT ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unlabeled-dataset-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unlabeled dataset annotation ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unlabeled dataset annotation ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading data ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-unique-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding unique samples ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotating-samples-in-cvat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotating samples in CVAT ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-annotation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional annotation parameters ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional annotation parameters ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-label-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single label fields ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label types ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Label schema ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset improvement ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-videos-in-cvat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotating videos in CVAT ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/cvat_annotation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="annotating-datasets-with-cvat">Annotating Datasets with CVAT <a href="#Annotating-Datasets-with-CVAT" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-datasets-with-cvat" title="Permanent link">&para;</a></h1>
+<p><a href="https://fiftyone.ai">FiftyOne</a> and <a href="https://github.com/opencv/cvat">CVAT</a> are two leading open-source tools, each tackling different parts of the dataset curation and improvement workflows.</p>
+<p><a href="https://voxel51.com/docs/fiftyone/integrations/cvat.html">The tight integration</a> between FiftyOne and CVAT allows you to curate and explore datasets in FiftyOne and then send off samples or existing labels for annotation in CVAT with just one line of code.</p>
+<p>This walkthrough covers:</p>
+<ul>
+<li>
+<p>Selecting subsets and annotating unlabeled image datasets with CVAT</p>
+</li>
+<li>
+<p>Improving datasets and fixing annotation mistakes with CVAT</p>
+</li>
+<li>
+<p>Annotating videos with CVAT</p>
+</li>
+</ul>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>FiftyOne makes it incredibly easy to explore datasets, understand them, and discover ways to improve them. This walkthrough covers the imporant next step: using CVAT to <strong>take action</strong> to both annotate datasets and correct existing label deficiencies that you’ve identified in your datasets.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>If you haven’t already, install FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<p>In order to use CVAT, you must create an account on a CVAT server.</p>
+<p>By default, FiftyOne uses <a href="https://app.cvat.ai">app.cvat.ai</a>. So if you haven’t already, go to <a href="https://app.cvat.ai">app.cvat.ai</a> and create an account now.</p>
+<p>Another option is to <a href="https://opencv.github.io/cvat/docs/administration/basics/installation">set up CVAT locally</a> and then <a href="https://voxel51.com/docs/fiftyone/integrations/cvat.html#self-hosted-servers">configure FiftyOne</a> to use your self-hosted server. A primary benefit of setting up CVAT locally is that you are limited to 10 tasks and 500MB of data with app.cvat.ai.</p>
+<p>In any case, FiftyOne will need to connect to your CVAT account. The easiest way to configure your CVAT login credentials is to store them in environment variables:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="err">!</span><span class="n">export</span> <span class="n">FIFTYONE_CVAT_USERNAME</span><span class="o">=&lt;</span><span class="n">YOUR_USERNAME</span><span class="o">&gt;</span>
+</span><span id="__span-3-2"><span class="err">!</span><span class="n">export</span> <span class="n">FIFTYONE_CVAT_PASSWORD</span><span class="o">=&lt;</span><span class="n">YOUR_PASSWORD</span><span class="o">&gt;</span>
+</span><span id="__span-3-3"><span class="err">!</span><span class="n">export</span> <span class="n">FIFTYONE_CVAT_EMAIL</span><span class="o">=&lt;</span><span class="n">YOUR_EMAIL</span><span class="o">&gt;</span>  <span class="c1"># if applicable</span>
+</span></code></pre></div>
+<p>There are also <a href="https://voxel51.com/docs/fiftyone/integrations/cvat.html#setup">other ways</a> to configure your login credentials if you prefer.</p>
+<p>In this tutorial we’ll use the UMAP technique for visualizing samples in a 2D scatterplot. We’ll also <strong>optionally</strong> run an object detection model that requires TensorFlow:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">umap</span><span class="o">-</span><span class="n">learn</span> <span class="n">tensorflow</span>
+</span></code></pre></div>
+<h2 id="unlabeled-dataset-annotation">Unlabeled dataset annotation <a href="#Unlabeled-dataset-annotation" title="Permalink to this headline">¶</a><a class="headerlink" href="#unlabeled-dataset-annotation" title="Permanent link">&para;</a></h2>
+<p>For most machine learning projects, the first step is to collect a suitable dataset for the task. For computer vision projects specifically, this will generally result in thousands of images or videos that have been gathered from internet sources like <a href="https://www.flickr.com/">Flickr</a> or captured by new footage from a data acquisition team.</p>
+<p>With collections containing thousands or millions of samples, the cost to annotate every single sample can be astronomical. It thus makes sense to ensure that only the most useful and relevant data is being sent to annotation. One metric for how “useful” data is in training a model is how unique the example is with respect to the rest of the dataset. Multiple similar examples will not provide the model with as much new information to learn as visually unique examples.</p>
+<p>FiftyOne provides a <a href="https://voxel51.com/docs/fiftyone/user_guide/brain.html#visual-similarity">visual similarity capability</a> that we’ll use in this tutorial to select some unique images to annotate.</p>
+<h3 id="loading-data">Loading data <a href="#Loading-data" title="Permalink to this headline">¶</a><a class="headerlink" href="#loading-data" title="Permanent link">&para;</a></h3>
+<p>We begin by <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html">loading a set of unlabeled images into FiftyOne</a>. This can be done in just one line of code. For example, if you are <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html">using your own data</a> you can run the following:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="c1"># Example</span>
+</span><span id="__span-7-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="n">dataset_dir</span> <span class="o">=</span> <span class="s2">&quot;/path/to/raw/data&quot;</span>
+</span><span id="__span-7-5"><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;my_dataset&quot;</span>
+</span><span id="__span-7-6">
+</span><span id="__span-7-7"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dir</span><span class="p">(</span>
+</span><span id="__span-7-8">    <span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">,</span>
+</span><span id="__span-7-9">    <span class="n">dataset_type</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageDirectory</span><span class="p">,</span>
+</span><span id="__span-7-10">    <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+</span><span id="__span-7-11"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="p">[</span><span class="mf">3.5</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="err">?</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>However, in this walkthrough, we’ll download some images from the <a href="https://voxel51.com/docs/fiftyone/integrations/open_images.html">Open Images V6 dataset</a> using the built-in <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html">FiftyOne Dataset Zoo</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-10-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-10-3">
+</span><span id="__span-10-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-10-5">    <span class="s2">&quot;open-images-v6&quot;</span><span class="p">,</span>
+</span><span id="__span-10-6">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-10-7">    <span class="n">label_types</span><span class="o">=</span><span class="p">[],</span>
+</span><span id="__span-10-8">    <span class="n">max_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-10-9"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">to</span> <span class="s1">&#39;/home/voxel51/fiftyone/open-images-v6/validation&#39;</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span id="__span-11-2"><span class="n">Necessary</span> <span class="n">images</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-11-3"><span class="n">Existing</span> <span class="n">download</span> <span class="n">of</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="ow">is</span> <span class="n">sufficient</span>
+</span><span id="__span-11-4"><span class="n">Loading</span> <span class="s1">&#39;open-images-v6&#39;</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span>
+</span><span id="__span-11-5"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">72.4</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">2.8</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-11-6"><span class="n">Dataset</span> <span class="s1">&#39;open-images-v6-validation-200&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p>Now let’s make the dataset <a href="https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#dataset-persistence">persistent</a> so that we can access it in future Python sessions.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">dataset</span><span class="o">.</span><span class="n">persistent</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div>
+<p>Now that the data is loaded, let’s visualize it in the <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html">FiftyOne App</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<h3 id="finding-unique-samples">Finding unique samples <a href="#Finding-unique-samples" title="Permalink to this headline">¶</a><a class="headerlink" href="#finding-unique-samples" title="Permanent link">&para;</a></h3>
+<p>Now let’s run the <a href="https://voxel51.com/docs/fiftyone/user_guide/brain.html#visual-similarity">compute_similarity()</a> method on the dataset in order to index all samples in the dataset by their visual similarity.</p>
+<p>Once this is done, we can then use the index to find the most unique samples:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-19-2">
+</span><span id="__span-19-3"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;img_sim&quot;</span><span class="p">)</span>
+</span><span id="__span-19-4"><span class="n">results</span><span class="o">.</span><span class="n">find_unique</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">Computing</span> <span class="n">embeddings</span><span class="o">...</span>
+</span><span id="__span-20-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">2.2</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-20-3"><span class="n">Generating</span> <span class="n">index</span><span class="o">...</span>
+</span><span id="__span-20-4"><span class="n">Index</span> <span class="n">complete</span>
+</span><span id="__span-20-5"><span class="n">Computing</span> <span class="n">unique</span> <span class="n">samples</span><span class="o">...</span>
+</span><span id="__span-20-6"><span class="n">threshold</span><span class="p">:</span> <span class="mf">1.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-7"><span class="n">threshold</span><span class="p">:</span> <span class="mf">2.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-8"><span class="n">threshold</span><span class="p">:</span> <span class="mf">4.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-9"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">122</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-10"><span class="n">threshold</span><span class="p">:</span> <span class="mf">16.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-11"><span class="n">threshold</span><span class="p">:</span> <span class="mf">12.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-12"><span class="n">threshold</span><span class="p">:</span> <span class="mf">10.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">66</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-13"><span class="n">threshold</span><span class="p">:</span> <span class="mf">9.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">81</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-14"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.500000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">98</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-15"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.250000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">107</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-16"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.375000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">103</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-17"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.437500</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">102</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-18"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.468750</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-20-19"><span class="n">Uniqueness</span> <span class="n">computation</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>We can also visualize the exact samples that were selected.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">vis_results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;img_vis&quot;</span><span class="p">)</span>
+</span><span id="__span-22-2">
+</span><span id="__span-22-3"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize_unique</span><span class="p">(</span><span class="n">visualization</span><span class="o">=</span><span class="n">vis_results</span><span class="p">)</span>
+</span><span id="__span-22-4"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">Computing</span> <span class="n">embeddings</span><span class="o">...</span>
+</span><span id="__span-23-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">2.1</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-23-3"><span class="n">Generating</span> <span class="n">visualization</span><span class="o">...</span>
+</span><span id="__span-23-4"><span class="n">UMAP</span><span class="p">(</span><span class="n">dens_frac</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">dens_lambda</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-23-5"><span class="n">Construct</span> <span class="n">fuzzy</span> <span class="n">simplicial</span> <span class="nb">set</span>
+</span><span id="__span-23-6"><span class="n">Fri</span> <span class="n">Aug</span> <span class="mi">20</span> <span class="mi">13</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">55</span> <span class="mi">2021</span> <span class="n">Finding</span> <span class="n">Nearest</span> <span class="n">Neighbors</span>
+</span><span id="__span-23-7"><span class="n">Fri</span> <span class="n">Aug</span> <span class="mi">20</span> <span class="mi">13</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">58</span> <span class="mi">2021</span> <span class="n">Finished</span> <span class="n">Nearest</span> <span class="n">Neighbor</span> <span class="n">Search</span>
+</span><span id="__span-23-8"><span class="n">Fri</span> <span class="n">Aug</span> <span class="mi">20</span> <span class="mi">14</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">01</span> <span class="mi">2021</span> <span class="n">Construct</span> <span class="n">embedding</span>
+</span><span id="__span-23-9">        <span class="n">completed</span>  <span class="mi">0</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-10">        <span class="n">completed</span>  <span class="mi">50</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-11">        <span class="n">completed</span>  <span class="mi">100</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-12">        <span class="n">completed</span>  <span class="mi">150</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-13">        <span class="n">completed</span>  <span class="mi">200</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-14">        <span class="n">completed</span>  <span class="mi">250</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-15">        <span class="n">completed</span>  <span class="mi">300</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-16">        <span class="n">completed</span>  <span class="mi">350</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-17">        <span class="n">completed</span>  <span class="mi">400</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-18">        <span class="n">completed</span>  <span class="mi">450</span>  <span class="o">/</span>  <span class="mi">500</span> <span class="n">epochs</span>
+</span><span id="__span-23-19"><span class="n">Fri</span> <span class="n">Aug</span> <span class="mi">20</span> <span class="mi">14</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span> <span class="mi">2021</span> <span class="n">Finished</span> <span class="n">embedding</span>
+</span></code></pre></div>
+<p><img alt="../_images/tutorials_cvat_annotation_25_1.png" src="../../_images/tutorials_cvat_annotation_25_1.png" /></p>
+<p>This plot <a href="https://voxel51.com/docs/fiftyone/user_guide/plots.html">can be interacted with</a> by attaching it to your <code>session</code> object, allowing you to select points in the plot and visualize them in the App.</p>
+<p><em>Note: Interactive plots currently only work in Jupyter notebook environments.</em></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;unique&quot;</span><span class="p">)</span>
+</span><span id="__span-25-2"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<p>Now let’s create a <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html">DatasetView</a> into the dataset containing only the unique samples that were selected and visualize them.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">unique_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">unique_ids</span><span class="p">)</span>
+</span><span id="__span-27-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">unique_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Having reduced the number of samples that need to be annotated, the time and cost of annotating this dataset have also been reduced.</p>
+<h3 id="annotating-samples-in-cvat">Annotating samples in CVAT <a href="#Annotating-samples-in-CVAT" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-samples-in-cvat" title="Permanent link">&para;</a></h3>
+<p>Whether you are annotating the data yourself or have a team of annotators, the workflow of uploading data from FiftyOne to CVAT is the same. The <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate">annotate()</a> method on a collection of samples lets you specify the name, type, and classes for the labels you are annotating.</p>
+<p>For example, let’s annotate instance segmentation masks for the classes “person”, “vehicle”, and “animal”.</p>
+<p>We’ll only include a few samples to be annotated in our view for brevity. To create annotation jobs in CVAT for these samples, we simply call <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate">annotate()</a> passing in a unique name for this annotation run and the relevant label schema information for the annotation task. Since we’ll be annotating these samples ourselves, we pass <code>launch_editor=True</code> to automatically
+launch a browser window with the CVAT editor open once the data has been loaded.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="c1"># Randomly select 5 samples to load to CVAT</span>
+</span><span id="__span-31-2"><span class="n">unique_5_view</span> <span class="o">=</span> <span class="n">unique_view</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-31-3">
+</span><span id="__span-31-4"><span class="c1"># A unique identifer for this run</span>
+</span><span id="__span-31-5"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;segs_run&quot;</span>
+</span><span id="__span-31-6">
+</span><span id="__span-31-7"><span class="c1"># Upload the samples and launch CVAT</span>
+</span><span id="__span-31-8"><span class="n">anno_results</span> <span class="o">=</span> <span class="n">unique_5_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-31-9">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-31-10">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;segmentations&quot;</span><span class="p">,</span>
+</span><span id="__span-31-11">    <span class="n">label_type</span><span class="o">=</span><span class="s2">&quot;instances&quot;</span><span class="p">,</span>
+</span><span id="__span-31-12">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="s2">&quot;animal&quot;</span><span class="p">],</span>
+</span><span id="__span-31-13">    <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-31-14"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-32-2"><span class="n">Computing</span> <span class="n">image</span> <span class="n">metadata</span><span class="o">...</span>
+</span><span id="__span-32-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">5</span><span class="o">/</span><span class="mi">5</span> <span class="p">[</span><span class="mf">151.6</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">33.0</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-32-4"><span class="n">Upload</span> <span class="n">complete</span>
+</span><span id="__span-32-5"><span class="n">Launching</span> <span class="n">editor</span> <span class="n">at</span> <span class="s1">&#39;https://app.cvat.ai/tasks/386/jobs/441&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<p>The <code>CVATAnnotationResults</code> object that was returned can be used to get the current status of the tasks that were created:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="n">anno_results</span><span class="o">.</span><span class="n">print_status</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="n">Status</span> <span class="k">for</span> <span class="n">label</span> <span class="n">field</span> <span class="s1">&#39;segmentations&#39;</span><span class="p">:</span>
+</span><span id="__span-35-2">
+</span><span id="__span-35-3">        <span class="n">Task</span> <span class="mi">386</span> <span class="p">(</span><span class="n">FiftyOne_open</span><span class="o">-</span><span class="n">images</span><span class="o">-</span><span class="n">v6</span><span class="o">-</span><span class="n">validation</span><span class="o">-</span><span class="mi">200</span><span class="n">_segmentations</span><span class="p">):</span>
+</span><span id="__span-35-4">                <span class="n">Status</span><span class="p">:</span> <span class="n">annotation</span>
+</span><span id="__span-35-5">                <span class="n">Assignee</span><span class="p">:</span> <span class="kc">None</span>
+</span><span id="__span-35-6">                <span class="n">Last</span> <span class="n">updated</span><span class="p">:</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="n">T21</span><span class="p">:</span><span class="mi">22</span><span class="p">:</span><span class="mf">37.928988</span><span class="n">Z</span>
+</span><span id="__span-35-7">                <span class="n">URL</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">app</span><span class="o">.</span><span class="n">cvat</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">tasks</span><span class="o">/</span><span class="mi">386</span>
+</span><span id="__span-35-8">
+</span><span id="__span-35-9">                <span class="n">Job</span> <span class="mi">441</span><span class="p">:</span>
+</span><span id="__span-35-10">                        <span class="n">Status</span><span class="p">:</span> <span class="n">annotation</span>
+</span><span id="__span-35-11">                        <span class="n">Assignee</span><span class="p">:</span> <span class="kc">None</span>
+</span><span id="__span-35-12">                        <span class="n">Reviewer</span><span class="p">:</span> <span class="kc">None</span>
+</span></code></pre></div>
+<p><img alt="cvat-seg" src="../../_images/cvat_segmentation.png" /></p>
+<p>Once the annotation is complete and saved in CVAT, we can download the annotations and automatically update our dataset by calling <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations">load_annotations()</a>.</p>
+<p>Since accounts on app.cvat.ai only allow for 10 tasks, we’ll set <code>cleanup=True</code> so that the CVAT tasks are automatically deleted after the annotations are loaded.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="n">unique_5_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="s2">&quot;segs_run&quot;</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-37-2">
+</span><span id="__span-37-3"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">unique_5_view</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="n">Downloading</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CVAT...</span>
+</span><span id="__span-38-2"><span class="n">Download</span> <span class="n">complete</span>
+</span><span id="__span-38-3"><span class="n">Adding</span> <span class="n">labels</span> <span class="k">for</span> <span class="s1">&#39;segmentations&#39;</span><span class="o">...</span>
+</span><span id="__span-38-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">5</span><span class="o">/</span><span class="mi">5</span> <span class="p">[</span><span class="mf">76.5</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">65.4</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<p>If you want to upload the dataset to a team of annotators, you can provide the CVAT usernames of the annotators and reviewers that will be assigned round-robin style. The <code>segment_size</code> parameter is used to define the maximum number of images in each job in your CVAT task.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;full_annot&quot;</span>
+</span><span id="__span-42-2"><span class="n">unique_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-42-3">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-42-4">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth_cls&quot;</span><span class="p">,</span>
+</span><span id="__span-42-5">    <span class="n">label_type</span><span class="o">=</span><span class="s2">&quot;classifications&quot;</span><span class="p">,</span>
+</span><span id="__span-42-6">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="s2">&quot;animal&quot;</span><span class="p">],</span>
+</span><span id="__span-42-7">    <span class="n">segment_size</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+</span><span id="__span-42-8">    <span class="n">job_reviewers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;user1&quot;</span><span class="p">,</span> <span class="s2">&quot;user2&quot;</span><span class="p">],</span>
+</span><span id="__span-42-9">    <span class="n">job_assignees</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;user3&quot;</span><span class="p">,</span> <span class="s2">&quot;user4&quot;</span><span class="p">],</span>
+</span><span id="__span-42-10">    <span class="n">task_assignee</span><span class="o">=</span><span class="s2">&quot;user5&quot;</span><span class="p">,</span>
+</span><span id="__span-42-11"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-43-2"><span class="n">Upload</span> <span class="n">complete</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1">
+</span></code></pre></div>
+<p><img alt="cvat-assignee" src="../../_images/cvat_assignees.png" /></p>
+<p>For larger datasets, the annotation process may take some time. The <code>anno_key</code> that we provided stores the relevant information about this annotation run on the dataset itself. When the annotations are ready to be imported back into FiftyOne, we can easily do so.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="n">dataset</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;example_dataset&quot;</span>
+</span></code></pre></div>
+<p>In practice, annotation tasks can take awhile. But don’t worry, you can always load your annotations back onto your dataset in the future in a new Python session:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-49-2">
+</span><span id="__span-49-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-49-4">
+</span><span id="__span-49-5"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;full_annot&quot;</span>
+</span><span id="__span-49-6"><span class="n">dataset</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span><span id="__span-49-7">
+</span><span id="__span-49-8"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_annotation_view</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span><span id="__span-49-9"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="n">view</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="additional-annotation-parameters">Additional annotation parameters <a href="#Additional-annotation-parameters" title="Permalink to this headline">¶</a><a class="headerlink" href="#additional-annotation-parameters" title="Permanent link">&para;</a></h3>
+<p>Creating new labels to exactly match your schema can require a lot of specifics in terms of the classes, attributes, and types that are used. This section outlines how different parameters can be used to specify an annotation run.</p>
+<h4 id="single-label-fields">Single label fields <a href="#Single-label-fields" title="Permalink to this headline">¶</a><a class="headerlink" href="#single-label-fields" title="Permanent link">&para;</a></h4>
+<p>If only one new label field is being created, then the <code>label_field</code>, <code>label_type</code>, <code>classes</code>, <code>attributes</code> and <code>mask_targets</code> arguments to <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate">annotate()</a> can be used to specify how to construct the label schema for CVAT.</p>
+<ul>
+<li>
+<p><code>label_field</code>: the string name of the field to create</p>
+</li>
+<li>
+<p><code>label_type</code>: the type of labels that will be created. The supported values are [“classification”, “classifications”, “detections”, “instances”, “segmentations”, “keypoints”, “polylines”, “polygons”, “scalar”]</p>
+</li>
+<li>
+<p><code>classes</code>: a list of class strings available to label</p>
+</li>
+<li>
+<p><code>attributes</code>: an optional list or dictionary containing specifications for attributes to annotate on every label</p>
+</li>
+</ul>
+<h4 id="label-types">Label types <a href="#Label-types" title="Permalink to this headline">¶</a><a class="headerlink" href="#label-types" title="Permanent link">&para;</a></h4>
+<p>There are a few things to note about label types:</p>
+<ul>
+<li>
+<p>“classification” creates a single <code>Classification</code> label from the first CVAT tag on every sample while “classifications” creates a <code>Classifications</code> label storing all CVAT tags on each sample</p>
+</li>
+<li>
+<p>“instance” segmentations are downloaded alongside “detections” since they are stored on the <code>mask</code> field in the FiftyOne <code>Detection</code> label type. Both bounding boxes and segmentation masks can be uploaded from existing <code>Detections</code> fields if the label type is left blank</p>
+</li>
+<li>
+<p>“scalar” does not accept attributes and optionally takes classes</p>
+</li>
+</ul>
+<p>Expanding on the point about scalar fields, this integrations allows for the creation and editing of integer, float, boolean, and string scalar fields on samples. In CVAT, they are annotated using the <code>tag</code> tool. Since scalar fields are not labels, no <code>attributes</code> are supported. If a list of <code>classes</code> is given, then the <code>tag</code> tool in CVAT lets you select from a dropdown of the given classes. If <code>classes</code> is not given, then the <code>tag</code> tool will require you to type in the scalar value
+as an attribute in CVAT.</p>
+<p><img alt="cvat-tag" src="../../_images/cvat_tag1.png" /></p>
+<h4 id="attributes">Attributes <a href="#Attributes" title="Permalink to this headline">¶</a><a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h4>
+<p>Non-scalar label types support per-label attributes that can be modified and created with CVAT. For existing label fields, these attributes will be parsed automatically if possible to determine the type of attribute annotation format to create.</p>
+<p>For new attributes, they can be specified either as a list of strings of attribute names in which case each attribute is annotated with a text box input in CVAT. Alternatively, a dictionary can be passed in with more concrete specifications of the type of formatting to use for the attributes.</p>
+<p>The attribute annotation formats available for CVAT are:</p>
+<ul>
+<li>
+<p><code>text</code>: a free-form text box. In this case, default is optional and values is unused</p>
+</li>
+<li>
+<p><code>select</code>: a selection dropdown. In this case, values is required and default is optional</p>
+</li>
+<li>
+<p><code>radio</code>: a radio button list UI. In this case, values is required and default is optional</p>
+</li>
+<li>
+<p><code>checkbox</code>: a boolean checkbox UI. In this case, default is optional and values is unused</p>
+</li>
+<li>
+<p><code>occluded</code>: CVAT’s builtin occlusion toggle icon. This widget type can only be specified for at most one attribute, which must be a boolean</p>
+</li>
+</ul>
+<p>When you are annotating existing label fields, the <code>attributes</code> parameter can take additional values:</p>
+<ul>
+<li>
+<p><code>True</code> ( <em>default</em>): export all custom attributes observed on the existing labels, using their observed values to determine the appropriate UI type and possible values, if applicable</p>
+</li>
+<li>
+<p><code>False</code>: do not include any custom attributes in the export</p>
+</li>
+<li>
+<p>a list of custom attributes to include in the export</p>
+</li>
+<li>
+<p>a full dictionary syntax described above</p>
+</li>
+</ul>
+<p>Note that only scalar-valued label attributes are supported. Other attribute types like lists, dictionaries, and arrays will be omitted.</p>
+<p>For example, the following will create <code>attr1</code> with text-box input and <code>attr2</code> with drop-down selection of the given values:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-51-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-51-3">
+</span><span id="__span-51-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-51-5">
+</span><span id="__span-51-6"><span class="n">attributes</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-51-7">    <span class="s2">&quot;attr1&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-51-8">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+</span><span id="__span-51-9">    <span class="p">},</span>
+</span><span id="__span-51-10">    <span class="s2">&quot;attr2&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-51-11">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;select&quot;</span><span class="p">,</span>
+</span><span id="__span-51-12">        <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;val1&quot;</span><span class="p">,</span> <span class="s2">&quot;val2&quot;</span><span class="p">],</span>
+</span><span id="__span-51-13">        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;val1&quot;</span><span class="p">,</span>
+</span><span id="__span-51-14">    <span class="p">}</span>
+</span><span id="__span-51-15"><span class="p">}</span>
+</span><span id="__span-51-16">
+</span><span id="__span-51-17"><span class="n">random_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span><span id="__span-51-18">
+</span><span id="__span-51-19"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;random_attrs&quot;</span>
+</span><span id="__span-51-20"><span class="n">random_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-51-21">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-51-22">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-51-23">    <span class="n">attributes</span><span class="o">=</span><span class="n">attributes</span><span class="p">,</span>
+</span><span id="__span-51-24">    <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-51-25"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-52-2"><span class="n">Computing</span> <span class="n">image</span> <span class="n">metadata</span><span class="o">...</span>
+</span><span id="__span-52-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">141.7</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">7.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-52-4"><span class="n">Samples</span> <span class="n">uploaded</span> <span class="n">successfully</span>
+</span><span id="__span-52-5"><span class="n">Launching</span> <span class="n">editor</span> <span class="k">for</span> <span class="n">label</span> <span class="n">field</span> <span class="s1">&#39;ground_truth&#39;</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">detections</span> <span class="n">at</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">app</span><span class="o">.</span><span class="n">cvat</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">tasks</span><span class="o">/</span><span class="mi">349</span><span class="o">/</span><span class="n">jobs</span><span class="o">/</span><span class="mi">393</span>
+</span></code></pre></div>
+<p>In CVAT, <code>attr1</code> and <code>attr2</code> are now available for annotation on every new and existing label.</p>
+<p><img alt="cvat-attrs" src="../../_images/cvat_attributes.png" /></p>
+<p>These annotations can now be loaded back into FiftyOne with <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations">load_annotations()</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="p">[</span><span class="mi">26</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="n">random_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="s2">&quot;random_attrs&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><span class="p">[</span><span class="mi">27</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">random_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><span class="p">[</span><span class="mi">28</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p><strong>Note:</strong> When uploading existing labels to CVAT, the id of the labels in FiftyOne are stored in a <code>label_id</code> attribute of the CVAT shapes. <code>label_id</code> is the single-source of provenance for a label. If this attribute is modified or deleted in CVAT, then FiftyOne will not be able to merge the annotation with its existing Label instance when the annotations are loaded back into FiftyOne. Instead, the existing label will be deleted and a new Label will be created. This can result in data loss
+if you sent only a subset of the label’s attributes to CVAT.</p>
+<h4 id="label-schema">Label schema <a href="#Label-schema" title="Permalink to this headline">¶</a><a class="headerlink" href="#label-schema" title="Permanent link">&para;</a></h4>
+<p>In order to annotate multiple label fields at once, or just to specify the field name, label type, classes and attributes in one structure, the <code>label_schema</code> argument to <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate">annotate()</a> can be used. This argument accepts a dictionary keyed by label field names that contain a dictionary setting up the type, classes and attributes as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><span class="n">label_schema</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-59-2">    <span class="s2">&quot;new_field&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-59-3">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-59-4">        <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;class_1&quot;</span><span class="p">,</span> <span class="s2">&quot;class_2&quot;</span><span class="p">],</span>
+</span><span id="__span-59-5">        <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-59-6">            <span class="s2">&quot;attr1&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-59-7">                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
+</span><span id="__span-59-8">                <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;val1&quot;</span><span class="p">,</span> <span class="s2">&quot;val2&quot;</span><span class="p">],</span>
+</span><span id="__span-59-9">                <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;val1&quot;</span><span class="p">,</span>
+</span><span id="__span-59-10">            <span class="p">}</span>
+</span><span id="__span-59-11">        <span class="p">}</span>
+</span><span id="__span-59-12">    <span class="p">},</span>
+</span><span id="__span-59-13">    <span class="s2">&quot;existing_field&quot;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-59-14"><span class="p">}</span>
+</span></code></pre></div>
+<p>For existing fields, the dictionary entry can be left blank and the relevant information will be parsed. For new fields, the type and classes are required (except for “scalar” type fields) and attributes are optional just like before.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-60-1"><span class="p">[</span><span class="mi">39</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-61-1"><span class="n">label_schema</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-61-2">    <span class="s2">&quot;ground_truth&quot;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-61-3">    <span class="s2">&quot;gt_segmentations&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-61-4">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;instances&quot;</span><span class="p">,</span>
+</span><span id="__span-61-5">        <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="s2">&quot;food&quot;</span><span class="p">],</span>
+</span><span id="__span-61-6">        <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-61-7">            <span class="s2">&quot;iscrowd&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-61-8">                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;radio&quot;</span><span class="p">,</span>
+</span><span id="__span-61-9">                <span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+</span><span id="__span-61-10">                <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-61-11">            <span class="p">}</span>
+</span><span id="__span-61-12">        <span class="p">}</span>
+</span><span id="__span-61-13">    <span class="p">}</span>
+</span><span id="__span-61-14"><span class="p">}</span>
+</span><span id="__span-61-15">
+</span><span id="__span-61-16"><span class="n">random_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">52</span><span class="p">)</span>
+</span><span id="__span-61-17">
+</span><span id="__span-61-18"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;random_segs&quot;</span>
+</span><span id="__span-61-19"><span class="n">random_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">anno_key</span><span class="p">,</span> <span class="n">label_schema</span><span class="o">=</span><span class="n">label_schema</span><span class="p">,</span> <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-62-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-62-2"><span class="n">Samples</span> <span class="n">uploaded</span> <span class="n">successfully</span>
+</span><span id="__span-62-3"><span class="n">Launching</span> <span class="n">editor</span> <span class="k">for</span> <span class="n">label</span> <span class="n">field</span> <span class="s1">&#39;ground_truth&#39;</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">instances</span> <span class="n">at</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">app</span><span class="o">.</span><span class="n">cvat</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">tasks</span><span class="o">/</span><span class="mi">354</span><span class="o">/</span><span class="n">jobs</span><span class="o">/</span><span class="mi">398</span>
+</span></code></pre></div>
+<p><img alt="cvat-segmentation" src="../../_images/cvat_segmentation_2.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-63-1"><span class="p">[</span><span class="mi">40</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-64-1"><span class="n">random_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="s2">&quot;random_segs&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-65-1"><span class="p">[</span><span class="mi">41</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-66-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">random_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-67-1"><span class="p">[</span><span class="mi">42</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-68-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p><strong>Note</strong>: CVAT annotation schemas do not have a notion of label fields. Therefore, if you define an annotation schema that involves the same class label in multiple fields, the name of the label field will be appended to the class in CVAT in order to distinguish the class labels.</p>
+<h2 id="dataset-improvement">Dataset improvement <a href="#Dataset-improvement" title="Permalink to this headline">¶</a><a class="headerlink" href="#dataset-improvement" title="Permanent link">&para;</a></h2>
+<p>In many projects, a dataset already exists and is being used to train models. In such cases, the best use of time is likely to improve the quality of the dataset, which often provides greater performance gains than similar effort into optimizing the model architecture.</p>
+<p>FiftyOne provides a powerful API and App workflows to identify the samples/annotations that need to be updated, and the tight integration with CVAT allows you to take the necessary actions to improve your dataset’s quality.</p>
+<p>To demonstrate this workflow, let’s load a subset of the <a href="https://voxel51.com/docs/fiftyone/integrations/coco.html">COCO object detection dataset</a> from the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html">FiftyOne Dataset Zoo</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-69-1"><span class="p">[</span><span class="mi">54</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-70-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-70-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-70-3">
+</span><span id="__span-70-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-70-5">    <span class="s2">&quot;coco-2017&quot;</span><span class="p">,</span>
+</span><span id="__span-70-6">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-70-7">    <span class="n">max_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-70-8"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-71-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">to</span> <span class="s1">&#39;/home/voxel51/fiftyone/coco-2017/validation&#39;</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span id="__span-71-2"><span class="n">Found</span> <span class="n">annotations</span> <span class="n">at</span> <span class="s1">&#39;/home/voxel51/fiftyone/coco-2017/raw/instances_val2017.json&#39;</span>
+</span><span id="__span-71-3"><span class="n">Sufficient</span> <span class="n">images</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-71-4"><span class="n">Existing</span> <span class="n">download</span> <span class="n">of</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="ow">is</span> <span class="n">sufficient</span>
+</span><span id="__span-71-5"><span class="n">Loading</span> <span class="s1">&#39;coco-2017&#39;</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span>
+</span><span id="__span-71-6"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">1.4</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">147.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-71-7"><span class="n">Dataset</span> <span class="s1">&#39;coco-2017-validation-200&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p><strong>If your machine has a GPU</strong>, then you can run the following code to generate predictions on the dataset with an object detection model from the <a href="https://voxel51.com/docs/fiftyone/user_guide/model_zoo/index.html">FiftyOne Model Zoo</a>. Note that you can also easily <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html#custom-formats">load your own model predictions</a> onto your FiftyOne dataset.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-72-1"><span class="p">[</span><span class="mi">48</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-73-1"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span><span class="s2">&quot;faster-rcnn-resnet50-coco-tf&quot;</span><span class="p">)</span>
+</span><span id="__span-73-2"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="s2">&quot;predictions&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-74-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">250</span><span class="o">/</span><span class="mi">250</span> <span class="p">[</span><span class="mf">3.6</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.2</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p><strong>For CPU only machines</strong>, let’s save time and just load the <code>quickstart</code> dataset from the dataset zoo, which contains a small subset of COCO with precomputed predictions.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-75-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-76-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-76-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-76-3">
+</span><span id="__span-76-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-77-1"><span class="n">Dataset</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-77-2"><span class="n">Loading</span> <span class="s1">&#39;quickstart&#39;</span>
+</span><span id="__span-77-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">4.3</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">38.8</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-77-4"><span class="n">Dataset</span> <span class="s1">&#39;quickstart&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p>Let’s visualize these model predictions.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-78-1"><span class="p">[</span><span class="mi">60</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-79-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-80-1"><span class="p">[</span><span class="mi">31</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-81-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<p>In order to find specific cases of how this model performed, we can <a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html">evaluate the object detections</a>. When running evaluation, we can provide an <code>eval_key</code>, which will cause per-label TP/FP/FN evaluation results to be stored on our samples for future use.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-82-1"><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-83-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-83-2">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-83-3">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-83-4">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-83-5">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-83-6"><span class="p">)</span>
+</span><span id="__span-83-7"><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">mAP</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-84-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-84-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">6.5</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">22.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-84-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-84-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">12.5</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">15.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-84-5"><span class="mf">0.3957238101325776</span>
+</span></code></pre></div>
+<p>Using the query language of FiftyOne, we can construct <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html">different views into the dataset</a>. Specifically, let’s find the samples where the model was confident in its prediction but the prediction was labeled incorrect (false positive). This indicates that the model may have been correct but the ground truth annotation was incorrect.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-85-1"><span class="p">[</span><span class="mi">61</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-86-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-86-2">
+</span><span id="__span-86-3"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span>
+</span><span id="__span-86-4">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-86-5">    <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;confidence&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.85</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fp&quot;</span><span class="p">)</span>
+</span><span id="__span-86-6"><span class="p">)</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span>
+</span><span id="__span-86-7">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;predictions.detections&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(),</span>
+</span><span id="__span-86-8">    <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-86-9"><span class="p">)</span>
+</span><span id="__span-86-10">
+</span><span id="__span-86-11"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-87-1"><span class="p">[</span><span class="mi">63</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-88-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<p>Browsing through some of these results, we can see a pattern emerge. The COCO dataset annotations have an <code>iscrowd</code> attribute that indicates if a bounding box contains a crowd of multiple objects or just a single instance of the object. In many of the situations where the model was incorrect, the <code>iscrowd</code> attribute is incorrectly annotated or missing entirely.</p>
+<p>We can tag some of these samples for annotation by clicking selecting the relevant samples and clicking the tag button.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-89-1"><span class="p">[</span><span class="mi">64</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-90-1"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-91-1"><span class="p">[</span><span class="mi">65</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-92-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-93-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-94-1"><span class="n">tagged_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="s2">&quot;requires_annotation&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We can now use the <code>annotate()</code> method to upload these samples and labels to CVAT for re-annotation.</p>
+<p>The following code creates a new task in your account in CVAT containing only the samples with the <code>requires_annotation</code> tag.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-95-1"><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-96-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;tagged_anno&quot;</span>
+</span><span id="__span-96-2"><span class="n">tagged_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">anno_key</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-97-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-97-2"><span class="n">Upload</span> <span class="n">complete</span>
+</span><span id="__span-97-3"><span class="n">Launching</span> <span class="n">editor</span> <span class="n">at</span> <span class="s1">&#39;https://app.cvat.ai/tasks/383/jobs/434&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<p>In CVAT, click on the box whose <code>iscrowd</code> attribute we want to modify. On the attributes sidebar, enter a value of <code>1</code> for the attribute:</p>
+<p><img alt="cvat-mistake" src="../../_images/cvat_mistakes.png" /></p>
+<p>After updating the relevant annotations in all of the samples, make sure to hit the save button in CVAT. Now that the re-annotation is complete, let’s load the updated labels back into FiftyOne and clean up the tasks that were created in CVAT.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-98-1"><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-99-1"><span class="n">tagged_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="s2">&quot;tagged_anno&quot;</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-99-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">tagged_view</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-100-1"><span class="n">Downloading</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CVAT...</span>
+</span><span id="__span-100-2"><span class="n">Download</span> <span class="n">complete</span>
+</span><span id="__span-100-3"><span class="n">Merging</span> <span class="n">labels</span> <span class="k">for</span> <span class="s1">&#39;ground_truth&#39;</span><span class="o">...</span>
+</span><span id="__span-100-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">11.1</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">89.9</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-100-5"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">352.8</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">2.8</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-101-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-102-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screen shot the App for this example</span>
+</span></code></pre></div>
+<p>As we can see, the ground truth labels on the dataset have been updated. Let’s evaluate the same model again on these updated labels.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-103-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-104-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-104-2">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-104-3">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-104-4">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-104-5">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-104-6"><span class="p">)</span>
+</span><span id="__span-104-7"><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">mAP</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-105-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-105-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">6.1</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">28.2</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-105-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-105-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">15.3</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">13.2</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-105-5"><span class="mf">0.3984999388520894</span>
+</span></code></pre></div>
+<p>The mAP of the model has improved from 39.57% to 39.85% just by updating a single label in one sample!</p>
+<p>In practice, the next step is to spend more time exploring the dataset in FiftyOne finding more annotation mistakes and sending them to a team of annotators in CVAT for review and re-annotation. Specific users can be assigned to annotate or review the tasks that are created through this API.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-106-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-107-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;all_mistakes&quot;</span>
+</span><span id="__span-107-2"><span class="n">tagged_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-107-3">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-107-4">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-107-5">    <span class="n">segment_size</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+</span><span id="__span-107-6">    <span class="n">task_assignee</span><span class="o">=</span><span class="s2">&quot;user1&quot;</span><span class="p">,</span>
+</span><span id="__span-107-7">    <span class="n">job_assignees</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;user2&quot;</span><span class="p">,</span> <span class="s2">&quot;user3&quot;</span><span class="p">],</span>
+</span><span id="__span-107-8">    <span class="n">job_reviewers</span><span class="o">=</span><span class="s2">&quot;user4&quot;</span><span class="p">,</span>
+</span><span id="__span-107-9"><span class="p">)</span>
+</span></code></pre></div>
+<p>This workflow has shown how to improve the validation split of a dataset and the subsequent performance of a model on that split. However, we never actually retrained the model at this point!</p>
+<p>In practice, a complete workflow might include performing K-fold cross-validation on the dataset. This is where the complete dataset is split into K equal parts where each is treated as the validation split and the model is retrained K times on each combination of the remaining splits. Following the above steps on each of these K validation splits will then result in the entire dataset having been iterated over and improved. Finally, the model should then be retrained on the entirety of this
+newly updated dataset.</p>
+<h2 id="annotating-videos-in-cvat">Annotating videos in CVAT <a href="#Annotating-videos-in-CVAT" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-videos-in-cvat" title="Permanent link">&para;</a></h2>
+<p>Videos are handled slightly differently by CVAT. Each task is only able to contain a single video, so if multiple video samples are uploaded at once via a call to <code>annotate()</code>, separate tasks will be created for each video.</p>
+<p>CVAT primarily allows for per-frame annotations of objects and classifications, so you should prepend <code>"frames."</code> to field names to indicate that you are working with frame-level, not sample-level, fields.</p>
+<p>All CVAT label types except <code>tags</code> provide an option to annotate <strong>tracks</strong> in videos, which captures the identity of a single object as it moves through the video. When you import video tracks into FiftyOne, the <code>index</code> attribute of each label will contain the integer number of its track, and any labels that are keyframes will have their <code>keyframe=True</code> attribute set.</p>
+<p>Let’s upload and modify some labels from the <code>quickstart-video</code> dataset. The workflow in FiftyOne looks identical to the image-based workflow. The only difference is needing to navigate to each video task separately inside of CVAT.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-108-1"><span class="p">[</span><span class="mi">43</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-109-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-109-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-110-1"><span class="p">[</span><span class="mi">44</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-111-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart-video&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-112-1"><span class="n">Dataset</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-112-2"><span class="n">Loading</span> <span class="s1">&#39;quickstart-video&#39;</span>
+</span><span id="__span-112-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="p">[</span><span class="mf">5.0</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.9</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-112-4"><span class="n">Dataset</span> <span class="s1">&#39;quickstart-video&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-113-1"><span class="p">[</span><span class="mi">45</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-114-1"><span class="n">random_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-115-1"><span class="p">[</span><span class="mi">50</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-116-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;vid_anno&quot;</span>
+</span><span id="__span-116-2"><span class="n">random_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">anno_key</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;frames.detections&quot;</span><span class="p">,</span> <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-117-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-117-2"><span class="n">Computing</span> <span class="n">video</span> <span class="n">metadata</span><span class="o">...</span>
+</span><span id="__span-117-3"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">296.8</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">3.4</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-117-4"><span class="n">Computing</span> <span class="n">video</span> <span class="n">metadata</span><span class="o">...</span>
+</span><span id="__span-117-5"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">141.0</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">7.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-117-6"><span class="n">Samples</span> <span class="n">uploaded</span> <span class="n">successfully</span>
+</span><span id="__span-117-7"><span class="n">Launching</span> <span class="n">editor</span> <span class="k">for</span> <span class="n">label</span> <span class="n">field</span> <span class="s1">&#39;frames.detections&#39;</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">detections</span> <span class="n">at</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">app</span><span class="o">.</span><span class="n">cvat</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">tasks</span><span class="o">/</span><span class="mi">356</span><span class="o">/</span><span class="n">jobs</span><span class="o">/</span><span class="mi">400</span>
+</span></code></pre></div>
+<p>In CVAT, you can press the play button to watch the video and annotations.</p>
+<p>In the attributes, the tracks that are shown provide some additional options over standard labels. For example, the first square icon with a line coming out of it indicates that the object is “outside” of the frame and should not be loaded into FiftyOne for that frame.</p>
+<p><img alt="cvat-video" src="../../_images/cvat_video1.png" /></p>
+<p>Let’s save our annotation work and then load the labels back into FiftyOne.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-118-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-119-1"><span class="n">random_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="s2">&quot;vid_anno&quot;</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-120-1"><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-121-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">random_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-122-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-123-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Building high-quality datasets is the best way to produce high-performing models, and FiftyOne and CVAT are two open-source tools that you can use to curate and annotate datasets from scratch, as well as explore and re-annotate existing datasets to improve them.</p>
+<p>Thanks to the tight integration between FiftyOne and CVAT, the power of one of the most popular open-source annotation tools is just one command away when working with your datasets in FiftyOne.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

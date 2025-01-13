@@ -1,0 +1,1299 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Model Interface ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#model-interface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model Interface ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prediction ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embeddings ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logits ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom models ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/data_and_models/model_zoo/design.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="model-interface">Model Interface <a href="#model-interface" title="Permalink to this headline">¶</a><a class="headerlink" href="#model-interface" title="Permanent link">&para;</a></h1>
+<p>All models in the Model Zoo are exposed via the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model</code></a> class, which defines a
+common interface for loading models and generating predictions with defined
+input and output data formats.</p>
+<p>Note</p>
+<p>If you write a wrapper for your custom model that implements the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model</code></a>
+interface, then you can pass your models to built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>
+and
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings" title="fiftyone.core.collections.SampleCollection.compute_embeddings"><code>compute_embeddings()</code></a>
+too!</p>
+<p>FiftyOne provides classes that make it easy to deploy models in custom
+frameworks easy. For example, if you have a PyTorch model that processes
+images, you can likely use
+<code>TorchImageModel</code> to run it
+using FiftyOne.</p>
+<h2 id="prediction">Prediction <a href="#prediction" title="Permalink to this headline">¶</a><a class="headerlink" href="#prediction" title="Permanent link">&para;</a></h2>
+<p>Inside built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>,
+predictions of a <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model</code></a> instance are generated using the following pattern:</p>
+<p>By convention, <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model</code></a> instances must implement the context manager interface,
+which handles any necessary setup and teardown required to use the model.</p>
+<p>Predictions are generated via the
+<a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model.predict()</code></a> interface method, which
+takes an image/video as input and returns the predictions.</p>
+<p>In order to be compatible with built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>,
+models should support the following basic signature of running inference and
+storing the output labels:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</span><span id="__span-0-2"><span class="n">sample</span><span class="o">.</span><span class="n">add_labels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="n">label_field</span><span class="p">)</span>
+</span></code></pre></div>
+<p>where the model should, at minimum, support <code>arg</code> values that are:</p>
+<ul>
+<li>
+<p><em>Image models:</em> uint8 numpy arrays (HWC)</p>
+</li>
+<li>
+<p><em>Video models:</em> <code>eta.core.video.VideoReader</code> instances</p>
+</li>
+</ul>
+<p>and the output <code>labels</code> can be any of the following:</p>
+<ul>
+<li>A <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a> instance, in which case the labels are directly saved in the
+specified <code>label_field</code> of the sample</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="c1"># Single sample-level label</span>
+</span><span id="__span-1-2"><span class="n">sample</span><span class="p">[</span><span class="n">label_field</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span>
+</span></code></pre></div>
+<ul>
+<li>A dict mapping keys to <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a> instances. In this case, the labels are
+added as follows:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="c1"># Multiple sample-level labels</span>
+</span><span id="__span-2-2"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">labels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-2-3">    <span class="n">sample</span><span class="p">[</span><span class="n">label_key</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
+</span></code></pre></div>
+<ul>
+<li>A dict mapping frame numbers to <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a> instances. In this case, the
+provided labels are interpreted as frame-level labels that should be added
+as follows:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="c1"># Single set of per-frame labels</span>
+</span><span id="__span-3-2"><span class="n">sample</span><span class="o">.</span><span class="n">frames</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+</span><span id="__span-3-3">    <span class="p">{</span>
+</span><span id="__span-3-4">        <span class="n">frame_number</span><span class="p">:</span> <span class="p">{</span><span class="n">label_field</span><span class="p">:</span> <span class="n">label</span><span class="p">}</span>
+</span><span id="__span-3-5">        <span class="k">for</span> <span class="n">frame_number</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span id="__span-3-6">    <span class="p">}</span>
+</span><span id="__span-3-7"><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>A dict mapping frame numbers to dicts mapping keys to <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a> instances. In
+this case, the provided labels are interpreted as frame-level labels that
+should be added as follows:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="c1"># Multiple per-frame labels</span>
+</span><span id="__span-4-2"><span class="n">sample</span><span class="o">.</span><span class="n">frames</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+</span><span id="__span-4-3">    <span class="p">{</span>
+</span><span id="__span-4-4">        <span class="n">frame_number</span><span class="p">:</span> <span class="p">{</span><span class="n">label_key</span><span class="p">(</span><span class="n">k</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">frame_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</span><span id="__span-4-5">        <span class="k">for</span> <span class="n">frame_number</span><span class="p">,</span> <span class="n">frame_dict</span> <span class="ow">in</span> <span class="n">labels</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span><span id="__span-4-6">    <span class="p">}</span>
+</span><span id="__span-4-7"><span class="p">)</span>
+</span></code></pre></div>
+<p>In the above snippets, the <code>label_key</code> function maps label dict keys to field
+names, and is defined from <code>label_field</code> as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">label_field</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span><span id="__span-5-2">    <span class="n">label_key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">label_field</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span><span id="__span-5-3"><span class="k">elif</span> <span class="n">label_field</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-5-4">    <span class="n">label_key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">label_field</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">k</span>
+</span><span id="__span-5-5"><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-6">    <span class="n">label_key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span>
+</span></code></pre></div>
+<p>For models that support batching, the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model" title="fiftyone.core.models.Model"><code>Model</code></a> interface also provides a
+<a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all" title="fiftyone.core.models.Model.predict_all"><code>predict_all()</code></a> method that can
+provide an efficient implementation of predicting on a batch of data.</p>
+<p>Note</p>
+<p>Built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>
+provide a <code>batch_size</code> parameter that can be used to control the batch
+size used when performing inference with models that support efficient
+batching.</p>
+<p>Note</p>
+<p>PyTorch models can implement the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.TorchModelMixin" title="fiftyone.core.models.TorchModelMixin"><code>TorchModelMixin</code></a> mixin, in which case
+<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader">DataLoaders</a>
+are used to efficiently feed data to the models during inference.</p>
+<h2 id="embeddings">Embeddings <a href="#embeddings" title="Permalink to this headline">¶</a><a class="headerlink" href="#embeddings" title="Permanent link">&para;</a></h2>
+<p>Models that can compute embeddings for their input data can expose this
+capability by implementing the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin" title="fiftyone.core.models.EmbeddingsMixin"><code>EmbeddingsMixin</code></a> mixin.</p>
+<p>Inside built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings" title="fiftyone.core.collections.SampleCollection.compute_embeddings"><code>compute_embeddings()</code></a>,
+embeddings for a collection of samples are generated using an analogous pattern
+to the prediction code shown above, except that the embeddings are generated
+using <a href="../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed" title="fiftyone.core.models.EmbeddingsMixin.embed"><code>Model.embed()</code></a> in
+place of <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict" title="fiftyone.core.models.Model.predict"><code>Model.predict()</code></a>.</p>
+<p>By convention,
+<a href="../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed" title="fiftyone.core.models.EmbeddingsMixin.embed"><code>Model.embed()</code></a> should
+return a numpy array containing the embedding.</p>
+<p>Note</p>
+<p>Embeddings are typically 1D vectors, but this is not strictly required.</p>
+<p>For models that support batching, the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin" title="fiftyone.core.models.EmbeddingsMixin"><code>EmbeddingsMixin</code></a> interface also provides
+a <a href="../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all" title="fiftyone.core.models.Model.predict_all"><code>embed_all()</code></a> method that can
+provide an efficient implementation of embedding a batch of data.</p>
+<h2 id="logits">Logits <a href="#logits" title="Permalink to this headline">¶</a><a class="headerlink" href="#logits" title="Permanent link">&para;</a></h2>
+<p>Models that generate logits for their predictions can expose them to FiftyOne
+by implementing the <a href="../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin" title="fiftyone.core.models.LogitsMixin"><code>LogitsMixin</code></a> mixin.</p>
+<p>Inside built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>,
+if the user requests logits, the model’s
+<a href="../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin.store_logits" title="fiftyone.core.models.LogitsMixin.store_logits"><code>store_logits</code></a>
+property is set to indicate that the model should store logits in the <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a>
+instances that it produces during inference.</p>
+<h2 id="custom-models">Custom models <a href="#custom-models" title="Permalink to this headline">¶</a><a class="headerlink" href="#custom-models" title="Permanent link">&para;</a></h2>
+<p>FiftyOne provides a
+<code>TorchImageModel</code>
+class that you can use to load your own custom Torch model and pass it to
+built-in methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model" title="fiftyone.core.collections.SampleCollection.apply_model"><code>apply_model()</code></a>
+and
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings" title="fiftyone.core.collections.SampleCollection.compute_embeddings"><code>compute_embeddings()</code></a>.</p>
+<p>For example, the snippet below loads a pretrained model from <code>torchvision</code>
+and uses it both as a classifier and to generate image embeddings:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-6-2"><span class="kn">import</span><span class="w"> </span><span class="nn">eta</span>
+</span><span id="__span-6-3">
+</span><span id="__span-6-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-6-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-6-6"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.torch</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fout</span>
+</span><span id="__span-6-7">
+</span><span id="__span-6-8"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-6-9">
+</span><span id="__span-6-10"><span class="n">labels_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+</span><span id="__span-6-11">    <span class="n">eta</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">RESOURCES_DIR</span><span class="p">,</span> <span class="s2">&quot;imagenet-labels-no-background.txt&quot;</span>
+</span><span id="__span-6-12"><span class="p">)</span>
+</span><span id="__span-6-13"><span class="n">config</span> <span class="o">=</span> <span class="n">fout</span><span class="o">.</span><span class="n">TorchImageModelConfig</span><span class="p">(</span>
+</span><span id="__span-6-14">    <span class="p">{</span>
+</span><span id="__span-6-15">        <span class="s2">&quot;entrypoint_fcn&quot;</span><span class="p">:</span> <span class="s2">&quot;torchvision.models.mobilenet.mobilenet_v2&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16">        <span class="s2">&quot;entrypoint_args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;weights&quot;</span><span class="p">:</span> <span class="s2">&quot;MobileNet_V2_Weights.DEFAULT&quot;</span><span class="p">},</span>
+</span><span id="__span-6-17">        <span class="s2">&quot;output_processor_cls&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.utils.torch.ClassifierOutputProcessor&quot;</span><span class="p">,</span>
+</span><span id="__span-6-18">        <span class="s2">&quot;labels_path&quot;</span><span class="p">:</span> <span class="n">labels_path</span><span class="p">,</span>
+</span><span id="__span-6-19">        <span class="s2">&quot;image_min_dim&quot;</span><span class="p">:</span> <span class="mi">224</span><span class="p">,</span>
+</span><span id="__span-6-20">        <span class="s2">&quot;image_max_dim&quot;</span><span class="p">:</span> <span class="mi">2048</span><span class="p">,</span>
+</span><span id="__span-6-21">        <span class="s2">&quot;image_mean&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span>
+</span><span id="__span-6-22">        <span class="s2">&quot;image_std&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">],</span>
+</span><span id="__span-6-23">        <span class="s2">&quot;embeddings_layer&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;classifier.1&quot;</span><span class="p">,</span>
+</span><span id="__span-6-24">    <span class="p">}</span>
+</span><span id="__span-6-25"><span class="p">)</span>
+</span><span id="__span-6-26"><span class="n">model</span> <span class="o">=</span> <span class="n">fout</span><span class="o">.</span><span class="n">TorchImageModel</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span><span id="__span-6-27">
+</span><span id="__span-6-28"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;imagenet&quot;</span><span class="p">)</span>
+</span><span id="__span-6-29"><span class="n">embeddings</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">compute_embeddings</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The necessary configuration is provided via the
+<code>TorchImageModelConfig</code>
+class, which exposes a number of built-in mechanisms for defining the model to
+load and any necessary preprocessing and post-processing.</p>
+<p>Under the hood, the torch model is loaded via:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="n">torch_model</span> <span class="o">=</span> <span class="n">entrypoint_fcn</span><span class="p">(</span><span class="o">**</span><span class="n">entrypoint_args</span><span class="p">)</span>
+</span></code></pre></div>
+<p>which is assumed to return a <a href="https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module" title="(in PyTorch v2.5)"><code>torch.nn.Module</code></a> whose <code>__call__()</code>
+method directly accepts Torch tensors (NCHW) as input.</p>
+<p>The <code>TorchImageModelConfig</code>
+class provides a number of built-in mechanisms for specifying the required
+preprocessing for your model, such as resizing and normalization. In the above
+example, <code>image_min_dim</code>, <code>image_max_dim</code>, <code>image_mean</code>, and <code>image_std</code> are
+used.</p>
+<p>The <code>output_processor_cls</code> parameter of
+<code>TorchImageModelConfig</code>
+must be set to the fully-qualified class name of an
+<code>OutputProcessor</code> subclass that
+defines how to translate the model’s raw output into the suitable FiftyOne
+<a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Label" title="fiftyone.core.labels.Label"><code>Label</code></a> types, and is instantiated as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">output_processor</span> <span class="o">=</span> <span class="n">output_processor_cls</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span> <span class="o">**</span><span class="n">output_processor_args</span><span class="p">)</span>
+</span></code></pre></div>
+<p>where your model’s classes can be specified via any of the <code>classes</code>,
+<code>labels_string</code>, or <code>labels_path</code> parameters of
+<code>TorchImageModelConfig</code>.</p>
+<p>The following built-in output processors are available for use:</p>
+<ul>
+<li>
+<p><code>ClassifierOutputProcessor</code></p>
+</li>
+<li>
+<p><code>DetectorOutputProcessor</code></p>
+</li>
+<li>
+<p><code>InstanceSegmenterOutputProcessor</code></p>
+</li>
+<li>
+<p><code>KeypointDetectorOutputProcessor</code></p>
+</li>
+<li>
+<p><code>SemanticSegmenterOutputProcessor</code></p>
+</li>
+</ul>
+<p>or you can write your own
+<code>OutputProcessor</code> subclass.</p>
+<p>Finally, if you would like to pass your custom model to methods like
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings" title="fiftyone.core.collections.SampleCollection.compute_embeddings"><code>compute_embeddings()</code></a>,
+set the <code>embeddings_layer</code> parameter to the name of a layer whose output to
+expose as embeddings (or prepend <code>&lt;</code> to use the input tensor instead).</p>
+<p>Note</p>
+<p>Did you know? You can also
+<a href="api.html#model-zoo-add">register your custom model</a> under a name of your
+choice so that it can be loaded and used as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span><span class="s2">&quot;your-custom-model&quot;</span><span class="p">)</span>
+</span><span id="__span-9-2"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;predictions&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

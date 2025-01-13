@@ -1,0 +1,1401 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Training and Evaluating FiftyOne Datasets with Detectron2 ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#training-and-evaluating-fiftyone-datasets-with-detectron2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Training and Evaluating FiftyOne Datasets with Detectron2 ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-on-a-fiftyone-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Train on a FiftyOne dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare the dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-model-and-train" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load the model and train! ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-evaluation-using-the-trained-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference &amp; evaluation using the trained model ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/detectron2.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="training-and-evaluating-fiftyone-datasets-with-detectron2">Training and Evaluating FiftyOne Datasets with Detectron2 <a href="#Training-and-Evaluating-FiftyOne-Datasets-with-Detectron2" title="Permalink to this headline">¶</a><a class="headerlink" href="#training-and-evaluating-fiftyone-datasets-with-detectron2" title="Permanent link">&para;</a></h1>
+<p>FiftyOne has all of the building blocks necessary to develop high-quality datasets to train your models, as well as advanced model evaluation capabilities. To make use of these, FiftyOne easily integrates with your existing model training and inference pipelines. In this walktrhough we’ll cover how you can use your FiftyOne datasets to train a model with <a href="https://github.com/facebookresearch/detectron2">Detectron2</a>, Facebook AI Reasearch’s library for detection and segmentation algorithms.</p>
+<p>This walkthrough is based off of the <a href="https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5">official Detectron2 tutorial</a>, augmented to load data to and from FiftyOne.</p>
+<p>Specifically, this walkthrough covers:</p>
+<ul>
+<li>
+<p>Loading a dataset from the FiftyOne Zoo, and splitting it into training/validation</p>
+</li>
+<li>
+<p>Initializing a segmentation model from the detectron2 model zoo</p>
+</li>
+<li>
+<p>Loading ground truth annotations from a FiftyOne dataset into a detectron2 model training pipeline and training the model</p>
+</li>
+<li>
+<p>Loading predictions from a detectron2 model into a FiftyOne dataset</p>
+</li>
+<li>
+<p>Evaluating model predictions in FiftyOne</p>
+</li>
+</ul>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>By writing two simple functions, you can integrate FiftyOne into your Detectron2 model training and inference pipelines.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>To get started, you need to install <a href="https://voxel51.com/docs/fiftyone/getting_started/install.html">FiftyOne</a> and <a href="https://detectron2.readthedocs.io/en/latest/tutorials/install.html">detectron2</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pyyaml</span><span class="o">==</span><span class="mf">5.1</span>
+</span><span id="__span-5-2">
+</span><span id="__span-5-3"><span class="c1"># Detectron2 has not released pre-built binaries for the latest pytorch (https://github.com/facebookresearch/detectron2/issues/4053)</span>
+</span><span id="__span-5-4"><span class="c1"># so we install from source instead. This takes a few minutes.</span>
+</span><span id="__span-5-5"><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;git+https://github.com/facebookresearch/detectron2.git&#39;</span>
+</span><span id="__span-5-6">
+</span><span id="__span-5-7"><span class="c1"># Install pre-built detectron2 that matches pytorch version, if released:</span>
+</span><span id="__span-5-8"><span class="c1"># See https://detectron2.readthedocs.io/tutorials/install.html for instructions</span>
+</span><span id="__span-5-9"><span class="c1">#!pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/{CUDA_VERSION}/{TORCH_VERSION}/index.html</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span><span class="o">,</span><span class="w"> </span><span class="nn">detectron2</span>
+</span><span id="__span-7-2"><span class="err">!</span><span class="n">nvcc</span> <span class="o">--</span><span class="n">version</span>
+</span><span id="__span-7-3"><span class="n">TORCH_VERSION</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
+</span><span id="__span-7-4"><span class="n">CUDA_VERSION</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-7-5"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;torch: &quot;</span><span class="p">,</span> <span class="n">TORCH_VERSION</span><span class="p">,</span> <span class="s2">&quot;; cuda: &quot;</span><span class="p">,</span> <span class="n">CUDA_VERSION</span><span class="p">)</span>
+</span><span id="__span-7-6"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;detectron2:&quot;</span><span class="p">,</span> <span class="n">detectron2</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">nvcc</span><span class="p">:</span> <span class="n">NVIDIA</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Cuda</span> <span class="n">compiler</span> <span class="n">driver</span>
+</span><span id="__span-8-2"><span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2005</span><span class="o">-</span><span class="mi">2020</span> <span class="n">NVIDIA</span> <span class="n">Corporation</span>
+</span><span id="__span-8-3"><span class="n">Built</span> <span class="n">on</span> <span class="n">Mon_Oct_12_20</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mi">46</span><span class="n">_PDT_2020</span>
+</span><span id="__span-8-4"><span class="n">Cuda</span> <span class="n">compilation</span> <span class="n">tools</span><span class="p">,</span> <span class="n">release</span> <span class="mf">11.1</span><span class="p">,</span> <span class="n">V11</span><span class="mf">.1.105</span>
+</span><span id="__span-8-5"><span class="n">Build</span> <span class="n">cuda_11</span><span class="mf">.1</span><span class="o">.</span><span class="n">TC455_06</span><span class="mf">.29190527_0</span>
+</span><span id="__span-8-6"><span class="n">torch</span><span class="p">:</span>  <span class="mf">1.12</span> <span class="p">;</span> <span class="n">cuda</span><span class="p">:</span>  <span class="n">cu113</span>
+</span><span id="__span-8-7"><span class="n">detectron2</span><span class="p">:</span> <span class="mf">0.6</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="c1"># Setup detectron2 logger</span>
+</span><span id="__span-10-2"><span class="kn">import</span><span class="w"> </span><span class="nn">detectron2</span>
+</span><span id="__span-10-3"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.utils.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup_logger</span>
+</span><span id="__span-10-4"><span class="n">setup_logger</span><span class="p">()</span>
+</span><span id="__span-10-5">
+</span><span id="__span-10-6"><span class="c1"># import some common libraries</span>
+</span><span id="__span-10-7"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-10-8"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-10-9">
+</span><span id="__span-10-10"><span class="c1"># import some common detectron2 utilities</span>
+</span><span id="__span-10-11"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2</span><span class="w"> </span><span class="kn">import</span> <span class="n">model_zoo</span>
+</span><span id="__span-10-12"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultPredictor</span>
+</span><span id="__span-10-13"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_cfg</span>
+</span><span id="__span-10-14"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetadataCatalog</span><span class="p">,</span> <span class="n">DatasetCatalog</span>
+</span></code></pre></div>
+<h2 id="train-on-a-fiftyone-dataset">Train on a FiftyOne dataset <a href="#Train-on-a-FiftyOne-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#train-on-a-fiftyone-dataset" title="Permanent link">&para;</a></h2>
+<p>In this section, we show how to use a custom FiftyOne Dataset to train a detectron2 model. We’ll train a license plate segmentation model from an existing model pre-trained on COCO dataset, available in detectron2’s model zoo.</p>
+<p>Since the COCO dataset doesn’t have a “Vehicle registration plates” category, we will be using segmentations of license plates from the Open Images v6 dataset in the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html#open-images-v6">FiftyOne Dataset Zoo</a> to train the model to recognize this new category.</p>
+<h2 id="prepare-the-dataset">Prepare the dataset <a href="#Prepare-the-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#prepare-the-dataset" title="Permanent link">&para;</a></h2>
+<p>For this example, we will just use some of the samples from the official “validation” split of the dataset. To improve model performance, we could always add in more data from the official “train” split as well but that will take longer to train so we’ll just stick to the “validation” split for this walkthrough.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-12-2">    <span class="s2">&quot;open-images-v6&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-12-4">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Vehicle registration plate&quot;</span><span class="p">],</span>
+</span><span id="__span-12-5">    <span class="n">label_types</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;segmentations&quot;</span><span class="p">],</span>
+</span><span id="__span-12-6">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;segmentations&quot;</span><span class="p">,</span>
+</span><span id="__span-12-7"><span class="p">)</span>
+</span></code></pre></div>
+<p>Specifying a <code>classes</code> when downloading a dataset from the zoo will ensure that only samples with one of the given classes will be present. However, these samples may still contain other labels, so we can use the powerful <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering">filtering capability</a> of FiftyOne to easily keep only the “Vehicle registration plate” labels. We will also untag these samples as “validation” and create our own split out of them.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-14-2">
+</span><span id="__span-14-3"><span class="c1"># Remove other classes and existing tags</span>
+</span><span id="__span-14-4"><span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;segmentations&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Vehicle registration plate&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span><span id="__span-14-5"><span class="n">dataset</span><span class="o">.</span><span class="n">untag_samples</span><span class="p">(</span><span class="s2">&quot;validation&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">four</span>
+</span><span id="__span-16-2">
+</span><span id="__span-16-3"><span class="n">four</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">})</span>
+</span></code></pre></div>
+<p>Next we will register the FiftyOne dataset to detectron2, following the <a href="https://detectron2.readthedocs.io/tutorials/datasets.html">detectron2 custom dataset tutorial</a>. Here, the dataset is in its custom format, therefore we write a function to parse it and prepare it into <a href="https://detectron2.readthedocs.io/en/latest/tutorials/datasets.html#standard-dataset-dicts">detectron2’s standard format</a>.</p>
+<p>Note: In this example, we are specifically parsing the segmentations into bounding boxes and polylines. This function may require tweaks depending on the model being trained and the data it expects.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.structures</span><span class="w"> </span><span class="kn">import</span> <span class="n">BoxMode</span>
+</span><span id="__span-18-2">
+</span><span id="__span-18-3"><span class="k">def</span><span class="w"> </span><span class="nf">get_fiftyone_dicts</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+</span><span id="__span-18-4">    <span class="n">samples</span><span class="o">.</span><span class="n">compute_metadata</span><span class="p">()</span>
+</span><span id="__span-18-5">
+</span><span id="__span-18-6">    <span class="n">dataset_dicts</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-18-7">    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">select_fields</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;filepath&quot;</span><span class="p">,</span> <span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="s2">&quot;segmentations&quot;</span><span class="p">]):</span>
+</span><span id="__span-18-8">        <span class="n">height</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span>
+</span><span id="__span-18-9">        <span class="n">width</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">]</span>
+</span><span id="__span-18-10">        <span class="n">record</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-18-11">        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">filepath</span>
+</span><span id="__span-18-12">        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;image_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">id</span>
+</span><span id="__span-18-13">        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">height</span>
+</span><span id="__span-18-14">        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">width</span>
+</span><span id="__span-18-15">
+</span><span id="__span-18-16">        <span class="n">objs</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-18-17">        <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">sample</span><span class="o">.</span><span class="n">segmentations</span><span class="o">.</span><span class="n">detections</span><span class="p">:</span>
+</span><span id="__span-18-18">            <span class="n">tlx</span><span class="p">,</span> <span class="n">tly</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">det</span><span class="o">.</span><span class="n">bounding_box</span>
+</span><span id="__span-18-19">            <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">tlx</span><span class="o">*</span><span class="n">width</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tly</span><span class="o">*</span><span class="n">height</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">width</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="o">*</span><span class="n">height</span><span class="p">)]</span>
+</span><span id="__span-18-20">            <span class="n">fo_poly</span> <span class="o">=</span> <span class="n">det</span><span class="o">.</span><span class="n">to_polyline</span><span class="p">()</span>
+</span><span id="__span-18-21">            <span class="n">poly</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="o">*</span><span class="n">width</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="n">height</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">fo_poly</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+</span><span id="__span-18-22">            <span class="n">poly</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">poly</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+</span><span id="__span-18-23">            <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-18-24">                <span class="s2">&quot;bbox&quot;</span><span class="p">:</span> <span class="n">bbox</span><span class="p">,</span>
+</span><span id="__span-18-25">                <span class="s2">&quot;bbox_mode&quot;</span><span class="p">:</span> <span class="n">BoxMode</span><span class="o">.</span><span class="n">XYWH_ABS</span><span class="p">,</span>
+</span><span id="__span-18-26">                <span class="s2">&quot;segmentation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">poly</span><span class="p">],</span>
+</span><span id="__span-18-27">                <span class="s2">&quot;category_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-18-28">            <span class="p">}</span>
+</span><span id="__span-18-29">            <span class="n">objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span><span id="__span-18-30">
+</span><span id="__span-18-31">        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;annotations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">objs</span>
+</span><span id="__span-18-32">        <span class="n">dataset_dicts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</span><span id="__span-18-33">
+</span><span id="__span-18-34">    <span class="k">return</span> <span class="n">dataset_dicts</span>
+</span><span id="__span-18-35">
+</span><span id="__span-18-36"><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]:</span>
+</span><span id="__span-18-37">    <span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-18-38">    <span class="n">DatasetCatalog</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;fiftyone_&quot;</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">view</span><span class="o">=</span><span class="n">view</span><span class="p">:</span> <span class="n">get_fiftyone_dicts</span><span class="p">(</span><span class="n">view</span><span class="p">))</span>
+</span><span id="__span-18-39">    <span class="n">MetadataCatalog</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fiftyone_&quot;</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">thing_classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vehicle_registration_plate&quot;</span><span class="p">])</span>
+</span><span id="__span-18-40">
+</span><span id="__span-18-41"><span class="n">metadata</span> <span class="o">=</span> <span class="n">MetadataCatalog</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fiftyone_train&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>To verify the dataset is in correct format, let’s visualize the annotations of the training set:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">dataset_dicts</span> <span class="o">=</span> <span class="n">get_fiftyone_dicts</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">))</span>
+</span><span id="__span-20-2"><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">dd</span><span class="p">[</span><span class="s2">&quot;image_id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">dd</span> <span class="ow">in</span> <span class="n">dataset_dicts</span><span class="p">]</span>
+</span><span id="__span-20-3">
+</span><span id="__span-20-4"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+</span><span id="__span-20-5"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1">
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>  <span class="c1"># screenshot the App</span>
+</span></code></pre></div>
+<h2 id="load-the-model-and-train">Load the model and train! <a href="#Load-the-model-and-train!" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-the-model-and-train" title="Permanent link">&para;</a></h2>
+<p>Now, let’s fine-tune a COCO-pretrained R50-FPN Mask R-CNN model on the FiftyOne dataset. It takes ~2 minutes to train 300 iterations on a P100 GPU.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="kn">from</span><span class="w"> </span><span class="nn">detectron2.engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultTrainer</span>
+</span><span id="__span-25-2">
+</span><span id="__span-25-3"><span class="n">cfg</span> <span class="o">=</span> <span class="n">get_cfg</span><span class="p">()</span>
+</span><span id="__span-25-4"><span class="n">cfg</span><span class="o">.</span><span class="n">merge_from_file</span><span class="p">(</span><span class="n">model_zoo</span><span class="o">.</span><span class="n">get_config_file</span><span class="p">(</span><span class="s2">&quot;COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml&quot;</span><span class="p">))</span>
+</span><span id="__span-25-5"><span class="n">cfg</span><span class="o">.</span><span class="n">DATASETS</span><span class="o">.</span><span class="n">TRAIN</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;fiftyone_train&quot;</span><span class="p">,)</span>
+</span><span id="__span-25-6"><span class="n">cfg</span><span class="o">.</span><span class="n">DATASETS</span><span class="o">.</span><span class="n">TEST</span> <span class="o">=</span> <span class="p">()</span>
+</span><span id="__span-25-7"><span class="n">cfg</span><span class="o">.</span><span class="n">DATALOADER</span><span class="o">.</span><span class="n">NUM_WORKERS</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-25-8"><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">WEIGHTS</span> <span class="o">=</span> <span class="n">model_zoo</span><span class="o">.</span><span class="n">get_checkpoint_url</span><span class="p">(</span><span class="s2">&quot;COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml&quot;</span><span class="p">)</span>  <span class="c1"># Let training initialize from model zoo</span>
+</span><span id="__span-25-9"><span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">IMS_PER_BATCH</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># This is the real &quot;batch size&quot; commonly known to deep learning people</span>
+</span><span id="__span-25-10"><span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">BASE_LR</span> <span class="o">=</span> <span class="mf">0.00025</span>  <span class="c1"># pick a good LR</span>
+</span><span id="__span-25-11"><span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">300</span>    <span class="c1"># 300 iterations seems good enough for this toy dataset; you will need to train longer for a practical dataset</span>
+</span><span id="__span-25-12"><span class="n">cfg</span><span class="o">.</span><span class="n">SOLVER</span><span class="o">.</span><span class="n">STEPS</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># do not decay learning rate</span>
+</span><span id="__span-25-13"><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">BATCH_SIZE_PER_IMAGE</span> <span class="o">=</span> <span class="mi">128</span>   <span class="c1"># The &quot;RoIHead batch size&quot;. 128 is faster, and good enough for this toy dataset (default: 512)</span>
+</span><span id="__span-25-14"><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">NUM_CLASSES</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># only has one class (Vehicle registration plate). (see https://detectron2.readthedocs.io/tutorials/datasets.html#update-the-config-for-new-datasets)</span>
+</span><span id="__span-25-15"><span class="c1"># NOTE: this config means the number of classes, but a few popular unofficial tutorials incorrect uses num_classes+1 here.</span>
+</span><span id="__span-25-16">
+</span><span id="__span-25-17"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-25-18"><span class="n">trainer</span> <span class="o">=</span> <span class="n">DefaultTrainer</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</span><span id="__span-25-19"><span class="n">trainer</span><span class="o">.</span><span class="n">resume_or_load</span><span class="p">(</span><span class="n">resume</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-25-20"><span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="c1"># Look at training curves in tensorboard:</span>
+</span><span id="__span-27-2"><span class="o">%</span><span class="n">load_ext</span> <span class="n">tensorboard</span>
+</span><span id="__span-27-3"><span class="o">%</span><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span> <span class="n">output</span>
+</span></code></pre></div>
+<p><img alt="tensorboard" src="../../_images/detectron2_tensorboard.png" /></p>
+<h2 id="inference-evaluation-using-the-trained-model">Inference &amp; evaluation using the trained model <a href="#Inference-&amp;-evaluation-using-the-trained-model" title="Permalink to this headline">¶</a><a class="headerlink" href="#inference-evaluation-using-the-trained-model" title="Permanent link">&para;</a></h2>
+<p>Now, let’s run inference with the trained model on the license plate validation dataset. First, let’s create a predictor using the model we just trained:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="c1"># Inference should use the config with parameters that are used in training</span>
+</span><span id="__span-29-2"><span class="c1"># cfg now already contains everything we&#39;ve set previously. We changed it a little bit for inference:</span>
+</span><span id="__span-29-3"><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">WEIGHTS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">OUTPUT_DIR</span><span class="p">,</span> <span class="s2">&quot;model_final.pth&quot;</span><span class="p">)</span>  <span class="c1"># path to the model we just trained</span>
+</span><span id="__span-29-4"><span class="n">cfg</span><span class="o">.</span><span class="n">MODEL</span><span class="o">.</span><span class="n">ROI_HEADS</span><span class="o">.</span><span class="n">SCORE_THRESH_TEST</span> <span class="o">=</span> <span class="mf">0.7</span>   <span class="c1"># set a custom testing threshold</span>
+</span><span id="__span-29-5"><span class="n">predictor</span> <span class="o">=</span> <span class="n">DefaultPredictor</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Then, we generate predictions on each sample in the validation set, and convert the outputs from detectron2 to FiftyOne format, then add them to our FiftyOne dataset.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="k">def</span><span class="w"> </span><span class="nf">detectron_to_fo</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">):</span>
+</span><span id="__span-31-2">    <span class="c1"># format is documented at https://detectron2.readthedocs.io/tutorials/models.html#model-output-format</span>
+</span><span id="__span-31-3">    <span class="n">detections</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-31-4">    <span class="n">instances</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;instances&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+</span><span id="__span-31-5">    <span class="k">for</span> <span class="n">pred_box</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+</span><span id="__span-31-6">        <span class="n">instances</span><span class="o">.</span><span class="n">pred_boxes</span><span class="p">,</span> <span class="n">instances</span><span class="o">.</span><span class="n">scores</span><span class="p">,</span> <span class="n">instances</span><span class="o">.</span><span class="n">pred_classes</span><span class="p">,</span> <span class="n">instances</span><span class="o">.</span><span class="n">pred_masks</span><span class="p">,</span>
+</span><span id="__span-31-7">    <span class="p">):</span>
+</span><span id="__span-31-8">        <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">pred_box</span>
+</span><span id="__span-31-9">        <span class="n">fo_mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="nb">int</span><span class="p">(</span><span class="n">y1</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">y2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">x2</span><span class="p">)]</span>
+</span><span id="__span-31-10">        <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">img_w</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="n">img_h</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">img_w</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="n">img_h</span><span class="p">]</span>
+</span><span id="__span-31-11">        <span class="n">detection</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detection</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Vehicle registration plate&quot;</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">score</span><span class="p">),</span> <span class="n">bounding_box</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">fo_mask</span><span class="p">)</span>
+</span><span id="__span-31-12">        <span class="n">detections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">detection</span><span class="p">)</span>
+</span><span id="__span-31-13">
+</span><span id="__span-31-14">    <span class="k">return</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="n">val_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="s2">&quot;val&quot;</span><span class="p">)</span>
+</span><span id="__span-33-2"><span class="n">dataset_dicts</span> <span class="o">=</span> <span class="n">get_fiftyone_dicts</span><span class="p">(</span><span class="n">val_view</span><span class="p">)</span>
+</span><span id="__span-33-3"><span class="n">predictions</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-33-4"><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dataset_dicts</span><span class="p">:</span>
+</span><span id="__span-33-5">    <span class="n">img_w</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;width&quot;</span><span class="p">]</span>
+</span><span id="__span-33-6">    <span class="n">img_h</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;height&quot;</span><span class="p">]</span>
+</span><span id="__span-33-7">    <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">])</span>
+</span><span id="__span-33-8">    <span class="n">outputs</span> <span class="o">=</span> <span class="n">predictor</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span><span id="__span-33-9">    <span class="n">detections</span> <span class="o">=</span> <span class="n">detectron_to_fo</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">)</span>
+</span><span id="__span-33-10">    <span class="n">predictions</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;image_id&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">detections</span>
+</span><span id="__span-33-11">
+</span><span id="__span-33-12"><span class="n">dataset</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">key_field</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="n">Computing</span> <span class="n">image</span> <span class="n">metadata</span><span class="o">...</span>
+</span><span id="__span-34-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">57</span><span class="o">/</span><span class="mi">57</span> <span class="p">[</span><span class="mf">328.7</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">173.4</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Let’s visualize the predictions and take a look at how the model did. We can click the eye icon next to the “val” tag to view all of the validation samples that we ran inference on.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>  <span class="c1"># screenshot the App</span>
+</span></code></pre></div>
+<p>From here, we can use the built-in <a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html#detections">evaluation methods</a> provided by FiftyOne. The <code>evaluate_detections()</code> method can be used to evaluate the instance segmentations using the <code>use_masks=True</code> parameter. We can also use this to compute mAP with the options being the <a href="https://voxel51.com/docs/fiftyone/integrations/coco.html#map-protocol">COCO-style</a> (default) or <a href="https://voxel51.com/docs/fiftyone/integrations/open_images.html#map-protocol">Open\
+Images-style</a> mAP protocol.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-40-2">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-40-3">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;segmentations&quot;</span><span class="p">,</span>
+</span><span id="__span-40-4">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-40-5">    <span class="n">use_masks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-40-6">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-40-7"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-41-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">287</span><span class="o">/</span><span class="mi">287</span> <span class="p">[</span><span class="mf">1.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">237.9</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-41-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-41-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">287</span><span class="o">/</span><span class="mi">287</span> <span class="p">[</span><span class="mf">953.7</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">302.4</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>We can use this results object to view the mAP, print an evaluation report, plot PR curves, plot confusion matrices, and more.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="n">results</span><span class="o">.</span><span class="n">mAP</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="mf">0.12387340239495186</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="n">results</span><span class="o">.</span><span class="n">print_report</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1">                            <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-48-2">
+</span><span id="__span-48-3"><span class="n">Vehicle</span> <span class="n">registration</span> <span class="n">plate</span>       <span class="mf">0.72</span>      <span class="mf">0.18</span>      <span class="mf">0.29</span>       <span class="mi">292</span>
+</span><span id="__span-48-4">
+</span><span id="__span-48-5">                 <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.72</span>      <span class="mf">0.18</span>      <span class="mf">0.29</span>       <span class="mi">292</span>
+</span><span id="__span-48-6">                 <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.72</span>      <span class="mf">0.18</span>      <span class="mf">0.29</span>       <span class="mi">292</span>
+</span><span id="__span-48-7">              <span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.72</span>      <span class="mf">0.18</span>      <span class="mf">0.29</span>       <span class="mi">292</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="n">results</span><span class="o">.</span><span class="n">plot_pr_curves</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="pr-curve" src="../../_images/detectron2_pr.png" /></p>
+<p>From the PR curve we can see that the model is not generating many predictions—resulting in many false negatives—but the predictions that are generated are often fairly accurate.</p>
+<p>We can also create a view into the dataset looking at high-confidence false positive predictions to understand where the model is going wrong and how to potentially improve it in the future.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-52-2">
+</span><span id="__span-52-3"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fp&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;confidence&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>  <span class="c1"># screenshot the App</span>
+</span></code></pre></div>
+<p>There are a few samples with false positives like this one that contain plates with characters not from the Latin alphabet indicating we may want to introduce images from a wider range of countries into the training set.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

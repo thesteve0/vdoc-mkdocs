@@ -1,0 +1,1612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>FiftyOne Teams Installation ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fiftyone-teams-installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FiftyOne Teams Installation ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python SDK ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python SDK ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-with-poetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation with Poetry ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation with Poetry ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add source ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure credentials ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-fiftyone-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add fiftyone dependency ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud credentials ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud credentials ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-origin-resource-sharing-cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-origin resource sharing (CORS) ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browser-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser caching ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon S3 ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud Storage ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-azure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft Azure ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minio" class="md-nav__link">
+    <span class="md-ellipsis">
+      MinIO ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-client-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extra client arguments ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-storage-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud storage page ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/teams/installation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fiftyone-teams-installation">FiftyOne Teams Installation <a href="#fiftyone-teams-installation" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-teams-installation" title="Permanent link">&para;</a></h1>
+<p>FiftyOne Teams deployments come with a centralized FiftyOne Teams App and
+database that allows your entire team to collaborate securely on the same
+datasets. FiftyOne Teams is deployed entirely into your environment, either
+on-premises or in a private cloud. Your data never leaves your environment.</p>
+<p>FiftyOne Teams can be deployed on a wide variety of infrastructure solutions,
+including Kubernetes and Docker.</p>
+<p>Note</p>
+<p>Detailed instructions for the initial FiftyOne Teams deployment, along with
+all necessary components, are made available by your Voxel51 CS engineer
+during the onboarding process.</p>
+<h2 id="python-sdk">Python SDK <a href="#python-sdk" title="Permalink to this headline">¶</a><a class="headerlink" href="#python-sdk" title="Permanent link">&para;</a></h2>
+<p>While the <a href="teams_app.html#teams-app">FiftyOne Teams App</a> allows for countless new
+App-centric workflows, any existing Python-based workflows that you’ve fallen
+in love with in the open-source version of FiftyOne are still directly
+applicable!</p>
+<p>FiftyOne Teams requires an updated Python SDK, which is a wrapper around the
+open-source FiftyOne package that adds new functionality like support for
+cloud-backed media.</p>
+<p>You can find the installation instructions under the “Install FiftyOne” section
+of the Teams App by clicking on your user icon in the upper right corner:</p>
+<p><a href="../../_images/install_fiftyone.png"><img alt="install-teams" src="../../_images/install_fiftyone.png" /></a></p>
+<p>There you’ll see instructions for installing a <code>fiftyone</code> package from the
+private PyPI server as shown below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="p">{</span><span class="n">TOKEN</span><span class="p">}</span><span class="nd">@pypi</span><span class="o">.</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">ai</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>See <a href="#teams-installation-poetry">Installation with Poetry</a> if you use
+<code>poetry</code> instead of <code>pip</code>.</p>
+<p>Note</p>
+<p>The Teams Python package is named <code>fiftyone</code> and has the same module
+structure as <a href="../api/fiftyone.html">fiftyone</a>, so any existing scripts you
+built using open source will continue to run after you upgrade!</p>
+<h3 id="next-steps">Next Steps <a href="#next-steps" title="Permalink to this headline">¶</a><a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
+<p>After installing the Teams Python SDK in your virtual environment, you’ll need
+to configure two things:</p>
+<ul>
+<li>
+<p>Your team’s <a href="api_connection.html#teams-api-connection">API connection</a> or
+<a href="../fiftyone_concepts/config.html#configuring-mongodb-connection">MongoDB connection</a></p>
+</li>
+<li>
+<p>The <a href="#teams-cloud-credentials">cloud credentials</a> to access your
+cloud-backed media</p>
+</li>
+</ul>
+<p>That’s it! Any operations you perform will be stored in a centralized location
+and will be available to all users with access to the same datasets in the
+Teams App or their Python workflows.</p>
+<h3 id="installation-with-poetry">Installation with Poetry <a href="#installation-with-poetry" title="Permalink to this headline">¶</a><a class="headerlink" href="#installation-with-poetry" title="Permanent link">&para;</a></h3>
+<p>If you are using <a href="https://python-poetry.org/">poetry</a> to install your
+dependencies rather than <code>pip</code>, you will need to follow instructions in
+<a href="https://python-poetry.org/docs/repositories/#installing-from-private-package-sources">the docs for installing from a private repository.</a>
+The two key points are specifying the additional private source and declaring
+that the <code>fiftyone</code> module should be found there and not the default PyPI
+location.</p>
+<h4 id="add-source">Add source <a href="#add-source" title="Permalink to this headline">¶</a><a class="headerlink" href="#add-source" title="Permanent link">&para;</a></h4>
+<p>In poetry v1.5, it is recommended to use an
+<a href="https://python-poetry.org/docs/repositories/#explicit-package-sources">explicit package source.</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="n">poetry</span> <span class="n">source</span> <span class="n">add</span> <span class="o">--</span><span class="n">priority</span><span class="o">=</span><span class="n">explicit</span> <span class="n">fiftyone</span><span class="o">-</span><span class="n">teams</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span>
+</span></code></pre></div>
+<p>Prior to v1.5, you should use the deprecated
+<a href="https://python-poetry.org/docs/1.4/repositories/#secondary-package-sources">secondary package source.</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="n">poetry</span> <span class="n">source</span> <span class="n">add</span> <span class="o">--</span><span class="n">secondary</span> <span class="n">fiftyone</span><span class="o">-</span><span class="n">teams</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span>
+</span></code></pre></div>
+<h4 id="configure-credentials">Configure credentials <a href="#configure-credentials" title="Permalink to this headline">¶</a><a class="headerlink" href="#configure-credentials" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="n">poetry</span> <span class="n">config</span> <span class="n">http</span><span class="o">-</span><span class="n">basic</span><span class="o">.</span><span class="n">fiftyone</span><span class="o">-</span><span class="n">teams</span> <span class="err">$</span><span class="p">{</span><span class="n">TOKEN</span><span class="p">}</span> <span class="s2">&quot;&quot;</span>
+</span></code></pre></div>
+<p>Alternatively, you can specify the credentials in environment variables.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="n">export</span> <span class="n">POETRY_HTTP_BASIC_FIFTYONE_TEAMS_USERNAME</span><span class="o">=</span><span class="s2">&quot;$</span><span class="si">{TOKEN}</span><span class="s2">&quot;</span>
+</span><span id="__span-4-2"><span class="n">export</span> <span class="n">POETRY_HTTP_BASIC_FIFTYONE_TEAMS_PASSWORD</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+</span></code></pre></div>
+<p>If you have trouble configuring the credentials, see
+<a href="https://python-poetry.org/docs/repositories/#configuring-credentials">more in the poetry docs here.</a></p>
+<h4 id="add-fiftyone-dependency">Add fiftyone dependency <a href="#add-fiftyone-dependency" title="Permalink to this headline">¶</a><a class="headerlink" href="#add-fiftyone-dependency" title="Permanent link">&para;</a></h4>
+<p>Replace <code>X.Y.Z</code> with the proper version</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">poetry</span> <span class="n">add</span> <span class="o">--</span><span class="n">source</span> <span class="n">fiftyone</span><span class="o">-</span><span class="n">teams</span> <span class="n">fiftyone</span><span class="o">==</span><span class="n">X</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Due to an <a href="https://github.com/python-poetry/poetry/issues/4046">unresolved misalignment</a>
+with <code>poetry</code> and a FiftyOne dependency, <code>kaleido</code>, you must add it
+to your own dependencies as well:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="n">poetry</span> <span class="n">add</span> <span class="n">kaleido</span><span class="o">==</span><span class="mf">0.2.1</span>
+</span></code></pre></div>
+<p>You should then see snippets in the <code>pyproject.toml</code> file like the following
+(the <code>priority</code> line will be different for <code>poetry&lt;v1.5</code>):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="p">[[</span><span class="n">tool</span><span class="o">.</span><span class="n">poetry</span><span class="o">.</span><span class="n">source</span><span class="p">]]</span>
+</span><span id="__span-7-2"><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fiftyone-teams&quot;</span>
+</span><span id="__span-7-3"><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://pypi.fiftyone.ai&quot;</span>
+</span><span id="__span-7-4"><span class="n">priority</span> <span class="o">=</span> <span class="s2">&quot;explicit&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">poetry</span><span class="o">.</span><span class="n">dependencies</span><span class="p">]</span>
+</span><span id="__span-8-2"><span class="n">fiftyone</span> <span class="o">=</span> <span class="p">{</span><span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;X.Y.Z&quot;</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;fiftyone-teams}</span>
+</span></code></pre></div>
+<h2 id="cloud-credentials">Cloud credentials <a href="#cloud-credentials" title="Permalink to this headline">¶</a><a class="headerlink" href="#cloud-credentials" title="Permanent link">&para;</a></h2>
+<p>In order to utilize cloud-backed media functionality of FiftyOne Teams, at
+least one cloud source must be configured with proper credentials. Below are
+instructions for configuring each supported cloud provider for local SDK use
+or directly to the Teams containers. An admin can also <a href="#teams-cloud-storage-page">configure\
+credentials for use by all app users</a>.</p>
+<h3 id="cross-origin-resource-sharing-cors">Cross-origin resource sharing (CORS) <a href="#cross-origin-resource-sharing-cors" title="Permalink to this headline">¶</a><a class="headerlink" href="#cross-origin-resource-sharing-cors" title="Permanent link">&para;</a></h3>
+<p>If your datasets include cloud-backed
+<a href="../fiftyone_concepts/using_datasets.html#point-cloud-datasets">point clouds</a> or
+<a href="../fiftyone_concepts/using_datasets.html#semantic-segmentation">segmentation maps</a>, you may need to configure
+cross-origin resource sharing (CORS) for your cloud buckets. Details are
+provided below for each cloud platform.</p>
+<h3 id="browser-caching">Browser caching <a href="#browser-caching" title="Permalink to this headline">¶</a><a class="headerlink" href="#browser-caching" title="Permanent link">&para;</a></h3>
+<p>If your datasets include cloud-backed media, we strongly recommend configuring your data
+sources to allow for built in browser caching. This will cache signed URL responses
+so you don’t need to reload assets from your cloud storage between sessions.
+Details are provided below for each cloud platform.</p>
+<h3 id="amazon-s3">Amazon S3 <a href="#amazon-s3" title="Permalink to this headline">¶</a><a class="headerlink" href="#amazon-s3" title="Permanent link">&para;</a></h3>
+<p>To work with FiftyOne datasets whose media are stored in Amazon S3, you simply
+need to provide
+<a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#using-a-configuration-file">AWS credentials</a>
+to your Teams client with read access to the relevant objects and buckets.</p>
+<p>You can do this in any of the following ways:</p>
+<p>1. Configure/provide AWS credentials in any format supported by the
+<a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials">boto3 library</a>.
+For example, here are two of the supported methods:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="c1"># Access key</span>
+</span><span id="__span-9-2"><span class="n">export</span> <span class="n">AWS_ACCESS_KEY_ID</span><span class="o">=...</span>
+</span><span id="__span-9-3"><span class="n">export</span> <span class="n">AWS_SECRET_ACCESS_KEY</span><span class="o">=...</span>
+</span><span id="__span-9-4"><span class="n">export</span> <span class="n">AWS_SESSION_TOKEN</span><span class="o">=...</span> <span class="c1"># if applicable</span>
+</span><span id="__span-9-5"><span class="n">export</span> <span class="n">AWS_DEFAULT_REGION</span><span class="o">=...</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="c1"># Web identity provider</span>
+</span><span id="__span-10-2"><span class="n">export</span> <span class="n">AWS_ROLE_ARN</span><span class="o">=...</span>
+</span><span id="__span-10-3"><span class="n">export</span> <span class="n">AWS_WEB_IDENTITY_TOKEN_FILE</span><span class="o">=...</span>
+</span><span id="__span-10-4"><span class="n">export</span> <span class="n">AWS_ROLE_SESSION_NAME</span><span class="o">...</span> <span class="c1">#if applicable</span>
+</span><span id="__span-10-5"><span class="n">export</span> <span class="n">AWS_DEFAULT_REGION</span><span class="o">=...</span>
+</span></code></pre></div>
+<p>2. Provide AWS credentials on a per-session basis by setting one of the
+following sets of environment variables to point to your AWS credentials on
+disk:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="c1"># AWS config file</span>
+</span><span id="__span-11-2"><span class="n">export</span> <span class="n">AWS_CONFIG_FILE</span><span class="o">=</span><span class="s2">&quot;/path/to/aws-config.ini&quot;</span>
+</span><span id="__span-11-3"><span class="n">export</span> <span class="n">AWS_PROFILE</span><span class="o">=</span><span class="n">default</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="c1"># Shared credentials file</span>
+</span><span id="__span-12-2"><span class="n">export</span> <span class="n">AWS_SHARED_CREDENTIALS_FILE</span><span class="o">=</span><span class="s2">&quot;/path/to/aws-credentials.ini&quot;</span>
+</span><span id="__span-12-3"><span class="n">export</span> <span class="n">AWS_PROFILE</span><span class="o">=</span><span class="n">default</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<p>In the above, the config file should use
+<a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#using-a-configuration-file">this syntax</a>
+and the shared credentials file should use
+<a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#shared-credentials-file">this syntax</a>.</p>
+<p>Note</p>
+<p>FiftyOne Teams requires either the <code>s3:ListBucket</code> or
+<code>s3:GetBucketLocation</code> permission in order to access objects in S3 buckets.</p>
+<p>If you wish to use multi-account credentials, your credentials must have
+the <code>s3:ListBucket</code> permission, as <code>s3:GetBucketLocation</code> does not support
+this.</p>
+<p>3. Permanently register AWS credentials on a particular machine by adding the
+following keys to your <a href="cloud_media.html#teams-media-cache-config">media cache config</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="p">{</span>
+</span><span id="__span-13-2">    <span class="s2">&quot;aws_config_file&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/aws-config.ini&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3">    <span class="s2">&quot;aws_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span>  <span class="c1"># optional</span>
+</span><span id="__span-13-4"><span class="p">}</span>
+</span></code></pre></div>
+<p>If you need to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html">configure CORS on your AWS buckets</a>,
+here is an example configuration:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">[</span>\
+</span><span id="__span-14-2">    <span class="p">{</span>\
+</span><span id="__span-14-3">        <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;https://fiftyone-teams-deployment.yourcompany.com&quot;</span><span class="p">],</span>\
+</span><span id="__span-14-4">        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">],</span>\
+</span><span id="__span-14-5">        <span class="s2">&quot;responseHeader&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>\
+</span><span id="__span-14-6">        <span class="s2">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">86400</span>\
+</span><span id="__span-14-7">    <span class="p">}</span>\
+</span><span id="__span-14-8"><span class="p">]</span>
+</span></code></pre></div>
+<p>If you would like to take advantage of browser caching you can
+<a href="https://docs.aws.amazon.com/whitepapers/latest/build-static-websites-aws/controlling-how-long-amazon-s3-content-is-cached-by-amazon-cloudfront.html#specify-cache-control-headers">specify cache-control headers on S3 objects</a>.
+By default S3 does not provide cache-control headers so it will be up to your browser’s
+heuristics engine to determine how long to cache the object.</p>
+<h3 id="google-cloud-storage">Google Cloud Storage <a href="#google-cloud-storage" title="Permalink to this headline">¶</a><a class="headerlink" href="#google-cloud-storage" title="Permanent link">&para;</a></h3>
+<p>To work with FiftyOne datasets whose media are stored in Google Cloud Storage,
+you simply need to provide <a href="https://cloud.google.com/docs/authentication">credentials</a>
+to your Teams client with read access to the relevant objects and buckets.</p>
+<p>You can do this in any of the following ways:</p>
+<p>1. Configure
+<a href="https://cloud.google.com/docs/authentication/application-default-credentials">application default credentials</a>
+in a manner supported by Google Cloud, such as:</p>
+<ul>
+<li>
+<p><a href="https://cloud.google.com/docs/authentication/application-default-credentials#personal">Using the gcloud CLI</a></p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/docs/authentication/application-default-credentials#attached-sa">Attaching a service account to your Google Cloud resource</a></p>
+</li>
+</ul>
+<p>2. Provide GCS credentials on a per-session basis by setting the following
+environment variables to point to your GCS credentials on disk:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">export</span> <span class="n">GOOGLE_APPLICATION_CREDENTIALS</span><span class="o">=</span><span class="s2">&quot;/path/to/gcp-credentials.json&quot;</span>
+</span></code></pre></div>
+<p>3. Permanently register GCS credentials on a particular machine by adding the
+following keys to your <a href="cloud_media.html#teams-media-cache-config">media cache config</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="p">{</span>
+</span><span id="__span-16-2">    <span class="s2">&quot;google_application_credentials&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/gcp-credentials.json&quot;</span>
+</span><span id="__span-16-3"><span class="p">}</span>
+</span></code></pre></div>
+<p>In the above, the credentials file can contain any format supported by
+<a href="https://google-auth.readthedocs.io/en/master/reference/google.auth.html#google.auth.load_credentials_from_file">google.auth.load_credentials_from_file()</a>,
+which includes a service account key, stored authorized user credentials, or
+external account credentials.</p>
+<p>If you need to <a href="https://cloud.google.com/storage/docs/using-cors">configure CORS on your GCP buckets</a>,
+here is an example configuration:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span>\
+</span><span id="__span-17-2">    <span class="p">{</span>\
+</span><span id="__span-17-3">        <span class="s2">&quot;origin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;https://fiftyone-teams-deployment.yourcompany.com&quot;</span><span class="p">],</span>\
+</span><span id="__span-17-4">        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">],</span>\
+</span><span id="__span-17-5">        <span class="s2">&quot;responseHeader&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">],</span>\
+</span><span id="__span-17-6">        <span class="s2">&quot;maxAgeSeconds&quot;</span><span class="p">:</span> <span class="mi">3600</span>\
+</span><span id="__span-17-7">    <span class="p">}</span>\
+</span><span id="__span-17-8"><span class="p">]</span>
+</span></code></pre></div>
+<p>If you would like to take advantage of browser caching you can
+<a href="https://cloud.google.com/storage/docs/metadata#cache-control">specify cache-control headers on GCP content</a>.
+By default GCP sets the max-age=0 seconds meaning no caching will occur.</p>
+<h3 id="microsoft-azure">Microsoft Azure <a href="#microsoft-azure" title="Permalink to this headline">¶</a><a class="headerlink" href="#microsoft-azure" title="Permanent link">&para;</a></h3>
+<p>To work with FiftyOne datasets whose media are stored in Azure Storage, you
+simply need to provide
+<a href="https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-data-operations-cli">Azure credentials</a>
+to your Teams client with read access to the relevant objects and containers.</p>
+<p>You can do this in any of the following ways:</p>
+<p>1. Provide your Azure credentials in any manner recognized by
+<a href="https://learn.microsoft.com/en-us/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python">azure.identity.DefaultAzureCredential</a></p>
+<p>2. Provide your Azure credentials on a per-session basis by setting any group
+of environment variables shown below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="c1"># Option 1</span>
+</span><span id="__span-18-2"><span class="n">export</span> <span class="n">AZURE_STORAGE_CONNECTION_STRING</span><span class="o">=...</span>
+</span><span id="__span-18-3"><span class="n">export</span> <span class="n">AZURE_ALIAS</span><span class="o">=...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="c1"># Option 2</span>
+</span><span id="__span-19-2"><span class="n">export</span> <span class="n">AZURE_STORAGE_ACCOUNT</span><span class="o">=...</span>
+</span><span id="__span-19-3"><span class="n">export</span> <span class="n">AZURE_STORAGE_KEY</span><span class="o">=...</span>
+</span><span id="__span-19-4"><span class="n">export</span> <span class="n">AZURE_ALIAS</span><span class="o">=...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="c1"># Option 3</span>
+</span><span id="__span-20-2"><span class="n">export</span> <span class="n">AZURE_STORAGE_ACCOUNT</span><span class="o">=...</span>
+</span><span id="__span-20-3"><span class="n">export</span> <span class="n">AZURE_CLIENT_ID</span><span class="o">=...</span>
+</span><span id="__span-20-4"><span class="n">export</span> <span class="n">AZURE_CLIENT_SECRET</span><span class="o">=...</span>
+</span><span id="__span-20-5"><span class="n">export</span> <span class="n">AZURE_TENANT_ID</span><span class="o">=...</span>
+</span><span id="__span-20-6"><span class="n">export</span> <span class="n">AZURE_ALIAS</span><span class="o">=...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<p>3. Provide Azure credentials on a per-session basis by setting the following
+environment variables to point to your Azure credentials on disk:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="n">export</span> <span class="n">AZURE_CREDENTIALS_FILE</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">azure</span><span class="o">-</span><span class="n">credentials</span><span class="o">.</span><span class="n">ini</span>
+</span><span id="__span-21-2"><span class="n">export</span> <span class="n">AZURE_PROFILE</span><span class="o">=</span><span class="n">default</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<p>4. Permanently register Azure credentials on a particular machine by adding the
+following keys to your <a href="cloud_media.html#teams-media-cache-config">media cache config</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">{</span>
+</span><span id="__span-22-2">    <span class="s2">&quot;azure_credentials_file&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/azure-credentials.ini&quot;</span><span class="p">,</span>
+</span><span id="__span-22-3">    <span class="s2">&quot;azure_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span>  <span class="c1"># optional</span>
+</span><span id="__span-22-4"><span class="p">}</span>
+</span></code></pre></div>
+<p>In the options above, the <code>.ini</code> file should have syntax similar to one of
+the following:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+</span><span id="__span-23-2"><span class="n">conn_str</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-23-3"><span class="n">alias</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+</span><span id="__span-24-2"><span class="n">account_name</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-24-3"><span class="n">account_key</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-24-4"><span class="n">alias</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+</span><span id="__span-25-2"><span class="n">account_name</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-25-3"><span class="n">client_id</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-25-4"><span class="n">secret</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-25-5"><span class="n">tenant</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-25-6"><span class="n">alias</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<p>When populating samples with Azure Storage filepaths, you can either specify
+paths by their full URL:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;https://$</span><span class="si">{account_name}</span><span class="s2">.blob.core.windows.net/container/path/to/object.ext&quot;</span>
+</span><span id="__span-26-2">
+</span><span id="__span-26-3"><span class="c1"># For example</span>
+</span><span id="__span-26-4"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;https://voxel51.blob.core.windows.net/test-container/image.jpg&quot;</span>
+</span></code></pre></div>
+<p>or, if you have defined an alias in your config, you may instead prefix the
+alias:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;$</span><span class="si">{alias}</span><span class="s2">://container/path/to/object.ext&quot;</span>
+</span><span id="__span-27-2">
+</span><span id="__span-27-3"><span class="c1"># For example</span>
+</span><span id="__span-27-4"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;az://test-container/image.jpg&quot;</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>If you use a
+<a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name?tabs=azure-portal">custom Azure domain</a>,
+you can provide it by setting the
+<code>AZURE_STORAGE_ACCOUNT_URL</code> environment variable or by including the
+<code>account_url</code> key in your credentials <code>.ini</code> file.</p>
+<p>If you would like to take advantage of browser caching you can
+<a href="https://learn.microsoft.com/en-us/azure/cdn/cdn-manage-expiration-of-blob-content#setting-cache-control-headers-by-using-azure-powershell">specify cache-control headers on Azure blobs</a>.
+By default Azure does not provide cache-control headers so it will be up to your browser’s
+heuristics engine to determine how long to cache the object.</p>
+<h3 id="minio">MinIO <a href="#minio" title="Permalink to this headline">¶</a><a class="headerlink" href="#minio" title="Permanent link">&para;</a></h3>
+<p>To work with FiftyOne datasets whose media are stored in
+<a href="https://min.io/">MinIO</a>, you simply need to provide the credentials to your
+Teams client with read access to the relevant objects and buckets.</p>
+<p>You can do this in any of the following ways:</p>
+<p>1. Provide your MinIO credentials on a per-session basis by setting the
+individual environment variables shown below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="n">export</span> <span class="n">MINIO_ACCESS_KEY</span><span class="o">=...</span>
+</span><span id="__span-28-2"><span class="n">export</span> <span class="n">MINIO_SECRET_ACCESS_KEY</span><span class="o">=...</span>
+</span><span id="__span-28-3"><span class="n">export</span> <span class="n">MINIO_ENDPOINT_URL</span><span class="o">=...</span>
+</span><span id="__span-28-4"><span class="n">export</span> <span class="n">MINIO_ALIAS</span><span class="o">=...</span>  <span class="c1"># optional</span>
+</span><span id="__span-28-5"><span class="n">export</span> <span class="n">MINIO_REGION</span><span class="o">=...</span>  <span class="c1"># if applicable</span>
+</span></code></pre></div>
+<p>2. Provide MinIO credentials on a per-session basis by setting the following
+environment variables to point to your MinIO credentials on disk:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">export</span> <span class="n">MINIO_CONFIG_FILE</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">minio</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">ini</span>
+</span><span id="__span-29-2"><span class="n">export</span> <span class="n">MINIO_PROFILE</span><span class="o">=</span><span class="n">default</span>  <span class="c1"># optional</span>
+</span></code></pre></div>
+<p>3. Permanently register MinIO credentials on a particular machine by adding the
+following keys to your <a href="cloud_media.html#teams-media-cache-config">media cache config</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">{</span>
+</span><span id="__span-30-2">    <span class="s2">&quot;minio_config_file&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/minio-config.ini&quot;</span><span class="p">,</span>
+</span><span id="__span-30-3">    <span class="s2">&quot;minio_profile&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span>  <span class="c1"># optional</span>
+</span><span id="__span-30-4"><span class="p">}</span>
+</span></code></pre></div>
+<p>In the options above, the <code>.ini</code> file should have syntax similar the following:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="p">[</span><span class="n">default</span><span class="p">]</span>
+</span><span id="__span-31-2"><span class="n">access_key</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-31-3"><span class="n">secret_access_key</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-31-4"><span class="n">endpoint_url</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-31-5"><span class="n">alias</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># optional</span>
+</span><span id="__span-31-6"><span class="n">region</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># if applicable</span>
+</span></code></pre></div>
+<p>When populating samples with MinIO filepaths, you can either specify paths by
+prefixing your MinIO endpoint URL:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;$</span><span class="si">{endpoint_url}</span><span class="s2">/bucket/path/to/object.ext&quot;</span>
+</span><span id="__span-32-2">
+</span><span id="__span-32-3"><span class="c1"># For example</span>
+</span><span id="__span-32-4"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;https://voxel51.min.io/test-bucket/image.jpg&quot;</span>
+</span></code></pre></div>
+<p>or, if you have defined an alias in your config, you may instead prefix the
+alias:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;$</span><span class="si">{alias}</span><span class="s2">://bucket/path/to/object.ext&quot;</span>
+</span><span id="__span-33-2">
+</span><span id="__span-33-3"><span class="c1"># For example</span>
+</span><span id="__span-33-4"><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;minio://test-bucket/image.jpg&quot;</span>
+</span></code></pre></div>
+<p>If you would like to take advantage of browser caching you can
+<a href="https://min.io/docs/minio/linux/developers/python/API.html">specify cache-control headers on MinIO content using the metadata field of the put_object API</a>.
+By default Minio does not provide cache-control headers so it will be up to your browser’s
+heuristics engine to determine how long to cache the object.</p>
+<h3 id="extra-client-arguments">Extra client arguments <a href="#extra-client-arguments" title="Permalink to this headline">¶</a><a class="headerlink" href="#extra-client-arguments" title="Permanent link">&para;</a></h3>
+<p>Configuring credentials following the instructions above is almost always
+sufficient for FiftyOne Teams to properly utilize them. In rare cases where the
+cloud provider client needs non-default configuration, you can add extra client
+kwargs via the <a href="cloud_media.html#teams-media-cache-config">media cache config</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">{</span>
+</span><span id="__span-34-2">    <span class="s2">&quot;extra_client_kwargs&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-34-3">        <span class="s2">&quot;azure&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;extra_kwarg&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">},</span>
+</span><span id="__span-34-4">        <span class="s2">&quot;gcs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;extra_kwarg&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">},</span>
+</span><span id="__span-34-5">        <span class="s2">&quot;minio&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;extra_kwarg&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">},</span>
+</span><span id="__span-34-6">        <span class="s2">&quot;s3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;extra_kwarg&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}</span>
+</span><span id="__span-34-7">    <span class="p">}</span>
+</span><span id="__span-34-8"><span class="p">}</span>
+</span></code></pre></div>
+<p>Provider names and the class that extra kwargs are passed to:</p>
+<ul>
+<li><strong>azure</strong>: <code>azure.identity.DefaultAzureCredential</code></li>
+<li><strong>gcs</strong>: <code>google.cloud.storage.Client</code></li>
+<li><strong>minio</strong>: <code>botocore.config.Config</code></li>
+<li><strong>s3</strong>: <code>botocore.config.Config</code></li>
+</ul>
+<h2 id="cloud-storage-page">Cloud storage page <a href="#cloud-storage-page" title="Permalink to this headline">¶</a><a class="headerlink" href="#cloud-storage-page" title="Permanent link">&para;</a></h2>
+<p>Admins can also configure cloud credentials via the Settings &gt; Cloud storage
+page.</p>
+<p>Credentials configured via this page are stored (encrypted) in the Teams
+database, rather than needing to be configured through environment variables in
+your Teams deployment.</p>
+<p>Note</p>
+<p>Any credentials configured via environment variables in your deployment
+will not be displayed in this page.</p>
+<p>To upload a new credential, click the <code>Add credential</code> button:</p>
+<p><img alt="cloud-creds-add-credentials-button" src="../../_images/cloud_creds_add_btn.png" /></p>
+<p>This will open a modal that you can use to add a credential for any of the
+available providers:</p>
+<p><img alt="blank-cloud-creds-modal" src="../../_images/cloud_creds_modal_blank.png" /></p>
+<p>After the appropriate files or fields are populated, click <code>Save credential</code>
+to store the (encrypted) credential.</p>
+<p>As depicted in the screenshot above, a credential can optionally be restricted
+to a specific list of bucket(s):</p>
+<ul>
+<li>
+<p>If one or more buckets are provided, the credentials are
+<strong>bucket-specific credentials</strong> that will only be used to read/write media
+within the specified bucket(s)</p>
+</li>
+<li>
+<p>If no buckets are provided, the credentials are <strong>default credentials</strong>
+that will be used whenever trying to read/write any media for the provider
+that does not belong to a bucket with bucket-specific credentials</p>
+</li>
+</ul>
+<p>Note</p>
+<p>Bucket-specific credentials are useful in situations where you cannot or
+do not wish to provide a single set of credentials to cover all buckets
+that your team plans to use within a given cloud storage provider.</p>
+<p>When providing bucket-specific credentials, you may either provide bucket
+names like <code>my-bucket</code>, or you can provide fully-qualified buckets like
+<code>s3://my-bucket</code> and
+<code>https://voxel51.blob.core.windows.net/my-container</code>.</p>
+<p>Alternatively, credentials can be updated programmatically with the
+<code>add_cloud_credentials()</code>
+method in the Management SDK.</p>
+<p>Any cloud credentials uploaded via this method will automatically be used by
+the Teams UI when any user attempts to load media associated with the
+appropriate provider or specific bucket.</p>
+<p>Note</p>
+<p>By default, Teams servers refresh their credentials every 120 seconds, so
+you may need to wait up to two minutes after modifying your credentials via
+this page in order for the changes to take effect.</p>
+<p>Note</p>
+<p>Users cannot access stored credentials directly, either via the Teams UI or
+by using the Teams SDK locally. The credentials are only decrypted and
+used internally by the Teams servers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Cloud-Backed Media ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloud-backed-media" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud-Backed Media ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-media-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud media caching ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media-cache-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Media cache config ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-cloud-backed-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with cloud-backed datasets ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API reference ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API reference ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset methods ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyonecorestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      fiftyone.core.storage ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-cloud-backed-datasets-with-cvat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotating cloud-backed datasets with CVAT ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-cloud-backed-datasets-with-v7-darwin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotating cloud-backed datasets with V7 Darwin ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-cloud-backed-datasets-with-labelbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotating cloud-backed datasets with Labelbox ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-lambda-and-google-cloud-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Lambda and Google Cloud Functions ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/teams/cloud_media.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="cloud-backed-media">Cloud-Backed Media <a href="#cloud-backed-media" title="Permalink to this headline">¶</a><a class="headerlink" href="#cloud-backed-media" title="Permanent link">&para;</a></h1>
+<p>FiftyOne Teams datasets may contain samples whose filepath refers to cloud
+object storage paths and/or publicly available URLs.</p>
+<p>Note</p>
+<p><a href="installation.html#teams-cloud-credentials">Click here</a> to see how to configure FiftyOne
+Teams to load your cloud credentials!</p>
+<h2 id="cloud-media-caching">Cloud media caching <a href="#cloud-media-caching" title="Permalink to this headline">¶</a><a class="headerlink" href="#cloud-media-caching" title="Permanent link">&para;</a></h2>
+<p>When you work with cloud-backed datasets using the
+<a href="installation.html#teams-python-sdk">Teams SDK</a>, media files will automatically be
+downloaded and cached on the machine you’re working from when you execute
+workflows such as model inference or Brain methods that require access to the
+pixels of the media files. This design minimizes bandwidth usage and can
+significantly improve performance in workflows where you access the same media
+file repeatedly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-0-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-0-3">
+</span><span id="__span-0-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;a-teams-dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5">
+</span><span id="__span-0-6"><span class="c1"># Automatically downloads cloud media to your local cache for processing</span>
+</span><span id="__span-0-7"><span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;img_viz&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>When launching the App locally using the Teams SDK, media will be served from
+your local cache whenever possible; otherwise it will be automatically
+retrieved from the cloud:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;a-teams-dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-1-4">
+</span><span id="__span-1-5"><span class="c1"># Any media you view will be automatically retrieved from the cloud</span>
+</span><span id="__span-1-6"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>By default, viewing media in the App will not add it to your local media cache,
+but, if desired, you can enable caching of images via the <code>cache_app_images</code>
+parameter of your <a href="#teams-media-cache-config">media cache config</a>. Viewing
+video datasets in the App will never cause previously uncached videos to be
+cached locally.</p>
+<p>Note</p>
+<p>We recommend that you populate the metadata on your datasets at creation
+time:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="n">dataset</span><span class="o">.</span><span class="n">compute_metadata</span><span class="p">()</span>
+</span></code></pre></div>
+<p>so that the dimensions of all media stored in the cloud are readily
+available when viewing datasets in the App. Otherwise, the App must pull
+this metadata each time you view a sample.</p>
+<h2 id="media-cache-config">Media cache config <a href="#media-cache-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#media-cache-config" title="Permanent link">&para;</a></h2>
+<p>By default, your local media cache is located at <code>~/fiftyone/__cache__</code>, has
+a size of 32GB, will download media in batches of 128MB when using
+<code>download_context()</code>, and will use a thread pool whose size equals the number
+of virtual CPU cores on your machine to download media files.</p>
+<p>When the cache is full, local files are automatically deleted in reverse order
+of when they were last accessed (i.e., oldest deleted first).</p>
+<p>You can configure the behavior of FiftyOne Team’s media cache in any of the
+following ways.</p>
+<p>1. Configure your media cache on a per-session basis by setting any of the
+following environment variables (default values shown):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_DIR</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">media</span><span class="o">-</span><span class="n">cache</span>
+</span><span id="__span-3-2"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_SIZE_BYTES</span><span class="o">=</span><span class="mi">34359738368</span>  <span class="c1"># 32GB</span>
+</span><span id="__span-3-3"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_DOWNLOAD_SIZE_BYTES</span><span class="o">=</span><span class="mi">134217728</span>  <span class="c1"># 128MB</span>
+</span><span id="__span-3-4"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_NUM_WORKERS</span><span class="o">=</span><span class="mi">16</span>
+</span><span id="__span-3-5"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_APP_IMAGES</span><span class="o">=</span><span class="n">false</span>
+</span></code></pre></div>
+<p>2. Create a media cache config file at <code>~/.fiftyone/media_cache_config.json</code>
+that contains any of the following keys (default values shown):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">{</span>
+</span><span id="__span-4-2">    <span class="s2">&quot;cache_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/for/media-cache&quot;</span><span class="p">,</span>
+</span><span id="__span-4-3">    <span class="s2">&quot;cache_size_bytes&quot;</span><span class="p">:</span> <span class="mi">34359738368</span><span class="p">,</span>
+</span><span id="__span-4-4">    <span class="s2">&quot;download_size_bytes&quot;</span><span class="p">:</span> <span class="mi">134217728</span><span class="p">,</span>
+</span><span id="__span-4-5">    <span class="s2">&quot;num_workers&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+</span><span id="__span-4-6">    <span class="s2">&quot;cache_app_images&quot;</span><span class="p">:</span> <span class="n">false</span>
+</span><span id="__span-4-7"><span class="p">}</span>
+</span></code></pre></div>
+<p>You can change the location of this file by setting the
+<code>FIFTYONE_MEDIA_CACHE_CONFIG_PATH</code> environment variable.</p>
+<p>If you combine multiple options above, environment variables will take
+precedence over JSON config settings.</p>
+<h2 id="working-with-cloud-backed-datasets">Working with cloud-backed datasets <a href="#working-with-cloud-backed-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#working-with-cloud-backed-datasets" title="Permanent link">&para;</a></h2>
+<p>When writing Python code using the Teams client that may involve cloud-backed
+datasets, use <code>sample.local_path</code> instead of <code>sample.filepath</code> to retrieve
+the location of the locally cached version of a media file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-5-2">
+</span><span id="__span-5-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;a-teams-dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-5-4"><span class="n">sample</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</span><span id="__span-5-5">
+</span><span id="__span-5-6"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">filepath</span><span class="p">)</span>
+</span><span id="__span-5-7"><span class="c1"># ex: s3://voxel51-test/images/000001.jpg</span>
+</span><span id="__span-5-8">
+</span><span id="__span-5-9"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">local_path</span><span class="p">)</span>
+</span><span id="__span-5-10"><span class="c1"># ex: ~/fiftyone/__cache__/media/s3/voxel51-test/images/000001.jpg</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>If <code>sample.filepath</code> itself is a local path, then <code>sample.local_path</code>
+will simply return that path. In other words, it is safe to write all Teams
+Python code as if the dataset contains cloud-backed media.</p>
+<p>Note</p>
+<p>If you access <code>sample.local_path</code> and the corresponding media file is not
+cached locally, it will immediately be downloaded.</p>
+<p>You can use <code>download_media()</code> to efficiently download and cache the source
+media files for an entire dataset or view using the cache’s full thread pool to
+maximize throughput:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-6-2">
+</span><span id="__span-6-3"><span class="c1"># Download media for a view</span>
+</span><span id="__span-6-4"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">shuffle</span><span class="p">()</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-6-5"><span class="n">view</span><span class="o">.</span><span class="n">download_media</span><span class="p">()</span>
+</span><span id="__span-6-6">
+</span><span id="__span-6-7"><span class="c1"># Download all media in the dataset</span>
+</span><span id="__span-6-8"><span class="n">dataset</span><span class="o">.</span><span class="n">download_media</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>By default, <code>download_media()</code> will automatically skip any already cached
+media.</p>
+<p>You can also use <code>download_context()</code> to download smaller batches of media
+when iterating over samples in a collection:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-7-2">
+</span><span id="__span-7-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;a-teams-dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-7-4">
+</span><span id="__span-7-5"><span class="c1"># Download media using the default batching strategy</span>
+</span><span id="__span-7-6"><span class="k">with</span> <span class="n">dataset</span><span class="o">.</span><span class="n">download_context</span><span class="p">():</span>
+</span><span id="__span-7-7">    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+</span><span id="__span-7-8">        <span class="n">sample</span><span class="o">.</span><span class="n">local_path</span>  <span class="c1"># already downloaded</span>
+</span><span id="__span-7-9">
+</span><span id="__span-7-10"><span class="c1"># Download media in batches of 50MB</span>
+</span><span id="__span-7-11"><span class="k">with</span> <span class="n">dataset</span><span class="o">.</span><span class="n">download_context</span><span class="p">(</span><span class="n">target_size_bytes</span><span class="o">=</span><span class="mi">50</span> <span class="o">*</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="p">):</span>
+</span><span id="__span-7-12">    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+</span><span id="__span-7-13">        <span class="n">sample</span><span class="o">.</span><span class="n">local_path</span>  <span class="c1"># already downloaded</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>You can configure the default size of each download batch via the
+<code>download_size_bytes</code> parameter of your
+<a href="#teams-media-cache-config">media cache config</a>.</p>
+<p>Download contexts provide a middle ground between the two extremes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="c1"># Download all media in advance</span>
+</span><span id="__span-8-2"><span class="n">dataset</span><span class="o">.</span><span class="n">download_media</span><span class="p">()</span>
+</span><span id="__span-8-3"><span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+</span><span id="__span-8-4">    <span class="n">sample</span><span class="o">.</span><span class="n">local_path</span>  <span class="c1"># already downloaded</span>
+</span><span id="__span-8-5">
+</span><span id="__span-8-6"><span class="c1"># Download individual images just in time</span>
+</span><span id="__span-8-7"><span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+</span><span id="__span-8-8">    <span class="n">sample</span><span class="o">.</span><span class="n">local_path</span>   <span class="c1"># downloads media now</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Download contexts are useful if your cache is not large enough to store all
+the media in the dataset you’re working with simultaneously.</p>
+<p>You can also use <code>get_local_paths()</code> to retrieve the list of local paths
+for each sample in a potentially cloud-backed dataset or view:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="c1"># These methods support full datasets or views into them</span>
+</span><span id="__span-9-2"><span class="n">sample_collection</span> <span class="o">=</span> <span class="n">dataset</span>
+</span><span id="__span-9-3"><span class="c1"># sample_collection = dataset.limit(10)</span>
+</span><span id="__span-9-4">
+</span><span id="__span-9-5"><span class="c1"># Retrieve the local paths for all media in a collection</span>
+</span><span id="__span-9-6"><span class="n">local_paths</span> <span class="o">=</span> <span class="n">sample_collection</span><span class="o">.</span><span class="n">get_local_paths</span><span class="p">()</span>
+</span><span id="__span-9-7">
+</span><span id="__span-9-8"><span class="nb">print</span><span class="p">(</span><span class="n">local_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-9-9"><span class="c1"># ex: ~/fiftyone/__cache__/media/s3/voxel51-test/images/000001.jpg</span>
+</span><span id="__span-9-10">
+</span><span id="__span-9-11"><span class="c1"># Retrieve the possibly-cloud paths for all media in a collection</span>
+</span><span id="__span-9-12"><span class="n">cloud_paths</span> <span class="o">=</span> <span class="n">sample_collection</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">)</span>
+</span><span id="__span-9-13">
+</span><span id="__span-9-14"><span class="nb">print</span><span class="p">(</span><span class="n">cloud_paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-9-15"><span class="c1"># ex: s3://voxel51-test/images/000001.jpg</span>
+</span></code></pre></div>
+<p>You can get information about currently cached media files for a sample
+collection by calling <code>cache_stats()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="c1"># View cache stats for the current collection</span>
+</span><span id="__span-10-2"><span class="n">sample_collection</span><span class="o">.</span><span class="n">cache_stats</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="p">{</span><span class="s1">&#39;cache_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;~/fiftyone/__cache__&#39;</span><span class="p">,</span>
+</span><span id="__span-11-2"> <span class="s1">&#39;cache_size&#39;</span><span class="p">:</span> <span class="mi">34359738368</span><span class="p">,</span>
+</span><span id="__span-11-3"> <span class="s1">&#39;cache_size_str&#39;</span><span class="p">:</span> <span class="s1">&#39;32.0GB&#39;</span><span class="p">,</span>
+</span><span id="__span-11-4"> <span class="s1">&#39;current_size&#39;</span><span class="p">:</span> <span class="mi">24412374</span><span class="p">,</span>
+</span><span id="__span-11-5"> <span class="s1">&#39;current_size_str&#39;</span><span class="p">:</span> <span class="s1">&#39;23.3MB&#39;</span><span class="p">,</span>
+</span><span id="__span-11-6"> <span class="s1">&#39;current_count&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-11-7"> <span class="s1">&#39;load_factor&#39;</span><span class="p">:</span> <span class="mf">0.000710493593942374</span><span class="p">}</span>
+</span></code></pre></div>
+<p>and you can call <code>clear_media()</code> to delete any cached copies of media in the
+collection:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="c1"># Clear this collection&#39;s media from the cache</span>
+</span><span id="__span-12-2"><span class="n">sample_collection</span><span class="o">.</span><span class="n">clear_media</span><span class="p">()</span>
+</span></code></pre></div>
+<p>You can also perform these operations on the full cache as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="c1"># View global cache stats</span>
+</span><span id="__span-13-2"><span class="nb">print</span><span class="p">(</span><span class="n">fo</span><span class="o">.</span><span class="n">media_cache</span><span class="o">.</span><span class="n">stats</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">{</span><span class="s1">&#39;cache_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;~/fiftyone/__cache__&#39;</span><span class="p">,</span>
+</span><span id="__span-14-2"> <span class="s1">&#39;cache_size&#39;</span><span class="p">:</span> <span class="mi">34359738368</span><span class="p">,</span>
+</span><span id="__span-14-3"> <span class="s1">&#39;cache_size_str&#39;</span><span class="p">:</span> <span class="s1">&#39;32.0GB&#39;</span><span class="p">,</span>
+</span><span id="__span-14-4"> <span class="s1">&#39;current_size&#39;</span><span class="p">:</span> <span class="mi">49097587</span><span class="p">,</span>
+</span><span id="__span-14-5"> <span class="s1">&#39;current_size_str&#39;</span><span class="p">:</span> <span class="s1">&#39;46.8MB&#39;</span><span class="p">,</span>
+</span><span id="__span-14-6"> <span class="s1">&#39;current_count&#39;</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+</span><span id="__span-14-7"> <span class="s1">&#39;load_factor&#39;</span><span class="p">:</span> <span class="mf">0.0014289278478827327</span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="c1"># Clear the entire cache</span>
+</span><span id="__span-15-2"><span class="n">fo</span><span class="o">.</span><span class="n">media_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></code></pre></div>
+<p>The <code>fiftyone.core.storage</code> module also provides a number of convenient
+methods that can be used to manipulate cloud and/or local media.</p>
+<p>The <code>upload_media()</code> method provides a convenient wrapper for uploading a local
+dataset’s media to the cloud:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.core.storage</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fos</span>
+</span><span id="__span-16-2">
+</span><span id="__span-16-3"><span class="c1"># Create a dataset from media stored locally</span>
+</span><span id="__span-16-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dir</span><span class="p">(</span><span class="s2">&quot;/tmp/local&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</span><span id="__span-16-5">
+</span><span id="__span-16-6"><span class="c1"># Upload the dataset&#39;s media to the cloud</span>
+</span><span id="__span-16-7"><span class="n">fos</span><span class="o">.</span><span class="n">upload_media</span><span class="p">(</span>
+</span><span id="__span-16-8">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-16-9">    <span class="s2">&quot;s3://voxel51-test/your-media&quot;</span><span class="p">,</span>
+</span><span id="__span-16-10">    <span class="n">update_filepaths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-16-11">    <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-16-12"><span class="p">)</span>
+</span></code></pre></div>
+<p>The <code>fiftyone.core.storage</code> module also provides a number of lower-level
+methods that you can use to work with cloud and local assets.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.core.storage</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fos</span>
+</span><span id="__span-17-2">
+</span><span id="__span-17-3"><span class="n">s3_paths</span> <span class="o">=</span> <span class="p">[</span>\
+</span><span id="__span-17-4">    <span class="s2">&quot;s3://voxel51-test/images/000001.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-5">    <span class="s2">&quot;s3://voxel51-test/images/000002.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-6">    <span class="o">...</span>\
+</span><span id="__span-17-7"><span class="p">]</span>
+</span><span id="__span-17-8">
+</span><span id="__span-17-9"><span class="n">gcs_paths</span> <span class="o">=</span> <span class="p">[</span>\
+</span><span id="__span-17-10">    <span class="s2">&quot;gs://voxel51-test/images/000001.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-11">    <span class="s2">&quot;gs://voxel51-test/images/000002.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-12">    <span class="o">...</span>\
+</span><span id="__span-17-13">\
+</span><span id="__span-17-14"><span class="p">]</span>
+</span><span id="__span-17-15">
+</span><span id="__span-17-16"><span class="n">local_paths</span> <span class="o">=</span> <span class="p">[</span>\
+</span><span id="__span-17-17">    <span class="s2">&quot;/tmp/voxel51-test/images/000001.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-18">    <span class="s2">&quot;/tmp/voxel51-test/images/000002.jpg&quot;</span><span class="p">,</span>\
+</span><span id="__span-17-19">    <span class="o">...</span>\
+</span><span id="__span-17-20"><span class="p">]</span>
+</span></code></pre></div>
+<p>For example, you can use <code>list_files()</code> to list the contents of a folder:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="n">cloud_paths</span> <span class="o">=</span> <span class="n">fos</span><span class="o">.</span><span class="n">list_files</span><span class="p">(</span>
+</span><span id="__span-18-2">    <span class="s2">&quot;s3://voxel51-test&quot;</span><span class="p">,</span> <span class="n">abs_paths</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-18-3"><span class="p">)</span>
+</span><span id="__span-18-4">
+</span><span id="__span-18-5"><span class="nb">print</span><span class="p">(</span><span class="n">cloud_paths</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-18-6"><span class="c1"># ex: s3://voxel51-test/images/000001.jpg</span>
+</span></code></pre></div>
+<p>or you can use <code>copy_files()</code> and <code>move_files()</code> to transfer files between
+destinations:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="c1"># S3 -&gt; local</span>
+</span><span id="__span-19-2"><span class="n">fos</span><span class="o">.</span><span class="n">copy_files</span><span class="p">(</span><span class="n">s3_paths</span><span class="p">,</span> <span class="n">local_paths</span><span class="p">)</span>
+</span><span id="__span-19-3"><span class="n">fos</span><span class="o">.</span><span class="n">move_files</span><span class="p">(</span><span class="n">s3_paths</span><span class="p">,</span> <span class="n">local_paths</span><span class="p">)</span>
+</span><span id="__span-19-4">
+</span><span id="__span-19-5"><span class="c1"># local -&gt; S3</span>
+</span><span id="__span-19-6"><span class="n">fos</span><span class="o">.</span><span class="n">copy_files</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">s3_paths</span><span class="p">)</span>
+</span><span id="__span-19-7"><span class="n">fos</span><span class="o">.</span><span class="n">move_files</span><span class="p">(</span><span class="n">local_paths</span><span class="p">,</span> <span class="n">s3_paths</span><span class="p">)</span>
+</span><span id="__span-19-8">
+</span><span id="__span-19-9"><span class="c1"># S3 -&gt; GCS</span>
+</span><span id="__span-19-10"><span class="n">fos</span><span class="o">.</span><span class="n">copy_files</span><span class="p">(</span><span class="n">s3_paths</span><span class="p">,</span> <span class="n">gcs_paths</span><span class="p">)</span>
+</span><span id="__span-19-11"><span class="n">fos</span><span class="o">.</span><span class="n">move_files</span><span class="p">(</span><span class="n">s3_paths</span><span class="p">,</span> <span class="n">gcs_paths</span><span class="p">)</span>
+</span></code></pre></div>
+<p>or you can use <code>delete_files()</code> to delete assets:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">fos</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">s3_paths</span><span class="p">)</span>
+</span><span id="__span-20-2"><span class="n">fos</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">gcs_paths</span><span class="p">)</span>
+</span><span id="__span-20-3"><span class="n">fos</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">local_paths</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>All of the above methods use the media cache’s thread pool to maximize
+throughput.</p>
+<h2 id="api-reference">API reference <a href="#api-reference" title="Permalink to this headline">¶</a><a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h2>
+<h3 id="dataset-methods"><code>Dataset</code> methods <a href="#dataset-methods" title="Permalink to this headline">¶</a><a class="headerlink" href="#dataset-methods" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-21-2">
+</span><span id="__span-21-3"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_media</span><span class="err">?</span>
+</span><span id="__span-21-4"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_scenes</span><span class="err">?</span>
+</span><span id="__span-21-5"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_context</span><span class="err">?</span>
+</span><span id="__span-21-6"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">get_local_paths</span><span class="err">?</span>
+</span><span id="__span-21-7"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">cache_stats</span><span class="err">?</span>
+</span><span id="__span-21-8"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">clear_media</span><span class="err">?</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_media</span><span class="p">(</span>
+</span><span id="__span-22-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-22-3">    <span class="n">media_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-22-4">    <span class="n">group_slices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-22-5">    <span class="n">include_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-22-6">    <span class="n">update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-22-7">    <span class="n">skip_failures</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-22-8">    <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-22-9"><span class="p">):</span>
+</span><span id="__span-22-10"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Downloads the source media files for all samples in the collection.</span>
+</span><span id="__span-22-11">
+</span><span id="__span-22-12"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-22-13">
+</span><span id="__span-22-14"><span class="sd">    Any existing files are not re-downloaded, unless ``update == True`` and</span>
+</span><span id="__span-22-15"><span class="sd">    their checksums no longer match.</span>
+</span><span id="__span-22-16">
+</span><span id="__span-22-17"><span class="sd">    Args:</span>
+</span><span id="__span-22-18"><span class="sd">        media_fields (None): a field or iterable of fields containing media</span>
+</span><span id="__span-22-19"><span class="sd">            to download. By default, all media fields in the collection&#39;s</span>
+</span><span id="__span-22-20"><span class="sd">            :meth:`app_config` are used</span>
+</span><span id="__span-22-21"><span class="sd">        group_slices (None): an optional subset of group slices for which</span>
+</span><span id="__span-22-22"><span class="sd">            to download media. Only applicable when the collection contains</span>
+</span><span id="__span-22-23"><span class="sd">            groups</span>
+</span><span id="__span-22-24"><span class="sd">        include_assets (True): whether to include 3D scene assets</span>
+</span><span id="__span-22-25"><span class="sd">        update (False): whether to re-download media whose checksums no</span>
+</span><span id="__span-22-26"><span class="sd">            longer match</span>
+</span><span id="__span-22-27"><span class="sd">        skip_failures (True): whether to gracefully continue without</span>
+</span><span id="__span-22-28"><span class="sd">            raising an error if a remote file cannot be downloaded</span>
+</span><span id="__span-22-29"><span class="sd">        progress (None): whether to render a progress bar tracking the</span>
+</span><span id="__span-22-30"><span class="sd">            progress of any downloads (True/False), use the default value</span>
+</span><span id="__span-22-31"><span class="sd">            ``fiftyone.config.show_progress_bars`` (None), or a progress</span>
+</span><span id="__span-22-32"><span class="sd">            callback function to invoke instead</span>
+</span><span id="__span-22-33"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_scenes</span><span class="p">(</span>
+</span><span id="__span-23-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-23-3">    <span class="n">update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-23-4">    <span class="n">skip_failures</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-23-5">    <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-23-6"><span class="p">):</span>
+</span><span id="__span-23-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Downloads all ``.fo3d`` files for the samples in the collection.</span>
+</span><span id="__span-23-8">
+</span><span id="__span-23-9"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-23-10">
+</span><span id="__span-23-11"><span class="sd">    Any existing files are not re-downloaded, unless ``update == True`` and</span>
+</span><span id="__span-23-12"><span class="sd">    their checksums no longer match.</span>
+</span><span id="__span-23-13">
+</span><span id="__span-23-14"><span class="sd">    Args:</span>
+</span><span id="__span-23-15"><span class="sd">        update (False): whether to re-download files whose checksums no</span>
+</span><span id="__span-23-16"><span class="sd">            longer match</span>
+</span><span id="__span-23-17"><span class="sd">        skip_failures (True): whether to gracefully continue without</span>
+</span><span id="__span-23-18"><span class="sd">            raising an error if a remote file cannot be downloaded</span>
+</span><span id="__span-23-19"><span class="sd">        progress (None): whether to render a progress bar tracking the</span>
+</span><span id="__span-23-20"><span class="sd">            progress of any downloads (True/False), use the default value</span>
+</span><span id="__span-23-21"><span class="sd">            ``fiftyone.config.show_progress_bars`` (None), or a progress</span>
+</span><span id="__span-23-22"><span class="sd">            callback function to invoke instead</span>
+</span><span id="__span-23-23"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">download_context</span><span class="p">(</span>
+</span><span id="__span-24-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-24-3">    <span class="n">batch_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-24-4">    <span class="n">target_size_bytes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-24-5">    <span class="n">media_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-24-6">    <span class="n">group_slices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-24-7">    <span class="n">include_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-24-8">    <span class="n">update</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-24-9">    <span class="n">skip_failures</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-24-10">    <span class="n">clear</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-24-11">    <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-24-12"><span class="p">):</span>
+</span><span id="__span-24-13"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a context that can be used to pre-download media in batches</span>
+</span><span id="__span-24-14"><span class="sd">    when iterating over samples in this collection.</span>
+</span><span id="__span-24-15">
+</span><span id="__span-24-16"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-24-17">
+</span><span id="__span-24-18"><span class="sd">    By default, all media will be downloaded when the context is entered,</span>
+</span><span id="__span-24-19"><span class="sd">    but you can configure a batching strategy via the `batch_size` or</span>
+</span><span id="__span-24-20"><span class="sd">    `target_size_bytes` parameters.</span>
+</span><span id="__span-24-21">
+</span><span id="__span-24-22"><span class="sd">    If no ``batch_size`` or ``target_size_bytes`` is provided, media are</span>
+</span><span id="__span-24-23"><span class="sd">    downloaded in batches of ``fo.media_cache_config.download_size_bytes``.</span>
+</span><span id="__span-24-24">
+</span><span id="__span-24-25"><span class="sd">    Args:</span>
+</span><span id="__span-24-26"><span class="sd">        batch_size (None): a sample batch size to use for each download</span>
+</span><span id="__span-24-27"><span class="sd">        target_size_bytes (None): a target content size, in bytes, for each</span>
+</span><span id="__span-24-28"><span class="sd">            download batch. If negative, all media is downloaded in one</span>
+</span><span id="__span-24-29"><span class="sd">            batch</span>
+</span><span id="__span-24-30"><span class="sd">        media_fields (None): a field or iterable of fields containing media</span>
+</span><span id="__span-24-31"><span class="sd">            to download. By default, all media fields in the collection&#39;s</span>
+</span><span id="__span-24-32"><span class="sd">            :meth:`app_config` are used</span>
+</span><span id="__span-24-33"><span class="sd">        group_slices (None): an optional subset of group slices to download</span>
+</span><span id="__span-24-34"><span class="sd">            media for. Only applicable when the collection contains groups</span>
+</span><span id="__span-24-35"><span class="sd">        include_assets (True): whether to include 3D scene assets</span>
+</span><span id="__span-24-36"><span class="sd">        update (False): whether to re-download media whose checksums no</span>
+</span><span id="__span-24-37"><span class="sd">            longer match</span>
+</span><span id="__span-24-38"><span class="sd">        skip_failures (True): whether to gracefully continue without</span>
+</span><span id="__span-24-39"><span class="sd">            raising an error if a remote file cannot be downloaded</span>
+</span><span id="__span-24-40"><span class="sd">        clear (False): whether to clear the media from the cache when the</span>
+</span><span id="__span-24-41"><span class="sd">            context exits</span>
+</span><span id="__span-24-42"><span class="sd">        progress (None): whether to render a progress bar tracking the</span>
+</span><span id="__span-24-43"><span class="sd">            progress of any downloads (True/False), use the default value</span>
+</span><span id="__span-24-44"><span class="sd">            ``fiftyone.config.show_progress_bars`` (None), or a progress</span>
+</span><span id="__span-24-45"><span class="sd">            callback function to invoke instead</span>
+</span><span id="__span-24-46"><span class="sd">        **kwargs: valid keyword arguments for :meth:`download_media`</span>
+</span><span id="__span-24-47">
+</span><span id="__span-24-48"><span class="sd">    Returns:</span>
+</span><span id="__span-24-49"><span class="sd">        a :class:`DownloadContext`</span>
+</span><span id="__span-24-50"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">get_local_paths</span><span class="p">(</span>
+</span><span id="__span-25-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-25-3">    <span class="n">media_field</span><span class="o">=</span><span class="s2">&quot;filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-25-4">    <span class="n">include_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-25-5">    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-25-6">    <span class="n">skip_failures</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-25-7">    <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-25-8"><span class="p">):</span>
+</span><span id="__span-25-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a list of local paths to the media files in this collection.</span>
+</span><span id="__span-25-10">
+</span><span id="__span-25-11"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-25-12">
+</span><span id="__span-25-13"><span class="sd">    Args:</span>
+</span><span id="__span-25-14"><span class="sd">        media_field (&quot;filepath&quot;): the field containing the media paths</span>
+</span><span id="__span-25-15"><span class="sd">        include_assets (True): whether to include 3D scene assets</span>
+</span><span id="__span-25-16"><span class="sd">        download (True): whether to download any non-cached media files</span>
+</span><span id="__span-25-17"><span class="sd">        skip_failures (True): whether to gracefully continue without</span>
+</span><span id="__span-25-18"><span class="sd">            raising an error if a remote file cannot be downloaded</span>
+</span><span id="__span-25-19"><span class="sd">        progress (None): whether to render a progress bar tracking the</span>
+</span><span id="__span-25-20"><span class="sd">            progress of any downloads (True/False), use the default value</span>
+</span><span id="__span-25-21"><span class="sd">            ``fiftyone.config.show_progress_bars`` (None), or a progress</span>
+</span><span id="__span-25-22"><span class="sd">            callback function to invoke instead</span>
+</span><span id="__span-25-23">
+</span><span id="__span-25-24"><span class="sd">    Returns:</span>
+</span><span id="__span-25-25"><span class="sd">        a list of local filepaths</span>
+</span><span id="__span-25-26"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">cache_stats</span><span class="p">(</span>
+</span><span id="__span-26-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-26-3">    <span class="n">media_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-26-4">    <span class="n">group_slices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-26-5">    <span class="n">include_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-26-6"><span class="p">):</span>
+</span><span id="__span-26-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of stats about the cached media files in this</span>
+</span><span id="__span-26-8"><span class="sd">    collection.</span>
+</span><span id="__span-26-9">
+</span><span id="__span-26-10"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-26-11">
+</span><span id="__span-26-12"><span class="sd">    Args:</span>
+</span><span id="__span-26-13"><span class="sd">        media_fields (None): a field or iterable of fields containing media</span>
+</span><span id="__span-26-14"><span class="sd">            paths. By default, all media fields in the collection&#39;s</span>
+</span><span id="__span-26-15"><span class="sd">            :meth:`app_config` are included</span>
+</span><span id="__span-26-16"><span class="sd">        group_slices (None): an optional subset of group slices to include.</span>
+</span><span id="__span-26-17"><span class="sd">            Only applicable when the collection contains groups</span>
+</span><span id="__span-26-18"><span class="sd">        include_assets (True): whether to include 3D scene assets</span>
+</span><span id="__span-26-19">
+</span><span id="__span-26-20"><span class="sd">    Returns:</span>
+</span><span id="__span-26-21"><span class="sd">        a stats dict</span>
+</span><span id="__span-26-22"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">clear_media</span><span class="p">(</span>
+</span><span id="__span-27-2">    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-27-3">    <span class="n">media_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-27-4">    <span class="n">group_slices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-27-5">    <span class="n">include_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-27-6"><span class="p">):</span>
+</span><span id="__span-27-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Deletes any local copies of media files in this collection from the</span>
+</span><span id="__span-27-8"><span class="sd">    media cache.</span>
+</span><span id="__span-27-9">
+</span><span id="__span-27-10"><span class="sd">    This method is only useful for collections that contain remote media.</span>
+</span><span id="__span-27-11">
+</span><span id="__span-27-12"><span class="sd">    Args:</span>
+</span><span id="__span-27-13"><span class="sd">        media_fields (None): a field or iterable of fields containing media</span>
+</span><span id="__span-27-14"><span class="sd">            paths to clear from the cache. By default, all media fields</span>
+</span><span id="__span-27-15"><span class="sd">            in the collection&#39;s :meth:`app_config` are cleared</span>
+</span><span id="__span-27-16"><span class="sd">        group_slices (None): an optional subset of group slices for which</span>
+</span><span id="__span-27-17"><span class="sd">            to clear media. Only applicable when the collection contains</span>
+</span><span id="__span-27-18"><span class="sd">            groups</span>
+</span><span id="__span-27-19"><span class="sd">        include_assets (True): whether to include 3D scene assets</span>
+</span><span id="__span-27-20"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h3 id="fiftyonecorestorage"><code>fiftyone.core.storage</code> <a href="#fiftyone-core-storage" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyonecorestorage" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.core.storage</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fos</span>
+</span><span id="__span-28-2">
+</span><span id="__span-28-3"><span class="n">fos</span><span class="o">.</span><span class="n">list_files</span><span class="err">?</span>
+</span><span id="__span-28-4"><span class="n">fos</span><span class="o">.</span><span class="n">copy_files</span><span class="err">?</span>
+</span><span id="__span-28-5"><span class="n">fos</span><span class="o">.</span><span class="n">move_files</span><span class="err">?</span>
+</span><span id="__span-28-6"><span class="n">fos</span><span class="o">.</span><span class="n">delete_files</span><span class="err">?</span>
+</span><span id="__span-28-7"><span class="n">fos</span><span class="o">.</span><span class="n">upload_media</span><span class="err">?</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">fos</span><span class="o">.</span><span class="n">list_files</span><span class="p">(</span>
+</span><span id="__span-29-2">    <span class="n">dirpath</span><span class="p">,</span>
+</span><span id="__span-29-3">    <span class="n">abs_paths</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-29-4">    <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-29-5">    <span class="n">include_hidden_files</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-29-6">    <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-29-7"><span class="p">):</span>
+</span><span id="__span-29-8"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Lists the files in the given directory.</span>
+</span><span id="__span-29-9">
+</span><span id="__span-29-10"><span class="sd">    If the directory does not exist, an empty list is returned.</span>
+</span><span id="__span-29-11">
+</span><span id="__span-29-12"><span class="sd">    Args:</span>
+</span><span id="__span-29-13"><span class="sd">        dirpath: the path to the directory to list</span>
+</span><span id="__span-29-14"><span class="sd">        abs_paths (False): whether to return the absolute paths to the files</span>
+</span><span id="__span-29-15"><span class="sd">        recursive (False): whether to recursively traverse subdirectories</span>
+</span><span id="__span-29-16"><span class="sd">        include_hidden_files (False): whether to include dot files</span>
+</span><span id="__span-29-17"><span class="sd">        sort (True): whether to sort the list of files</span>
+</span><span id="__span-29-18">
+</span><span id="__span-29-19"><span class="sd">    Returns:</span>
+</span><span id="__span-29-20"><span class="sd">        a list of filepaths</span>
+</span><span id="__span-29-21"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="n">fos</span><span class="o">.</span><span class="n">copy_files</span><span class="p">(</span><span class="n">inpaths</span><span class="p">,</span> <span class="n">outpaths</span><span class="p">,</span> <span class="n">skip_failures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-30-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Copies the files to the given locations.</span>
+</span><span id="__span-30-3">
+</span><span id="__span-30-4"><span class="sd">    Args:</span>
+</span><span id="__span-30-5"><span class="sd">        inpaths: a list of input paths</span>
+</span><span id="__span-30-6"><span class="sd">        outpaths: a list of output paths</span>
+</span><span id="__span-30-7"><span class="sd">        skip_failures (False): whether to gracefully continue without</span>
+</span><span id="__span-30-8"><span class="sd">            raising an error if a remote operation fails</span>
+</span><span id="__span-30-9"><span class="sd">        progress (None): whether to render a progress bar (True/False), use the</span>
+</span><span id="__span-30-10"><span class="sd">            default value ``fiftyone.config.show_progress_bars`` (None), or a</span>
+</span><span id="__span-30-11"><span class="sd">            progress callback function to invoke instead</span>
+</span><span id="__span-30-12"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="n">fos</span><span class="o">.</span><span class="n">move_files</span><span class="p">(</span><span class="n">inpaths</span><span class="p">,</span> <span class="n">outpaths</span><span class="p">,</span> <span class="n">skip_failures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-31-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Moves the files to the given locations.</span>
+</span><span id="__span-31-3">
+</span><span id="__span-31-4"><span class="sd">    Args:</span>
+</span><span id="__span-31-5"><span class="sd">        inpaths: a list of input paths</span>
+</span><span id="__span-31-6"><span class="sd">        outpaths: a list of output paths</span>
+</span><span id="__span-31-7"><span class="sd">        skip_failures (False): whether to gracefully continue without raising</span>
+</span><span id="__span-31-8"><span class="sd">            an error if a remote operation fails</span>
+</span><span id="__span-31-9"><span class="sd">        progress (None): whether to render a progress bar (True/False), use the</span>
+</span><span id="__span-31-10"><span class="sd">            default value ``fiftyone.config.show_progress_bars`` (None), or a</span>
+</span><span id="__span-31-11"><span class="sd">            progress callback function to invoke instead</span>
+</span><span id="__span-31-12"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="n">fos</span><span class="o">.</span><span class="n">delete_files</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">skip_failures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-32-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Deletes the files from the given locations.</span>
+</span><span id="__span-32-3">
+</span><span id="__span-32-4"><span class="sd">    For local paths, any empty directories are also recursively deleted from</span>
+</span><span id="__span-32-5"><span class="sd">    the resulting directory tree.</span>
+</span><span id="__span-32-6">
+</span><span id="__span-32-7"><span class="sd">    Args:</span>
+</span><span id="__span-32-8"><span class="sd">        paths: a list of paths</span>
+</span><span id="__span-32-9"><span class="sd">        skip_failures (False): whether to gracefully continue without raising</span>
+</span><span id="__span-32-10"><span class="sd">            an error if a remote operation fails</span>
+</span><span id="__span-32-11"><span class="sd">        progress (None): whether to render a progress bar (True/False), use the</span>
+</span><span id="__span-32-12"><span class="sd">            default value ``fiftyone.config.show_progress_bars`` (None), or a</span>
+</span><span id="__span-32-13"><span class="sd">            progress callback function to invoke instead</span>
+</span><span id="__span-32-14"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="n">fos</span><span class="o">.</span><span class="n">upload_media</span><span class="p">(</span>
+</span><span id="__span-33-2">    <span class="n">sample_collection</span><span class="p">,</span>
+</span><span id="__span-33-3">    <span class="n">remote_dir</span><span class="p">,</span>
+</span><span id="__span-33-4">    <span class="n">rel_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-33-5">    <span class="n">media_field</span><span class="o">=</span><span class="s2">&quot;filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-33-6">    <span class="n">update_filepaths</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-33-7">    <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-33-8">    <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-33-9">    <span class="n">skip_failures</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-33-10">    <span class="n">progress</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-33-11"><span class="p">):</span>
+</span><span id="__span-33-12"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Uploads the source media files for the given collection to the given</span>
+</span><span id="__span-33-13"><span class="sd">    remote directory.</span>
+</span><span id="__span-33-14">
+</span><span id="__span-33-15"><span class="sd">    Providing a ``rel_dir`` enables writing nested subfolders within</span>
+</span><span id="__span-33-16"><span class="sd">    ``remote_dir`` matching the structure of the input collection&#39;s media. By</span>
+</span><span id="__span-33-17"><span class="sd">    default, the files are written directly to ``remote_dir`` using their</span>
+</span><span id="__span-33-18"><span class="sd">    basenames.</span>
+</span><span id="__span-33-19">
+</span><span id="__span-33-20"><span class="sd">    Args:</span>
+</span><span id="__span-33-21"><span class="sd">        sample_collection: a</span>
+</span><span id="__span-33-22"><span class="sd">            :class:`fiftyone.core.collections.SampleCollection`</span>
+</span><span id="__span-33-23"><span class="sd">        remote_dir: a remote &quot;folder&quot; into which to upload</span>
+</span><span id="__span-33-24"><span class="sd">        rel_dir (None): an optional relative directory to strip from each</span>
+</span><span id="__span-33-25"><span class="sd">            filepath when constructing the corresponding remote path</span>
+</span><span id="__span-33-26"><span class="sd">        media_field (&quot;filepath&quot;): the field containing the media paths</span>
+</span><span id="__span-33-27"><span class="sd">        update_filepaths (False): whether to update the ``media_field`` of each</span>
+</span><span id="__span-33-28"><span class="sd">            sample in the collection to its remote path</span>
+</span><span id="__span-33-29"><span class="sd">        cache (False): whether to store the uploaded media in your local media</span>
+</span><span id="__span-33-30"><span class="sd">            cache. The supported values are:</span>
+</span><span id="__span-33-31">
+</span><span id="__span-33-32"><span class="sd">            -   ``False`` (default): do not cache the media</span>
+</span><span id="__span-33-33"><span class="sd">            -   ``True`` or ``&quot;copy&quot;``: copy the media into your local cache</span>
+</span><span id="__span-33-34"><span class="sd">            -   ``&quot;move&quot;``: move the media into your local cache</span>
+</span><span id="__span-33-35"><span class="sd">        overwrite (False): whether to overwrite (True) or skip (False) existing</span>
+</span><span id="__span-33-36"><span class="sd">            remote files</span>
+</span><span id="__span-33-37"><span class="sd">        skip_failures (False): whether to gracefully continue without raising</span>
+</span><span id="__span-33-38"><span class="sd">            an error if a remote operation fails</span>
+</span><span id="__span-33-39"><span class="sd">        progress (None): whether to render a progress bar (True/False), use the</span>
+</span><span id="__span-33-40"><span class="sd">            default value ``fiftyone.config.show_progress_bars`` (None), or a</span>
+</span><span id="__span-33-41"><span class="sd">            progress callback function to invoke instead</span>
+</span><span id="__span-33-42">
+</span><span id="__span-33-43"><span class="sd">    Returns:</span>
+</span><span id="__span-33-44"><span class="sd">        the list of remote paths</span>
+</span><span id="__span-33-45"><span class="sd">    &quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h2 id="annotating-cloud-backed-datasets-with-cvat">Annotating cloud-backed datasets with CVAT <a href="#annotating-cloud-backed-datasets-with-cvat" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-cloud-backed-datasets-with-cvat" title="Permanent link">&para;</a></h2>
+<p>When using FiftyOne to
+<a href="../integrations/cvat.html#cvat-integration">annotate data with CVAT</a>,
+you can optionally follow the instructions below to instruct CVAT to load media
+directly from S3, GCS, or
+<a href="https://github.com/openvinotoolkit/cvat/pull/4353">MinIO</a> buckets rather
+than the default behavior of uploading copies of the media to the CVAT server.</p>
+<p>First, follow
+<a href="https://opencv.github.io/cvat/docs/manual/basics/attach-cloud-storage/">these instructions</a>
+to attach a cloud storage bucket to CVAT. Then, simply provide the
+<code>cloud_manifest</code> parameter to
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate" title="fiftyone.core.collections.SampleCollection.annotate"><code>annotate()</code></a> to
+specify the URL of the manifest file in your cloud bucket:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;cloud_annotations&quot;</span>
+</span><span id="__span-34-2">
+</span><span id="__span-34-3"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-34-4">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-34-5">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-34-6">    <span class="n">cloud_manifest</span><span class="o">=</span><span class="s2">&quot;s3://voxel51/manifest.jsonl&quot;</span><span class="p">,</span>
+</span><span id="__span-34-7"><span class="p">)</span>
+</span></code></pre></div>
+<p>Alternatively, if your cloud manifest has the default name <code>manifest.jsonl</code>
+and exists in the root of the bucket containing the data in the sample
+collection being annotated, then you can simply pass <code>cloud_manifest=True</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-35-2">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-35-3">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-35-4">    <span class="n">cloud_manifest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-35-5"><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>The cloud manifest file must contain all media files in the sample
+collection being annotated.</p>
+<h2 id="annotating-cloud-backed-datasets-with-v7-darwin">Annotating cloud-backed datasets with V7 Darwin <a href="#annotating-cloud-backed-datasets-with-v7-darwin" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-cloud-backed-datasets-with-v7-darwin" title="Permanent link">&para;</a></h2>
+<p>When using FiftyOne to <a href="../integrations/v7.html#v7-integration">annotate data with V7 Darwin</a>,
+you can optionally follow the instructions below to instruct V7 to load media
+directly from S3, GCS, or Azure buckets rather than the default behavior of
+uploading copies of the media from your local machine.</p>
+<p>First, follow
+<a href="https://docs.v7labs.com/docs/external-storage-configuration">these instructions</a>
+to configure external storage for V7. Then, simply provide the
+<code>external_storage</code> parameter to
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate" title="fiftyone.core.collections.SampleCollection.annotate"><code>annotate()</code></a> and
+specify the sluggified external storage name:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;cloud_annotations&quot;</span>
+</span><span id="__span-36-2">
+</span><span id="__span-36-3"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-36-4">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-36-5">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-36-6">    <span class="n">external_storage</span><span class="o">=</span><span class="s2">&quot;example-darwin-storage-slug&quot;</span><span class="p">,</span>
+</span><span id="__span-36-7">    <span class="o">...</span>
+</span><span id="__span-36-8"><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="annotating-cloud-backed-datasets-with-labelbox">Annotating cloud-backed datasets with Labelbox <a href="#annotating-cloud-backed-datasets-with-labelbox" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-cloud-backed-datasets-with-labelbox" title="Permanent link">&para;</a></h2>
+<p>When using FiftyOne to
+<a href="../integrations/labelbox.html#labelbox-integration">annotate data with Labelbox</a>, you can optionally
+follow the instructions below to instruct Labelbox to load media directly from
+S3 rather than the default behavior of uploading copies of the media.</p>
+<p>This assumes that you have configured the
+<a href="https://docs.labelbox.com/docs/import-aws-s3-data">S3 integration for Labelbox</a>.
+If so, then you can provide the <code>upload_media=False</code> keyword argument to
+the <a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate" title="fiftyone.core.collections.SampleCollection.annotate"><code>annotate()</code></a>
+method to pass URLs for your S3-backed media when creating Labelbox data rows.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-37-2">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-37-3">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-37-4">    <span class="n">label_type</span><span class="o">=</span><span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-37-5">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">],</span>
+</span><span id="__span-37-6">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;labelbox&quot;</span><span class="p">,</span>
+</span><span id="__span-37-7">    <span class="n">upload_media</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-37-8"><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Google Cloud and Azure blob support will be added in the future. Currently,
+any Google Cloud, Azure, or local media will still be uploaded to Labelbox
+as usual.</p>
+<h2 id="aws-lambda-and-google-cloud-functions">AWS Lambda and Google Cloud Functions <a href="#aws-lambda-and-google-cloud-functions" title="Permalink to this headline">¶</a><a class="headerlink" href="#aws-lambda-and-google-cloud-functions" title="Permanent link">&para;</a></h2>
+<p>FiftyOne Teams can easily be used in AWS Lambda Functions and Google Cloud
+Functions.</p>
+<p><strong>Requirements</strong></p>
+<p>We recommend including Teams in your function’s <code>requirements.txt</code> file by
+passing your token as a build environment variable, e.g.,
+<code>FIFTYONE_TEAMS_TOKEN</code> and then using the syntax below to specify the version
+of the Teams client to use:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="p">{</span><span class="n">FIFTYONE_TEAMS_TOKEN</span><span class="p">}</span><span class="nd">@pypi</span><span class="o">.</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">ai</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">fiftyone</span><span class="o">-</span><span class="mf">0.6.6</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</span></code></pre></div>
+<p><strong>Runtime</strong></p>
+<p>Lambda/GCFs cannot use services, so you must disable the media the cache by
+setting the following runtime environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">export</span> <span class="n">FIFTYONE_MEDIA_CACHE_SIZE_BYTES</span><span class="o">=-</span><span class="mi">1</span>  <span class="c1"># disable media cache</span>
+</span></code></pre></div>
+<p>From there, you can configure your database URI and any necessary cloud storage
+credentials via runtime environment variables as you normally would, eg:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_URI</span><span class="o">=</span><span class="n">mongodb</span><span class="p">:</span><span class="o">//...</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

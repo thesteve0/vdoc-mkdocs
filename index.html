@@ -1,0 +1,1590 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="getting_started/install/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Capabilities ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Capabilities ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curating-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curating datasets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with geolocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-annotation-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding annotation mistakes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-redundant-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing redundant images
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Library ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne App ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Brain ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Plugins ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset-zoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset Zoo ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-zoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Zoo ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What’s Next? ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need Support? ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Capabilities ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Capabilities ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curating-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curating datasets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluating models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-geolocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with geolocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-annotation-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding annotation mistakes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-redundant-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing redundant images
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Library ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne App ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Brain ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiftyone-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      FiftyOne Plugins ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset-zoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset Zoo ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-zoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Zoo ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What’s Next? ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Need Support? ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fiftyone">FiftyOne <a href="#fiftyone" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone" title="Permanent link">&para;</a></h1>
+<p><strong>The open-source tool for building high-quality datasets and computer vision models</strong></p>
+<p>Nothing hinders the success of machine learning systems more than poor quality
+data. And without the right tools, improving a model can be time-consuming and
+inefficient.</p>
+<p>FiftyOne supercharges your machine learning workflows by enabling you to
+visualize datasets and interpret models faster and more effectively.</p>
+<p>Improving data quality and understanding your model’s failure modes are the
+most impactful ways to boost the performance of your model.</p>
+<p>FiftyOne provides the building blocks for optimizing your dataset analysis
+pipeline. Use it to get hands-on with your data, including visualizing complex
+labels, evaluating your models, exploring scenarios of interest, identifying
+failure modes, finding annotation mistakes, and much more!</p>
+<p><a href="getting_started/install.html">Install FiftyOne!</a></p>
+<p>FiftyOne integrates naturally with your favorite tools. Click on a logo to
+learn how:</p>
+<p><a href="recipes/adding_detections.html" title="PyTorch"><img alt="PyTorch" src="https://voxel51.com/images/integrations/pytorch-128.png" /></a></p>
+<p><a href="integrations/lightning_flash.html" title="PyTorch Lightning"><img alt="PyTorch Lightning" src="https://voxel51.com/images/integrations/pytorch-lightning-128.png" /></a></p>
+<p><a href="integrations/huggingface.html" title="Hugging Face"><img alt="Hugging Face" src="https://voxel51.com/images/integrations/hugging-face-128.png" /></a></p>
+<p><a href="integrations/ultralytics.html" title="Ultralytics"><img alt="Ultralytics" src="https://voxel51.com/images/integrations/ultralytics-128.png" /></a></p>
+<p><a href="integrations/super_gradients.html" title="SuperGradients"><img alt="SuperGradients" src="https://voxel51.com/images/integrations/super-gradients-128.png" /></a></p>
+<p><a href="recipes/adding_detections.html" title="TensorFlow"><img alt="TensorFlow" src="https://voxel51.com/images/integrations/tensorflow-128.png" /></a></p>
+<p><a href="tutorials/detectron2.html" title="Detectron2"><img alt="Detectron2" src="https://voxel51.com/images/integrations/detectron2-128.png" /></a></p>
+<p><a href="integrations/qdrant.html" title="Qdrant"><img alt="Qdrant" src="https://voxel51.com/images/integrations/qdrant-128.png" /></a></p>
+<p><a href="integrations/redis.html" title="Redis"><img alt="Redis" src="https://voxel51.com/images/integrations/redis-128.png" /></a></p>
+<p><a href="integrations/pinecone.html" title="Pinecone"><img alt="Pinecone" src="https://voxel51.com/images/integrations/pinecone-128.png" /></a></p>
+<p><a href="integrations/mongodb.html" title="MongoDB"><img alt="MongoDB" src="https://voxel51.com/images/integrations/mongodb-128.png" /></a></p>
+<p><a href="integrations/elasticsearch.html" title="Elasticsearch"><img alt="Elasticsearch" src="https://voxel51.com/images/integrations/elasticsearch-128.png" /></a></p>
+<p><a href="integrations/milvus.html" title="Milvus"><img alt="Milvus" src="https://voxel51.com/images/integrations/milvus-128.png" /></a></p>
+<p><a href="integrations/lancedb.html" title="LanceDB"><img alt="LanceDB" src="https://voxel51.com/images/integrations/lancedb-128.png" /></a></p>
+<p><a href="integrations/activitynet.html" title="ActivityNet"><img alt="ActivityNet" src="https://voxel51.com/images/integrations/activitynet-128.png" /></a></p>
+<p><a href="integrations/coco.html" title="COCO"><img alt="COCO" src="https://voxel51.com/images/integrations/coco-128.png" /></a></p>
+<p><a href="integrations/open_images.html" title="Open Images"><img alt="Open Images" src="https://voxel51.com/images/integrations/open-images-128.png" /></a></p>
+<p><a href="environments/index.html#notebooks" title="Jupyter"><img alt="Jupyter" src="https://voxel51.com/images/integrations/jupyter-128.png" /></a></p>
+<p><a href="environments/index.html#notebooks" title="Google Colab"><img alt="Google Colab" src="https://voxel51.com/images/integrations/colab-128.png" /></a></p>
+<p><a href="fiftyone_concepts/plots.html" title="Plotly"><img alt="Plotly" src="https://voxel51.com/images/integrations/plotly-128.png" /></a></p>
+<p><a href="integrations/cvat.html" title="CVAT"><img alt="CVAT" src="https://voxel51.com/images/integrations/cvat-128.png" /></a></p>
+<p><a href="integrations/labelstudio.html" title="Label Studio"><img alt="Label Studio" src="https://voxel51.com/images/integrations/labelstudio-128.png" /></a></p>
+<p><a href="integrations/v7.html" title="V7"><img alt="V7" src="https://voxel51.com/images/integrations/v7-128.png" /></a></p>
+<p><a href="https://github.com/segments-ai/segments-voxel51-plugin" title="Segments"><img alt="Segments" src="https://voxel51.com/images/integrations/segments-128.png" /></a></p>
+<p><a href="integrations/labelbox.html" title="Labelbox"><img alt="Labelbox" src="https://voxel51.com/images/integrations/labelbox-128.png" /></a></p>
+<p><a href="api/fiftyone.utils.scale.html" title="Scale AI"><img alt="Scale AI" src="https://voxel51.com/images/integrations/scale-128.png" /></a></p>
+<p><a href="teams/installation.html#google-cloud-storage" title="Google Cloud"><img alt="Google Cloud" src="https://voxel51.com/images/integrations/google-cloud-128.png" /></a></p>
+<p><a href="teams/installation.html#amazon-s3" title="Amazon Web Services"><img alt="Amazon Web Services" src="https://voxel51.com/images/integrations/aws-128.png" /></a></p>
+<p><a href="teams/installation.html#microsoft-azure" title="Azure"><img alt="Azure" src="https://voxel51.com/images/integrations/azure-128.png" /></a></p>
+<p>Note</p>
+<p>FiftyOne is growing!
+<a href="https://share.hsforms.com/1zpJ60ggaQtOoVeBqIZdaaA2ykyk">Sign up for the mailing list</a>
+to learn about new features as they come out.</p>
+<h2 id="core-capabilities">Core Capabilities <a href="#core-capabilities" title="Permalink to this headline">¶</a><a class="headerlink" href="#core-capabilities" title="Permanent link">&para;</a></h2>
+<h3 id="curating-datasets">Curating datasets<a class="headerlink" href="#curating-datasets" title="Permanent link">&para;</a></h3>
+<p>Surveys show that machine learning engineers spend over half of their time wrangling data, but it doesn't have to be that way. Use FiftyOne's powerful dataset import and manipulation capabilities to manage your data with ease.</p>
+<p><a href="fiftyone_concepts/dataset_creation/index.html">Learn how to load data into FiftyOne</a></p>
+<p><img alt="" src="_static/images/homepage_curate.gif" /></p>
+<h3 id="evaluating-models">Evaluating models<a class="headerlink" href="#evaluating-models" title="Permanent link">&para;</a></h3>
+<p>Aggregate metrics alone don’t give you the full picture of your ML models. In practice, the limiting factor on your model’s performance is often data quality issues that you need to see to address. FiftyOne makes it easy to do just that.</p>
+<p><a href="tutorials/evaluate_detections.html">See how to evaluate models with FiftyOne</a></p>
+<p><img alt="" src="_static/images/homepage_evaluate.gif" /></p>
+<h3 id="visualizing-embeddings">Visualizing embeddings<a class="headerlink" href="#visualizing-embeddings" title="Permanent link">&para;</a></h3>
+<p>Are you using embeddings to analyze your data and models? Use FiftyOne's embeddings visualization capabilities to reveal hidden structure in you data, mine hard samples, pre-annotate data, recommend new samples for annotation, and more.</p>
+<p><a href="tutorials/image_embeddings.html">Experience the power of embeddings</a></p>
+<p><img alt="" src="_static/images/homepage_embeddings.gif" /></p>
+<h3 id="working-with-geolocation">Working with geolocation<a class="headerlink" href="#working-with-geolocation" title="Permanent link">&para;</a></h3>
+<p>Many datasets have location metadata, but visualizing location-based datasets has traditionally required closed source or cloud-based tools. FiftyOne provides native support for storing, visualizing, and querying datasets by location.</p>
+<p><a href="fiftyone_concepts/plots.html#geolocation-plots">Visualize your location data</a></p>
+<p><img alt="" src="_static/images/homepage_location.gif" /></p>
+<h3 id="finding-annotation-mistakes">Finding annotation mistakes<a class="headerlink" href="#finding-annotation-mistakes" title="Permanent link">&para;</a></h3>
+<p>Annotations mistakes create an artificial ceiling on the performance of your model. However, finding these mistakes by hand is not feasible! Use FiftyOne to automatically identify possible label mistakes in your datasets.</p>
+<p><a href="tutorials/classification_mistakes.html">Check out the label mistakes tutorial</a></p>
+<p><img alt="" src="_static/images/homepage_mistakes.gif" /></p>
+<h3 id="removing-redundant-images">Removing redundant images<a class="headerlink" href="#removing-redundant-images" title="Permanent link">&para;</a></h3>
+<p>During model training, the best results will be seen when training on unique data. Use FiftyOne to automatically remove duplicate or near-duplicate images from your datasets and curate diverse training datasets from your raw data.</p>
+<p><a href="tutorials/uniqueness.html">Try the image uniqueness tutorial</a></p>
+<p><img alt="" src="_static/images/homepage_redundant.gif" /></p>
+<h2 id="core-concepts">Core Concepts <a href="#core-concepts" title="Permalink to this headline">¶</a><a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="fiftyone-library">FiftyOne Library <a href="#fiftyone-library" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-library" title="Permanent link">&para;</a></h3>
+<p>FiftyOne’s core library provides a structured yet dynamic representation to
+explore your datasets. You can efficiently query and manipulate your dataset by
+adding custom tags, model predictions and more.</p>
+<p><a href="fiftyone_concepts/basics.html">Explore the library</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;my_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4">
+</span><span id="__span-0-5"><span class="n">sample</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;/path/to/image.png&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><span class="n">sample</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span>
+</span><span id="__span-0-7"><span class="n">sample</span><span class="p">[</span><span class="s2">&quot;custom_field&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">51</span>
+</span><span id="__span-0-8">
+</span><span id="__span-0-9"><span class="n">dataset</span><span class="o">.</span><span class="n">add_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</span><span id="__span-0-10">
+</span><span id="__span-0-11"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;custom_field&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-0-12">
+</span><span id="__span-0-13"><span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">view</span><span class="p">:</span>
+</span><span id="__span-0-14">    <span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>FiftyOne is designed to be lightweight and flexible, making it easy to load
+your datasets. FiftyOne supports loading datasets in a variety of common
+formats out-of-the-box, and it also provides the extensibility to load
+datasets in custom formats.</p>
+<p>Check out <a href="fiftyone_concepts/dataset_creation/index.html">loading datasets</a> to see
+how to load your data into FiftyOne.</p>
+<h3 id="fiftyone-app">FiftyOne App <a href="#fiftyone-app" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-app" title="Permanent link">&para;</a></h3>
+<p>The FiftyOne App is a graphical user interface that makes it easy to explore
+and rapidly gain intuition into your datasets. You can visualize labels like
+bounding boxes and segmentations overlaid on the samples; sort, query and
+slice your dataset into any subset of interest; and more.</p>
+<p><a href="fiftyone_concepts/app.html">See more of the App</a></p>
+<p><img alt="fiftyone-app" src="_images/homepage_app.png" /></p>
+<h3 id="fiftyone-brain">FiftyOne Brain <a href="#fiftyone-brain" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-brain" title="Permanent link">&para;</a></h3>
+<p>The FiftyOne Brain is a library of powerful machine learning-powered
+capabilities that provide insights into your datasets and recommend ways to
+modify your datasets that will lead to measurably better performance of your
+models.</p>
+<p><a href="brain.html">Learn more about the Brain</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="n">fob</span><span class="o">.</span><span class="n">compute_uniqueness</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-1-4"><span class="n">rank_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="fiftyone-plugins">FiftyOne Plugins <a href="#fiftyone-plugins" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-plugins" title="Permanent link">&para;</a></h3>
+<p>FiftyOne provides a powerful plugin framework that allows for extending and
+customizing the functionality of the tool to suit your specific needs.</p>
+<p>With plugins, you can add new functionality to the FiftyOne App, create
+integrations with other tools and APIs, render custom panels, and add custom
+buttons to menus.</p>
+<p>With <a href="teams/teams_plugins.html#teams-delegated-operations">FiftyOne Teams</a>, you can even write
+plugins that allow users to execute long-running tasks from within the App that
+run on a connected compute cluster.</p>
+<p><a href="plugins/index.html">Install some plugins!</a></p>
+<p><img alt="fiftyone-plugins" src="_images/embeddings.gif" /></p>
+<h3 id="dataset-zoo">Dataset Zoo <a href="#dataset-zoo" title="Permalink to this headline">¶</a><a class="headerlink" href="#dataset-zoo" title="Permanent link">&para;</a></h3>
+<p>The FiftyOne Dataset Zoo provides a powerful interface for downloading datasets
+and loading them into FiftyOne.</p>
+<p>It provides native access to dozens of popular benchmark datasets, and it als
+supports downloading arbitrary public or private datasets whose
+download/preparation methods are provided via GitHub repositories or URLs.</p>
+<p><a href="dataset_zoo/index.html">Check out the Dataset Zoo</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-2-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-2-3">
+</span><span id="__span-2-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;coco-2017&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5">
+</span><span id="__span-2-6"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="dataset-zoo" src="_images/dataset_zoo_coco_2017.png" /></p>
+<h3 id="model-zoo">Model Zoo <a href="#model-zoo" title="Permalink to this headline">¶</a><a class="headerlink" href="#model-zoo" title="Permanent link">&para;</a></h3>
+<p>The FiftyOne Model Zoo provides a powerful interface for downloading models and
+applying them to your FiftyOne datasets.</p>
+<p>It provides native access to hundreds of pre-trained models, and it also
+supports downloading arbitrary public or private models whose definitions are
+provided via GitHub repositories or URLs.</p>
+<p><a href="data_and_models/model_zoo/index.html">Check out the Model Zoo</a></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-3-5">    <span class="s2">&quot;coco-2017&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-3-7">    <span class="n">max_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+</span><span id="__span-3-8">    <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-3-9"><span class="p">)</span>
+</span><span id="__span-3-10">
+</span><span id="__span-3-11"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-3-12">    <span class="s2">&quot;clip-vit-base32-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-3-13">    <span class="n">text_prompt</span><span class="o">=</span><span class="s2">&quot;A photo of a&quot;</span><span class="p">,</span>
+</span><span id="__span-3-14">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="s2">&quot;tree&quot;</span><span class="p">,</span> <span class="s2">&quot;chair&quot;</span><span class="p">],</span>
+</span><span id="__span-3-15"><span class="p">)</span>
+</span><span id="__span-3-16">
+</span><span id="__span-3-17"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;zero_shot_predictions&quot;</span><span class="p">)</span>
+</span><span id="__span-3-18">
+</span><span id="__span-3-19"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="whats-next">What’s Next? <a href="#what-s-next" title="Permalink to this headline">¶</a><a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Where should you go from here? You could…</p>
+<ul>
+<li>
+<p><a href="getting_started/install.html#installing-fiftyone">Install FiftyOne</a></p>
+</li>
+<li>
+<p>Try one of the <a href="tutorials/index.html">tutorials</a> that demonstrate the unique
+capabilities of FiftyOne</p>
+</li>
+<li>
+<p>Explore <a href="recipes/index.html">recipes</a> for integrating FiftyOne into
+your current ML workflows</p>
+</li>
+<li>
+<p>Check out the <a href="cheat_sheets/index.html">cheat sheets</a> for topics you may
+want to master quickly</p>
+</li>
+<li>
+<p>Consult the <a href="fiftyone_concepts/index.html">user guide</a> for detailed instructions on
+how to accomplish various tasks with FiftyOne</p>
+</li>
+</ul>
+<h2 id="need-support">Need Support? <a href="#need-support" title="Permalink to this headline">¶</a><a class="headerlink" href="#need-support" title="Permanent link">&para;</a></h2>
+<p>If you run into any issues with FiftyOne or have any burning questions, feel
+free to <a href="https://community.voxel51.com">connect with us on Discord</a> or reach out to
+us at <a href="mailto:support%40voxel51.com">support@voxel51.com</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

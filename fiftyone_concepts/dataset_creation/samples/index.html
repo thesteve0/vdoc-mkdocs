@@ -1,0 +1,1674 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Using Sample Parsers ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-sample-parsers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Sample Parsers ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adding-samples-to-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding samples to datasets ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding samples to datasets ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic recipe ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-unlabeled-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding unlabeled images ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding unlabeled images ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-directory-of-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a directory of images ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-glob-pattern-of-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a glob pattern of images ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-images-using-a-sampleparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding images using a SampleParser ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-labeled-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding labeled images ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-unlabeled-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding unlabeled videos ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding unlabeled videos ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-directory-of-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a directory of videos ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-glob-pattern-of-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a glob pattern of videos ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-videos-using-a-sampleparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding videos using a SampleParser ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-labeled-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding labeled videos ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingesting-samples-into-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingesting samples into datasets ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ingesting samples into datasets ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-recipe_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic recipe ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingesting-unlabeled-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingesting unlabeled images ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingesting-labeled-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingesting labeled images ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingesting-unlabeled-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingesting unlabeled videos ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingesting-labeled-videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingesting labeled videos ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-sampleparser-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in SampleParser classes ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-a-custom-sampleparser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing a custom SampleParser ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/fiftyone_concepts/dataset_creation/samples.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="using-sample-parsers">Using Sample Parsers <a href="#using-sample-parsers" title="Permalink to this headline">¶</a><a class="headerlink" href="#using-sample-parsers" title="Permanent link">&para;</a></h1>
+<p>This page describes how to use the <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> interface to add samples to
+your FiftyOne datasets.</p>
+<p>The <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> interface provides native support for loading samples in a
+variety of <a href="#builtin-sample-parser">common formats</a>, and it can be easily
+extended to import datasets in <a href="#custom-sample-parser">custom formats</a>,
+allowing you to automate the dataset loading process.</p>
+<p>Warning</p>
+<p>Using the <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> interface is not recommended. You’ll likely prefer
+<a href="index.html#loading-custom-datasets">adding samples manually</a> or
+<a href="datasets.html#loading-datasets-from-disk">using dataset importers</a> to load data
+into FiftyOne.</p>
+<h2 id="adding-samples-to-datasets">Adding samples to datasets <a href="#adding-samples-to-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-samples-to-datasets" title="Permanent link">&para;</a></h2>
+<h3 id="basic-recipe">Basic recipe <a href="#basic-recipe" title="Permalink to this headline">¶</a><a class="headerlink" href="#basic-recipe" title="Permanent link">&para;</a></h3>
+<p>The basic recipe for using the <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> interface to add samples to a
+<a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a> is to create a parser of the appropriate type and then pass the
+parser along with an iterable of samples to the appropriate <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a> method.</p>
+<p>Note</p>
+<p>A typical use case is that <code>samples</code> in the above recipe is a
+<code>torch.utils.data.Dataset</code> or an iterable generated by
+<code>tf.data.Dataset.as_numpy_iterator()</code>.</p>
+<h3 id="adding-unlabeled-images">Adding unlabeled images <a href="#adding-unlabeled-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-unlabeled-images" title="Permanent link">&para;</a></h3>
+<p>FiftyOne provides a few convenient ways to add unlabeled images in FiftyOne
+datasets.</p>
+<h4 id="adding-a-directory-of-images">Adding a directory of images <a href="#adding-a-directory-of-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-a-directory-of-images" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_images_dir" title="fiftyone.core.dataset.Dataset.add_images_dir"><code>Dataset.add_images_dir()</code></a>
+to add a directory of images to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-0-4">
+</span><span id="__span-0-5"><span class="c1"># A directory of images to add</span>
+</span><span id="__span-0-6"><span class="n">images_dir</span> <span class="o">=</span> <span class="s2">&quot;/path/to/images&quot;</span>
+</span><span id="__span-0-7">
+</span><span id="__span-0-8"><span class="c1"># Add images to the dataset</span>
+</span><span id="__span-0-9"><span class="n">dataset</span><span class="o">.</span><span class="n">add_images_dir</span><span class="p">(</span><span class="n">images_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="adding-a-glob-pattern-of-images">Adding a glob pattern of images <a href="#adding-a-glob-pattern-of-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-a-glob-pattern-of-images" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_images_patt" title="fiftyone.core.dataset.Dataset.add_images_patt"><code>Dataset.add_images_patt()</code></a>
+to add a glob pattern of images to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-1-4">
+</span><span id="__span-1-5"><span class="c1"># A glob pattern of images to add</span>
+</span><span id="__span-1-6"><span class="n">images_patt</span> <span class="o">=</span> <span class="s2">&quot;/path/to/images/*.jpg&quot;</span>
+</span><span id="__span-1-7">
+</span><span id="__span-1-8"><span class="c1"># Add images to the dataset</span>
+</span><span id="__span-1-9"><span class="n">dataset</span><span class="o">.</span><span class="n">add_images_patt</span><span class="p">(</span><span class="n">images_patt</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="adding-images-using-a-sampleparser">Adding images using a SampleParser <a href="#adding-images-using-a-sampleparser" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-images-using-a-sampleparser" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_images" title="fiftyone.core.dataset.Dataset.add_images"><code>Dataset.add_images()</code></a>
+to add an iterable of unlabeled images that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledImageSampleParser" title="fiftyone.utils.data.parsers.UnlabeledImageSampleParser"><code>UnlabeledImageSampleParser</code></a> to a dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides an
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageSampleParser" title="fiftyone.utils.data.parsers.ImageSampleParser"><code>ImageSampleParser</code></a>
+that handles samples that contain either an image that can be converted to
+<a href="https://numpy.org">numpy format</a> via <code>np.asarray()</code> of the path to an
+image on disk.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-2-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-2-3">
+</span><span id="__span-2-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-2-5">
+</span><span id="__span-2-6"><span class="c1"># An iterable of images or image paths and the UnlabeledImageSampleParser</span>
+</span><span id="__span-2-7"><span class="c1"># to use to parse them</span>
+</span><span id="__span-2-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-2-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">ImageSampleParser</span>
+</span><span id="__span-2-10">
+</span><span id="__span-2-11"><span class="c1"># Add images to the dataset</span>
+</span><span id="__span-2-12"><span class="n">dataset</span><span class="o">.</span><span class="n">add_images</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="adding-labeled-images">Adding labeled images <a href="#adding-labeled-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-labeled-images" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_labeled_images" title="fiftyone.core.dataset.Dataset.add_labeled_images"><code>Dataset.add_labeled_images()</code></a>
+to add an iterable of samples that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledImageSampleParser" title="fiftyone.utils.data.parsers.LabeledImageSampleParser"><code>LabeledImageSampleParser</code></a> to a dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides an
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageClassificationSampleParser" title="fiftyone.utils.data.parsers.ImageClassificationSampleParser"><code>ImageClassificationSampleParser</code></a>
+that handles samples that contain <code>(image_or_path, target)</code> tuples, where:</p>
+<ul>
+<li>
+<p><code>image_or_path</code> is either an image that can be converted to numpy
+format via <code>np.asarray()</code> or the path to an image on disk</p>
+</li>
+<li>
+<p><code>target</code> is either a class ID or a label string</p>
+</li>
+</ul>
+<p>The snippet below adds an iterable of image classification data in the above
+format to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6"><span class="c1"># An iterable of `(image_or_path, target)` tuples and the</span>
+</span><span id="__span-3-7"><span class="c1"># LabeledImageSampleParser to use to parse them</span>
+</span><span id="__span-3-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-3-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">ImageClassificationSampleParser</span>
+</span><span id="__span-3-10">
+</span><span id="__span-3-11"><span class="c1"># Add labeled images to the dataset</span>
+</span><span id="__span-3-12"><span class="n">dataset</span><span class="o">.</span><span class="n">add_labeled_images</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="adding-unlabeled-videos">Adding unlabeled videos <a href="#adding-unlabeled-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-unlabeled-videos" title="Permanent link">&para;</a></h3>
+<p>FiftyOne provides a few convenient ways to add unlabeled videos in FiftyOne
+datasets.</p>
+<h4 id="adding-a-directory-of-videos">Adding a directory of videos <a href="#adding-a-directory-of-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-a-directory-of-videos" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_videos_dir" title="fiftyone.core.dataset.Dataset.add_videos_dir"><code>Dataset.add_videos_dir()</code></a>
+to add a directory of videos to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-4-2">
+</span><span id="__span-4-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-4-4">
+</span><span id="__span-4-5"><span class="c1"># A directory of videos to add</span>
+</span><span id="__span-4-6"><span class="n">videos_dir</span> <span class="o">=</span> <span class="s2">&quot;/path/to/videos&quot;</span>
+</span><span id="__span-4-7">
+</span><span id="__span-4-8"><span class="c1"># Add videos to the dataset</span>
+</span><span id="__span-4-9"><span class="n">dataset</span><span class="o">.</span><span class="n">add_videos_dir</span><span class="p">(</span><span class="n">videos_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="adding-a-glob-pattern-of-videos">Adding a glob pattern of videos <a href="#adding-a-glob-pattern-of-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-a-glob-pattern-of-videos" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_videos_patt" title="fiftyone.core.dataset.Dataset.add_videos_patt"><code>Dataset.add_videos_patt()</code></a>
+to add a glob pattern of videos to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-5-2">
+</span><span id="__span-5-3"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-5-4">
+</span><span id="__span-5-5"><span class="c1"># A glob pattern of videos to add</span>
+</span><span id="__span-5-6"><span class="n">videos_patt</span> <span class="o">=</span> <span class="s2">&quot;/path/to/videos/*.mp4&quot;</span>
+</span><span id="__span-5-7">
+</span><span id="__span-5-8"><span class="c1"># Add videos to the dataset</span>
+</span><span id="__span-5-9"><span class="n">dataset</span><span class="o">.</span><span class="n">add_videos_patt</span><span class="p">(</span><span class="n">videos_patt</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="adding-videos-using-a-sampleparser">Adding videos using a SampleParser <a href="#adding-videos-using-a-sampleparser" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-videos-using-a-sampleparser" title="Permanent link">&para;</a></h4>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_videos" title="fiftyone.core.dataset.Dataset.add_videos"><code>Dataset.add_videos()</code></a>
+to add an iterable of unlabeled videos that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledVideoSampleParser" title="fiftyone.utils.data.parsers.UnlabeledVideoSampleParser"><code>UnlabeledVideoSampleParser</code></a> to a dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides a
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoSampleParser" title="fiftyone.utils.data.parsers.VideoSampleParser"><code>VideoSampleParser</code></a>
+that handles samples that directly contain the path to the video on disk.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-6-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-6-3">
+</span><span id="__span-6-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="c1"># An iterable of video paths and the UnlabeledVideoSampleParser to use to</span>
+</span><span id="__span-6-7"><span class="c1"># parse them</span>
+</span><span id="__span-6-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-6-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">VideoSampleParser</span>
+</span><span id="__span-6-10">
+</span><span id="__span-6-11"><span class="c1"># Add videos to the dataset</span>
+</span><span id="__span-6-12"><span class="n">dataset</span><span class="o">.</span><span class="n">add_videos</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="adding-labeled-videos">Adding labeled videos <a href="#adding-labeled-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#adding-labeled-videos" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_labeled_videos" title="fiftyone.core.dataset.Dataset.add_labeled_videos"><code>Dataset.add_labeled_videos()</code></a>
+to add an iterable of samples that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledVideoSampleParser" title="fiftyone.utils.data.parsers.LabeledVideoSampleParser"><code>LabeledVideoSampleParser</code></a> to a dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides a
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoLabelsSampleParser" title="fiftyone.utils.data.parsers.VideoLabelsSampleParser"><code>VideoLabelsSampleParser</code></a>
+that handles samples that contain <code>(video_path, video_labels_or_path)</code>
+tuples, where:</p>
+<ul>
+<li>
+<p><code>video_path</code> is the path to a video on disk</p>
+</li>
+<li>
+<p><code>video_labels_or_path</code> is an <code>eta.core.video.VideoLabels</code>
+instance, a serialized dict representation of one, or the path to one on disk</p>
+</li>
+</ul>
+<p>The snippet below adds an iterable of labeled video samples in the above format
+to a dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-7-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-7-5">
+</span><span id="__span-7-6"><span class="c1"># An iterable of `(video_path, video_labels_or_path)` tuples and the</span>
+</span><span id="__span-7-7"><span class="c1"># LabeledVideoSampleParser to use to parse them</span>
+</span><span id="__span-7-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-7-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">VideoLabelsSampleParser</span>
+</span><span id="__span-7-10">
+</span><span id="__span-7-11"><span class="c1"># Add labeled videos to the dataset</span>
+</span><span id="__span-7-12"><span class="n">dataset</span><span class="o">.</span><span class="n">add_labeled_videos</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="ingesting-samples-into-datasets">Ingesting samples into datasets <a href="#ingesting-samples-into-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#ingesting-samples-into-datasets" title="Permanent link">&para;</a></h2>
+<p>Creating FiftyOne datasets typically does not create copies of the source media,
+since <a href="../../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample" title="fiftyone.core.sample.Sample"><code>Sample</code></a> instances store the <code>filepath</code> to the media, not the media itself.</p>
+<p>However, in certain circumstances, such as loading data from binary sources
+like <a href="https://www.tensorflow.org/tutorials/load_data/tfrecord">TFRecords</a>
+or creating a FiftyOne dataset from unorganized and/or temporary files on disk,
+it can be desirable to <em>ingest</em> the raw media for each sample into a common
+backing location.</p>
+<p>FiftyOne provides support for ingesting samples and their underlying source
+media in both <a href="#builtin-sample-parser">common formats</a> and can be extended
+to import datasets in <a href="#custom-sample-parser">custom formats</a>.</p>
+<h3 id="basic-recipe_1">Basic recipe <a href="#id3" title="Permalink to this headline">¶</a><a class="headerlink" href="#basic-recipe_1" title="Permanent link">&para;</a></h3>
+<p>The basic recipe for ingesting samples and their source media into a <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a>
+is to create a <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> of the appropriate type of sample that you’re
+loading and then pass the parser along with an iterable of samples to the
+appropriate <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a> method.</p>
+<p>Note</p>
+<p>A typical use case is that <code>samples</code> in the above recipe is a
+<code>torch.utils.data.Dataset</code> or an iterable generated by
+<code>tf.data.Dataset.as_numpy_iterator()</code>.</p>
+<h3 id="ingesting-unlabeled-images">Ingesting unlabeled images <a href="#ingesting-unlabeled-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#ingesting-unlabeled-images" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_images" title="fiftyone.core.dataset.Dataset.ingest_images"><code>Dataset.ingest_images()</code></a>
+to ingest an iterable of unlabeled images that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledImageSampleParser" title="fiftyone.utils.data.parsers.UnlabeledImageSampleParser"><code>UnlabeledImageSampleParser</code></a> into a dataset.</p>
+<p>The <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledImageSampleParser.has_image_path" title="fiftyone.utils.data.parsers.UnlabeledImageSampleParser.has_image_path"><code>has_image_path</code></a>
+property of the parser may either be <code>True</code> or <code>False</code>. If the parser provides
+image paths, the source images will be directly copied from their source
+locations into the backing directory for the dataset; otherwise, the image will
+be read in-memory via
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledImageSampleParser.get_image" title="fiftyone.utils.data.parsers.UnlabeledImageSampleParser.get_image"><code>get_image()</code></a>
+and then written to the backing directory.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides an
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageSampleParser" title="fiftyone.utils.data.parsers.ImageSampleParser"><code>ImageSampleParser</code></a>
+that handles samples that contain either an image that can be converted to
+<a href="https://numpy.org">numpy format</a> via <code>np.asarray()</code> of the path to an
+image on disk.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-8-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-8-3">
+</span><span id="__span-8-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-8-5">
+</span><span id="__span-8-6"><span class="c1"># An iterable of images or image paths and the UnlabeledImageSampleParser</span>
+</span><span id="__span-8-7"><span class="c1"># to use to parse them</span>
+</span><span id="__span-8-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-8-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">ImageSampleParser</span>
+</span><span id="__span-8-10">
+</span><span id="__span-8-11"><span class="c1"># A directory in which the images will be written; If `None`, a default directory</span>
+</span><span id="__span-8-12"><span class="c1"># based on the dataset&#39;s `name` will be used</span>
+</span><span id="__span-8-13"><span class="n">dataset_dir</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-8-14">
+</span><span id="__span-8-15"><span class="c1"># Ingest the images into the dataset</span>
+</span><span id="__span-8-16"><span class="c1"># The source images are copied into `dataset_dir`</span>
+</span><span id="__span-8-17"><span class="n">dataset</span><span class="o">.</span><span class="n">ingest_images</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="ingesting-labeled-images">Ingesting labeled images <a href="#ingesting-labeled-images" title="Permalink to this headline">¶</a><a class="headerlink" href="#ingesting-labeled-images" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_labeled_images" title="fiftyone.core.dataset.Dataset.ingest_labeled_images"><code>Dataset.ingest_labeled_images()</code></a>
+to ingest an iterable of samples that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledImageSampleParser" title="fiftyone.utils.data.parsers.LabeledImageSampleParser"><code>LabeledImageSampleParser</code></a> into a dataset.</p>
+<p>The <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_path" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_path"><code>has_image_path</code></a>
+property of the parser may either be <code>True</code> or <code>False</code>. If the parser provides
+image paths, the source images will be directly copied from their source
+locations into the backing directory for the dataset; otherwise, the image will
+be read in-memory via
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image"><code>get_image()</code></a>
+and then written to the backing directory.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides an
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageClassificationSampleParser" title="fiftyone.utils.data.parsers.ImageClassificationSampleParser"><code>ImageClassificationSampleParser</code></a>
+that handles samples that contain <code>(image_or_path, target)</code> tuples, where:</p>
+<ul>
+<li>
+<p><code>image_or_path</code> is either an image that can be converted to numpy
+format via <code>np.asarray()</code> or the path to an image on disk</p>
+</li>
+<li>
+<p><code>target</code> is either a class ID or a label string</p>
+</li>
+</ul>
+<p>The snippet below ingests an iterable of image classification data in the above
+format intoa a FiftyOne dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-9-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-9-3">
+</span><span id="__span-9-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-9-5">
+</span><span id="__span-9-6"><span class="c1"># An iterable of `(image_or_path, target)` tuples and the</span>
+</span><span id="__span-9-7"><span class="c1"># LabeledImageSampleParser to use to parse them</span>
+</span><span id="__span-9-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-9-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">ImageClassificationSampleParser</span>  <span class="c1"># for example</span>
+</span><span id="__span-9-10">
+</span><span id="__span-9-11"><span class="c1"># A directory in which the images will be written; If `None`, a default directory</span>
+</span><span id="__span-9-12"><span class="c1"># based on the dataset&#39;s `name` will be used</span>
+</span><span id="__span-9-13"><span class="n">dataset_dir</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-9-14">
+</span><span id="__span-9-15"><span class="c1"># Ingest the labeled images into the dataset</span>
+</span><span id="__span-9-16"><span class="c1"># The source images are copied into `dataset_dir`</span>
+</span><span id="__span-9-17"><span class="n">dataset</span><span class="o">.</span><span class="n">ingest_labeled_images</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="ingesting-unlabeled-videos">Ingesting unlabeled videos <a href="#ingesting-unlabeled-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#ingesting-unlabeled-videos" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_videos" title="fiftyone.core.dataset.Dataset.ingest_videos"><code>Dataset.ingest_videos()</code></a>
+to ingest an iterable of unlabeled videos that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.UnlabeledVideoSampleParser" title="fiftyone.utils.data.parsers.UnlabeledVideoSampleParser"><code>UnlabeledVideoSampleParser</code></a> into a dataset.</p>
+<p>The source videos will be directly copied from their source locations into the
+backing directory for the dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides a
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoSampleParser" title="fiftyone.utils.data.parsers.VideoSampleParser"><code>VideoSampleParser</code></a>
+that handles samples that directly contain the paths to videos on disk.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-10-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-10-3">
+</span><span id="__span-10-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-10-5">
+</span><span id="__span-10-6"><span class="c1"># An iterable of videos or video paths and the UnlabeledVideoSampleParser</span>
+</span><span id="__span-10-7"><span class="c1"># to use to parse them</span>
+</span><span id="__span-10-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-10-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">VideoSampleParser</span>
+</span><span id="__span-10-10">
+</span><span id="__span-10-11"><span class="c1"># A directory in which the videos will be written; If `None`, a default directory</span>
+</span><span id="__span-10-12"><span class="c1"># based on the dataset&#39;s `name` will be used</span>
+</span><span id="__span-10-13"><span class="n">dataset_dir</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-10-14">
+</span><span id="__span-10-15"><span class="c1"># Ingest the videos into the dataset</span>
+</span><span id="__span-10-16"><span class="c1"># The source videos are copied into `dataset_dir`</span>
+</span><span id="__span-10-17"><span class="n">dataset</span><span class="o">.</span><span class="n">ingest_videos</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="ingesting-labeled-videos">Ingesting labeled videos <a href="#ingesting-labeled-videos" title="Permalink to this headline">¶</a><a class="headerlink" href="#ingesting-labeled-videos" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_labeled_videos" title="fiftyone.core.dataset.Dataset.ingest_labeled_videos"><code>Dataset.ingest_labeled_videos()</code></a>
+to ingest an iterable of samples that can be parsed via a specified
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledVideoSampleParser" title="fiftyone.utils.data.parsers.LabeledVideoSampleParser"><code>LabeledVideoSampleParser</code></a> into a dataset.</p>
+<p>The source videos will be directly copied from their source locations into the
+backing directory for the dataset.</p>
+<p><strong>Example</strong></p>
+<p>FiftyOne provides a
+<a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoLabelsSampleParser" title="fiftyone.utils.data.parsers.VideoLabelsSampleParser"><code>VideoLabelsSampleParser</code></a>
+that handles samples that contain <code>(video_path, video_labels_or_path)</code>
+tuples, where:</p>
+<ul>
+<li>
+<p><code>video_path</code> is the path to a video on disk</p>
+</li>
+<li>
+<p><code>video_labels_or_path</code> is an <code>eta.core.video.VideoLabels</code> instance, a
+serialized dict representation of one, or the path to one on disk</p>
+</li>
+</ul>
+<p>The snippet below ingests an iterable of labeled videos in the above format
+into a FiftyOne dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-11-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.data</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foud</span>
+</span><span id="__span-11-3">
+</span><span id="__span-11-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-11-5">
+</span><span id="__span-11-6"><span class="c1"># An iterable of `(video_path, video_labels_or_path)` tuples and the</span>
+</span><span id="__span-11-7"><span class="c1"># LabeledVideoSampleParser to use to parse them</span>
+</span><span id="__span-11-8"><span class="n">samples</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-11-9"><span class="n">sample_parser</span> <span class="o">=</span> <span class="n">foud</span><span class="o">.</span><span class="n">VideoLabelsSampleParser</span>  <span class="c1"># for example</span>
+</span><span id="__span-11-10">
+</span><span id="__span-11-11"><span class="c1"># A directory in which the videos will be written; If `None`, a default directory</span>
+</span><span id="__span-11-12"><span class="c1"># based on the dataset&#39;s `name` will be used</span>
+</span><span id="__span-11-13"><span class="n">dataset_dir</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-11-14">
+</span><span id="__span-11-15"><span class="c1"># Ingest the labeled videos into the dataset</span>
+</span><span id="__span-11-16"><span class="c1"># The source videos are copied into `dataset_dir`</span>
+</span><span id="__span-11-17"><span class="n">dataset</span><span class="o">.</span><span class="n">ingest_labeled_videos</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_parser</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="built-in-sampleparser-classes">Built-in SampleParser classes <a href="#built-in-sampleparser-classes" title="Permalink to this headline">¶</a><a class="headerlink" href="#built-in-sampleparser-classes" title="Permanent link">&para;</a></h2>
+<p>The table below lists the common data formats for which FiftyOne provides
+built-in <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> implementations. You can also write a
+<a href="#custom-sample-parser">custom SampleParser</a> to automate the parsing of
+samples in your own custom data format.</p>
+<p>You can use a <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> to
+<a href="#adding-samples-to-datasets">add samples to datasets</a> and
+<a href="#ingesting-samples-into-datasets">ingest samples into datasets</a>.</p>
+<table>
+<thead>
+<tr>
+<th>SampleParser</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageSampleParser" title="fiftyone.utils.data.parsers.ImageSampleParser"><code>ImageSampleParser</code></a></td>
+<td>A sample parser that parses raw image samples.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoSampleParser" title="fiftyone.utils.data.parsers.VideoSampleParser"><code>VideoSampleParser</code></a></td>
+<td>A sample parser that parses raw video samples.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageClassificationSampleParser" title="fiftyone.utils.data.parsers.ImageClassificationSampleParser"><code>ImageClassificationSampleParser</code></a></td>
+<td>Generic parser for image classification samples whose labels are represented as <a href="../../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification" title="fiftyone.core.labels.Classification"><code>Classification</code></a> instances.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageDetectionSampleParser" title="fiftyone.utils.data.parsers.ImageDetectionSampleParser"><code>ImageDetectionSampleParser</code></a></td>
+<td>Generic parser for image detection samples whose labels are represented as <a href="../../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections" title="fiftyone.core.labels.Detections"><code>Detections</code></a> instances.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.ImageLabelsSampleParser" title="fiftyone.utils.data.parsers.ImageLabelsSampleParser"><code>ImageLabelsSampleParser</code></a></td>
+<td>Generic parser for image detection samples whose labels are stored in<br><a href="https://github.com/voxel51/eta/blob/develop/docs/image_labels_guide.md">ETA ImageLabels format</a>.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.FiftyOneImageClassificationSampleParser" title="fiftyone.utils.data.parsers.FiftyOneImageClassificationSampleParser"><code>FiftyOneImageClassificationSampleParser</code></a></td>
+<td>Parser for samples in FiftyOne image classification datasets. See<br><a href="../../api/fiftyone.types.html#fiftyone.types.FiftyOneImageClassificationDataset" title="fiftyone.types.FiftyOneImageClassificationDataset"><code>FiftyOneImageClassificationDataset</code></a> for format<br>details.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.FiftyOneImageDetectionSampleParser" title="fiftyone.utils.data.parsers.FiftyOneImageDetectionSampleParser"><code>FiftyOneImageDetectionSampleParser</code></a></td>
+<td>Parser for samples in FiftyOne image detection datasets. See<br><a href="../../api/fiftyone.types.html#fiftyone.types.FiftyOneImageDetectionDataset" title="fiftyone.types.FiftyOneImageDetectionDataset"><code>FiftyOneImageDetectionDataset</code></a> for format details.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.FiftyOneImageLabelsSampleParser" title="fiftyone.utils.data.parsers.FiftyOneImageLabelsSampleParser"><code>FiftyOneImageLabelsSampleParser</code></a></td>
+<td>Parser for samples in FiftyOne image labels datasets. See<br><a href="../../api/fiftyone.types.html#fiftyone.types.FiftyOneImageLabelsDataset" title="fiftyone.types.FiftyOneImageLabelsDataset"><code>FiftyOneImageLabelsDataset</code></a> for format details.</td>
+</tr>
+<tr>
+<td><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.FiftyOneVideoLabelsSampleParser" title="fiftyone.utils.data.parsers.FiftyOneVideoLabelsSampleParser"><code>FiftyOneVideoLabelsSampleParser</code></a></td>
+<td>Parser for samples in FiftyOne video labels datasets. See<br><a href="../../api/fiftyone.types.html#fiftyone.types.FiftyOneVideoLabelsDataset" title="fiftyone.types.FiftyOneVideoLabelsDataset"><code>FiftyOneVideoLabelsDataset</code></a> for format details.</td>
+</tr>
+<tr>
+<td><code>TFImageClassificationSampleParser</code></td>
+<td>Parser for image classification samples stored as<br><a href="https://www.tensorflow.org/tutorials/load_data/tfrecord">TFRecords</a>.</td>
+</tr>
+<tr>
+<td><code>TFObjectDetectionSampleParser</code></td>
+<td>Parser for image detection samples stored in<br><a href="https://github.com/tensorflow/models/blob/master/research/object_detection">TF Object Detection API format</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="writing-a-custom-sampleparser">Writing a custom SampleParser <a href="#writing-a-custom-sampleparser" title="Permalink to this headline">¶</a><a class="headerlink" href="#writing-a-custom-sampleparser" title="Permanent link">&para;</a></h2>
+<p>FiftyOne provides a variety of
+<a href="#builtin-sample-parser">built-in SampleParser classes</a> to parse
+data in common formats. However, if your samples are stored in a custom format,
+you can provide a custom <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> class and provide it to FiftyOne when
+<a href="#adding-samples-to-datasets">adding</a> or
+<a href="#ingesting-samples-into-datasets">ingesting</a> samples into your datasets.</p>
+<p>The <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> interface provides a mechanism for defining methods that
+parse a data sample that is stored in a particular (external to FiftyOne)
+format and return various elements of the sample in a format that FiftyOne
+understands.</p>
+<p><a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser" title="fiftyone.utils.data.parsers.SampleParser"><code>SampleParser</code></a> itself is an abstract interface; the concrete interface that you
+should implement is determined by the type of samples that you are importing.
+For example, <a href="../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.LabeledImageSampleParser" title="fiftyone.utils.data.parsers.LabeledImageSampleParser"><code>LabeledImageSampleParser</code></a> defines an interface for parsing
+information from a labeled image sample, such as the path to the image on
+disk, the image itself, metadata about the image, and the label (e.g.,
+classification or object detections) associated with the image.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

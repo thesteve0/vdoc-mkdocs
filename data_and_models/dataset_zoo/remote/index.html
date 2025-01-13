@@ -1,0 +1,1461 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../datasets/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Remotely-Sourced Zoo Datasets - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#remotely-sourced-zoo-datasets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Remotely-Sourced Zoo Datasets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-remotely-sourced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with remotely-sourced datasets ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-remotely-sourced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating remotely-sourced datasets ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating remotely-sourced datasets ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiftyoneyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      fiftyone.yml ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-and-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download and prepare ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load dataset ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partial downloads ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-remotely-sourced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with remotely-sourced datasets ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-remotely-sourced-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating remotely-sourced datasets ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating remotely-sourced datasets ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiftyoneyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      fiftyone.yml ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-and-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download and prepare ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load dataset ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partial downloads ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/data_and_models/dataset_zoo/remote.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="remotely-sourced-zoo-datasets">Remotely-Sourced Zoo Datasets <a href="#remotely-sourced-zoo-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#remotely-sourced-zoo-datasets" title="Permanent link">&para;</a></h1>
+<p>This page describes how to work with and create zoo datasets whose
+download/preparation methods are hosted via GitHub repositories or public URLs.</p>
+<p>Note</p>
+<p>To download from a private GitHub repository that you have access to,
+provide your GitHub personal access token by setting the <code>GITHUB_TOKEN</code>
+environment variable.</p>
+<h2 id="working-with-remotely-sourced-datasets">Working with remotely-sourced datasets <a href="#working-with-remotely-sourced-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#working-with-remotely-sourced-datasets" title="Permanent link">&para;</a></h2>
+<p>Working with remotely-sourced zoo datasets is just like
+<a href="datasets.html#dataset-zoo-datasets">built-in zoo datasets</a>, as both varieties support
+the <a href="api.html#dataset-zoo-api">full zoo API</a>.</p>
+<p>When specifying remote sources, you can provide any of the following:</p>
+<ul>
+<li>
+<p>A GitHub repo URL like <code>https://github.com/&lt;user&gt;/&lt;repo&gt;</code></p>
+</li>
+<li>
+<p>A GitHub ref like <code>https://github.com/&lt;user&gt;/&lt;repo&gt;/tree/&lt;branch&gt;</code> or
+<code>https://github.com/&lt;user&gt;/&lt;repo&gt;/commit/&lt;commit&gt;</code></p>
+</li>
+<li>
+<p>A GitHub ref string like <code>&lt;user&gt;/&lt;repo&gt;[/&lt;ref&gt;]</code></p>
+</li>
+<li>
+<p>A publicly accessible URL of an archive (eg zip or tar) file</p>
+</li>
+</ul>
+<p>Here’s the basic recipe for working with remotely-sourced zoo datasets:</p>
+<h2 id="creating-remotely-sourced-datasets">Creating remotely-sourced datasets <a href="#creating-remotely-sourced-datasets" title="Permalink to this headline">¶</a><a class="headerlink" href="#creating-remotely-sourced-datasets" title="Permanent link">&para;</a></h2>
+<p>A remotely-sourced dataset is defined by a directory with the following
+contents:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="n">fiftyone</span><span class="o">.</span><span class="n">yml</span>
+</span><span id="__span-0-2"><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="__span-0-3">    <span class="k">def</span><span class="w"> </span><span class="nf">download_and_prepare</span><span class="p">(</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-0-4">        <span class="k">pass</span>
+</span><span id="__span-0-5">
+</span><span id="__span-0-6">    <span class="k">def</span><span class="w"> </span><span class="nf">load_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-0-7">        <span class="k">pass</span>
+</span></code></pre></div>
+<p>Each component is described in detail below.</p>
+<p>Note</p>
+<p>By convention, datasets also contain an optional <code>README.md</code> file that
+provides additional information about the dataset and example syntaxes for
+downloading and working with it.</p>
+<h3 id="fiftyoneyml">fiftyone.yml <a href="#fiftyone-yml" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyoneyml" title="Permanent link">&para;</a></h3>
+<p>The dataset’s <code>fiftyone.yml</code> or <code>fiftyone.yaml</code> file defines relevant metadata
+about the dataset:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required?</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><strong>yes</strong></td>
+<td>The name of the dataset. Once you’ve downloaded all or part of a<br>remotely-sourced zoo dataset, it will subsequently appear as an available<br>zoo dataset under this name when using the<br><a href="api.html#dataset-zoo-api">zoo API</a></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td></td>
+<td>Declare that the directory defines a <code>dataset</code>. This can be omitted for<br>backwards compatibility, but it is recommended to specify this</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td></td>
+<td>The author of the dataset</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td></td>
+<td>The version of the dataset</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td></td>
+<td>The source (eg GitHub repository) where the directory containing this file<br>is hosted</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td></td>
+<td>The original source of the dataset</td>
+</tr>
+<tr>
+<td><code>license</code></td>
+<td></td>
+<td>The license under which the dataset is distributed</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td></td>
+<td>A brief description of the dataset</td>
+</tr>
+<tr>
+<td><code>fiftyone.version</code></td>
+<td></td>
+<td>A semver version specifier (or <code>*</code>) describing the required<br>FiftyOne version for the dataset to load properly</td>
+</tr>
+<tr>
+<td><code>supports_partial_downloads</code></td>
+<td></td>
+<td>Specify <code>true</code> or <code>false</code> whether parts of the dataset can be<br>downloaded/loaded by providing <code>kwargs</code> to<br><a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset" title="fiftyone.zoo.datasets.download_zoo_dataset"><code>download_zoo_dataset()</code></a><br>or <a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset" title="fiftyone.zoo.datasets.load_zoo_dataset"><code>load_zoo_dataset()</code></a> as<br><a href="#dataset-zoo-remote-partial-downloads">described here</a>. If omitted,<br>this is assumed to be <code>false</code></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td></td>
+<td>A list of tags for the dataset. Useful in conjunction with<br><a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.list_zoo_datasets" title="fiftyone.zoo.datasets.list_zoo_datasets"><code>list_zoo_datasets()</code></a></td>
+</tr>
+<tr>
+<td><code>splits</code></td>
+<td></td>
+<td>A list of the dataset’s supported splits. This should be omitted if the<br>dataset does not contain splits</td>
+</tr>
+<tr>
+<td><code>size_samples</code></td>
+<td></td>
+<td>The totaal number of samples in the dataset, or a list of per-split sizes</td>
+</tr>
+</tbody>
+</table>
+<p>Here are two example dataset YAML files:</p>
+<h3 id="download-and-prepare">Download and prepare <a href="#download-and-prepare" title="Permalink to this headline">¶</a><a class="headerlink" href="#download-and-prepare" title="Permanent link">&para;</a></h3>
+<p>All dataset’s <code>__init__.py</code> files must define a <code>download_and_prepare()</code>
+method with the signature below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="k">def</span><span class="w"> </span><span class="nf">download_and_prepare</span><span class="p">(</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Downloads the dataset and prepares it for loading into FiftyOne.</span>
+</span><span id="__span-1-3">
+</span><span id="__span-1-4"><span class="sd">    Args:</span>
+</span><span id="__span-1-5"><span class="sd">        dataset_dir: the directory in which to construct the dataset</span>
+</span><span id="__span-1-6"><span class="sd">        split (None): a specific split to download, if the dataset supports</span>
+</span><span id="__span-1-7"><span class="sd">            splits. The supported split values are defined by the dataset&#39;s</span>
+</span><span id="__span-1-8"><span class="sd">            YAML file</span>
+</span><span id="__span-1-9"><span class="sd">        **kwargs: optional keyword arguments that your dataset can define to</span>
+</span><span id="__span-1-10"><span class="sd">            configure what/how the download is performed</span>
+</span><span id="__span-1-11">
+</span><span id="__span-1-12"><span class="sd">    Returns:</span>
+</span><span id="__span-1-13"><span class="sd">        a tuple of</span>
+</span><span id="__span-1-14">
+</span><span id="__span-1-15"><span class="sd">        -   ``dataset_type``: a ``fiftyone.types.Dataset`` type that the</span>
+</span><span id="__span-1-16"><span class="sd">            dataset is stored in locally, or None if the dataset provides</span>
+</span><span id="__span-1-17"><span class="sd">            its own ``load_dataset()`` method</span>
+</span><span id="__span-1-18"><span class="sd">        -   ``num_samples``: the total number of downloaded samples for the</span>
+</span><span id="__span-1-19"><span class="sd">            dataset or split</span>
+</span><span id="__span-1-20"><span class="sd">        -   ``classes``: a list of classes in the dataset, or None if not</span>
+</span><span id="__span-1-21"><span class="sd">            applicable</span>
+</span><span id="__span-1-22"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-1-23">
+</span><span id="__span-1-24">    <span class="c1"># Download files and organize them in `dataset_dir`</span>
+</span><span id="__span-1-25">    <span class="o">...</span>
+</span><span id="__span-1-26">
+</span><span id="__span-1-27">    <span class="c1"># Define how the data is stored</span>
+</span><span id="__span-1-28">    <span class="n">dataset_type</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageClassificationDirectoryTree</span>
+</span><span id="__span-1-29">    <span class="n">dataset_type</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># custom ``load_dataset()`` method</span>
+</span><span id="__span-1-30">
+</span><span id="__span-1-31">    <span class="c1"># Indicate how many samples have been downloaded</span>
+</span><span id="__span-1-32">    <span class="c1"># May be less than the total size if partial downloads have been used</span>
+</span><span id="__span-1-33">    <span class="n">num_samples</span> <span class="o">=</span> <span class="mi">10000</span>
+</span><span id="__span-1-34">
+</span><span id="__span-1-35">    <span class="c1"># Optionally report what classes exist in the dataset</span>
+</span><span id="__span-1-36">    <span class="n">classes</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-1-37">    <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</span><span id="__span-1-38">
+</span><span id="__span-1-39">    <span class="k">return</span> <span class="n">dataset_type</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">,</span> <span class="n">classes</span>
+</span></code></pre></div>
+<p>This method is called under-the-hood when a user calls
+<a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset" title="fiftyone.zoo.datasets.download_zoo_dataset"><code>download_zoo_dataset()</code></a> or
+<a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset" title="fiftyone.zoo.datasets.load_zoo_dataset"><code>load_zoo_dataset()</code></a>, and its
+job is to download any relevant files from the web and organize and/or prepare
+them as necessary into a format that’s ready to be loaded into a FiftyOne
+dataset.</p>
+<p>The <code>dataset_type</code> that <code>download_and_prepare()</code> returns defines how it the
+dataset is ultimately loaded into FiftyOne:</p>
+<ul>
+<li><strong>Built-in importer</strong>: in many cases, FiftyOne already contains a
+<a href="../user_guide/dataset_creation/datasets.html#supported-import-formats">built-in importer</a> that can be leveraged
+to load data on disk into FiftyOne. Remotely-sourced datasets can take
+advantage of this by simply returning the appropriate <code>dataset_type</code> from
+<code>download_and_prepare()</code>, which is then used to load the data into
+FiftyOne as follows:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="c1"># If the dataset has splits, `dataset_dir` will be the split directory</span>
+</span><span id="__span-2-2"><span class="n">dataset_importer_cls</span> <span class="o">=</span> <span class="n">dataset_type</span><span class="o">.</span><span class="n">get_dataset_importer_cls</span><span class="p">()</span>
+</span><span id="__span-2-3"><span class="n">dataset_importer</span> <span class="o">=</span> <span class="n">dataset_importer_cls</span><span class="p">(</span><span class="n">dataset_dir</span><span class="o">=</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span id="__span-2-4">
+</span><span id="__span-2-5"><span class="n">dataset</span><span class="o">.</span><span class="n">add_importer</span><span class="p">(</span><span class="n">dataset_importer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Custom loader</strong>: if <code>dataset_type=None</code> is returned, then
+<code>__init__.py</code> must also contain a <code>load_dataset()</code> method as described
+below that handles loading the data into FiftyOne as follows:</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="n">load_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="load-dataset">Load dataset <a href="#load-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-dataset" title="Permanent link">&para;</a></h3>
+<p>Datasets that don’t use a built-in importer must also define a
+<code>load_dataset()</code> method in their <code>__init__.py</code> with the signature below:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="k">def</span><span class="w"> </span><span class="nf">load_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Loads the dataset into the given FiftyOne dataset.</span>
+</span><span id="__span-4-3">
+</span><span id="__span-4-4"><span class="sd">    Args:</span>
+</span><span id="__span-4-5"><span class="sd">        dataset: a :class:`fiftyone.core.dataset.Dataset` to which to import</span>
+</span><span id="__span-4-6"><span class="sd">        dataset_dir: the directory to which the dataset was downloaded</span>
+</span><span id="__span-4-7"><span class="sd">        split (None): a split to load. The supported values are</span>
+</span><span id="__span-4-8"><span class="sd">            ``(&quot;train&quot;, &quot;validation&quot;, &quot;test&quot;)``</span>
+</span><span id="__span-4-9"><span class="sd">        **kwargs: optional keyword arguments that your dataset can define to</span>
+</span><span id="__span-4-10"><span class="sd">            configure what/how the load is performed</span>
+</span><span id="__span-4-11"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-4-12">
+</span><span id="__span-4-13">    <span class="c1"># Load data into samples</span>
+</span><span id="__span-4-14">    <span class="n">samples</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</span><span id="__span-4-15">
+</span><span id="__span-4-16">    <span class="c1"># Add samples to the dataset</span>
+</span><span id="__span-4-17">    <span class="n">dataset</span><span class="o">.</span><span class="n">add_samples</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This method’s job is to load the filepaths and any relevant labels into
+<a href="../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample" title="fiftyone.core.sample.Sample"><code>Sample</code></a> objects and then call
+<a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples" title="fiftyone.core.dataset.Dataset.add_samples"><code>add_samples()</code></a> or a similar
+method to add them to the provided <a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a>.</p>
+<h2 id="partial-downloads">Partial downloads <a href="#partial-downloads" title="Permalink to this headline">¶</a><a class="headerlink" href="#partial-downloads" title="Permanent link">&para;</a></h2>
+<p>Remotely-sourced datasets can support partial downloads, which is useful for a
+variety of reasons, including:</p>
+<ul>
+<li>
+<p>A dataset may contain labels for multiple task types but the user is only
+interested in a subset of them</p>
+</li>
+<li>
+<p>The dataset may be very large and the user only wants to download a small
+subset of the samples to get familiar with the dataset</p>
+</li>
+</ul>
+<p>Datasets that support partial downloads should declare this in their
+<a href="#zoo-dataset-remote-fiftyone-yml">fiftyone.yml</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">supports_partial_downloads</span><span class="p">:</span> <span class="n">true</span>
+</span></code></pre></div>
+<p>The partial download behavior itself is defined via <code>**kwargs</code> in the
+dataset’s <code>__init__.py</code> methods:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="k">def</span><span class="w"> </span><span class="nf">download_and_prepare</span><span class="p">(</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-6-2">    <span class="k">pass</span>
+</span><span id="__span-6-3">
+</span><span id="__span-6-4"><span class="k">def</span><span class="w"> </span><span class="nf">load_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_dir</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-6-5">    <span class="k">pass</span>
+</span></code></pre></div>
+<p>When
+<a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset" title="fiftyone.zoo.datasets.download_zoo_dataset"><code>download_zoo_dataset(url, ..., **kwargs)</code></a>
+is called, any <code>kwargs</code> declared by <code>download_and_prepare()</code> are passed
+through to it.</p>
+<p>When
+<a href="../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset" title="fiftyone.zoo.datasets.load_zoo_dataset"><code>load_zoo_dataset(name_or_url, ..., **kwargs)</code></a>
+is called, any <code>kwargs</code> declared by <code>download_and_prepare()</code> and
+<code>load_dataset()</code> are passed through to them, respectively.</p>
+<p>Note</p>
+<p>Check out <a href="https://github.com/voxel51/coco-2017">voxel51/coco-2017</a> for
+an example of a remotely-sourced dataset that supports partial downloads.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1822 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>FiftyOne Teams Plugins ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fiftyone-teams-plugins" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FiftyOne Teams Plugins ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plugins-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins page ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing a plugin ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing a plugin ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-a-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading a plugin ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrading a plugin ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling-a-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling a plugin ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uninstalling a plugin ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enablingdisabling-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling/disabling plugins ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling/disabling plugins ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugin permissions ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plugin permissions ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default permissions ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default permissions ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-ui_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teams UI ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdk_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDK ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegated-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delegated operations ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-your-orchestrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring your orchestrator(s) ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-delegated-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing delegated operations ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing delegated operations ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runs-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runs page ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runs page ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorting ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      Re-running ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinning ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mark-as-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mark as failed ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring progress ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run page ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run page ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Errors ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    <span class="md-ellipsis">
+      View ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/teams/teams_plugins.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fiftyone-teams-plugins">FiftyOne Teams Plugins <a href="#fiftyone-teams-plugins" title="Permalink to this headline">¶</a><a class="headerlink" href="#fiftyone-teams-plugins" title="Permanent link">&para;</a></h1>
+<p>FiftyOne Teams provides native support for installing and running
+<a href="../plugins/index.html#fiftyone-plugins">FiftyOne plugins</a>, which offers powerful opportunities
+to extend and customize the functionality of your Teams deployment to suit your
+needs.</p>
+<p>Note</p>
+<p>What can you do with plugins? Check out
+<a href="#teams-delegated-operations">delegated operations</a> to see some quick
+examples, then check out the
+<a href="https://github.com/voxel51/fiftyone-plugins">FiftyOne plugins</a>
+repository for a growing collection of prebuilt plugins that you can add to
+your Teams deployment!</p>
+<h2 id="plugins-page">Plugins page <a href="#plugins-page" title="Permalink to this headline">¶</a><a class="headerlink" href="#plugins-page" title="Permanent link">&para;</a></h2>
+<p>Admins can use the plugins page to upload, manage, and configure permissions
+for plugins that are made available to users of your Teams deployment.</p>
+<p>Admins can access the plugins page under Settings &gt; Plugins. It displays a
+list of all installed plugins and their operators, as well as the enablement
+and permissions of each.</p>
+<p><img alt="teams-plugins-page" src="../../_images/plugins_page.png" /></p>
+<h2 id="installing-a-plugin">Installing a plugin <a href="#installing-a-plugin" title="Permalink to this headline">¶</a><a class="headerlink" href="#installing-a-plugin" title="Permanent link">&para;</a></h2>
+<p>Admins can install plugins via the Teams UI or Management SDK.</p>
+<p>Note</p>
+<p>A plugin is a directory (or ZIP of it) that contains a top-level
+<code>fiftyone.yml</code> file.</p>
+<h3 id="teams-ui">Teams UI <a href="#teams-ui" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui" title="Permanent link">&para;</a></h3>
+<p>To install a plugin, click the “Install plugin” button on the plugins page.</p>
+<p><img alt="teams-plugins-page-install-button" src="../../_images/plugins_install_btn.png" /></p>
+<p>Then upload or drag and drop the plugin contents as a ZIP file and click
+install.</p>
+<p><img alt="teams-plugins-page-install-page" src="../../_images/plugins_install.png" /></p>
+<p>You should then see a success message and the newly installed plugin listed on
+the plugins page.</p>
+<p><img alt="teams-plugins-page-install-success-page" src="../../_images/plugins_install_success.png" /></p>
+<h3 id="sdk">SDK <a href="#sdk" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h3>
+<p>Admins can also use the
+<code>upload_plugin()</code> method from
+the Management SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="c1"># You can pass the directory or an already zipped version of it</span>
+</span><span id="__span-0-4"><span class="n">fom</span><span class="o">.</span><span class="n">upload_plugin</span><span class="p">(</span><span class="s2">&quot;/path/to/plugin_dir&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="upgrading-a-plugin">Upgrading a plugin <a href="#upgrading-a-plugin" title="Permalink to this headline">¶</a><a class="headerlink" href="#upgrading-a-plugin" title="Permanent link">&para;</a></h2>
+<p>Admins can upgrade plugins at any time through the Teams UI or Management SDK.</p>
+<h3 id="teams-ui_1">Teams UI <a href="#id1" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui_1" title="Permanent link">&para;</a></h3>
+<p>To upgrade a plugin, click the plugin’s dropdown and select “Upgrade plugin”.</p>
+<p><img alt="teams-plugins-page-upgrade-btn" src="../../_images/plugins_upgrade_btn.png" /></p>
+<p>Then upload or drag and drop the upgraded plugin as a ZIP file and click
+upgrade.</p>
+<p><img alt="teams-plugins-page-upgrade-page" src="../../_images/plugins_upgrade_page.png" /></p>
+<p>Note</p>
+<p>If the <code>name</code> attribute within the uploaded plugin’s <code>fiftyone.yml</code> file
+doesn’t match the existing plugin, a new plugin will be created. Simply
+delete the old one.</p>
+<p>You should then see a success message and the updated information about the
+plugin on the plugins page.</p>
+<p><img alt="teams-plugins-page-upgrade-success-page" src="../../_images/plugins_upgrade_success_page.png" /></p>
+<h3 id="sdk_1">SDK <a href="#id2" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h3>
+<p>Admins can also use the
+<code>upload_plugin()</code> method from
+the Management SDK with the <code>overwrite=True</code> option:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="c1"># You can pass the directory or an already zipped version of it</span>
+</span><span id="__span-1-4"><span class="n">fom</span><span class="o">.</span><span class="n">upload_plugin</span><span class="p">(</span><span class="s2">&quot;/path/to/plugin_dir&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="uninstalling-a-plugin">Uninstalling a plugin <a href="#uninstalling-a-plugin" title="Permalink to this headline">¶</a><a class="headerlink" href="#uninstalling-a-plugin" title="Permanent link">&para;</a></h2>
+<p>Admins can uninstall plugins at any time through the Teams UI or Management
+SDK.</p>
+<p>Note</p>
+<p>Did you know? You can
+<a href="#teams-plugins-enable-disable">enable/disable plugins</a> rather than
+permanently uninstalling them.</p>
+<h3 id="teams-ui_2">Teams UI <a href="#id3" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui_2" title="Permanent link">&para;</a></h3>
+<p>To uninstall a plugin, click the plugin’s dropdown and select
+“Uninstall plugin”.</p>
+<p><img alt="teams-plugins-page-uninstall-btn" src="../../_images/plugins_uninstall_btn.png" /></p>
+<h3 id="sdk_2">SDK <a href="#id4" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk_2" title="Permanent link">&para;</a></h3>
+<p>Admins can also use the
+<code>delete_plugin()</code> method from
+the Management SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="n">fom</span><span class="o">.</span><span class="n">delete_plugin</span><span class="p">(</span><span class="n">plugin_name</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="enablingdisabling-plugins">Enabling/disabling plugins <a href="#enabling-disabling-plugins" title="Permalink to this headline">¶</a><a class="headerlink" href="#enablingdisabling-plugins" title="Permanent link">&para;</a></h2>
+<h3 id="teams-ui_3">Teams UI <a href="#id5" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui_3" title="Permanent link">&para;</a></h3>
+<p>When plugins are first installed into Teams, they are enabled by default, along
+with any operators they contain.</p>
+<p>Admins can enable/disable a plugin and all of its operators by toggling the
+enabled/disabled switch.</p>
+<p><img alt="teams-plugins-page-disable" src="../../_images/plugins_disable.png" /></p>
+<p>Admins can also disable/enable specific operators within an (enabled) plugin
+by clicking on the plugin’s operators link.</p>
+<p><img alt="teams-plugins-page-operators-btn" src="../../_images/plugins_operators_btn.png" /></p>
+<p>and then toggling the enabled/disabled switch for each operator as necessary.</p>
+<p><img alt="teams-plugins-page-operators-disable" src="../../_images/plugins_operators_disable.png" /></p>
+<h3 id="sdk_3">SDK <a href="#id6" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk_3" title="Permanent link">&para;</a></h3>
+<p>Admins can also use the
+<code>set_plugin_enabled()</code>
+and
+<code>set_plugin_operator_enabled()</code>
+methods from the management SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="c1"># Disable a plugin</span>
+</span><span id="__span-3-4"><span class="n">fom</span><span class="o">.</span><span class="n">set_plugin_enabled</span><span class="p">(</span><span class="n">plugin_name</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6"><span class="c1"># Disable a particular operator</span>
+</span><span id="__span-3-7"><span class="n">fom</span><span class="o">.</span><span class="n">set_plugin_operator_enabled</span><span class="p">(</span><span class="n">plugin_name</span><span class="p">,</span> <span class="n">operator_name</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="plugin-permissions">Plugin permissions <a href="#plugin-permissions" title="Permalink to this headline">¶</a><a class="headerlink" href="#plugin-permissions" title="Permanent link">&para;</a></h2>
+<p>Admins can optionally configure access to plugins and individual operators
+within them via any combination of the permissions described below:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum Role</td>
+<td>The minimum role a user must have to execute the operation.</td>
+</tr>
+<tr>
+<td>Minimum Dataset Permission</td>
+<td>The minimum dataset permission a user must have to perform the operation<br>on a particular dataset.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="teams-ui_4">Teams UI <a href="#id7" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui_4" title="Permanent link">&para;</a></h3>
+<p>To configure the permissions for an operator, first click on the plugin’s
+operators link.</p>
+<p><img alt="teams-plugins-page-operators-btn" src="../../_images/plugins_operators_btn.png" /></p>
+<p>Then change the dropdown for the operator to reflect the desired permission
+level.</p>
+<p><a href="../../_images/plugins_operators_perms.png"><img alt="teams-plugins-page-operators-perms" src="../../_images/plugins_operators_perms.png" /></a> <a href="../../_images/plugins_operators_perms2.png"><img alt="teams-plugins-page-operators-perms2" src="../../_images/plugins_operators_perms2.png" /></a></p>
+<h3 id="sdk_4">SDK <a href="#id8" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk_4" title="Permanent link">&para;</a></h3>
+<p>Admins can also use the
+<code>set_plugin_operator_permissions()</code>
+method from the Management SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-4-2">
+</span><span id="__span-4-3"><span class="c1"># Set minimum role permission only</span>
+</span><span id="__span-4-4"><span class="n">fom</span><span class="o">.</span><span class="n">set_plugin_operator_enabled</span><span class="p">(</span>
+</span><span id="__span-4-5">    <span class="n">plugin_name</span><span class="p">,</span>
+</span><span id="__span-4-6">    <span class="n">operator_name</span><span class="p">,</span>
+</span><span id="__span-4-7">    <span class="n">minimum_role</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">MEMBER</span><span class="p">,</span>
+</span><span id="__span-4-8"><span class="p">)</span>
+</span><span id="__span-4-9">
+</span><span id="__span-4-10"><span class="c1"># Set minimum dataset permission only</span>
+</span><span id="__span-4-11"><span class="n">fom</span><span class="o">.</span><span class="n">set_plugin_operator_enabled</span><span class="p">(</span>
+</span><span id="__span-4-12">    <span class="n">plugin_name</span><span class="p">,</span>
+</span><span id="__span-4-13">    <span class="n">operator_name</span><span class="p">,</span>
+</span><span id="__span-4-14">    <span class="n">minimum_dataset_permission</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">EDIT</span><span class="p">,</span>
+</span><span id="__span-4-15"><span class="p">)</span>
+</span><span id="__span-4-16">
+</span><span id="__span-4-17"><span class="c1"># Set both minimum role and minimum dataset permissions</span>
+</span><span id="__span-4-18"><span class="n">fom</span><span class="o">.</span><span class="n">set_plugin_operator_enabled</span><span class="p">(</span>
+</span><span id="__span-4-19">    <span class="n">plugin_name</span><span class="p">,</span>
+</span><span id="__span-4-20">    <span class="n">operator_name</span><span class="p">,</span>
+</span><span id="__span-4-21">    <span class="n">minimum_role</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">EDIT</span><span class="p">,</span>
+</span><span id="__span-4-22">    <span class="n">minimum_dataset_permission</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">EDIT</span><span class="p">,</span>
+</span><span id="__span-4-23"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="default-permissions">Default permissions <a href="#default-permissions" title="Permalink to this headline">¶</a><a class="headerlink" href="#default-permissions" title="Permanent link">&para;</a></h3>
+<p>When new plugins are installed, any operators they contain are initialized with
+the default permissions for your deployment.</p>
+<p>By default, the initial permissions are:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum Role</td>
+<td>Member</td>
+</tr>
+<tr>
+<td>Minimum Dataset Permission</td>
+<td>Edit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="teams-ui_5">Teams UI <a href="#id9" title="Permalink to this headline">¶</a><a class="headerlink" href="#teams-ui_5" title="Permanent link">&para;</a></h4>
+<p>Default operator permissions can be configured by navigating to the page at
+Settings &gt; Security and looking under the Plugins header. Click the dropdown
+for the permission you want to change and select the new value.</p>
+<p><img alt="teams-plugins-page-org-settings" src="../../_images/plugins_org_settings.png" /></p>
+<h4 id="sdk_5">SDK <a href="#id10" title="Permalink to this headline">¶</a><a class="headerlink" href="#sdk_5" title="Permanent link">&para;</a></h4>
+<p>Admins can also use the
+<code>set_organization_settings()</code>
+method from the Management SDK:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.management</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fom</span>
+</span><span id="__span-5-2">
+</span><span id="__span-5-3"><span class="n">fom</span><span class="o">.</span><span class="n">set_organization_settings</span><span class="p">(</span>
+</span><span id="__span-5-4">    <span class="n">default_operator_minimum_role</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">MEMBER</span><span class="p">,</span>
+</span><span id="__span-5-5">    <span class="n">default_operator_minimum_dataset_permission</span><span class="o">=</span><span class="n">fom</span><span class="o">.</span><span class="n">EDIT</span><span class="p">,</span>
+</span><span id="__span-5-6"><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="delegated-operations">Delegated operations <a href="#delegated-operations" title="Permalink to this headline">¶</a><a class="headerlink" href="#delegated-operations" title="Permanent link">&para;</a></h2>
+<p><a href="../plugins/using_plugins.html#delegated-operations">Delegated operations</a> are a powerful feature of
+FiftyOne’s plugin framework that allows users to schedule tasks from within the
+App that are executed in the background on a connected compute cluster.</p>
+<p>With FiftyOne Teams, your team can
+<a href="#teams-plugins-page">upload and permission</a> custom operations that your
+users can execute from the Teams App, all of which run against a central
+orchestrator <a href="#teams-delegated-orchestrator">configured by</a> your admins.</p>
+<p>Why is this awesome? Your AI stack needs a flexible data-centric component that
+enables you to organize and compute on your data. With delegated operations,
+FiftyOne Teams becomes both a dataset management/visualization tool and a
+workflow automation tool that defines how your data-centric workflows like
+ingestion, curation, and evaluation are performed. In short, think of FiftyOne
+Teams as the single source of truth on which you co-develop your data and
+models together.</p>
+<p>What can delegated operations do for you? Get started by installing any of
+these plugins available in the
+<a href="https://github.com/voxel51/fiftyone-plugins">FiftyOne Plugins</a> repository:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/README.md">@voxel51/annotation</a></td>
+<td>✏️ Utilities for integrating FiftyOne with annotation tools</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md">@voxel51/brain</a></td>
+<td>🧠 Utilities for working with the FiftyOne Brain</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/evaluation/README.md">@voxel51/evaluation</a></td>
+<td>✅ Utilities for evaluating models with FiftyOne</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/io/README.md">@voxel51/io</a></td>
+<td>📁 A collection of import/export utilities</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/indexes/README.md">@voxel51/indexes</a></td>
+<td>📈 Utilities working with FiftyOne database indexes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/utils/README.md">@voxel51/utils</a></td>
+<td>⚒️ Call your favorite SDK utilities from the App</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/voxelgpt">@voxel51/voxelgpt</a></td>
+<td>🤖 An AI assistant that can query visual datasets, search the FiftyOne docs, and answer general computer vision questions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/zoo/README.md">@voxel51/zoo</a></td>
+<td>🌎 Download datasets and run inference with models from the FiftyOne Zoo, all without leaving the App</td>
+</tr>
+</tbody>
+</table>
+<p>For example, wish you could import data from within the App? With the
+<a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/io/README.md">@voxel51/io</a>,
+plugin you can!</p>
+<p><img alt="../_images/import.gif" src="../../_images/import.gif" /></p>
+<p>Want to send data for annotation from within the App? Sure thing, just install the
+<a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/README.md">@voxel51/annotation</a>
+plugin:</p>
+<p><img alt="../_images/annotation.gif" src="../../_images/annotation.gif" /></p>
+<p>Have model predictions on your dataset that you want to evaluate? The
+<a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/evaluation/README.md">@voxel51/evaluation</a>
+plugin makes it easy:</p>
+<p><img alt="../_images/evaluation.gif" src="../../_images/evaluation.gif" /></p>
+<p>Need to compute embedding for your dataset so you can visualize them in the
+<a href="../fiftyone_concepts/app.html#app-embeddings-panel">Embeddings panel</a>? Kick off the task with the
+<a href="https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md">@voxel51/brain</a>
+plugin and proceed with other work while the execution happens in the background:</p>
+<p><img alt="../_images/embeddings.gif" src="../../_images/embeddings.gif" /></p>
+<p>When you choose delegated execution in the App, these tasks are automatically
+scheduled for execution on your
+<a href="#teams-delegated-orchestrator">connected orchestrator</a> and you can
+continue with other work. Meanwhile, all datasets have a
+<a href="#teams-managing-delegated-operations">Runs tab</a> in the App where you can
+browse a history of all delegated operations that have been run on the dataset
+and their status.</p>
+<h2 id="configuring-your-orchestrators">Configuring your orchestrator(s) <a href="#configuring-your-orchestrator-s" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-your-orchestrators" title="Permanent link">&para;</a></h2>
+<p>FiftyOne Teams offers a builtin orchestrator that is configured as part of your
+team’s deployment with a default level of compute capacity.</p>
+<p>It is also possible to connect your FiftyOne Teams deployment to an externally
+managed workflow orchestration tool ( <a href="https://airflow.apache.org">Airflow</a>,
+<a href="https://flyte.org">Flyte</a>,
+<a href="https://www.databricks.com/product/spark">Spark</a>, etc).</p>
+<p>Note</p>
+<p>Contact your Voxel51 support team to scale your deployment’s compute
+capacity or if you’d like to use an external orchestrator.</p>
+<h2 id="managing-delegated-operations">Managing delegated operations <a href="#managing-delegated-operations" title="Permalink to this headline">¶</a><a class="headerlink" href="#managing-delegated-operations" title="Permanent link">&para;</a></h2>
+<p>Every dataset in FiftyOne Teams has a Runs page that allows users with access
+to monitor and explore delegated operations scheduled against that dataset.</p>
+<p>All scheduled operations are maintained in a queue and will be automatically
+executed as resources are available on the targeted orchestrator.</p>
+<p>Note</p>
+<p>The Runs page only tracks operations that are <strong>scheduled</strong> for delegated
+execution, not operations that are executed immediately in the App.</p>
+<h3 id="runs-page">Runs page <a href="#runs-page" title="Permalink to this headline">¶</a><a class="headerlink" href="#runs-page" title="Permanent link">&para;</a></h3>
+<p>The Runs page is accessible to all users with Can view access to the dataset.</p>
+<p>You can access the Runs page by clicking on the “Runs” tab from the
+<a href="teams_app.html#teams-using-datasets">Samples tab</a>.</p>
+<p>Once you are on the Runs page, you will see a table with the list of all
+operators scheduled by any user of your organization on the dataset. You can
+sort, search and filter runs listed to refine the list as you like:</p>
+<p><img alt="../_images/runs_page.png" src="../../_images/runs_page.png" /></p>
+<h4 id="sorting">Sorting <a href="#sorting" title="Permalink to this headline">¶</a><a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h4>
+<p>By default, the runs table is sorted by recency, but you can use the dropdown
+menu in the upper left of table to sort by other fields like update time or the
+name of the operator:</p>
+<p><img alt="../_images/sort.png" src="../../_images/sort.png" /></p>
+<h4 id="filtering">Filtering <a href="#filtering" title="Permalink to this headline">¶</a><a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h4>
+<p>You can also filter the runs table to see a subset of runs.</p>
+<p>Use the “My runs” radio button to see only the runs that you scheduled:</p>
+<p><img alt="../_images/my_runs.png" src="../../_images/my_runs.png" /></p>
+<p>You can further refine the list of runs using the status dropdown to select one
+or more status you would like to filter by:</p>
+<p><img alt="../_images/filter_by_status.png" src="../../_images/filter_by_status.png" /></p>
+<h4 id="searching">Searching <a href="#searching" title="Permalink to this headline">¶</a><a class="headerlink" href="#searching" title="Permanent link">&para;</a></h4>
+<p>You can also use the search functionality to filter the list of runs by
+keyword. As you type your query in the search box, the list of runs will be
+updated to show only the runs matching your query:</p>
+<p><img alt="../_images/search_by_name.png" src="../../_images/search_by_name.png" /></p>
+<p>Note</p>
+<p>Search is case-sensitive and you can currently only search by operator
+name, not label. For example, searches will not match against
+<strong>Demo: Export to GCP</strong> in the image above.</p>
+<h4 id="re-running">Re-running <a href="#re-running" title="Permalink to this headline">¶</a><a class="headerlink" href="#re-running" title="Permanent link">&para;</a></h4>
+<p>From the Runs page, you can trigger a re-run of any listed run by clicking the
+three-dots to open actions menu and then clicking “Re-run”:</p>
+<p><img alt="../_images/re_run.png" src="../../_images/re_run.png" /></p>
+<h4 id="pinning">Pinning <a href="#pinning" title="Permalink to this headline">¶</a><a class="headerlink" href="#pinning" title="Permanent link">&para;</a></h4>
+<p>Pinned runs are displayed to the right of the runs table. By default, five
+pinned runs will be displayed. However, if there are more than five pinned
+runs, you will see a button to expand the list.</p>
+<p>To pin a run, hover over its row in the runs table and click the pin icon that
+appears beside the operator label:</p>
+<p><img alt="../_images/pinning.png" src="../../_images/pinning.png" /></p>
+<p>Note</p>
+<p>Pinned runs are stored at the dataset-level and will be visible to all
+users with access to the dataset.</p>
+<h4 id="renaming">Renaming <a href="#renaming" title="Permalink to this headline">¶</a><a class="headerlink" href="#renaming" title="Permanent link">&para;</a></h4>
+<p>When delegating an operator multiple times on the same dataset, you may wish to
+give the runs custom labels so that you can easily identify each run later.</p>
+<p>To edit the label of an operator run, move your mouse cursor over the label of
+interest and click the pencil button as indicated by “1” below. This will
+present an input field indicated by “2” where you can update label to text of
+your choice. Once you are ready to apply changes, click the save button
+indicated by “3”.</p>
+<p><img alt="../_images/edit_label.png" src="../../_images/edit_label.png" /></p>
+<h4 id="mark-as-failed">Mark as failed <a href="#mark-as-failed" title="Permalink to this headline">¶</a><a class="headerlink" href="#mark-as-failed" title="Permanent link">&para;</a></h4>
+<p>If a delegated operation run terminates unexpectedly without reporting failure,
+you can manually mark it as failed from the Runs page.</p>
+<p>To mark a run as failed, click the three dots indicated by “1”. Then, in the
+menu, click “Mark as failed” as indicated by “2”. The run status will be
+updated and will now display as failed.</p>
+<p><img alt="../_images/mark_as_failed.png" src="../../_images/mark_as_failed.png" /></p>
+<p>Note</p>
+<p>If the delegated operation is, in fact, still in progress in your
+orchestrator, marking the run as failed will <strong>not</strong> terminate the
+execution of operation.</p>
+<h4 id="monitoring-progress">Monitoring progress <a href="#monitoring-progress" title="Permalink to this headline">¶</a><a class="headerlink" href="#monitoring-progress" title="Permanent link">&para;</a></h4>
+<p>Delegated operations can optionally
+<a href="../plugins/developing_plugins.html#operator-reporting-progress">report their progress</a> during execution.</p>
+<p>If a progress is available for a run, it will be displayed in the Runs table
+as indicated by “2”. By default, the progress of running operations is
+automatically refreshed. You can disable auto-refresh of running operations by
+toggling the auto refresh setting indicated by “1”.</p>
+<p><img alt="../_images/run_progress.png" src="../../_images/run_progress.png" /></p>
+<p>Note</p>
+<p>Only the progress of running operations is automatically refreshed.</p>
+<h3 id="run-page">Run page <a href="#run-page" title="Permalink to this headline">¶</a><a class="headerlink" href="#run-page" title="Permanent link">&para;</a></h3>
+<p>The Run page allows you to see information about a specific run such as inputs,
+outputs, and errors.</p>
+<p>You can visit the Run page for a run by clicking on a run in the runs table,
+the Pinned runs, or Recent runs widgets.</p>
+<h4 id="input">Input <a href="#input" title="Permalink to this headline">¶</a><a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
+<p>The Input tab on the Run page lets you see the input parameters that were
+provided when the run was scheduled:</p>
+<p><img alt="../_images/input.png" src="../../_images/input.png" /></p>
+<p><strong>Raw input</strong></p>
+<p>By default, a rendered version (similar to what is displayed when invoking an
+operator) of input parameters is displayed. However, you can switch to raw view
+by clicking the “Show raw” toggle button:</p>
+<p><img alt="../_images/raw_input.png" src="../../_images/raw_input.png" /></p>
+<h4 id="output">Output <a href="#output" title="Permalink to this headline">¶</a><a class="headerlink" href="#output" title="Permanent link">&para;</a></h4>
+<p>The Output tab on the Run page lets you see the preview of the result of a
+completed run:</p>
+<p>Note</p>
+<p>Output tab is only available for completed run.</p>
+<p><img alt="../_images/output.png" src="../../_images/output.png" /></p>
+<h4 id="errors">Errors <a href="#errors" title="Permalink to this headline">¶</a><a class="headerlink" href="#errors" title="Permanent link">&para;</a></h4>
+<p>The Errors tab on the Run page will appear if the run failed and lets you see
+the errors that occurred:</p>
+<p><img alt="../_images/errors.png" src="../../_images/errors.png" /></p>
+<h4 id="view">View <a href="#view" title="Permalink to this headline">¶</a><a class="headerlink" href="#view" title="Permanent link">&para;</a></h4>
+<p>The View tab on the Run page lets you see the dataset view on which the run was
+scheduled:</p>
+<p><img alt="../_images/view.png" src="../../_images/view.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

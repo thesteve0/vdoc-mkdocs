@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Removing Duplicate Objects ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#removing-duplicate-objects" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Removing Duplicate Objects ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load a dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-duplicate-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding duplicate objects ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-duplicates-in-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing duplicates in the App ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-duplicates-in-cvat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing duplicates in CVAT ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatically-finding-duplicates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatically finding duplicates ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/recipes/remove_duplicate_annos.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="removing-duplicate-objects">Removing Duplicate Objects <a href="#Removing-Duplicate-Objects" title="Permalink to this headline">¶</a><a class="headerlink" href="#removing-duplicate-objects" title="Permanent link">&para;</a></h1>
+<p>This recipe demonstrates a simple workflow for finding and removing duplicate objects in your FiftyOne datasets using <a href="https://en.wikipedia.org/wiki/Jaccard_index">intersection over union (IoU)</a>.</p>
+<p>Specificially, it covers:</p>
+<ul>
+<li>
+<p>Using the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.compute_max_ious">compute_max_ious()</a> utility to compute overlap between spatial objects</p>
+</li>
+<li>
+<p>Using the <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging">App’s tagging UI</a> to review and delete duplicate labels</p>
+</li>
+<li>
+<p>Using FiftyOne’s <a href="https://voxel51.com/docs/fiftyone/integrations/cvat.html">CVAT integration</a> to edit duplicate labels</p>
+</li>
+<li>
+<p>Using the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.find_duplicates">find_duplicates()</a> utility to automatically detect duplicate objects</p>
+</li>
+</ul>
+<p>Also, check out <a href="https://towardsdatascience.com/iou-a-better-detection-evaluation-metric-45a511185be1">our blog post</a> for more information about using IoU to evaluate your object detection models.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>If you haven’t already, install FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<h2 id="load-a-dataset">Load a dataset <a href="#Load-a-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-a-dataset" title="Permanent link">&para;</a></h2>
+<p>In this recipe, we’ll work with the validation split of the <a href="https://cocodataset.org/#home">COCO dataset</a>, which is conveniently available for download via the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html#coco-2017">FiftyOne Dataset Zoo</a>.</p>
+<p>The snippet below downloads and loads a subset of the validation split into FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;coco-2017&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span> <span class="n">max_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">to</span> <span class="s1">&#39;/Users/Brian/fiftyone/coco-2017/validation&#39;</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span id="__span-4-2"><span class="n">Found</span> <span class="n">annotations</span> <span class="n">at</span> <span class="s1">&#39;/Users/Brian/fiftyone/coco-2017/raw/instances_val2017.json&#39;</span>
+</span><span id="__span-4-3"><span class="n">Sufficient</span> <span class="n">images</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-4-4"><span class="n">Existing</span> <span class="n">download</span> <span class="n">of</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="ow">is</span> <span class="n">sufficient</span>
+</span><span id="__span-4-5"><span class="n">Loading</span> <span class="s1">&#39;coco-2017&#39;</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span>
+</span><span id="__span-4-6"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████</span><span class="o">|</span> <span class="mi">1000</span><span class="o">/</span><span class="mi">1000</span> <span class="p">[</span><span class="mf">4.9</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">216.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-4-7"><span class="n">Dataset</span> <span class="s1">&#39;coco-2017-validation-1000&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p>Let’s print the dataset to see what we downloaded:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="n">Name</span><span class="p">:</span>        <span class="n">coco</span><span class="o">-</span><span class="mi">2017</span><span class="o">-</span><span class="n">validation</span><span class="o">-</span><span class="mi">1000</span>
+</span><span id="__span-7-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-7-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">1000</span>
+</span><span id="__span-7-4"><span class="n">Persistent</span><span class="p">:</span>  <span class="kc">False</span>
+</span><span id="__span-7-5"><span class="n">Tags</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;validation&#39;</span><span class="p">]</span>
+</span><span id="__span-7-6"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-7-7">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-7-8">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-7-9">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-7-10">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">Metadata</span><span class="p">)</span>
+</span><span id="__span-7-11">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="finding-duplicate-objects">Finding duplicate objects <a href="#Finding-duplicate-objects" title="Permalink to this headline">¶</a><a class="headerlink" href="#finding-duplicate-objects" title="Permanent link">&para;</a></h2>
+<p>Now let’s use the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.compute_max_ious">compute_max_ious()</a> utility to compute the maximum IoU between each object in the <code>ground_truth</code> field with another object of the same class ( <code>classwise=True</code>) within the same image.</p>
+<p>The max IOU will be stored in a <code>max_iou</code> attribute of each object, and the idea here is that duplicate objects will necessarily have high <a href="https://en.wikipedia.org/wiki/Jaccard_index">IoU</a> with another object.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.iou</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foui</span>
+</span><span id="__span-9-2">
+</span><span id="__span-9-3"><span class="n">foui</span><span class="o">.</span><span class="n">compute_max_ious</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">iou_attr</span><span class="o">=</span><span class="s2">&quot;max_iou&quot;</span><span class="p">,</span> <span class="n">classwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-9-4"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max IoU range: (</span><span class="si">%f</span><span class="s2">, </span><span class="si">%f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">dataset</span><span class="o">.</span><span class="n">bounds</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.max_iou&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████</span><span class="o">|</span> <span class="mi">1000</span><span class="o">/</span><span class="mi">1000</span> <span class="p">[</span><span class="mf">3.2</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">348.2</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-10-2"><span class="n">Max</span> <span class="n">IoU</span> <span class="nb">range</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.951640</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note that <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.compute_max_ious">compute_max_ious()</a> provides an optional <code>other_field</code> parameter if you would like to compute IoUs between objects in different fields instead.</p>
+<p>In any case, let’s <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering-sample-contents">create a view</a> that contains only labels with a max IoU &gt; 0.75:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-12-2">
+</span><span id="__span-12-3"><span class="c1"># Retrieve detections that overlap above a chosen threshold</span>
+</span><span id="__span-12-4"><span class="n">dups_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;max_iou&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.75</span><span class="p">)</span>
+</span><span id="__span-12-5"><span class="nb">print</span><span class="p">(</span><span class="n">dups_view</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">Dataset</span><span class="p">:</span>     <span class="n">coco</span><span class="o">-</span><span class="mi">2017</span><span class="o">-</span><span class="n">validation</span><span class="o">-</span><span class="mi">1000</span>
+</span><span id="__span-13-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-13-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">7</span>
+</span><span id="__span-13-4"><span class="n">Tags</span><span class="p">:</span>        <span class="p">[</span><span class="s1">&#39;validation&#39;</span><span class="p">]</span>
+</span><span id="__span-13-5"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-13-6">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-13-7">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-13-8">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-13-9">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">Metadata</span><span class="p">)</span>
+</span><span id="__span-13-10">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-13-11"><span class="n">View</span> <span class="n">stages</span><span class="p">:</span>
+</span><span id="__span-13-12">    <span class="mf">1.</span> <span class="n">FilterLabels</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;ground_truth&#39;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;$$this.max_iou&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]},</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">trajectories</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>and load it in the App:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="n">dups_view</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<h2 id="removing-duplicates-in-the-app">Removing duplicates in the App <a href="#Removing-duplicates-in-the-App" title="Permalink to this headline">¶</a><a class="headerlink" href="#removing-duplicates-in-the-app" title="Permanent link">&para;</a></h2>
+<p>One simple approach to removing the duplicate labels is to review them in the App and <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging">assign label tags</a> to the labels that we deem to be duplicates:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<p>Then we can simply delete the labels with the duplicate tag that we populated:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="p">[</span><span class="mi">16</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="n">dataset</span><span class="o">.</span><span class="n">delete_labels</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="s2">&quot;duplicate&quot;</span><span class="p">)</span>
+</span><span id="__span-19-2">
+</span><span id="__span-19-3"><span class="c1"># Verify that tagged labels were deleted</span>
+</span><span id="__span-19-4"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">count_label_tags</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="p">{}</span>
+</span></code></pre></div>
+<h2 id="removing-duplicates-in-cvat">Removing duplicates in CVAT <a href="#Removing-duplicates-in-CVAT" title="Permalink to this headline">¶</a><a class="headerlink" href="#removing-duplicates-in-cvat" title="Permanent link">&para;</a></h2>
+<p>Another approach to resolve the duplicate labegls is to use FiftyOne’s <a href="https://voxel51.com/docs/fiftyone/integrations/cvat.html">CVAT integration</a> to upload the duplicate labels to CVAT for review, editing, and/or deletion:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;remove_dups&quot;</span>
+</span><span id="__span-22-2"><span class="n">dups_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">anno_key</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">CVAT</span><span class="o">...</span>
+</span><span id="__span-23-2"><span class="n">Upload</span> <span class="n">complete</span>
+</span><span id="__span-23-3"><span class="n">Launching</span> <span class="n">editor</span> <span class="n">at</span> <span class="s1">&#39;http://localhost:8080/tasks/286/jobs/292&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="o">&lt;</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">cvat</span><span class="o">.</span><span class="n">CVATAnnotationResults</span> <span class="n">at</span> <span class="mh">0x7fc07c97c7b8</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p><img alt="cvat-remove-dups" src="../../_images/cvat_remove_dups.jpg" /></p>
+<p>Once we’re finished editing in CVAT, we simply load the results back into FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">dataset</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span></code></pre></div>
+<p>and refresh the App to verify that the duplicates have been properly addressed:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<h2 id="automatically-finding-duplicates">Automatically finding duplicates <a href="#Automatically-finding-duplicates" title="Permalink to this headline">¶</a><a class="headerlink" href="#automatically-finding-duplicates" title="Permanent link">&para;</a></h2>
+<p>A third approach is to use the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.find_duplicates">find_duplicates()</a> utility to automatically retrieve the IDs of duplicate labels:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="n">dup_ids</span> <span class="o">=</span> <span class="n">foui</span><span class="o">.</span><span class="n">find_duplicates</span><span class="p">(</span>
+</span><span id="__span-31-2">    <span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">iou_thresh</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">classwise</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-31-3"><span class="p">)</span>
+</span><span id="__span-31-4"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">%d</span><span class="s2"> duplicates&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dup_ids</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████</span><span class="o">|</span> <span class="mi">1000</span><span class="o">/</span><span class="mi">1000</span> <span class="p">[</span><span class="mf">3.5</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">315.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-32-2"><span class="n">Found</span> <span class="mi">7</span> <span class="n">duplicates</span>
+</span></code></pre></div>
+<p>Of course, when dealing with duplicate labels, there is inherent ambiguity: which one is “correct” and which one(s) are “duplicate”?</p>
+<p>By default, <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.find_duplicates">find_duplicates()</a> will simply iterate through the labels in each sample and flag any label whose IoU with a previous label exceeds the chosen threshold as a duplicate.</p>
+<p>Alternatively, you can pass the <code>method="greedy"</code> option to instead use a greedy approach to mark the fewest number of labels as duplicate such that no non-duplicate labels have IoU greater than the specified threshold with each other.</p>
+<p>In either case, it is recommended to visualize the duplicates in the App before taking any action. One convenient way to do this is to first tag the duplicates:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="c1"># Cleanup any previous tags (if necessary)</span>
+</span><span id="__span-34-2"><span class="n">dataset</span><span class="o">.</span><span class="n">untag_labels</span><span class="p">(</span><span class="s2">&quot;duplicate&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="c1"># Tag the automatically selected duplicates</span>
+</span><span id="__span-36-2"><span class="n">dataset</span><span class="o">.</span><span class="n">select_labels</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">dup_ids</span><span class="p">)</span><span class="o">.</span><span class="n">tag_labels</span><span class="p">(</span><span class="s2">&quot;duplicate&quot;</span><span class="p">)</span>
+</span><span id="__span-36-3"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">count_label_tags</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="p">{</span><span class="s1">&#39;duplicate&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</span></code></pre></div>
+<p>Then, use <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_labels">match_labels()</a> to load the samples containing at least one duplicate label in the App and use the <code>duplicate</code> tag you added to conveniently isolate and evaluate the duplicates.</p>
+<p>If you see any erroneous duplicates, simply remove the <code>duplicate</code> tag in the App:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="p">[</span><span class="mi">16</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_labels</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">dup_ids</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<p>When you’re ready to act, you can then easily delete the duplicate labels as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">[</span><span class="mi">17</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="n">dataset</span><span class="o">.</span><span class="n">delete_labels</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="s2">&quot;duplicate&quot;</span><span class="p">)</span>
+</span><span id="__span-41-2">
+</span><span id="__span-41-3"><span class="c1"># If you want to delete every label flagged by `find_duplicates()`</span>
+</span><span id="__span-41-4"><span class="c1"># dataset.delete_labels(ids=dup_ids)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="p">[</span><span class="mi">18</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># screenshot the active App for sharing</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

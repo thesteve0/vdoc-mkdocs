@@ -1,0 +1,1499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Annotating Datasets with Labelbox ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#annotating-datasets-with-labelbox" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Annotating Datasets with Labelbox ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw Data ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotation ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Utilities ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/labelbox_annotation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="annotating-datasets-with-labelbox">Annotating Datasets with Labelbox <a href="#Annotating-Datasets-with Labelbox" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotating-datasets-with-labelbox" title="Permanent link">&para;</a></h1>
+<p>All successful computer vision projects start with the same thing: LOTS OF LABELED DATA!</p>
+<p>In this walkthrough, we’ll cover how to use <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html">the integration</a> between <a href="https://fiftyone.ai">FiftyOne</a> and the popular annotation tool <a href="https://labelbox.com/">Labelbox</a> to build a high-quality labeled dataset.</p>
+<p>Specifically, this walkthrough covers:</p>
+<ul>
+<li>
+<p>Using the FiftyOne Brain to select unique samples for annotation</p>
+</li>
+<li>
+<p>Annotating unlabeled samples with Labelbox</p>
+</li>
+<li>
+<p>Improving existing annotations using FiftyOne tagging and Labelbox</p>
+</li>
+<li>
+<p>Additional utilities for managing Labelbox annotation projects</p>
+</li>
+</ul>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>FiftyOne Datasets are the best way to explore, understand, and improve your datasets and models. This walkthrough covers how to use our Labelbox integration to streamline the annotation creation and improvement process.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>To get started, you need to <a href="https://voxel51.com/docs/fiftyone/getting_started/install.html">install FiftyOne</a> and the <a href="https://github.com/Labelbox/labelbox-python">Labelbox Python client</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span> <span class="n">labelbox</span>
+</span></code></pre></div>
+<p>You’ll also need to set up a <a href="https://app.labelbox.com/">Labelbox account</a>. FiftyOne supports both standard Labelbox cloud accounts and Labelbox enterprise solutions.</p>
+<p>The easiest way to get started is to use the default Labelbox server, which simply requires creating an account and then providing your API key as shown below.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="err">!</span><span class="n">export</span> <span class="n">FIFTYONE_LABELBOX_API_KEY</span><span class="o">=...</span>
+</span></code></pre></div>
+<p>Alternatively, for a more permanent solution, you can store your credentials in your FiftyOne annotation config located at <code>~/.fiftyone/annotation_config.json</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="p">{</span>
+</span><span id="__span-5-2">    <span class="s2">&quot;backends&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-5-3">        <span class="s2">&quot;labelbox&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-5-4">            <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>
+</span><span id="__span-5-5">        <span class="p">}</span>
+</span><span id="__span-5-6">    <span class="p">}</span>
+</span><span id="__span-5-7"><span class="p">}</span>
+</span></code></pre></div>
+<p>See <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#setup">this page</a> for more advanced Labelbox setup options.</p>
+<h2 id="raw-data">Raw Data <a href="#Raw-Data" title="Permalink to this headline">¶</a><a class="headerlink" href="#raw-data" title="Permanent link">&para;</a></h2>
+<p>To start, you need to gather raw image or video data relevant to your task. The internet has a lot of places to look for free data. Assuming you have your raw data downloaded locally, you can <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html">easily load it into FiftyOne</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dir</span><span class="p">(</span><span class="n">dataset_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/dir&quot;</span><span class="p">,</span> <span class="n">dataset_type</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">ImageDirectory</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Another method is to use publically available datasets that may be relevant. For example, the <a href="https://storage.googleapis.com/openimages/web/download.html">Open Images dataset</a> contains millions of images available for public use and can be accessed directly through the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html">FiftyOne Dataset Zoo</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span><span class="mi">15</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-13-2">    <span class="s2">&quot;open-images-v6&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-13-4">    <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-13-5">    <span class="n">label_types</span><span class="o">=</span><span class="p">[],</span>
+</span><span id="__span-13-6">    <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;labelbox_dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-13-7"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">to</span> <span class="s1">&#39;/home/eric/fiftyone/open-images-v6/validation&#39;</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span id="__span-14-2"><span class="n">Necessary</span> <span class="n">images</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-14-3"><span class="n">Existing</span> <span class="n">download</span> <span class="n">of</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="ow">is</span> <span class="n">sufficient</span>
+</span><span id="__span-14-4"><span class="n">Loading</span> <span class="s1">&#39;open-images-v6&#39;</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span>
+</span><span id="__span-14-5"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">100</span><span class="o">/</span><span class="mi">100</span> <span class="p">[</span><span class="mf">72.9</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.4</span><span class="n">K</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-14-6"><span class="n">Dataset</span> <span class="s1">&#39;labelbox_dataset&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p>Either way, once your data is in FiftyOne, we can <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html">visualize it in the FiftyOne App</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span><span class="mi">18</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span> <span class="c1"># Screenshot the App in this notebook</span>
+</span></code></pre></div>
+<p>FiftyOne provides a <a href="https://voxel51.com/docs/fiftyone/user_guide/brain.html">variety of methods</a> that can help you understand the quality of the dataset and pick the best samples to annotate. For example, the <code>`compute_similarity()</code> &lt; <a href="https://voxel51.com/docs/fiftyone/user_guide/brain.html#visual-similarity">https://voxel51.com/docs/fiftyone/user_guide/brain.html#visual-similarity</a> &gt;`__ the method can be used to find both the most similar, and the most unique samples, ensuring that your dataset will contain an even distribution of data.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span><span class="mi">19</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="p">[</span><span class="mi">20</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_similarity</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;img_sim&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">Computing</span> <span class="n">embeddings</span><span class="o">...</span>
+</span><span id="__span-23-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">100</span><span class="o">/</span><span class="mi">100</span> <span class="p">[</span><span class="mf">1.0</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.8</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span><span class="mi">21</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="n">results</span><span class="o">.</span><span class="n">find_unique</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="n">Generating</span> <span class="n">index</span><span class="o">...</span>
+</span><span id="__span-26-2"><span class="n">Index</span> <span class="n">complete</span>
+</span><span id="__span-26-3"><span class="n">Computing</span> <span class="n">unique</span> <span class="n">samples</span><span class="o">...</span>
+</span><span id="__span-26-4"><span class="n">threshold</span><span class="p">:</span> <span class="mf">1.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-5"><span class="n">threshold</span><span class="p">:</span> <span class="mf">2.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-6"><span class="n">threshold</span><span class="p">:</span> <span class="mf">4.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-7"><span class="n">threshold</span><span class="p">:</span> <span class="mf">8.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-8"><span class="n">threshold</span><span class="p">:</span> <span class="mf">16.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-9"><span class="n">threshold</span><span class="p">:</span> <span class="mf">12.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-10"><span class="n">threshold</span><span class="p">:</span> <span class="mf">14.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-11"><span class="n">threshold</span><span class="p">:</span> <span class="mf">13.000000</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="mi">10</span>
+</span><span id="__span-26-12"><span class="n">Uniqueness</span> <span class="n">computation</span> <span class="n">complete</span>
+</span></code></pre></div>
+<p>Now to select only the slice of our dataset that contains the 10 most unique samples.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="p">[</span><span class="mi">22</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="n">unique_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">unique_ids</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">unique_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="p">[</span><span class="mi">25</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="annotation">Annotation <a href="#Annotation" title="Permalink to this headline">¶</a><a class="headerlink" href="#annotation" title="Permanent link">&para;</a></h2>
+<p>The <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html">integration between FiftyOne and Labelbox</a> allows you to begin annotating your image or video data by calling a single method!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="p">[</span><span class="mi">28</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;annotation_run_1&quot;</span>
+</span><span id="__span-34-2">
+</span><span id="__span-34-3"><span class="n">results</span> <span class="o">=</span> <span class="n">unique_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-34-4">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-34-5">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;labelbox&quot;</span><span class="p">,</span>
+</span><span id="__span-34-6">    <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-34-7">    <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vehicle&quot;</span><span class="p">,</span> <span class="s2">&quot;animal&quot;</span><span class="p">,</span> <span class="s2">&quot;plant&quot;</span><span class="p">],</span>
+</span><span id="__span-34-8">    <span class="n">label_type</span><span class="o">=</span><span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-34-9">    <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-34-10"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-35-2"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">Labelbox</span><span class="o">...</span>
+</span><span id="__span-35-3"><span class="n">Upload</span> <span class="n">complete</span>
+</span><span id="__span-35-4"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-35-5"><span class="n">Launching</span> <span class="n">editor</span> <span class="n">at</span> <span class="s1">&#39;https://editor.labelbox.com/?project=ckx83uywu09j610a9ertke8ny&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="p">[</span><span class="mi">28</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="o">&lt;</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">labelbox</span><span class="o">.</span><span class="n">LabelboxAnnotationResults</span> <span class="n">at</span> <span class="mh">0x7fa3c01b4eb8</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p><img alt="labelbox-detection" src="../../_images/labelbox_detection.png" /></p>
+<p>The annotations can then be <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#loading-annotations">loaded back into FiftyOne</a> in just one more line.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="p">[</span><span class="mi">30</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">unique_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-40-2"><span class="n">Downloading</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Labelbox...</span>
+</span><span id="__span-40-3">  <span class="mf">133.4</span><span class="n">Kb</span> <span class="p">[</span><span class="mf">7.2</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">91.0</span><span class="n">Mb</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-40-4"><span class="n">Download</span> <span class="n">complete</span>
+</span><span id="__span-40-5"><span class="n">Loading</span> <span class="n">labels</span> <span class="k">for</span> <span class="n">field</span> <span class="s1">&#39;detections&#39;</span><span class="o">...</span>
+</span><span id="__span-40-6"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">8</span><span class="o">/</span><span class="mi">8</span> <span class="p">[</span><span class="mf">26.2</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">305.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="p">[</span><span class="mi">31</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">unique_view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="p">[</span><span class="mi">32</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>This API provides <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#requesting-annotations">advanced customization options</a> for your annotation tasks. For example, we can construct a sophisticated schema to define the annotations we want and even directly assign the annotators:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="p">[</span><span class="mi">33</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;labelbox_assign_users&quot;</span>
+</span><span id="__span-46-2">
+</span><span id="__span-46-3"><span class="n">members</span> <span class="o">=</span> <span class="p">[</span>\
+</span><span id="__span-46-4">    <span class="p">(</span><span class="s2">&quot;fiftyone_labelbox_user1@gmail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;LABELER&quot;</span><span class="p">),</span>\
+</span><span id="__span-46-5">    <span class="p">(</span><span class="s2">&quot;fiftyone_labelbox_user2@gmail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;REVIEWER&quot;</span><span class="p">),</span>\
+</span><span id="__span-46-6">    <span class="p">(</span><span class="s2">&quot;fiftyone_labelbox_user3@gmail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;TEAM_MANAGER&quot;</span><span class="p">),</span>\
+</span><span id="__span-46-7"><span class="p">]</span>
+</span><span id="__span-46-8">
+</span><span id="__span-46-9"><span class="c1"># Set up the Labelbox editor to reannotate existing &quot;detections&quot; labels and a new &quot;keypoints&quot; field</span>
+</span><span id="__span-46-10"><span class="n">label_schema</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-46-11">    <span class="s2">&quot;detections_new&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-46-12">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-46-13">        <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;detections.detections.label&quot;</span><span class="p">),</span>
+</span><span id="__span-46-14">    <span class="p">},</span>
+</span><span id="__span-46-15">    <span class="s2">&quot;keypoints&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-46-16">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;keypoints&quot;</span><span class="p">,</span>
+</span><span id="__span-46-17">        <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">],</span>
+</span><span id="__span-46-18">    <span class="p">}</span>
+</span><span id="__span-46-19"><span class="p">}</span>
+</span><span id="__span-46-20">
+</span><span id="__span-46-21"><span class="n">results</span> <span class="o">=</span> <span class="n">unique_view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-46-22">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-46-23">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;labelbox&quot;</span><span class="p">,</span>
+</span><span id="__span-46-24">    <span class="n">label_schema</span><span class="o">=</span><span class="n">label_schema</span><span class="p">,</span>
+</span><span id="__span-46-25">    <span class="n">members</span><span class="o">=</span><span class="n">members</span><span class="p">,</span>
+</span><span id="__span-46-26">    <span class="n">launch_editor</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-46-27"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="n">Experimental</span> <span class="n">features</span> <span class="n">have</span> <span class="n">been</span> <span class="n">enabled</span>
+</span><span id="__span-47-2"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-47-3"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">Labelbox</span><span class="o">...</span>
+</span><span id="__span-47-4"><span class="n">Uploading</span> <span class="n">existing</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">field</span> <span class="s1">&#39;detections&#39;</span> <span class="n">to</span> <span class="n">Labelbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">yet</span> <span class="n">supported</span>
+</span><span id="__span-47-5"><span class="n">Your</span> <span class="n">organization</span> <span class="n">has</span> <span class="n">reached</span> <span class="n">its</span> <span class="n">limit</span> <span class="n">of</span> <span class="mi">5</span> <span class="n">members</span><span class="o">.</span> <span class="n">Cannot</span> <span class="n">invite</span> <span class="n">new</span> <span class="n">member</span> <span class="n">fiftyone_labelbox_user3</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span> <span class="n">to</span> <span class="n">project</span> <span class="s1">&#39;FiftyOne_labelbox_dataset&#39;</span>
+</span><span id="__span-47-6"><span class="n">Upload</span> <span class="n">complete</span>
+</span><span id="__span-47-7"><span class="n">Experimental</span> <span class="n">features</span> <span class="n">have</span> <span class="n">been</span> <span class="n">enabled</span>
+</span><span id="__span-47-8"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-47-9"><span class="n">Launching</span> <span class="n">editor</span> <span class="n">at</span> <span class="s1">&#39;https://editor.labelbox.com/?project=ckx845cbd0atq10a948ze988n&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="p">[</span><span class="mi">33</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="o">&lt;</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">labelbox</span><span class="o">.</span><span class="n">LabelboxAnnotationResults</span> <span class="n">at</span> <span class="mh">0x7fa45ffcdc88</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>After you’re finished annotating in Labelbox, you can easily download the results:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="p">[</span><span class="mi">35</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="c1"># Download results and clean the run from FiftyOne and Labelbox</span>
+</span><span id="__span-51-2"><span class="n">unique_view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="n">anno_key</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="n">Experimental</span> <span class="n">features</span> <span class="n">have</span> <span class="n">been</span> <span class="n">enabled</span>
+</span><span id="__span-52-2"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-52-3"><span class="n">Downloading</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Labelbox...</span>
+</span><span id="__span-52-4">    <span class="mf">24.0</span><span class="n">b</span> <span class="p">[</span><span class="mf">8.4</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">58.0</span><span class="n">Kb</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-52-5"><span class="n">Download</span> <span class="n">complete</span>
+</span><span id="__span-52-6"><span class="n">Loading</span> <span class="n">labels</span> <span class="k">for</span> <span class="n">field</span> <span class="s1">&#39;detections&#39;</span><span class="o">...</span>
+</span><span id="__span-52-7"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="p">[</span><span class="mf">12.1</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="err">?</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-52-8"><span class="n">Loading</span> <span class="n">labels</span> <span class="k">for</span> <span class="n">field</span> <span class="s1">&#39;keypoints&#39;</span><span class="o">...</span>
+</span><span id="__span-52-9"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="p">[</span><span class="mf">1.8</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="err">?</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-52-10"><span class="n">Experimental</span> <span class="n">features</span> <span class="n">have</span> <span class="n">been</span> <span class="n">enabled</span>
+</span><span id="__span-52-11"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-52-12"><span class="n">Deleting</span> <span class="n">project</span> <span class="s1">&#39;ckx845cbd0atq10a948ze988n&#39;</span><span class="o">...</span>
+</span></code></pre></div>
+<h2 id="next-steps">Next Steps <a href="#Next-Steps" title="Permalink to this headline">¶</a><a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>Now that you have a labeled dataset, you can go ahead and start training a model. FiftyOne lets you <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html">export your data to disk in a variety of formats</a> (ex: COCO, YOLO, etc) expected by most training pipelines. It also provides workflows for using popular model training libraries like <a href="https://towardsdatascience.com/stop-wasting-time-with-pytorch-datasets-17cac2c22fa8">PyTorch</a>, <a href="https://voxel51.com/docs/fiftyone/integrations/lightning_flash.html">PyTorch Lightning\
+Flash</a>, and <a href="https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#tfobjectdetectiondataset">Tensorflow</a>.</p>
+<p>Once the model is trained, the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html#model-predictions">model predictions can be loaded</a> back into FiftyOne. These <a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html">predictions can then be evaluated against the ground truth</a> annotations to find where the model is performing well, and where it is performing poorly. This provides insight into the type of samples that need to be added to the training set, as well
+as any annotation errors that may exist.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="p">[</span><span class="mi">36</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="c1"># Load an existing dataset with predictions</span>
+</span><span id="__span-54-2"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><span class="n">Dataset</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-55-2"><span class="n">Loading</span> <span class="n">existing</span> <span class="n">dataset</span> <span class="s1">&#39;quickstart&#39;</span><span class="o">.</span> <span class="n">To</span> <span class="n">reload</span> <span class="kn">from</span><span class="w"> </span><span class="nn">disk</span><span class="p">,</span> <span class="n">either</span> <span class="n">delete</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">dataset</span> <span class="ow">or</span> <span class="n">provide</span> <span class="n">a</span> <span class="n">custom</span> <span class="err">`</span><span class="n">dataset_name</span><span class="err">`</span> <span class="n">to</span> <span class="n">use</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="p">[</span><span class="mi">37</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><span class="c1"># Evaluate model predictions</span>
+</span><span id="__span-57-2"><span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-57-3">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-57-4">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-57-5">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-57-6"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-58-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">200</span><span class="o">/</span><span class="mi">200</span> <span class="p">[</span><span class="mf">6.8</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">29.6</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><span class="p">[</span><span class="mi">37</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-60-1"><span class="o">&lt;</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">eval</span><span class="o">.</span><span class="n">detection</span><span class="o">.</span><span class="n">DetectionResults</span> <span class="n">at</span> <span class="mh">0x7fa45fcdf0b8</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>We can use the <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html">powerful querying capabilities of the FiftyOne API</a> to create a <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering">view filtering</a> these model results by false positives with high confidence which generally indicates an error in the ground truth annotation.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-61-1"><span class="p">[</span><span class="mi">39</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-62-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-62-2">
+</span><span id="__span-62-3"><span class="n">fp_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span>
+</span><span id="__span-62-4">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-62-5">    <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;confidence&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fp&quot;</span><span class="p">),</span>
+</span><span id="__span-62-6"><span class="p">)</span>
+</span><span id="__span-62-7">
+</span><span id="__span-62-8"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="n">fp_view</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-63-1"><span class="p">[</span><span class="mi">40</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-64-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>This sample appears to be missing a ground truth annotation of skis. Let’s <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging">tag it in FiftyOne</a>, and send it to Labelbox for reannotation.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-65-1"><span class="p">[</span><span class="mi">41</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-66-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="n">fp_view</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-67-1"><span class="p">[</span><span class="mi">42</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-68-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>The workflow for reannotating an existing label field is to annotate a new field, then merge the new field into the existing field.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-69-1"><span class="p">[</span><span class="mi">43</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-70-1"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="s2">&quot;reannotate&quot;</span><span class="p">)</span>
+</span><span id="__span-70-2">
+</span><span id="__span-70-3"><span class="n">label_schema</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-70-4">    <span class="s2">&quot;ground_truth_edits&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-70-5">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;detections&quot;</span><span class="p">,</span>
+</span><span id="__span-70-6">        <span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="n">dataset</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">),</span>
+</span><span id="__span-70-7">    <span class="p">}</span>
+</span><span id="__span-70-8"><span class="p">}</span>
+</span><span id="__span-70-9">
+</span><span id="__span-70-10"><span class="n">anno_key</span> <span class="o">=</span> <span class="s2">&quot;fix_labels&quot;</span>
+</span><span id="__span-70-11"><span class="n">results</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+</span><span id="__span-70-12">    <span class="n">anno_key</span><span class="p">,</span>
+</span><span id="__span-70-13">    <span class="n">label_schema</span><span class="o">=</span><span class="n">label_schema</span><span class="p">,</span>
+</span><span id="__span-70-14">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;labelbox&quot;</span><span class="p">,</span>
+</span><span id="__span-70-15"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-71-1"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-71-2"><span class="n">Uploading</span> <span class="n">samples</span> <span class="n">to</span> <span class="n">Labelbox</span><span class="o">...</span>
+</span><span id="__span-71-3"><span class="n">Uploading</span> <span class="n">existing</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">field</span> <span class="s1">&#39;ground_truth&#39;</span> <span class="n">to</span> <span class="n">Labelbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">yet</span> <span class="n">supported</span>
+</span><span id="__span-71-4"><span class="n">Upload</span> <span class="n">complete</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-72-1"><span class="p">[</span><span class="mi">43</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-73-1"><span class="o">&lt;</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">labelbox</span><span class="o">.</span><span class="n">LabelboxAnnotationResults</span> <span class="n">at</span> <span class="mh">0x7fa45fab4c88</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-74-1"><span class="p">[</span><span class="mi">44</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-75-1"><span class="n">view</span><span class="o">.</span><span class="n">load_annotations</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-76-1"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-76-2"><span class="n">Downloading</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Labelbox...</span>
+</span><span id="__span-76-3">   <span class="mf">14.6</span><span class="n">Kb</span> <span class="p">[</span><span class="mf">3.2</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="err">?</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">37.7</span><span class="n">Mb</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-76-4"><span class="n">Download</span> <span class="n">complete</span>
+</span><span id="__span-76-5"><span class="n">Loading</span> <span class="n">labels</span> <span class="k">for</span> <span class="n">field</span> <span class="s1">&#39;ground_truth&#39;</span><span class="o">...</span>
+</span><span id="__span-76-6"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████████</span><span class="o">|</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span> <span class="p">[</span><span class="mf">18.3</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">54.8</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-77-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-78-1"><span class="n">view</span><span class="o">.</span><span class="n">merge_labels</span><span class="p">(</span><span class="s2">&quot;ground_truth_edits&quot;</span><span class="p">,</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-79-1"><span class="p">[</span><span class="mi">45</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-80-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">view</span>
+</span></code></pre></div>
+<p>Activate</p>
+<p><img alt="" src="Base64-Image-Removed" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-81-1"><span class="p">[</span><span class="mi">46</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-82-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Iterating over this process of training a model, evaluating its failure modes, and improving the dataset is the most surefire way to produce high-quality datasets and subsequently high-performing models.</p>
+<h2 id="additional-utilities">Additional Utilities <a href="#Additional-Utilities" title="Permalink to this headline">¶</a><a class="headerlink" href="#additional-utilities" title="Permanent link">&para;</a></h2>
+<p>You can perform <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#additional-utilities">additional Labelbox-specific operations</a> to monitor the progress of an annotation project initiated through this integration with FiftyOne.</p>
+<p>For example, you can <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#viewing-project-status">view the status of an existing project</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-83-1"><span class="p">[</span><span class="mi">47</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-84-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_annotation_results</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span><span id="__span-84-2"><span class="n">results</span><span class="o">.</span><span class="n">print_status</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-85-1"><span class="n">Initializing</span> <span class="n">Labelbox</span> <span class="n">client</span> <span class="n">at</span> <span class="s1">&#39;https://api.labelbox.com/graphql&#39;</span>
+</span><span id="__span-85-2">
+</span><span id="__span-85-3"><span class="n">Project</span><span class="p">:</span> <span class="n">FiftyOne_quickstart</span>
+</span><span id="__span-85-4"><span class="n">ID</span><span class="p">:</span> <span class="n">ckx84egkf0kx60za90ukgc02a</span>
+</span><span id="__span-85-5"><span class="n">Created</span> <span class="n">at</span><span class="p">:</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">15</span> <span class="mi">22</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">41</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+</span><span id="__span-85-6"><span class="n">Updated</span> <span class="n">at</span><span class="p">:</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">15</span> <span class="mi">22</span><span class="p">:</span><span class="mi">43</span><span class="p">:</span><span class="mi">43</span><span class="o">+</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+</span><span id="__span-85-7"><span class="n">Number</span> <span class="n">of</span> <span class="n">labeled</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-85-8"><span class="n">Members</span><span class="p">:</span>
+</span><span id="__span-85-9">
+</span><span id="__span-85-10">        <span class="n">User</span><span class="p">:</span> <span class="n">Eric</span> <span class="n">Hofesmann</span>
+</span><span id="__span-85-11">        <span class="n">Name</span><span class="p">:</span> <span class="n">eric</span><span class="o">.</span><span class="n">hofesmann</span>
+</span><span id="__span-85-12">        <span class="n">Role</span><span class="p">:</span> <span class="n">Admin</span>
+</span><span id="__span-85-13">        <span class="n">Email</span><span class="p">:</span> <span class="n">eric</span><span class="o">.</span><span class="n">hofesmann</span><span class="nd">@voxel51</span><span class="o">.</span><span class="n">com</span>
+</span><span id="__span-85-14">        <span class="n">ID</span><span class="p">:</span> <span class="n">ckl137jfiss1c07320dacd81l</span>
+</span><span id="__span-85-15">
+</span><span id="__span-85-16"><span class="n">Reviews</span><span class="p">:</span>
+</span><span id="__span-85-17">        <span class="n">Positive</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-85-18">        <span class="n">Negative</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-85-19">        <span class="n">Zero</span><span class="p">:</span> <span class="mi">0</span>
+</span></code></pre></div>
+<p>You can also <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html#deleting-projects">delete projects</a> associated with an annotation run directly through the FiftyOne API.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-86-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-87-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_annotation_results</span><span class="p">(</span><span class="n">anno_key</span><span class="p">)</span>
+</span><span id="__span-87-2"><span class="n">api</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">connect_to_api</span><span class="p">()</span>
+</span><span id="__span-87-3">
+</span><span id="__span-87-4"><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">project_id</span><span class="p">)</span>
+</span><span id="__span-87-5"><span class="c1"># &quot;bktes8fl60p4s0yba11npdjwm&quot;</span>
+</span><span id="__span-87-6">
+</span><span id="__span-87-7"><span class="n">api</span><span class="o">.</span><span class="n">delete_project</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">project_id</span><span class="p">,</span> <span class="n">delete_datasets</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-87-8">
+</span><span id="__span-87-9"><span class="c1"># OR</span>
+</span><span id="__span-87-10">
+</span><span id="__span-87-11"><span class="n">api</span><span class="o">.</span><span class="n">delete_projects</span><span class="p">([</span><span class="n">results</span><span class="o">.</span><span class="n">project_id</span><span class="p">],</span> <span class="n">delete_datasets</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-87-12">
+</span><span id="__span-87-13"><span class="c1"># List all projects or datasets associated with your Labelbox account</span>
+</span><span id="__span-87-14"><span class="n">project_ids</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list_projects</span><span class="p">()</span>
+</span><span id="__span-87-15"><span class="n">dataset_ids</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()</span>
+</span><span id="__span-87-16">
+</span><span id="__span-87-17"><span class="c1"># Delete all projects and datsets from your Labelbox account</span>
+</span><span id="__span-87-18"><span class="n">api</span><span class="o">.</span><span class="n">delete_projects</span><span class="p">(</span><span class="n">project_ids_to_delete</span><span class="p">)</span>
+</span><span id="__span-87-19"><span class="n">api</span><span class="o">.</span><span class="n">delete_datasets</span><span class="p">(</span><span class="n">dataset_ids_to_delete</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>No matter what computer vision projects you are working on, you will need a dataset. <a href="https://fiftyone.ai">FiftyOne</a> makes it easy to curate and dig into your dataset to understand all aspects of it, including what needs to be annotated or reannotated.</p>
+<p>In addition, using our <a href="https://voxel51.com/docs/fiftyone/integrations/labelbox.html">Labelbox integration</a> can streamline the annotation process and help you build higher quality datasets and models, faster.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

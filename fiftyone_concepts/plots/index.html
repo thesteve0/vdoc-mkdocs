@@ -1,0 +1,2178 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Interactive Plots ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interactive-plots" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interactive Plots ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      View plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-in-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working in notebooks ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing embeddings ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualizing embeddings ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standalone-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standalone plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plots_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geolocation-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geolocation plots ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geolocation plots ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standalone-plots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standalone plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-plots_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression plots ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line plots ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confusion matrices ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-plots_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      View plots ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-plots-to-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching plots to the App ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attaching plots to the App ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attaching-a-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attaching a plot ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-and-disconnecting-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting and disconnecting plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detaching-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detaching plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freezing-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Freezing plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving plots ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced usage ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced usage ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-plot-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing plot layouts ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plot-selection-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plot selection modes ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting backend ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-matplotlib-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive matplotlib plots ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/fiftyone_concepts/plots.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="interactive-plots">Interactive Plots <a href="#interactive-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#interactive-plots" title="Permanent link">&para;</a></h1>
+<p>FiftyOne provides a powerful <a href="../api/fiftyone.core.plots.html#module-fiftyone.core.plots" title="fiftyone.core.plots"><code>fiftyone.core.plots</code></a> framework that contains
+a variety of interactive plotting methods that enable you to visualize your
+datasets and uncover patterns that are not apparent from inspecting either the
+<a href="app.html#fiftyone-app">raw media files</a> or
+<a href="using_aggregations.html#using-aggregations">aggregate statistics</a>.</p>
+<p>With FiftyOne, you can visualize geolocated data on maps, generate interactive
+evaluation reports such as confusion matrices and PR curves, create dashboards
+of custom statistics, and even generate low-dimensional representations of your
+data that you can use to identify data clusters corresponding to model failure
+modes, annotation gaps, and more.</p>
+<p>What do we mean by <strong>interactive plots</strong>? First, FiftyOne plots are
+<a href="https://plotly.com/python">powered by Plotly</a>, which means they are
+responsive JavaScript-based plots that can be zoomed, panned, and lasso-ed.
+Second, FiftyOne plots can be linked to the <a href="app.html#fiftyone-app">FiftyOne App</a>,
+so that selecting points in a plot will automatically load the corresponding
+samples/labels in the App (and vice versa) for you to visualize! Linking plots
+to their source media is a paradigm that should play a critical part in any
+visual dataset analysis pipeline.</p>
+<p>The builtin plots provided by FiftyOne are chosen to help you analyze and
+improve the quality of your datasets and models, with minimal customization
+required on your part to get started. At the same time, data/model
+interpretability is not a narrowly-defined space that can be fully automated.
+That’s why FiftyOne’s plotting framework is highly customizable and extensible,
+all by writing pure Python (no JavaScript knowledge required).</p>
+<p>Note</p>
+<p>Check out the <a href="../tutorials/index.html#tutorials">tutorials page</a> for in-depth walkthroughs
+that apply the available interactive plotting methods to perform
+evaluation, identify model failure modes, recommend new samples for
+annotation, and more!</p>
+<h2 id="overview">Overview <a href="#overview" title="Permalink to this headline">¶</a><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>All <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> instances provide a
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.plots" title="fiftyone.core.session.Session.plots"><code>plots attribute</code></a> attribute that
+you can use to attach <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> instances to the FiftyOne App.</p>
+<p>When <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> instances are attached to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, they are
+automatically updated whenever
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> changes for any
+reason, whether you modify your view in the App, or programmatically change it
+by setting <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, or if
+multiple plots are connected and another plot triggers a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> update!</p>
+<p>Note</p>
+<p>Interactive plots are currently only supported in Jupyter notebooks. In the
+meantime, you can still use FiftyOne’s plotting features in other
+environments, but you must manually call
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> to update the
+state of a plot to match the state of a connected <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, and any
+callbacks that would normally be triggered in response to interacting with
+a plot will not be triggered.</p>
+<p>See <a href="#working-in-notebooks">this section</a> for more information.</p>
+<p>The two main classes of <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> are explained next.</p>
+<h3 id="interactive-plots_1">Interactive plots <a href="#id3" title="Permalink to this headline">¶</a><a class="headerlink" href="#interactive-plots_1" title="Permanent link">&para;</a></h3>
+<p><a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot" title="fiftyone.core.plots.base.InteractivePlot"><code>InteractivePlot</code></a> is a class of plots that are bidirectionally linked to a
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> via the IDs of either samples or individual labels in the dataset.
+When the user performs a selection in the plot, the
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> is automatically
+updated to select the corresponding samples/labels, and, conversely, when
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> changes, the contents
+of the current view is automatically selected in the plot.</p>
+<p>Examples of <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot" title="fiftyone.core.plots.base.InteractivePlot"><code>InteractivePlot</code></a> types include
+<a href="#embeddings-plots">scatterplots</a>,
+<a href="#geolocation-plots">location scatterplots</a>, and
+<a href="#confusion-matrix-plots">interactive heatmaps</a>.</p>
+<p><img alt="interactive-plots" src="../../_images/mnist-interactive1.gif" /></p>
+<h3 id="view-plots">View plots <a href="#view-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#view-plots" title="Permanent link">&para;</a></h3>
+<p><a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ViewPlot" title="fiftyone.core.plots.base.ViewPlot"><code>ViewPlot</code></a> is a class of plots whose state is automatically updated whenever
+the current <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> changes.
+View plots can be used to construct <a href="#id11">dynamic dashboards</a> that
+update to reflect the contents of your current view.</p>
+<p>More view plot types are being continually added to the library over time.
+Current varieties include <a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.CategoricalHistogram" title="fiftyone.core.plots.views.CategoricalHistogram"><code>CategoricalHistogram</code></a>, <a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.NumericalHistogram" title="fiftyone.core.plots.views.NumericalHistogram"><code>NumericalHistogram</code></a>, and
+<a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.ViewGrid" title="fiftyone.core.plots.views.ViewGrid"><code>ViewGrid</code></a>.</p>
+<p><img alt="view-plots" src="../../_images/view-plots.gif" /></p>
+<h2 id="working-in-notebooks">Working in notebooks <a href="#working-in-notebooks" title="Permalink to this headline">¶</a><a class="headerlink" href="#working-in-notebooks" title="Permanent link">&para;</a></h2>
+<p>The recommended way to work with FiftyOne’s interactive plots is in
+<a href="https://jupyter.org">Jupyter notebooks</a> or
+<a href="https://jupyterlab.readthedocs.io/en/stable">JupyterLab</a>.</p>
+<p>In these environments, you can leverage the full power of plots by
+<a href="#attaching-plots">attaching them to the FiftyOne App</a> and bidirectionally
+interacting with the plots and the App to identify interesting subsets of your
+data.</p>
+<p>Note</p>
+<p>Support for interactive plots in non-notebook contexts and in
+<a href="https://colab.research.google.com">Google Colab</a> and
+<a href="https://docs.databricks.com/en/notebooks/index.html">Databricks</a>
+is coming soon! In the meantime, you can still use FiftyOne’s plotting
+features in these environments, but you must manually call
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> to update the
+state of a plot to match the state of a connected <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, and any
+callbacks that would normally be triggered in response to interacting with
+a plot will not be triggered.</p>
+<p>You can get setup to work in a Jupyter environment by running the commands
+below for your environment:</p>
+<p>If you wish to use the <code>matplotlib</code> backend for any interactive plots, refer
+to <a href="#matplotlib-in-notebooks">this section</a> for setup instructions.</p>
+<h2 id="visualizing-embeddings">Visualizing embeddings <a href="#visualizing-embeddings" title="Permalink to this headline">¶</a><a class="headerlink" href="#visualizing-embeddings" title="Permanent link">&para;</a></h2>
+<p>The <a href="../brain.html#fiftyone-brain">FiftyOne Brain</a> provides a powerful
+<code>compute_visualization()</code> method
+that can be used to generate low-dimensional representations of the
+samples/object patches in a dataset that can be visualized using interactive
+FiftyOne plots.</p>
+<p>To learn more about the available embedding methods, dimensionality reduction
+techniques, and their applications to dataset analysis, refer to
+<a href="../brain.html#brain-embeddings-visualization">this page</a>. In this section, we’ll just
+cover the basic mechanics of creating scatterplots and interacting with them.</p>
+<p>Note</p>
+<p>The visualizations in this section are rendered under the hood via the
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.scatterplot" title="fiftyone.core.plots.base.scatterplot"><code>scatterplot()</code></a> method, which
+you can directly use to generate interactive plots for arbitrary 2D or 3D
+representations of your data.</p>
+<h3 id="standalone-plots">Standalone plots <a href="#standalone-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#standalone-plots" title="Permanent link">&para;</a></h3>
+<p>Let’s use
+<code>compute_visualization()</code> to
+generate a 2D visualization of the images in the test split of the
+<a href="../dataset_zoo/datasets.html#dataset-zoo-mnist">MNIST dataset</a> and then visualize it using the
+<code>results.visualize()</code>
+method of the returned results object, where each point is colored by its
+ground truth label:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-0-2"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-3">
+</span><span id="__span-0-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-0-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-0-6"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-0-7">
+</span><span id="__span-0-8"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;mnist&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+</span><span id="__span-0-9">
+</span><span id="__span-0-10"><span class="c1"># Construct a `num_samples x num_pixels` array of images</span>
+</span><span id="__span-0-11"><span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>\
+</span><span id="__span-0-12">    <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>\
+</span><span id="__span-0-13">    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">)</span>\
+</span><span id="__span-0-14"><span class="p">])</span>
+</span><span id="__span-0-15">
+</span><span id="__span-0-16"><span class="c1"># Compute 2D embeddings</span>
+</span><span id="__span-0-17"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">embeddings</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span><span id="__span-0-18">
+</span><span id="__span-0-19"><span class="c1"># Visualize embeddings, colored by ground truth label</span>
+</span><span id="__span-0-20"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;ground_truth.label&quot;</span><span class="p">)</span>
+</span><span id="__span-0-21"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="mnist-scatterplot" src="../../_images/mnist-scatterplot.png" /></p>
+<p>As you can see, the 2D embeddings are naturally clustered according to their
+ground truth label!</p>
+<h3 id="interactive-plots_2">Interactive plots <a href="#id5" title="Permalink to this headline">¶</a><a class="headerlink" href="#interactive-plots_2" title="Permanent link">&para;</a></h3>
+<p>The full power of
+<code>compute_visualization()</code> comes
+when you associate the scatterpoints with the samples or objects in a <a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a>
+and then attach it to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>.</p>
+<p>The example below demonstrates setting up an interactive scatterplot for the
+test split of the <a href="../dataset_zoo/datasets.html#dataset-zoo-mnist">MNIST dataset</a> that is
+<a href="#attaching-plots">attached to the App</a>.</p>
+<p>In this setup, the scatterplot renders each sample using its corresponding 2D
+embedding generated by
+<code>compute_visualization()</code>, colored
+by the sample’s ground truth label.</p>
+<p>Since the <code>labels</code> argument to
+<code>results.visualize()</code>
+is categorical, each class is rendered as its own trace and you can click on
+the legend entries to show/hide individual classes, or double-click to
+show/hide all other classes.</p>
+<p>When points are lasso-ed in the plot, the corresponding
+samples are automatically selected in the session’s current
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>view</code></a>. Likewise, whenever you
+modify the session’s view, either in the App or by programmatically setting
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, the corresponding
+locations will be selected in the scatterplot.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-1-2"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-1-3">
+</span><span id="__span-1-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-1-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-1-6"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-1-7">
+</span><span id="__span-1-8"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;mnist&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9">
+</span><span id="__span-1-10"><span class="c1"># Construct a `num_samples x num_pixels` array of images</span>
+</span><span id="__span-1-11"><span class="n">images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>\
+</span><span id="__span-1-12">    <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>\
+</span><span id="__span-1-13">    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">)</span>\
+</span><span id="__span-1-14"><span class="p">])</span>
+</span><span id="__span-1-15">
+</span><span id="__span-1-16"><span class="c1"># Compute 2D embeddings</span>
+</span><span id="__span-1-17"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">embeddings</span><span class="o">=</span><span class="n">images</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span><span id="__span-1-18">
+</span><span id="__span-1-19"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="c1"># Visualize embeddings, colored by ground truth label</span>
+</span><span id="__span-2-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;ground_truth.label&quot;</span><span class="p">)</span>
+</span><span id="__span-2-3"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">)</span>
+</span><span id="__span-2-4">
+</span><span id="__span-2-5"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p>To give a taste of the possible interactions, let’s hide all zero digit images
+and select the other digits near the zero cluster; this isolates the non-zero
+digit images in the App that are likely to be confused as zeros:</p>
+<p><img alt="mnist-interactive1" src="../../_images/mnist-interactive1.gif" /></p>
+<p>Alternatively, let’s hide all classes except the zero digits, and then select
+the zero digits that are <em>not</em> in the zero cluster; this isolates the zero
+digit images in the App that are likely to be confused as other digits:</p>
+<p><img alt="mnist-interactive2" src="../../_images/mnist-interactive2.gif" /></p>
+<h2 id="geolocation-plots">Geolocation plots <a href="#geolocation-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#geolocation-plots" title="Permanent link">&para;</a></h2>
+<p>You can use
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.location_scatterplot" title="fiftyone.core.plots.base.location_scatterplot"><code>location_scatterplot()</code></a>
+to generate interactive plots of datasets with geolocation data.</p>
+<p>You can store arbitrary location data in
+<a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> format on your datasets
+using the <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation" title="fiftyone.core.labels.GeoLocation"><code>GeoLocation</code></a> and <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocations" title="fiftyone.core.labels.GeoLocations"><code>GeoLocations</code></a> label types. See
+<a href="using_datasets.html#geolocation">this section</a> for more information.</p>
+<p>The
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.location_scatterplot" title="fiftyone.core.plots.base.location_scatterplot"><code>location_scatterplot()</code></a>
+method only supports simple <code>[longitude, latitude]</code> coordinate points, which
+can be stored in the <code>point</code> attribute of a <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation" title="fiftyone.core.labels.GeoLocation"><code>GeoLocation</code></a> field.</p>
+<p>Note</p>
+<p>Did you know? You can create
+<a href="using_views.html#geolocation-views">location-based views</a> that filter your data by
+their location!</p>
+<h3 id="standalone-plots_1">Standalone plots <a href="#id7" title="Permalink to this headline">¶</a><a class="headerlink" href="#standalone-plots_1" title="Permanent link">&para;</a></h3>
+<p>In the simplest case, you can use this method to generate a location
+scatterplot for a list of <code>[longitude, latitude]</code> coordinates, using the
+optional <code>labels</code> and <code>sizes</code> parameters to control the color and sizes
+of each point, respectively.</p>
+<p>The example below demonstrates this usage using the
+<a href="../dataset_zoo/datasets.html#dataset-zoo-quickstart-geo">quickstart-geo</a> dataset from the zoo, which
+contains <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation" title="fiftyone.core.labels.GeoLocation"><code>GeoLocation</code></a> data in its <code>location</code> field:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-3-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-4"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart-geo&quot;</span><span class="p">)</span>
+</span><span id="__span-3-7"><span class="n">fob</span><span class="o">.</span><span class="n">compute_uniqueness</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-3-8">
+</span><span id="__span-3-9"><span class="c1"># A list of ``[longitude, latitude]`` coordinates</span>
+</span><span id="__span-3-10"><span class="n">locations</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;location.point.coordinates&quot;</span><span class="p">)</span>
+</span><span id="__span-3-11">
+</span><span id="__span-3-12"><span class="c1"># Scalar `uniqueness` values for each sample</span>
+</span><span id="__span-3-13"><span class="n">uniqueness</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">)</span>
+</span><span id="__span-3-14">
+</span><span id="__span-3-15"><span class="c1"># The number of ground truth objects in each sample</span>
+</span><span id="__span-3-16"><span class="n">num_objects</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+</span><span id="__span-3-17">
+</span><span id="__span-3-18"><span class="c1"># Create scatterplot</span>
+</span><span id="__span-3-19"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">location_scatterplot</span><span class="p">(</span>
+</span><span id="__span-3-20">    <span class="n">locations</span><span class="o">=</span><span class="n">locations</span><span class="p">,</span>
+</span><span id="__span-3-21">    <span class="n">labels</span><span class="o">=</span><span class="n">uniqueness</span><span class="p">,</span>      <span class="c1"># color points by their `uniqueness` values</span>
+</span><span id="__span-3-22">    <span class="n">sizes</span><span class="o">=</span><span class="n">num_objects</span><span class="p">,</span>      <span class="c1"># scale point sizes by number of objects</span>
+</span><span id="__span-3-23">    <span class="n">labels_title</span><span class="o">=</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">,</span>
+</span><span id="__span-3-24">    <span class="n">sizes_title</span><span class="o">=</span><span class="s2">&quot;objects&quot;</span><span class="p">,</span>
+</span><span id="__span-3-25"><span class="p">)</span>
+</span><span id="__span-3-26"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="location-scatterplot" src="../../_images/location-scatterplot.gif" /></p>
+<p>You can also change the style to <code>style="density"</code> in order to view the data
+as a density plot:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="c1"># Create density plot</span>
+</span><span id="__span-4-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">location_scatterplot</span><span class="p">(</span>
+</span><span id="__span-4-3">    <span class="n">locations</span><span class="o">=</span><span class="n">locations</span><span class="p">,</span>
+</span><span id="__span-4-4">    <span class="n">labels</span><span class="o">=</span><span class="n">uniqueness</span><span class="p">,</span>      <span class="c1"># color points by their `uniqueness` values</span>
+</span><span id="__span-4-5">    <span class="n">sizes</span><span class="o">=</span><span class="n">num_objects</span><span class="p">,</span>      <span class="c1"># scale influence by number of objects</span>
+</span><span id="__span-4-6">    <span class="n">style</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span>
+</span><span id="__span-4-7">    <span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-4-8"><span class="p">)</span>
+</span><span id="__span-4-9"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="location-densityplot" src="../../_images/location-densityplot.gif" /></p>
+<h3 id="interactive-plots_3">Interactive plots <a href="#id8" title="Permalink to this headline">¶</a><a class="headerlink" href="#interactive-plots_3" title="Permanent link">&para;</a></h3>
+<p>The real power of
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.location_scatterplot" title="fiftyone.core.plots.base.location_scatterplot"><code>location_scatterplot()</code></a>
+comes when you associate the location coordinates with the samples in a
+<a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset" title="fiftyone.core.dataset.Dataset"><code>Dataset</code></a> and then attach it to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>.</p>
+<p>The example below demonstrates setting up an interactive location scatterplot
+for the <a href="../dataset_zoo/datasets.html#dataset-zoo-quickstart-geo">quickstart-geo</a> dataset that is
+<a href="#attaching-plots">attached to the App</a>.</p>
+<p>In this setup, the location plot renders each sample using its corresponding
+<code>[longitude, latitude]</code> coordinates from the dataset’s only <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation" title="fiftyone.core.labels.GeoLocation"><code>GeoLocation</code></a>
+field, <code>location</code>. When points are lasso-ed in the plot, the corresponding
+samples are automatically selected in the session’s current
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>view</code></a>. Likewise, whenever you
+modify the Session’s view, either in the App or by programmatically setting
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, the corresponding
+locations will be selected in the scatterplot.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-5-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-5-3"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-5-4">
+</span><span id="__span-5-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart-geo&quot;</span><span class="p">)</span>
+</span><span id="__span-5-6"><span class="n">fob</span><span class="o">.</span><span class="n">compute_uniqueness</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-5-7">
+</span><span id="__span-5-8"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-6-2">
+</span><span id="__span-6-3"><span class="c1"># Computes the number of ground truth objects in each sample</span>
+</span><span id="__span-6-4"><span class="n">num_objects</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+</span><span id="__span-6-5">
+</span><span id="__span-6-6"><span class="c1"># Create the scatterplot</span>
+</span><span id="__span-6-7"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">location_scatterplot</span><span class="p">(</span>
+</span><span id="__span-6-8">    <span class="n">samples</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-6-9">    <span class="n">labels</span><span class="o">=</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">,</span>    <span class="c1"># color points by their `uniqueness` values</span>
+</span><span id="__span-6-10">    <span class="n">sizes</span><span class="o">=</span><span class="n">num_objects</span><span class="p">,</span>      <span class="c1"># scale point sizes by number of objects</span>
+</span><span id="__span-6-11">    <span class="n">sizes_title</span><span class="o">=</span><span class="s2">&quot;objects&quot;</span><span class="p">,</span>
+</span><span id="__span-6-12"><span class="p">)</span>
+</span><span id="__span-6-13"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">)</span>
+</span><span id="__span-6-14">
+</span><span id="__span-6-15"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="location-scatterplot-interactive" src="../../_images/location-scatterplot-interactive.gif" /></p>
+<h2 id="regression-plots">Regression plots <a href="#regression-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#regression-plots" title="Permanent link">&para;</a></h2>
+<p>When you use evaluation methods such as
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_regressions" title="fiftyone.core.collections.SampleCollection.evaluate_regressions"><code>evaluate_regressions()</code></a>
+to evaluate model predictions, the regression plots that you can generate by
+calling the <a href="../api/fiftyone.utils.eval.regression.html#fiftyone.utils.eval.regression.RegressionResults.plot_results" title="fiftyone.utils.eval.regression.RegressionResults.plot_results"><code>plot_results()</code></a>
+method are responsive plots that can be attached to App instances to
+interactively explore specific cases of your model’s performance.</p>
+<p>Note</p>
+<p>See <a href="evaluation.html#evaluating-regressions">this page</a> for an in-depth guide to using
+FiftyOne to evaluate regression models.</p>
+<p>The example below demonstrates using an interactive regression plot to explore
+the results of some fake regression data on the
+<a href="../dataset_zoo/datasets.html#dataset-zoo-quickstart">quickstart</a> dataset.</p>
+<p>In this setup, you can lasso scatter points to select the corresponding samples
+in the App.</p>
+<p>Likewise, whenever you modify the Session’s view, either in the App or by
+programmatically setting
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, the regression plot
+is automatically updated to select the scatter points that are included in the
+current view.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="__span-7-2"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-7-5"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-7-6"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-7-7">
+</span><span id="__span-7-8"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">select_fields</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span><span id="__span-7-9">
+</span><span id="__span-7-10"><span class="c1"># Populate some fake regression + weather data</span>
+</span><span id="__span-7-11"><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-7-12">    <span class="n">ytrue</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">idx</span>
+</span><span id="__span-7-13">    <span class="n">ypred</span> <span class="o">=</span> <span class="n">ytrue</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ytrue</span><span class="p">)</span>
+</span><span id="__span-7-14">    <span class="n">confidence</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</span><span id="__span-7-15">    <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Regression</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">ytrue</span><span class="p">)</span>
+</span><span id="__span-7-16">    <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;predictions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Regression</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">ypred</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="n">confidence</span><span class="p">)</span>
+</span><span id="__span-7-17">    <span class="n">sample</span><span class="p">[</span><span class="s2">&quot;weather&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;sunny&quot;</span><span class="p">,</span> <span class="s2">&quot;cloudy&quot;</span><span class="p">,</span> <span class="s2">&quot;rainy&quot;</span><span class="p">])</span>
+</span><span id="__span-7-18">    <span class="n">sample</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span><span id="__span-7-19">
+</span><span id="__span-7-20"><span class="c1"># Evaluate the predictions in the `predictions` field with respect to the</span>
+</span><span id="__span-7-21"><span class="c1"># values in the `ground_truth` field</span>
+</span><span id="__span-7-22"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_regressions</span><span class="p">(</span>
+</span><span id="__span-7-23">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span>
+</span><span id="__span-7-24">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-7-25">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-7-26"><span class="p">)</span>
+</span><span id="__span-7-27">
+</span><span id="__span-7-28"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="c1"># Plot a scatterplot of the results colored by `weather` and scaled by</span>
+</span><span id="__span-8-2"><span class="c1"># `confidence`</span>
+</span><span id="__span-8-3"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_results</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;weather&quot;</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="s2">&quot;predictions.confidence&quot;</span><span class="p">)</span>
+</span><span id="__span-8-4"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="__span-8-5">
+</span><span id="__span-8-6"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="regression-evaluation" src="../../_images/regression-evaluation.gif" /></p>
+<h2 id="line-plots">Line plots <a href="#line-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#line-plots" title="Permanent link">&para;</a></h2>
+<p>You can use <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.lines" title="fiftyone.core.plots.base.lines"><code>lines()</code></a> to generate
+interactive line plots whose points represent data associated with the samples,
+frames, or labels of a dataset. These plots can then be attached to App
+instances to interactively explore specific slices of your dataset based on
+their corresponding line data.</p>
+<p>The example below demonstrates using an interactive lines plot to view the
+frames of the <a href="../dataset_zoo/datasets.html#dataset-zoo-quickstart-video">quickstart-video</a> dataset
+that contain the most vehicles. In this setup, you can lasso scatter points to
+select the corresponding frames in a <a href="using_views.html#frame-views">frames view</a> in the
+App.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-9-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-9-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-9-4">
+</span><span id="__span-9-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart-video&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span><span id="__span-9-6">
+</span><span id="__span-9-7"><span class="c1"># Ensure dataset has sampled frames available so we can use frame selection</span>
+</span><span id="__span-9-8"><span class="n">dataset</span><span class="o">.</span><span class="n">to_frames</span><span class="p">(</span><span class="n">sample_frames</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-9-9">
+</span><span id="__span-9-10"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;frames.detections&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;vehicle&quot;</span><span class="p">)</span>
+</span><span id="__span-10-2">
+</span><span id="__span-10-3"><span class="c1"># Plot the number of vehicles in each frame of a video dataset</span>
+</span><span id="__span-10-4"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">lines</span><span class="p">(</span>
+</span><span id="__span-10-5">    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;frames.frame_number&quot;</span><span class="p">,</span>
+</span><span id="__span-10-6">    <span class="n">y</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;frames.detections.detections&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">(),</span>
+</span><span id="__span-10-7">    <span class="n">labels</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+</span><span id="__span-10-8">    <span class="n">samples</span><span class="o">=</span><span class="n">view</span><span class="p">,</span>
+</span><span id="__span-10-9">    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;frame number&quot;</span><span class="p">,</span>
+</span><span id="__span-10-10">    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;num vehicles&quot;</span><span class="p">,</span>
+</span><span id="__span-10-11"><span class="p">)</span>
+</span><span id="__span-10-12"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="__span-10-13">
+</span><span id="__span-10-14"><span class="c1"># When points are selected in the plot, load the corresponding frames in</span>
+</span><span id="__span-10-15"><span class="c1"># frames views in the App</span>
+</span><span id="__span-10-16"><span class="n">plot</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s2">&quot;frames&quot;</span>
+</span><span id="__span-10-17">
+</span><span id="__span-10-18"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="lines" src="../../_images/lines.gif" /></p>
+<h2 id="confusion-matrices">Confusion matrices <a href="#confusion-matrices" title="Permalink to this headline">¶</a><a class="headerlink" href="#confusion-matrices" title="Permanent link">&para;</a></h2>
+<p>When you use evaluation methods such as
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_classifications" title="fiftyone.core.collections.SampleCollection.evaluate_classifications"><code>evaluate_classifications()</code></a>
+and
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections" title="fiftyone.core.collections.SampleCollection.evaluate_detections"><code>evaluate_detections()</code></a>
+to evaluate model predictions, the confusion matrices that you can generate
+by calling the
+<a href="../api/fiftyone.utils.eval.classification.html#fiftyone.utils.eval.classification.ClassificationResults.plot_confusion_matrix" title="fiftyone.utils.eval.classification.ClassificationResults.plot_confusion_matrix"><code>plot_confusion_matrix()</code></a>
+method are responsive plots that can be attached to App instances to
+interactively explore specific cases of your model’s performance.</p>
+<p>Note</p>
+<p>See <a href="evaluation.html#evaluating-models">this page</a> for an in-depth guide to using
+FiftyOne to evaluate models.</p>
+<p>The example below demonstrates using an interactive confusion matrix to explore
+the results of an evaluation on the <code>predictions</code> field of the
+<a href="../dataset_zoo/datasets.html#dataset-zoo-quickstart">quickstart</a> dataset.</p>
+<p>In this setup, you can click on individual cells of the confusion matrix to
+select the corresponding ground truth and/or predicted <a href="../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections" title="fiftyone.core.labels.Detections"><code>Detections</code></a> in the App.
+For example, if you click on a diagonal cell of the confusion matrix, you will
+see the true positive examples of that class in the App.</p>
+<p>Likewise, whenever you modify the Session’s view, either in the App or by
+programmatically setting
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, the confusion matrix
+is automatically updated to show the cell counts for only those detections that
+are included in the current view.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-11-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-11-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-11-4">
+</span><span id="__span-11-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-11-6">
+</span><span id="__span-11-7"><span class="c1"># Evaluate detections in the `predictions` field</span>
+</span><span id="__span-11-8"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">)</span>
+</span><span id="__span-11-9">
+</span><span id="__span-11-10"><span class="c1"># The top-10 most common classes</span>
+</span><span id="__span-11-11"><span class="n">counts</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-11-12"><span class="n">classes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-11-13">
+</span><span id="__span-11-14"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="c1"># Plot confusion matrix</span>
+</span><span id="__span-12-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+</span><span id="__span-12-3"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</span><span id="__span-12-4">
+</span><span id="__span-12-5"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="detection-evaluation" src="../../_images/detection-evaluation.gif" /></p>
+<p>When you pass an <code>eval_key</code> to
+<a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections" title="fiftyone.core.collections.SampleCollection.evaluate_detections"><code>evaluate_detections()</code></a>,
+confusion matrices attached to App instances have a different default behavior:
+when you select cell(s), the corresponding
+<a href="evaluation.html#evaluation-patches">evaluation patches</a> for the run are shown in the
+App. This allows you to visualize each TP, FP, and FN example in a fine-grained
+manner:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-13-2">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span>
+</span><span id="__span-13-3"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="c1"># Since these results have an `eval_key`, selecting cells in this plot will</span>
+</span><span id="__span-14-2"><span class="c1"># load evaluation patch views</span>
+</span><span id="__span-14-3"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+</span><span id="__span-14-4"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</span><span id="__span-14-5">
+</span><span id="__span-14-6"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="detection-evaluation-patches" src="../../_images/detection-evaluation-patches.gif" /></p>
+<p>If you prefer a different selection behavior, you can simply change the plot’s
+<a href="#plot-selection-modes">selection mode</a>.</p>
+<h2 id="view-plots_1">View plots <a href="#id11" title="Permalink to this headline">¶</a><a class="headerlink" href="#view-plots_1" title="Permanent link">&para;</a></h2>
+<p><a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ViewPlot" title="fiftyone.core.plots.base.ViewPlot"><code>ViewPlot</code></a> is a class of plots whose state is automatically updated whenever
+the current <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> changes.</p>
+<p>Current varieties of view plots include <a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.CategoricalHistogram" title="fiftyone.core.plots.views.CategoricalHistogram"><code>CategoricalHistogram</code></a>,
+<a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.NumericalHistogram" title="fiftyone.core.plots.views.NumericalHistogram"><code>NumericalHistogram</code></a>, and <a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.ViewGrid" title="fiftyone.core.plots.views.ViewGrid"><code>ViewGrid</code></a>.</p>
+<p>Note</p>
+<p>New <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ViewPlot" title="fiftyone.core.plots.base.ViewPlot"><code>ViewPlot</code></a> subclasses will be continually added over time, and it is
+also straightforward to implement your own custom view plots. Contributions
+are welcome at <a href="https://github.com/voxel51/fiftyone">https://github.com/voxel51/fiftyone</a>!</p>
+<p>The example below demonstrates the use of <a href="../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.ViewGrid" title="fiftyone.core.plots.views.ViewGrid"><code>ViewGrid</code></a> to construct a dashboard
+of histograms of various aspects of a dataset, which can then be attached to a
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> in order to automatically see how the statistics change when the
+session’s <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>view</code></a> is modified.</p>
+<p>Each block in the example code below denotes a separate cell in a Jupyter
+notebook:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-15-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-15-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-15-4">
+</span><span id="__span-15-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-15-6"><span class="n">dataset</span><span class="o">.</span><span class="n">compute_metadata</span><span class="p">()</span>
+</span><span id="__span-15-7">
+</span><span id="__span-15-8"><span class="c1"># Define some interesting plots</span>
+</span><span id="__span-15-9"><span class="n">plot1</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">NumericalHistogram</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;metadata.size_bytes&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;image size (KB)&quot;</span><span class="p">)</span>
+</span><span id="__span-15-10"><span class="n">plot2</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">NumericalHistogram</span><span class="p">(</span><span class="s2">&quot;predictions.detections.confidence&quot;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-15-11"><span class="n">plot3</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">CategoricalHistogram</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;frequency&quot;</span><span class="p">)</span>
+</span><span id="__span-15-12"><span class="n">plot4</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">CategoricalHistogram</span><span class="p">(</span><span class="s2">&quot;predictions.detections.label&quot;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;frequency&quot;</span><span class="p">)</span>
+</span><span id="__span-15-13">
+</span><span id="__span-15-14"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="c1"># Construct a custom dashboard of plots</span>
+</span><span id="__span-16-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">ViewGrid</span><span class="p">([</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">,</span> <span class="n">plot3</span><span class="p">,</span> <span class="n">plot4</span><span class="p">],</span> <span class="n">init_view</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-16-3"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">)</span>
+</span><span id="__span-16-4">
+</span><span id="__span-16-5"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="view-plots" src="../../_images/view-plots.gif" /></p>
+<h2 id="attaching-plots-to-the-app">Attaching plots to the App <a href="#attaching-plots-to-the-app" title="Permalink to this headline">¶</a><a class="headerlink" href="#attaching-plots-to-the-app" title="Permanent link">&para;</a></h2>
+<p>All <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> instances provide a
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.plots" title="fiftyone.core.session.Session.plots"><code>plots</code></a> attribute that you can use
+to attach <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> instances to the FiftyOne App.</p>
+<p>When <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> instances are attached to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, they are
+automatically updated whenever
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a> changes for any
+reason, whether you modify your view in the App, or programmatically change it
+by setting <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.view" title="fiftyone.core.session.Session.view"><code>session.view</code></a>, or if
+multiple plots are connected and another plot triggers a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> update!</p>
+<p>Note</p>
+<p>Interactive plots are currently only supported in Jupyter notebooks. In the
+meantime, you can still use FiftyOne’s plotting features in other
+environments, but you must manually call
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> to update the
+state of a plot to match the state of a connected <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, and any
+callbacks that would normally be triggered in response to interacting with
+a plot will not be triggered.</p>
+<p>See <a href="#working-in-notebooks">this section</a> for more information.</p>
+<h3 id="attaching-a-plot">Attaching a plot <a href="#attaching-a-plot" title="Permalink to this headline">¶</a><a class="headerlink" href="#attaching-a-plot" title="Permanent link">&para;</a></h3>
+<p>The code below demonstrates the basic pattern of connecting a <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a>
+to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-17-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-17-3">
+</span><span id="__span-17-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart-geo&quot;</span><span class="p">)</span>
+</span><span id="__span-17-5">
+</span><span id="__span-17-6"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-17-7">
+</span><span id="__span-17-8"><span class="c1"># Create a responsive location plot</span>
+</span><span id="__span-17-9"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">location_scatterplot</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-17-10"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># show the plot</span>
+</span><span id="__span-17-11">
+</span><span id="__span-17-12"><span class="c1"># Attach the plot to the session</span>
+</span><span id="__span-17-13"><span class="c1"># Updates will automatically occur when the plot/session are updated</span>
+</span><span id="__span-17-14"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+</span></code></pre></div>
+<p>You can view details about the plots attached to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> by printing it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="n">Dataset</span><span class="p">:</span>          <span class="n">quickstart</span><span class="o">-</span><span class="n">geo</span>
+</span><span id="__span-19-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>       <span class="n">image</span>
+</span><span id="__span-19-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span>      <span class="mi">500</span>
+</span><span id="__span-19-4"><span class="n">Selected</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-19-5"><span class="n">Selected</span> <span class="n">labels</span><span class="p">:</span>  <span class="mi">0</span>
+</span><span id="__span-19-6"><span class="n">Session</span> <span class="n">URL</span><span class="p">:</span>      <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5151</span><span class="o">/</span>
+</span><span id="__span-19-7"><span class="n">Connected</span> <span class="n">plots</span><span class="p">:</span>
+</span><span id="__span-19-8">    <span class="n">plot1</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plotly</span><span class="o">.</span><span class="n">InteractiveScatter</span>
+</span></code></pre></div>
+<p>By default, plots are given sequential names <code>plot1</code>, <code>plot2</code>, etc., but
+you can customize their names via the optional <code>name</code> parameter of
+<a href="../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.attach" title="fiftyone.core.plots.manager.PlotManager.attach"><code>session.plots.attach()</code></a>.</p>
+<p>You can retrieve a <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot" title="fiftyone.core.plots.base.ResponsivePlot"><code>ResponsivePlot</code></a> instance from its connected session by its
+name:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">same_plot</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="p">[</span><span class="s2">&quot;plot1&quot;</span><span class="p">]</span>
+</span><span id="__span-20-2"><span class="n">same_plot</span> <span class="ow">is</span> <span class="n">plot</span>  <span class="c1"># True</span>
+</span></code></pre></div>
+<h3 id="connecting-and-disconnecting-plots">Connecting and disconnecting plots <a href="#connecting-and-disconnecting-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#connecting-and-disconnecting-plots" title="Permanent link">&para;</a></h3>
+<p>By default, when plots are attached to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, they are <em>connected</em>, which
+means that any necessary state updates will happen automatically. If you wish
+to temporarily suspend updates for an individual plot, you can use
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.disconnect" title="fiftyone.core.plots.base.ResponsivePlot.disconnect"><code>plot.disconnect()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="c1"># Disconnect an individual plot</span>
+</span><span id="__span-21-2"><span class="c1"># Plot updates will no longer update the session, and vice versa</span>
+</span><span id="__span-21-3"><span class="n">plot</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</span><span id="__span-21-4">
+</span><span id="__span-21-5"><span class="c1"># Note that `plot1` is now disconnected</span>
+</span><span id="__span-21-6"><span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">Dataset</span><span class="p">:</span>          <span class="n">quickstart</span><span class="o">-</span><span class="n">geo</span>
+</span><span id="__span-22-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>       <span class="n">image</span>
+</span><span id="__span-22-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span>      <span class="mi">500</span>
+</span><span id="__span-22-4"><span class="n">Selected</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-22-5"><span class="n">Selected</span> <span class="n">labels</span><span class="p">:</span>  <span class="mi">0</span>
+</span><span id="__span-22-6"><span class="n">Session</span> <span class="n">URL</span><span class="p">:</span>      <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5151</span><span class="o">/</span>
+</span><span id="__span-22-7"><span class="n">Disconnected</span> <span class="n">plots</span><span class="p">:</span>
+</span><span id="__span-22-8">    <span class="n">plot1</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plotly</span><span class="o">.</span><span class="n">InteractiveScatter</span>
+</span></code></pre></div>
+<p>You can reconnect a plot by calling
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.connect" title="fiftyone.core.plots.base.ResponsivePlot.connect"><code>plot.connect()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="c1"># Reconnect an individual plot</span>
+</span><span id="__span-23-2"><span class="n">plot</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+</span><span id="__span-23-3">
+</span><span id="__span-23-4"><span class="c1"># Note that `plot1` is connected again</span>
+</span><span id="__span-23-5"><span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="n">Dataset</span><span class="p">:</span>          <span class="n">quickstart</span><span class="o">-</span><span class="n">geo</span>
+</span><span id="__span-24-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>       <span class="n">image</span>
+</span><span id="__span-24-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span>      <span class="mi">500</span>
+</span><span id="__span-24-4"><span class="n">Selected</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-24-5"><span class="n">Selected</span> <span class="n">labels</span><span class="p">:</span>  <span class="mi">0</span>
+</span><span id="__span-24-6"><span class="n">Session</span> <span class="n">URL</span><span class="p">:</span>      <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5151</span><span class="o">/</span>
+</span><span id="__span-24-7"><span class="n">Connected</span> <span class="n">plots</span><span class="p">:</span>
+</span><span id="__span-24-8">    <span class="n">plot1</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plotly</span><span class="o">.</span><span class="n">InteractiveScatter</span>
+</span></code></pre></div>
+<p>You can disconnect and reconnect all plots currently attached to a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>
+via
+<a href="../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.disconnect" title="fiftyone.core.plots.manager.PlotManager.disconnect"><code>session.plots.disconnect()</code></a>
+and
+<a href="../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.connect" title="fiftyone.core.plots.manager.PlotManager.connect"><code>session.plots.connect()</code></a>,
+respectively.</p>
+<h3 id="detaching-plots">Detaching plots <a href="#detaching-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#detaching-plots" title="Permanent link">&para;</a></h3>
+<p>If you would like to permanently detach a plot from a <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a>, use
+<a href="../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.pop" title="fiftyone.core.plots.manager.PlotManager.pop"><code>session.plots.pop()</code></a> or
+<a href="../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.remove" title="fiftyone.core.plots.manager.PlotManager.remove"><code>session.plots.remove()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="c1"># Detach plot from its session</span>
+</span><span id="__span-25-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;plot1&quot;</span><span class="p">)</span>
+</span><span id="__span-25-3">
+</span><span id="__span-25-4"><span class="c1"># Note that `plot1` no longer appears</span>
+</span><span id="__span-25-5"><span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="n">Dataset</span><span class="p">:</span>          <span class="n">quickstart</span><span class="o">-</span><span class="n">geo</span>
+</span><span id="__span-26-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>       <span class="n">image</span>
+</span><span id="__span-26-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span>      <span class="mi">500</span>
+</span><span id="__span-26-4"><span class="n">Selected</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">0</span>
+</span><span id="__span-26-5"><span class="n">Selected</span> <span class="n">labels</span><span class="p">:</span>  <span class="mi">0</span>
+</span><span id="__span-26-6"><span class="n">Session</span> <span class="n">URL</span><span class="p">:</span>      <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5151</span><span class="o">/</span>
+</span></code></pre></div>
+<h3 id="freezing-plots">Freezing plots <a href="#freezing-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#freezing-plots" title="Permanent link">&para;</a></h3>
+<p>Working with interactive plots in notebooks is an amazingly productive
+experience. However, when you find something particularly interesting that you
+want to save, or you want to share a notebook with a colleague without requiring
+them to rerun all of the cells to reproduce your results, you may want to
+<em>freeze</em> your responsive plots.</p>
+<p>You can conveniently freeze your currently active App instance and any attached
+plots by calling
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.freeze" title="fiftyone.core.session.Session.freeze"><code>session.freeze()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="c1"># Replace current App instance and all attached plots with static images</span>
+</span><span id="__span-27-2"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>After calling this method, your current App instance and all connected plots
+will be replaced by static images that will be visible when you save + reopen
+your notebook later.</p>
+<p>You can also freeze an individual plot by calling
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.freeze" title="fiftyone.core.plots.base.ResponsivePlot.freeze"><code>plot.freeze()</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="c1"># Replace a plot with a static image</span>
+</span><span id="__span-28-2"><span class="n">plot</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>You can “revive” frozen App and plot instances by simply rerunning the notebook
+cells in which they were defined and shown.</p>
+<p>Note</p>
+<p><a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.freeze" title="fiftyone.core.session.Session.freeze"><code>session.freeze()</code></a> and
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.freeze" title="fiftyone.core.plots.base.ResponsivePlot.freeze"><code>plot.freeze()</code></a> are
+only applicable when working in notebook contexts.</p>
+<h2 id="saving-plots">Saving plots <a href="#saving-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#saving-plots" title="Permanent link">&para;</a></h2>
+<p>You can use <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.save" title="fiftyone.core.plots.base.Plot.save"><code>plot.save()</code></a> to save
+any <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot" title="fiftyone.core.plots.base.InteractivePlot"><code>InteractivePlot</code></a> or <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ViewPlot" title="fiftyone.core.plots.base.ViewPlot"><code>ViewPlot</code></a> as a static image or HTML.</p>
+<p>Consult the documentation of your plot’s
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.save" title="fiftyone.core.plots.base.Plot.save"><code>save()</code></a> method for details on
+configuring the export.</p>
+<p>For example, you can save a <a href="#id11">histogram view plot</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-29-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-29-3">
+</span><span id="__span-29-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-29-5">
+</span><span id="__span-29-6"><span class="n">plot</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">CategoricalHistogram</span><span class="p">(</span>
+</span><span id="__span-29-7">    <span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">,</span>
+</span><span id="__span-29-8">    <span class="n">order</span><span class="o">=</span><span class="s2">&quot;frequency&quot;</span><span class="p">,</span>
+</span><span id="__span-29-9">    <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-29-10">    <span class="n">init_view</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-29-11"><span class="p">)</span>
+</span><span id="__span-29-12">
+</span><span id="__span-29-13"><span class="n">plot</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./histogram.jpg&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="save-histogram" src="../../_images/save-histogram.jpg" /></p>
+<p>Or you can save an <a href="#embeddings-plots">embedding scatterplot</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-30-2">
+</span><span id="__span-30-3"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-30-4">
+</span><span id="__span-30-5"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">,</span> <span class="n">axis_equal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-30-6"><span class="n">plot</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./embeddings.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="save-embeddings" src="../../_images/save-embeddings.png" /></p>
+<p>You can also save plots generated using the
+<a href="#plotting-backend">matplotlib backend</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span>
+</span><span id="__span-31-2">    <span class="n">labels</span><span class="o">=</span><span class="s2">&quot;uniqueness&quot;</span><span class="p">,</span>
+</span><span id="__span-31-3">    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+</span><span id="__span-31-4">    <span class="n">ax_equal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-31-5">    <span class="n">marker_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-31-6"><span class="p">)</span>
+</span><span id="__span-31-7"><span class="n">plot</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;./embeddings-matplotlib.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="save-embeddings-matplotlib" src="../../_images/save-embeddings-matplotlib.png" /></p>
+<h2 id="advanced-usage">Advanced usage <a href="#advanced-usage" title="Permalink to this headline">¶</a><a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h2>
+<h3 id="customizing-plot-layouts">Customizing plot layouts <a href="#customizing-plot-layouts" title="Permalink to this headline">¶</a><a class="headerlink" href="#customizing-plot-layouts" title="Permanent link">&para;</a></h3>
+<p>The <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> method used to
+display plots in FiftyOne supports optional keyword arguments that you can use
+to customize the look-and-feel of plots.</p>
+<p>In general, consult the documentation of the relevant
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> method for details on
+the supported parameters.</p>
+<p>If you are using the default <a href="#plotting-backend">plotly backend</a>,
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.Plot.show" title="fiftyone.core.plots.base.Plot.show"><code>plot.show()</code></a> will accept any valid
+keyword arguments for <a href="https://plotly.com/python-api-reference/generated/plotly.graph_objects.html#plotly.graph_objects.Figure.update_layout" title="(in )"><code>plotly.graph_objects.Figure.update_layout()</code></a>.</p>
+<p>The examples below demonstrate some common layout customizations that you may
+wish to perform:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="c1"># Increase the default height of the figure, in pixels</span>
+</span><span id="__span-32-2"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">720</span><span class="p">)</span>
+</span><span id="__span-32-3">
+</span><span id="__span-32-4"><span class="c1"># Equivalent of `axis(&quot;equal&quot;)` in matplotlib</span>
+</span><span id="__span-32-5"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">yaxis_scaleanchor</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Refer to the
+<a href="https://plotly.com/python/reference/layout">plotly layout documentation</a>
+for a full list of the supported options.</p>
+<h3 id="plot-selection-modes">Plot selection modes <a href="#plot-selection-modes" title="Permalink to this headline">¶</a><a class="headerlink" href="#plot-selection-modes" title="Permanent link">&para;</a></h3>
+<p>When working with <a href="#embeddings-plots">scatterplots</a> and
+<a href="#confusion-matrix-plots">interactive heatmaps</a> that are linked to frames
+or labels, you may prefer to see different views loaded in the App when you
+make a selection in the plot. For example, you may want to see the
+corresponding objects in a <a href="using_views.html#object-patches-views">patches view</a>, or you
+may wish to see the samples containing the objects but with all other labels
+also visible.</p>
+<p>You can use the
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+property of <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot" title="fiftyone.core.plots.base.InteractivePlot"><code>InteractivePlot</code></a> instances to change the behavior of App updates
+when selections are made in <a href="#attaching-plots">connected plots</a>.</p>
+<p>When a plot is linked to frames, the available
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+options are:</p>
+<ul>
+<li>
+<p><code>"select"</code> ( <em>default</em>): show video samples with labels only for the
+selected frames</p>
+</li>
+<li>
+<p><code>"match"</code>: show unfiltered video samples containing at least one selected
+frame</p>
+</li>
+<li>
+<p><code>"frames"</code>: show only the selected frames in a frames view</p>
+</li>
+</ul>
+<p>When a plot is linked to labels, the available
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+options are:</p>
+<ul>
+<li>
+<p><code>"patches"</code> ( <em>default</em>): show the selected labels in a patches view</p>
+</li>
+<li>
+<p><code>"select"</code>: show only the selected labels</p>
+</li>
+<li>
+<p><code>"match"</code>: show unfiltered samples containing at least one selected label</p>
+</li>
+</ul>
+<p>For example, by default, clicking on cells in a confusion matrix for a
+<a href="evaluation.html#evaluating-detections-coco">detection evaluation</a> will show the
+corresponding ground truth and predicted objects in an
+<a href="evaluation.html#evaluation-patches">evaluation patches view</a> view in the App. Run the
+code blocks below in Jupyter notebook cells to see this:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-33-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-33-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-33-4">
+</span><span id="__span-33-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-33-6">
+</span><span id="__span-33-7"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-33-8">    <span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span>
+</span><span id="__span-33-9"><span class="p">)</span>
+</span><span id="__span-33-10">
+</span><span id="__span-33-11"><span class="c1"># Get the 10 most common classes in the dataset</span>
+</span><span id="__span-33-12"><span class="n">counts</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-33-13"><span class="n">classes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-33-14">
+</span><span id="__span-33-15"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+</span><span id="__span-34-2"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</span><span id="__span-34-3">
+</span><span id="__span-34-4"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>However, you can change this behavior by updating the
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+property of the plot like so:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="c1"># Selecting cells will now show unfiltered samples containing selected objects</span>
+</span><span id="__span-35-2"><span class="n">plot</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s2">&quot;match&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="c1"># Selecting cells will now show filtered samples containing only selected objects</span>
+</span><span id="__span-36-2"><span class="n">plot</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s2">&quot;select&quot;</span>
+</span></code></pre></div>
+<p>Similarly, selecting scatter points in an
+<a href="../brain.html#brain-embeddings-visualization">object embeddings visualization</a> will
+show the corresponding objects in the App as a
+<a href="using_views.html#object-patches-views">patches view</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="c1"># Continuing from the code above</span>
+</span><span id="__span-37-2"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-38-2">
+</span><span id="__span-38-3"><span class="n">results</span> <span class="o">=</span> <span class="n">fob</span><span class="o">.</span><span class="n">compute_visualization</span><span class="p">(</span>
+</span><span id="__span-38-4">    <span class="n">dataset</span><span class="p">,</span> <span class="n">patches_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">brain_key</span><span class="o">=</span><span class="s2">&quot;gt_viz&quot;</span>
+</span><span id="__span-38-5"><span class="p">)</span>
+</span><span id="__span-38-6">
+</span><span id="__span-38-7"><span class="c1"># Restrict visualization to the 10 most common classes</span>
+</span><span id="__span-38-8"><span class="n">view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">is_in</span><span class="p">(</span><span class="n">classes</span><span class="p">))</span>
+</span><span id="__span-38-9"><span class="n">results</span><span class="o">.</span><span class="n">use_view</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+</span><span id="__span-38-10">
+</span><span id="__span-38-11"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">visualize</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-39-2"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</span><span id="__span-39-3">
+</span><span id="__span-39-4"><span class="n">session</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;gt_viz&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>However, you can change this behavior by updating the
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+property of the plot:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="c1"># Selecting points will now show unfiltered samples containing selected objects</span>
+</span><span id="__span-40-2"><span class="n">plot</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s2">&quot;match&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="c1"># Selecting points will now show filtered samples containing only selected objects</span>
+</span><span id="__span-41-2"><span class="n">plot</span><span class="o">.</span><span class="n">selection_mode</span> <span class="o">=</span> <span class="s2">&quot;select&quot;</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>The App will immediately update when you set the
+<a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode" title="fiftyone.core.plots.base.InteractivePlot.selection_mode"><code>selection_mode</code></a>
+property of an <a href="../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot" title="fiftyone.core.plots.base.InteractivePlot"><code>InteractivePlot</code></a> connected to the App.</p>
+<h3 id="plotting-backend">Plotting backend <a href="#plotting-backend" title="Permalink to this headline">¶</a><a class="headerlink" href="#plotting-backend" title="Permanent link">&para;</a></h3>
+<p>Most plotting methods in the <a href="../api/fiftyone.core.plots.html#module-fiftyone.core.plots" title="fiftyone.core.plots"><code>fiftyone.core.plots()</code></a> module provide an
+optional <code>backend</code> parameter that you can use to control the plotting backend
+used to render plots.</p>
+<p>The default plotting backend is <code>plotly</code>, which is highly recommended due to
+its better performance, look-and-feel, and greater support for interactivity.</p>
+<p>However, most plot types also support the <code>matplotlib</code> backend. If you chose
+this backend, plots will be rendered as matplotlib figures. Many
+matplotlib-powered plot types support interactivity, but you must
+<a href="#matplotlib-in-notebooks">enable this behavior</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-42-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-42-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-42-4">
+</span><span id="__span-42-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-42-6"><span class="n">results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">,</span> <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">)</span>
+</span><span id="__span-42-7">
+</span><span id="__span-42-8"><span class="c1"># Get the 10 most common classes in the dataset</span>
+</span><span id="__span-42-9"><span class="n">counts</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-42-10"><span class="n">classes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="c1"># Use the default plotly backend</span>
+</span><span id="__span-43-2"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+</span><span id="__span-43-3"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="plotly-backend" src="../../_images/plotly-backend.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-44-2">
+</span><span id="__span-44-3"><span class="c1"># Use the matplotlib backend instead</span>
+</span><span id="__span-44-4"><span class="n">figure</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span>
+</span><span id="__span-44-5">    <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-44-6"><span class="p">)</span>
+</span><span id="__span-44-7"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="matplotlib-backend" src="../../_images/matplotlib-backend.png" /></p>
+<h3 id="interactive-matplotlib-plots">Interactive matplotlib plots <a href="#interactive-matplotlib-plots" title="Permalink to this headline">¶</a><a class="headerlink" href="#interactive-matplotlib-plots" title="Permanent link">&para;</a></h3>
+<p>If you are using the <a href="#plotting-backend">matplotlib backend</a>, many
+FiftyOne plots still support interactivity in notebooks, but you must enable
+this behavior by running the appropriate magic command in your notebook
+<em>before</em> you generate your first plot.</p>
+<p>If you forget or choose not to run a magic command, the plots will still
+display, but they will not be interactive.</p>
+<p>Follow the instructions for your environment below to enable interactive
+matplotlib plots:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

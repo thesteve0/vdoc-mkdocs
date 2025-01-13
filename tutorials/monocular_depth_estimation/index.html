@@ -1,0 +1,1611 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Monocular Depth Estimation with FiftyOne ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#monocular-depth-estimation-with-fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Monocular Depth Estimation with FiftyOne ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-monocular-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Monocular Depth Estimation? ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Monocular Depth Estimation? ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Dataset ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Dataset ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ground-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground Truth? ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-monocular-depth-estimation-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run Monocular Depth Estimation Models ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Monocular Depth Estimation Models ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpt-transformer-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPT (Transformer Models) ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-run-locally-with-hugging-face-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Run locally with Hugging Face Transformers ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Run locally with Hugging Face Transformers ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interpolating-depth-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpolating Depth Maps ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-transformers-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hugging Face Transformers Integration ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-run-with-replicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Run with Replicate ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marigold-diffusion-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Marigold (Diffusion Models) ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-1-download-and-run-locally-with-hugging-face-diffusers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Download and run locally with Hugging Face Diffusers ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-run-via-replicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Run via Replicate ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate Predictions ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-challenges-with-monocular-depth-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Challenges with Monocular Depth Estimation ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Challenges with Monocular Depth Estimation ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-quality-and-quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data quality and quantity ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poor-generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Poor generalization ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precarious-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precarious metrics ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/monocular_depth_estimation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="monocular-depth-estimation-with-fiftyone">Monocular Depth Estimation with FiftyOne <a href="#Monocular-Depth-Estimation-with-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#monocular-depth-estimation-with-fiftyone" title="Permanent link">&para;</a></h1>
+<p>In this walkthrough, you’ll learn how to run monocular depth estimation models on your data using FiftyOne, Replicate, and Hugging Face libraries!</p>
+<p>It covers the following:</p>
+<ul>
+<li>
+<p>What is monocular depth estimation?</p>
+</li>
+<li>
+<p>Downloading the SUN RGB-D dataset from source and loading it into FiftyOne</p>
+</li>
+<li>
+<p>Running monocular depth estimation models on your data</p>
+</li>
+<li>
+<p>Evaluating prediction performance</p>
+</li>
+<li>
+<p>Visualizing the results in FiftyOne</p>
+</li>
+</ul>
+<h2 id="what-is-monocular-depth-estimation">What is Monocular Depth Estimation? <a href="#What-is-Monocular-Depth-Estimation?" title="Permalink to this headline">¶</a><a class="headerlink" href="#what-is-monocular-depth-estimation" title="Permanent link">&para;</a></h2>
+<p><a href="https://paperswithcode.com/task/monocular-depth-estimation">Monocular depth estimation</a> is the task of predicting the depth of a scene from <em>a single image</em>. Often, depth information is necessary for downstream tasks, such as 3D reconstruction or scene understanding. However, depth sensors are expensive and not always available.</p>
+<p>This is a challenging task because depth is inherently ambiguous from a single image. The same scene can be projected onto the image plane in many different ways, and it is impossible to know which one is correct without additional information.</p>
+<p>If you have multiple cameras, you can use <a href="https://paperswithcode.com/task/stereo-depth-estimation">stereo depth estimation</a> techniques. But in some real world scenarios, you may be constrained to a single camera. When this is the case, you must rely on other cues, such as object size, occlusion, and perspective.</p>
+<h3 id="applications">Applications <a href="#Applications" title="Permalink to this headline">¶</a><a class="headerlink" href="#applications" title="Permanent link">&para;</a></h3>
+<p>Monocular depth estimation has many applications in computer vision. For example, it can be used for:</p>
+<ul>
+<li>
+<p><strong>3D reconstruction</strong>: Given a single image, estimate the depth of the scene and reconstruct the 3D geometry of the scene.</p>
+</li>
+<li>
+<p><strong>Scene understanding</strong>: Given a single image, estimate the depth of the scene and use it to understand the scene better.</p>
+</li>
+<li>
+<p><strong>Autonomous driving</strong>: Given a single image, estimate the depth of the scene and use it to navigate the vehicle.</p>
+</li>
+<li>
+<p><strong>Augmented reality</strong>: Given a single image, estimate the depth of the scene and use it to place virtual objects in the scene.</p>
+</li>
+</ul>
+<p>Beyond these industry applications, the ability to extract high-quality depth information from a single image has found fascinating use cases in content creation and editing, for instance:</p>
+<ul>
+<li>
+<p><strong>Image editing</strong>: Given a single image, estimate the depth of the scene and use it to apply depth-aware effects to the image.</p>
+</li>
+<li>
+<p><strong>Image generation</strong>: Given a single image, estimate the depth of the scene and use it to generate a 3D model of the scene.</p>
+</li>
+<li>
+<p><strong>Depth-map guided text-to-image generation</strong>: Given a single image, estimate the depth of the scene and use it to generate a new image that both adheres to your input text prompt and has the same depth map. (See <a href="https://huggingface.co/lllyasviel/sd-controlnet-depth">ControlNet</a>!)</p>
+</li>
+</ul>
+<h2 id="create-dataset">Create Dataset <a href="#Create-Dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#create-dataset" title="Permanent link">&para;</a></h2>
+<p>First, we import all the necessary libraries, installing <code>fiftyone</code> if necessary:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-3-3"><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+</span><span id="__span-3-4"><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-7"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-8"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.brain</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fob</span>
+</span><span id="__span-3-9"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span></code></pre></div>
+<p>Download the SUN RGB-D dataset from <a href="https://rgbd.cs.princeton.edu/">here</a> and unzip it, or use the following command to download it directly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">o</span> <span class="n">sunrgbd</span><span class="o">.</span><span class="n">zip</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">rgbd</span><span class="o">.</span><span class="n">cs</span><span class="o">.</span><span class="n">princeton</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">SUNRGBD</span><span class="o">.</span><span class="n">zip</span>
+</span></code></pre></div>
+<p>and then unzip it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="err">!</span><span class="n">unzip</span> <span class="n">sunrgbd</span><span class="o">.</span><span class="n">zip</span>
+</span></code></pre></div>
+<p>The <a href="https://rgbd.cs.princeton.edu/">SUN RGB-D dataset</a> contains 10,335 RGB-D images, each of which has a corresponding RGB image, depth image, and camera intrinsics. It contains images from the <a href="https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html">NYU depth v2</a>, Berkeley <a href="http://kinectdata.com/">B3DO</a>, and <a href="https://sun3d.cs.princeton.edu/">SUN3D</a> datasets. SUN RGB-D is <a href="https://paperswithcode.com/dataset/sun-rgb-d">one of the most popular</a> datasets for monocular depth
+estimation and semantic segmentation tasks!</p>
+<p>If you want to use the dataset for other tasks, you can fully convert the annotations and load them into your <code>fiftyone.Dataset</code>. However, for this tutorial, we will only be using the depth images, so we will only use the RGB images and the depth images (stored in the <code>depth_bfx</code> sub-directories).</p>
+<p>Because we are just interested in getting the point across, we’ll restrict ourselves to the first 20 samples.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;SUNRGBD-20&quot;</span><span class="p">,</span> <span class="n">persistent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Load in images and ground truth data</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="c1">## restrict to 20 scenes</span>
+</span><span id="__span-11-2"><span class="n">scene_dirs</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;SUNRGBD/k*/*/*&quot;</span><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+</span></code></pre></div>
+<p>We will be representing depth maps with FiftyOne’s <a href="https://docs.voxel51.com/user_guide/using_datasets.html#heatmaps">Heatmap</a> labels. For a thorough guide to working with heatmaps in FiftyOne, check out these <a href="https://voxel51.com/blog/heatmaps-fiftyone-tips-and-tricks-october-6th-2023/">FiftyOne Heatmaps Tips and Tricks</a>!</p>
+<p>We are going to store everything in terms of normalized, <em>relative</em> distances, where 255 represents the maximum distance in the scene and 0 represents the minimum distance in the scene. This is a common way to represent depth maps, although it is far from the only way to do so. If we were interested in <em>absolute</em> distances, we could store sample-wise parameters for the minimum and maximum distances in the scene, and use these to reconstruct the absolute distances from the relative distances.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">samples</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-13-2"><span class="k">for</span> <span class="n">scene_dir</span> <span class="ow">in</span> <span class="n">scene_dirs</span><span class="p">:</span>
+</span><span id="__span-13-3">    <span class="c1">## Get image file path from scene directory</span>
+</span><span id="__span-13-4">    <span class="n">image_path</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">scene_dir</span><span class="si">}</span><span class="s2">/image/*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6">    <span class="c1">## Get depth map file path from scene directory</span>
+</span><span id="__span-13-7">    <span class="n">depth_path</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">scene_dir</span><span class="si">}</span><span class="s2">/depth_bfx/*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-13-8">
+</span><span id="__span-13-9">    <span class="n">depth_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">depth_path</span><span class="p">))</span>
+</span><span id="__span-13-10">    <span class="n">depth_map</span> <span class="o">=</span> <span class="p">(</span><span class="n">depth_map</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">depth_map</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+</span><span id="__span-13-11">    <span class="n">sample</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span>
+</span><span id="__span-13-12">        <span class="n">filepath</span><span class="o">=</span><span class="n">image_path</span><span class="p">,</span>
+</span><span id="__span-13-13">        <span class="n">gt_depth</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">depth_map</span><span class="p">),</span>
+</span><span id="__span-13-14">    <span class="p">)</span>
+</span><span id="__span-13-15">
+</span><span id="__span-13-16">    <span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</span><span id="__span-13-17">
+</span><span id="__span-13-18"><span class="n">dataset</span><span class="o">.</span><span class="n">add_samples</span><span class="p">(</span><span class="n">samples</span><span class="p">);</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">20</span><span class="o">/</span><span class="mi">20</span> <span class="p">[</span><span class="mf">192.2</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">104.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>We can then visualize our images and depth maps in the <a href="https://docs.voxel51.com/user_guide/app.html">FiftyOne App</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">auto</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-16-2"><span class="c1">## then open tab to localhost:5151 in browser</span>
+</span></code></pre></div>
+<p><img alt="sun-rgbd-dataset" src="../../_images/mde_gt_heatmaps.png" /></p>
+<p>When working with depth maps, the color scheme and opacity of the heatmap are important. We can customize these as illustrated <a href="https://docs.voxel51.com/user_guide/app.html#color-schemes">here</a>.</p>
+<p><img alt="color-customization" src="../../_images/mde_color_customization.gif" /></p>
+<h3 id="ground-truth">Ground Truth? <a href="#Ground-Truth?" title="Permalink to this headline">¶</a><a class="headerlink" href="#ground-truth" title="Permanent link">&para;</a></h3>
+<p>Inspecting these RGB images and depth maps, we can see that there are some inaccuracies in the ground truth depth maps. For example, in this image, the dark rift through the center of the image is actually the <em>farthest</em> part of the scene, but the ground truth depth map shows it as the <em>closest</em> part of the scene:</p>
+<p><img alt="gt-issue" src="../../_images/mde_gt_issue.png" /></p>
+<h2 id="run-monocular-depth-estimation-models">Run Monocular Depth Estimation Models <a href="#Run-Monocular-Depth-Estimation-Models" title="Permalink to this headline">¶</a><a class="headerlink" href="#run-monocular-depth-estimation-models" title="Permanent link">&para;</a></h2>
+<p>Now that we have our dataset loaded in, we can run monocular depth estimation models on it! For a long time, the state-of-the-art models for monocular depth estimation such as <a href="https://github.com/hufu6371/DORN">DORN</a> and <a href="https://github.com/ialhashim/DenseDepth">DenseDepth</a> were built with convolutional neural networks. Recently, however, both transformer-based models ( <a href="https://huggingface.co/docs/transformers/model_doc/dpt">DPT</a>,
+<a href="https://huggingface.co/docs/transformers/model_doc/glpn">GLPN</a>) and diffusion-based models ( <a href="https://huggingface.co/Bingxin/Marigold">Marigold</a>) have achieved remarkable results!</p>
+<h3 id="dpt-transformer-models">DPT (Transformer Models) <a href="#DPT-(Transformer-Models)" title="Permalink to this headline">¶</a><a class="headerlink" href="#dpt-transformer-models" title="Permanent link">&para;</a></h3>
+<p>The first model we’ll run is a Transformer-based model called <a href="https://huggingface.co/docs/transformers/model_doc/dpt">DPT</a>. The checkpoint below uses <a href="https://github.com/isl-org/MiDaS/tree/master">MiDaS</a>, which returns the <a href="https://pyimagesearch.com/2022/01/17/torch-hub-series-5-midas-model-on-depth-estimation/">inverse depth map</a>, so we have to invert it back to get a comparable depth map.</p>
+<h3 id="option-1-run-locally-with-hugging-face-transformers">Option 1: Run locally with Hugging Face <a href="https://huggingface.co/docs/transformers/index">Transformers</a> <a href="#Option-1:-Run-locally-with-Hugging-Face-Transformers" title="Permalink to this headline">¶</a><a class="headerlink" href="#option-1-run-locally-with-hugging-face-transformers" title="Permanent link">&para;</a></h3>
+<p>If necessary, install <code>transformers</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">transformers</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span><span class="mi">8</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoImageProcessor</span><span class="p">,</span> <span class="n">AutoModelForDepthEstimation</span>
+</span><span id="__span-20-2">
+</span><span id="__span-20-3"><span class="n">image_processor</span> <span class="o">=</span> <span class="n">AutoImageProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;Intel/dpt-hybrid-midas&quot;</span><span class="p">)</span>
+</span><span id="__span-20-4"><span class="n">dpt_model</span> <span class="o">=</span> <span class="n">AutoModelForDepthEstimation</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;Intel/dpt-hybrid-midas&quot;</span><span class="p">)</span>
+</span><span id="__span-20-5">
+</span><span id="__span-20-6"><span class="c1">## you can also us a different model:</span>
+</span><span id="__span-20-7"><span class="c1"># image_processor = AutoImageProcessor.from_pretrained(&quot;Intel/dpt-large&quot;)</span>
+</span><span id="__span-20-8"><span class="c1"># dpt_model = AutoModelForDepthEstimation.from_pretrained(&quot;Intel/dpt-large&quot;)</span>
+</span><span id="__span-20-9">
+</span><span id="__span-20-10"><span class="k">def</span><span class="w"> </span><span class="nf">apply_dpt_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="p">):</span>
+</span><span id="__span-20-11">    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">filepath</span><span class="p">)</span>
+</span><span id="__span-20-12">    <span class="n">inputs</span> <span class="o">=</span> <span class="n">image_processor</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+</span><span id="__span-20-13">
+</span><span id="__span-20-14">    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+</span><span id="__span-20-15">        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+</span><span id="__span-20-16">        <span class="n">predicted_depth</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">predicted_depth</span>
+</span><span id="__span-20-17">
+</span><span id="__span-20-18">    <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+</span><span id="__span-20-19">        <span class="n">predicted_depth</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span><span id="__span-20-20">        <span class="n">size</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-20-21">        <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bicubic&quot;</span><span class="p">,</span>
+</span><span id="__span-20-22">        <span class="n">align_corners</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-20-23">    <span class="p">)</span>
+</span><span id="__span-20-24">
+</span><span id="__span-20-25">    <span class="n">output</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</span><span id="__span-20-26">    <span class="c1">## flip b/c MiDaS returns inverse depth</span>
+</span><span id="__span-20-27">    <span class="n">formatted</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span> <span class="o">-</span> <span class="n">output</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">output</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+</span><span id="__span-20-28">
+</span><span id="__span-20-29">    <span class="n">sample</span><span class="p">[</span><span class="n">label_field</span><span class="p">]</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">formatted</span><span class="p">)</span>
+</span><span id="__span-20-30">    <span class="n">sample</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span><span id="__span-20-31">
+</span><span id="__span-20-32"><span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_samples</span><span class="p">(</span><span class="n">autosave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-20-33">    <span class="n">apply_dpt_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">dpt_model</span><span class="p">,</span> <span class="s2">&quot;dpt&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">20</span><span class="o">/</span><span class="mi">20</span> <span class="p">[</span><span class="mf">15.1</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.5</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="dpt-heatmaps" src="../../_images/mde_dpt_heatmaps.png" /></p>
+<h4 id="interpolating-depth-maps">Interpolating Depth Maps <a href="#Interpolating-Depth-Maps" title="Permalink to this headline">¶</a><a class="headerlink" href="#interpolating-depth-maps" title="Permanent link">&para;</a></h4>
+<p>In our <code>apply_dpt_model()</code> function, between the model’s forward pass and the heatmap generation, notice that we make a call to <code>torch.nn.functional.interpolate()</code>. This is because the model’s forward pass is run on a downsampled version of the image, and we want to return a heatmap that is the same size as the original image.</p>
+<p>Why do we need to do this? If we just want to <em>look</em> at the heatmaps, this would not matter. But if we want to compare the ground truth depth maps to the model’s predictions on a per-pixel basis, we need to make sure that they are the same size.</p>
+<h4 id="hugging-face-transformers-integration">Hugging Face Transformers Integration <a href="#Hugging-Face-Transformers-Integration" title="Permalink to this headline">¶</a><a class="headerlink" href="#hugging-face-transformers-integration" title="Permanent link">&para;</a></h4>
+<p>In this example, we manually applied the <code>transformers</code> model to our data to generate heatmaps. In practice, we have made it even easier to apply transformer-based models (for monocular depth estimation as well as other tasks) to your data via FiftyOne’s <a href="https://docs.voxel51.com/integrations/huggingface.html">Hugging Face Transformers Integration</a>!</p>
+<p>You can load the transformer models via Hugging Face’s <code>transformers</code> library, and then just apply them to FiftyOne datasets via the <code>apply_model()</code> method:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="c1"># DPT</span>
+</span><span id="__span-25-2"><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">DPTForDepthEstimation</span>
+</span><span id="__span-25-3"><span class="n">model</span> <span class="o">=</span> <span class="n">DPTForDepthEstimation</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;Intel/dpt-large&quot;</span><span class="p">)</span>
+</span><span id="__span-25-4">
+</span><span id="__span-25-5"><span class="c1"># GLPN</span>
+</span><span id="__span-25-6"><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">GLPNForDepthEstimation</span>
+</span><span id="__span-25-7"><span class="n">model</span> <span class="o">=</span> <span class="n">GLPNForDepthEstimation</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;vinvino02/glpn-kitti&quot;</span><span class="p">)</span>
+</span><span id="__span-25-8">
+</span><span id="__span-25-9"><span class="c1"># Depth Anything</span>
+</span><span id="__span-25-10"><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForDepthEstimation</span>
+</span><span id="__span-25-11"><span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForDepthEstimation</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;LiheYoung/depth-anything-small-hf&quot;</span><span class="p">)</span>
+</span><span id="__span-25-12">
+</span><span id="__span-25-13"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;depth_predictions&quot;</span><span class="p">)</span>
+</span><span id="__span-25-14">
+</span><span id="__span-25-15"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Alternatively, you can load any Hugging Face Transformers model directly from the <a href="https://docs.voxel51.com/user_guide/model_zoo/index.html">FiftyOne Model Zoo</a> via the name <code>depth-estimation-transformer-torch</code>, and specifying the model’s location on the Hugging Face Hub ( <code>repo_id</code>) via the <code>name_or_path</code> parameter. To load and apply <a href="https://huggingface.co/Intel/dpt-hybrid-midas">this DPT MiDaS hybrid model</a>, for instance, you would use the following:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-27-2">
+</span><span id="__span-27-3"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span>
+</span><span id="__span-27-4">    <span class="s2">&quot;depth-estimation-transformer-torch&quot;</span><span class="p">,</span>
+</span><span id="__span-27-5">    <span class="n">name_or_path</span><span class="o">=</span><span class="s2">&quot;Intel/dpt-hybrid-midas&quot;</span><span class="p">,</span>
+</span><span id="__span-27-6"><span class="p">)</span>
+</span><span id="__span-27-7">
+</span><span id="__span-27-8"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;dpt_hybrid_midas&quot;</span><span class="p">)</span>
+</span><span id="__span-27-9"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="option-2-run-with-replicate">Option 2: Run with <a href="https://replicate.com/">Replicate</a> <a href="#Option-2:-Run-with-Replicate" title="Permalink to this headline">¶</a><a class="headerlink" href="#option-2-run-with-replicate" title="Permanent link">&para;</a></h3>
+<p>Install the <code>replicate</code> Python client if necessary:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">replicate</span>
+</span></code></pre></div>
+<p>And set your API Token:</p>
+<p>Then run the following command:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="err">!</span><span class="n">export</span> <span class="n">REPLICATE_API_TOKEN</span><span class="o">=</span><span class="n">r8_</span><span class="o">&lt;</span><span class="n">your_token_here</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>💡 It might take a minute for the model to load into memory on the server (cold-start problem), but once it does the prediction should only take a few seconds.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="kn">import</span><span class="w"> </span><span class="nn">replicate</span>
+</span><span id="__span-33-2"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-33-3">
+</span><span id="__span-33-4"><span class="n">rgb_fp</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">filepath</span>
+</span><span id="__span-33-5">
+</span><span id="__span-33-6"><span class="n">output</span> <span class="o">=</span> <span class="n">replicate</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span><span id="__span-33-7">    <span class="s2">&quot;cjwbw/midas:a6ba5798f04f80d3b314de0f0a62277f21ab3503c60c84d4817de83c5edfdae0&quot;</span><span class="p">,</span>
+</span><span id="__span-33-8">    <span class="nb">input</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-33-9">        <span class="s2">&quot;model_type&quot;</span><span class="p">:</span> <span class="s2">&quot;dpt_beit_large_512&quot;</span><span class="p">,</span>
+</span><span id="__span-33-10">        <span class="s2">&quot;image&quot;</span><span class="p">:</span><span class="nb">open</span><span class="p">(</span><span class="n">rgb_fp</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+</span><span id="__span-33-11">    <span class="p">}</span>
+</span><span id="__span-33-12"><span class="p">)</span>
+</span><span id="__span-33-13"><span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="marigold-diffusion-models">Marigold (Diffusion Models) <a href="#Marigold-(Diffusion-Models)" title="Permalink to this headline">¶</a><a class="headerlink" href="#marigold-diffusion-models" title="Permanent link">&para;</a></h3>
+<p>While diffusion is a very powerful approach to monocular depth estimation, it is also very computationally expensive and can take a while. I personally recommend going for option 2, where predictions with Replicate take about 15 seconds per image.</p>
+<h3 id="option-1-download-and-run-locally-with-hugging-face-diffusers">Option 1: Download and run locally with Hugging Face <a href="https://huggingface.co/docs/diffusers/index">Diffusers</a> <a href="#Option-1:-Download-and-run-locally-with-Hugging-Face-Diffusers" title="Permalink to this headline">¶</a><a class="headerlink" href="#option-1-download-and-run-locally-with-hugging-face-diffusers" title="Permanent link">&para;</a></h3>
+<p>Clone the Marigold GH repo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="err">!</span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">prs</span><span class="o">-</span><span class="n">eth</span><span class="o">/</span><span class="n">Marigold</span><span class="o">.</span><span class="n">git</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="kn">from</span><span class="w"> </span><span class="nn">Marigold.marigold</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarigoldPipeline</span>
+</span><span id="__span-37-2"><span class="n">pipe</span> <span class="o">=</span> <span class="n">MarigoldPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;Bingxin/Marigold&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Then prediction looks like:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">rgb_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">filepath</span><span class="p">)</span>
+</span><span id="__span-39-2"><span class="n">output</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">)</span>
+</span><span id="__span-39-3"><span class="n">depth_image</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s1">&#39;depth_colored&#39;</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="option-2-run-via-replicate">Option 2: Run via <a href="https://replicate.com/">Replicate</a> <a href="#Option-2:-Run-via-Replicate" title="Permalink to this headline">¶</a><a class="headerlink" href="#option-2-run-via-replicate" title="Permanent link">&para;</a></h3>
+<p>💡 It might take a minute for the model to load into memory on the server (cold-start problem), but once it does the prediction should only take a few seconds.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">[</span><span class="mi">29</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="kn">import</span><span class="w"> </span><span class="nn">replicate</span>
+</span><span id="__span-41-2"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-41-3"><span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+</span><span id="__span-41-4">
+</span><span id="__span-41-5"><span class="k">def</span><span class="w"> </span><span class="nf">marigold_model</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">):</span>
+</span><span id="__span-41-6">    <span class="n">output</span> <span class="o">=</span> <span class="n">replicate</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span><span id="__span-41-7">        <span class="s2">&quot;adirik/marigold:1a363593bc4882684fc58042d19db5e13a810e44e02f8d4c32afd1eb30464818&quot;</span><span class="p">,</span>
+</span><span id="__span-41-8">        <span class="nb">input</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-41-9">            <span class="s2">&quot;image&quot;</span><span class="p">:</span><span class="n">rgb_image</span>
+</span><span id="__span-41-10">        <span class="p">}</span>
+</span><span id="__span-41-11">    <span class="p">)</span>
+</span><span id="__span-41-12">    <span class="c1">## get the black and white depth map</span>
+</span><span id="__span-41-13">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
+</span><span id="__span-41-14">    <span class="k">return</span> <span class="n">response</span>
+</span><span id="__span-41-15">
+</span><span id="__span-41-16"><span class="k">def</span><span class="w"> </span><span class="nf">apply_marigold_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="p">):</span>
+</span><span id="__span-41-17">    <span class="n">rgb_image</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+</span><span id="__span-41-18">    <span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">)</span>
+</span><span id="__span-41-19">    <span class="n">depth_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="p">)))[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1">## all channels are the same</span>
+</span><span id="__span-41-20">    <span class="n">formatted</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span> <span class="o">-</span> <span class="n">depth_image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+</span><span id="__span-41-21">    <span class="n">sample</span><span class="p">[</span><span class="n">label_field</span><span class="p">]</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Heatmap</span><span class="p">(</span><span class="nb">map</span><span class="o">=</span><span class="n">formatted</span><span class="p">)</span>
+</span><span id="__span-41-22">    <span class="n">sample</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span><span id="__span-41-23">
+</span><span id="__span-41-24"><span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_samples</span><span class="p">(</span><span class="n">autosave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-41-25">    <span class="n">apply_marigold_model</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">marigold_model</span><span class="p">,</span> <span class="s2">&quot;marigold&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">20</span><span class="o">/</span><span class="mi">20</span> <span class="p">[</span><span class="mf">5.3</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">0.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="marigold-heatmaps" src="../../_images/mde_marigold_heatmaps.png" /></p>
+<h2 id="evaluate-predictions">Evaluate Predictions <a href="#Evaluate-Predictions" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluate-predictions" title="Permanent link">&para;</a></h2>
+<p>Now that we have predictions from multiple models, let’s evaluate them! We will leverage sklearn to apply three simple metrics commonly used for monocular depth estimation: <a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation">root mean squared error (RMSE)</a>, <a href="https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio">peak signal to noise ratio (PSNR)</a>, and <a href="https://en.wikipedia.org/wiki/Structural_similarity">structural similarity index (SSIM)</a>.</p>
+<p>💡 Higher PSNR and SSIM scores indicate better predictions, while lower RMSE scores indicate better predictions.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="p">[</span><span class="mi">38</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="kn">from</span><span class="w"> </span><span class="nn">skimage.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">peak_signal_noise_ratio</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">structural_similarity</span>
+</span><span id="__span-46-2">
+</span><span id="__span-46-3"><span class="k">def</span><span class="w"> </span><span class="nf">rmse</span><span class="p">(</span><span class="n">gt</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
+</span><span id="__span-46-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute root mean squared error between ground truth and prediction&quot;&quot;&quot;</span>
+</span><span id="__span-46-5">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">gt</span><span class="p">,</span> <span class="n">pred</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="p">[</span><span class="mi">48</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_depth</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">prediction_field</span><span class="p">,</span> <span class="n">gt_field</span><span class="p">):</span>
+</span><span id="__span-48-2">    <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_samples</span><span class="p">(</span><span class="n">autosave</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="__span-48-3">        <span class="n">gt_map</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">gt_field</span><span class="p">]</span><span class="o">.</span><span class="n">map</span>
+</span><span id="__span-48-4">        <span class="n">pred</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">prediction_field</span><span class="p">]</span>
+</span><span id="__span-48-5">        <span class="n">pred_map</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">map</span>
+</span><span id="__span-48-6">        <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;rmse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rmse</span><span class="p">(</span><span class="n">gt_map</span><span class="p">,</span> <span class="n">pred_map</span><span class="p">)</span>
+</span><span id="__span-48-7">        <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;psnr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">peak_signal_noise_ratio</span><span class="p">(</span><span class="n">gt_map</span><span class="p">,</span> <span class="n">pred_map</span><span class="p">)</span>
+</span><span id="__span-48-8">        <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;ssim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">structural_similarity</span><span class="p">(</span><span class="n">gt_map</span><span class="p">,</span> <span class="n">pred_map</span><span class="p">)</span>
+</span><span id="__span-48-9">        <span class="n">sample</span><span class="p">[</span><span class="n">prediction_field</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred</span>
+</span><span id="__span-48-10">
+</span><span id="__span-48-11">    <span class="c1">## add dynamic fields to dataset so we can view them in the App</span>
+</span><span id="__span-48-12">    <span class="n">dataset</span><span class="o">.</span><span class="n">add_dynamic_sample_fields</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="n">evaluate_depth</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;dpt&quot;</span><span class="p">,</span> <span class="s2">&quot;gt_depth&quot;</span><span class="p">)</span>
+</span><span id="__span-50-2"><span class="n">evaluate_depth</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;marigold&quot;</span><span class="p">,</span> <span class="s2">&quot;gt_depth&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We can then compute average metrics across the entire dataset very easily:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="p">[</span><span class="mi">66</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean Error Metrics&quot;</span><span class="p">)</span>
+</span><span id="__span-52-2"><span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;dpt&quot;</span><span class="p">,</span> <span class="s2">&quot;marigold&quot;</span><span class="p">]:</span>
+</span><span id="__span-52-3">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-52-4">    <span class="k">for</span> <span class="n">metric</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;rmse&quot;</span><span class="p">,</span> <span class="s2">&quot;psnr&quot;</span><span class="p">,</span> <span class="s2">&quot;ssim&quot;</span><span class="p">]:</span>
+</span><span id="__span-52-5">        <span class="n">mean_metric_value</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-52-6">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean </span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mean_metric_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="n">Mean</span> <span class="n">Error</span> <span class="n">Metrics</span>
+</span><span id="__span-53-2"><span class="o">--------------------------------------------------</span>
+</span><span id="__span-53-3"><span class="n">Mean</span> <span class="n">rmse</span> <span class="k">for</span> <span class="n">dpt</span><span class="p">:</span> <span class="mf">49.8915828817003</span>
+</span><span id="__span-53-4"><span class="n">Mean</span> <span class="n">psnr</span> <span class="k">for</span> <span class="n">dpt</span><span class="p">:</span> <span class="mf">14.805904629602551</span>
+</span><span id="__span-53-5"><span class="n">Mean</span> <span class="n">ssim</span> <span class="k">for</span> <span class="n">dpt</span><span class="p">:</span> <span class="mf">0.8398022368184576</span>
+</span><span id="__span-53-6"><span class="o">--------------------------------------------------</span>
+</span><span id="__span-53-7"><span class="n">Mean</span> <span class="n">rmse</span> <span class="k">for</span> <span class="n">marigold</span><span class="p">:</span> <span class="mf">104.0061165272178</span>
+</span><span id="__span-53-8"><span class="n">Mean</span> <span class="n">psnr</span> <span class="k">for</span> <span class="n">marigold</span><span class="p">:</span> <span class="mf">7.93015537185192</span>
+</span><span id="__span-53-9"><span class="n">Mean</span> <span class="n">ssim</span> <span class="k">for</span> <span class="n">marigold</span><span class="p">:</span> <span class="mf">0.42766803372861134</span>
+</span></code></pre></div>
+<p>All of the metrics seem to agree that DPT outperforms Marigold. However, it is important to note that these metrics are not perfect. For example, RMSE is very sensitive to outliers, and SSIM is not very sensitive to small errors. For a more thorough evaluation, we can filter by these metrics in the app in order to visualize what the model is doing well and what it is doing poorly — or where the metrics are failing to capture the model’s performance.</p>
+<p>Toggling masks on and off is a great way to visualize the differences between the ground truth and the model’s predictions:</p>
+<p><img alt="compare-heatmaps" src="../../_images/mde_compare_heatmaps.gif" /></p>
+<h2 id="key-challenges-with-monocular-depth-estimation">Key Challenges with Monocular Depth Estimation <a href="#Key-Challenges-with-Monocular-Depth-Estimation" title="Permalink to this headline">¶</a><a class="headerlink" href="#key-challenges-with-monocular-depth-estimation" title="Permanent link">&para;</a></h2>
+<p>Now that we’ve explored some model predictions, let’s quickly recap some of the key challenges with monocular depth estimation:</p>
+<h3 id="data-quality-and-quantity">Data quality and quantity <a href="#Data-quality-and-quantity" title="Permalink to this headline">¶</a><a class="headerlink" href="#data-quality-and-quantity" title="Permanent link">&para;</a></h3>
+<p>Ground truth data is hard to come by, and is often noisy. For example, the SUN RGB-D dataset contains 10,335 RGB-D images, which is a lot, but it is still a relatively small dataset compared to other datasets such as ImageNet, which contains 1.2 million images. And in many cases, the ground truth data is noisy. For example, the ground truth depth maps in the SUN RGB-D dataset are generated by projecting the 3D point clouds onto the 2D image plane, and then computing the Euclidean distance
+between the projected points and the camera. This process is inherently noisy, and the resulting depth maps are often noisy as well.</p>
+<h3 id="poor-generalization">Poor generalization <a href="#Poor-generalization" title="Permalink to this headline">¶</a><a class="headerlink" href="#poor-generalization" title="Permanent link">&para;</a></h3>
+<p>Models often struggle to generalize to new environments. Outdoors, for example, is a very different environment than indoors, and models trained on indoor data often fail to generalize to outdoor data.</p>
+<h3 id="precarious-metrics">Precarious metrics <a href="#Precarious-metrics" title="Permalink to this headline">¶</a><a class="headerlink" href="#precarious-metrics" title="Permanent link">&para;</a></h3>
+<p>Metrics are not always a good indicator of model performance. For example, a model might have a low RMSE, but still produce very noisy depth maps. This is why it is important to look at the depth maps themselves, and not just the metrics!</p>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>In this walkthrough, we learned how to run monocular depth estimation models on your data using FiftyOne, Replicate, and Hugging Face libraries! We also learned how to evaluate the predictions using common metrics, and how to visualize the results in FiftyOne. In real-world applications, it is important to look at the depth maps themselves, and not just the metrics! It is also important to understand that model performance is limited by the quality, quantity, and diversity of data they are
+trained on.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

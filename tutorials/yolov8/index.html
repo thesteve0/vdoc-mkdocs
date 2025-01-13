@@ -1,0 +1,1891 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fine-tune-yolov8-models-for-custom-use-cases-with-the-help-of-fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-yolov8-predictions-in-fiftyone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load YOLOv8 predictions in FiftyOne ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Load YOLOv8 predictions in FiftyOne ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate predictions ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-detections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load detections ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-segmentation-masks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load segmentation masks ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-yolov8-model-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate YOLOv8 model predictions ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluate YOLOv8 model predictions ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute-summary-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compute summary statistics ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-individual-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect individual predictions ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curate-data-for-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curate data for fine-tuning ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Curate data for fine-tuning ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-test-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate test set ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-training-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate training set ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tune-a-yolov8-detection-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tune a YOLOv8 detection model ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assess-improvement-from-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assess improvement from fine-tuning ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/yolov8.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fine-tune-yolov8-models-for-custom-use-cases-with-the-help-of-fiftyone">Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne <a href="#Fine-tune-YOLOv8-models-for-custom-use-cases-with-the-help-of-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#fine-tune-yolov8-models-for-custom-use-cases-with-the-help-of-fiftyone" title="Permanent link">&para;</a></h1>
+<p>Since its <a href="https://arxiv.org/abs/1506.02640">initial release back in 2015</a>, the You Only Look Once (YOLO) family of computer vision models has been one of the most popular in the field. In late 2022, <a href="https://github.com/ultralytics/ultralytics">Ultralytics</a> announced <a href="https://docs.ultralytics.com/#ultralytics-yolov8">YOLOv8</a>, which comes with a new
+<a href="https://arxiv.org/abs/2206.08016#:~:text=Many%20networks%20have%20been%20proposed,before%20and%20demonstrates%20its%20effectiveness.">backbone</a>.</p>
+<p>The basic YOLOv8 detection and segmentation models, however, are general purpose, which means for custom use cases they may not be suitable out of the box. With FiftyOne, we can visualize and evaluate YOLOv8 model predictions, and better understand where the model’s predictive power breaks down.</p>
+<p>In this walkthrough, we will show you how to load YOLOv8 model predictions into FiftyOne, and use insights from model evaluation to fine-tune a YOLOv8 model for your custom use case.</p>
+<p>Specifically, this walkthrough covers:</p>
+<ul>
+<li>
+<p>Loading YOLOv8 model predictions into FiftyOne</p>
+</li>
+<li>
+<p>Evaluating YOLOv8 model predictions</p>
+</li>
+<li>
+<p>Curating a dataset for fine-tuning</p>
+</li>
+<li>
+<p>Fine-tuning YOLOv8 models</p>
+</li>
+<li>
+<p>Comparing the performance of out-of-the-box and fine-tuned YOLOv8 models.</p>
+</li>
+</ul>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>FiftyOne can help you to achieve better performance using YOLOv8 models on real-time inference tasks for custom use cases.</p>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>To get started, you need to install <a href="https://docs.voxel51.com/getting_started/install.html">FiftyOne</a> and <a href="https://github.com/ultralytics/ultralytics">Ultralytics</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span> <span class="n">ultralytics</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-3-3"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-5-2"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-5-3"><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+</span></code></pre></div>
+<p>We will import the YOLO object from Ultralytics and use this to instantiate pretrained detection and segmentation models in Python. Along with the YOLOv8 architecture, Ultralytics released a set of pretrained models, with different sizes, for classification, detection, and segmentation tasks.</p>
+<p>For the purposes of illustration, we will use the smallest version, YOLOv8 Nano (YOLOv8n), but the same syntax will work for any of the pretrained models on the <a href="https://github.com/ultralytics/ultralytics">Ultralytics YOLOv8 GitHub repo</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+</span><span id="__span-7-2">
+</span><span id="__span-7-3"><span class="n">detection_model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n.pt&quot;</span><span class="p">)</span>
+</span><span id="__span-7-4"><span class="n">seg_model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8n-seg.pt&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>In Python, we can apply a YOLOv8 model to an individual image by passing the file path into the model call. For an image with file path <code>path/to/image.jpg</code>, running <code>detection_model("path/to/image.jpg")</code> will generate a list containing a single <code>ultralytics.yolo.engine.results.Results</code> object.</p>
+<p>We can see this by applying the detection model to Ultralytics’ test image:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">results</span> <span class="o">=</span> <span class="n">detection_model</span><span class="p">(</span><span class="s2">&quot;https://ultralytics.com/images/bus.jpg&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>A similar result can be obtained if we apply the segmentation model to an image. These results contain bounding boxes, class confidence scores, and integers representing class labels. For a complete discussion of these results objects, see the Ultralytics YOLOv8 <a href="https://docs.ultralytics.com/reference/results/">Results API Reference</a>.</p>
+<p>If we want to run tasks on all images in a directory, then we can do so from the command line with the YOLO Command Line Interface by specifying the task <code>[detect, segment, classify]</code> and mode <code>[train, val, predict, export]</code>, along with other arguments.</p>
+<p>To run inference on a set of images, we must first put the data in the appropriate format. The best way to do so is to load your images into a FiftyOne <code>Dataset</code>, and then export the dataset in <a href="https://docs.voxel51.com/user_guide/dataset_creation/datasets.html#yolov5dataset">YOLOv5Dataset</a> format, as YOLOv5 and YOLOv8 use the same data formats.</p>
+<p>💡 FiftyOne’s Ultralytics Integration</p>
+<p>If you just want to run inference on your FiftyOne dataset with an existing YOLOv8 model, you can do so by passing this <code>ultralytics.YOLO</code> model directly into your FiftyOne dataset’s <code>apply_model()</code> method:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-10-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-10-3">
+</span><span id="__span-10-4"><span class="c1"># Load a dataset</span>
+</span><span id="__span-10-5"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-10-6">
+</span><span id="__span-10-7"><span class="c1"># Load a YOLOv8 model</span>
+</span><span id="__span-10-8"><span class="kn">from</span><span class="w"> </span><span class="nn">ultralytics</span><span class="w"> </span><span class="kn">import</span> <span class="n">YOLO</span>
+</span><span id="__span-10-9"><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&quot;yolov8l.pt&quot;</span><span class="p">)</span>
+</span><span id="__span-10-10">
+</span><span id="__span-10-11"><span class="c1"># Apply the model to the dataset</span>
+</span><span id="__span-10-12"><span class="n">dataset</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;yolov8l&quot;</span><span class="p">)</span>
+</span><span id="__span-10-13">
+</span><span id="__span-10-14"><span class="c1"># Launch the App to visualize the results</span>
+</span><span id="__span-10-15"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p>For more details, check out the <a href="https://docs.voxel51.com/integrations/ultralytics.html">FiftyOne Ultralytics Integration docs</a>!</p>
+<h2 id="load-yolov8-predictions-in-fiftyone">Load YOLOv8 predictions in FiftyOne <a href="#Load-YOLOv8-predictions-in-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-yolov8-predictions-in-fiftyone" title="Permanent link">&para;</a></h2>
+<p>In this walkthrough, we will look at YOLOv8’s predictions on a subset of the <a href="https://cocodataset.org/#home">MS COCO</a> dataset. This is the dataset on which these models were trained, which means that they are likely to show close to peak performance on this data. Additionally, working with COCO data makes it easy for us to map model outputs to class labels.</p>
+<p>Load the images and ground truth object detections in COCO’s validation set from the <a href="https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html">FiftyOne Dataset Zoo</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-12-2">    <span class="s1">&#39;coco-2017&#39;</span><span class="p">,</span>
+</span><span id="__span-12-3">    <span class="n">split</span><span class="o">=</span><span class="s1">&#39;validation&#39;</span><span class="p">,</span>
+</span><span id="__span-12-4"><span class="p">)</span>
+</span></code></pre></div>
+<p>We then generate a mapping from YOLO class predictions to COCO class labels. <a href="https://cocodataset.org/#home">COCO has 91 classes</a>, and YOLOv8, just like YOLOv3 and YOLOv5, ignores all of the numeric classes and <a href="https://imageai.readthedocs.io/en/latest/detection/">focuses on the remaining 80</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="n">coco_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">default_classes</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()]</span>
+</span></code></pre></div>
+<h3 id="generate-predictions">Generate predictions <a href="#Generate-predictions" title="Permalink to this headline">¶</a><a class="headerlink" href="#generate-predictions" title="Permanent link">&para;</a></h3>
+<p>Export the dataset into a directory <code>coco_val</code> in YOLO format:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="k">def</span><span class="w"> </span><span class="nf">export_yolo_data</span><span class="p">(</span>
+</span><span id="__span-16-2">    <span class="n">samples</span><span class="p">,</span>
+</span><span id="__span-16-3">    <span class="n">export_dir</span><span class="p">,</span>
+</span><span id="__span-16-4">    <span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-16-5">    <span class="n">label_field</span> <span class="o">=</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-16-6">    <span class="n">split</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-16-7">    <span class="p">):</span>
+</span><span id="__span-16-8">
+</span><span id="__span-16-9">    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">split</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="__span-16-10">        <span class="n">splits</span> <span class="o">=</span> <span class="n">split</span>
+</span><span id="__span-16-11">        <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="n">splits</span><span class="p">:</span>
+</span><span id="__span-16-12">            <span class="n">export_yolo_data</span><span class="p">(</span>
+</span><span id="__span-16-13">                <span class="n">samples</span><span class="p">,</span>
+</span><span id="__span-16-14">                <span class="n">export_dir</span><span class="p">,</span>
+</span><span id="__span-16-15">                <span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-16-16">                <span class="n">label_field</span><span class="p">,</span>
+</span><span id="__span-16-17">                <span class="n">split</span>
+</span><span id="__span-16-18">            <span class="p">)</span>
+</span><span id="__span-16-19">    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-16-20">        <span class="k">if</span> <span class="n">split</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-16-21">            <span class="n">split_view</span> <span class="o">=</span> <span class="n">samples</span>
+</span><span id="__span-16-22">            <span class="n">split</span> <span class="o">=</span> <span class="s2">&quot;val&quot;</span>
+</span><span id="__span-16-23">        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-16-24">            <span class="n">split_view</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">match_tags</span><span class="p">(</span><span class="n">split</span><span class="p">)</span>
+</span><span id="__span-16-25">
+</span><span id="__span-16-26">        <span class="n">split_view</span><span class="o">.</span><span class="n">export</span><span class="p">(</span>
+</span><span id="__span-16-27">            <span class="n">export_dir</span><span class="o">=</span><span class="n">export_dir</span><span class="p">,</span>
+</span><span id="__span-16-28">            <span class="n">dataset_type</span><span class="o">=</span><span class="n">fo</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">YOLOv5Dataset</span><span class="p">,</span>
+</span><span id="__span-16-29">            <span class="n">label_field</span><span class="o">=</span><span class="n">label_field</span><span class="p">,</span>
+</span><span id="__span-16-30">            <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-16-31">            <span class="n">split</span><span class="o">=</span><span class="n">split</span>
+</span><span id="__span-16-32">        <span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="n">coco_val_dir</span> <span class="o">=</span> <span class="s2">&quot;coco_val&quot;</span>
+</span><span id="__span-18-2"><span class="n">export_yolo_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">coco_val_dir</span><span class="p">,</span> <span class="n">coco_classes</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Then run inference on these images:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="err">!</span><span class="n">yolo</span> <span class="n">task</span><span class="o">=</span><span class="n">detect</span> <span class="n">mode</span><span class="o">=</span><span class="n">predict</span> <span class="n">model</span><span class="o">=</span><span class="n">yolov8n</span><span class="o">.</span><span class="n">pt</span> <span class="n">source</span><span class="o">=</span><span class="n">coco_val</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">val</span> <span class="n">save_txt</span><span class="o">=</span><span class="kc">True</span> <span class="n">save_conf</span><span class="o">=</span><span class="kc">True</span>
+</span></code></pre></div>
+<p>Running this inference generates a directory <code>runs/detect/predict/labels</code>, which will contain a separate <code>.txt</code> file for each image in the dataset, and a line for each object detection.</p>
+<p>Each line is in the form: an integer for the class label, a class confidence score, and four values representing the bounding box.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="p">[</span><span class="mi">22</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="n">label_file</span> <span class="o">=</span> <span class="s2">&quot;runs/detect/predict/labels/000000000139.txt&quot;</span>
+</span><span id="__span-22-2">
+</span><span id="__span-22-3"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">label_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-22-4">    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="mi">56</span> <span class="mf">0.663281</span> <span class="mf">0.619718</span> <span class="mf">0.0640625</span> <span class="mf">0.201878</span> <span class="mf">0.265856</span>
+</span><span id="__span-23-2"><span class="mi">60</span> <span class="mf">0.55625</span> <span class="mf">0.619718</span> <span class="mf">0.184375</span> <span class="mf">0.225352</span> <span class="mf">0.266771</span>
+</span><span id="__span-23-3"><span class="mi">74</span> <span class="mf">0.710938</span> <span class="mf">0.307512</span> <span class="mf">0.01875</span> <span class="mf">0.0469484</span> <span class="mf">0.277868</span>
+</span><span id="__span-23-4"><span class="mi">60</span> <span class="mf">0.860156</span> <span class="mf">0.91784</span> <span class="mf">0.279687</span> <span class="mf">0.159624</span> <span class="mf">0.278297</span>
+</span><span id="__span-23-5"><span class="mi">72</span> <span class="mf">0.744531</span> <span class="mf">0.539906</span> <span class="mf">0.101562</span> <span class="mf">0.295775</span> <span class="mf">0.356417</span>
+</span><span id="__span-23-6"><span class="mi">75</span> <span class="mf">0.888281</span> <span class="mf">0.820423</span> <span class="mf">0.0609375</span> <span class="mf">0.241784</span> <span class="mf">0.391675</span>
+</span><span id="__span-23-7"><span class="mi">58</span> <span class="mf">0.385156</span> <span class="mf">0.457746</span> <span class="mf">0.0640625</span> <span class="mf">0.084507</span> <span class="mf">0.420693</span>
+</span><span id="__span-23-8"><span class="mi">56</span> <span class="mf">0.609375</span> <span class="mf">0.620892</span> <span class="mf">0.090625</span> <span class="mf">0.21831</span> <span class="mf">0.50562</span>
+</span><span id="__span-23-9"><span class="mi">56</span> <span class="mf">0.650781</span> <span class="mf">0.619718</span> <span class="mf">0.0859375</span> <span class="mf">0.215962</span> <span class="mf">0.508265</span>
+</span><span id="__span-23-10"><span class="mi">56</span> <span class="mf">0.629687</span> <span class="mf">0.619718</span> <span class="mf">0.128125</span> <span class="mf">0.220657</span> <span class="mf">0.523211</span>
+</span><span id="__span-23-11"><span class="mi">0</span> <span class="mf">0.686719</span> <span class="mf">0.535211</span> <span class="mf">0.0828125</span> <span class="mf">0.333333</span> <span class="mf">0.712339</span>
+</span><span id="__span-23-12"><span class="mi">56</span> <span class="mf">0.505469</span> <span class="mf">0.624413</span> <span class="mf">0.0953125</span> <span class="mf">0.230047</span> <span class="mf">0.854189</span>
+</span><span id="__span-23-13"><span class="mi">62</span> <span class="mf">0.125</span> <span class="mf">0.502347</span> <span class="mf">0.23125</span> <span class="mf">0.225352</span> <span class="mf">0.927385</span>
+</span></code></pre></div>
+<h3 id="load-detections">Load detections <a href="#Load-detections" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-detections" title="Permanent link">&para;</a></h3>
+<p>We can read a YOLOv8 detection prediction file with NN detections into an (N,6)(N,6) numpy array:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="k">def</span><span class="w"> </span><span class="nf">read_yolo_detections_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+</span><span id="__span-25-2">    <span class="n">detections</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-25-3">    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+</span><span id="__span-25-4">        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-25-5">
+</span><span id="__span-25-6">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-25-7">        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+</span><span id="__span-25-8">
+</span><span id="__span-25-9">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+</span><span id="__span-25-10">        <span class="n">detection</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
+</span><span id="__span-25-11">        <span class="n">detections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">detection</span><span class="p">)</span>
+</span><span id="__span-25-12">    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">detections</span><span class="p">)</span>
+</span></code></pre></div>
+<p>From here, we need to convert these detections into FiftyOne’s <a href="https://docs.voxel51.com/user_guide/using_datasets.html#object-detection">Detections</a> format.</p>
+<p>YOLOv8 represents bounding boxes in a centered format with coordinates <code>[center_x, center_y, width, height]</code>, whereas <a href="https://docs.voxel51.com/user_guide/using_datasets.html#object-detection">FiftyOne stores bounding boxes</a> in <code>[top-left-x, top-left-y, width, height]</code> format. We can make this conversion by “un-centering” the predicted bounding boxes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="k">def</span><span class="w"> </span><span class="nf">_uncenter_boxes</span><span class="p">(</span><span class="n">boxes</span><span class="p">):</span>
+</span><span id="__span-27-2"><span class="w">    </span><span class="sd">&#39;&#39;&#39;convert from center coords to corner coords&#39;&#39;&#39;</span>
+</span><span id="__span-27-3">    <span class="n">boxes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">boxes</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">2.</span>
+</span><span id="__span-27-4">    <span class="n">boxes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="n">boxes</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mf">2.</span>
+</span></code></pre></div>
+<p>Additionally, we can convert a list of class predictions (indices) to a list of class labels (strings) by passing in the class list:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span><span class="mi">25</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="k">def</span><span class="w"> </span><span class="nf">_get_class_labels</span><span class="p">(</span><span class="n">predicted_classes</span><span class="p">,</span> <span class="n">class_list</span><span class="p">):</span>
+</span><span id="__span-29-2">    <span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="n">predicted_classes</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span><span id="__span-29-3">    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">class_list</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">]</span>
+</span><span id="__span-29-4">    <span class="k">return</span> <span class="n">labels</span>
+</span></code></pre></div>
+<p>Given the output of a <code>read_yolo_detections_file()</code> call, <code>yolo_detections</code>, we can generate the FiftyOne <code>Detections</code> object that captures this data:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span><span class="mi">26</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="k">def</span><span class="w"> </span><span class="nf">convert_yolo_detections_to_fiftyone</span><span class="p">(</span>
+</span><span id="__span-31-2">    <span class="n">yolo_detections</span><span class="p">,</span>
+</span><span id="__span-31-3">    <span class="n">class_list</span>
+</span><span id="__span-31-4">    <span class="p">):</span>
+</span><span id="__span-31-5">
+</span><span id="__span-31-6">    <span class="n">detections</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-31-7">    <span class="k">if</span> <span class="n">yolo_detections</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-31-8">        <span class="k">return</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
+</span><span id="__span-31-9">
+</span><span id="__span-31-10">    <span class="n">boxes</span> <span class="o">=</span> <span class="n">yolo_detections</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-31-11">    <span class="n">_uncenter_boxes</span><span class="p">(</span><span class="n">boxes</span><span class="p">)</span>
+</span><span id="__span-31-12">
+</span><span id="__span-31-13">    <span class="n">confs</span> <span class="o">=</span> <span class="n">yolo_detections</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-31-14">    <span class="n">labels</span> <span class="o">=</span> <span class="n">_get_class_labels</span><span class="p">(</span><span class="n">yolo_detections</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">class_list</span><span class="p">)</span>
+</span><span id="__span-31-15">
+</span><span id="__span-31-16">    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">box</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">confs</span><span class="p">,</span> <span class="n">boxes</span><span class="p">):</span>
+</span><span id="__span-31-17">        <span class="n">detections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="__span-31-18">            <span class="n">fo</span><span class="o">.</span><span class="n">Detection</span><span class="p">(</span>
+</span><span id="__span-31-19">                <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+</span><span id="__span-31-20">                <span class="n">bounding_box</span><span class="o">=</span><span class="n">box</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+</span><span id="__span-31-21">                <span class="n">confidence</span><span class="o">=</span><span class="n">conf</span>
+</span><span id="__span-31-22">            <span class="p">)</span>
+</span><span id="__span-31-23">        <span class="p">)</span>
+</span><span id="__span-31-24">
+</span><span id="__span-31-25">    <span class="k">return</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The final ingredient is a function that takes in the file path of an image, and returns the file path of the corresponding YOLOv8 detection prediction text file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="k">def</span><span class="w"> </span><span class="nf">get_prediction_filepath</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">run_number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-33-2">    <span class="n">run_num_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-33-3">    <span class="k">if</span> <span class="n">run_number</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-33-4">        <span class="n">run_num_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">run_number</span><span class="p">)</span>
+</span><span id="__span-33-5">    <span class="n">filename</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-33-6">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;runs/detect/predict</span><span class="si">{</span><span class="n">run_num_string</span><span class="si">}</span><span class="s2">/labels/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.txt&quot;</span>
+</span></code></pre></div>
+<p>If you run multiple inference calls for the same task, the predictions results are stored in a directory with the next available integer appended to <code>predict</code> in the file path. You can account for this in the above function by passing in the <code>run_number</code> argument.</p>
+<p>Putting the pieces together, we can write a function that adds these YOLOv8 detections to all of the samples in our dataset efficiently by batching the read and write operations to the underlying <a href="https://docs.voxel51.com/environments/index.html#connecting-to-a-localhost-database">MongoDB database</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">[</span><span class="mi">31</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="k">def</span><span class="w"> </span><span class="nf">add_yolo_detections</span><span class="p">(</span>
+</span><span id="__span-35-2">    <span class="n">samples</span><span class="p">,</span>
+</span><span id="__span-35-3">    <span class="n">prediction_field</span><span class="p">,</span>
+</span><span id="__span-35-4">    <span class="n">prediction_filepath</span><span class="p">,</span>
+</span><span id="__span-35-5">    <span class="n">class_list</span>
+</span><span id="__span-35-6">    <span class="p">):</span>
+</span><span id="__span-35-7">
+</span><span id="__span-35-8">    <span class="n">prediction_filepaths</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">prediction_filepath</span><span class="p">)</span>
+</span><span id="__span-35-9">    <span class="n">yolo_detections</span> <span class="o">=</span> <span class="p">[</span><span class="n">read_yolo_detections_file</span><span class="p">(</span><span class="n">pf</span><span class="p">)</span> <span class="k">for</span> <span class="n">pf</span> <span class="ow">in</span> <span class="n">prediction_filepaths</span><span class="p">]</span>
+</span><span id="__span-35-10">    <span class="n">detections</span> <span class="o">=</span>  <span class="p">[</span><span class="n">convert_yolo_detections_to_fiftyone</span><span class="p">(</span><span class="n">yd</span><span class="p">,</span> <span class="n">class_list</span><span class="p">)</span> <span class="k">for</span> <span class="n">yd</span> <span class="ow">in</span> <span class="n">yolo_detections</span><span class="p">]</span>
+</span><span id="__span-35-11">    <span class="n">samples</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span><span class="n">prediction_field</span><span class="p">,</span> <span class="n">detections</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Now we can rapidly add the detections in a few lines of code:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="n">filepaths</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">)</span>
+</span><span id="__span-37-2"><span class="n">prediction_filepaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_prediction_filepath</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> <span class="k">for</span> <span class="n">fp</span> <span class="ow">in</span> <span class="n">filepaths</span><span class="p">]</span>
+</span><span id="__span-37-3"><span class="n">dataset</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span>
+</span><span id="__span-37-4">    <span class="s2">&quot;yolov8n_det_filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-37-5">    <span class="n">prediction_filepaths</span>
+</span><span id="__span-37-6"><span class="p">)</span>
+</span><span id="__span-37-7">
+</span><span id="__span-37-8"><span class="n">add_yolo_detections</span><span class="p">(</span>
+</span><span id="__span-37-9">    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-37-10">    <span class="s2">&quot;yolov8n&quot;</span><span class="p">,</span>
+</span><span id="__span-37-11">    <span class="s2">&quot;yolov8n_det_filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-37-12">    <span class="n">coco_classes</span>
+</span><span id="__span-37-13"><span class="p">)</span>
+</span></code></pre></div>
+<p>Now we can visualize these YOLOv8 model predictions on the samples in our dataset in the FiftyOne App:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="yolov8-base-predictions" src="../../_images/yolov8_coco_val_predictions.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h3 id="load-segmentation-masks">Load segmentation masks <a href="#Load-segmentation-masks" title="Permalink to this headline">¶</a><a class="headerlink" href="#load-segmentation-masks" title="Permanent link">&para;</a></h3>
+<p>It is also worth noting that it is possible to convert YOLOv8 predictions directly from the output of a YOLO model call in Python, without first generating external prediction files and reading them in. Let’s see how this can be done for instance segmentations.</p>
+<p>Like detections, YOLOv8 stores instance segmentations with centered bounding boxes. In addition, <a href="https://docs.ultralytics.com/reference/results/#masks-api-reference">YOLOv8 stores a mask</a> that covers the entire image, with only a rectangular region of that mask containing nonzero values. FiftyOne, on the other hand, <a href="https://docs.voxel51.com/user_guide/using_datasets.html#instance-segmentations">stores instance segmentations</a> at <code>Detection</code> labels with a mask that only covers the given
+bounding box.</p>
+<p>We can convert from YOLOv8 instance segmentations to FiftyOne instance segmentations with this <code>convert_yolo_segmentations_to_fiftyone()</code> function:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="p">[</span><span class="mi">32</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="k">def</span><span class="w"> </span><span class="nf">convert_yolo_segmentations_to_fiftyone</span><span class="p">(</span>
+</span><span id="__span-43-2">    <span class="n">yolo_segmentations</span><span class="p">,</span>
+</span><span id="__span-43-3">    <span class="n">class_list</span>
+</span><span id="__span-43-4">    <span class="p">):</span>
+</span><span id="__span-43-5">
+</span><span id="__span-43-6">    <span class="n">detections</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-43-7">    <span class="n">boxes</span> <span class="o">=</span> <span class="n">yolo_segmentations</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xywhn</span>
+</span><span id="__span-43-8">    <span class="k">if</span> <span class="ow">not</span> <span class="n">boxes</span><span class="o">.</span><span class="n">shape</span> <span class="ow">or</span> <span class="n">yolo_segmentations</span><span class="o">.</span><span class="n">masks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-43-9">        <span class="k">return</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
+</span><span id="__span-43-10">
+</span><span id="__span-43-11">    <span class="n">_uncenter_boxes</span><span class="p">(</span><span class="n">boxes</span><span class="p">)</span>
+</span><span id="__span-43-12">    <span class="n">masks</span> <span class="o">=</span> <span class="n">yolo_segmentations</span><span class="o">.</span><span class="n">masks</span><span class="o">.</span><span class="n">masks</span>
+</span><span id="__span-43-13">    <span class="n">labels</span> <span class="o">=</span> <span class="n">_get_class_labels</span><span class="p">(</span><span class="n">yolo_segmentations</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">cls</span><span class="p">,</span> <span class="n">class_list</span><span class="p">)</span>
+</span><span id="__span-43-14">
+</span><span id="__span-43-15">    <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">masks</span><span class="p">):</span>
+</span><span id="__span-43-16">        <span class="c1">## convert to absolute indices to index mask</span>
+</span><span id="__span-43-17">        <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-43-18">        <span class="n">tmp</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+</span><span id="__span-43-19">        <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-43-20">        <span class="n">tmp</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-43-21">        <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">h</span>
+</span><span id="__span-43-22">        <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">h</span>
+</span><span id="__span-43-23">        <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">w</span>
+</span><span id="__span-43-24">        <span class="n">tmp</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*=</span> <span class="n">w</span>
+</span><span id="__span-43-25">        <span class="n">tmp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">tmp</span><span class="p">]</span>
+</span><span id="__span-43-26">        <span class="n">y0</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">tmp</span>
+</span><span id="__span-43-27">        <span class="n">sub_mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">[</span><span class="n">x0</span><span class="p">:</span><span class="n">x1</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y1</span><span class="p">]</span>
+</span><span id="__span-43-28">
+</span><span id="__span-43-29">        <span class="n">detections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="__span-43-30">            <span class="n">fo</span><span class="o">.</span><span class="n">Detection</span><span class="p">(</span>
+</span><span id="__span-43-31">                <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">,</span>
+</span><span id="__span-43-32">                <span class="n">bounding_box</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">box</span><span class="p">),</span>
+</span><span id="__span-43-33">                <span class="n">mask</span> <span class="o">=</span> <span class="n">sub_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+</span><span id="__span-43-34">            <span class="p">)</span>
+</span><span id="__span-43-35">        <span class="p">)</span>
+</span><span id="__span-43-36">
+</span><span id="__span-43-37">    <span class="k">return</span> <span class="n">fo</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span><span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Looping through all samples in the dataset, we can add the predictions from our <code>seg_model</code>, and then view these predicted masks in the FiftyOne App.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="yolov8-segmentation" src="../../_images/yolov8_coco_val_segmentation.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="evaluate-yolov8-model-predictions">Evaluate YOLOv8 model predictions <a href="#Evaluate-YOLOv8-model-predictions" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluate-yolov8-model-predictions" title="Permanent link">&para;</a></h2>
+<p>Now that we have YOLOv8 predictions loaded onto the images in our dataset, we can evaluate the quality of these predictions using FiftyOne’s <a href="https://docs.voxel51.com/user_guide/evaluation.html">Evaluation API</a>.</p>
+<p>To evaluate the object detections in the <code>yolov8_det</code> field relative to the <code>ground_truth</code> detections field, we can run:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><span class="n">detection_results</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-49-2">    <span class="s2">&quot;yolov8n&quot;</span><span class="p">,</span>
+</span><span id="__span-49-3">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-49-4">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-49-5">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-49-6"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="compute-summary-statistics">Compute summary statistics <a href="#Compute-summary-statistics" title="Permalink to this headline">¶</a><a class="headerlink" href="#compute-summary-statistics" title="Permanent link">&para;</a></h3>
+<p>We can then get the <a href="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173">mean average precision</a> (mAP) of the model’s predictions:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="p">[</span><span class="mi">44</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="n">mAP</span> <span class="o">=</span> <span class="n">detection_results</span><span class="o">.</span><span class="n">mAP</span><span class="p">()</span>
+</span><span id="__span-51-2"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;mAP = </span><span class="si">{</span><span class="n">mAP</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="n">mAP</span> <span class="o">=</span> <span class="mf">0.3121319189417518</span>
+</span></code></pre></div>
+<p>We can also look at the model’s performance on the 20 most common object classes in the dataset, where it has seen the most examples so the statistics are most meaningful:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="p">[</span><span class="mi">45</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="n">counts</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-54-2">
+</span><span id="__span-54-3"><span class="n">top20_classes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+</span><span id="__span-54-4">    <span class="n">counts</span><span class="p">,</span>
+</span><span id="__span-54-5">    <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span>
+</span><span id="__span-54-6">    <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-54-7"><span class="p">)[:</span><span class="mi">20</span><span class="p">]</span>
+</span><span id="__span-54-8">
+</span><span id="__span-54-9"><span class="n">detection_results</span><span class="o">.</span><span class="n">print_report</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">top20_classes</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1">               <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-55-2">
+</span><span id="__span-55-3">       <span class="n">person</span>       <span class="mf">0.85</span>      <span class="mf">0.68</span>      <span class="mf">0.76</span>     <span class="mi">11573</span>
+</span><span id="__span-55-4">          <span class="n">car</span>       <span class="mf">0.71</span>      <span class="mf">0.52</span>      <span class="mf">0.60</span>      <span class="mi">1971</span>
+</span><span id="__span-55-5">        <span class="n">chair</span>       <span class="mf">0.62</span>      <span class="mf">0.34</span>      <span class="mf">0.44</span>      <span class="mi">1806</span>
+</span><span id="__span-55-6">         <span class="n">book</span>       <span class="mf">0.61</span>      <span class="mf">0.12</span>      <span class="mf">0.20</span>      <span class="mi">1182</span>
+</span><span id="__span-55-7">       <span class="n">bottle</span>       <span class="mf">0.68</span>      <span class="mf">0.39</span>      <span class="mf">0.50</span>      <span class="mi">1051</span>
+</span><span id="__span-55-8">          <span class="n">cup</span>       <span class="mf">0.61</span>      <span class="mf">0.44</span>      <span class="mf">0.51</span>       <span class="mi">907</span>
+</span><span id="__span-55-9"> <span class="n">dining</span> <span class="n">table</span>       <span class="mf">0.54</span>      <span class="mf">0.42</span>      <span class="mf">0.47</span>       <span class="mi">697</span>
+</span><span id="__span-55-10"><span class="n">traffic</span> <span class="n">light</span>       <span class="mf">0.66</span>      <span class="mf">0.36</span>      <span class="mf">0.46</span>       <span class="mi">638</span>
+</span><span id="__span-55-11">         <span class="n">bowl</span>       <span class="mf">0.63</span>      <span class="mf">0.49</span>      <span class="mf">0.55</span>       <span class="mi">636</span>
+</span><span id="__span-55-12">      <span class="n">handbag</span>       <span class="mf">0.48</span>      <span class="mf">0.12</span>      <span class="mf">0.19</span>       <span class="mi">540</span>
+</span><span id="__span-55-13">         <span class="n">bird</span>       <span class="mf">0.79</span>      <span class="mf">0.39</span>      <span class="mf">0.52</span>       <span class="mi">451</span>
+</span><span id="__span-55-14">         <span class="n">boat</span>       <span class="mf">0.58</span>      <span class="mf">0.29</span>      <span class="mf">0.39</span>       <span class="mi">430</span>
+</span><span id="__span-55-15">        <span class="n">truck</span>       <span class="mf">0.57</span>      <span class="mf">0.35</span>      <span class="mf">0.44</span>       <span class="mi">415</span>
+</span><span id="__span-55-16">        <span class="n">bench</span>       <span class="mf">0.58</span>      <span class="mf">0.27</span>      <span class="mf">0.37</span>       <span class="mi">413</span>
+</span><span id="__span-55-17">     <span class="n">umbrella</span>       <span class="mf">0.65</span>      <span class="mf">0.52</span>      <span class="mf">0.58</span>       <span class="mi">423</span>
+</span><span id="__span-55-18">          <span class="n">cow</span>       <span class="mf">0.81</span>      <span class="mf">0.61</span>      <span class="mf">0.70</span>       <span class="mi">397</span>
+</span><span id="__span-55-19">       <span class="n">banana</span>       <span class="mf">0.68</span>      <span class="mf">0.34</span>      <span class="mf">0.45</span>       <span class="mi">397</span>
+</span><span id="__span-55-20">       <span class="n">carrot</span>       <span class="mf">0.56</span>      <span class="mf">0.29</span>      <span class="mf">0.38</span>       <span class="mi">384</span>
+</span><span id="__span-55-21">   <span class="n">motorcycle</span>       <span class="mf">0.77</span>      <span class="mf">0.58</span>      <span class="mf">0.66</span>       <span class="mi">379</span>
+</span><span id="__span-55-22">     <span class="n">backpack</span>       <span class="mf">0.51</span>      <span class="mf">0.16</span>      <span class="mf">0.24</span>       <span class="mi">371</span>
+</span><span id="__span-55-23">
+</span><span id="__span-55-24">    <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.76</span>      <span class="mf">0.52</span>      <span class="mf">0.61</span>     <span class="mi">25061</span>
+</span><span id="__span-55-25">    <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.64</span>      <span class="mf">0.38</span>      <span class="mf">0.47</span>     <span class="mi">25061</span>
+</span><span id="__span-55-26"> <span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.74</span>      <span class="mf">0.52</span>      <span class="mf">0.60</span>     <span class="mi">25061</span>
+</span></code></pre></div>
+<p>From the output of <code>print_report()</code>, we can see that this model performs decently well, but certainly has its limitations. While its precision is relatively good on average, it is lacking when it comes to recall. This is especially pronounced for certain classes like the <code>book</code> class.</p>
+<h3 id="inspect-individual-predictions">Inspect individual predictions <a href="#Inspect-individual-predictions" title="Permalink to this headline">¶</a><a class="headerlink" href="#inspect-individual-predictions" title="Permanent link">&para;</a></h3>
+<p>Fortunately, we can dig deeper into these results with FiftyOne. Using the FiftyOne App, we can for instance filter by class for both ground truth and predicted detections so that only <code>book</code> detections appear in the samples.</p>
+<p><img alt="yolov8-book-predictions" src="../../_images/yolov8_coco_val_books_modal.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Scrolling through the samples in the sample grid, we can see that a lot of the time, COCO’s purported <em>ground truth</em> labels for the <code>book</code> class appear to be imperfect. Sometimes, individual books are bounded, other times rows or whole bookshelves are encompassed in a single box, and yet other times books are entirely unlabeled. Unless our desired computer vision application specifically requires good <code>book</code> detection, this should probably not be a point of concern when we are assessing the
+quality of the model. After all, the quality of a model is limited by the quality of the data it is trained on - this is why data-centric approaches to computer vision are so important!</p>
+<p>For other classes like the <code>bird</code> class, however, there appear to be challenges. One way to see this is to filter for <code>bird</code> ground truth detections and then convert to an <a href="https://docs.voxel51.com/api/fiftyone.core.patches.html#fiftyone.core.patches.EvaluationPatchesView">EvaluationPatchesView</a>. Some of these recall errors appear to be related to small features, where the resolution is poor.</p>
+<p>In other cases though, quick inspection confirms that the object is clearly a bird. This means that there is likely room for improvement.</p>
+<p><img alt="yolov8-base-bird_patches" src="../../_images/yolov8_coco_val_bird_patch_view.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="curate-data-for-fine-tuning">Curate data for fine-tuning <a href="#Curate-data-for-fine-tuning" title="Permalink to this headline">¶</a><a class="headerlink" href="#curate-data-for-fine-tuning" title="Permanent link">&para;</a></h2>
+<p>For the remainder of this walkthrough, we will pretend that we are working for a bird conservancy group, putting computer vision models in the field to track and protect endangered species. Our goal is to fine-tune a YOLOv8 detection model to detect birds.</p>
+<h3 id="generate-test-set">Generate test set <a href="#Generate-test-set" title="Permalink to this headline">¶</a><a class="headerlink" href="#generate-test-set" title="Permanent link">&para;</a></h3>
+<p>We will use the COCO validation dataset above as our test set. Since we are only concerned with detecting birds, we can filter out all non- <code>bird</code> ground truth detections using <code>filter_labels()</code>. We will also filter out the non- <code>bird</code> predictions, but will pass the <code>only_matches = False</code> argument into <code>filter_labels()</code> to make sure we keep images that have ground truth <code>bird</code> detections without YOLOv8n <code>bird</code> predictions.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-60-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-61-1"><span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span>
+</span><span id="__span-61-2">    <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-61-3">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;bird&quot;</span>
+</span><span id="__span-61-4"><span class="p">)</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span>
+</span><span id="__span-61-5">    <span class="s2">&quot;yolov8n&quot;</span><span class="p">,</span>
+</span><span id="__span-61-6">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;bird&quot;</span><span class="p">,</span>
+</span><span id="__span-61-7">    <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="__span-61-8"><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span><span id="__span-61-9">
+</span><span id="__span-61-10"><span class="n">test_dataset</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;birds-test-dataset&quot;</span>
+</span><span id="__span-61-11"><span class="n">test_dataset</span><span class="o">.</span><span class="n">persistent</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-61-12">
+</span><span id="__span-61-13"><span class="c1">## set classes to just include birds</span>
+</span><span id="__span-61-14"><span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bird&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>We then give the dataset a name, make it persistent, and save it to the underlying database. This test set has only 125 images, which we can visualize in the FiftyOne App.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-62-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-63-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="yolov8-birds-test-view" src="../../_images/yolov8_bird_test_view.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-64-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-65-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>We can also run <code>evaluate_detections()</code> on this data to evaluate the YOLOv8n model’s performance on images with ground truth bird detections. We will store the results under the <code>base</code> evaluation key:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-66-1"><span class="p">[</span><span class="mi">49</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-67-1"><span class="n">base_bird_results</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-67-2">    <span class="s2">&quot;yolov8n&quot;</span><span class="p">,</span>
+</span><span id="__span-67-3">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>
+</span><span id="__span-67-4">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-67-5"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-68-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-68-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">125</span><span class="o">/</span><span class="mi">125</span> <span class="p">[</span><span class="mf">886.0</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">141.1</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-68-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-68-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">125</span><span class="o">/</span><span class="mi">125</span> <span class="p">[</span><span class="mf">619.1</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">201.9</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-69-1"><span class="p">[</span><span class="mi">54</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-70-1"><span class="n">mAP</span> <span class="o">=</span> <span class="n">base_bird_results</span><span class="o">.</span><span class="n">mAP</span><span class="p">()</span>
+</span><span id="__span-70-2"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Base mAP = </span><span class="si">{</span><span class="n">mAP</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-71-1"><span class="n">Base</span> <span class="n">mAP</span> <span class="o">=</span> <span class="mf">0.24897924786479841</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-72-1"><span class="p">[</span><span class="mi">56</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-73-1"><span class="n">base_bird_results</span><span class="o">.</span><span class="n">print_report</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-74-1">              <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-74-2">
+</span><span id="__span-74-3">        <span class="n">bird</span>       <span class="mf">0.87</span>      <span class="mf">0.39</span>      <span class="mf">0.54</span>       <span class="mi">451</span>
+</span><span id="__span-74-4">
+</span><span id="__span-74-5">   <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.87</span>      <span class="mf">0.39</span>      <span class="mf">0.54</span>       <span class="mi">451</span>
+</span><span id="__span-74-6">   <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.87</span>      <span class="mf">0.39</span>      <span class="mf">0.54</span>       <span class="mi">451</span>
+</span><span id="__span-74-7"><span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.87</span>      <span class="mf">0.39</span>      <span class="mf">0.54</span>       <span class="mi">451</span>
+</span></code></pre></div>
+<p>We note that while the recall is the same as in the initial evaluation report over the entire COCO validation split, the precision is higher. This means there are images that have YOLOv8n <code>bird</code> predictions but not ground truth <code>bird</code> detections.</p>
+<p>The final step in preparing this test set is exporting the data into YOLOv8 format so we can run inference on just these samples with our fine-tuned model when we are done training. We will do so using the <code>export_yolo_data()</code> function we defined earlier.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-75-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-76-1"><span class="n">export_yolo_data</span><span class="p">(</span>
+</span><span id="__span-76-2">    <span class="n">test_dataset</span><span class="p">,</span>
+</span><span id="__span-76-3">    <span class="s2">&quot;birds_test&quot;</span><span class="p">,</span>
+</span><span id="__span-76-4">    <span class="n">classes</span>
+</span><span id="__span-76-5"><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="generate-training-set">Generate training set <a href="#Generate-training-set" title="Permalink to this headline">¶</a><a class="headerlink" href="#generate-training-set" title="Permanent link">&para;</a></h3>
+<p>Now we choose the data on which we will fine-tune the base YOLOv8 model. Our goal is to generate a high-quality training dataset whose examples cover all expected scenarios in that subset.</p>
+<p>In general, this is both an art and a science, and it can involve a variety of techniques, including</p>
+<ul>
+<li>
+<p>pulling in data from other datasets</p>
+</li>
+<li>
+<p>annotating more data that you’ve already collected with ground truth labels,</p>
+</li>
+<li>
+<p>augmenting your data with tools like <a href="https://albumentations.ai/">Albumentations</a></p>
+</li>
+<li>
+<p>generating synthetic data with <a href="https://blog.roboflow.com/synthetic-data-with-stable-diffusion-a-guide/">diffusion models</a> or <a href="https://towardsai.net/p/l/gans-for-synthetic-data-generation">GANs</a>.</p>
+</li>
+</ul>
+<p>We’ll take the first approach and incorporate existing high-quality data from Google’s <a href="https://storage.googleapis.com/openimages/web/index.html">Open Images dataset</a>. For a thorough tutorial on how to work with Open Images data, see <a href="https://medium.com/voxel51/loading-open-images-v6-and-custom-datasets-with-fiftyone-18b5334851c3">Loading Open Images V6 and custom datasets with FiftyOne</a>.</p>
+<p>The COCO training data on which YOLOv8 was trained contains 3,2373,237 images with <code>bird</code> detections. Open Images is more expansive, with the train, test, and validation splits together housing 20k+20k+ images with <code>Bird</code> detections.</p>
+<p>Let’s create our training dataset. First, we’ll create a dataset, <code>train_dataset</code>, by loading the <code>bird</code> detection labels from the COCO train split using the <a href="https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html">FiftyOne Dataset Zoo</a>, and cloning this into a new <code>Dataset</code> object:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-77-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-78-1"><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-78-2">    <span class="s1">&#39;coco-2017&#39;</span><span class="p">,</span>
+</span><span id="__span-78-3">    <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span>
+</span><span id="__span-78-4">    <span class="n">classes</span><span class="o">=</span><span class="n">classes</span>
+</span><span id="__span-78-5"><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+</span><span id="__span-78-6">
+</span><span id="__span-78-7"><span class="n">train_dataset</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;birds-train-data&quot;</span>
+</span><span id="__span-78-8"><span class="n">train_dataset</span><span class="o">.</span><span class="n">persistent</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-78-9"><span class="n">train_dataset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Then, we’ll load Open Images samples with <code>Bird</code> detection labels, passing in <code>only_matching=True</code> to only load the <code>Bird</code> labels. We then map these labels into COCO label format by changing <code>Bird</code> into <code>bird</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-79-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-80-1"><span class="n">oi_samples</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-80-2">    <span class="s2">&quot;open-images-v6&quot;</span><span class="p">,</span>
+</span><span id="__span-80-3">    <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bird&quot;</span><span class="p">],</span>
+</span><span id="__span-80-4">    <span class="n">only_matching</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-80-5">    <span class="n">label_types</span><span class="o">=</span><span class="s2">&quot;detections&quot;</span>
+</span><span id="__span-80-6"><span class="p">)</span><span class="o">.</span><span class="n">map_labels</span><span class="p">(</span>
+</span><span id="__span-80-7">    <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-80-8">    <span class="p">{</span><span class="s2">&quot;Bird&quot;</span><span class="p">:</span><span class="s2">&quot;bird&quot;</span><span class="p">}</span>
+</span><span id="__span-80-9"><span class="p">)</span>
+</span></code></pre></div>
+<p>We can add these new samples into our training dataset with <code>merge_samples()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-81-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-82-1"><span class="n">train_dataset</span><span class="o">.</span><span class="n">merge_samples</span><span class="p">(</span><span class="n">oi_samples</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This dataset contains 24,22624,226 samples with <code>bird</code> labels, or more than seven times as many birds as the base YOLOv8n model was trained on. In the next section, we’ll demonstrate how to fine-tune the model on this data using the <a href="https://docs.ultralytics.com/reference/base_trainer/">YOLO Trainer class</a>.</p>
+<h2 id="fine-tune-a-yolov8-detection-model">Fine-tune a YOLOv8 detection model <a href="#Fine-tune-a-YOLOv8-detection-model" title="Permalink to this headline">¶</a><a class="headerlink" href="#fine-tune-a-yolov8-detection-model" title="Permanent link">&para;</a></h2>
+<p>The final step in preparing our data is splitting it into training and validation sets and exporting it into YOLO format. We will use an 80–20 train-val split, which we will select randomly using <a href="https://docs.voxel51.com/api/fiftyone.utils.random.html">FiftyOne’s random utils</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-83-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-84-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.utils.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">four</span>
+</span><span id="__span-84-2">
+</span><span id="__span-84-3"><span class="c1">## delete existing tags to start fresh</span>
+</span><span id="__span-84-4"><span class="n">train_dataset</span><span class="o">.</span><span class="n">untag_samples</span><span class="p">(</span><span class="n">train_dataset</span><span class="o">.</span><span class="n">distinct</span><span class="p">(</span><span class="s2">&quot;tags&quot;</span><span class="p">))</span>
+</span><span id="__span-84-5">
+</span><span id="__span-84-6"><span class="c1">## split into train and val</span>
+</span><span id="__span-84-7"><span class="n">four</span><span class="o">.</span><span class="n">random_split</span><span class="p">(</span>
+</span><span id="__span-84-8">    <span class="n">train_dataset</span><span class="p">,</span>
+</span><span id="__span-84-9">    <span class="p">{</span><span class="s2">&quot;train&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
+</span><span id="__span-84-10"><span class="p">)</span>
+</span><span id="__span-84-11">
+</span><span id="__span-84-12"><span class="c1">## export in YOLO format</span>
+</span><span id="__span-84-13"><span class="n">export_yolo_data</span><span class="p">(</span>
+</span><span id="__span-84-14">    <span class="n">train_dataset</span><span class="p">,</span>
+</span><span id="__span-84-15">    <span class="s2">&quot;birds_train&quot;</span><span class="p">,</span>
+</span><span id="__span-84-16">    <span class="n">classes</span><span class="p">,</span>
+</span><span id="__span-84-17">    <span class="n">split</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;val&quot;</span><span class="p">]</span>
+</span><span id="__span-84-18"><span class="p">)</span>
+</span></code></pre></div>
+<p>Now all that is left is to do the fine-tuning! We will use <a href="https://docs.ultralytics.com/cli/">YOLO command line syntax</a>, with <code>mode=train</code>. We will specify the initial weights as the starting point for training, the number of epochs, image size, and batch size.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-85-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-86-1"><span class="err">!</span><span class="n">yolo</span> <span class="n">task</span><span class="o">=</span><span class="n">detect</span> <span class="n">mode</span><span class="o">=</span><span class="n">train</span> <span class="n">model</span><span class="o">=</span><span class="n">yolov8n</span><span class="o">.</span><span class="n">pt</span> <span class="n">data</span><span class="o">=</span><span class="n">birds_train</span><span class="o">/</span><span class="n">dataset</span><span class="o">.</span><span class="n">yaml</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">60</span> <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span> <span class="n">batch</span><span class="o">=</span><span class="mi">16</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-87-1"> <span class="n">Image</span> <span class="n">sizes</span> <span class="mi">640</span> <span class="n">train</span><span class="p">,</span> <span class="mi">640</span> <span class="n">val</span>
+</span><span id="__span-87-2"> <span class="n">Using</span> <span class="mi">8</span> <span class="n">dataloader</span> <span class="n">workers</span>
+</span><span id="__span-87-3"> <span class="n">Logging</span> <span class="n">results</span> <span class="n">to</span> <span class="n">runs</span><span class="o">/</span><span class="n">detect</span><span class="o">/</span><span class="n">train</span>
+</span><span id="__span-87-4"> <span class="n">Starting</span> <span class="n">training</span> <span class="k">for</span> <span class="mi">60</span> <span class="n">epochs</span><span class="o">...</span>
+</span><span id="__span-87-5">
+</span><span id="__span-87-6"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-7"> <span class="mi">1</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">6.65</span><span class="n">G</span>      <span class="mf">1.392</span>      <span class="mf">1.627</span>      <span class="mf">1.345</span>         <span class="mi">22</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-8">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-9">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.677</span>      <span class="mf">0.524</span>      <span class="mf">0.581</span>      <span class="mf">0.339</span>
+</span><span id="__span-87-10">
+</span><span id="__span-87-11"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-12"> <span class="mi">2</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">9.58</span><span class="n">G</span>      <span class="mf">1.446</span>      <span class="mf">1.407</span>      <span class="mf">1.395</span>         <span class="mi">30</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-13">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-14">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.669</span>       <span class="mf">0.47</span>       <span class="mf">0.54</span>      <span class="mf">0.316</span>
+</span><span id="__span-87-15">
+</span><span id="__span-87-16"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-17"> <span class="mi">3</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">9.58</span><span class="n">G</span>       <span class="mf">1.54</span>      <span class="mf">1.493</span>      <span class="mf">1.462</span>         <span class="mi">29</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-18">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-19">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.529</span>      <span class="mf">0.329</span>      <span class="mf">0.349</span>      <span class="mf">0.188</span>
+</span><span id="__span-87-20">
+</span><span id="__span-87-21">                                       <span class="o">......</span>
+</span><span id="__span-87-22">
+</span><span id="__span-87-23"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-24"><span class="mi">58</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">9.59</span><span class="n">G</span>      <span class="mf">1.263</span>     <span class="mf">0.9489</span>      <span class="mf">1.277</span>         <span class="mi">47</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-25">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-26">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.751</span>      <span class="mf">0.631</span>      <span class="mf">0.708</span>      <span class="mf">0.446</span>
+</span><span id="__span-87-27">
+</span><span id="__span-87-28"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-29"><span class="mi">59</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">9.59</span><span class="n">G</span>      <span class="mf">1.264</span>     <span class="mf">0.9476</span>      <span class="mf">1.277</span>         <span class="mi">29</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-30">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-31">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.752</span>      <span class="mf">0.631</span>      <span class="mf">0.708</span>      <span class="mf">0.446</span>
+</span><span id="__span-87-32">
+</span><span id="__span-87-33"> <span class="n">Epoch</span>    <span class="n">GPU_mem</span>   <span class="n">box_loss</span>   <span class="n">cls_loss</span>   <span class="n">dfl_loss</span>  <span class="n">Instances</span>       <span class="n">Size</span>
+</span><span id="__span-87-34"><span class="mi">60</span><span class="o">/</span><span class="mi">60</span>       <span class="mf">9.59</span><span class="n">G</span>      <span class="mf">1.257</span>     <span class="mf">0.9456</span>      <span class="mf">1.274</span>         <span class="mi">41</span>        <span class="mi">640</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-87-35">            <span class="n">Class</span>     <span class="n">Images</span>  <span class="n">Instances</span>      <span class="n">Box</span><span class="p">(</span><span class="n">P</span>          <span class="n">R</span>      <span class="n">mAP50</span>  <span class="n">m</span>
+</span><span id="__span-87-36">              <span class="nb">all</span>       <span class="mi">4845</span>      <span class="mi">12487</span>      <span class="mf">0.752</span>      <span class="mf">0.631</span>      <span class="mf">0.709</span>      <span class="mf">0.446</span>
+</span></code></pre></div>
+<p>For this walkthrough, 6060 epochs of training was sufficient to achieve convergence. If you are fine-tuning on a different dataset, you may need to change these parameters.</p>
+<p>With fine-tuning complete, we can generate predictions on our test data with the “best” weights found during the training process, which are stored at <code>runs/detect/train/weights/best.pt</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-88-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-89-1"><span class="err">!</span><span class="n">yolo</span> <span class="n">task</span><span class="o">=</span><span class="n">detect</span> <span class="n">mode</span><span class="o">=</span><span class="n">predict</span> <span class="n">model</span><span class="o">=</span><span class="n">runs</span><span class="o">/</span><span class="n">detect</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="n">weights</span><span class="o">/</span><span class="n">best</span><span class="o">.</span><span class="n">pt</span> <span class="n">source</span><span class="o">=</span><span class="n">birds_test</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">val</span> <span class="n">save_txt</span><span class="o">=</span><span class="kc">True</span> <span class="n">save_conf</span><span class="o">=</span><span class="kc">True</span>
+</span></code></pre></div>
+<p>Then we can load these predictions onto our data and visualize the predictions in the FiftyOne App:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-90-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-91-1"><span class="n">filepaths</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;filepath&quot;</span><span class="p">)</span>
+</span><span id="__span-91-2"><span class="n">prediction_filepaths</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_prediction_filepath</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">run_number</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">fp</span> <span class="ow">in</span> <span class="n">filepaths</span><span class="p">]</span>
+</span><span id="__span-91-3">
+</span><span id="__span-91-4"><span class="n">test_dataset</span><span class="o">.</span><span class="n">set_values</span><span class="p">(</span>
+</span><span id="__span-91-5">    <span class="s2">&quot;yolov8n_bird_det_filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-91-6">    <span class="n">prediction_filepaths</span>
+</span><span id="__span-91-7"><span class="p">)</span>
+</span><span id="__span-91-8">
+</span><span id="__span-91-9"><span class="n">add_yolo_detections</span><span class="p">(</span>
+</span><span id="__span-91-10">    <span class="n">birds_test_dataset</span><span class="p">,</span>
+</span><span id="__span-91-11">    <span class="s2">&quot;yolov8n_bird&quot;</span><span class="p">,</span>
+</span><span id="__span-91-12">    <span class="s2">&quot;yolov8n_bird_det_filepath&quot;</span><span class="p">,</span>
+</span><span id="__span-91-13">    <span class="n">classes</span>
+</span><span id="__span-91-14"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-92-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-93-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="yolov8-finetune-predictions" src="../../_images/yolov8_finetune_predictions_app.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-94-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-95-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="assess-improvement-from-fine-tuning">Assess improvement from fine-tuning <a href="#Assess-improvement-from-fine-tuning" title="Permalink to this headline">¶</a><a class="headerlink" href="#assess-improvement-from-fine-tuning" title="Permanent link">&para;</a></h2>
+<p>On a holistic level, we can compare the performance of the fine-tuned model to the original, pretrained model by stacking their standard metrics against each other. The easiest way to get these metrics is with FiftyOne’s Evaluation API:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-96-1"><span class="p">[</span><span class="mi">55</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-97-1"><span class="n">finetune_bird_results</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-97-2">    <span class="s2">&quot;yolov8n_bird&quot;</span><span class="p">,</span>
+</span><span id="__span-97-3">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;finetune&quot;</span><span class="p">,</span>
+</span><span id="__span-97-4">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-97-5"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-98-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-98-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">125</span><span class="o">/</span><span class="mi">125</span> <span class="p">[</span><span class="mf">954.4</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">131.0</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-98-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-98-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">125</span><span class="o">/</span><span class="mi">125</span> <span class="p">[</span><span class="mf">751.8</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">166.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>From this, we can immediately see improvement in the mean average precision (mAP):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-99-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-100-1"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;yolov8n mAP: </span><span class="si">{}</span><span class="s2">.format(base_bird_results.mAP()))</span>
+</span><span id="__span-100-2"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fine-tuned mAP: </span><span class="si">{}</span><span class="s2">.format(finetune_bird_results.mAP()))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-101-1"><span class="n">yolov8n</span> <span class="n">mAP</span><span class="p">:</span> <span class="mf">0.24897924786479841</span>
+</span><span id="__span-101-2"><span class="n">fine</span><span class="o">-</span><span class="n">tuned</span> <span class="n">mAP</span><span class="p">:</span> <span class="mf">0.31339033693212076</span>
+</span></code></pre></div>
+<p>Printing out a report, we can see that the recall has improved from 0.390.39 to 0.560.56. This major improvement offsets a minor dip in precision, giving an overall higher F1 score (0.670.67 compared to 0.540.54).</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-102-1"><span class="p">[</span><span class="mi">56</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-103-1"><span class="n">finetune_bird_results</span><span class="o">.</span><span class="n">print_report</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-104-1">              <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-104-2">
+</span><span id="__span-104-3">        <span class="n">bird</span>       <span class="mf">0.81</span>      <span class="mf">0.56</span>      <span class="mf">0.67</span>       <span class="mi">506</span>
+</span><span id="__span-104-4">
+</span><span id="__span-104-5">   <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.81</span>      <span class="mf">0.56</span>      <span class="mf">0.67</span>       <span class="mi">506</span>
+</span><span id="__span-104-6">   <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.81</span>      <span class="mf">0.56</span>      <span class="mf">0.67</span>       <span class="mi">506</span>
+</span><span id="__span-104-7"><span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.81</span>      <span class="mf">0.56</span>      <span class="mf">0.67</span>       <span class="mi">506</span>
+</span></code></pre></div>
+<p>We can also look more closely at individual images to see where the fine-tuned model is having trouble. In particular, we can look at images with the most false negatives, or the most false positives:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-105-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-106-1"><span class="n">fn_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_fn&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-106-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">fn_view</span>
+</span></code></pre></div>
+<p><img alt="yolov8-finetune-fp" src="../../_images/yolov8_finetune_fp_predictions.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-107-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-108-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-109-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-110-1"><span class="n">fp_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_fp&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-110-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">fp_view</span>
+</span></code></pre></div>
+<p><img alt="yolov8-finetune_fn" src="../../_images/yolov8_finetune_fn_predictions.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-111-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-112-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Looking at both the false positives and false negatives, we can see that the model struggles to correctly handle small features. This poor performance could be in part due to quality of the data, as many of these features are grainy. It could also be due to the training parameters, as both the pre-training and fine-tuning for this model used an image size of 640640 pixels, which might not allow for fine-grained details to be captured.</p>
+<p>To further improve the model’s performance, we could try a variety of approaches, including:</p>
+<ul>
+<li>
+<p>Using image augmentation to increase the proportion of images with small birds</p>
+</li>
+<li>
+<p>Gathering and annotating more images with small birds</p>
+</li>
+<li>
+<p>Increasing the image size during fine-tuning</p>
+</li>
+</ul>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>While YOLOv8 represents a step forward for real-time object detection and segmentation models, out-of-the-box it’s aimed at general purpose uses. Before deploying the model, it is essential to understand how it performs on your data. Only then can you effectively fine-tune the YOLOv8 architecture to suit your specific needs.</p>
+<p>You can use FiftyOne to visualize, evaluate, and better understand YOLOv8 model predictions. After all, while YOLO may only look once, a conscientious computer vision engineer or researcher certainly looks twice (or more)!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

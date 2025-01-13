@@ -1,0 +1,1978 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Configuring FiftyOne ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuring-fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuring FiftyOne ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration options ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-your-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing your config ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifying-your-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifying your config ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modifying your config ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-of-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Order of precedence ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-your-json-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing your JSON config ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting environment variables ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-your-config-in-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modifying your config in code ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-mongodb-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring a MongoDB connection ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring a MongoDB connection ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-different-mongodb-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a different MongoDB version ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling-database-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controlling database migrations ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-custom-database-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example custom database usage ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database migrations ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database migrations ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restricting-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restricting migrations ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinating-a-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinating a migration ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-timezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring a timezone ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/fiftyone_concepts/config.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="configuring-fiftyone">Configuring FiftyOne <a href="#configuring-fiftyone" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-fiftyone" title="Permanent link">&para;</a></h1>
+<p>FiftyOne can be configured in various ways. This guide covers the various
+options that exist, how to view your current config, and how to customize your
+config as desired.</p>
+<h2 id="configuration-options">Configuration options <a href="#configuration-options" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
+<p>FiftyOne supports the configuration options described below:</p>
+<table>
+<thead>
+<tr>
+<th>Config field</th>
+<th>Environment variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>database_admin</code></td>
+<td><code>FIFTYONE_DATABASE_ADMIN</code></td>
+<td><code>True</code></td>
+<td>Whether the client is allowed to trigger database migrations. See<br><a href="#database-migrations">this section</a> for more information.</td>
+</tr>
+<tr>
+<td><code>database_dir</code></td>
+<td><code>FIFTYONE_DATABASE_DIR</code></td>
+<td><code>~/.fiftyone/var/lib/mongo</code></td>
+<td>The directory in which to store FiftyOne’s backing database. Only applicable if<br><code>database_uri</code> is not defined.</td>
+</tr>
+<tr>
+<td><code>database_name</code></td>
+<td><code>FIFTYONE_DATABASE_NAME</code></td>
+<td><code>fiftyone</code></td>
+<td>A name to use for FiftyOne’s backing database in your MongoDB instance. The database<br>is automatically created if necessary.</td>
+</tr>
+<tr>
+<td><code>database_uri</code></td>
+<td><code>FIFTYONE_DATABASE_URI</code></td>
+<td><code>None</code></td>
+<td>A <a href="https://docs.mongodb.com/manual/reference/connection-string/">MongoDB URI</a> to<br>specifying a custom MongoDB database to which to connect. See<br><a href="#configuring-mongodb-connection">this section</a> for more information.</td>
+</tr>
+<tr>
+<td><code>database_validation</code></td>
+<td><code>FIFTYONE_DATABASE_VALIDATION</code></td>
+<td><code>True</code></td>
+<td>Whether to validate the compatibility of database before connecting to it. See<br><a href="#configuring-mongodb-connection">this section</a> for more information.</td>
+</tr>
+<tr>
+<td><code>dataset_zoo_dir</code></td>
+<td><code>FIFTYONE_DATASET_ZOO_DIR</code></td>
+<td><code>~/fiftyone</code></td>
+<td>The default directory in which to store datasets that are downloaded from the<br><a href="../dataset_zoo/index.html#dataset-zoo">FiftyOne Dataset Zoo</a>.</td>
+</tr>
+<tr>
+<td><code>dataset_zoo_manifest_paths</code></td>
+<td><code>FIFTYONE_ZOO_MANIFEST_PATHS</code></td>
+<td><code>None</code></td>
+<td>A list of manifest JSON files specifying additional zoo datasets. See<br><a href="../dataset_zoo/api.html#dataset-zoo-add">adding datasets to the zoo</a> for more information.</td>
+</tr>
+<tr>
+<td><code>default_dataset_dir</code></td>
+<td><code>FIFTYONE_DEFAULT_DATASET_DIR</code></td>
+<td><code>~/fiftyone</code></td>
+<td>The default directory to use when performing FiftyOne operations that<br>require writing dataset contents to disk, such as ingesting datasets via<br><a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_labeled_images" title="fiftyone.core.dataset.Dataset.ingest_labeled_images"><code>ingest_labeled_images()</code></a>.</td>
+</tr>
+<tr>
+<td><code>default_ml_backend</code></td>
+<td><code>FIFTYONE_DEFAULT_ML_BACKEND</code></td>
+<td><code>torch</code></td>
+<td>The default ML backend to use when performing operations such as<br>downloading datasets from the FiftyOne Dataset Zoo that support multiple ML<br>backends. Supported values are <code>torch</code> and <code>tensorflow</code>. By default,<br><code>torch</code> is used if <a href="https://pytorch.org">PyTorch</a> is installed in your<br>Python environment, and <code>tensorflow</code> is used if<br><a href="http://tensorflow.org">TensorFlow</a> is installed. If no supported backend<br>is detected, this defaults to <code>None</code>, and any operation that requires an<br>installed ML backend will raise an informative error message if invoked in<br>this state.</td>
+</tr>
+<tr>
+<td><code>default_batch_size</code></td>
+<td><code>FIFTYONE_DEFAULT_BATCH_SIZE</code></td>
+<td><code>None</code></td>
+<td>A default batch size to use when <a href="../data_and_models/model_zoo/api.html#model-zoo-apply">applying models to datasets</a>.</td>
+</tr>
+<tr>
+<td><code>default_batcher</code></td>
+<td><code>FIFTYONE_DEFAULT_BATCHER</code></td>
+<td><code>latency</code></td>
+<td>Batching implementation to use in some batched database operations such as<br><a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples" title="fiftyone.core.dataset.Dataset.add_samples"><code>add_samples()</code></a>,<br><a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values" title="fiftyone.core.collections.SampleCollection.set_values"><code>set_values()</code></a>, and<br><a href="../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.save_context" title="fiftyone.core.collections.SampleCollection.save_context"><code>save_context()</code></a>.<br>Supported values are <code>latency</code>, <code>size</code>, and <code>static</code>.<br><code>latency</code> is the default, which uses a dynamic batch size to achieve a target latency<br>of <code>batcher_target_latency</code> between calls. The default changes to <code>size</code> for the<br>FiftyOne Teams SDK in <a href="../teams/api_connection.html#teams-api-connection">API connection mode</a>, which targets<br>a size of <code>batcher_target_size_bytes</code> for each call. <code>static</code> uses a fixed batch size<br>of <code>batcher_static_size</code>.</td>
+</tr>
+<tr>
+<td><code>batcher_static_size</code></td>
+<td><code>FIFTYONE_BATCHER_STATIC_SIZE</code></td>
+<td><code>100</code></td>
+<td>Fixed size of batches. Only used when <code>default_batcher</code> is <code>static</code>.</td>
+</tr>
+<tr>
+<td><code>batcher_target_size_bytes</code></td>
+<td><code>FIFTYONE_BATCHER_TARGET_SIZE_BYTES</code></td>
+<td><code>2 ** 20</code></td>
+<td>Target content size of batches, in bytes. Only used when <code>default_batcher</code> is <code>size</code>.</td>
+</tr>
+<tr>
+<td><code>batcher_target_latency</code></td>
+<td><code>FIFTYONE_BATCHER_TARGET_LATENCY</code></td>
+<td><code>0.2</code></td>
+<td>Target latency between batches, in seconds. Only used when <code>default_batcher</code> is<br><code>latency</code>.</td>
+</tr>
+<tr>
+<td><code>default_sequence_idx</code></td>
+<td><code>FIFTYONE_DEFAULT_SEQUENCE_IDX</code></td>
+<td><code>%06d</code></td>
+<td>The default numeric string pattern to use when writing sequential lists of<br>files.</td>
+</tr>
+<tr>
+<td><code>default_image_ext</code></td>
+<td><code>FIFTYONE_DEFAULT_IMAGE_EXT</code></td>
+<td><code>.jpg</code></td>
+<td>The default image format to use when writing images to disk.</td>
+</tr>
+<tr>
+<td><code>default_video_ext</code></td>
+<td><code>FIFTYONE_DEFAULT_VIDEO_EXT</code></td>
+<td><code>.mp4</code></td>
+<td>The default video format to use when writing videos to disk.</td>
+</tr>
+<tr>
+<td><code>default_app_port</code></td>
+<td><code>FIFTYONE_DEFAULT_APP_PORT</code></td>
+<td><code>5151</code></td>
+<td>The default port to use to serve the <a href="app.html#fiftyone-app">FiftyOne App</a>.</td>
+</tr>
+<tr>
+<td><code>default_app_address</code></td>
+<td><code>FIFTYONE_DEFAULT_APP_ADDRESS</code></td>
+<td><code>localhost</code></td>
+<td>The default address to use to serve the <a href="app.html#fiftyone-app">FiftyOne App</a>. This may<br>be either an IP address or hostname. If it’s a hostname, the App will listen to all<br>IP addresses associated with the name. The default is <code>localhost</code>, which means the App<br>will only listen on the local interface. See <a href="../environments/index.html#restricting-app-address">this page</a><br>for more information.</td>
+</tr>
+<tr>
+<td><code>do_not_track</code></td>
+<td><code>FIFTYONE_DO_NOT_TRACK</code></td>
+<td><code>False</code></td>
+<td>Controls whether UUID based import and App usage events are tracked.</td>
+</tr>
+<tr>
+<td><code>logging_level</code></td>
+<td><code>FIFTYONE_LOGGING_LEVEL</code></td>
+<td><code>INFO</code></td>
+<td>Controls FiftyOne’s package-wide logging level. Can be any valid <code>logging</code> level as<br>a string: <code>DEBUG, INFO, WARNING, ERROR, CRITICAL</code>.</td>
+</tr>
+<tr>
+<td><code>max_thread_pool_workers</code></td>
+<td><code>FIFTYONE_MAX_THREAD_POOL_WORKERS</code></td>
+<td><code>None</code></td>
+<td>An optional maximum number of workers to use when creating thread pools</td>
+</tr>
+<tr>
+<td><code>max_process_pool_workers</code></td>
+<td><code>FIFTYONE_MAX_PROCESS_POOL_WORKERS</code></td>
+<td><code>None</code></td>
+<td>An optional maximum number of workers to use when creating process pools</td>
+</tr>
+<tr>
+<td><code>model_zoo_dir</code></td>
+<td><code>FIFTYONE_MODEL_ZOO_DIR</code></td>
+<td><code>~/fiftyone/__models__</code></td>
+<td>The default directory in which to store models that are downloaded from the<br><a href="../data_and_models/model_zoo/index.html#model-zoo">FiftyOne Model Zoo</a>.</td>
+</tr>
+<tr>
+<td><code>model_zoo_manifest_paths</code></td>
+<td><code>FIFTYONE_MODEL_ZOO_MANIFEST_PATHS</code></td>
+<td><code>None</code></td>
+<td>A list of manifest JSON files specifying additional zoo models. See<br><a href="../data_and_models/model_zoo/api.html#model-zoo-add">adding models to the zoo</a> for more information.</td>
+</tr>
+<tr>
+<td><code>module_path</code></td>
+<td><code>FIFTYONE_MODULE_PATH</code></td>
+<td><code>None</code></td>
+<td>A list of modules that should be automatically imported whenever FiftyOne is imported.<br>See <a href="using_datasets.html#custom-embedded-documents">this page</a> for an example usage.</td>
+</tr>
+<tr>
+<td><code>operator_timeout</code></td>
+<td><code>FIFTYONE_OPERATOR_TIMEOUT</code></td>
+<td><code>600</code></td>
+<td>The timeout for execution of an operator. See <a href="../plugins/index.html#fiftyone-plugins">this page</a> for<br>more information.</td>
+</tr>
+<tr>
+<td><code>allow_legacy_orchestrators</code></td>
+<td><code>FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS</code></td>
+<td><code>False</code></td>
+<td>Whether to allow delegated operations to be scheduled locally.<br>See <a href="../plugins/using_plugins.html#delegated-orchestrator-open-source">this page</a> for more information.</td>
+</tr>
+<tr>
+<td><code>plugins_dir</code></td>
+<td><code>FIFTYONE_PLUGINS_DIR</code></td>
+<td><code>None</code></td>
+<td>A directory containing custom App plugins. See <a href="../plugins/index.html#fiftyone-plugins">this page</a> for<br>more information.</td>
+</tr>
+<tr>
+<td><code>plugins_cache_enabled</code></td>
+<td><code>FIFTYONE_PLUGINS_CACHE_ENABLED</code></td>
+<td><code>False</code></td>
+<td>When set to <code>True</code> plugins will be cached until their directory’s <code>mtime</code> changes.<br>This is intended to be used in production.</td>
+</tr>
+<tr>
+<td><code>do_not_track</code></td>
+<td><code>FIFTYONE_DO_NOT_TRACK</code></td>
+<td><code>False</code></td>
+<td>Controls whether UUID based import and App usage events are tracked.</td>
+</tr>
+<tr>
+<td><code>show_progress_bars</code></td>
+<td><code>FIFTYONE_SHOW_PROGRESS_BARS</code></td>
+<td><code>True</code></td>
+<td>Controls whether progress bars are printed to the terminal when performing<br>operations such reading/writing large datasets or activating FiftyOne<br>Brain methods on datasets.</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td><code>FIFTYONE_TIMEZONE</code></td>
+<td><code>None</code></td>
+<td>An optional timezone string. If provided, all datetimes read from FiftyOne datasets<br>will be expressed in this timezone. See <a href="#configuring-timezone">this section</a> for<br>more information.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="viewing-your-config">Viewing your config <a href="#viewing-your-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#viewing-your-config" title="Permanent link">&para;</a></h2>
+<p>You can print your current FiftyOne config at any time via the Python library
+and the CLI:</p>
+<p>Note</p>
+<p>If you have customized your FiftyOne config via any of the methods
+described below, printing your config is a convenient way to ensure that
+the changes you made have taken effect as you expected.</p>
+<h2 id="modifying-your-config">Modifying your config <a href="#modifying-your-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#modifying-your-config" title="Permanent link">&para;</a></h2>
+<p>You can modify your FiftyOne config in a variety of ways. The following
+sections describe these options in detail.</p>
+<h3 id="order-of-precedence">Order of precedence <a href="#order-of-precedence" title="Permalink to this headline">¶</a><a class="headerlink" href="#order-of-precedence" title="Permanent link">&para;</a></h3>
+<p>The following order of precedence is used to assign values to your FiftyOne
+config settings at runtime:</p>
+<ol>
+<li>
+<p>Config changes applied at runtime by directly editing <code>fiftyone.config</code></p>
+</li>
+<li>
+<p><code>FIFTYONE_XXX</code> environment variables</p>
+</li>
+<li>
+<p>Settings in your JSON config ( <code>~/.fiftyone/config.json</code>)</p>
+</li>
+<li>
+<p>The default config values</p>
+</li>
+</ol>
+<h3 id="editing-your-json-config">Editing your JSON config <a href="#editing-your-json-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#editing-your-json-config" title="Permanent link">&para;</a></h3>
+<p>You can permanently customize your FiftyOne config by creating a
+<code>~/.fiftyone/config.json</code> file on your machine. The JSON file may contain any
+desired subset of config fields that you wish to customize.</p>
+<p>For example, a valid config JSON file is:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">{</span>
+</span><span id="__span-0-2">    <span class="s2">&quot;default_ml_backend&quot;</span><span class="p">:</span> <span class="s2">&quot;tensorflow&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3">    <span class="s2">&quot;show_progress_bars&quot;</span><span class="p">:</span> <span class="n">true</span>
+</span><span id="__span-0-4"><span class="p">}</span>
+</span></code></pre></div>
+<p>When <code>fiftyone</code> is imported, any options from your JSON config are applied,
+as per the order of precedence described above.</p>
+<p>Note</p>
+<p>You can customize the location from which your JSON config is read by
+setting the <code>FIFTYONE_CONFIG_PATH</code> environment variable.</p>
+<h3 id="setting-environment-variables">Setting environment variables <a href="#setting-environment-variables" title="Permalink to this headline">¶</a><a class="headerlink" href="#setting-environment-variables" title="Permanent link">&para;</a></h3>
+<p>FiftyOne config settings may be customized on a per-session basis by setting
+the <code>FIFTYONE_XXX</code> environment variable(s) for the desired config settings.</p>
+<p>When <code>fiftyone</code> is imported, all config environment variables are applied, as
+per the order of precedence described above.</p>
+<p>For example, you can customize your FiftyOne config in a Terminal session by
+issuing the following commands prior to launching your Python interpreter:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="n">export</span> <span class="n">FIFTYONE_DEFAULT_ML_BACKEND</span><span class="o">=</span><span class="n">tensorflow</span>
+</span><span id="__span-1-2"><span class="n">export</span> <span class="n">FIFTYONE_SHOW_PROGRESS_BARS</span><span class="o">=</span><span class="n">true</span>
+</span></code></pre></div>
+<h3 id="modifying-your-config-in-code">Modifying your config in code <a href="#modifying-your-config-in-code" title="Permalink to this headline">¶</a><a class="headerlink" href="#modifying-your-config-in-code" title="Permanent link">&para;</a></h3>
+<p>You can dynamically modify your FiftyOne config at runtime by editing the
+<code>fiftyone.config</code> object.</p>
+<p>Any changes to your FiftyOne config applied via this manner will immediately
+take effect for all subsequent calls to <code>fiftyone.config</code> during your current
+session.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="n">fo</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">default_ml_backend</span> <span class="o">=</span> <span class="s2">&quot;tensorflow&quot;</span>
+</span><span id="__span-2-4"><span class="n">fo</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">show_progress_bars</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div>
+<h2 id="configuring-a-mongodb-connection">Configuring a MongoDB connection <a href="#configuring-a-mongodb-connection" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-a-mongodb-connection" title="Permanent link">&para;</a></h2>
+<p>By default, FiftyOne is installed with its own MongoDB database distribution.
+This database is managed by FiftyOne automatically as a service that runs
+whenever at least one FiftyOne Python client is alive.</p>
+<p>Alternatively, you can configure FiftyOne to connect to your own self-managed
+MongoDB instance. To do so, simply set the <code>database_uri</code> property of your
+FiftyOne config to any valid
+<a href="https://docs.mongodb.com/manual/reference/connection-string/">MongoDB connection string URI</a>.</p>
+<p>You can achieve this by adding the following entry to your
+<code>~/.fiftyone/config.json</code> file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="p">{</span>
+</span><span id="__span-3-2">    <span class="s2">&quot;database_uri&quot;</span><span class="p">:</span> <span class="s2">&quot;mongodb://[username:password@]host[:port]&quot;</span>
+</span><span id="__span-3-3"><span class="p">}</span>
+</span></code></pre></div>
+<p>or you can set the following environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_URI</span><span class="o">=</span><span class="n">mongodb</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">username</span><span class="p">:</span><span class="n">password</span><span class="o">@</span><span class="p">]</span><span class="n">host</span><span class="p">[:</span><span class="n">port</span><span class="p">]</span>
+</span></code></pre></div>
+<p>If you are running MongoDB with authentication enabled (the <code>--auth</code> flag),
+FiftyOne must connect as a root user.</p>
+<p>You can create a root user with the Mongo shell as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="n">mongo</span> <span class="o">--</span><span class="n">shell</span>
+</span><span id="__span-5-2"><span class="o">&gt;</span> <span class="n">use</span> <span class="n">admin</span>
+</span><span id="__span-5-3"><span class="o">&gt;</span> <span class="n">db</span><span class="o">.</span><span class="n">createUser</span><span class="p">({</span><span class="n">user</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="n">pwd</span><span class="p">:</span> <span class="n">passwordPrompt</span><span class="p">(),</span> <span class="n">roles</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;root&quot;</span><span class="p">]})</span>
+</span></code></pre></div>
+<p>You must also add <code>?authSource=admin</code> to your database URI:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="n">mongodb</span><span class="p">:</span><span class="o">//</span><span class="p">[</span><span class="n">username</span><span class="p">:</span><span class="n">password</span><span class="o">@</span><span class="p">]</span><span class="n">host</span><span class="p">[:</span><span class="n">port</span><span class="p">]</span><span class="o">/</span><span class="err">?</span><span class="n">authSource</span><span class="o">=</span><span class="n">admin</span>
+</span></code></pre></div>
+<h3 id="using-a-different-mongodb-version">Using a different MongoDB version <a href="#using-a-different-mongodb-version" title="Permalink to this headline">¶</a><a class="headerlink" href="#using-a-different-mongodb-version" title="Permanent link">&para;</a></h3>
+<p>FiftyOne is designed for <strong>MongoDB v4.4 or later</strong>.</p>
+<p>If you wish to connect FiftyOne to a MongoDB database whose version is not
+explicitly supported, you will also need to set the <code>database_validation</code>
+property of your FiftyOne config to <code>False</code> to suppress a runtime error that
+will otherwise occur.</p>
+<p>You can achieve this by adding the following entry to your
+<code>~/.fiftyone/config.json</code> file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="p">{</span>
+</span><span id="__span-7-2">    <span class="s2">&quot;database_validation&quot;</span><span class="p">:</span> <span class="n">false</span>
+</span><span id="__span-7-3"><span class="p">}</span>
+</span></code></pre></div>
+<p>or you can set the following environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_VALIDATION</span><span class="o">=</span><span class="n">false</span>
+</span></code></pre></div>
+<h3 id="controlling-database-migrations">Controlling database migrations <a href="#controlling-database-migrations" title="Permalink to this headline">¶</a><a class="headerlink" href="#controlling-database-migrations" title="Permanent link">&para;</a></h3>
+<p>If you are working with a shared MongoDB database, you can use
+<a href="#database-migrations">database admin privileges</a> to control which clients
+are allowed to migrate the shared database.</p>
+<h3 id="example-custom-database-usage">Example custom database usage <a href="#example-custom-database-usage" title="Permalink to this headline">¶</a><a class="headerlink" href="#example-custom-database-usage" title="Permanent link">&para;</a></h3>
+<p>In order to use a custom MongoDB database with FiftyOne, you must manually
+start the database before importing FiftyOne. MongoDB provides
+<a href="https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes">a variety of options</a>
+for this, including running the database as a daemon automatically.</p>
+<p>In the simplest case, you can just run <code>mongod</code> in one shell:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">db</span>
+</span><span id="__span-9-2"><span class="n">mongod</span> <span class="o">--</span><span class="n">dbpath</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">for</span><span class="o">/</span><span class="n">db</span>
+</span></code></pre></div>
+<p>Then, in another shell, configure the database URI and launch FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_URI</span><span class="o">=</span><span class="n">mongodb</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-11-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-11-3">
+</span><span id="__span-11-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-11-5"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="database-migrations">Database migrations <a href="#database-migrations" title="Permalink to this headline">¶</a><a class="headerlink" href="#database-migrations" title="Permanent link">&para;</a></h2>
+<p>New FiftyOne versions occasionally introduce data model changes that require
+database migrations when you <a href="../getting_started/install.html#upgrading-fiftyone">upgrade</a> or
+<a href="../getting_started/install.html#downgrading-fiftyone">downgrade</a>.</p>
+<p>By default, database upgrades happen automatically in two steps:</p>
+<ul>
+<li>
+<p><strong>Database</strong>: when you import FiftyOne for the first time using a newer
+version of the Python package, the database’s version is automatically
+updated to match your client version</p>
+</li>
+<li>
+<p><strong>Datasets</strong> are lazily migrated to the current database version on a
+per-dataset basis whenever you load the dataset for the first time using a
+newer version of the FiftyOne package</p>
+</li>
+</ul>
+<p>Database downgrades must be manually performed. See
+<a href="../getting_started/install.html#downgrading-fiftyone">this page</a> for instructions.</p>
+<p>You can use the <a href="../cli/index.html#cli-fiftyone-migrate">fiftyone migrate</a> command to view
+the current versions of your client, database, and datasets:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="c1"># View your client, database, and dataset versions</span>
+</span><span id="__span-12-2"><span class="n">fiftyone</span> <span class="n">migrate</span> <span class="o">--</span><span class="n">info</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="n">Client</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.16.6</span>
+</span><span id="__span-13-2"><span class="n">Compatible</span> <span class="n">versions</span><span class="p">:</span> <span class="o">&gt;=</span><span class="mf">0.16.3</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.17</span>
+</span><span id="__span-13-3">
+</span><span id="__span-13-4"><span class="n">Database</span> <span class="n">version</span><span class="p">:</span> <span class="mf">0.16.6</span>
+</span><span id="__span-13-5">
+</span><span id="__span-13-6"><span class="n">dataset</span>                      <span class="n">version</span>
+</span><span id="__span-13-7"><span class="o">---------------------------</span>  <span class="o">---------</span>
+</span><span id="__span-13-8"><span class="n">bdd100k</span><span class="o">-</span><span class="n">validation</span>           <span class="mf">0.16.5</span>
+</span><span id="__span-13-9"><span class="n">quickstart</span>                   <span class="mf">0.16.5</span>
+</span><span id="__span-13-10"><span class="o">...</span>
+</span></code></pre></div>
+<h3 id="restricting-migrations">Restricting migrations <a href="#restricting-migrations" title="Permalink to this headline">¶</a><a class="headerlink" href="#restricting-migrations" title="Permanent link">&para;</a></h3>
+<p>You can use the <code>database_admin</code> config setting to control whether a client is
+allowed to upgrade/downgrade your FiftyOne database. The default is <code>True</code>,
+which means that upgrades are automatically performed when you connect to your
+database with newer Python client versions.</p>
+<p>If you set <code>database_admin</code> to <code>False</code>, your client will <strong>never</strong> cause the
+database to be migrated to a new version. Instead, you’ll see the following
+behavior:</p>
+<ul>
+<li>
+<p>If your client is compatible with the current database version, you will be
+allowed to connect to the database and use FiftyOne</p>
+</li>
+<li>
+<p>If your client is not compatible with the current database version, you
+will see an informative error message when you import the library</p>
+</li>
+</ul>
+<p>You can restrict migrations by adding the following entry to your
+<code>~/.fiftyone/config.json</code> file:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="p">{</span>
+</span><span id="__span-14-2">    <span class="s2">&quot;database_admin&quot;</span><span class="p">:</span> <span class="n">false</span>
+</span><span id="__span-14-3"><span class="p">}</span>
+</span></code></pre></div>
+<p>or by setting the following environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_ADMIN</span><span class="o">=</span><span class="n">false</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>A common pattern when working with
+<a href="#configuring-mongodb-connection">custom/shared MongoDB databases</a> is
+to adopt a convention that all non-administrators set their
+<code>database_admin</code> config setting to <code>False</code> to ensure that they cannot
+trigger automatic database upgrades by connecting to the database with
+newer Python client versions.</p>
+<h3 id="coordinating-a-migration">Coordinating a migration <a href="#coordinating-a-migration" title="Permalink to this headline">¶</a><a class="headerlink" href="#coordinating-a-migration" title="Permanent link">&para;</a></h3>
+<p>If you are working in an environment where multiple services are connecting to
+your MongoDB database at any given time, use this strategy to upgrade your
+deployment:</p>
+<ol>
+<li>Ensure that all clients are running without database admin privileges,
+e.g., by adding this to their <code>~/.fiftyone/config.json</code>:</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="p">{</span>
+</span><span id="__span-16-2">    <span class="s2">&quot;database_admin&quot;</span><span class="p">:</span> <span class="n">false</span>
+</span><span id="__span-16-3"><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>Perform a test upgrade of one client and ensure that it is compatible with
+your current database version:</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="c1"># In a test environment</span>
+</span><span id="__span-17-2"><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">fiftyone</span>
+</span><span id="__span-17-3">
+</span><span id="__span-17-4"><span class="c1"># View client&#39;s compatibility info</span>
+</span><span id="__span-17-5"><span class="n">fiftyone</span> <span class="n">migrate</span> <span class="o">--</span><span class="n">info</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-18-2">
+</span><span id="__span-18-3"><span class="c1"># Convince yourself that the new client can load a dataset</span>
+</span><span id="__span-18-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></code></pre></div>
+<ol>
+<li>Now upgrade the client version used by all services:</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="c1"># In all client environments</span>
+</span><span id="__span-19-2"><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<ol>
+<li>Once all services are running the new client version, upgrade the database
+with admin privileges:</li>
+</ol>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">export</span> <span class="n">FIFTYONE_DATABASE_ADMIN</span><span class="o">=</span><span class="n">true</span>
+</span><span id="__span-20-2">
+</span><span id="__span-20-3"><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">fiftyone</span>
+</span><span id="__span-20-4"><span class="n">fiftyone</span> <span class="n">migrate</span> <span class="o">--</span><span class="nb">all</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>Newly created datasets will always bear the
+<a href="../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.version" title="fiftyone.core.dataset.Dataset.version"><code>version</code></a> of the Python
+client that created them, which may differ from your database’s version
+if you are undergoing a migration.</p>
+<p>If the new client’s version is not in the compatibility range for the old
+clients that are still in use, the old clients will not be able to load
+the new datasets.</p>
+<p>Therefore, it is recommended to upgrade all clients as soon as possible!</p>
+<h2 id="configuring-a-timezone">Configuring a timezone <a href="#configuring-a-timezone" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-a-timezone" title="Permanent link">&para;</a></h2>
+<p>By default, FiftyOne loads all datetimes in FiftyOne datasets as naive
+<code>datetime</code> objects expressed in UTC time.</p>
+<p>However, you can configure FiftyOne to express datetimes in a specific timezone
+by setting the <code>timezone</code> property of your FiftyOne config.</p>
+<p>The <code>timezone</code> property can be set to any timezone string supported by
+<code>pytz.timezone()</code>, or <code>"local"</code> to use your current local timezone.</p>
+<p>For example, you could set the <code>FIFTYONE_TIMEZONE</code> environment variable:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><span class="c1"># Local timezone</span>
+</span><span id="__span-21-2"><span class="n">export</span> <span class="n">FIFTYONE_TIMEZONE</span><span class="o">=</span><span class="n">local</span>
+</span><span id="__span-21-3">
+</span><span id="__span-21-4"><span class="c1"># US Eastern timezone</span>
+</span><span id="__span-21-5"><span class="n">export</span> <span class="n">FIFTYONE_TIMEZONE</span><span class="o">=</span><span class="n">US</span><span class="o">/</span><span class="n">Eastern</span>
+</span></code></pre></div>
+<p>Or, you can even dynamically change the timezone while you work in Python:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+</span><span id="__span-22-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-22-3">
+</span><span id="__span-22-4"><span class="n">sample</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;image.png&quot;</span><span class="p">,</span> <span class="n">created_at</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">())</span>
+</span><span id="__span-22-5">
+</span><span id="__span-22-6"><span class="n">dataset</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+</span><span id="__span-22-7"><span class="n">dataset</span><span class="o">.</span><span class="n">add_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</span><span id="__span-22-8">
+</span><span id="__span-22-9"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+</span><span id="__span-22-10"><span class="c1"># 2021-08-24 20:24:09.723021</span>
+</span><span id="__span-22-11">
+</span><span id="__span-22-12"><span class="n">fo</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">timezone</span> <span class="o">=</span> <span class="s2">&quot;local&quot;</span>
+</span><span id="__span-22-13"><span class="n">dataset</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+</span><span id="__span-22-14">
+</span><span id="__span-22-15"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+</span><span id="__span-22-16"><span class="c1"># 2021-08-24 16:24:09.723000-04:00</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>The <code>timezone</code> setting does not affect the internal database representation
+of datetimes, which are always stored as UTC timestamps.</p>
+<h1 id="configuring-the-app">Configuring the App <a href="#configuring-the-app" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-the-app" title="Permanent link">&para;</a></h1>
+<p>The <a href="app.html#fiftyone-app">FiftyOne App</a> can also be configured in various ways.
+A new copy of your App config is applied to each <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> object that is
+created when you launch the App. A session’s config can be inspected and
+modified via the <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.config" title="fiftyone.core.session.Session.config"><code>session.config</code></a>
+property.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-23-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-23-3">
+</span><span id="__span-23-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-23-5"><span class="nb">print</span><span class="p">(</span><span class="n">fo</span><span class="o">.</span><span class="n">app_config</span><span class="p">)</span>
+</span><span id="__span-23-6">
+</span><span id="__span-23-7"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-23-8"><span class="nb">print</span><span class="p">(</span><span class="n">session</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>For changes to a live session’s config to take effect in the App, you must
+call <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.refresh" title="fiftyone.core.session.Session.refresh"><code>session.refresh()</code></a> or
+invoke another state-updating action such as <code>session.view = my_view</code>.</p>
+<p>The FiftyOne App can be configured in the ways described below:</p>
+<table>
+<thead>
+<tr>
+<th>Config field</th>
+<th>Environment variable</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color_by</code></td>
+<td><code>FIFTYONE_APP_COLOR_BY</code></td>
+<td><code>"field"</code></td>
+<td>Whether to color labels by their field name ( <code>"field"</code>), <code>label</code> value ( <code>"label"</code>), or<br>render each instance ID/trajectory index ( <code>"instance"</code>).</td>
+</tr>
+<tr>
+<td><code>color_pool</code></td>
+<td><code>FIFTYONE_APP_COLOR_POOL</code></td>
+<td>See below</td>
+<td>A list of browser supported color strings from which the App should draw from when<br>drawing labels (e.g., object bounding boxes).</td>
+</tr>
+<tr>
+<td><code>colorscale</code></td>
+<td><code>FIFTYONE_APP_COLORSCALE</code></td>
+<td><code>"viridis"</code></td>
+<td>The colorscale to use when rendering heatmaps in the App. See<br><a href="using_datasets.html#heatmaps">this section</a> for more details.</td>
+</tr>
+<tr>
+<td><code>default_query_performance</code></td>
+<td><code>FIFTYONE_APP_DEFAULT_QUERY_PERFORMANCE</code></td>
+<td><code>True</code></td>
+<td>Default if a user hasn’t selected a query performance mode in their current session. See<br><a href="app.html#app-optimizing-query-performance">this section</a> for more details.</td>
+</tr>
+<tr>
+<td><code>disable_frame_filtering</code></td>
+<td><code>FIFTYONE_APP_DISABLE_FRAME_FILTERING</code></td>
+<td><code>False</code></td>
+<td>Whether to disable frame filtering for video datasets in the App’s grid view. See<br><a href="app.html#app-optimizing-query-performance">this section</a> for more details.</td>
+</tr>
+<tr>
+<td><code>enable_query_performance</code></td>
+<td><code>FIFTYONE_APP_ENABLE_QUERY_PERFORMANCE</code></td>
+<td><code>True</code></td>
+<td>Whether to show the query performance toggle in the UI for users to select. See<br><a href="app.html#app-optimizing-query-performance">this section</a> for more details.</td>
+</tr>
+<tr>
+<td><code>grid_zoom</code></td>
+<td><code>FIFTYONE_APP_GRID_ZOOM</code></td>
+<td><code>5</code></td>
+<td>The zoom level of the App’s sample grid. Larger values result in larger samples (and thus<br>fewer samples in the grid). Supported values are <code>{0, 1, ..., 10}</code>.</td>
+</tr>
+<tr>
+<td><code>loop_videos</code></td>
+<td><code>FIFTYONE_APP_LOOP_VIDEOS</code></td>
+<td><code>False</code></td>
+<td>Whether to loop videos by default in the expanded sample view.</td>
+</tr>
+<tr>
+<td><code>media_fallback</code></td>
+<td><code>FIFTYONE_APP_MEDIA_FALLBACK</code></td>
+<td><code>False</code></td>
+<td>Whether to fall back to the default media field ( <code>"filepath"</code>) when the configured media<br>field’s value for a sample is not defined.</td>
+</tr>
+<tr>
+<td><code>multicolor_keypoints</code></td>
+<td><code>FIFTYONE_APP_MULTICOLOR_KEYPOINTS</code></td>
+<td><code>False</code></td>
+<td>Whether to independently coloy keypoint points by their index</td>
+</tr>
+<tr>
+<td><code>notebook_height</code></td>
+<td><code>FIFTYONE_APP_NOTEBOOK_HEIGHT</code></td>
+<td><code>800</code></td>
+<td>The height of App instances displayed in notebook cells.</td>
+</tr>
+<tr>
+<td><code>proxy_url</code></td>
+<td><code>FIFTYONE_APP_PROXY_URL</code></td>
+<td><code>None</code></td>
+<td>A URL string to override the default server URL. Useful for configuring the session<br>through a reverse proxy in notebook environments.</td>
+</tr>
+<tr>
+<td><code>show_confidence</code></td>
+<td><code>FIFTYONE_APP_SHOW_CONFIDENCE</code></td>
+<td><code>True</code></td>
+<td>Whether to show confidences when rendering labels in the App’s expanded sample view.</td>
+</tr>
+<tr>
+<td><code>show_index</code></td>
+<td><code>FIFTYONE_APP_SHOW_INDEX</code></td>
+<td><code>True</code></td>
+<td>Whether to show indexes when rendering labels in the App’s expanded sample view.</td>
+</tr>
+<tr>
+<td><code>show_label</code></td>
+<td><code>FIFTYONE_APP_SHOW_LABEL</code></td>
+<td><code>True</code></td>
+<td>Whether to show the label value when rendering detection labels in the App’s expanded<br>sample view.</td>
+</tr>
+<tr>
+<td><code>show_skeletons</code></td>
+<td><code>FIFTYONE_APP_SHOW_SKELETONS</code></td>
+<td><code>True</code></td>
+<td>Whether to show keypoint skeletons, if available.</td>
+</tr>
+<tr>
+<td><code>show_tooltip</code></td>
+<td><code>FIFTYONE_APP_SHOW_TOOLTIP</code></td>
+<td><code>True</code></td>
+<td>Whether to show the tooltip when hovering over labels in the App’s expanded sample view.</td>
+</tr>
+<tr>
+<td><code>theme</code></td>
+<td><code>FIFTYONE_APP_THEME</code></td>
+<td><code>"browser"</code></td>
+<td>The default theme to use in the App. Supported values are <code>{"browser", "dark", "light"}</code>.<br>If <code>"browser"</code>, your current theme will be persisted in your browser’s storage.</td>
+</tr>
+<tr>
+<td><code>use_frame_number</code></td>
+<td><code>FIFTYONE_APP_USE_FRAME_NUMBER</code></td>
+<td><code>False</code></td>
+<td>Whether to use the frame number instead of a timestamp in the expanded sample view. Only<br>applicable to video samples.</td>
+</tr>
+<tr>
+<td><code>plugins</code></td>
+<td>N/A</td>
+<td><code>{}</code></td>
+<td>A dict of plugin configurations. See <a href="#configuring-plugins">this section</a> for<br>details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="viewing-your-app-config">Viewing your App config <a href="#viewing-your-app-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#viewing-your-app-config" title="Permanent link">&para;</a></h2>
+<p>You can print your App config at any time via the Python library and the CLI:</p>
+<p>Note</p>
+<p>If you have customized your App config via any of the methods described
+below, printing your config is a convenient way to ensure that the changes
+you made have taken effect as you expected.</p>
+<h2 id="modifying-your-app-config">Modifying your App config <a href="#modifying-your-app-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#modifying-your-app-config" title="Permanent link">&para;</a></h2>
+<p>You can modify your App config in a variety of ways. The following sections
+describe these options in detail.</p>
+<p>Note</p>
+<p>Did you know? You can also configure the behavior of the App on a
+per-dataset basis by customizing your
+<a href="using_datasets.html#dataset-app-config">dataset’s App config</a>.</p>
+<h3 id="order-of-precedence_1">Order of precedence <a href="#id4" title="Permalink to this headline">¶</a><a class="headerlink" href="#order-of-precedence_1" title="Permanent link">&para;</a></h3>
+<p>The following order of precedence is used to assign values to your App config
+settings at runtime:</p>
+<ol>
+<li>
+<p>Config settings of a
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> instance in question</p>
+</li>
+<li>
+<p>App config settings applied at runtime by directly editing
+<code>fiftyone.app_config</code></p>
+</li>
+<li>
+<p><code>FIFTYONE_APP_XXX</code> environment variables</p>
+</li>
+<li>
+<p>Settings in your JSON App config ( <code>~/.fiftyone/app_config.json</code>)</p>
+</li>
+<li>
+<p>The default App config values</p>
+</li>
+</ol>
+<h3 id="launching-the-app-with-a-custom-config">Launching the App with a custom config <a href="#launching-the-app-with-a-custom-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#launching-the-app-with-a-custom-config" title="Permanent link">&para;</a></h3>
+<p>You can launch the FiftyOne App with a customized App config on a one-off basis
+via the following pattern:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-24-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-24-3">
+</span><span id="__span-24-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span><span class="s2">&quot;quickstart&quot;</span><span class="p">)</span>
+</span><span id="__span-24-5">
+</span><span id="__span-24-6"><span class="c1"># Create a custom App config</span>
+</span><span id="__span-24-7"><span class="n">app_config</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">app_config</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-24-8"><span class="n">app_config</span><span class="o">.</span><span class="n">show_confidence</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-24-9"><span class="n">app_config</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-24-10">
+</span><span id="__span-24-11"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">app_config</span><span class="p">)</span>
+</span></code></pre></div>
+<p>You can also configure a live <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session" title="fiftyone.core.session.Session"><code>Session</code></a> by editing its
+<a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.config" title="fiftyone.core.session.Session.config"><code>session.config</code></a> property and
+calling <a href="../api/fiftyone.core.session.html#fiftyone.core.session.Session.refresh" title="fiftyone.core.session.Session.refresh"><code>session.refresh()</code></a> to
+apply the changes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="c1"># Customize the config of a live session</span>
+</span><span id="__span-25-2"><span class="n">session</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">show_confidence</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-25-3"><span class="n">session</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-25-4"><span class="n">session</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>  <span class="c1"># must refresh after edits</span>
+</span></code></pre></div>
+<h3 id="editing-your-json-app-config">Editing your JSON App config <a href="#editing-your-json-app-config" title="Permalink to this headline">¶</a><a class="headerlink" href="#editing-your-json-app-config" title="Permanent link">&para;</a></h3>
+<p>You can permanently customize your App config by creating a
+<code>~/.fiftyone/app_config.json</code> file on your machine. The JSON file may contain
+any desired subset of config fields that you wish to customize.</p>
+<p>For example, a valid App config JSON file is:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">{</span>
+</span><span id="__span-26-2">    <span class="s2">&quot;show_confidence&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+</span><span id="__span-26-3">    <span class="s2">&quot;show_label&quot;</span><span class="p">:</span> <span class="n">false</span>
+</span><span id="__span-26-4"><span class="p">}</span>
+</span></code></pre></div>
+<p>When <code>fiftyone</code> is imported, any options from your JSON App config are applied,
+as per the order of precedence described above.</p>
+<p>Note</p>
+<p>You can customize the location from which your JSON App config is read by
+setting the <code>FIFTYONE_APP_CONFIG_PATH</code> environment variable.</p>
+<h3 id="setting-app-environment-variables">Setting App environment variables <a href="#setting-app-environment-variables" title="Permalink to this headline">¶</a><a class="headerlink" href="#setting-app-environment-variables" title="Permanent link">&para;</a></h3>
+<p>App config settings may be customized on a per-session basis by setting the
+<code>FIFTYONE_APP_XXX</code> environment variable(s) for the desired App config settings.</p>
+<p>When <code>fiftyone</code> is imported, all App config environment variables are applied,
+as per the order of precedence described above.</p>
+<p>For example, you can customize your App config in a Terminal session by
+issuing the following commands prior to launching your Python interpreter:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="n">export</span> <span class="n">FIFTYONE_APP_SHOW_CONFIDENCE</span><span class="o">=</span><span class="n">false</span>
+</span><span id="__span-27-2"><span class="n">export</span> <span class="n">FIFTYONE_APP_SHOW_LABEL</span><span class="o">=</span><span class="n">false</span>
+</span></code></pre></div>
+<h3 id="modifying-your-app-config-in-code">Modifying your App config in code <a href="#modifying-your-app-config-in-code" title="Permalink to this headline">¶</a><a class="headerlink" href="#modifying-your-app-config-in-code" title="Permanent link">&para;</a></h3>
+<p>You can dynamically modify your App config at runtime by editing the
+<code>fiftyone.app_config</code> object.</p>
+<p>Any changes to your App config applied via this manner will immediately
+take effect for all subsequent calls to <code>fiftyone.app_config</code> during your
+current session.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-28-2">
+</span><span id="__span-28-3"><span class="n">fo</span><span class="o">.</span><span class="n">app_config</span><span class="o">.</span><span class="n">show_confidence</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-28-4"><span class="n">fo</span><span class="o">.</span><span class="n">app_config</span><span class="o">.</span><span class="n">show_label</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div>
+<h2 id="configuring-plugins">Configuring plugins <a href="#configuring-plugins" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-plugins" title="Permanent link">&para;</a></h2>
+<p>You can store system-wide plugin configurations under the <code>plugins</code> key of your
+App config.</p>
+<p>Builtin plugins that you can configure include:</p>
+<ul>
+<li>
+<p>The builtin <a href="app.html#app-map-panel">Map panel</a></p>
+</li>
+<li>
+<p>The builtin <a href="app.html#app-3d-visualizer-config">3D visualizer</a></p>
+</li>
+<li>
+<p>Any <a href="../plugins/index.html#fiftyone-plugins">custom plugins</a> that you’ve registered</p>
+</li>
+</ul>
+<p>For example, you may add the following to your JSON App config
+( <code>~/.fiftyone/app_config.json</code>) to register a Mapbox token globally on your
+system:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="p">{</span>
+</span><span id="__span-29-2">    <span class="s2">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-29-3">        <span class="s2">&quot;map&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-29-4">            <span class="s2">&quot;mapboxAccessToken&quot;</span><span class="p">:</span> <span class="s2">&quot;XXXXXXXX&quot;</span>
+</span><span id="__span-29-5">        <span class="p">}</span>
+</span><span id="__span-29-6">    <span class="p">}</span>
+</span><span id="__span-29-7"><span class="p">}</span>
+</span></code></pre></div>
+<p>Note</p>
+<p>You can also store dataset-specific plugin settings by storing any subset
+of the above values on a <a href="using_datasets.html#dataset-app-config">dataset’s App config</a>.</p>
+<h2 id="configuring-a-proxy-url">Configuring a proxy URL <a href="#configuring-a-proxy-url" title="Permalink to this headline">¶</a><a class="headerlink" href="#configuring-a-proxy-url" title="Permanent link">&para;</a></h2>
+<p>When running FiftyOne in a cloud machine, such as a
+<a href="https://aws.amazon.com/sagemaker/notebooks/">SageMaker Notebook</a>, a
+<code>proxy_url</code> should be set in your
+<a href="#configuring-fiftyone-app">FiftyOne App config</a> before launching the App
+in order for browser windows or notebook cells to point to a correct App URL.
+For <a href="https://aws.amazon.com/sagemaker/notebooks/">SageMaker Notebooks</a>, the
+below code snippet shows how to configure the proxy based on your instance.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-30-2">
+</span><span id="__span-30-3"><span class="c1"># before launching the App, configure a proxy_url</span>
+</span><span id="__span-30-4"><span class="n">fo</span><span class="o">.</span><span class="n">app_config</span><span class="o">.</span><span class="n">proxy_url</span> <span class="o">=</span> <span class="s2">&quot;https://&lt;myinstance&gt;.notebook.&lt;region&gt;.sagemaker.aws/proxy/&lt;port&gt;/&quot;</span>
+</span><span id="__span-30-5">
+</span><span id="__span-30-6"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">port</span><span class="o">=&lt;</span><span class="n">port</span><span class="o">&gt;</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

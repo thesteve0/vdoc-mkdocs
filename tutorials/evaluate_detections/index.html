@@ -1,0 +1,1912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Evaluating Object Detections with FiftyOne ¶ - Voxel51 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#evaluating-object-detections-with-fiftyone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Voxel51 Documentation" class="md-header__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxel51 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Evaluating Object Detections with FiftyOne ¶
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Voxel51 Documentation" class="md-nav__button md-logo" aria-label="Voxel51 Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Voxel51 Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thesteve0/vdoc-mkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualenvs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/datasets_samples_fields/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets, Samples, and Fields
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/application_tour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tour of the Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fiftyone_concepts/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FiftyOne Concepts
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            FiftyOne Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiftyone_concepts/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How Do I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data and Models
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Data and Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../data_and_models/dataset_zoo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Zoo Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Zoo Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Built-In Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/remote/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remotely-Sourced Zoo Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/dataset_zoo/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zoo Data API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_and_models/hugging_face_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hugging Face Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fifty One Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-predictions-to-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add predictions to dataset ¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-detections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyzing detections ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyzing detections ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-bounding-boxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing bounding boxes ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-samples-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting samples of interest ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-thresholding-in-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confidence thresholding in the App ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-thresholding-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confidence thresholding in Python ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-object-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing object patches ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-detections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate detections ¶
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluate detections ¶">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running evaluation ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate results ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-level-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample-level analysis ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation views ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-best-performing-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      View the best-performing samples ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-worst-performing-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      View the worst-performing samples ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-by-bounding-box-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering by bounding box area ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-detections-in-a-crowd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing detections in a crowd ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-complex-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      More complex insights ¶
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tagging-and-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tagging and next steps ¶
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary ¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/thesteve0/vdoc-mkdocs/blob/main/docs/tutorials/evaluate_detections.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="evaluating-object-detections-with-fiftyone">Evaluating Object Detections with FiftyOne <a href="#Evaluating-Object-Detections-with-FiftyOne" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluating-object-detections-with-fiftyone" title="Permanent link">&para;</a></h1>
+<p>This walkthrough demonstrates how to use FiftyOne to perform hands-on evaluation of your detection model.</p>
+<p>It covers the following concepts:</p>
+<ul>
+<li>
+<p>Loading a dataset with ground truth labels <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html">into FiftyOne</a></p>
+</li>
+<li>
+<p><a href="https://voxel51.com/docs/fiftyone/recipes/adding_detections.html">Adding model predictions</a> to your dataset</p>
+</li>
+<li>
+<p><a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html#detections">Evaluating your model</a> using FiftyOne’s evaluation API</p>
+</li>
+<li>
+<p>Viewing the best and worst performing samples in your dataset</p>
+</li>
+</ul>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>Aggregate measures of performance like mAP don’t give you the full picture of your detection model. In practice, the limiting factor on your model’s performance is often data quality issues that you need to <strong>see</strong> to address. FiftyOne is designed to make it easy to do just that.</p>
+<p>Running the workflow presented here on your ML projects will help you to understand the current failure modes (edge cases) of your model and how to fix them, including:</p>
+<ul>
+<li>
+<p>Identifying scenarios that require additional training samples in order to boost your model’s performance</p>
+</li>
+<li>
+<p>Deciding whether your ground truth annotations have errors/weaknesses that need to be corrected before any subsequent model training will be profitable</p>
+</li>
+</ul>
+<h2 id="setup">Setup <a href="#Setup" title="Permalink to this headline">¶</a><a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>If you haven’t already, install FiftyOne:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">fiftyone</span>
+</span></code></pre></div>
+<p>In this tutorial, we’ll use an off-the-shelf <a href="https://pytorch.org/docs/stable/torchvision/models.html#faster-r-cnn">Faster R-CNN detection model</a> provided by PyTorch. To use it, you’ll need to install <code>torch</code> and <code>torchvision</code>, if necessary.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span>
+</span></code></pre></div>
+<p>If you wanted to, you could download the pretrained model from the web and load it with <code>torchvision</code>. However, this model is also available via the <a href="https://docs.voxel51.com/user_guide/model_zoo/index.html">FiftyOne Model Zoo</a>, which makes our lives much easier!</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-5-2"><span class="n">model</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_model</span><span class="p">(</span><span class="s1">&#39;faster-rcnn-resnet50-fpn-coco-torch&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We’ll perform our analysis on the validation split of the <a href="https://cocodataset.org/#home">COCO dataset</a>, which is conveniently available for download via the <a href="https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html#coco-2017">FiftyOne Dataset Zoo</a>.</p>
+<p>The snippet below will download the validation split and load it into FiftyOne.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fo</span>
+</span><span id="__span-7-2"><span class="kn">import</span><span class="w"> </span><span class="nn">fiftyone.zoo</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">foz</span>
+</span><span id="__span-7-3">
+</span><span id="__span-7-4"><span class="n">dataset</span> <span class="o">=</span> <span class="n">foz</span><span class="o">.</span><span class="n">load_zoo_dataset</span><span class="p">(</span>
+</span><span id="__span-7-5">    <span class="s2">&quot;coco-2017&quot;</span><span class="p">,</span>
+</span><span id="__span-7-6">    <span class="n">split</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+</span><span id="__span-7-7">    <span class="n">dataset_name</span><span class="o">=</span><span class="s2">&quot;evaluate-detections-tutorial&quot;</span><span class="p">,</span>
+</span><span id="__span-7-8"><span class="p">)</span>
+</span><span id="__span-7-9"><span class="n">dataset</span><span class="o">.</span><span class="n">persistent</span> <span class="o">=</span> <span class="kc">True</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><span class="n">Downloading</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="n">to</span> <span class="s1">&#39;/Users/jacobmarks/fiftyone/coco-2017/validation&#39;</span> <span class="k">if</span> <span class="n">necessary</span>
+</span><span id="__span-8-2"><span class="n">Found</span> <span class="n">annotations</span> <span class="n">at</span> <span class="s1">&#39;/Users/jacobmarks/fiftyone/coco-2017/raw/instances_val2017.json&#39;</span>
+</span><span id="__span-8-3"><span class="n">Images</span> <span class="n">already</span> <span class="n">downloaded</span>
+</span><span id="__span-8-4"><span class="n">Existing</span> <span class="n">download</span> <span class="n">of</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span> <span class="ow">is</span> <span class="n">sufficient</span>
+</span><span id="__span-8-5"><span class="n">Loading</span> <span class="s1">&#39;coco-2017&#39;</span> <span class="n">split</span> <span class="s1">&#39;validation&#39;</span>
+</span><span id="__span-8-6"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████</span><span class="o">|</span> <span class="mi">5000</span><span class="o">/</span><span class="mi">5000</span> <span class="p">[</span><span class="mf">14.7</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">360.0</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-8-7"><span class="n">Dataset</span> <span class="s1">&#39;evaluate-detections-tutorial&#39;</span> <span class="n">created</span>
+</span></code></pre></div>
+<p>Let’s inspect the dataset to see what we downloaded:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><span class="c1"># Print some information about the dataset</span>
+</span><span id="__span-10-2"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><span class="n">Name</span><span class="p">:</span>        <span class="n">evaluate</span><span class="o">-</span><span class="n">detections</span><span class="o">-</span><span class="n">tutorial</span>
+</span><span id="__span-11-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-11-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">5000</span>
+</span><span id="__span-11-4"><span class="n">Persistent</span><span class="p">:</span>  <span class="kc">True</span>
+</span><span id="__span-11-5"><span class="n">Tags</span><span class="p">:</span>        <span class="p">[]</span>
+</span><span id="__span-11-6"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-11-7">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-11-8">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-11-9">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-11-10">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">)</span>
+</span><span id="__span-11-11">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><span class="p">[</span><span class="mi">6</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><span class="c1"># Print a ground truth detection</span>
+</span><span id="__span-13-2"><span class="n">sample</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</span><span id="__span-13-3"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">ground_truth</span><span class="o">.</span><span class="n">detections</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><span class="o">&lt;</span><span class="n">Detection</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-14-2">    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;66047a4705c1282f3e97c5e9&#39;</span><span class="p">,</span>
+</span><span id="__span-14-3">    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-14-4">    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__span-14-5">    <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;potted plant&#39;</span><span class="p">,</span>
+</span><span id="__span-14-6">    <span class="s1">&#39;bounding_box&#39;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-14-7">        <span class="mf">0.37028125</span><span class="p">,</span>\
+</span><span id="__span-14-8">        <span class="mf">0.3345305164319249</span><span class="p">,</span>\
+</span><span id="__span-14-9">        <span class="mf">0.038593749999999996</span><span class="p">,</span>\
+</span><span id="__span-14-10">        <span class="mf">0.16314553990610328</span><span class="p">,</span>\
+</span><span id="__span-14-11">    <span class="p">],</span>
+</span><span id="__span-14-12">    <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-13">    <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-14">    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-15">    <span class="s1">&#39;supercategory&#39;</span><span class="p">:</span> <span class="s1">&#39;furniture&#39;</span><span class="p">,</span>
+</span><span id="__span-14-16">    <span class="s1">&#39;iscrowd&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-14-17"><span class="p">}</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>Note that the ground truth detections are stored in the <code>ground_truth</code> field of the samples.</p>
+<p>Before we go further, let’s launch the <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html">FiftyOne App</a> and use the GUI to explore the dataset visually:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><span class="n">session</span> <span class="o">=</span> <span class="n">fo</span><span class="o">.</span><span class="n">launch_app</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Evaluate Detections Dataset" src="../../_images/evaluate_detections_dataset.jpg" /></p>
+<h2 id="add-predictions-to-dataset">Add predictions to dataset <a href="#Add-predictions-to-dataset" title="Permalink to this headline">¶</a><a class="headerlink" href="#add-predictions-to-dataset" title="Permanent link">&para;</a></h2>
+<p>Now let’s generate some predictions to analyze.</p>
+<p>Because we loaded the model from the FiftyOne Model Zoo, it is a FiftyOne model object, which means we can apply it directly to our dataset (or any subset thereof) for inference using the sample collection’s <code>apply_model()</code> method.</p>
+<p>The code below performs inference with the Faster R-CNN model on a randomly chosen subset of 100 samples from the dataset and stores the resulting predictions in a <code>faster_rcnn</code> field of the samples.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><span class="p">[</span><span class="mi">9</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><span class="c1"># Choose a random subset of 100 samples to add predictions to</span>
+</span><span id="__span-18-2"><span class="n">predictions_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><span class="p">[</span><span class="mi">10</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><span class="n">predictions_view</span><span class="o">.</span><span class="n">apply_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">label_field</span><span class="o">=</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">100</span><span class="o">/</span><span class="mi">100</span> <span class="p">[</span><span class="mf">1.4</span><span class="n">m</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">1.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Let’s load <code>predictions_view</code> in the App to visualize the predictions that we added:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><span class="p">[</span><span class="mi">11</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">predictions_view</span>
+</span></code></pre></div>
+<p><img alt="Predictions View" src="../../_images/evaluate_detections_prediction_view.jpg" /></p>
+<h2 id="analyzing-detections">Analyzing detections <a href="#Analyzing-detections" title="Permalink to this headline">¶</a><a class="headerlink" href="#analyzing-detections" title="Permanent link">&para;</a></h2>
+<p>Let’s analyze the raw predictions we’ve added to our dataset in more detail.</p>
+<h3 id="visualizing-bounding-boxes">Visualizing bounding boxes <a href="#Visualizing-bounding-boxes" title="Permalink to this headline">¶</a><a class="headerlink" href="#visualizing-bounding-boxes" title="Permanent link">&para;</a></h3>
+<p>Let’s start by loading the full dataset in the App:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><span class="c1"># Resets the session; the entire dataset will now be shown</span>
+</span><span id="__span-25-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+</span></code></pre></div>
+<p><img alt="All boxes" src="../../_images/evaluate_detections_all_boxes.jpg" /></p>
+<p>Only the 100 samples in <code>predictions_view</code> have predictions in their <code>faster_rcnn</code> field, so some of the samples we see above do not have predicted boxes.</p>
+<p>If we want to recover our predictions view, we can do this programmatically via <code>session.view = predictions_view</code>, or we can use the <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#using-the-view-bar">view bar in the App</a> to accomplish the same thing:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><span class="c1"># Use the view bar to create an `Exists(faster_rcnn, True)` stage</span>
+</span><span id="__span-27-2"><span class="c1"># Now your view contains only the 100 samples with predictions in `faster_rcnn` field</span>
+</span><span id="__span-27-3"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="Exists Filter" src="../../_images/evaluate_detections_exists_filter.gif" /></p>
+<p>Each field of the samples are shown as togglable checkboxes on the left sidebar which can be used to control whether ground truth detections or predictions are rendered on the images.</p>
+<p>You can also click on an image to view the sample in more detail:</p>
+<p><img alt="Click Image" src="../../_images/evaluate_detections_click_image.gif" /></p>
+<h3 id="selecting-samples-of-interest">Selecting samples of interest <a href="#Selecting-samples-of-interest" title="Permalink to this headline">¶</a><a class="headerlink" href="#selecting-samples-of-interest" title="Permanent link">&para;</a></h3>
+<p>You can select images in the App by clicking on the checkbox when hovering over an image. Then, you can create a view that contains only those samples by clicking the orange checkmark with the number of selected samples in the top left corner of the sample grid and clicking <code>Only show selected samples</code>.</p>
+<p><img alt="Only show selected" src="../../_images/evaluate_detections_only_show_selected.gif" /></p>
+<p>Let’s reset our session to show our <code>predictions_view</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><span class="p">[</span><span class="mi">12</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">predictions_view</span>
+</span></code></pre></div>
+<h3 id="confidence-thresholding-in-the-app">Confidence thresholding in the App <a href="#Confidence-thresholding-in-the-App" title="Permalink to this headline">¶</a><a class="headerlink" href="#confidence-thresholding-in-the-app" title="Permanent link">&para;</a></h3>
+<p>From the App instance above, it looks like our detector is generating some spurious low-quality detections. Let’s use the App to interactively filter the predictions by <code>confidence</code> to identify a reasonable confidence threshold for our model:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><span class="c1"># Click the down caret on the `faster_rcnn` field of Fields Sidebar</span>
+</span><span id="__span-31-2"><span class="c1"># and apply a confidence threshold</span>
+</span><span id="__span-31-3"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="Confidence Threshold" src="../../_images/evaluate_detections_confidence_filter.jpg" /></p>
+<p>It looks like a confidence threshold of 0.75 is a good choice for our model, but we’ll confirm that quantitatively later.</p>
+<h3 id="confidence-thresholding-in-python">Confidence thresholding in Python <a href="#Confidence-thresholding-in-Python" title="Permalink to this headline">¶</a><a class="headerlink" href="#confidence-thresholding-in-python" title="Permanent link">&para;</a></h3>
+<p>FiftyOne also provides the ability to <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering">write expressions</a> that match, filter, and sort detections based on their attributes. See <a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html">using DatasetViews</a> for full details.</p>
+<p>For example, we can programmatically generate a view that contains only detections whose <code>confidence</code> is at least <code>0.75</code> as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><span class="p">[</span><span class="mi">13</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><span class="kn">from</span><span class="w"> </span><span class="nn">fiftyone</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViewField</span> <span class="k">as</span> <span class="n">F</span>
+</span><span id="__span-33-2">
+</span><span id="__span-33-3"><span class="c1"># Only contains detections with confidence &gt;= 0.75</span>
+</span><span id="__span-33-4"><span class="n">high_conf_view</span> <span class="o">=</span> <span class="n">predictions_view</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;confidence&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.75</span><span class="p">,</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Note the <code>only_matches=False</code> argument. When filtering labels, any samples that no longer contain labels would normally be removed from the view. However, this is not desired when performing evaluations since it can skew your results between views. We set <code>only_matches=False</code> so that all samples will be retained, even if some no longer contain labels.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><span class="p">[</span><span class="mi">14</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><span class="c1"># Print some information about the view</span>
+</span><span id="__span-35-2"><span class="nb">print</span><span class="p">(</span><span class="n">high_conf_view</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><span class="n">Dataset</span><span class="p">:</span>     <span class="n">evaluate</span><span class="o">-</span><span class="n">detections</span><span class="o">-</span><span class="n">tutorial</span>
+</span><span id="__span-36-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-36-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-36-4"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-36-5">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-36-6">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-36-7">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-36-8">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">)</span>
+</span><span id="__span-36-9">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-36-10">    <span class="n">faster_rcnn</span><span class="p">:</span>  <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-36-11"><span class="n">View</span> <span class="n">stages</span><span class="p">:</span>
+</span><span id="__span-36-12">    <span class="mf">1.</span> <span class="n">Take</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span><span id="__span-36-13">    <span class="mf">2.</span> <span class="n">FilterLabels</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;faster_rcnn&#39;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;$$this.confidence&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]},</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">trajectories</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><span class="p">[</span><span class="mi">15</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><span class="c1"># Print a prediction from the view to verify that its confidence is &gt; 0.75</span>
+</span><span id="__span-38-2"><span class="n">sample</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</span><span id="__span-38-3"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">faster_rcnn</span><span class="o">.</span><span class="n">detections</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><span class="o">&lt;</span><span class="n">Detection</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-39-2">    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;66047b0f05c1282f3e986920&#39;</span><span class="p">,</span>
+</span><span id="__span-39-3">    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-39-4">    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__span-39-5">    <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;airplane&#39;</span><span class="p">,</span>
+</span><span id="__span-39-6">    <span class="s1">&#39;bounding_box&#39;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-39-7">        <span class="mf">0.5629980087280273</span><span class="p">,</span>\
+</span><span id="__span-39-8">        <span class="mf">0.7977214296832356</span><span class="p">,</span>\
+</span><span id="__span-39-9">        <span class="mf">0.03478360176086426</span><span class="p">,</span>\
+</span><span id="__span-39-10">        <span class="mf">0.1007584484383529</span><span class="p">,</span>\
+</span><span id="__span-39-11">    <span class="p">],</span>
+</span><span id="__span-39-12">    <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-39-13">    <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.9952868223190308</span><span class="p">,</span>
+</span><span id="__span-39-14">    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-39-15"><span class="p">}</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>Now let’s load our view in the App to view the predictions that we programmatically selected:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><span class="p">[</span><span class="mi">16</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><span class="c1"># Load high confidence view in the App</span>
+</span><span id="__span-41-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">high_conf_view</span>
+</span></code></pre></div>
+<p><img alt="High Confidence" src="../../_images/evaluate_detections_high_conf_view.jpg" /></p>
+<h3 id="viewing-object-patches">Viewing object patches <a href="#Viewing-object-patches" title="Permalink to this headline">¶</a><a class="headerlink" href="#viewing-object-patches" title="Permanent link">&para;</a></h3>
+<p>There are multiple situations where it can be useful to visualize each object separately. For example, if a sample contains dozens of objects overlapping one another or if you want to look specifically for instances of a class of objects.</p>
+<p>In any case, the FiftyOne App provides a <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#viewing-object-patches">patches view button</a> that allows you to take any <code>Detections</code> field in your dataset and visualize each object as an individual patch in the image grid.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><span class="n">session</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="Patches View" src="../../_images/evaluate_detections_gt_patches.gif" /></p>
+<h2 id="evaluate-detections">Evaluate detections <a href="#Evaluate-detections" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluate-detections" title="Permanent link">&para;</a></h2>
+<p>Now that we have samples with ground truth and predicted objects, let’s use FiftyOne to evaluate the quality of the detections.</p>
+<p>FiftyOne provides a powerful <a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html">evaluation API</a> that contains a collection of methods for performing evaluation of model predictions. Since we’re working with object detections here, we’ll use <a href="https://voxel51.com/docs/fiftyone/user_guide/evaluation.html#detections">detection evaluation</a>.</p>
+<h3 id="running-evaluation">Running evaluation <a href="#Running-evaluation" title="Permalink to this headline">¶</a><a class="headerlink" href="#running-evaluation" title="Permanent link">&para;</a></h3>
+<p>We can run evaluation on our samples via <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections">evaluate_detections()</a>. Note that this method is available on both the <code>Dataset</code> and <code>DatasetView</code> classes, which means that we can run evaluation on our <code>high_conf_view</code> to assess the quality of only the high confidence predictions in our dataset.</p>
+<p>By default, this method will use the <a href="https://cocodataset.org/#detection-eval">COCO evaluation protocol</a>, plus some extra goodies that we will use later.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><span class="p">[</span><span class="mi">17</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><span class="c1"># Evaluate the predictions in the `faster_rcnn` field of our `high_conf_view`</span>
+</span><span id="__span-45-2"><span class="c1"># with respect to the objects in the `ground_truth` field</span>
+</span><span id="__span-45-3"><span class="n">results</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-45-4">    <span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span>
+</span><span id="__span-45-5">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-45-6">    <span class="n">eval_key</span><span class="o">=</span><span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-45-7">    <span class="n">compute_mAP</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-45-8"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-46-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">100</span><span class="o">/</span><span class="mi">100</span> <span class="p">[</span><span class="mf">1.8</span><span class="n">s</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">53.7</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-46-3"><span class="n">Performing</span> <span class="n">IoU</span> <span class="n">sweep</span><span class="o">...</span>
+</span><span id="__span-46-4"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">█████████████████</span><span class="o">|</span> <span class="mi">100</span><span class="o">/</span><span class="mi">100</span> <span class="p">[</span><span class="mf">882.6</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">113.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="aggregate-results">Aggregate results <a href="#Aggregate-results" title="Permalink to this headline">¶</a><a class="headerlink" href="#aggregate-results" title="Permanent link">&para;</a></h3>
+<p>The <code>results</code> object returned by the evaluation routine provides a number of convenient methods for analyzing our predictions.</p>
+<p>For example, let’s print a classification report for the top-10 most common classes in the dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><span class="p">[</span><span class="mi">18</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><span class="c1"># Get the 10 most common classes in the dataset</span>
+</span><span id="__span-48-2"><span class="n">counts</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-48-3"><span class="n">classes_top10</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-48-4">
+</span><span id="__span-48-5"><span class="c1"># Print a classification report for the top-10 classes</span>
+</span><span id="__span-48-6"><span class="n">results</span><span class="o">.</span><span class="n">print_report</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes_top10</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1">               <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-49-2">
+</span><span id="__span-49-3">       <span class="n">person</span>       <span class="mf">0.89</span>      <span class="mf">0.80</span>      <span class="mf">0.84</span>       <span class="mi">263</span>
+</span><span id="__span-49-4">          <span class="n">car</span>       <span class="mf">0.72</span>      <span class="mf">0.56</span>      <span class="mf">0.63</span>        <span class="mi">55</span>
+</span><span id="__span-49-5">        <span class="n">chair</span>       <span class="mf">0.53</span>      <span class="mf">0.23</span>      <span class="mf">0.32</span>        <span class="mi">35</span>
+</span><span id="__span-49-6">         <span class="n">book</span>       <span class="mf">1.00</span>      <span class="mf">0.30</span>      <span class="mf">0.47</span>        <span class="mi">33</span>
+</span><span id="__span-49-7">       <span class="n">bottle</span>       <span class="mf">0.60</span>      <span class="mf">0.67</span>      <span class="mf">0.63</span>         <span class="mi">9</span>
+</span><span id="__span-49-8">          <span class="n">cup</span>       <span class="mf">0.93</span>      <span class="mf">0.81</span>      <span class="mf">0.87</span>        <span class="mi">16</span>
+</span><span id="__span-49-9"> <span class="n">dining</span> <span class="n">table</span>       <span class="mf">0.50</span>      <span class="mf">0.62</span>      <span class="mf">0.55</span>        <span class="mi">13</span>
+</span><span id="__span-49-10"><span class="n">traffic</span> <span class="n">light</span>       <span class="mf">0.50</span>      <span class="mf">0.46</span>      <span class="mf">0.48</span>        <span class="mi">13</span>
+</span><span id="__span-49-11">         <span class="n">bowl</span>       <span class="mf">0.71</span>      <span class="mf">0.38</span>      <span class="mf">0.50</span>        <span class="mi">13</span>
+</span><span id="__span-49-12">      <span class="n">handbag</span>       <span class="mf">0.50</span>      <span class="mf">0.18</span>      <span class="mf">0.26</span>        <span class="mi">17</span>
+</span><span id="__span-49-13">
+</span><span id="__span-49-14">    <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.81</span>      <span class="mf">0.64</span>      <span class="mf">0.72</span>       <span class="mi">467</span>
+</span><span id="__span-49-15">    <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.69</span>      <span class="mf">0.50</span>      <span class="mf">0.56</span>       <span class="mi">467</span>
+</span><span id="__span-49-16"> <span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.81</span>      <span class="mf">0.64</span>      <span class="mf">0.70</span>       <span class="mi">467</span>
+</span></code></pre></div>
+<p>We can also compute the mean average-precision (mAP) of our detector:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><span class="p">[</span><span class="mi">19</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">mAP</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><span class="mf">0.3519380509318074</span>
+</span></code></pre></div>
+<p>Since <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections">evaluate_detections()</a> uses the official <a href="https://cocodataset.org/#detection-eval">COCO evaluation protocol</a>, this mAP value will match what <code>pycocotools</code> would report.</p>
+<p>We can also view some precision-recall (PR) curves for specific classes of our model:</p>
+<p>Install ipywidgets to view the PR curves:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-54-1"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;ipywidgets&gt;=8,&lt;9&#39;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><span class="p">[</span><span class="mi">23</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-56-1"><span class="n">plot</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">plot_pr_curves</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;person&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">])</span>
+</span><span id="__span-56-2"><span class="n">plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="../_images/tutorials_evaluate_detections_59_1.png" src="../../_images/tutorials_evaluate_detections_59_1.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><span class="p">[</span><span class="mi">24</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><span class="n">plot</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>  <span class="c1"># replaces interactive plot with static image</span>
+</span></code></pre></div>
+<h3 id="sample-level-analysis">Sample-level analysis <a href="#Sample-level-analysis" title="Permalink to this headline">¶</a><a class="headerlink" href="#sample-level-analysis" title="Permanent link">&para;</a></h3>
+<p>The evaluation routine also populated some new fields on our dataset that contain helpful information that we can use to evaluate our predictions at the sample-level.</p>
+<p>In particular, each sample now contains new fields:</p>
+<ul>
+<li>
+<p><code>eval_tp</code>: the number of true positive (TP) predictions in the sample</p>
+</li>
+<li>
+<p><code>eval_fp</code>: the number of false positive (FP) predictions in the sample</p>
+</li>
+<li>
+<p><code>eval_fn</code>: the number of false negative (FN) predictions in the sample</p>
+</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><span class="p">[</span><span class="mi">25</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-60-1"><span class="c1"># Our dataset&#39;s schema now contains `eval_*` fields</span>
+</span><span id="__span-60-2"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-61-1"><span class="n">Name</span><span class="p">:</span>        <span class="n">evaluate</span><span class="o">-</span><span class="n">detections</span><span class="o">-</span><span class="n">tutorial</span>
+</span><span id="__span-61-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-61-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">5000</span>
+</span><span id="__span-61-4"><span class="n">Persistent</span><span class="p">:</span>  <span class="kc">True</span>
+</span><span id="__span-61-5"><span class="n">Tags</span><span class="p">:</span>        <span class="p">[]</span>
+</span><span id="__span-61-6"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-61-7">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-61-8">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-61-9">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-61-10">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">)</span>
+</span><span id="__span-61-11">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-61-12">    <span class="n">faster_rcnn</span><span class="p">:</span>  <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-61-13">    <span class="n">eval_tp</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span><span id="__span-61-14">    <span class="n">eval_fp</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span><span id="__span-61-15">    <span class="n">eval_fn</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span></code></pre></div>
+<p>The individual predicted and ground truth objects also have fields populated on them describing the results of the matching process:</p>
+<ul>
+<li>
+<p><code>eval</code>: whether the object is a TP/FP/FN</p>
+</li>
+<li>
+<p><code>eval_id</code>: the ID of the matching ground truth/predicted object, if any</p>
+</li>
+<li>
+<p><code>eval_iou</code>: the IoU between the matching objects, if any</p>
+</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-62-1"><span class="p">[</span><span class="mi">26</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-63-1"><span class="c1"># Our detections have helpful evaluation data on them</span>
+</span><span id="__span-63-2"><span class="n">sample</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</span><span id="__span-63-3"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">faster_rcnn</span><span class="o">.</span><span class="n">detections</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-64-1"><span class="o">&lt;</span><span class="n">Detection</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-64-2">    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;66047b0f05c1282f3e986920&#39;</span><span class="p">,</span>
+</span><span id="__span-64-3">    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-64-4">    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__span-64-5">    <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;airplane&#39;</span><span class="p">,</span>
+</span><span id="__span-64-6">    <span class="s1">&#39;bounding_box&#39;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-64-7">        <span class="mf">0.5629980087280273</span><span class="p">,</span>\
+</span><span id="__span-64-8">        <span class="mf">0.7977214296832356</span><span class="p">,</span>\
+</span><span id="__span-64-9">        <span class="mf">0.03478360176086426</span><span class="p">,</span>\
+</span><span id="__span-64-10">        <span class="mf">0.1007584484383529</span><span class="p">,</span>\
+</span><span id="__span-64-11">    <span class="p">],</span>
+</span><span id="__span-64-12">    <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-64-13">    <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.9952868223190308</span><span class="p">,</span>
+</span><span id="__span-64-14">    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-64-15">    <span class="s1">&#39;eval_iou&#39;</span><span class="p">:</span> <span class="mf">0.8995312552391188</span><span class="p">,</span>
+</span><span id="__span-64-16">    <span class="s1">&#39;eval_id&#39;</span><span class="p">:</span> <span class="s1">&#39;66047a4b05c1282f3e97f285&#39;</span><span class="p">,</span>
+</span><span id="__span-64-17">    <span class="s1">&#39;eval&#39;</span><span class="p">:</span> <span class="s1">&#39;tp&#39;</span><span class="p">,</span>
+</span><span id="__span-64-18"><span class="p">}</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>These extra fields were added because we provided the <code>eval_key</code> parameter to <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections">evaluate_detections()</a>. If we had omitted this parameter, then no information would have been recorded on our samples.</p>
+<p>Don’t worry, if you forget what evaluations you’ve run, you can retrieve information about the evaluation later:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-65-1"><span class="p">[</span><span class="mi">27</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-66-1"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">list_evaluations</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-67-1"><span class="p">[</span><span class="s1">&#39;eval&#39;</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-68-1"><span class="p">[</span><span class="mi">28</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-69-1"><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_evaluation_info</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-70-1"><span class="p">{</span>
+</span><span id="__span-70-2">    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;eval&quot;</span><span class="p">,</span>
+</span><span id="__span-70-3">    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.24.0&quot;</span><span class="p">,</span>
+</span><span id="__span-70-4">    <span class="s2">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-03-27T22:10:32.599000&quot;</span><span class="p">,</span>
+</span><span id="__span-70-5">    <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-70-6">        <span class="s2">&quot;cls&quot;</span><span class="p">:</span> <span class="s2">&quot;fiftyone.utils.eval.coco.COCOEvaluationConfig&quot;</span><span class="p">,</span>
+</span><span id="__span-70-7">        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;detection&quot;</span><span class="p">,</span>
+</span><span id="__span-70-8">        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;coco&quot;</span><span class="p">,</span>
+</span><span id="__span-70-9">        <span class="s2">&quot;pred_field&quot;</span><span class="p">:</span> <span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span>
+</span><span id="__span-70-10">        <span class="s2">&quot;gt_field&quot;</span><span class="p">:</span> <span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-70-11">        <span class="s2">&quot;iou&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+</span><span id="__span-70-12">        <span class="s2">&quot;classwise&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</span><span id="__span-70-13">        <span class="s2">&quot;iscrowd&quot;</span><span class="p">:</span> <span class="s2">&quot;iscrowd&quot;</span><span class="p">,</span>
+</span><span id="__span-70-14">        <span class="s2">&quot;use_masks&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+</span><span id="__span-70-15">        <span class="s2">&quot;use_boxes&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+</span><span id="__span-70-16">        <span class="s2">&quot;tolerance&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+</span><span id="__span-70-17">        <span class="s2">&quot;compute_mAP&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</span><span id="__span-70-18">        <span class="s2">&quot;iou_threshs&quot;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-70-19">            <span class="mf">0.5</span><span class="p">,</span>\
+</span><span id="__span-70-20">            <span class="mf">0.55</span><span class="p">,</span>\
+</span><span id="__span-70-21">            <span class="mf">0.6</span><span class="p">,</span>\
+</span><span id="__span-70-22">            <span class="mf">0.65</span><span class="p">,</span>\
+</span><span id="__span-70-23">            <span class="mf">0.7</span><span class="p">,</span>\
+</span><span id="__span-70-24">            <span class="mf">0.75</span><span class="p">,</span>\
+</span><span id="__span-70-25">            <span class="mf">0.8</span><span class="p">,</span>\
+</span><span id="__span-70-26">            <span class="mf">0.85</span><span class="p">,</span>\
+</span><span id="__span-70-27">            <span class="mf">0.9</span><span class="p">,</span>\
+</span><span id="__span-70-28">            <span class="mf">0.95</span>\
+</span><span id="__span-70-29">        <span class="p">],</span>
+</span><span id="__span-70-30">        <span class="s2">&quot;max_preds&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-70-31">        <span class="s2">&quot;error_level&quot;</span><span class="p">:</span> <span class="mi">1</span>
+</span><span id="__span-70-32">    <span class="p">}</span>
+</span><span id="__span-70-33"><span class="p">}</span>
+</span></code></pre></div>
+<p>You can even load the view on which you ran an evaluation by calling the <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html?highlight=load_evaluation_view#fiftyone.core.collections.SampleCollection.load_evaluation_view">load_evaluation_view()</a> method on the parent dataset:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-71-1"><span class="p">[</span><span class="mi">29</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-72-1"><span class="c1"># Load the view on which we ran the `eval` evaluation</span>
+</span><span id="__span-72-2"><span class="n">eval_view</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_evaluation_view</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span>
+</span><span id="__span-72-3"><span class="nb">print</span><span class="p">(</span><span class="n">eval_view</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-73-1"><span class="n">Dataset</span><span class="p">:</span>     <span class="n">evaluate</span><span class="o">-</span><span class="n">detections</span><span class="o">-</span><span class="n">tutorial</span>
+</span><span id="__span-73-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-73-3"><span class="n">Num</span> <span class="n">samples</span><span class="p">:</span> <span class="mi">100</span>
+</span><span id="__span-73-4"><span class="n">Sample</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-73-5">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-73-6">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-73-7">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-73-8">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">)</span>
+</span><span id="__span-73-9">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-73-10">    <span class="n">faster_rcnn</span><span class="p">:</span>  <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-73-11">    <span class="n">eval_tp</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span><span id="__span-73-12">    <span class="n">eval_fp</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span><span id="__span-73-13">    <span class="n">eval_fn</span><span class="p">:</span>      <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">IntField</span>
+</span><span id="__span-73-14"><span class="n">View</span> <span class="n">stages</span><span class="p">:</span>
+</span><span id="__span-73-15">    <span class="mf">1.</span> <span class="n">Take</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+</span><span id="__span-73-16">    <span class="mf">2.</span> <span class="n">FilterLabels</span><span class="p">(</span><span class="n">field</span><span class="o">=</span><span class="s1">&#39;faster_rcnn&#39;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;$gt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;$$this.confidence&#39;</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]},</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">trajectories</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Finally, you can delete an evaluation from a dataset, including any information that was added to your samples, by calling <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_evaluation">delete_evaluation()</a>.</p>
+<h3 id="evaluation-views">Evaluation views <a href="#Evaluation-views" title="Permalink to this headline">¶</a><a class="headerlink" href="#evaluation-views" title="Permanent link">&para;</a></h3>
+<p>So, now that we have a sense for the aggregate performance of our model, let’s dive into sample-level analysis by creating an <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#viewing-evaluation-patches">evaluation view</a>.</p>
+<p>Any evaluation that you stored on your dataset can be used to generate an <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#viewing-evaluation-patches">evaluation view</a> that is a patches view creating a sample for every true positive, false positive, and false negative in your dataset. Through this view, you can quickly filter and sort evaluated detections by their type (TP/FP/FN), evaluated IoU, and if they are matched to a crowd object.</p>
+<p>These evaluation views can be created through Python or directly in the App as shown below.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-74-1"><span class="p">[</span><span class="mi">30</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-75-1"><span class="n">eval_patches</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_evaluation_patches</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span>
+</span><span id="__span-75-2"><span class="nb">print</span><span class="p">(</span><span class="n">eval_patches</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-76-1"><span class="n">Dataset</span><span class="p">:</span>     <span class="n">evaluate</span><span class="o">-</span><span class="n">detections</span><span class="o">-</span><span class="n">tutorial</span>
+</span><span id="__span-76-2"><span class="n">Media</span> <span class="nb">type</span><span class="p">:</span>  <span class="n">image</span>
+</span><span id="__span-76-3"><span class="n">Num</span> <span class="n">patches</span><span class="p">:</span> <span class="mi">37747</span>
+</span><span id="__span-76-4"><span class="n">Patch</span> <span class="n">fields</span><span class="p">:</span>
+</span><span id="__span-76-5">    <span class="nb">id</span><span class="p">:</span>           <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-76-6">    <span class="n">sample_id</span><span class="p">:</span>    <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ObjectIdField</span>
+</span><span id="__span-76-7">    <span class="n">filepath</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-76-8">    <span class="n">tags</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">ListField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span><span class="p">)</span>
+</span><span id="__span-76-9">    <span class="n">metadata</span><span class="p">:</span>     <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">)</span>
+</span><span id="__span-76-10">    <span class="n">ground_truth</span><span class="p">:</span> <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-76-11">    <span class="n">faster_rcnn</span><span class="p">:</span>  <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">EmbeddedDocumentField</span><span class="p">(</span><span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">Detections</span><span class="p">)</span>
+</span><span id="__span-76-12">    <span class="n">crowd</span><span class="p">:</span>        <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">BooleanField</span>
+</span><span id="__span-76-13">    <span class="nb">type</span><span class="p">:</span>         <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">StringField</span>
+</span><span id="__span-76-14">    <span class="n">iou</span><span class="p">:</span>          <span class="n">fiftyone</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">FloatField</span>
+</span><span id="__span-76-15"><span class="n">View</span> <span class="n">stages</span><span class="p">:</span>
+</span><span id="__span-76-16">    <span class="mf">1.</span> <span class="n">ToEvaluationPatches</span><span class="p">(</span><span class="n">eval_key</span><span class="o">=</span><span class="s1">&#39;eval&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-77-1"><span class="p">[</span><span class="mi">31</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-78-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">high_conf_view</span>
+</span></code></pre></div>
+<p><img alt="Evaluation Patches" src="../../_images/evaluate_detections_eval_patches.gif" /></p>
+<p>Let’s use this evaluation view to find individual false positive detections with a confidence of 0.85 or greater.</p>
+<p><img alt="FP Confidence Filter" src="../../_images/evaluate_detections_high_conf_fp.gif" /></p>
+<h3 id="view-the-best-performing-samples">View the best-performing samples <a href="#View-the-best-performing-samples" title="Permalink to this headline">¶</a><a class="headerlink" href="#view-the-best-performing-samples" title="Permanent link">&para;</a></h3>
+<p>To dig in further, let’s create a view that sorts by <code>eval_tp</code> so we can see the best-performing cases of our model (i.e., the samples with the most correct predictions):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-79-1"><span class="p">[</span><span class="mi">33</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-80-1"><span class="c1"># Show samples with most true positives</span>
+</span><span id="__span-80-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_tp&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Best Samples" src="../../_images/evaluate_detections_eval_tp.jpg" /></p>
+<h3 id="view-the-worst-performing-samples">View the worst-performing samples <a href="#View-the-worst-performing-samples" title="Permalink to this headline">¶</a><a class="headerlink" href="#view-the-worst-performing-samples" title="Permanent link">&para;</a></h3>
+<p>Similarly, we can sort by the <code>eval_fp</code> field to see the worst-performing cases of our model (i.e., the samples with the most false positive predictions):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-81-1"><span class="p">[</span><span class="mi">34</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-82-1"><span class="c1"># Show samples with most false positives</span>
+</span><span id="__span-82-2"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_fp&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Worst Samples" src="../../_images/evaluate_detections_eval_fp.jpg" /></p>
+<h3 id="filtering-by-bounding-box-area">Filtering by bounding box area <a href="#Filtering-by-bounding-box-area" title="Permalink to this headline">¶</a><a class="headerlink" href="#filtering-by-bounding-box-area" title="Permanent link">&para;</a></h3>
+<p><a href="https://voxel51.com/docs/fiftyone/user_guide/using_views.html">Dataset views</a> are extremely powerful. For example, let’s look at how our model performed on small objects by creating a view that contains only predictions whose bounding box area is less than <code>32^2</code> pixels:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-83-1"><span class="p">[</span><span class="mi">37</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-84-1"><span class="c1"># Compute metadata so we can reference image height/width in our view</span>
+</span><span id="__span-84-2"><span class="n">dataset</span><span class="o">.</span><span class="n">compute_metadata</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-85-1"><span class="p">[</span><span class="mi">38</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-86-1"><span class="c1">#</span>
+</span><span id="__span-86-2"><span class="c1"># Create an expression that will match objects whose bounding boxes have</span>
+</span><span id="__span-86-3"><span class="c1"># area less than 32^2 pixels</span>
+</span><span id="__span-86-4"><span class="c1">#</span>
+</span><span id="__span-86-5"><span class="c1"># Bounding box format is [top-left-x, top-left-y, width, height]</span>
+</span><span id="__span-86-6"><span class="c1"># with relative coordinates in [0, 1], so we multiply by image</span>
+</span><span id="__span-86-7"><span class="c1"># dimensions to get pixel area</span>
+</span><span id="__span-86-8"><span class="c1">#</span>
+</span><span id="__span-86-9"><span class="n">bbox_area</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-86-10">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;$metadata.width&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;bounding_box&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span>
+</span><span id="__span-86-11">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;$metadata.height&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;bounding_box&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-86-12"><span class="p">)</span>
+</span><span id="__span-86-13"><span class="n">small_boxes</span> <span class="o">=</span> <span class="n">bbox_area</span> <span class="o">&lt;</span> <span class="mi">32</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-86-14">
+</span><span id="__span-86-15"><span class="c1"># Create a view that contains only small (and high confidence) predictions</span>
+</span><span id="__span-86-16"><span class="n">small_boxes_view</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span> <span class="n">small_boxes</span><span class="p">)</span>
+</span><span id="__span-86-17">
+</span><span id="__span-86-18"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">small_boxes_view</span>
+</span></code></pre></div>
+<p><img alt="Small Bboxes" src="../../_images/evaluate_detections_small_bboxes.jpg" /></p>
+<p>We can always re-run evaluation to see how our detector fairs on only small boxes:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-87-1"><span class="p">[</span><span class="mi">33</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-88-1"><span class="c1"># Create a view that contains only small GT and predicted boxes</span>
+</span><span id="__span-88-2"><span class="n">small_boxes_eval_view</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-88-3">    <span class="n">high_conf_view</span>
+</span><span id="__span-88-4">    <span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span> <span class="n">small_boxes</span><span class="p">,</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-88-5">    <span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span> <span class="n">small_boxes</span><span class="p">,</span> <span class="n">only_matches</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-88-6"><span class="p">)</span>
+</span><span id="__span-88-7">
+</span><span id="__span-88-8"><span class="c1"># Run evaluation</span>
+</span><span id="__span-88-9"><span class="n">small_boxes_results</span> <span class="o">=</span> <span class="n">small_boxes_eval_view</span><span class="o">.</span><span class="n">evaluate_detections</span><span class="p">(</span>
+</span><span id="__span-88-10">    <span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span>
+</span><span id="__span-88-11">    <span class="n">gt_field</span><span class="o">=</span><span class="s2">&quot;ground_truth&quot;</span><span class="p">,</span>
+</span><span id="__span-88-12"><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-89-1"><span class="n">Evaluating</span> <span class="n">detections</span><span class="o">...</span>
+</span><span id="__span-89-2"> <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">███████████████████</span><span class="o">|</span> <span class="mi">34</span><span class="o">/</span><span class="mi">34</span> <span class="p">[</span><span class="mf">339.1</span><span class="n">ms</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="n">s</span> <span class="n">remaining</span><span class="p">,</span> <span class="mf">100.3</span> <span class="n">samples</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-90-1"><span class="p">[</span><span class="mi">34</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-91-1"><span class="c1"># Get the 10 most common small object classes</span>
+</span><span id="__span-91-2"><span class="n">small_counts</span> <span class="o">=</span> <span class="n">small_boxes_eval_view</span><span class="o">.</span><span class="n">count_values</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections.label&quot;</span><span class="p">)</span>
+</span><span id="__span-91-3"><span class="n">classes_top10_small</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">small_counts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</span><span id="__span-91-4">
+</span><span id="__span-91-5"><span class="c1"># Print a classification report for the top-10 small object classes</span>
+</span><span id="__span-91-6"><span class="n">small_boxes_results</span><span class="o">.</span><span class="n">print_report</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="n">classes_top10_small</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-92-1">               <span class="n">precision</span>    <span class="n">recall</span>  <span class="n">f1</span><span class="o">-</span><span class="n">score</span>   <span class="n">support</span>
+</span><span id="__span-92-2">
+</span><span id="__span-92-3">       <span class="n">person</span>       <span class="mf">0.66</span>      <span class="mf">0.44</span>      <span class="mf">0.53</span>        <span class="mi">80</span>
+</span><span id="__span-92-4">          <span class="n">car</span>       <span class="mf">0.69</span>      <span class="mf">0.43</span>      <span class="mf">0.53</span>        <span class="mi">21</span>
+</span><span id="__span-92-5">        <span class="n">chair</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>         <span class="mi">4</span>
+</span><span id="__span-92-6">         <span class="n">book</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>        <span class="mi">20</span>
+</span><span id="__span-92-7">       <span class="n">bottle</span>       <span class="mf">0.25</span>      <span class="mf">1.00</span>      <span class="mf">0.40</span>         <span class="mi">1</span>
+</span><span id="__span-92-8">          <span class="n">cup</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>         <span class="mi">1</span>
+</span><span id="__span-92-9"> <span class="n">dining</span> <span class="n">table</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>         <span class="mi">2</span>
+</span><span id="__span-92-10"><span class="n">traffic</span> <span class="n">light</span>       <span class="mf">0.56</span>      <span class="mf">0.33</span>      <span class="mf">0.42</span>        <span class="mi">15</span>
+</span><span id="__span-92-11">      <span class="n">handbag</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>         <span class="mi">7</span>
+</span><span id="__span-92-12">         <span class="n">boat</span>       <span class="mf">0.00</span>      <span class="mf">0.00</span>      <span class="mf">0.00</span>         <span class="mi">1</span>
+</span><span id="__span-92-13">
+</span><span id="__span-92-14">    <span class="n">micro</span> <span class="n">avg</span>       <span class="mf">0.61</span>      <span class="mf">0.33</span>      <span class="mf">0.43</span>       <span class="mi">152</span>
+</span><span id="__span-92-15">    <span class="n">macro</span> <span class="n">avg</span>       <span class="mf">0.22</span>      <span class="mf">0.22</span>      <span class="mf">0.19</span>       <span class="mi">152</span>
+</span><span id="__span-92-16"> <span class="n">weighted</span> <span class="n">avg</span>       <span class="mf">0.50</span>      <span class="mf">0.33</span>      <span class="mf">0.39</span>       <span class="mi">152</span>
+</span></code></pre></div>
+<h3 id="viewing-detections-in-a-crowd">Viewing detections in a crowd <a href="#Viewing-detections-in-a-crowd" title="Permalink to this headline">¶</a><a class="headerlink" href="#viewing-detections-in-a-crowd" title="Permanent link">&para;</a></h3>
+<p>If you’re familiar with the <a href="https://cocodataset.org/#format-data">COCO data format</a>, you’ll know that the ground truth annotations have an <code>iscrowd = 0/1</code> attribute that indicates whether a box contains multiple instances of the same object.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-93-1"><span class="p">[</span><span class="mi">39</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-94-1"><span class="c1"># View the `iscrowd` attribute on a ground truth object</span>
+</span><span id="__span-94-2"><span class="n">sample</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</span><span id="__span-94-3"><span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">ground_truth</span><span class="o">.</span><span class="n">detections</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-95-1"><span class="o">&lt;</span><span class="n">Detection</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-95-2">    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;66047a4705c1282f3e97c5e9&#39;</span><span class="p">,</span>
+</span><span id="__span-95-3">    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="p">{},</span>
+</span><span id="__span-95-4">    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[],</span>
+</span><span id="__span-95-5">    <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;potted plant&#39;</span><span class="p">,</span>
+</span><span id="__span-95-6">    <span class="s1">&#39;bounding_box&#39;</span><span class="p">:</span> <span class="p">[</span>\
+</span><span id="__span-95-7">        <span class="mf">0.37028125</span><span class="p">,</span>\
+</span><span id="__span-95-8">        <span class="mf">0.3345305164319249</span><span class="p">,</span>\
+</span><span id="__span-95-9">        <span class="mf">0.038593749999999996</span><span class="p">,</span>\
+</span><span id="__span-95-10">        <span class="mf">0.16314553990610328</span><span class="p">,</span>\
+</span><span id="__span-95-11">    <span class="p">],</span>
+</span><span id="__span-95-12">    <span class="s1">&#39;mask&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-95-13">    <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-95-14">    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-95-15">    <span class="s1">&#39;supercategory&#39;</span><span class="p">:</span> <span class="s1">&#39;furniture&#39;</span><span class="p">,</span>
+</span><span id="__span-95-16">    <span class="s1">&#39;iscrowd&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-95-17"><span class="p">}</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>Let’s create a view that contains only samples with at least one detection for which <code>iscrowd</code> is 1:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-96-1"><span class="p">[</span><span class="mi">40</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-97-1"><span class="c1"># Create a view that contains only samples for which at least one detection has</span>
+</span><span id="__span-97-2"><span class="c1"># its iscrowd attribute set to 1</span>
+</span><span id="__span-97-3"><span class="n">crowded_images_view</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+</span><span id="__span-97-4">    <span class="n">F</span><span class="p">(</span><span class="s2">&quot;ground_truth.detections&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;iscrowd&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-97-5"><span class="p">)</span>
+</span><span id="__span-97-6">
+</span><span id="__span-97-7"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">crowded_images_view</span>
+</span></code></pre></div>
+<p><img alt="Crowd Boxes" src="../../_images/evaluate_detections_crowded.jpg" /></p>
+<h3 id="more-complex-insights">More complex insights <a href="#More-complex-insights" title="Permalink to this headline">¶</a><a class="headerlink" href="#more-complex-insights" title="Permanent link">&para;</a></h3>
+<p>Let’s combine our previous operations to form more complex queries that provide deeper insight into the quality of our detections.</p>
+<p>For example, let’s sort our view of crowded images from the previous section in decreasing order of false positive counts, so that we can see samples that have many (allegedly) spurious predictions in images that are known to contain crowds of objects:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-98-1"><span class="p">[</span><span class="mi">41</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-99-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">crowded_images_view</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_fp&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="Crowd FPs" src="../../_images/evaluate_detections_crowded_fp.jpg" /></p>
+<p>Let’s compare the above view to another view that just sorts by false positive count, regardless of whether the image is crowded:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-100-1"><span class="p">[</span><span class="mi">43</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-101-1"><span class="n">session</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">high_conf_view</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;eval_fp&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
+<p><img alt="High Conf Eval FPs Sort" src="../../_images/evaluate_detections_high_conf_eval_fp.jpg" /></p>
+<p>This was one of the first images in the view. As we can see, while the evaluation is detecting 77 false positives, all of the model’s predictions seem accurate. It is just that the ground truth labels lumped a bunch of orange slices together into one box.</p>
+<p><strong>See anything interesting?</strong></p>
+<p>What you find will likely be different because a random subset of samples were chosen. In our case, we find missing ground truth boxes for two of the laptop keyboards, a bottle, and even perhaps a cell phone. The model did not confidently predict many of the boxes in this image, but from a high-level, an example like this makes us consider the consequences of including complex or dense images in datasets. It will likely mean incorrect or incomplete ground truth annotations the annotators are not
+diligent! And that ultimately leads to confused models, and misinformed evaluations.</p>
+<p>This conclusion would have been nearly impossible to achieve without visually inspecting the individual samples in the dataset according to the variety of criteria that we considered in this tutorial.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-102-1"><span class="p">[</span><span class="mi">45</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-103-1"><span class="n">session</span><span class="o">.</span><span class="n">freeze</span><span class="p">()</span>  <span class="c1"># screenshot the active App for sharing</span>
+</span></code></pre></div>
+<h3 id="tagging-and-next-steps">Tagging and next steps <a href="#Tagging-and-next-steps" title="Permalink to this headline">¶</a><a class="headerlink" href="#tagging-and-next-steps" title="Permanent link">&para;</a></h3>
+<p>In practice, the next step is to take action on the issues that we identified above. A natural first step is to <em>tag</em> the issues so they can be retrieved and dealt with later. FiftyOne provides support for <a href="https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging">tagging samples and labels</a>, both programmatically and via the App.</p>
+<p>In your App instance, try tagging the predictions with missing ground truth detections. You can do this by clicking on the boxes of the predictions of interest and using the tagging element in the top-right corner to assign a <code>possibly-missing</code> tag.</p>
+<p>Alternatively, we can programmatically tag a batch of labels by creating a view that contains the objects of interest and then applying <a href="https://voxel51.com/docs/fiftyone/user_guide/fiftyone.core.collections.html?highlight=tag_labels#fiftyone.core.collections.SampleCollection.tag_labels">tag_labels()</a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-104-1"><span class="p">[</span><span class="mi">44</span><span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-105-1"><span class="c1"># Tag all highly confident false positives as &quot;possibly-missing&quot;</span>
+</span><span id="__span-105-2"><span class="p">(</span>
+</span><span id="__span-105-3">    <span class="n">high_conf_view</span>
+</span><span id="__span-105-4">        <span class="o">.</span><span class="n">filter_labels</span><span class="p">(</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="s2">&quot;eval&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;fp&quot;</span><span class="p">)</span>
+</span><span id="__span-105-5">        <span class="o">.</span><span class="n">select_fields</span><span class="p">(</span><span class="s2">&quot;faster_rcnn&quot;</span><span class="p">)</span>
+</span><span id="__span-105-6">        <span class="o">.</span><span class="n">tag_labels</span><span class="p">(</span><span class="s2">&quot;possibly-missing&quot;</span><span class="p">)</span>
+</span><span id="__span-105-7"><span class="p">)</span>
+</span></code></pre></div>
+<p>These tagged labels could then be sent off to our annotation provider of choice for review and addition to the ground truth labels. FiftyOne currently offers integrations for <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.scale.html">Scale AI</a>, <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.utils.labelbox.html">Labelbox</a>, and <a href="https://voxel51.com/docs/fiftyone/api/fiftyone.types.dataset_types.html?highlight=cvat#fiftyone.types.dataset_types.CVATImageDataset">CVAT</a>.</p>
+<p>For example, the snippet below exports the tagged labels and their source media to disk in CVAT format:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-106-1"><span class="p">[</span> <span class="p">]:</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-107-1"><span class="c1"># Export all labels with the `possibly-missing` tag in CVAT format</span>
+</span><span id="__span-107-2"><span class="p">(</span>
+</span><span id="__span-107-3">    <span class="n">dataset</span>
+</span><span id="__span-107-4">        <span class="o">.</span><span class="n">select_labels</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;possibly-missing&quot;</span><span class="p">])</span>
+</span><span id="__span-107-5">        <span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="s2">&quot;/path/for/export&quot;</span><span class="p">,</span> <span class="n">fo</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">CVATImageDataset</span><span class="p">)</span>
+</span><span id="__span-107-6"><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="summary">Summary <a href="#Summary" title="Permalink to this headline">¶</a><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>In this tutorial, we covered loading a dataset into FiftyOne and analyzing the performance of an out-of-the-box object detection model on the dataset.</p>
+<p><strong>So, what’s the takeaway?</strong></p>
+<p>Aggregate evaluation results for an object detector are important, but they alone don’t tell the whole story of a model’s performance. It’s critical to study the failure modes of your model so you can take the right actions to improve them.</p>
+<p>In this tutorial, we covered two types of analysis:</p>
+<ul>
+<li>
+<p>Analyzing the performance of your detector across different strata, like high confidence, small objects in crowded scenes</p>
+</li>
+<li>
+<p>Inspecting the hardest samples in your dataset to diagnose the underlying issue, whether it be your detector or the ground truth annotations</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.indexes", "navigation.top", {"icon": {"repo": "fontawesome/brands/github"}}, "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
