@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [Plugins Overview](index.html) >
-- Developing Plugins
-
-Contents
-
-
 # Developing Plugins [¶](\#developing-plugins "Permalink to this headline")
 
 This page describes how to write your own FiftyOne plugins.
@@ -117,7 +107,7 @@ about developing components.
 In order to develop Python plugins, you can use either a release or source
 install of FiftyOne:
 
-```
+```python
 pip install fiftyone
 
 ```
@@ -141,7 +131,7 @@ files within your [plugins directory](using_plugins.html#plugins-directory).
 Below is an example of a plugin directory with a typical Python plugin and JS
 plugin:
 
-```
+```python
 /path/to/your/plugins/dir/
     my-js-plugin/
         fiftyone.yml
@@ -194,7 +184,7 @@ For example, the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin’s `fiftyone.yml` looks like this:
 
-```
+```python
 name: "@voxel51/annotation"
 type: plugin
 author: Voxel51
@@ -266,7 +256,7 @@ Any users with access to the plugin’s hosted location can easily
 [download it](using_plugins.html#plugins-download) via the
 [fiftyone plugins download](../cli/index.html#cli-fiftyone-plugins-download) CLI command:
 
-```
+```python
 # Download plugin(s) from a GitHub repository
 fiftyone plugins download https://github.com/<user>/<repo>[/tree/branch]
 
@@ -316,7 +306,7 @@ the operator browser:
 Here’s a simple [Python operator](#developing-operators) that accepts a
 string input and then displays it to the user in the operator’s output modal.
 
-```
+```python
 class SimpleInputExample(foo.Operator):
     @property
     def config(self):
@@ -353,7 +343,7 @@ Note
 Remember that you must also include the operator’s name in the plugin’s
 [fiftyone.yml](#plugin-fiftyone-yml):
 
-```
+```python
 operators:
   - simple_input_example
 
@@ -364,7 +354,7 @@ operators:
 Here’s a simple [Python panel](#developing-panels) that renders a button
 that shows a “Hello world!” notification when clicked:
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
@@ -407,7 +397,7 @@ Note
 Remember that you must also include the panel’s name in the plugin’s
 [fiftyone.yml](#plugin-fiftyone-yml):
 
-```
+```python
 panels:
   - hello_world_panel
 
@@ -421,7 +411,7 @@ Here’s how to define a [JS operator](#developing-js-plugins) that sets the
 currently selected samples in the App based on a list of sample IDs provided
 via a `samples` parameter.
 
-```
+```python
 import {Operator, OperatorConfig, types, registerOperator} from "@fiftyone/operators";
 const PLUGIN_NAME = "@my/plugin";
 
@@ -492,7 +482,7 @@ Note
 The JS interface for defining operators is analogous. See this
 [example JS operator](#example-js-operator) for details.
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
@@ -679,7 +669,7 @@ Note
 Remember that you must also include the operator’s name in the plugin’s
 [fiftyone.yml](#plugin-fiftyone-yml):
 
-```
+```python
 operators:
   - example_operator
 
@@ -692,7 +682,7 @@ Every operator must define a
 defines its name, display name, and other optional metadata about its
 execution:
 
-```
+```python
 @property
 def config(self):
     return foo.OperatorConfig(
@@ -835,7 +825,7 @@ all aspects of input collection, validation, and component rendering for you!
 For example, here’s a simple example of collecting a single string input from
 the user:
 
-```
+```python
 def resolve_input(self, ctx):
     inputs = types.Object()
     inputs.str("message", label="Message", required=True)
@@ -853,7 +843,7 @@ forms whose components may contextually change based on the already provided
 values and any other aspects of the
 [execution context](#operator-execution-context):
 
-```
+```python
 import fiftyone.brain as fob
 
 def resolve_input(self, ctx):
@@ -947,7 +937,7 @@ You can provide the optional properties described below in the
 [operator’s config](#operator-config) to specify the available execution
 modes for the operator:
 
-```
+```python
 @property
 def config(self):
     return foo.OperatorConfig(
@@ -985,7 +975,7 @@ Operators may also implement
 to dynamically configure the available execution options based on the current
 execution context:
 
-```
+```python
 # Option 1: recommend delegation for larger views
 def resolve_execution_options(self, ctx):
     should_delegate = len(ctx.view) > 1000
@@ -1020,7 +1010,7 @@ context.
 For example, you could decide whether to delegate execution based on the size
 of the current view:
 
-```
+```python
 def resolve_delegation(self, ctx):
     # Force delegation for large views and immediate execution for small views
     return len(ctx.view) > 1000
@@ -1038,7 +1028,7 @@ Delegated operations can report their execution progress by calling
 on their execution context from within
 [`execute()`](../api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.execute "fiftyone.operators.operator.Operator.execute"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.core.storage as fos
 import fiftyone.core.utils as fou
@@ -1071,7 +1061,7 @@ trigger calls to
 `set_progress()`
 using the pattern show below:
 
-```
+```python
 import fiftyone as fo
 
 def execute(self, ctx):
@@ -1100,7 +1090,7 @@ automatically forward logging messages to
 `set_progress()`
 as `label` values using the pattern shown below:
 
-```
+```python
 import logging
 import fiftyone.operators as foo
 import fiftyone.zoo as foz
@@ -1135,7 +1125,7 @@ and any external dependencies that it needs.
 
 For example, you might perform inference on a model:
 
-```
+```python
 import fiftyone.zoo as foz
 
 def execute(self, ctx):
@@ -1164,7 +1154,7 @@ throws an error it will be displayed to the user in the browser.
 The [`execute()`](../api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.execute "fiftyone.operators.operator.Operator.execute") method
 can also be `async`:
 
-```
+```python
 import aiohttp
 
 async def execute(self, ctx):
@@ -1190,7 +1180,7 @@ execution context exposes all builtin
 in a conveniently documented functional interface. For example, many operations
 involve updating the current state of the App:
 
-```
+```python
 def execute(self, ctx):
     # Dataset
     ctx.ops.open_dataset("...")
@@ -1222,7 +1212,7 @@ operations by providing their URI and parameters, including all builtin
 operations as well as any operations installed via custom plugins. For example,
 here’s how to trigger the same App-related operations from above:
 
-```
+```python
 def execute(self, ctx):
     # Dataset
     ctx.trigger("open_dataset", params=dict(name="..."))
@@ -1263,7 +1253,7 @@ instance containing the result of the invocation.
 For example, a common generator pattern is to use the builtin `set_progress`
 operator to render a progress bar tracking the progress of an operation:
 
-```
+```python
 def execute(self, ctx):
     # render a progress bar tracking the execution
     for i in range(n):
@@ -1297,7 +1287,7 @@ For example, the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin declares the following secrets:
 
-```
+```python
 secrets:
   - FIFTYONE_CVAT_URL
   - FIFTYONE_CVAT_USERNAME
@@ -1316,7 +1306,7 @@ you want to use the CVAT backend with the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin, you would set:
 
-```
+```python
 FIFTYONE_CVAT_URL=...
 FIFTYONE_CVAT_USERNAME=...
 FIFTYONE_CVAT_PASSWORD=...
@@ -1328,7 +1318,7 @@ At runtime, the plugin’s [execution context](#operator-execution-context)
 is automatically hydrated with any available secrets that are declared by the
 plugin. Operators can access these secrets via the `ctx.secrets` dict:
 
-```
+```python
 def execute(self, ctx):
    url = ctx.secrets["FIFTYONE_CVAT_URL"]
    username = ctx.secrets["FIFTYONE_CVAT_USERNAME"]
@@ -1353,7 +1343,7 @@ for the user. As with input forms, you can use the
 For example, the output form below renders the number of samples ( `count`)
 computed during the operator’s [execution](#operator-execution):
 
-```
+```python
 def execute(self, ctx):
     # computation here...
 
@@ -1445,7 +1435,7 @@ Note
 See [this section](#developing-js-plugins) for more information on
 developing panels in JS.
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
@@ -1770,7 +1760,7 @@ Note
 Remember that you must also include the panel’s name in the plugin’s
 [fiftyone.yml](#plugin-fiftyone-yml):
 
-```
+```python
 panels:
   - example_panel
 
@@ -1783,7 +1773,7 @@ Every panel must define a
 defines its name, display name, surfaces, and other optional metadata about its
 behavior:
 
-```
+```python
 @property
 def config(self):
     return foo.PanelConfig(
@@ -1865,7 +1855,7 @@ important to avoid naming conflicts between state and data keys. If a key
 is present in both panel state and data, the value in _panel data_ will be
 used.
 
-```
+```python
 class CounterPanel(foo.Panel):
     @property
     def config(self):
@@ -1943,7 +1933,7 @@ available via corresponding state properties of the same name
 - The current panel state is readable during a panel’s execution
 
 
-```
+```python
 def render(self, ctx):
     panel = types.Object()
 
@@ -1972,7 +1962,7 @@ def on_change_mode(self, ctx):
 Panel state can be programmatically updated in panel methods via the two
 syntaxes shown below:
 
-```
+```python
 def on_change_view(self, ctx):
     # Top-level state attributes can be modified by setting properties
     ctx.panel.state.foo = "bar"
@@ -1999,7 +1989,7 @@ loaded once and henceforward stored _only_ clientside to avoid
 unnecessary/expensive reloads and serverside serialization during the lifecycle
 of the panel.
 
-```
+```python
 def on_load(self, ctx):
     self.update_plot_data(ctx)
 
@@ -2053,7 +2043,7 @@ as cached data, long-lived panel state, or user preferences.
 You can create/retrieve execution stores scoped to the current `ctx.dataset`
 via `ctx.store`:
 
-```
+```python
 def on_load(ctx):
     # Retrieve a store scoped to the current `ctx.dataset`
     # The store is automatically created if necessary
@@ -2092,7 +2082,7 @@ For advanced use cases, it is also possible to create and use global stores
 that are available to all datasets via the
 [`ExecutionStore`](../api/fiftyone.operators.store.html#fiftyone.operators.store.ExecutionStore "fiftyone.operators.store.ExecutionStore") class:
 
-```
+```python
 from fiftyone.operators import ExecutionStore
 
 # Retrieve a global store
@@ -2146,7 +2136,7 @@ At runtime, the panel’s [execution context](#operator-execution-context)
 is automatically hydrated with any available secrets that are declared by the
 plugin. Panels can access these secrets via the `ctx.secrets` dict:
 
-```
+```python
 def on_load(self, ctx):
     url = ctx.secrets["FIFTYONE_CVAT_URL"]
     username = ctx.secrets["FIFTYONE_CVAT_USERNAME"]
@@ -2187,7 +2177,7 @@ All callback functions have access to the current
 via their `ctx` argument and can use it to get/update panel state and
 trigger other operations.
 
-```
+```python
 def on_load(self, ctx):
     # Set initial slider state
     ctx.panel.state.slider_value = 5
@@ -2254,7 +2244,7 @@ to a particular position in your panel (e.g., top-left).
 Check out [this section](#panel-interface) for an example panel that
 makes use of `menu()`.
 
-```
+```python
 class DropdownMenuExample(foo.Panel):
     @property
     def config(self):
@@ -2369,7 +2359,7 @@ For example, here’s a panel that displays a histogram of a specified field of
 the current dataset where clicking a bar loads the corresponding samples in
 the App.
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 from fiftyone import ViewField as F
@@ -2481,7 +2471,7 @@ ones at [try.fiftyone.ai](https://try.fiftyone.ai/datasets/example/samples).
 Here’s an example of a panel that leads the user through multiple steps of a
 guided workflow.
 
-```
+```python
 class WalkthroughExample(foo.Panel):
     @property
     def config(self):
@@ -2633,7 +2623,7 @@ For example, declaring that the `ctx` variable has type
 `ExecutionContext` allows
 you to reveal all of its available methods during development:
 
-```
+```python
 from fiftyone.operators import ExecutionContext
 
 def on_load(ctx: ExecutionContext):
@@ -2685,7 +2675,7 @@ own custom user interface and components to the FiftyOne App.
 
 A simple plugin that renders “Hello world” in a panel would look like this:
 
-```
+```python
 import { registerComponent, PluginComponentTypes } from "@fiftyone/plugins";
 
 function HelloWorld() {
@@ -2704,7 +2694,7 @@ registerComponent({
 
 #### Adding a custom Panel [¶](\#adding-a-custom-panel "Permalink to this headline")
 
-```
+```python
 import * as fop from "@fiftyone/plugins";
 import * as fos from "@fiftyone/state";
 import * as foa from "@fiftyone/aggregations";
@@ -2759,7 +2749,7 @@ fop.registerComponent({
 
 Creating and registering a custom view type:
 
-```
+```python
 import * as fop from "@fiftyone/plugins";
 import { useState } from "react"
 
@@ -2812,7 +2802,7 @@ fop.registerComponent({
 
 Using the custom component as the view for a Python operator field:
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 
@@ -2859,7 +2849,7 @@ internal state.
 If you want to allow users to interact with other aspects of FiftyOne through
 your plugin, you can use the `@fiftyone/state` package:
 
-```
+```python
 // note: similar to react hooks, these must be used in the context
 // of a React component
 
@@ -2883,7 +2873,7 @@ You can also use a combination of your own and fiftyone’s recoil `atoms` and
 Here’s an example the combines both approaches in a hook that you could call
 from anywhere where hooks are supported (almost all plugin component types).
 
-```
+```python
 import {atom, useRecoilValue, useRecoilState} from 'recoil';
 
 const myPluginmyPluginFieldsState = atom({
@@ -2910,7 +2900,7 @@ Plugins that provide `PluginComponentTypes.Panel` components should use the
 `@fiftyone/spaces` package to manage their state. This package provides hooks
 to allow plugins to manage the state of individual panel instances.
 
-```
+```python
 import { usePanelStatePartial, usePanelTitle } from "@fiftyone/spaces";
 import { Button } from '@fiftyone/components';
 
@@ -2952,7 +2942,7 @@ default camera position of FiftyOne’s builtin
 
 Here’s an example of a system-wide plugin setting:
 
-```
+```python
 // app_config.json
 {
   "plugins": {
@@ -2966,7 +2956,7 @@ Here’s an example of a system-wide plugin setting:
 
 And here’s how to customize that setting for a particular dataset:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("quickstart")
@@ -2978,7 +2968,7 @@ dataset.save()
 In your plugin implementation, you can read settings with the `useSettings`
 hook:
 
-```
+```python
 const { mysetting } = fop.useSettings("my-plugin");
 
 ```
@@ -2998,7 +2988,7 @@ For example, a `PluginComponentType.Panel` plugin rendering a map of geo points
 may need to fetch data relative to where the user is currently viewing. In
 MongoDB, such a query would look like this:
 
-```
+```python
 {
   $geoNear: {
     near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
@@ -3012,7 +3002,7 @@ MongoDB, such a query would look like this:
 In a FiftyOne plugin this same query can be performed using the
 `useAggregation()` method of the plugin SDK:
 
-```
+```python
 import * as fop from "@fiftyone/plugins";
 import * as fos from "@fiftyone/state";
 import * as foa from "@fiftyone/aggregations";
@@ -3127,7 +3117,7 @@ information that can be accessed later by users and/or plugins.
 
 The interface for creating custom runs is simple:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset("custom-runs-example")
@@ -3167,7 +3157,7 @@ store only a handful of simple parameters.
 
 You can access custom runs at any time as follows:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("custom-runs-example")
@@ -3180,7 +3170,7 @@ print(results)
 
 ```
 
-```
+```python
 {
     "key": "custom",
     "version": "0.22.3",
@@ -3195,7 +3185,7 @@ print(results)
 
 ```
 
-```
+```python
 {
     "cls": "fiftyone.core.runs.RunResults",
     "spam": "eggs"
@@ -3212,7 +3202,7 @@ Call
 [`list_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_runs "fiftyone.core.collections.SampleCollection.list_runs")
 to see the available custom run keys on a dataset:
 
-```
+```python
 dataset.list_runs()
 
 ```
@@ -3221,7 +3211,7 @@ Use
 [`get_run_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_run_info "fiftyone.core.collections.SampleCollection.get_run_info")
 to retrieve information about the configuration of a custom run:
 
-```
+```python
 info = dataset.get_run_info(run_key)
 print(info)
 
@@ -3232,7 +3222,7 @@ and
 [`register_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.register_run "fiftyone.core.collections.SampleCollection.register_run")
 to create a new custom run on a dataset:
 
-```
+```python
 config = dataset.init_run()
 config.foo = "bar"  # add as many key-value pairs as you need
 
@@ -3244,7 +3234,7 @@ Use
 [`update_run_config()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.update_run_config "fiftyone.core.collections.SampleCollection.update_run_config")
 to update the run config associated with an existing custom run:
 
-```
+```python
 dataset.update_run_config(run_key, config)
 
 ```
@@ -3255,7 +3245,7 @@ and
 [`save_run_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.save_run_results "fiftyone.core.collections.SampleCollection.save_run_results")
 to store run results for a custom run:
 
-```
+```python
 results = dataset.init_run_results(run_key)
 results.spam = "eggs"  # add as many key-value pairs as you need
 
@@ -3270,7 +3260,7 @@ Use
 [`load_run_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_run_results "fiftyone.core.collections.SampleCollection.load_run_results")
 to load the results for a custom run:
 
-```
+```python
 results = dataset.load_run_results(run_key)
 
 ```
@@ -3279,7 +3269,7 @@ Use
 [`rename_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_run "fiftyone.core.collections.SampleCollection.rename_run")
 to rename the run key associated with an existing custom run:
 
-```
+```python
 dataset.rename_run(run_key, new_run_key)
 
 ```
@@ -3288,82 +3278,8 @@ Use
 [`delete_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_run "fiftyone.core.collections.SampleCollection.delete_run")
 to delete the record of a custom run from a dataset:
 
-```
+```python
 dataset.delete_run(run_key)
 
 ```
 
-- Developing Plugins
-  - [Design overview](#design-overview)
-    - [Plugin types](#plugin-types)
-    - [Panels](#panels)
-    - [Operators](#operators)
-    - [Components](#components)
-  - [Development setup](#development-setup)
-  - [Anatomy of a plugin](#anatomy-of-a-plugin)
-    - [fiftyone.yml](#fiftyone-yml)
-    - [Python plugins](#python-plugins)
-    - [JS plugins](#js-plugins)
-  - [Publishing plugins](#publishing-plugins)
-  - [Quick examples](#quick-examples)
-    - [Example plugin](#example-plugin)
-    - [Example Python operator](#example-python-operator)
-    - [Example Python panel](#example-python-panel)
-    - [Example JS operator](#example-js-operator)
-  - [Developing operators](#developing-operators)
-    - [Operator interface](#operator-interface)
-    - [Operator config](#operator-config)
-    - [Execution context](#execution-context)
-    - [Operator inputs](#operator-inputs)
-    - [Delegated execution](#delegated-execution)
-      - [Execution options](#execution-options)
-      - [Dynamic execution options](#dynamic-execution-options)
-      - [Forced delegation](#forced-delegation)
-      - [Reporting progress](#reporting-progress)
-    - [Operator execution](#operator-execution)
-      - [Synchronous execution](#synchronous-execution)
-      - [Asynchronous execution](#asynchronous-execution)
-      - [Operator composition](#operator-composition)
-      - [Generator execution](#generator-execution)
-    - [Accessing secrets](#accessing-secrets)
-    - [Operator outputs](#operator-outputs)
-    - [Operator placement](#operator-placement)
-  - [Developing panels](#developing-panels)
-    - [Panel interface](#panel-interface)
-    - [Panel config](#panel-config)
-    - [Execution context](#panel-execution-context)
-    - [Panel state and data](#panel-state-and-data)
-      - [Basic structure](#basic-structure)
-      - [Panel state](#panel-state)
-      - [Panel data](#panel-data)
-    - [Execution store](#execution-store)
-    - [Saved workspaces](#saved-workspaces)
-    - [Accessing secrets](#panel-accessing-secrets)
-    - [Common patterns](#common-patterns)
-      - [Callbacks](#callbacks)
-      - [Dropdown menus](#dropdown-menus)
-      - [Interactive plots](#interactive-plots)
-      - [Walkthroughs](#walkthroughs)
-      - [Displaying multimedia](#displaying-multimedia)
-      - [Type hints](#type-hints)
-  - [Developing JS plugins](#developing-js-plugins)
-    - [Getting Started](#getting-started)
-    - [Component types](#component-types)
-    - [Panels and Components](#panels-and-components)
-      - [Hello world panel](#hello-world-panel)
-      - [Adding a custom Panel](#adding-a-custom-panel)
-      - [Custom operator view using component plugin](#custom-operator-view-using-component-plugin)
-    - [FiftyOne App state](#fiftyone-app-state)
-      - [Interactivity and state](#interactivity-and-state)
-      - [Recoil, atoms, and selectors](#recoil-atoms-and-selectors)
-    - [Panel state](#id29)
-    - [Reading settings in your plugin](#reading-settings-in-your-plugin)
-    - [Querying FiftyOne](#querying-fiftyone)
-  - [Plugin runtime](#plugin-runtime)
-    - [JS runtime](#js-runtime)
-    - [Python runtime](#python-runtime)
-      - [Immediate execution](#immediate-execution)
-      - [Delegated execution](#id31)
-  - [Advanced usage](#advanced-usage)
-    - [Storing custom runs](#storing-custom-runs)
-    - [Managing custom runs](#managing-custom-runs)

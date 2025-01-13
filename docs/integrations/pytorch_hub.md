@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- PyTorch Hub Integration
-
-Contents
-
-
 # PyTorch Hub Integration [¶](\#pytorch-hub-integration "Permalink to this headline")
 
 FiftyOne integrates natively with [PyTorch Hub](https://pytorch.org/hub), so
@@ -22,7 +12,7 @@ You can use the builtin
 `load_torch_hub_image_model()`
 utility to load models from the PyTorch Hub:
 
-```
+```python
 import fiftyone.utils.torch as fout
 
 model = fout.load_torch_hub_image_model(
@@ -44,7 +34,7 @@ directly pass the model to builtin methods like
 `compute_visualization()`, and
 `compute_similarity()`.
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -68,7 +58,7 @@ output processors to automatically parse model outputs into FiftyOne
 FiftyOne also provides lower-level utilities for direct access to information
 about PyTorch Hub models:
 
-```
+```python
 import fiftyone.utils.torch as fout
 
 # Load a raw Hub model
@@ -96,7 +86,7 @@ print(requirements)
 Here’s how to load [Ultralytics YOLOv5](https://docs.ultralytics.com/yolov5)
 and use it to generate object detections:
 
-```
+```python
 from PIL import Image
 import numpy as np
 
@@ -166,7 +156,7 @@ check out the [Ultralytics integration](ultralytics.html#ultralytics-integration
 Here’s how to load [DINOv2](https://github.com/facebookresearch/dinov2) and
 use it to compute embeddings:
 
-```
+```python
 from PIL import Image
 import numpy as np
 
@@ -207,7 +197,7 @@ and then load and use them via the [`fiftyone.zoo`](../api/fiftyone.zoo.html#mod
 using the same syntax that you would with the
 [publicly available models](../data_and_models/model_zoo/models.html#model-zoo-models):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -227,7 +217,7 @@ your local model zoo and then load it to compute embeddings.
 1. Create a custom manifest file and add DINOv2 to it:
 
 
-```
+```python
 {
     "models": [\
         {\
@@ -255,7 +245,7 @@ your local model zoo and then load it to compute embeddings.
 2. Expose your manifest to FiftyOne by setting this environment variable:
 
 
-```
+```python
 export FIFTYONE_MODEL_ZOO_MANIFEST_PATHS=/path/to/custom-manifest.json
 
 ```
@@ -264,7 +254,7 @@ export FIFTYONE_MODEL_ZOO_MANIFEST_PATHS=/path/to/custom-manifest.json
 [`load_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"):
 
 
-```
+```python
 import numpy as np
 from PIL import Image
 
@@ -287,11 +277,3 @@ print(embeddings.shape)  # (10, 384)
 
 ```
 
-- PyTorch Hub Integration
-  - [Loading a model](#loading-a-model)
-    - [Image models](#image-models)
-    - [Utilities](#utilities)
-    - [Example: YOLOv5](#example-yolov5)
-    - [Example: DINOv2](#example-dinov2)
-  - [Adding Hub models to your local zoo](#adding-hub-models-to-your-local-zoo)
-    - [Example: DINOv2](#id3)

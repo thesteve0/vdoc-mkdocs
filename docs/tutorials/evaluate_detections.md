@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Evaluating Object Detections with FiftyOne
-
-Contents
-
-
 # Evaluating Object Detections with FiftyOne [¶](\#Evaluating-Object-Detections-with-FiftyOne "Permalink to this headline")
 
 This walkthrough demonstrates how to use FiftyOne to perform hands-on evaluation of your detection model.
@@ -38,36 +28,36 @@ Running the workflow presented here on your ML projects will help you to underst
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 In this tutorial, we’ll use an off-the-shelf [Faster R-CNN detection model](https://pytorch.org/docs/stable/torchvision/models.html#faster-r-cnn) provided by PyTorch. To use it, you’ll need to install `torch` and `torchvision`, if necessary.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install torch torchvision
 
 ```
 
 If you wanted to, you could download the pretrained model from the web and load it with `torchvision`. However, this model is also available via the [FiftyOne Model Zoo](https://docs.voxel51.com/user_guide/model_zoo/index.html), which makes our lives much easier!
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 import fiftyone.zoo as foz
 model = foz.load_zoo_model('faster-rcnn-resnet50-fpn-coco-torch')
 
@@ -77,12 +67,12 @@ We’ll perform our analysis on the validation split of the [COCO dataset](https
 
 The snippet below will download the validation split and load it into FiftyOne.
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -95,7 +85,7 @@ dataset.persistent = True
 
 ```
 
-```
+```python
 Downloading split 'validation' to '/Users/jacobmarks/fiftyone/coco-2017/validation' if necessary
 Found annotations at '/Users/jacobmarks/fiftyone/coco-2017/raw/instances_val2017.json'
 Images already downloaded
@@ -108,18 +98,18 @@ Dataset 'evaluate-detections-tutorial' created
 
 Let’s inspect the dataset to see what we downloaded:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 # Print some information about the dataset
 print(dataset)
 
 ```
 
-```
+```python
 Name:        evaluate-detections-tutorial
 Media type:  image
 Num samples: 5000
@@ -134,19 +124,19 @@ Sample fields:
 
 ```
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 # Print a ground truth detection
 sample = dataset.first()
 print(sample.ground_truth.detections[0])
 
 ```
 
-```
+```python
 <Detection: {
     'id': '66047a4705c1282f3e97c5e9',
     'attributes': {},
@@ -171,12 +161,12 @@ Note that the ground truth detections are stored in the `ground_truth` field of 
 
 Before we go further, let’s launch the [FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html) and use the GUI to explore the dataset visually:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -191,40 +181,40 @@ Because we loaded the model from the FiftyOne Model Zoo, it is a FiftyOne model 
 
 The code below performs inference with the Faster R-CNN model on a randomly chosen subset of 100 samples from the dataset and stores the resulting predictions in a `faster_rcnn` field of the samples.
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 # Choose a random subset of 100 samples to add predictions to
 predictions_view = dataset.take(100, seed=51)
 
 ```
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 predictions_view.apply_model(model, label_field="faster_rcnn")
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [1.4m elapsed, 0s remaining, 1.3 samples/s]
 
 ```
 
 Let’s load `predictions_view` in the App to visualize the predictions that we added:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 session.view = predictions_view
 
 ```
@@ -239,12 +229,12 @@ Let’s analyze the raw predictions we’ve added to our dataset in more detail.
 
 Let’s start by loading the full dataset in the App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Resets the session; the entire dataset will now be shown
 session.view = None
 
@@ -256,12 +246,12 @@ Only the 100 samples in `predictions_view` have predictions in their `faster_rcn
 
 If we want to recover our predictions view, we can do this programmatically via `session.view = predictions_view`, or we can use the [view bar in the App](https://voxel51.com/docs/fiftyone/user_guide/app.html#using-the-view-bar) to accomplish the same thing:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Use the view bar to create an `Exists(faster_rcnn, True)` stage
 # Now your view contains only the 100 samples with predictions in `faster_rcnn` field
 session.show()
@@ -284,12 +274,12 @@ You can select images in the App by clicking on the checkbox when hovering over 
 
 Let’s reset our session to show our `predictions_view`:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 session.view = predictions_view
 
 ```
@@ -298,12 +288,12 @@ session.view = predictions_view
 
 From the App instance above, it looks like our detector is generating some spurious low-quality detections. Let’s use the App to interactively filter the predictions by `confidence` to identify a reasonable confidence threshold for our model:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Click the down caret on the `faster_rcnn` field of Fields Sidebar
 # and apply a confidence threshold
 session.show()
@@ -320,12 +310,12 @@ FiftyOne also provides the ability to [write expressions](https://voxel51.com/do
 
 For example, we can programmatically generate a view that contains only detections whose `confidence` is at least `0.75` as follows:
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Only contains detections with confidence >= 0.75
@@ -335,18 +325,18 @@ high_conf_view = predictions_view.filter_labels("faster_rcnn", F("confidence") >
 
 Note the `only_matches=False` argument. When filtering labels, any samples that no longer contain labels would normally be removed from the view. However, this is not desired when performing evaluations since it can skew your results between views. We set `only_matches=False` so that all samples will be retained, even if some no longer contain labels.
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 # Print some information about the view
 print(high_conf_view)
 
 ```
 
-```
+```python
 Dataset:     evaluate-detections-tutorial
 Media type:  image
 Num samples: 100
@@ -363,19 +353,19 @@ View stages:
 
 ```
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 # Print a prediction from the view to verify that its confidence is > 0.75
 sample = high_conf_view.first()
 print(sample.faster_rcnn.detections[0])
 
 ```
 
-```
+```python
 <Detection: {
     'id': '66047b0f05c1282f3e986920',
     'attributes': {},
@@ -396,12 +386,12 @@ print(sample.faster_rcnn.detections[0])
 
 Now let’s load our view in the App to view the predictions that we programmatically selected:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 # Load high confidence view in the App
 session.view = high_conf_view
 
@@ -415,12 +405,12 @@ There are multiple situations where it can be useful to visualize each object se
 
 In any case, the FiftyOne App provides a [patches view button](https://voxel51.com/docs/fiftyone/user_guide/app.html#viewing-object-patches) that allows you to take any `Detections` field in your dataset and visualize each object as an individual patch in the image grid.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.show()
 
 ```
@@ -439,12 +429,12 @@ We can run evaluation on our samples via [evaluate\_detections()](https://voxel5
 
 By default, this method will use the [COCO evaluation protocol](https://cocodataset.org/#detection-eval), plus some extra goodies that we will use later.
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 # Evaluate the predictions in the `faster_rcnn` field of our `high_conf_view`
 # with respect to the objects in the `ground_truth` field
 results = high_conf_view.evaluate_detections(
@@ -456,7 +446,7 @@ results = high_conf_view.evaluate_detections(
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 100/100 [1.8s elapsed, 0s remaining, 53.7 samples/s]
 Performing IoU sweep...
@@ -470,12 +460,12 @@ The `results` object returned by the evaluation routine provides a number of con
 
 For example, let’s print a classification report for the top-10 most common classes in the dataset:
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 # Get the 10 most common classes in the dataset
 counts = dataset.count_values("ground_truth.detections.label")
 classes_top10 = sorted(counts, key=counts.get, reverse=True)[:10]
@@ -485,7 +475,7 @@ results.print_report(classes=classes_top10)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.89      0.80      0.84       263
@@ -507,17 +497,17 @@ traffic light       0.50      0.46      0.48        13
 
 We can also compute the mean average-precision (mAP) of our detector:
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 print(results.mAP())
 
 ```
 
-```
+```python
 0.3519380509318074
 
 ```
@@ -528,22 +518,22 @@ We can also view some precision-recall (PR) curves for specific classes of our m
 
 Install ipywidgets to view the PR curves:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install 'ipywidgets>=8,<9'
 
 ```
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 plot = results.plot_pr_curves(classes=["person", "car"])
 plot.show()
 
@@ -551,12 +541,12 @@ plot.show()
 
 ![../_images/tutorials_evaluate_detections_59_1.png](../_images/tutorials_evaluate_detections_59_1.png)
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 plot.freeze()  # replaces interactive plot with static image
 
 ```
@@ -574,18 +564,18 @@ In particular, each sample now contains new fields:
 - `eval_fn`: the number of false negative (FN) predictions in the sample
 
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 # Our dataset's schema now contains `eval_*` fields
 print(dataset)
 
 ```
 
-```
+```python
 Name:        evaluate-detections-tutorial
 Media type:  image
 Num samples: 5000
@@ -613,19 +603,19 @@ The individual predicted and ground truth objects also have fields populated on 
 - `eval_iou`: the IoU between the matching objects, if any
 
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 # Our detections have helpful evaluation data on them
 sample = high_conf_view.first()
 print(sample.faster_rcnn.detections[0])
 
 ```
 
-```
+```python
 <Detection: {
     'id': '66047b0f05c1282f3e986920',
     'attributes': {},
@@ -651,32 +641,32 @@ These extra fields were added because we provided the `eval_key` parameter to [e
 
 Don’t worry, if you forget what evaluations you’ve run, you can retrieve information about the evaluation later:
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 print(dataset.list_evaluations())
 
 ```
 
-```
+```python
 ['eval']
 
 ```
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 print(dataset.get_evaluation_info("eval"))
 
 ```
 
-```
+```python
 {
     "key": "eval",
     "version": "0.24.0",
@@ -715,19 +705,19 @@ print(dataset.get_evaluation_info("eval"))
 
 You can even load the view on which you ran an evaluation by calling the [load\_evaluation\_view()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html?highlight=load_evaluation_view#fiftyone.core.collections.SampleCollection.load_evaluation_view) method on the parent dataset:
 
-```
+```python
 [29]:
 
 ```
 
-```
+```python
 # Load the view on which we ran the `eval` evaluation
 eval_view = dataset.load_evaluation_view("eval")
 print(eval_view)
 
 ```
 
-```
+```python
 Dataset:     evaluate-detections-tutorial
 Media type:  image
 Num samples: 100
@@ -757,18 +747,18 @@ Any evaluation that you stored on your dataset can be used to generate an [evalu
 
 These evaluation views can be created through Python or directly in the App as shown below.
 
-```
+```python
 [30]:
 
 ```
 
-```
+```python
 eval_patches = dataset.to_evaluation_patches("eval")
 print(eval_patches)
 
 ```
 
-```
+```python
 Dataset:     evaluate-detections-tutorial
 Media type:  image
 Num patches: 37747
@@ -788,12 +778,12 @@ View stages:
 
 ```
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 session.view = high_conf_view
 
 ```
@@ -808,12 +798,12 @@ Let’s use this evaluation view to find individual false positive detections wi
 
 To dig in further, let’s create a view that sorts by `eval_tp` so we can see the best-performing cases of our model (i.e., the samples with the most correct predictions):
 
-```
+```python
 [33]:
 
 ```
 
-```
+```python
 # Show samples with most true positives
 session.view = high_conf_view.sort_by("eval_tp", reverse=True)
 
@@ -825,12 +815,12 @@ session.view = high_conf_view.sort_by("eval_tp", reverse=True)
 
 Similarly, we can sort by the `eval_fp` field to see the worst-performing cases of our model (i.e., the samples with the most false positive predictions):
 
-```
+```python
 [34]:
 
 ```
 
-```
+```python
 # Show samples with most false positives
 session.view = high_conf_view.sort_by("eval_fp", reverse=True)
 
@@ -842,23 +832,23 @@ session.view = high_conf_view.sort_by("eval_fp", reverse=True)
 
 [Dataset views](https://voxel51.com/docs/fiftyone/user_guide/using_views.html) are extremely powerful. For example, let’s look at how our model performed on small objects by creating a view that contains only predictions whose bounding box area is less than `32^2` pixels:
 
-```
+```python
 [37]:
 
 ```
 
-```
+```python
 # Compute metadata so we can reference image height/width in our view
 dataset.compute_metadata()
 
 ```
 
-```
+```python
 [38]:
 
 ```
 
-```
+```python
 #
 # Create an expression that will match objects whose bounding boxes have
 # area less than 32^2 pixels
@@ -884,12 +874,12 @@ session.view = small_boxes_view
 
 We can always re-run evaluation to see how our detector fairs on only small boxes:
 
-```
+```python
 [33]:
 
 ```
 
-```
+```python
 # Create a view that contains only small GT and predicted boxes
 small_boxes_eval_view = (
     high_conf_view
@@ -905,18 +895,18 @@ small_boxes_results = small_boxes_eval_view.evaluate_detections(
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |███████████████████| 34/34 [339.1ms elapsed, 0s remaining, 100.3 samples/s]
 
 ```
 
-```
+```python
 [34]:
 
 ```
 
-```
+```python
 # Get the 10 most common small object classes
 small_counts = small_boxes_eval_view.count_values("ground_truth.detections.label")
 classes_top10_small = sorted(small_counts, key=counts.get, reverse=True)[:10]
@@ -926,7 +916,7 @@ small_boxes_results.print_report(classes=classes_top10_small)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.66      0.44      0.53        80
@@ -950,19 +940,19 @@ traffic light       0.56      0.33      0.42        15
 
 If you’re familiar with the [COCO data format](https://cocodataset.org/#format-data), you’ll know that the ground truth annotations have an `iscrowd = 0/1` attribute that indicates whether a box contains multiple instances of the same object.
 
-```
+```python
 [39]:
 
 ```
 
-```
+```python
 # View the `iscrowd` attribute on a ground truth object
 sample = dataset.first()
 print(sample.ground_truth.detections[0])
 
 ```
 
-```
+```python
 <Detection: {
     'id': '66047a4705c1282f3e97c5e9',
     'attributes': {},
@@ -985,12 +975,12 @@ print(sample.ground_truth.detections[0])
 
 Let’s create a view that contains only samples with at least one detection for which `iscrowd` is 1:
 
-```
+```python
 [40]:
 
 ```
 
-```
+```python
 # Create a view that contains only samples for which at least one detection has
 # its iscrowd attribute set to 1
 crowded_images_view = high_conf_view.match(
@@ -1009,12 +999,12 @@ Let’s combine our previous operations to form more complex queries that provid
 
 For example, let’s sort our view of crowded images from the previous section in decreasing order of false positive counts, so that we can see samples that have many (allegedly) spurious predictions in images that are known to contain crowds of objects:
 
-```
+```python
 [41]:
 
 ```
 
-```
+```python
 session.view = crowded_images_view.sort_by("eval_fp", reverse=True)
 
 ```
@@ -1023,12 +1013,12 @@ session.view = crowded_images_view.sort_by("eval_fp", reverse=True)
 
 Let’s compare the above view to another view that just sorts by false positive count, regardless of whether the image is crowded:
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 session.view = high_conf_view.sort_by("eval_fp", reverse=True)
 
 ```
@@ -1044,12 +1034,12 @@ diligent! And that ultimately leads to confused models, and misinformed evaluati
 
 This conclusion would have been nearly impossible to achieve without visually inspecting the individual samples in the dataset according to the variety of criteria that we considered in this tutorial.
 
-```
+```python
 [45]:
 
 ```
 
-```
+```python
 session.freeze()  # screenshot the active App for sharing
 
 ```
@@ -1062,12 +1052,12 @@ In your App instance, try tagging the predictions with missing ground truth dete
 
 Alternatively, we can programmatically tag a batch of labels by creating a view that contains the objects of interest and then applying [tag\_labels()](https://voxel51.com/docs/fiftyone/user_guide/fiftyone.core.collections.html?highlight=tag_labels#fiftyone.core.collections.SampleCollection.tag_labels):
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 # Tag all highly confident false positives as "possibly-missing"
 (
     high_conf_view
@@ -1082,12 +1072,12 @@ These tagged labels could then be sent off to our annotation provider of choice 
 
 For example, the snippet below exports the tagged labels and their source media to disk in CVAT format:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Export all labels with the `possibly-missing` tag in CVAT format
 (
     dataset
@@ -1112,24 +1102,3 @@ In this tutorial, we covered two types of analysis:
 - Inspecting the hardest samples in your dataset to diagnose the underlying issue, whether it be your detector or the ground truth annotations
 
 
-- Evaluating Object Detections with FiftyOne
-  - [Setup](#Setup)
-  - [Add predictions to dataset](#Add-predictions-to-dataset)
-  - [Analyzing detections](#Analyzing-detections)
-    - [Visualizing bounding boxes](#Visualizing-bounding-boxes)
-    - [Selecting samples of interest](#Selecting-samples-of-interest)
-    - [Confidence thresholding in the App](#Confidence-thresholding-in-the-App)
-    - [Confidence thresholding in Python](#Confidence-thresholding-in-Python)
-    - [Viewing object patches](#Viewing-object-patches)
-  - [Evaluate detections](#Evaluate-detections)
-    - [Running evaluation](#Running-evaluation)
-    - [Aggregate results](#Aggregate-results)
-    - [Sample-level analysis](#Sample-level-analysis)
-    - [Evaluation views](#Evaluation-views)
-    - [View the best-performing samples](#View-the-best-performing-samples)
-    - [View the worst-performing samples](#View-the-worst-performing-samples)
-    - [Filtering by bounding box area](#Filtering-by-bounding-box-area)
-    - [Viewing detections in a crowd](#Viewing-detections-in-a-crowd)
-    - [More complex insights](#More-complex-insights)
-    - [Tagging and next steps](#Tagging-and-next-steps)
-  - [Summary](#Summary)

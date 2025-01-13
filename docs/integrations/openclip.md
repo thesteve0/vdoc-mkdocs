@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- OpenCLIP Integration
-
-Contents
-
-
 # OpenCLIP Integration [¶](\#openclip-integration "Permalink to this headline")
 
 FiftyOne integrates natively with the
@@ -20,7 +10,7 @@ with a few lines of code!
 
 To get started with OpenCLIP, install the `open_clip_torch` package:
 
-```
+```python
 pip install open_clip_torch
 
 # May also be needed
@@ -33,7 +23,7 @@ pip install timm --upgrade
 You can load the original ViT-B-32 OpenAI pretrained model from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo) as follows:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model("open-clip-torch")
@@ -45,7 +35,7 @@ passing in optional parameters. Pretrained models can be loaded directly from
 OpenCLIP or from
 [Hugging Face’s Model Hub](https://huggingface.co/docs/hub/models-the-hub):
 
-```
+```python
 rn50 = foz.load_zoo_model(
     "open-clip-torch",
     clip_model="RN50",
@@ -91,7 +81,7 @@ integration sets the model to eval mode before running inference.
 
 For example we can run inference as such:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -120,7 +110,7 @@ For example, let’s compare the embeddings of the original OpenAI CLIP model to
 MetaCLIP. We’ll also perform a quick zero shot classification to color the
 embeddings:
 
-```
+```python
 import fiftyone.brain as fob
 
 meta_clip = foz.load_zoo_model(
@@ -168,7 +158,7 @@ these in as a dictionary via the `model_kwargs` argument to
 
 For example, for MetaCLIP, we can do the following:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.brain as fob
@@ -194,7 +184,7 @@ You can then search by text similarity in Python via the
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 stage as follows:
 
-```
+```python
 query = "kites flying in the sky"
 
 view = dataset.sort_by_similarity(query, k=25, brain_key="sim_metaclip")
@@ -206,9 +196,3 @@ Note
 Did you know? You can also perform text similarity queries directly
 [in the App](../fiftyone_concepts/app.html#app-text-similarity)!
 
-- OpenCLIP Integration
-  - [Setup](#setup)
-  - [Model zoo](#model-zoo)
-  - [Inference](#inference)
-  - [Embeddings](#embeddings)
-  - [Text similarity search](#text-similarity-search)

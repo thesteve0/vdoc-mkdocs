@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Creating Views
-
-Contents
-
-
 # Creating Views [¶](\#Creating-Views "Permalink to this headline")
 
 [FiftyOne datasets](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html) provide the flexibility to store large, complex data. While it is helpful that data can be imported and exported easily, the real potential of FiftyOne comes from its powerful query language that you can use to define custom **views** into your datasets.
@@ -20,12 +10,12 @@ In this notebook, we’ll do a brief walkthrough of creating and using dataset v
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
@@ -34,23 +24,23 @@ If you haven’t already, install FiftyOne:
 
 To start out, lets import FiftyOne, load up a dataset, and evaluate some predicted object detections.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset("quickstart")
 dataset.evaluate_detections("predictions", gt_field="ground_truth", eval_key="eval")
 
@@ -58,12 +48,12 @@ dataset.evaluate_detections("predictions", gt_field="ground_truth", eval_key="ev
 
 Dataset views can range from as simple as “select a slice of the dataset” to “filter sample that have at least two large bounding boxes of people or dogs with high confidence and that were evaluated to be a false positive, then crop all images to those bounding boxes”:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Slice dataset
@@ -92,12 +82,12 @@ The goal is that, by the end of this notebook, creating complex views like the o
 
 “Creating a view from a dataset” is simply the process of performing an operation on a dataset that returns a `DatasetView`. The most basic way to turn a `Dataset` into a `DatasetView` is to just call `view()`.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # A view that contains the entire dataset
 view = dataset.view()
 
@@ -105,17 +95,17 @@ view = dataset.view()
 
 Within FiftyOne, views and datasets are largely interchangable in nearly all operations. Anything you can do to a dataset, you can also do to a view.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 print(view)
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 200
@@ -141,17 +131,17 @@ View stages:
 
 To create some more interesting views, you need to apply a view stage operation to the dataset. The list of available view stages can be printed as follows:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.list_view_stages()
 
 ```
 
-```
+```python
 ['exclude',\
  'exclude_by',\
  'exclude_fields',\
@@ -197,31 +187,31 @@ These view stages allow you to perform many useful operations on datasets like s
 
 For example, the [take()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.take) stage lets you extract a random subset of samples from the dataset:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 random_view = dataset.take(100)
 
 print(len(random_view))
 
 ```
 
-```
+```python
 100
 
 ```
 
 These view stages can also be chained together, each operating on the view returned by the previous stage:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 sorted_random_view = random_view.sort_by("filepath")
 sliced_sorted_random_view = sorted_random_view[10:51]
 
@@ -229,12 +219,12 @@ sliced_sorted_random_view = sorted_random_view[10:51]
 
 Note that the slicing syntax is simply a different representation of the [skip()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.skip) and [limit()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.limit) stages:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 sliced_sorted_random_view = sorted_random_view.skip(10).limit(41)
 
 ```
@@ -243,12 +233,12 @@ An example of one of the stages used in this notebook is [match()](https://voxel
 
 For example, we can create a view that includes all samples with a uniqueness greater than 0.5:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 matched_view = dataset.match(F("uniqueness") > 0.5)
 
 ```
@@ -257,12 +247,12 @@ Another useful view stage is [set\_field()](https://voxel51.com/docs/fiftyone/ap
 
 For example, lets set a boolean field called `is_cloudy` to True for all samples in the dataset. Note that when using `set_field()`, you need to ensure that the field exists on the dataset first.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.add_sample_field("is_cloudy", fo.BooleanField)
 cloudy_view = dataset.set_field("is_cloudy", True)
 
@@ -279,12 +269,12 @@ In this section, we go over what some view expression operations and how to writ
 
 Most view stages accept a [ViewExpression](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression) as input. View stages that seemingly operate on fields can also accept expressions! For example, [sort\_by()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.sort_by) can accept a field name or an expression:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Sort by filepaths
 dataset.sort_by("filepath")
 
@@ -293,7 +283,7 @@ dataset.sort_by(F("predictions.detections").length())
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 200
@@ -325,7 +315,7 @@ As mentioned, view expressions are built around view fields. A [ViewField](https
 
 For example, if you had a boolean field on your dataset called `is_cloudy` indicating if the image contains cloudy or not, then for each sample, `F("is_cloudy")` can be thought of as being replaced with the value of `"is_cloudy"` for that sample. Since values in the field are themselves boolean, the view to match samples where `"is_cloudy"` is True is simply:
 
-```
+```python
 cloudy_view = dataset.match(F("is_cloudy"))
 
 ```
@@ -334,12 +324,12 @@ In our dataset, after performing evaluation, we populated the field `eval_tp` on
 
 The way to think about view expressions in this case is the same as the expressions for the if-statement in Python that resolve in a boolean context.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 a = True
 b = 51
 
@@ -356,57 +346,57 @@ if b:
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 tp_view = dataset.match(F("eval_tp") > 4)
 
 print(len(tp_view))
 
 ```
 
-```
+```python
 69
 
 ```
 
 When providing just an integer in the expression in a Python if-statement, then the statement is True as long as the integer is not zero. The same logic applies with view expressions in this case:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 nonzero_tp_view = dataset.match(F("eval_tp"))
 
 print(len(nonzero_tp_view))
 
 ```
 
-```
+```python
 198
 
 ```
 
 We can also use `~` to negate an expression:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 zero_tp_view = dataset.match(~F("eval_tp"))
 
 print(zero_tp_view.values("eval_tp"))
 
 ```
 
-```
+```python
 [0, 0]
 
 ```
@@ -417,12 +407,12 @@ The most difficult/subtle aspect of creating view expressions is how to handle n
 
 To get a better idea of which samples contain lists, you can print out your sample as a dictionary:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 sample = fo.Sample(
     filepath="example.png",
     ground_truth=fo.Detections(
@@ -436,7 +426,7 @@ fo.pprint(sample.to_dict())
 
 ```
 
-```
+```python
 {
     'filepath': '/content/example.png',
     'tags': [],
@@ -475,12 +465,12 @@ The most important operations for working with lists are:
 
 The [filter()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression.filter) operation is quite useful to allow for fine-grained access to the information that is to be kept and removed from the view.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Only include predictions with `confidence` of at least 0.9
 view = dataset.set_field(
     "predictions.detections",
@@ -492,12 +482,12 @@ view = dataset.set_field(
 Note that the [filter\_labels()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.filter_labels) operation is simply a simplification of the filter operation and [set\_field()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.set_field). This operation will automatically apply the given expression to the corresponding list field of the label if applicable ( `Detections`, `Classifications`, etc) or
 will apply the expression as a match operation for non-list labels ( `Detection`, `Classification`, etc).
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Filter detections
 view1 = dataset.filter_labels("ground_truth", F("label") == "cat")
 
@@ -513,7 +503,7 @@ print(len(view2))
 
 ```
 
-```
+```python
 14
 14
 
@@ -521,12 +511,12 @@ print(len(view2))
 
 The match operation above was added since by default, [filter\_labels()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.filter_labels) sets the keyword argument `only_matches=True`.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Add example classification labels
 dataset.set_values("classifications", [fo.Classification(label="cat")]*len(dataset))
 
@@ -541,7 +531,7 @@ print(len(view2))
 
 ```
 
-```
+```python
 200
 200
 
@@ -551,12 +541,12 @@ print(len(view2))
 
 The [map()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression.map) operation can be used to apply an expression to every element of a list. For example, we can update the tags to set every tag to uppercase:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 transform_tag = F().upper()
 view = dataset.set_field("tags", F("tags").map(transform_tag))
 
@@ -564,7 +554,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 200
@@ -596,22 +586,22 @@ The [reduce()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.h
 
 Say that we want to set a field on our predictions containing the IDs of the corresponding ground truth objects that were matched to the true positives. We can use filter and reduce to accomplish this as follows:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from fiftyone.core.expressions import VALUE
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Get all of the matched gt object ids
 view = (
     dataset
@@ -626,7 +616,7 @@ view.first().predictions.gt_ids
 
 ```
 
-```
+```python
 ['5f452471ef00e6374aac53c8', '5f452471ef00e6374aac53ca']
 
 ```
@@ -635,12 +625,12 @@ view.first().predictions.gt_ids
 
 Another useful property of expressions is prepending your field names with `$` to refer to the root of the document. This can be used, for example, to use sample-level information like `metadata` when filtering at a detection-level:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.compute_metadata()
 
 # Computes the area of each bounding box in pixels
@@ -675,17 +665,17 @@ For example, you can use aggregations to get information like:
 
 You can view the available aggregations like so:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.list_aggregations()
 
 ```
 
-```
+```python
 ['bounds',\
  'count',\
  'count_values',\
@@ -702,34 +692,34 @@ dataset.list_aggregations()
 
 In the simplest case, aggregations can be performed by providing the name of a field you want to compute on:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 print(dataset.distinct("predictions.detections.label"))
 
 ```
 
-```
+```python
 ['airplane', 'apple', 'backpack', 'banana', 'baseball glove', 'bear', 'bed', 'bench', 'bicycle', 'bird', 'boat', 'book', 'bottle', 'bowl', 'broccoli', 'bus', 'cake', 'car', 'carrot', 'cat', 'cell phone', 'chair', 'clock', 'couch', 'cow', 'cup', 'dining table', 'dog', 'donut', 'elephant', 'fire hydrant', 'fork', 'frisbee', 'giraffe', 'hair drier', 'handbag', 'horse', 'hot dog', 'keyboard', 'kite', 'knife', 'laptop', 'microwave', 'motorcycle', 'mouse', 'orange', 'oven', 'parking meter', 'person', 'pizza', 'potted plant', 'refrigerator', 'remote', 'sandwich', 'scissors', 'sheep', 'sink', 'skateboard', 'skis', 'snowboard', 'spoon', 'sports ball', 'stop sign', 'suitcase', 'surfboard', 'teddy bear', 'tennis racket', 'tie', 'toaster', 'toilet', 'toothbrush', 'traffic light', 'train', 'truck', 'tv', 'umbrella', 'vase', 'wine glass', 'zebra']
 
 ```
 
 However, you can also pass a [ViewExpression](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression) to the aggregation method, in which case the expression will be evaluated and then aggregated as requested:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 print(dataset.distinct(F("uniqueness").round(2)))
 
 ```
 
-```
+```python
 [0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.34, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.72, 0.73, 0.74, 0.75, 0.78, 0.8, 0.82, 0.92, 1.0]
 
 ```
@@ -740,16 +730,3 @@ Dataset views and the view expressions language are powerful and flexible aspect
 
 Getting comfortable with using views and expressions to slice and dice your datasets based on the questions you have will allow you to work efficiently to curate high quality datasets.
 
-- Creating Views
-  - [Setup](#Setup)
-  - [Overview](#Overview)
-  - [View basics](#View-basics)
-  - [View expressions](#View-expressions)
-    - [View fields](#View-fields)
-    - [Nested lists](#Nested-lists)
-    - [Filtering list fields](#Filtering-list-fields)
-    - [Mapping list fields](#Mapping-list-fields)
-    - [Reducing list fields](#Reducing-list-fields)
-    - [Referencing root fields](#Referencing-root-fields)
-  - [Aggregations](#Aggregations)
-  - [Summary](#Summary)

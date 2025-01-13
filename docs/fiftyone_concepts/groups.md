@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Grouped datasets
-
-Contents
-
-
 # Grouped datasets [¶](\#grouped-datasets "Permalink to this headline")
 
 FiftyOne supports the creation of **grouped datasets**, which contain multiple
@@ -34,7 +24,7 @@ datasets via Python.
 Let’s start by creating some test data. We’ll use the quickstart dataset to
 construct some mocked triples of left/center/right images:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.random as four
 import fiftyone.zoo as foz
@@ -50,7 +40,7 @@ print(filepaths[:2])
 
 ```
 
-```
+```python
 [\
     {\
         'left': '~/fiftyone/quickstart/data/000880.jpg',\
@@ -72,7 +62,7 @@ To create a grouped dataset, simply use
 [`add_group_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_group_field "fiftyone.core.dataset.Dataset.add_group_field") to
 declare a [`Group`](../api/fiftyone.core.groups.html#fiftyone.core.groups.Group "fiftyone.core.groups.Group") field on your dataset before you add samples to it:
 
-```
+```python
 dataset = fo.Dataset("groups-overview")
 dataset.add_group_field("group", default="center")
 
@@ -95,7 +85,7 @@ for each group of samples and use
 for the group field of each [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") object in the group based on their slice’s
 `name`. The [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") objects can then simply be added to the dataset as usual:
 
-```
+```python
 samples = []
 for fps in filepaths:
     group = fo.Group()
@@ -109,7 +99,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:        groups-overview
 Media type:  group
 Group slice: center
@@ -136,7 +126,7 @@ a [`Group`](../api/fiftyone.core.groups.html#fiftyone.core.groups.Group "fiftyon
 
 Grouped datasets have a `media_type` of `"group"`:
 
-```
+```python
 print(dataset.media_type)
 # group
 
@@ -146,7 +136,7 @@ The [`group_field`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Data
 contains the name of the [`Group`](../api/fiftyone.core.groups.html#fiftyone.core.groups.Group "fiftyone.core.groups.Group") field storing the dataset’s group membership
 information:
 
-```
+```python
 print(dataset.group_field)
 # group
 
@@ -155,7 +145,7 @@ print(dataset.group_field)
 The [`group_slices`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_slices "fiftyone.core.dataset.Dataset.group_slices") property
 contains the names of all group slices in the dataset:
 
-```
+```python
 print(dataset.group_slices)
 # ['left', 'center', 'right']
 
@@ -164,7 +154,7 @@ print(dataset.group_slices)
 The [`group_media_types`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_media_types "fiftyone.core.dataset.Dataset.group_media_types")
 property is a dict mapping each slice name to its corresponding media type:
 
-```
+```python
 print(dataset.group_media_types)
 # {'left': 'image', 'center': 'image', 'right': 'image'}
 
@@ -185,7 +175,7 @@ the `left` slice of the above dataset, since it contains images.
 The [`default_group_slice`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.default_group_slice "fiftyone.core.dataset.Dataset.default_group_slice")
 property stores the name of the default group slice:
 
-```
+```python
 print(dataset.default_group_slice)
 # center
 
@@ -195,12 +185,12 @@ The default group slice controls the slice of samples that will be returned via
 the API—for example when you directly iterate over the dataset—or
 visualized in the App’s grid view by default:
 
-```
+```python
 print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '62db2ce147e9efc3615cd450',
     'media_type': 'image',
@@ -217,14 +207,14 @@ print(dataset.first())
 You can change the _active group slice_ in your current session by setting the
 [`group_slice`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_slice "fiftyone.core.dataset.Dataset.group_slice") property:
 
-```
+```python
 dataset.group_slice = "left"
 
 print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '62db2ce147e9efc3615cd44e',
     'media_type': 'image',
@@ -241,7 +231,7 @@ print(dataset.first())
 You can reset the active group slice to the default value by setting
 [`group_slice`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_slice "fiftyone.core.dataset.Dataset.group_slice") to `None`:
 
-```
+```python
 # Resets to `default_group_slice`
 dataset.group_slice = None
 
@@ -256,7 +246,7 @@ property.
 You are free to add arbitrary sample- and frame-level fields to your grouped
 datasets just as you would with ungrouped datasets:
 
-```
+```python
 sample = dataset.first()
 
 sample["int_field"] = 51
@@ -276,12 +266,12 @@ Note that all slices of a grouped dataset share the same schema, and hence
 any fields you add to samples from a particular slice will be implicitly
 declared on all samples from that slice and all other slices:
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:        groups-overview
 Media type:  group
 Group slice: center
@@ -319,7 +309,7 @@ perform batch edits to the fields across _all slices_ of a grouped dataset.
 You can access a sample from any slice of grouped dataset via its ID or
 filepath:
 
-```
+```python
 # Grab a random sample across all slices
 sample = dataset.select_group_slices().shuffle().first()
 
@@ -332,7 +322,7 @@ In addition, you can also use
 [`get_group()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.get_group "fiftyone.core.dataset.Dataset.get_group") to retrieve a
 dict containing all samples in a group with a given ID:
 
-```
+```python
 # Grab a random group ID
 sample = dataset.shuffle().first()
 group_id = sample.group.id
@@ -342,7 +332,7 @@ print(group)
 
 ```
 
-```
+```python
 {
     'left': <Sample: {
         'id': '62f810ba59e644568f229dac',
@@ -384,7 +374,7 @@ Like ungrouped datasets, you can use
 [`delete_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_samples "fiftyone.core.dataset.Dataset.delete_samples") to
 delete individual sample(s) from a grouped dataset:
 
-```
+```python
 # Grab a random sample across all slices
 sample = dataset.select_group_slices().shuffle().first()
 
@@ -396,7 +386,7 @@ In addition, you can use
 [`delete_groups()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_groups "fiftyone.core.dataset.Dataset.delete_groups") to delete
 all samples in a specific group(s):
 
-```
+```python
 # Continuing from above, delete the rest of the group
 group_id = sample.group.id
 
@@ -414,7 +404,7 @@ the groups in a grouped dataset.
 When you directly iterate over a grouped dataset, you will get samples from the
 dataset’s [active slice](#groups-dataset-properties):
 
-```
+```python
 print(dataset.group_slice)
 # center
 
@@ -425,7 +415,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '62f10dbb68f4ed13eba7c5e7',
     'media_type': 'image',
@@ -449,7 +439,7 @@ You can also use
 [`iter_groups()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.iter_groups "fiftyone.core.dataset.Dataset.iter_groups") to iterate
 over dicts containing all samples in each group:
 
-```
+```python
 for group in dataset.iter_groups():
     pass
 
@@ -457,7 +447,7 @@ print(group)
 
 ```
 
-```
+```python
 {
     'left': <Sample: {
         'id': '62f10dbb68f4ed13eba7c5e6',
@@ -506,7 +496,7 @@ consists of 200 scenes from the train split of the KITTI dataset, each
 containing left camera, right camera, point cloud, and 2D/3D object annotation
 data:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -519,7 +509,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:        quickstart-groups
 Media type:  group
 Group slice: left
@@ -543,7 +533,7 @@ Sample fields:
 You can also load the full [kitti-multiview](../dataset_zoo/datasets.html#dataset-zoo-kitti-multiview)
 dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -559,7 +549,7 @@ The snippet below generates a toy dataset containing 3D cuboids filled with
 points that demonstrates how
 [3D detections are represented](using_datasets.html#d-detections):
 
-```
+```python
 import fiftyone as fo
 import numpy as np
 import open3d as o3d
@@ -628,7 +618,7 @@ to sort, slice, and search your grouped datasets!
 
 You can perform simple operations like shuffling and limiting grouped datasets:
 
-```
+```python
 # Select 10 random groups from the dataset
 view = dataset.shuffle().limit(10)
 
@@ -636,7 +626,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:     groups-overview
 Media type:  group
 Group slice: center
@@ -658,7 +648,7 @@ View stages:
 As you can see, the [basic properties](#groups-dataset-properties) of
 grouped datasets carry over to views into them:
 
-```
+```python
 print(view.media_type)
 # group
 
@@ -674,7 +664,7 @@ You can also perform all the usual operations on grouped views, such as
 [accessing samples](#groups-accessing-samples), and
 [iterating over them](#groups-iteration):
 
-```
+```python
 for group in view.iter_groups():
     pass
 
@@ -692,7 +682,7 @@ print(group)
 You can write views that [match and filter](using_views.html#view-filtering) the contents
 of grouped datasets:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -718,7 +708,7 @@ datasets, any filtering operations will only be applied to the
 However, you can write views that reference specific slice(s) of a grouped
 collection via the special `"groups.<slice>.field.name"` syntax:
 
-```
+```python
 from fiftyone import ViewField as F
 
 dataset.compute_metadata()
@@ -740,7 +730,7 @@ You can use
 [`select_groups()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_groups "fiftyone.core.collections.SampleCollection.select_groups")
 to create a view that contains certain group(s) of interest by their IDs:
 
-```
+```python
 # Select two groups at random
 view = dataset.take(2)
 
@@ -762,7 +752,7 @@ You can use
 [`exclude_groups()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude_groups "fiftyone.core.collections.SampleCollection.exclude_groups")
 to create a view that excludes certain group(s) of interest by their IDs:
 
-```
+```python
 # Exclude two groups at random
 view = dataset.take(2)
 
@@ -782,13 +772,13 @@ grouped dataset.
 For example, you can create an image view that contains only the left camera
 images from the grouped dataset:
 
-```
+```python
 left_view = dataset.select_group_slices("left")
 print(left_view)
 
 ```
 
-```
+```python
 Dataset:     groups-overview
 Media type:  image
 Num samples: 108
@@ -808,13 +798,13 @@ View stages:
 or you could create an image collection containing the left and right camera
 images:
 
-```
+```python
 lr_view = dataset.select_group_slices(["left", "right"])
 print(lr_view)
 
 ```
 
-```
+```python
 Dataset:     groups-overview
 Media type:  image
 Num samples: 216
@@ -836,7 +826,7 @@ the above collections are `image`, not `group`. This means you can perform any
 valid operation for image collections to these views, without worrying about
 the fact that their data is sourced from a grouped dataset!
 
-```
+```python
 image_view = dataset.shuffle().limit(10).select_group_slices("left")
 
 another_view = image_view.match(F("metadata.width") >= 640)
@@ -850,7 +840,7 @@ Also note that any filtering that you apply prior to a
 stage in a view is **not** automatically reflected by the output view, as the
 stage looks up unfiltered slice data from the source collection:
 
-```
+```python
 # Filter the active slice to locate groups of interest
 match_view = dataset.filter_labels(...).match(...)
 
@@ -864,7 +854,7 @@ Instead, you can apply the same (or different) filtering _after_ the
 [`select_group_slices()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_group_slices "fiftyone.core.collections.SampleCollection.select_group_slices")
 stage:
 
-```
+```python
 # Now apply filters to the flattened collection
 match_images_view = images_view.filter_labels(...).match(...)
 
@@ -879,7 +869,7 @@ Remember that, just as when [iterating over](#groups-iteration) or
 [writing views](#groups-views) into grouped datasets, aggregations will
 only include samples from the [active slice](#groups-dataset-properties):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -906,7 +896,7 @@ You can customize the dataset’s active slice by setting the
 [`group_slice`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_slice "fiftyone.core.dataset.Dataset.group_slice") property to
 another slice name:
 
-```
+```python
 dataset.group_slice = "right"
 
 print(dataset.count("ground_truth.detections"))
@@ -920,7 +910,7 @@ print(dataset.bounds("ground_truth.detections[]", expr=bbox_area))
 As usual, you can combine views and aggregations to refine your statistics to
 any subset of the dataset:
 
-```
+```python
 print(dataset.count_values("ground_truth.detections.label"))
 # {'Pedestrian': 128, 'Car': 793, ...}
 
@@ -937,7 +927,7 @@ print(view2.count_values("ground_truth.detections.label"))
 In particular, if you would like to compute statistics across multiple group
 slices, you can [select them](#groups-selecting-slices)!
 
-```
+```python
 print(dataset.count())  # 200
 print(dataset.count("ground_truth.detections"))  # 1438
 
@@ -955,7 +945,7 @@ you’ll see the samples from the collection’s
 [default group slice](#groups-dataset-properties) in the grid view by
 default.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1015,7 +1005,7 @@ into your grouped datasets via Python.
 The simplest way to import grouped datasets is to
 [write a Python loop](#groups-adding-samples):
 
-```
+```python
 samples = []
 for fps in filepaths:
     group = fo.Group()
@@ -1038,7 +1028,7 @@ Alternatively, you can
 [write your own importer](dataset_creation/datasets.html#writing-a-custom-dataset-importer) and then
 import grouped datasets in your custom format using the syntax below:
 
-```
+```python
 # Create an instance of your custom dataset importer
 importer = CustomGroupDatasetImporter(...)
 
@@ -1051,7 +1041,7 @@ dataset = fo.Dataset.from_importer(importer)
 If you need to export an entire grouped dataset (or a view into it), you can
 use [FiftyOneDataset format](export_datasets.html#fiftyonedataset-export):
 
-```
+```python
 view = dataset.shuffle().limit(10)
 
 view.export(
@@ -1070,7 +1060,7 @@ You can also [select specific slice(s)](#groups-selecting-slices) and then
 export the resulting ungrouped collection in
 [all the usual ways](export_datasets.html#exporting-datasets):
 
-```
+```python
 left_view = dataset.shuffle().limit(10).select_group_slices("left")
 
 left_view.export(
@@ -1084,7 +1074,7 @@ Alternatively, you can
 [write your own exporter](export_datasets.html#writing-a-custom-dataset-exporter) and then
 export grouped datasets in your custom format using the syntax below:
 
-```
+```python
 # Create an instance of your custom dataset exporter
 exporter = CustomGroupDatasetExporter(...)
 
@@ -1092,26 +1082,3 @@ dataset_or_view.export(dataset_exporter=exporter, ...)
 
 ```
 
-- Grouped datasets
-  - [Overview](#overview)
-    - [Creating grouped datasets](#creating-grouped-datasets)
-    - [Adding samples](#adding-samples)
-    - [Dataset properties](#dataset-properties)
-    - [Adding fields](#adding-fields)
-    - [Accessing samples](#accessing-samples)
-    - [Deleting samples](#deleting-samples)
-    - [Iterating over grouped datasets](#iterating-over-grouped-datasets)
-  - [Example datasets](#example-datasets)
-    - [Quickstart groups](#quickstart-groups)
-    - [KITTI multiview](#kitti-multiview)
-    - [Toy dataset](#toy-dataset)
-  - [Grouped views](#grouped-views)
-    - [Basics](#basics)
-    - [Filtering](#filtering)
-    - [Selecting groups](#selecting-groups)
-    - [Excluding groups](#excluding-groups)
-    - [Selecting slices](#selecting-slices)
-  - [Grouped aggregations](#grouped-aggregations)
-  - [Groups in the App](#groups-in-the-app)
-  - [Importing groups](#importing-groups)
-  - [Exporting groups](#exporting-groups)

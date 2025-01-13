@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Annotating Datasets with Labelbox
-
-Contents
-
-
 # Annotating Datasets with Labelbox [¶](\#Annotating-Datasets-with Labelbox "Permalink to this headline")
 
 All successful computer vision projects start with the same thing: LOTS OF LABELED DATA!
@@ -33,12 +23,12 @@ FiftyOne Datasets are the best way to explore, understand, and improve your data
 
 To get started, you need to [install FiftyOne](https://voxel51.com/docs/fiftyone/getting_started/install.html) and the [Labelbox Python client](https://github.com/Labelbox/labelbox-python):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone labelbox
 
 ```
@@ -47,24 +37,24 @@ You’ll also need to set up a [Labelbox account](https://app.labelbox.com/). Fi
 
 The easiest way to get started is to use the default Labelbox server, which simply requires creating an account and then providing your API key as shown below.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !export FIFTYONE_LABELBOX_API_KEY=...
 
 ```
 
 Alternatively, for a more permanent solution, you can store your credentials in your FiftyOne annotation config located at `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 {
     "backends": {
         "labelbox": {
@@ -81,44 +71,44 @@ See [this page](https://voxel51.com/docs/fiftyone/integrations/labelbox.html#set
 
 To start, you need to gather raw image or video data relevant to your task. The internet has a lot of places to look for free data. Assuming you have your raw data downloaded locally, you can [easily load it into FiftyOne](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html).
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = fo.Dataset.from_dir(dataset_dir="/path/to/dir", dataset_type=fo.types.ImageDirectory)
 
 ```
 
 Another method is to use publically available datasets that may be relevant. For example, the [Open Images dataset](https://storage.googleapis.com/openimages/web/download.html) contains millions of images available for public use and can be accessed directly through the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html).
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import fiftyone.zoo as foz
 
 ```
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     "open-images-v6",
     split="validation",
@@ -129,7 +119,7 @@ dataset = foz.load_zoo_dataset(
 
 ```
 
-```
+```python
 Downloading split 'validation' to '/home/eric/fiftyone/open-images-v6/validation' if necessary
 Necessary images already downloaded
 Existing download of split 'validation' is sufficient
@@ -141,12 +131,12 @@ Dataset 'labelbox_dataset' created
 
 Either way, once your data is in FiftyOne, we can [visualize it in the FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html).
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -155,55 +145,55 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 session.freeze() # Screenshot the App in this notebook
 
 ```
 
 FiftyOne provides a [variety of methods](https://voxel51.com/docs/fiftyone/user_guide/brain.html) that can help you understand the quality of the dataset and pick the best samples to annotate. For example, the `` `compute_similarity()`` < [https://voxel51.com/docs/fiftyone/user\_guide/brain.html#visual-similarity](https://voxel51.com/docs/fiftyone/user_guide/brain.html#visual-similarity) >\`\_\_ the method can be used to find both the most similar, and the most unique samples, ensuring that your dataset will contain an even distribution of data.
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 ```
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 results = fob.compute_similarity(dataset, brain_key="img_sim")
 
 ```
 
-```
+```python
 Computing embeddings...
  100% |█████████████████| 100/100 [1.0m elapsed, 0s remaining, 1.8 samples/s]
 
 ```
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 results.find_unique(10)
 
 ```
 
-```
+```python
 Generating index...
 Index complete
 Computing unique samples...
@@ -221,22 +211,22 @@ Uniqueness computation complete
 
 Now to select only the slice of our dataset that contains the 10 most unique samples.
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 unique_view = dataset.select(results.unique_ids)
 
 ```
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 session.view = unique_view
 
 ```
@@ -245,12 +235,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -259,12 +249,12 @@ session.freeze()
 
 The [integration between FiftyOne and Labelbox](https://voxel51.com/docs/fiftyone/integrations/labelbox.html) allows you to begin annotating your image or video data by calling a single method!
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 anno_key = "annotation_run_1"
 
 results = unique_view.annotate(
@@ -278,7 +268,7 @@ results = unique_view.annotate(
 
 ```
 
-```
+```python
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Uploading samples to Labelbox...
 Upload complete
@@ -287,12 +277,12 @@ Launching editor at 'https://editor.labelbox.com/?project=ckx83uywu09j610a9ertke
 
 ```
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 <fiftyone.utils.labelbox.LabelboxAnnotationResults at 0x7fa3c01b4eb8>
 
 ```
@@ -301,17 +291,17 @@ Launching editor at 'https://editor.labelbox.com/?project=ckx83uywu09j610a9ertke
 
 The annotations can then be [loaded back into FiftyOne](https://voxel51.com/docs/fiftyone/integrations/labelbox.html#loading-annotations) in just one more line.
 
-```
+```python
 [30]:
 
 ```
 
-```
+```python
 unique_view.load_annotations(anno_key)
 
 ```
 
-```
+```python
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Downloading labels from Labelbox...
   133.4Kb [7.2ms elapsed, ? remaining, 91.0Mb/s]
@@ -321,12 +311,12 @@ Loading labels for field 'detections'...
 
 ```
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 session.view = unique_view
 
 ```
@@ -335,24 +325,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [32]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
 
 This API provides [advanced customization options](https://voxel51.com/docs/fiftyone/integrations/labelbox.html#requesting-annotations) for your annotation tasks. For example, we can construct a sophisticated schema to define the annotations we want and even directly assign the annotators:
 
-```
+```python
 [33]:
 
 ```
 
-```
+```python
 anno_key = "labelbox_assign_users"
 
 members = [\
@@ -383,7 +373,7 @@ results = unique_view.annotate(
 
 ```
 
-```
+```python
 Experimental features have been enabled
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Uploading samples to Labelbox...
@@ -396,30 +386,30 @@ Launching editor at 'https://editor.labelbox.com/?project=ckx845cbd0atq10a948ze9
 
 ```
 
-```
+```python
 [33]:
 
 ```
 
-```
+```python
 <fiftyone.utils.labelbox.LabelboxAnnotationResults at 0x7fa45ffcdc88>
 
 ```
 
 After you’re finished annotating in Labelbox, you can easily download the results:
 
-```
+```python
 [35]:
 
 ```
 
-```
+```python
 # Download results and clean the run from FiftyOne and Labelbox
 unique_view.load_annotations(anno_key, cleanup=True)
 
 ```
 
-```
+```python
 Experimental features have been enabled
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Downloading labels from Labelbox...
@@ -443,29 +433,29 @@ Flash](https://voxel51.com/docs/fiftyone/integrations/lightning_flash.html), and
 Once the model is trained, the [model predictions can be loaded](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html#model-predictions) back into FiftyOne. These [predictions can then be evaluated against the ground truth](https://voxel51.com/docs/fiftyone/user_guide/evaluation.html) annotations to find where the model is performing well, and where it is performing poorly. This provides insight into the type of samples that need to be added to the training set, as well
 as any annotation errors that may exist.
 
-```
+```python
 [36]:
 
 ```
 
-```
+```python
 # Load an existing dataset with predictions
 dataset = foz.load_zoo_dataset("quickstart")
 
 ```
 
-```
+```python
 Dataset already downloaded
 Loading existing dataset 'quickstart'. To reload from disk, either delete the existing dataset or provide a custom `dataset_name` to use
 
 ```
 
-```
+```python
 [37]:
 
 ```
 
-```
+```python
 # Evaluate model predictions
 dataset.evaluate_detections(
     "predictions",
@@ -475,30 +465,30 @@ dataset.evaluate_detections(
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 200/200 [6.8s elapsed, 0s remaining, 29.6 samples/s]
 
 ```
 
-```
+```python
 [37]:
 
 ```
 
-```
+```python
 <fiftyone.utils.eval.detection.DetectionResults at 0x7fa45fcdf0b8>
 
 ```
 
 We can use the [powerful querying capabilities of the FiftyOne API](https://voxel51.com/docs/fiftyone/user_guide/using_views.html) to create a [view filtering](https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering) these model results by false positives with high confidence which generally indicates an error in the ground truth annotation.
 
-```
+```python
 [39]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 fp_view = dataset.filter_labels(
@@ -514,24 +504,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [40]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
 
 This sample appears to be missing a ground truth annotation of skis. Let’s [tag it in FiftyOne](https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging), and send it to Labelbox for reannotation.
 
-```
+```python
 [41]:
 
 ```
 
-```
+```python
 session = fo.launch_app(view=fp_view)
 
 ```
@@ -540,24 +530,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [42]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
 
 The workflow for reannotating an existing label field is to annotate a new field, then merge the new field into the existing field.
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 view = dataset.match_tags("reannotate")
 
 label_schema = {
@@ -576,7 +566,7 @@ results = view.annotate(
 
 ```
 
-```
+```python
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Uploading samples to Labelbox...
 Uploading existing labels in field 'ground_truth' to Labelbox is not yet supported
@@ -584,27 +574,27 @@ Upload complete
 
 ```
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 <fiftyone.utils.labelbox.LabelboxAnnotationResults at 0x7fa45fab4c88>
 
 ```
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 view.load_annotations(anno_key)
 
 ```
 
-```
+```python
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 Downloading labels from Labelbox...
    14.6Kb [3.2ms elapsed, ? remaining, 37.7Mb/s]
@@ -614,22 +604,22 @@ Loading labels for field 'ground_truth'...
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 view.merge_labels("ground_truth_edits", "ground_truth")
 
 ```
 
-```
+```python
 [45]:
 
 ```
 
-```
+```python
 session.view = view
 
 ```
@@ -638,12 +628,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [46]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -656,18 +646,18 @@ You can perform [additional Labelbox-specific operations](https://voxel51.com/do
 
 For example, you can [view the status of an existing project](https://voxel51.com/docs/fiftyone/integrations/labelbox.html#viewing-project-status):
 
-```
+```python
 [47]:
 
 ```
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 results.print_status()
 
 ```
 
-```
+```python
 Initializing Labelbox client at 'https://api.labelbox.com/graphql'
 
 Project: FiftyOne_quickstart
@@ -692,12 +682,12 @@ Reviews:
 
 You can also [delete projects](https://voxel51.com/docs/fiftyone/integrations/labelbox.html#deleting-projects) associated with an annotation run directly through the FiftyOne API.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 api = results.connect_to_api()
 
@@ -726,10 +716,3 @@ No matter what computer vision projects you are working on, you will need a data
 
 In addition, using our [Labelbox integration](https://voxel51.com/docs/fiftyone/integrations/labelbox.html) can streamline the annotation process and help you build higher quality datasets and models, faster.
 
-- Annotating Datasets with Labelbox
-  - [Setup](#Setup)
-  - [Raw Data](#Raw-Data)
-  - [Annotation](#Annotation)
-  - [Next Steps](#Next-Steps)
-  - [Additional Utilities](#Additional-Utilities)
-  - [Summary](#Summary)

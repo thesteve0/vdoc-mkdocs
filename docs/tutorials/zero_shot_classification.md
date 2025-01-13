@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Zero-Shot Image Classification with Multimodal Models and FiftyOne
-
-Contents
-
-
 # Zero-Shot Image Classification with Multimodal Models and FiftyOne [¶](\#Zero-Shot-Image-Classification-with-Multimodal-Models-and-FiftyOne "Permalink to this headline")
 
 Traditionally, computer vision models are trained to predict a fixed set of categories. For image classification, for instance, many standard models are trained on the ImageNet dataset, which contains 1,000 categories. All images _must_ be assigned to one of these 1,000 categories, and the model is trained to predict the correct category for each image.
@@ -63,19 +53,19 @@ For this walkthrough, we will use the [Caltech-256 dataset](https://docs.voxel51
 
 Before we start, let’s install the required packages:
 
-```
+```python
 pip install -U torch torchvision fiftyone transformers timm open_clip_torch
 
 ```
 
 Now let’s import the relevant modules and load the dataset:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.brain as fob
@@ -83,12 +73,12 @@ from fiftyone import ViewField as F
 
 ```
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     "caltech256",
     max_samples=1000,
@@ -107,12 +97,12 @@ Here, we are using the `shuffle=True` option to randomly select 1000 images from
 
 Finally, let’s use the dataset’s `distinct()` method to get a list of the distinct categories in the dataset, which we will give to the zero-shot models to predict:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 classes = dataset.distinct("ground_truth.label")
 
 ```
@@ -130,7 +120,7 @@ If you have the [FiftyOne Plugin Utils Plugin](https://github.com/voxel51/fiftyo
 
 If not, you can install the plugin from the command line:
 
-```
+```python
 fiftyone plugins download https://github.com/jacobmarks/zero-shot-prediction-plugin
 
 ```
@@ -156,7 +146,7 @@ All of these models can be loaded from the FiftyOne Model Zoo via the `load_zoo_
 
 Regardless of the model you are loading, the basic recipe for loading a zero-shot model is as follows:
 
-```
+```python
 model = foz.load_zoo_model(
     "<zoo-model-name>",
     classes=classes,
@@ -179,7 +169,7 @@ OpenCLIP documentation. The `name` column contains the value for `clip_model`.
 
 Once we have our model loaded (and classes set), we can use it like any other image classification model in FiftyOne by calling the dataset’s `apply_model()` method:
 
-```
+```python
 dataset.apply_model(
     model,
     label_field="<where-to-store-predictions>",
@@ -189,12 +179,12 @@ dataset.apply_model(
 
 For efficiency, we will also set our default batch size to 32, which will speed up the predictions:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 fo.config.default_batch_size = 32
 
 ```
@@ -203,12 +193,12 @@ fo.config.default_batch_size = 32
 
 Starting off with the natively supported CLIP model, we can load and apply it to our dataset as follows:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 clip = foz.load_zoo_model(
     "clip-vit-base32-torch",
     classes=classes,
@@ -220,12 +210,12 @@ dataset.apply_model(clip, label_field="clip")
 
 If we would like, after adding our predictions in the specified field, we can add some high-level information detailing what the field contains:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 field = dataset.get_field("clip")
 field.description = "OpenAI CLIP predictions"
 field.info = {"clip_model": "CLIP-ViT-B-32"}
@@ -233,12 +223,12 @@ field.save()
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset, auto=False)
 
 ```
@@ -266,12 +256,12 @@ To make life interesting, we will be running inference with 5 different OpenCLIP
 
 To reduce the repetition, we’re just going to create a dictionary for the `clip_model` and `pretrained` arguments, and then loop through the dictionary to load and apply the models to our dataset:
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 open_clip_args = {
     "clipa": {
         "clip_model": 'hf-hub:UCSC-VLAA/ViT-L-14-CLIPA-datacomp1B',
@@ -297,12 +287,12 @@ open_clip_args = {
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 for name, args in open_clip_args.items():
     clip_model = args["clip_model"]
     pretrained = args["pretrained"]
@@ -321,12 +311,12 @@ for name, args in open_clip_args.items():
 
 Finally, we will load and apply zero-shot image classification model sfrom the Hugging Face Transformers library. Once again, we will loop through a dictionary of model names and apply the models to our dataset:
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 transformer_model_repo_ids = {
     "altclip": "BAAI/AltCLIP",
     "align": "kakaobrain/align-base"
@@ -334,12 +324,12 @@ transformer_model_repo_ids = {
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 for name, repo_id in transformer_model_repo_ids.items():
     model = foz.load_zoo_model(
         "zero-shot-classification-transformer-torch",
@@ -359,12 +349,12 @@ Now that we have applied all of our zero-shot models to our dataset, we can eval
 
 First, we will use the dataset’s schema to get a list of all of the fields that contain predictions:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 classification_fields = sorted(list(
     dataset.get_field_schema(
         ftype=fo.EmbeddedDocumentField, embedded_doc_type=fo.Classification
@@ -377,12 +367,12 @@ prediction_fields = [f for f in classification_fields if f != "ground_truth"]
 
 Then, we will loop through these prediction fields and apply the dataset’s `evaluate_classifications()` method to each one, evaluating against the `ground_truth` field:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 for pf in prediction_fields:
     eval_key = f"{pf}_eval"
     dataset.evaluate_classifications(
@@ -395,38 +385,38 @@ for pf in prediction_fields:
 
 We can then easily filter the dataset based on which models predicted the ground truth labels correctly, either programmatically in Python, or in the FiftyOne App. For example, here is how we could specify the view into the dataset containing all samples where SigLIP predicted the ground truth label correctly and CLIP did not:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 dataset = fo.load_dataset("CLIP-Comparison")
 
 ```
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 siglip_not_clip_view = dataset.match((F("siglip_eval") == True) & (F("clip_eval") == False))
 
 ```
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 num_siglip_not_clip = len(siglip_not_clip_view)
 print(f"There were {num_siglip_not_clip} samples where the SigLIP model predicted correctly and the CLIP model did not.")
 
 ```
 
-```
+```python
 There were 57 samples where the SigLIP model predicted correctly and the CLIP model did not.
 
 ```
@@ -448,34 +438,34 @@ This will allow us to answer questions like:
 
 For the first question, we can use the `count_values()` aggregation on the evaluation fields for our predictions, which will give us a count of the number of times each model was correct or incorrect. As an example:
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 dataset.count_values(f"clip_eval")
 
 ```
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 {False: 197, True: 803}
 
 ```
 
 Looping over our prediction fields and turning these raw counts into percentages, we can get a high-level view of the performance of our models:
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 for pf in prediction_fields:
     eval_results = dataset.count_values(f"{pf}_eval")
     percent_correct = eval_results.get(True, 0) / sum(eval_results.values())
@@ -483,7 +473,7 @@ for pf in prediction_fields:
 
 ```
 
-```
+```python
 align:  83.7% correct
 altclip:  87.6% correct
 clip:  80.3% correct
@@ -499,19 +489,19 @@ At least on this dataset, it looks like the DFN model was the clear winner, with
 
 To answer the second question, we can use the `mean()` aggregation to get the average confidence of each model’s predictions. This will give us a sense of how confident each model was in its predictions:
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 for pf in prediction_fields:
     mean_conf = dataset.mean(F(f"{pf}.confidence"))
     print(f"Mean confidence for {pf}: {mean_conf:.3f}")
 
 ```
 
-```
+```python
 Mean confidence for align: 0.774
 Mean confidence for altclip: 0.883
 Mean confidence for clip: 0.770
@@ -531,24 +521,24 @@ These high-level insights are useful, but as always, they only tell part of the 
 
 One thing we might want to see is where all of the models were correct or incorrect. To probe these questions, we can construct a list with one `ViewExpression` for each model, and then use the `any()` and `all()` methods:
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 exprs = [F(f"{pf}_eval") == True for pf in prediction_fields]
 
 ```
 
 First, let’s see how many samples every model got correct:
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 all_right_view = dataset.match(F().all(exprs))
 print(f"{len(all_right_view)} samples were right for all models")
 
@@ -556,7 +546,7 @@ session = fo.launch_app(all_right_view, auto=False)
 
 ```
 
-```
+```python
 498 samples were right for all models
 Session launched. Run `session.show()` to open the App in a cell output.
 
@@ -566,12 +556,12 @@ The fact that about half of the time, all of the models are “correct” and in
 
 How about when all of the models are incorrect?
 
-```
+```python
 [29]:
 
 ```
 
-```
+```python
 all_wrong_view = dataset.match(~F().any(exprs))
 print(f"{len(all_wrong_view)} samples were wrong for all models")
 
@@ -579,7 +569,7 @@ session = fo.launch_app(all_wrong_view, auto=False)
 
 ```
 
-```
+```python
 45 samples were wrong for all models
 Session launched. Run `session.show()` to open the App in a cell output.
 
@@ -601,12 +591,12 @@ Before we wrap up, let’s construct one even more nuanced view of our data: the
 
 To construct this view, we will copy the array of expressions, remove one model from the array, and see where that model was correct and the others were not. We will then loop through the models, and find the samples where each _any_ of these conditions is met:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 n = len(prediction_fields)
 sub_exprs = []
 for i in range(n):
@@ -646,16 +636,3 @@ For zero-shot object detection, here are some resources to get you started:
 - [Evaluating Object Detections](https://docs.voxel51.com/tutorials/evaluate_detections.html) tutorial
 
 
-- Zero-Shot Image Classification with Multimodal Models and FiftyOne
-  - [Setup](#Setup)
-  - [Zero-Shot Image Classification with the FiftyOne Zero-Shot Prediction Plugin](#Zero-Shot-Image-Classification-with-the-FiftyOne-Zero-Shot-Prediction-Plugin)
-  - [Zero-Shot Image Classification with the FiftyOne Model Zoo](#Zero-Shot-Image-Classification-with-the-FiftyOne-Model-Zoo)
-    - [Basic Recipe for Loading a Zero-Shot Model](#Basic-Recipe-for-Loading-a-Zero-Shot-Model)
-    - [Zero-Shot Image Classification with OpenAI CLIP](#Zero-Shot-Image-Classification-with-OpenAI-CLIP)
-    - [Zero-Shot Image Classification with OpenCLIP](#Zero-Shot-Image-Classification-with-OpenCLIP)
-    - [Zero-Shot Image Classification with Hugging Face Transformers](#Zero-Shot-Image-Classification-with-Hugging-Face-Transformers)
-  - [Evaluating Zero-Shot Image Classification Predictions with FiftyOne](#Evaluating-Zero-Shot-Image-Classification-Predictions-with-FiftyOne)
-    - [Using FiftyOne’s Evaluation API](#Using-FiftyOne’s-Evaluation-API)
-    - [High-Level Insights using Aggregations](#High-Level-Insights-using-Aggregations)
-    - [Advanced Insights using ViewExpressions](#Advanced-Insights-using-ViewExpressions)
-  - [Summary](#Summary)

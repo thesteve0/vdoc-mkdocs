@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Query Performance
-
-Contents
-
-
 # Query Performance [¶](\#query-performance "Permalink to this headline")
 
 **Available in FiftyOne Teams v2.2+**
@@ -157,23 +147,15 @@ upper right corner of the Query Performance panel:
 Deployment admins can also configure the global behavior of Query Performance
 via the following environment variables:
 
-```
+```python
 # Disable Query Performance by default for all new datasets
 FIFTYONE_APP_DEFAULT_QUERY_PERFORMANCE=false
 
 ```
 
-```
+```python
 # Completely disable Query Performance for all users
 FIFTYONE_APP_ENABLE_QUERY_PERFORMANCE=false
 
 ```
 
-- Query Performance
-  - [Optimizing Query Performance](#optimizing-query-performance)
-  - [Query Performance panel](#query-performance-panel)
-    - [Creating indexes](#creating-indexes)
-    - [Creating summary fields](#creating-summary-fields)
-    - [Updating summary fields](#updating-summary-fields)
-    - [Deleting indexes/summaries](#deleting-indexes-summaries)
-  - [Disabling Query Performance](#disabling-query-performance)

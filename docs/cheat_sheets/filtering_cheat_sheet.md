@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Cheat Sheets](index.html) >
-- Filtering Cheat Sheet
-
-Contents
-
-
 # Filtering Cheat Sheet [¶](\#filtering-cheat-sheet "Permalink to this headline")
 
 This cheat sheet shows how to perform common matching and filtering operations
@@ -17,7 +7,7 @@ in FiftyOne using [dataset views](../fiftyone_concepts/using_views.html#using-vi
 
 The formulas in this section use the following example data:
 
-```
+```python
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
 
@@ -40,7 +30,7 @@ Reference:
 
 The formulas in this section use the following example data:
 
-```
+```python
 from datetime import datetime, timedelta
 
 import fiftyone as fo
@@ -86,7 +76,7 @@ Reference:
 
 The formulas in this section use the following example data:
 
-```
+```python
 import fiftyone.zoo as foz
 
 TIMES_SQUARE = [-73.9855, 40.7580]
@@ -117,7 +107,7 @@ Reference:
 
 The formulas in this section use the following example data:
 
-```
+```python
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
 
@@ -145,7 +135,7 @@ Reference:
 
 The formulas in this section assume the following code has been run:
 
-```
+```python
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
 
@@ -176,7 +166,7 @@ and
 The formulas in this section assume the following code has been run on a
 dataset `ds` with detections in its `predictions` field:
 
-```
+```python
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -216,7 +206,7 @@ The formulas in the following table assumes the following code has been run on
 a dataset `ds`, where the `predictions` field is populated with
 classification predictions that have their `logits` attribute set:
 
-```
+```python
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
 
@@ -253,7 +243,7 @@ force implementation of the same operation that follows.
 
 The tables in this section use the following example data:
 
-```
+```python
 from bson import ObjectId
 
 import fiftyone as fo
@@ -321,7 +311,7 @@ Reference:
 
 The following table uses this example data:
 
-```
+```python
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
 
@@ -347,7 +337,7 @@ specified condition.
 
 The following table uses this example data:
 
-```
+```python
 import fiftyone as fo
 from fiftyone import ViewField as F
 
@@ -385,18 +375,3 @@ ds.default_skeleton = fo.KeypointSkeleton(
 Reference:
 [`match_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
 
-- Filtering Cheat Sheet
-  - [Strings and pattern matching](#strings-and-pattern-matching)
-  - [Dates and times](#dates-and-times)
-  - [Geospatial](#geospatial)
-  - [Detections](#detections)
-    - [Bounding boxes](#bounding-boxes)
-    - [Evaluating detections](#evaluating-detections)
-  - [Classifications](#classifications)
-    - [Evaluating classifications](#evaluating-classifications)
-  - [Built-in filter and match functions](#built-in-filter-and-match-functions)
-    - [Filtering labels](#filtering-labels)
-    - [Matching labels](#matching-labels)
-    - [Matching tags](#matching-tags)
-    - [Matching frames](#matching-frames)
-    - [Filtering keypoints](#filtering-keypoints)

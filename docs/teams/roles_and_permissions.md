@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Roles and permissions
-
-Contents
-
-
 # Roles and permissions [¶](\#roles-and-permissions "Permalink to this headline")
 
 FiftyOne Teams is built for collaboration, with the goal of making it as easy
@@ -255,19 +245,3 @@ navigating to the “Settings > Security > Roles” page:
 
 ![admin-roles-page](../_images/admin_roles_page.png)
 
-- Roles and permissions
-  - [Roles](#roles)
-    - [Admin](#admin)
-    - [Member](#member)
-    - [Collaborator](#collaborator)
-    - [Guest](#guest)
-    - [Groups](#groups)
-  - [Permissions](#permissions)
-    - [Default access](#default-access)
-    - [Specific access](#specific-access)
-    - [No access](#no-access)
-    - [Can view](#can-view)
-    - [Can tag](#can-tag)
-    - [Can edit](#can-edit)
-    - [Can manage](#can-manage)
-  - [Roles page](#roles-page)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Exporting FiftyOne Datasets
-
-Contents
-
-
 # Exporting FiftyOne Datasets [¶](\#exporting-fiftyone-datasets "Permalink to this headline")
 
 FiftyOne provides native support for exporting datasets to disk in a
@@ -46,7 +36,7 @@ refers to a single label type ( [`Classification`](../api/fiftyone.core.labels.h
 [`Keypoint`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint")), then the labels will be automatically upgraded to single-label
 lists to match the export type’s expectations.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -71,7 +61,7 @@ labels, if you provide a label field to
 type [`Classification`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification "fiftyone.core.labels.Classification"), the classification labels will be automatically upgraded
 to detections that span the entire images.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -99,7 +89,7 @@ is provided to
 [object patches](app.html#app-object-patches) of the provided samples will be
 exported.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -134,7 +124,7 @@ You can also directly call
 [patches views](using_views.html#object-patches-views) to export the specified object
 patches along with their appropriately typed labels.
 
-```
+```python
 # Continuing from above...
 
 patches = dataset.to_patches("ground_truth")
@@ -160,7 +150,7 @@ a [`TemporalDetection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Te
 [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export"), the
 specified [video clips](app.html#app-video-clips) will be exported.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -208,7 +198,7 @@ You can also directly call
 [clip views](using_views.html#clip-views) to export the specified video clips along with
 their appropriately typed labels.
 
-```
+```python
 # Continuing from above...
 
 clips = dataset.to_clips("events")
@@ -253,7 +243,7 @@ Note
 See [this section](using_datasets.html#storing-classes) for more information about
 storing class lists on FiftyOne datasets.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -329,7 +319,7 @@ images.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -354,7 +344,7 @@ videos.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -379,7 +369,7 @@ media files.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -409,7 +399,7 @@ label(s) stored in a simple JSON format.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -422,7 +412,7 @@ Datasets of this type are exported in the following format:
 In the simplest case, `labels.json` will be a JSON file in the following
 format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -450,7 +440,7 @@ additional attributes, you can use the `include_confidence` and
 `include_attributes` parameters to include this information in the export.
 In this case, `labels.json` will have the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -483,7 +473,7 @@ In this case, `labels.json` will have the following format:
 You can also export multilabel classification fields, in which case
 `labels.json` will have the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -551,7 +541,7 @@ directory tree whose subfolders define an image classification dataset.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     <classA>/
         <image1>.<ext>
@@ -588,7 +578,7 @@ directory tree whose subfolders define a video classification dataset.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     <classA>/
         <video1>.<ext>
@@ -627,7 +617,7 @@ stored as
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     tf.records-?????-of-?????
 
@@ -636,7 +626,7 @@ Datasets of this type are exported in the following format:
 where the features of the (possibly sharded) TFRecords are stored in the
 following format:
 
-```
+```python
 {
     # Image dimensions
     "height": tf.io.FixedLenFeature([], tf.int64),
@@ -686,7 +676,7 @@ stored in a simple JSON format.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -698,7 +688,7 @@ Datasets of this type are exported in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         <labelA>,\
@@ -793,7 +783,7 @@ stored in a simple JSON format.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -805,7 +795,7 @@ Datasets of this type are exported in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -926,7 +916,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename0>.<ext>
@@ -938,7 +928,7 @@ Datasets of this type are exported in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "info": {
         "year": "",
@@ -1036,7 +1026,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1051,7 +1041,7 @@ Datasets of this type are exported in the following format:
 
 where the labels XML files are in the following format:
 
-```
+```python
 <annotation>
     <folder></folder>
     <filename>image.ext</filename>
@@ -1126,7 +1116,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1186,7 +1176,7 @@ consisting of images and their associated object detections saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     obj.names
     images.txt
@@ -1201,7 +1191,7 @@ Datasets of this type are exported in the following format:
 
 where `obj.names` contains the object class labels:
 
-```
+```python
 <label-0>
 <label-1>
 ...
@@ -1210,7 +1200,7 @@ where `obj.names` contains the object class labels:
 
 and `images.txt` contains the list of images in `data/`:
 
-```
+```python
 data/<uuid1>.<ext>
 data/<uuid2>.<ext>
 ...
@@ -1221,7 +1211,7 @@ and the TXT files in `data/` are space-delimited files where each row
 corresponds to an object in the image of the same name, in one of the following
 formats:
 
-```
+```python
 # Detections
 <target> <x-center> <y-center> <width> <height>
 <target> <x-center> <y-center> <width> <height> <confidence>
@@ -1272,7 +1262,7 @@ consisting of images and their associated object detections saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     dataset.yaml
     images/
@@ -1298,7 +1288,7 @@ Datasets of this type are exported in the following format:
 
 where `dataset.yaml` contains the following information:
 
-```
+```python
 path: <dataset_dir>  # optional
 train: ./images/train/
 val: ./images/val/
@@ -1321,7 +1311,7 @@ located outside of `<dataset_dir>` as long as the optional `path` is provided.
 The TXT files in `labels/` are space-delimited files where each row corresponds
 to an object in the image of the same name, in one of the following formats:
 
-```
+```python
 # Detections
 <target> <x-center> <y-center> <width> <height>
 <target> <x-center> <y-center> <width> <height> <confidence>
@@ -1351,7 +1341,7 @@ to customize the export of datasets of this type.
 You can export a FiftyOne dataset as a YOLOv5 dataset in the above format as
 follows:
 
-```
+```python
 import fiftyone as fo
 
 export_dir = "/path/for/yolov5-dataset"
@@ -1391,7 +1381,7 @@ used to populate the class list.
 You can also perform labels-only exports of YOLO-formatted labels by providing
 the `labels_path` parameter instead of `export_dir`:
 
-```
+```python
 import fiftyone as fo
 
 labels_path = "/path/for/yolo-labels"
@@ -1422,7 +1412,7 @@ dataset consisting of images and their associated object detections stored as
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     tf.records-?????-of-?????
 
@@ -1431,7 +1421,7 @@ Datasets of this type are exported in the following format:
 where the features of the (possibly sharded) TFRecords are stored in the
 following format:
 
-```
+```python
 {
     # Image dimensions
     "image/height": tf.io.FixedLenFeature([], tf.int64),
@@ -1514,7 +1504,7 @@ segmentations stored as images on disk.
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename1>.<ext>
@@ -1560,7 +1550,7 @@ consisting of images and their associated tags and object detections stored in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1572,7 +1562,7 @@ Datasets of this type are exported in the following format:
 
 where `labels.xml` is an XML file in the following format:
 
-```
+```python
 <?xml version="1.0" encoding="utf-8"?>
 <annotations>
     <version>1.1</version>
@@ -1695,7 +1685,7 @@ consisting of videos and their associated object detections stored in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1710,7 +1700,7 @@ Datasets of this type are exported in the following format:
 
 where the labels XML files are stored in the following format:
 
-```
+```python
 <?xml version="1.0" encoding="utf-8"?>
 <annotations>
     <version>1.1</version>
@@ -1829,7 +1819,7 @@ stored in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1845,7 +1835,7 @@ Datasets of this type are exported in the following format:
 
 where `manifest.json` is a JSON file in the following format:
 
-```
+```python
 {
     "type": "eta.core.datasets.LabeledImageDataset",
     "description": "",
@@ -1891,7 +1881,7 @@ labeled dataset consisting of videos and their associated labels stored in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1907,7 +1897,7 @@ Datasets of this type are exported in the following format:
 
 where `manifest.json` is a JSON file in the following format:
 
-```
+```python
 {
     "type": "eta.core.datasets.LabeledVideoDataset",
     "description": "",
@@ -1953,7 +1943,7 @@ consisting of images and their associated multitask predictions saved in
 
 Datasets of this type are exported in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename0>.<ext>
@@ -1965,7 +1955,7 @@ Datasets of this type are exported in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 [\
     {\
         "name": "<filename0>.<ext>",\
@@ -2379,39 +2369,3 @@ about defining custom [`DatasetImporter`](../api/fiftyone.utils.data.importers.h
 Custom dataset types can be declared by implementing the [`Dataset`](../api/fiftyone.types.html#fiftyone.types.Dataset "fiftyone.types.Dataset") subclass\
 corresponding to the type of dataset that you are working with.\
 \
-- Exporting FiftyOne Datasets\
-  - [Basic recipe](#basic-recipe)\
-  - [Label type coercion](#label-type-coercion)\
-    - [Single labels to lists](#single-labels-to-lists)\
-    - [Classifications as detections](#classifications-as-detections)\
-    - [Object patches](#object-patches)\
-    - [Video clips](#video-clips)\
-  - [Class lists](#class-lists)\
-  - [Supported formats](#supported-formats)\
-  - [ImageDirectory](#imagedirectory)\
-  - [VideoDirectory](#videodirectory)\
-  - [MediaDirectory](#mediadirectory)\
-  - [FiftyOneImageClassificationDataset](#fiftyoneimageclassificationdataset)\
-  - [ImageClassificationDirectoryTree](#imageclassificationdirectorytree)\
-  - [VideoClassificationDirectoryTree](#videoclassificationdirectorytree)\
-  - [TFImageClassificationDataset](#tfimageclassificationdataset)\
-  - [FiftyOneImageDetectionDataset](#fiftyoneimagedetectiondataset)\
-  - [FiftyOneTemporalDetectionDataset](#fiftyonetemporaldetectiondataset)\
-  - [COCODetectionDataset](#cocodetectiondataset)\
-  - [VOCDetectionDataset](#vocdetectiondataset)\
-  - [KITTIDetectionDataset](#kittidetectiondataset)\
-  - [YOLOv4Dataset](#yolov4dataset)\
-  - [YOLOv5Dataset](#yolov5dataset)\
-  - [TFObjectDetectionDataset](#tfobjectdetectiondataset)\
-  - [ImageSegmentationDirectory](#imagesegmentationdirectory)\
-  - [CVATImageDataset](#cvatimagedataset)\
-  - [CVATVideoDataset](#cvatvideodataset)\
-  - [FiftyOneImageLabelsDataset](#fiftyoneimagelabelsdataset)\
-  - [FiftyOneVideoLabelsDataset](#fiftyonevideolabelsdataset)\
-  - [BDDDataset](#bdddataset)\
-  - [CSVDataset](#csvdataset)\
-  - [GeoJSONDataset](#geojsondataset)\
-  - [FiftyOneDataset](#fiftyonedataset)\
-  - [Custom formats](#custom-formats)\
-    - [Writing a custom DatasetExporter](#writing-a-custom-datasetexporter)\
-    - [Writing a custom Dataset type](#writing-a-custom-dataset-type)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne
-
-Contents
-
-
 # Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne [¶](\#Fine-tune-YOLOv8-models-for-custom-use-cases-with-the-help-of-FiftyOne "Permalink to this headline")
 
 Since its [initial release back in 2015](https://arxiv.org/abs/1506.02640), the You Only Look Once (YOLO) family of computer vision models has been one of the most popular in the field. In late 2022, [Ultralytics](https://github.com/ultralytics/ultralytics) announced [YOLOv8](https://docs.ultralytics.com/#ultralytics-yolov8), which comes with a new
@@ -38,34 +28,34 @@ FiftyOne can help you to achieve better performance using YOLOv8 models on real-
 
 To get started, you need to install [FiftyOne](https://docs.voxel51.com/getting_started/install.html) and [Ultralytics](https://github.com/ultralytics/ultralytics):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone ultralytics
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import numpy as np
 import os
 from tqdm import tqdm
@@ -76,12 +66,12 @@ We will import the YOLO object from Ultralytics and use this to instantiate pret
 
 For the purposes of illustration, we will use the smallest version, YOLOv8 Nano (YOLOv8n), but the same syntax will work for any of the pretrained models on the [Ultralytics YOLOv8 GitHub repo](https://github.com/ultralytics/ultralytics).
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from ultralytics import YOLO
 
 detection_model = YOLO("yolov8n.pt")
@@ -93,12 +83,12 @@ In Python, we can apply a YOLOv8 model to an individual image by passing the fil
 
 We can see this by applying the detection model to Ultralytics’ test image:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 results = detection_model("https://ultralytics.com/images/bus.jpg")
 
 ```
@@ -113,7 +103,7 @@ To run inference on a set of images, we must first put the data in the appropria
 
 If you just want to run inference on your FiftyOne dataset with an existing YOLOv8 model, you can do so by passing this `ultralytics.YOLO` model directly into your FiftyOne dataset’s `apply_model()` method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -140,12 +130,12 @@ In this walkthrough, we will look at YOLOv8’s predictions on a subset of the [
 
 Load the images and ground truth object detections in COCO’s validation set from the [FiftyOne Dataset Zoo](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html).
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     'coco-2017',
     split='validation',
@@ -155,12 +145,12 @@ dataset = foz.load_zoo_dataset(
 
 We then generate a mapping from YOLO class predictions to COCO class labels. [COCO has 91 classes](https://cocodataset.org/#home), and YOLOv8, just like YOLOv3 and YOLOv5, ignores all of the numeric classes and [focuses on the remaining 80](https://imageai.readthedocs.io/en/latest/detection/).
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 coco_classes = [c for c in dataset.default_classes if not c.isnumeric()]
 
 ```
@@ -169,12 +159,12 @@ coco_classes = [c for c in dataset.default_classes if not c.isnumeric()]
 
 Export the dataset into a directory `coco_val` in YOLO format:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 def export_yolo_data(
     samples,
     export_dir,
@@ -210,12 +200,12 @@ def export_yolo_data(
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 coco_val_dir = "coco_val"
 export_yolo_data(dataset, coco_val_dir, coco_classes)
 
@@ -223,12 +213,12 @@ export_yolo_data(dataset, coco_val_dir, coco_classes)
 
 Then run inference on these images:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !yolo task=detect mode=predict model=yolov8n.pt source=coco_val/images/val save_txt=True save_conf=True
 
 ```
@@ -237,12 +227,12 @@ Running this inference generates a directory `runs/detect/predict/labels`, which
 
 Each line is in the form: an integer for the class label, a class confidence score, and four values representing the bounding box.
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 label_file = "runs/detect/predict/labels/000000000139.txt"
 
 with open(label_file) as f:
@@ -250,7 +240,7 @@ with open(label_file) as f:
 
 ```
 
-```
+```python
 56 0.663281 0.619718 0.0640625 0.201878 0.265856
 60 0.55625 0.619718 0.184375 0.225352 0.266771
 74 0.710938 0.307512 0.01875 0.0469484 0.277868
@@ -271,12 +261,12 @@ with open(label_file) as f:
 
 We can read a YOLOv8 detection prediction file with NN detections into an (N,6)(N,6) numpy array:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 def read_yolo_detections_file(filepath):
     detections = []
     if not os.path.exists(filepath):
@@ -296,12 +286,12 @@ From here, we need to convert these detections into FiftyOne’s [Detections](ht
 
 YOLOv8 represents bounding boxes in a centered format with coordinates `[center_x, center_y, width, height]`, whereas [FiftyOne stores bounding boxes](https://docs.voxel51.com/user_guide/using_datasets.html#object-detection) in `[top-left-x, top-left-y, width, height]` format. We can make this conversion by “un-centering” the predicted bounding boxes:
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 def _uncenter_boxes(boxes):
     '''convert from center coords to corner coords'''
     boxes[:, 0] -= boxes[:, 2]/2.
@@ -311,12 +301,12 @@ def _uncenter_boxes(boxes):
 
 Additionally, we can convert a list of class predictions (indices) to a list of class labels (strings) by passing in the class list:
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 def _get_class_labels(predicted_classes, class_list):
     labels = (predicted_classes).astype(int)
     labels = [class_list[l] for l in labels]
@@ -326,12 +316,12 @@ def _get_class_labels(predicted_classes, class_list):
 
 Given the output of a `read_yolo_detections_file()` call, `yolo_detections`, we can generate the FiftyOne `Detections` object that captures this data:
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 def convert_yolo_detections_to_fiftyone(
     yolo_detections,
     class_list
@@ -362,12 +352,12 @@ def convert_yolo_detections_to_fiftyone(
 
 The final ingredient is a function that takes in the file path of an image, and returns the file path of the corresponding YOLOv8 detection prediction text file.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def get_prediction_filepath(filepath, run_number = 1):
     run_num_string = ""
     if run_number != 1:
@@ -381,12 +371,12 @@ If you run multiple inference calls for the same task, the predictions results a
 
 Putting the pieces together, we can write a function that adds these YOLOv8 detections to all of the samples in our dataset efficiently by batching the read and write operations to the underlying [MongoDB database](https://docs.voxel51.com/environments/index.html#connecting-to-a-localhost-database).
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 def add_yolo_detections(
     samples,
     prediction_field,
@@ -403,12 +393,12 @@ def add_yolo_detections(
 
 Now we can rapidly add the detections in a few lines of code:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 filepaths = dataset.values("filepath")
 prediction_filepaths = [get_prediction_filepath(fp) for fp in filepaths]
 dataset.set_values(
@@ -427,24 +417,24 @@ add_yolo_detections(
 
 Now we can visualize these YOLOv8 model predictions on the samples in our dataset in the FiftyOne App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
 
 ![yolov8-base-predictions](../_images/yolov8_coco_val_predictions.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -458,12 +448,12 @@ bounding box.
 
 We can convert from YOLOv8 instance segmentations to FiftyOne instance segmentations with this `convert_yolo_segmentations_to_fiftyone()` function:
 
-```
+```python
 [32]:
 
 ```
 
-```
+```python
 def convert_yolo_segmentations_to_fiftyone(
     yolo_segmentations,
     class_list
@@ -506,24 +496,24 @@ def convert_yolo_segmentations_to_fiftyone(
 
 Looping through all samples in the dataset, we can add the predictions from our `seg_model`, and then view these predicted masks in the FiftyOne App.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
 
 ![yolov8-segmentation](../_images/yolov8_coco_val_segmentation.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -534,12 +524,12 @@ Now that we have YOLOv8 predictions loaded onto the images in our dataset, we ca
 
 To evaluate the object detections in the `yolov8_det` field relative to the `ground_truth` detections field, we can run:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 detection_results = dataset.evaluate_detections(
     "yolov8n",
     eval_key="eval",
@@ -553,30 +543,30 @@ detection_results = dataset.evaluate_detections(
 
 We can then get the [mean average precision](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173) (mAP) of the model’s predictions:
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 mAP = detection_results.mAP()
 print(f"mAP = {mAP}")
 
 ```
 
-```
+```python
 mAP = 0.3121319189417518
 
 ```
 
 We can also look at the model’s performance on the 20 most common object classes in the dataset, where it has seen the most examples so the statistics are most meaningful:
 
-```
+```python
 [45]:
 
 ```
 
-```
+```python
 counts = dataset.count_values("ground_truth.detections.label")
 
 top20_classes = sorted(
@@ -589,7 +579,7 @@ detection_results.print_report(classes=top20_classes)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.85      0.68      0.76     11573
@@ -627,12 +617,12 @@ Fortunately, we can dig deeper into these results with FiftyOne. Using the Fifty
 
 ![yolov8-book-predictions](../_images/yolov8_coco_val_books_modal.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -646,12 +636,12 @@ In other cases though, quick inspection confirms that the object is clearly a bi
 
 ![yolov8-base-bird_patches](../_images/yolov8_coco_val_bird_patch_view.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -664,12 +654,12 @@ For the remainder of this walkthrough, we will pretend that we are working for a
 
 We will use the COCO validation dataset above as our test set. Since we are only concerned with detecting birds, we can filter out all non- `bird` ground truth detections using `filter_labels()`. We will also filter out the non- `bird` predictions, but will pass the `only_matches = False` argument into `filter_labels()` to make sure we keep images that have ground truth `bird` detections without YOLOv8n `bird` predictions.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 test_dataset = dataset.filter_labels(
     "ground_truth",
     F("label") == "bird"
@@ -689,36 +679,36 @@ classes = ["bird"]
 
 We then give the dataset a name, make it persistent, and save it to the underlying database. This test set has only 125 images, which we can visualize in the FiftyOne App.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
 
 ![yolov8-birds-test-view](../_images/yolov8_bird_test_view.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
 
 We can also run `evaluate_detections()` on this data to evaluate the YOLOv8n model’s performance on images with ground truth bird detections. We will store the results under the `base` evaluation key:
 
-```
+```python
 [49]:
 
 ```
 
-```
+```python
 base_bird_results = test_dataset.evaluate_detections(
     "yolov8n",
     eval_key="base",
@@ -727,7 +717,7 @@ base_bird_results = test_dataset.evaluate_detections(
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 125/125 [886.0ms elapsed, 0s remaining, 141.1 samples/s]
 Performing IoU sweep...
@@ -735,33 +725,33 @@ Performing IoU sweep...
 
 ```
 
-```
+```python
 [54]:
 
 ```
 
-```
+```python
 mAP = base_bird_results.mAP()
 print(f"Base mAP = {mAP}")
 
 ```
 
-```
+```python
 Base mAP = 0.24897924786479841
 
 ```
 
-```
+```python
 [56]:
 
 ```
 
-```
+```python
 base_bird_results.print_report(classes=classes)
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
         bird       0.87      0.39      0.54       451
@@ -776,12 +766,12 @@ We note that while the recall is the same as in the initial evaluation report ov
 
 The final step in preparing this test set is exporting the data into YOLOv8 format so we can run inference on just these samples with our fine-tuned model when we are done training. We will do so using the `export_yolo_data()` function we defined earlier.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 export_yolo_data(
     test_dataset,
     "birds_test",
@@ -811,12 +801,12 @@ The COCO training data on which YOLOv8 was trained contains 3,2373,237 images wi
 
 Let’s create our training dataset. First, we’ll create a dataset, `train_dataset`, by loading the `bird` detection labels from the COCO train split using the [FiftyOne Dataset Zoo](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html), and cloning this into a new `Dataset` object:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 train_dataset = foz.load_zoo_dataset(
     'coco-2017',
     split='train',
@@ -831,12 +821,12 @@ train_dataset.save()
 
 Then, we’ll load Open Images samples with `Bird` detection labels, passing in `only_matching=True` to only load the `Bird` labels. We then map these labels into COCO label format by changing `Bird` into `bird`.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 oi_samples = foz.load_zoo_dataset(
     "open-images-v6",
     classes = ["Bird"],
@@ -851,12 +841,12 @@ oi_samples = foz.load_zoo_dataset(
 
 We can add these new samples into our training dataset with `merge_samples()`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 train_dataset.merge_samples(oi_samples)
 
 ```
@@ -867,12 +857,12 @@ This dataset contains 24,22624,226 samples with `bird` labels, or more than seve
 
 The final step in preparing our data is splitting it into training and validation sets and exporting it into YOLO format. We will use an 80–20 train-val split, which we will select randomly using [FiftyOne’s random utils](https://docs.voxel51.com/api/fiftyone.utils.random.html).
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone.utils.random as four
 
 ## delete existing tags to start fresh
@@ -896,17 +886,17 @@ export_yolo_data(
 
 Now all that is left is to do the fine-tuning! We will use [YOLO command line syntax](https://docs.ultralytics.com/cli/), with `mode=train`. We will specify the initial weights as the starting point for training, the number of epochs, image size, and batch size.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !yolo task=detect mode=train model=yolov8n.pt data=birds_train/dataset.yaml epochs=60 imgsz=640 batch=16
 
 ```
 
-```
+```python
  Image sizes 640 train, 640 val
  Using 8 dataloader workers
  Logging results to runs/detect/train
@@ -950,24 +940,24 @@ For this walkthrough, 6060 epochs of training was sufficient to achieve converge
 
 With fine-tuning complete, we can generate predictions on our test data with the “best” weights found during the training process, which are stored at `runs/detect/train/weights/best.pt`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !yolo task=detect mode=predict model=runs/detect/train/weights/best.pt source=birds_test/images/val save_txt=True save_conf=True
 
 ```
 
 Then we can load these predictions onto our data and visualize the predictions in the FiftyOne App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 filepaths = test_dataset.values("filepath")
 prediction_filepaths = [get_prediction_filepath(fp, run_number=2) for fp in filepaths]
 
@@ -985,24 +975,24 @@ add_yolo_detections(
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(test_dataset)
 
 ```
 
 ![yolov8-finetune-predictions](../_images/yolov8_finetune_predictions_app.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -1011,12 +1001,12 @@ session.freeze()
 
 On a holistic level, we can compare the performance of the fine-tuned model to the original, pretrained model by stacking their standard metrics against each other. The easiest way to get these metrics is with FiftyOne’s Evaluation API:
 
-```
+```python
 [55]:
 
 ```
 
-```
+```python
 finetune_bird_results = test_dataset.evaluate_detections(
     "yolov8n_bird",
     eval_key="finetune",
@@ -1025,7 +1015,7 @@ finetune_bird_results = test_dataset.evaluate_detections(
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 125/125 [954.4ms elapsed, 0s remaining, 131.0 samples/s]
 Performing IoU sweep...
@@ -1035,18 +1025,18 @@ Performing IoU sweep...
 
 From this, we can immediately see improvement in the mean average precision (mAP):
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 print("yolov8n mAP: {}.format(base_bird_results.mAP()))
 print("fine-tuned mAP: {}.format(finetune_bird_results.mAP()))
 
 ```
 
-```
+```python
 yolov8n mAP: 0.24897924786479841
 fine-tuned mAP: 0.31339033693212076
 
@@ -1054,17 +1044,17 @@ fine-tuned mAP: 0.31339033693212076
 
 Printing out a report, we can see that the recall has improved from 0.390.39 to 0.560.56. This major improvement offsets a minor dip in precision, giving an overall higher F1 score (0.670.67 compared to 0.540.54).
 
-```
+```python
 [56]:
 
 ```
 
-```
+```python
 finetune_bird_results.print_report()
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
         bird       0.81      0.56      0.67       506
@@ -1077,12 +1067,12 @@ weighted avg       0.81      0.56      0.67       506
 
 We can also look more closely at individual images to see where the fine-tuned model is having trouble. In particular, we can look at images with the most false negatives, or the most false positives:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 fn_view = dataset.sort_by("eval_fn", reverse=True)
 session.view = fn_view
 
@@ -1090,22 +1080,22 @@ session.view = fn_view
 
 ![yolov8-finetune-fp](../_images/yolov8_finetune_fp_predictions.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 fp_view = dataset.sort_by("eval_fp", reverse=True)
 session.view = fp_view
 
@@ -1113,12 +1103,12 @@ session.view = fp_view
 
 ![yolov8-finetune_fn](../_images/yolov8_finetune_fn_predictions.png)
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -1140,18 +1130,3 @@ While YOLOv8 represents a step forward for real-time object detection and segmen
 
 You can use FiftyOne to visualize, evaluate, and better understand YOLOv8 model predictions. After all, while YOLO may only look once, a conscientious computer vision engineer or researcher certainly looks twice (or more)!
 
-- Fine-tune YOLOv8 models for custom use cases with the help of FiftyOne
-  - [Setup](#Setup)
-  - [Load YOLOv8 predictions in FiftyOne](#Load-YOLOv8-predictions-in-FiftyOne)
-    - [Generate predictions](#Generate-predictions)
-    - [Load detections](#Load-detections)
-    - [Load segmentation masks](#Load-segmentation-masks)
-  - [Evaluate YOLOv8 model predictions](#Evaluate-YOLOv8-model-predictions)
-    - [Compute summary statistics](#Compute-summary-statistics)
-    - [Inspect individual predictions](#Inspect-individual-predictions)
-  - [Curate data for fine-tuning](#Curate-data-for-fine-tuning)
-    - [Generate test set](#Generate-test-set)
-    - [Generate training set](#Generate-training-set)
-  - [Fine-tune a YOLOv8 detection model](#Fine-tune-a-YOLOv8-detection-model)
-  - [Assess improvement from fine-tuning](#Assess-improvement-from-fine-tuning)
-  - [Summary](#Summary)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Cheat Sheets](index.html) >
-- Views Cheat Sheet
-
-Contents
-
-
 # Views Cheat Sheet [¶](\#views-cheat-sheet "Permalink to this headline")
 
 This cheat sheet shows how to use [dataset views](../fiftyone_concepts/using_views.html#using-views) to
@@ -17,7 +7,7 @@ retrieve the specific subset of data you’re looking for.
 
 If you run:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -197,7 +187,7 @@ you’ll need to make two changes when creating your filter expression:
 
 The following example demonstrates how to correctly filter by label IDs:
 
-```
+```python
 from bson import ObjectId
 
 import fiftone as fo
@@ -223,7 +213,7 @@ A hypothetical match fields method would take as input a `field` and a
 `filter` to apply to it, but we can achieve this in multiple ways via simple
 [`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") expressions:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -247,7 +237,7 @@ view = dataset.match(F(field).apply(filter))
 Note that [`exists()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exists "fiftyone.core.collections.SampleCollection.exists")
 is also a special case of field matching:
 
-```
+```python
 dataset.take(100).set_field("uniqueness", None).save()
 
 # Concise syntax via `exists()`
@@ -264,7 +254,7 @@ All three of the missing `Tag` methods can be created with relative ease.
 
 Here’s how selecting tags can be achieved:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # What a select_tags() method would look like
@@ -277,7 +267,7 @@ view = dataset.set_field("tags", F("tags").intersection(tags))
 
 Here’s how excluding tags can be achieved:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # What an exclude_tags() method would look like
@@ -290,7 +280,7 @@ view = dataset.set_field("tags", F("tags").difference(tags))
 
 And here’s how filtering tags can be achieved:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # What a filter_tags() method would look like
@@ -320,7 +310,7 @@ For example, you can retrieve the frame-level object detections in the
 “detections” field of the
 [quickstart-video](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -334,7 +324,7 @@ view = dataset.filter_labels("frames.detections", F("label") == "vehicle")
 Or when working with grouped datasets, you can match groups based on whether
 they contain a given group slice:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -379,7 +369,7 @@ field of your dataset.
 For example, you can extract patches for all ground truth objects in a
 detection dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -390,7 +380,7 @@ print(gt_patches)
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num patches: 1232
@@ -416,7 +406,7 @@ an object detection model, then you can use
 to transform the dataset (or a view into it) into a new view that contains one
 sample for each true positive, false positive, and false negative example.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -436,7 +426,7 @@ print(eval_patches.count_values("type"))
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num patches: 5363
@@ -465,7 +455,7 @@ You can use
 create views into your video datasets that contain one sample per clip defined
 by a specific field or expression in a video collection.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -483,7 +473,7 @@ print(clips)
 
 ```
 
-```
+```python
 Dataset:    quickstart-video
 Media type: video
 Num clips:  11
@@ -515,7 +505,7 @@ You can use
 to create image views into your video datasets that contain one sample per
 frame in the input collection.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -527,7 +517,7 @@ print(frames)
 
 ```
 
-```
+```python
 Dataset:     quickstart-video
 Media type:  image
 Num samples: 1279
@@ -557,7 +547,7 @@ For example, the following code creates an image collection from the “left” 
 “right” group slices of the
 [quickstart-groups](../dataset_zoo/datasets.html#dataset-zoo-quickstart-groups) dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -568,7 +558,7 @@ print(image_view)
 
 ```
 
-```
+```python
 Dataset:     groups-overview
 Media type:  image
 Num samples: 400
@@ -592,25 +582,3 @@ All group slice(s) you select must have the same media type, since the
 `media_type` of the returned collection is the media type of the slices
 you select.
 
-- Views Cheat Sheet
-  - [The six basic operations](#the-six-basic-operations)
-    - [Matching](#matching)
-    - [Filtering](#filtering)
-    - [Selection](#selection)
-    - [Exclusion](#exclusion)
-    - [Sorting](#sorting)
-    - [Indexing](#indexing)
-    - [Conversion](#conversion)
-    - [Miscellaneous](#miscellaneous)
-  - [Filtering, matching, selecting, and excluding](#filtering-matching-selecting-and-excluding)
-    - [Samples](#samples)
-    - [Labels](#labels)
-    - [Fields](#fields)
-    - [Tags](#tags)
-    - [Frames and groups](#frames-and-groups)
-  - [Conversion](#id2)
-    - [Images to object patches](#images-to-object-patches)
-    - [Images to evaluation patches](#images-to-evaluation-patches)
-    - [Videos to clips](#videos-to-clips)
-    - [Videos to images](#videos-to-images)
-    - [Grouped to non-grouped](#grouped-to-non-grouped)

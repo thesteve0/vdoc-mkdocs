@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- FiftyOne Teams Installation
-
-Contents
-
-
 # FiftyOne Teams Installation [¶](\#fiftyone-teams-installation "Permalink to this headline")
 
 FiftyOne Teams deployments come with a centralized FiftyOne Teams App and
@@ -43,7 +33,7 @@ of the Teams App by clicking on your user icon in the upper right corner:
 There you’ll see instructions for installing a `fiftyone` package from the
 private PyPI server as shown below:
 
-```
+```python
 pip install --index-url https://${TOKEN}@pypi.fiftyone.ai fiftyone
 
 ```
@@ -89,7 +79,7 @@ location.
 In poetry v1.5, it is recommended to use an
 [explicit package source.](https://python-poetry.org/docs/repositories/#explicit-package-sources)
 
-```
+```python
 poetry source add --priority=explicit fiftyone-teams https://pypi.fiftyone.ai/simple/
 
 ```
@@ -97,21 +87,21 @@ poetry source add --priority=explicit fiftyone-teams https://pypi.fiftyone.ai/si
 Prior to v1.5, you should use the deprecated
 [secondary package source.](https://python-poetry.org/docs/1.4/repositories/#secondary-package-sources)
 
-```
+```python
 poetry source add --secondary fiftyone-teams https://pypi.fiftyone.ai/simple/
 
 ```
 
 #### Configure credentials [¶](\#configure-credentials "Permalink to this headline")
 
-```
+```python
 poetry config http-basic.fiftyone-teams ${TOKEN} ""
 
 ```
 
 Alternatively, you can specify the credentials in environment variables.
 
-```
+```python
 export POETRY_HTTP_BASIC_FIFTYONE_TEAMS_USERNAME="${TOKEN}"
 export POETRY_HTTP_BASIC_FIFTYONE_TEAMS_PASSWORD=""
 
@@ -124,7 +114,7 @@ If you have trouble configuring the credentials, see
 
 Replace `X.Y.Z` with the proper version
 
-```
+```python
 poetry add --source fiftyone-teams fiftyone==X.Y.Z
 
 ```
@@ -135,7 +125,7 @@ Due to an [unresolved misalignment](https://github.com/python-poetry/poetry/issu
 with `poetry` and a FiftyOne dependency, `kaleido`, you must add it
 to your own dependencies as well:
 
-```
+```python
 poetry add kaleido==0.2.1
 
 ```
@@ -143,7 +133,7 @@ poetry add kaleido==0.2.1
 You should then see snippets in the `pyproject.toml` file like the following
 (the `priority` line will be different for `poetry<v1.5`):
 
-```
+```python
 [[tool.poetry.source]]
 name = "fiftyone-teams"
 url = "https://pypi.fiftyone.ai"
@@ -151,7 +141,7 @@ priority = "explicit"
 
 ```
 
-```
+```python
 [tool.poetry.dependencies]
 fiftyone = {version = "X.Y.Z", source = "fiftyone-teams}
 
@@ -193,7 +183,7 @@ You can do this in any of the following ways:
 [boto3 library](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 For example, here are two of the supported methods:
 
-```
+```python
 # Access key
 export AWS_ACCESS_KEY_ID=...
 export AWS_SECRET_ACCESS_KEY=...
@@ -202,7 +192,7 @@ export AWS_DEFAULT_REGION=...
 
 ```
 
-```
+```python
 # Web identity provider
 export AWS_ROLE_ARN=...
 export AWS_WEB_IDENTITY_TOKEN_FILE=...
@@ -215,14 +205,14 @@ export AWS_DEFAULT_REGION=...
 following sets of environment variables to point to your AWS credentials on
 disk:
 
-```
+```python
 # AWS config file
 export AWS_CONFIG_FILE="/path/to/aws-config.ini"
 export AWS_PROFILE=default  # optional
 
 ```
 
-```
+```python
 # Shared credentials file
 export AWS_SHARED_CREDENTIALS_FILE="/path/to/aws-credentials.ini"
 export AWS_PROFILE=default  # optional
@@ -246,7 +236,7 @@ this.
 3\. Permanently register AWS credentials on a particular machine by adding the
 following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
 
-```
+```python
 {
     "aws_config_file": "/path/to/aws-config.ini",
     "aws_profile": "default"  # optional
@@ -257,7 +247,7 @@ following keys to your [media cache config](cloud_media.html#teams-media-cache-c
 If you need to [configure CORS on your AWS buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enabling-cors-examples.html),
 here is an example configuration:
 
-```
+```python
 [\
     {\
         "origin": ["https://fiftyone-teams-deployment.yourcompany.com"],\
@@ -294,7 +284,7 @@ in a manner supported by Google Cloud, such as:
 2\. Provide GCS credentials on a per-session basis by setting the following
 environment variables to point to your GCS credentials on disk:
 
-```
+```python
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcp-credentials.json"
 
 ```
@@ -302,7 +292,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcp-credentials.json"
 3\. Permanently register GCS credentials on a particular machine by adding the
 following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
 
-```
+```python
 {
     "google_application_credentials": "/path/to/gcp-credentials.json"
 }
@@ -317,7 +307,7 @@ external account credentials.
 If you need to [configure CORS on your GCP buckets](https://cloud.google.com/storage/docs/using-cors),
 here is an example configuration:
 
-```
+```python
 [\
     {\
         "origin": ["https://fiftyone-teams-deployment.yourcompany.com"],\
@@ -348,14 +338,14 @@ You can do this in any of the following ways:
 2\. Provide your Azure credentials on a per-session basis by setting any group
 of environment variables shown below:
 
-```
+```python
 # Option 1
 export AZURE_STORAGE_CONNECTION_STRING=...
 export AZURE_ALIAS=...  # optional
 
 ```
 
-```
+```python
 # Option 2
 export AZURE_STORAGE_ACCOUNT=...
 export AZURE_STORAGE_KEY=...
@@ -363,7 +353,7 @@ export AZURE_ALIAS=...  # optional
 
 ```
 
-```
+```python
 # Option 3
 export AZURE_STORAGE_ACCOUNT=...
 export AZURE_CLIENT_ID=...
@@ -376,7 +366,7 @@ export AZURE_ALIAS=...  # optional
 3\. Provide Azure credentials on a per-session basis by setting the following
 environment variables to point to your Azure credentials on disk:
 
-```
+```python
 export AZURE_CREDENTIALS_FILE=/path/to/azure-credentials.ini
 export AZURE_PROFILE=default  # optional
 
@@ -385,7 +375,7 @@ export AZURE_PROFILE=default  # optional
 4\. Permanently register Azure credentials on a particular machine by adding the
 following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
 
-```
+```python
 {
     "azure_credentials_file": "/path/to/azure-credentials.ini",
     "azure_profile": "default"  # optional
@@ -396,14 +386,14 @@ following keys to your [media cache config](cloud_media.html#teams-media-cache-c
 In the options above, the `.ini` file should have syntax similar to one of
 the following:
 
-```
+```python
 [default]
 conn_str = ...
 alias = ...  # optional
 
 ```
 
-```
+```python
 [default]
 account_name = ...
 account_key = ...
@@ -411,7 +401,7 @@ alias = ...  # optional
 
 ```
 
-```
+```python
 [default]
 account_name = ...
 client_id = ...
@@ -424,7 +414,7 @@ alias = ...  # optional
 When populating samples with Azure Storage filepaths, you can either specify
 paths by their full URL:
 
-```
+```python
 filepath = "https://${account_name}.blob.core.windows.net/container/path/to/object.ext"
 
 # For example
@@ -435,7 +425,7 @@ filepath = "https://voxel51.blob.core.windows.net/test-container/image.jpg"
 or, if you have defined an alias in your config, you may instead prefix the
 alias:
 
-```
+```python
 filepath = "${alias}://container/path/to/object.ext"
 
 # For example
@@ -467,7 +457,7 @@ You can do this in any of the following ways:
 1\. Provide your MinIO credentials on a per-session basis by setting the
 individual environment variables shown below:
 
-```
+```python
 export MINIO_ACCESS_KEY=...
 export MINIO_SECRET_ACCESS_KEY=...
 export MINIO_ENDPOINT_URL=...
@@ -479,7 +469,7 @@ export MINIO_REGION=...  # if applicable
 2\. Provide MinIO credentials on a per-session basis by setting the following
 environment variables to point to your MinIO credentials on disk:
 
-```
+```python
 export MINIO_CONFIG_FILE=/path/to/minio-config.ini
 export MINIO_PROFILE=default  # optional
 
@@ -488,7 +478,7 @@ export MINIO_PROFILE=default  # optional
 3\. Permanently register MinIO credentials on a particular machine by adding the
 following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
 
-```
+```python
 {
     "minio_config_file": "/path/to/minio-config.ini",
     "minio_profile": "default"  # optional
@@ -498,7 +488,7 @@ following keys to your [media cache config](cloud_media.html#teams-media-cache-c
 
 In the options above, the `.ini` file should have syntax similar the following:
 
-```
+```python
 [default]
 access_key = ...
 secret_access_key = ...
@@ -511,7 +501,7 @@ region = ...  # if applicable
 When populating samples with MinIO filepaths, you can either specify paths by
 prefixing your MinIO endpoint URL:
 
-```
+```python
 filepath = "${endpoint_url}/bucket/path/to/object.ext"
 
 # For example
@@ -522,7 +512,7 @@ filepath = "https://voxel51.min.io/test-bucket/image.jpg"
 or, if you have defined an alias in your config, you may instead prefix the
 alias:
 
-```
+```python
 filepath = "${alias}://bucket/path/to/object.ext"
 
 # For example
@@ -542,7 +532,7 @@ sufficient for FiftyOne Teams to properly utilize them. In rare cases where the
 cloud provider client needs non-default configuration, you can add extra client
 kwargs via the [media cache config](cloud_media.html#teams-media-cache-config):
 
-```
+```python
 {
     "extra_client_kwargs": {
         "azure": {"extra_kwarg": "value"},
@@ -630,19 +620,3 @@ Users cannot access stored credentials directly, either via the Teams UI or
 by using the Teams SDK locally. The credentials are only decrypted and
 used internally by the Teams servers.
 
-- FiftyOne Teams Installation
-  - [Python SDK](#python-sdk)
-    - [Next Steps](#next-steps)
-    - [Installation with Poetry](#installation-with-poetry)
-      - [Add source](#add-source)
-      - [Configure credentials](#configure-credentials)
-      - [Add fiftyone dependency](#add-fiftyone-dependency)
-  - [Cloud credentials](#cloud-credentials)
-    - [Cross-origin resource sharing (CORS)](#cross-origin-resource-sharing-cors)
-    - [Browser caching](#browser-caching)
-    - [Amazon S3](#amazon-s3)
-    - [Google Cloud Storage](#google-cloud-storage)
-    - [Microsoft Azure](#microsoft-azure)
-    - [MinIO](#minio)
-    - [Extra client arguments](#extra-client-arguments)
-  - [Cloud storage page](#cloud-storage-page)

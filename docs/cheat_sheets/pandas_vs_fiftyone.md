@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Cheat Sheets](index.html) >
-- pandas vs FiftyOne
-
-Contents
-
-
 # pandas vs FiftyOne [¶](\#pandas-vs-fiftyone "Permalink to this headline")
 
 This cheat sheet shows how to translate common
@@ -100,17 +90,9 @@ Note
 
 The table above assumes you have imported:
 
-```
+```python
 import pandas.api.types as pdt
 from fiftyone import ViewField as F
 
 ```
 
-- pandas vs FiftyOne
-  - [Nomenclature](#nomenclature)
-  - [Getting started](#getting-started)
-  - [Basics](#basics)
-  - [View stages](#view-stages)
-  - [Aggregations](#aggregations)
-  - [Structural changes](#structural-changes)
-  - [Expressions](#expressions)

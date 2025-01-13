@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- FiftyOne Teams Plugins
-
-Contents
-
-
 # FiftyOne Teams Plugins [¶](\#fiftyone-teams-plugins "Permalink to this headline")
 
 FiftyOne Teams provides native support for installing and running
@@ -66,7 +56,7 @@ Admins can also use the
 `upload_plugin()` method from
 the Management SDK:
 
-```
+```python
 import fiftyone.management as fom
 
 # You can pass the directory or an already zipped version of it
@@ -106,7 +96,7 @@ Admins can also use the
 `upload_plugin()` method from
 the Management SDK with the `overwrite=True` option:
 
-```
+```python
 import fiftyone.management as fom
 
 # You can pass the directory or an already zipped version of it
@@ -138,7 +128,7 @@ Admins can also use the
 `delete_plugin()` method from
 the Management SDK:
 
-```
+```python
 import fiftyone.management as fom
 
 fom.delete_plugin(plugin_name)
@@ -174,7 +164,7 @@ and
 `set_plugin_operator_enabled()`
 methods from the management SDK:
 
-```
+```python
 import fiftyone.management as fom
 
 # Disable a plugin
@@ -213,7 +203,7 @@ Admins can also use the
 `set_plugin_operator_permissions()`
 method from the Management SDK:
 
-```
+```python
 import fiftyone.management as fom
 
 # Set minimum role permission only
@@ -266,7 +256,7 @@ Admins can also use the
 `set_organization_settings()`
 method from the Management SDK:
 
-```
+```python
 import fiftyone.management as fom
 
 fom.set_organization_settings(
@@ -536,40 +526,3 @@ scheduled:
 
 ![../_images/view.png](../_images/view.png)
 
-- FiftyOne Teams Plugins
-  - [Plugins page](#plugins-page)
-  - [Installing a plugin](#installing-a-plugin)
-    - [Teams UI](#teams-ui)
-    - [SDK](#sdk)
-  - [Upgrading a plugin](#upgrading-a-plugin)
-    - [Teams UI](#id1)
-    - [SDK](#id2)
-  - [Uninstalling a plugin](#uninstalling-a-plugin)
-    - [Teams UI](#id3)
-    - [SDK](#id4)
-  - [Enabling/disabling plugins](#enabling-disabling-plugins)
-    - [Teams UI](#id5)
-    - [SDK](#id6)
-  - [Plugin permissions](#plugin-permissions)
-    - [Teams UI](#id7)
-    - [SDK](#id8)
-    - [Default permissions](#default-permissions)
-      - [Teams UI](#id9)
-      - [SDK](#id10)
-  - [Delegated operations](#delegated-operations)
-  - [Configuring your orchestrator(s)](#configuring-your-orchestrator-s)
-  - [Managing delegated operations](#managing-delegated-operations)
-    - [Runs page](#runs-page)
-      - [Sorting](#sorting)
-      - [Filtering](#filtering)
-      - [Searching](#searching)
-      - [Re-running](#re-running)
-      - [Pinning](#pinning)
-      - [Renaming](#renaming)
-      - [Mark as failed](#mark-as-failed)
-      - [Monitoring progress](#monitoring-progress)
-    - [Run page](#run-page)
-      - [Input](#input)
-      - [Output](#output)
-      - [Errors](#errors)
-      - [View](#view)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Albumentations Integration
-
-Contents
-
-
 # Albumentations Integration [¶](\#albumentations-integration "Permalink to this headline")
 
 The [Albumentations](https://albumentations.ai/docs/) library is
@@ -83,7 +73,7 @@ The FiftyOne Albumentations plugin provides the following functionality:
 
 To get started, first make sure you have FiftyOne and Albumentations installed:
 
-```
+```python
 $ pip install -U fiftyone albumentations
 
 ```
@@ -91,7 +81,7 @@ $ pip install -U fiftyone albumentations
 Next, install the
 [FiftyOne Albumentations plugin](https://github.com/jacobmarks/fiftyone-albumentations-plugin):
 
-```
+```python
 $ fiftyone plugins download https://github.com/jacobmarks/fiftyone-albumentations-plugin
 
 ```
@@ -107,7 +97,7 @@ You will also need to load (and download if necessary) a dataset to apply the
 augmentations to. For this guide, we’ll use the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -129,12 +119,12 @@ examples to get you started, using FiftyOne’s
 [Hugging Face Transformers](huggingface.html#huggingface-integration) and
 [Ultralytics](ultralytics.html#ultralytics-integration) integrations:
 
-```
+```python
 pip install -U transformers ultralytics
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -194,7 +184,7 @@ executed immediately. If you set `delegated=True`, the operation will be
 background from your terminal with:
 
 
-```
+```python
 $ fiftyone delegated launch
 
 ```
@@ -227,7 +217,7 @@ filter for just augmented or non-augmented samples in the app.
 You can also filter for augmented samples programmatically with the
 [`match_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags") method:
 
-```
+```python
 # get just the augmented samples
 augmented_view = dataset.match_tags("augmented")
 
@@ -288,7 +278,7 @@ You can also access this information programmatically by getting info about
 the custom run that the information is stored in. For the Albumentations
 plugin, this info is stored via the key `'_last_albumentations_run'`:
 
-```
+```python
 last_run_info = dataset.get_run_info("_last_albumentations_run")
 print(last_run_info)
 
@@ -315,13 +305,3 @@ Additionally, you will have access to this saved transformation pipeline under
 the “saved” tab for each transformation in the [augment\_with\_albumentations](https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=readme-ov-file#applying-augmentations)
 operator modal.
 
-- Albumentations Integration
-  - [Overview](#overview)
-    - [Supported transformations](#supported-transformations)
-    - [Functionality](#functionality)
-  - [Setup](#setup)
-  - [Apply transformations](#apply-transformations)
-  - [Visualize transformations](#visualize-transformations)
-  - [Save augmentations](#save-augmentations)
-  - [Get last transformation info](#get-last-transformation-info)
-  - [Save transformations](#save-transformations)

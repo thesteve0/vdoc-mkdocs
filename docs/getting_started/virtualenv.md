@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Installation](install.html) >
-- Virtual Environment Setup
-
-Contents
-
-
 # Virtual Environment Setup [¶](\#virtual-environment-setup "Permalink to this headline")
 
 This page describes how to create a Python
@@ -25,7 +15,7 @@ First, identify a suitable Python executable. On many systems, this will be
 Python version, pass `--version` to Python. Here is example output from running
 these commands:
 
-```
+```python
 $ python --version
 Python 2.7.17
 $ python3 --version
@@ -39,7 +29,7 @@ Navigate to a folder where you would like to create the virtual environment.
 Using the suitable Python version you have identified, run the following to
 create a virtual environment called `env` (you can choose any name):
 
-```
+```python
 python3 -m venv env
 
 ```
@@ -58,7 +48,7 @@ is active, `python` without any suffix will refer to the Python version you
 used to create the virtual environment, so you can use this for the remainder
 of this guide. For example:
 
-```
+```python
 $ python --version
 Python 3.9.20
 
@@ -72,7 +62,7 @@ virtual environment. FiftyOne’s packages rely on some newer pip features, so
 older pip versions may fail to locate a downloadable version of FiftyOne
 entirely. To upgrade, run the following command:
 
-```
+```python
 pip install --upgrade pip setuptools wheel build
 
 ```
@@ -102,6 +92,3 @@ Warning
 We currently discourage using `pipenv` with FiftyOne, as it has known issues
 with installing packages from custom package indices.
 
-- Virtual Environment Setup
-  - [Creating a virtual environment using `venv`](#creating-a-virtual-environment-using-venv)
-  - [Alternatives to `venv`](#alternatives-to-venv)

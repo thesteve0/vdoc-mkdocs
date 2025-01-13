@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Qdrant Integration
-
-Contents
-
-
 # Qdrant Integration [¶](\#qdrant-integration "Permalink to this headline")
 
 [Qdrant](https://qdrant.tech) is one of the most popular vector search
@@ -60,7 +50,7 @@ You must [launch a Qdrant server](https://qdrant.tech) and install the
 [Qdrant Python client](https://github.com/qdrant/qdrant_client) to run
 this example:
 
-```
+```python
 docker pull qdrant/qdrant
 docker run -p 6333:6333 qdrant/qdrant
 
@@ -74,7 +64,7 @@ entering them manually each time you interact with your Qdrant index.
 
 First let’s load a dataset into FiftyOne and compute embeddings for the samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -94,7 +84,7 @@ qdrant_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -123,7 +113,7 @@ Qdrant query patterns.
 The easiest way to get started with Qdrant is to
 [install locally via Docker](https://qdrant.tech/documentation/install/):
 
-```
+```python
 docker pull qdrant/qdrant
 docker run -p 6333:6333 qdrant/qdrant
 
@@ -134,7 +124,7 @@ docker run -p 6333:6333 qdrant/qdrant
 In order to use the Qdrant backend, you must also install the
 [Qdrant Python client](https://qdrant.tech/documentation/install/#python-client):
 
-```
+```python
 pip install qdrant-client
 
 ```
@@ -149,7 +139,7 @@ will use an sklearn backend.
 To use the Qdrant backend, simply set the optional `backend` parameter of
 `compute_similarity()` to `"qdrant"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="qdrant", ...)
@@ -159,7 +149,7 @@ fob.compute_similarity(..., backend="qdrant", ...)
 Alternatively, you can permanently configure FiftyOne to use the Qdrant backend
 by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=qdrant
 
 ```
@@ -167,7 +157,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=qdrant
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "qdrant"
 }
@@ -185,7 +175,7 @@ The recommended way to configure your Qdrant credentials is to store them in
 the environment variables shown below, which are automatically accessed by
 FiftyOne whenever a connection to Qdrant is made.
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_QDRANT_URL=localhost:6333
 export FIFTYONE_BRAIN_SIMILARITY_QDRANT_API_KEY=XXXXXXXX
 export FIFTYONE_BRAIN_SIMILARITY_QDRANT_GRPC_PORT=6334
@@ -200,7 +190,7 @@ The `API_KEY`, `GRPC_PORT`, and `PREFER_GRPC` environment variables are optional
 You can also store your credentials in your [brain config](../brain.html#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "similarity_backends": {
         "qdrant": {
@@ -222,7 +212,7 @@ You can manually provide credentials as keyword arguments each time you call
 methods like `compute_similarity()`
 that require connections to Qdrant:
 
-```
+```python
 import fiftyone.brain as fob
 
 qdrant_index = fob.compute_similarity(
@@ -241,7 +231,7 @@ Note that, when using this strategy, you must manually provide the credentials
 when loading an index later via
 [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results"):
 
-```
+```python
 qdrant_index = dataset.load_brain_results(
     "qdrant_index",
     url="http://localhost:6333",
@@ -274,7 +264,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "qdrant": {
@@ -314,7 +304,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 qdrant_index = fob.compute_similarity(
     ...
     backend="qdrant",
@@ -334,7 +324,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -356,7 +346,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -369,7 +359,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -379,7 +369,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -392,7 +382,7 @@ only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated Qdrant collection, which you can do as
 follows:
 
-```
+```python
 # Delete the Qdrant collection
 qdrant_index = dataset.load_brain_results(brain_key)
 qdrant_index.cleanup()
@@ -416,7 +406,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -474,7 +464,7 @@ You can also create a similarity index for
 including the `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -503,7 +493,7 @@ for the samples or patches in your dataset, you can connect to it by passing
 the `collection_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -532,7 +522,7 @@ to add and remove embeddings from an existing Qdrant index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Qdrant index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -576,7 +566,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Qdrant index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -619,7 +609,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -669,7 +659,7 @@ interest.
 You can use the `client` property of a Qdrant index to directly access the
 underlying Qdrant client instance and use its methods as desired:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -705,7 +695,7 @@ Here’s an example of creating a similarity index backed by a customized Qdrant
 collection. Just for fun, we’ll specify a custom collection name, use dot
 product similarity, and populate the index for only a subset of our dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -735,20 +725,3 @@ print(qdrant_client.get_collections())
 
 ```
 
-- Qdrant Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Qdrant client](#installing-the-qdrant-client)
-    - [Using the Qdrant backend](#using-the-qdrant-backend)
-    - [Authentication](#authentication)
-    - [Qdrant config parameters](#qdrant-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a Qdrant index](#querying-a-qdrant-index)
-    - [Accessing the Qdrant client](#accessing-the-qdrant-client)
-    - [Advanced usage](#advanced-usage)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- FiftyOne Teams App
-
-Contents
-
-
 # FiftyOne Teams App [¶](\#fiftyone-teams-app "Permalink to this headline")
 
 The FiftyOne Teams App allows you to visualize, browse, and interact with your
@@ -176,14 +166,3 @@ Warning
 
 Deleting a dataset is permanent!
 
-- FiftyOne Teams App
-  - [The homepage](#the-homepage)
-    - [Pinned datasets](#pinned-datasets)
-    - [Sorting datasets](#sorting-datasets)
-    - [Filtering datasets](#filtering-datasets)
-  - [Creating datasets](#creating-datasets)
-  - [Using a dataset](#using-a-dataset)
-  - [Managing a dataset](#managing-a-dataset)
-    - [Basic info](#basic-info)
-    - [Access](#access)
-    - [Danger zone](#danger-zone)

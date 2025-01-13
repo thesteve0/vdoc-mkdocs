@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Pinecone Integration
-
-Contents
-
-
 # Pinecone Integration [¶](\#pinecone-integration "Permalink to this headline")
 
 [Pinecone](https://www.pinecone.io) is one of the most popular vector search
@@ -60,7 +50,7 @@ the
 [Pinecone Python client](https://github.com/pinecone-io/pinecone-python-client)
 to run this example:
 
-```
+```python
 pip install -U pinecone-client
 
 ```
@@ -72,7 +62,7 @@ time you interact with your Pinecone index.
 First let’s load a dataset into FiftyOne and compute embeddings for the
 samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -92,7 +82,7 @@ pinecone_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -128,7 +118,7 @@ Pinecone API key.
 In order to use the Pinecone backend, you must install the
 [Pinecone Python client](https://github.com/pinecone-io/pinecone-python-client):
 
-```
+```python
 pip install pinecone-client
 
 ```
@@ -144,7 +134,7 @@ To use the Pinecone backend, simply set the optional `backend` parameter of
 `compute_similarity()` to
 `"pinecone"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="pinecone", ...)
@@ -154,7 +144,7 @@ fob.compute_similarity(..., backend="pinecone", ...)
 Alternatively, you can permanently configure FiftyOne to use the Pinecone
 backend by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=pinecone
 
 ```
@@ -162,7 +152,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=pinecone
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "pinecone"
 }
@@ -180,7 +170,7 @@ The recommended way to configure your Pinecone credentials is to store them
 in the environment variables shown below, which are automatically accessed by
 FiftyOne whenever a connection to Pinecone is made:
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_PINECONE_API_KEY=XXXXXX
 
 # Serverless indexes
@@ -197,7 +187,7 @@ export FIFTYONE_BRAIN_SIMILARITY_PINECONE_ENVIRONMENT="us-east-1-aws"
 You can also store your credentials in your [brain config](../brain.html#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "similarity_backends": {
         "pinecone": {
@@ -220,7 +210,7 @@ time you call methods like
 `compute_similarity()` that require
 connections to Pinecone:
 
-```
+```python
 import fiftyone.brain as fob
 
 pinecone_index = fob.compute_similarity(
@@ -238,7 +228,7 @@ Note that, when using this strategy, you must manually provide the credentials
 when loading an index later via
 [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results"):
 
-```
+```python
 pinecone_index = dataset.load_brain_results(
     "pinecone_index",
     api_key="XXXXXX",
@@ -286,7 +276,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that configures a serverless index:
 
-```
+```python
 {
     "similarity_backends": {
         "pinecone": {
@@ -303,7 +293,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 pinecone_index = fob.compute_similarity(
     ...
     backend="pinecone",
@@ -323,7 +313,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -345,7 +335,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -358,7 +348,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -368,7 +358,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -380,7 +370,7 @@ Calling
 only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated Pinecone index, which you can do as follows:
 
-```
+```python
 # Delete the Pinecone index
 pinecone_index = dataset.load_brain_results(brain_key)
 pinecone_index.cleanup()
@@ -404,7 +394,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -462,7 +452,7 @@ You can also create a similarity index for
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -491,7 +481,7 @@ the samples or patches in your dataset, you can connect to it by passing the
 `index_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -520,7 +510,7 @@ to add and remove embeddings from an existing Pinecone index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Pinecone index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -564,7 +554,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Pinecone index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -607,7 +597,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -657,7 +647,7 @@ interest.
 You can use the `index` property of a Pinecone index to directly access the
 underlying Pinecone client instance and use its methods as desired:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -685,7 +675,7 @@ Here’s an example of creating a similarity index backed by a customized
 Pinecone index. Just for fun, we’ll specify a custom index name, use dot
 product similarity, and populate the index for only a subset of our dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -712,20 +702,3 @@ print(pinecone_index.index)
 
 ```
 
-- Pinecone Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Pinecone client](#installing-the-pinecone-client)
-    - [Using the Pinecone backend](#using-the-pinecone-backend)
-    - [Authentication](#authentication)
-    - [Pinecone config parameters](#pinecone-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a Pinecone index](#querying-a-pinecone-index)
-    - [Accessing the Pinecone client](#accessing-the-pinecone-client)
-    - [Advanced usage](#advanced-usage)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Label Studio Integration
-
-Contents
-
-
 # Label Studio Integration [¶](\#label-studio-integration "Permalink to this headline")
 
 [Label Studio](https://labelstud.io/) is a popular open-source data labeling
@@ -87,7 +77,7 @@ manually each time you interact with Label Studio.
 
 First, we create the annotation tasks in Label Studio:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -144,7 +134,7 @@ print(dataset.get_annotation_info(anno_key))
 Then, once the annotation work is complete, we merge the annotations back into
 FiftyOne:
 
-```
+```python
 import fiftyone as fo
 
 anno_key = "labelstudio_basic_recipe"
@@ -175,7 +165,7 @@ The easiest way to get started with
 [Label Studio](https://github.com/heartexlabs/label-studio) is to install
 it locally and create an account.
 
-```
+```python
 pip install label-studio
 
 # Launch it!
@@ -188,7 +178,7 @@ label-studio
 In order to use the Label Studio backend, you must install the
 [Label Studio Python SDK](https://github.com/heartexlabs/label-studio-sdk):
 
-```
+```python
 pip install label-studio-sdk
 
 ```
@@ -203,7 +193,7 @@ To use the Label Studio backend, simply set the optional `backend` parameter of
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
 `"labelstudio"`:
 
-```
+```python
 view.annotate(anno_key, backend="labelstudio", ...)
 
 ```
@@ -212,7 +202,7 @@ Alternatively, you can permanently configure FiftyOne to use the Label Studio
 backend by setting the `FIFTYONE_ANNOTATION_DEFAULT_BACKEND` environment
 variable:
 
-```
+```python
 export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=labelstudio
 
 ```
@@ -221,7 +211,7 @@ or by setting the `default_backend` parameter of your
 [annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "default_backend": "labelstudio"
 }
@@ -239,7 +229,7 @@ The recommended way to configure your Label Studio API key is to store it in
 the `FIFTYONE_LABELSTUDIO_API_KEY` environment variable. This is automatically
 accessed by FiftyOne whenever a connection to Label Studio is made.
 
-```
+```python
 export FIFTYONE_LABELSTUDIO_API_KEY=...
 
 ```
@@ -250,7 +240,7 @@ You can also store your credentials in your
 [annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "backends": {
         "labelstudio": {
@@ -271,7 +261,7 @@ methods like
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 that require connections to Label Studio:
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelstudio",
@@ -287,7 +277,7 @@ If you have not stored your API key via another method, you will be prompted to
 enter it interactively in your shell each time you call a method that requires
 a connection to Label Studio:
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelstudio",
@@ -297,7 +287,7 @@ view.annotate(
 
 ```
 
-```
+```python
 Please enter your API key.
 You can avoid this in the future by setting your `FIFTYONE_LABELSTUDIO_API_KEY` environment variable.
 API key: ...
@@ -312,7 +302,7 @@ following ways:
 - Set the `FIFTYONE_LABELSTUDIO_URL` environment variable:
 
 
-```
+```python
 export FIFTYONE_LABELSTUDIO_URL=http://localhost:8080
 
 ```
@@ -322,7 +312,7 @@ export FIFTYONE_LABELSTUDIO_URL=http://localhost:8080
 `~/.fiftyone/annotation_config.json`:
 
 
-```
+```python
 {
     "backends": {
         "labelstudio": {
@@ -337,7 +327,7 @@ export FIFTYONE_LABELSTUDIO_URL=http://localhost:8080
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelstudio",
@@ -374,7 +364,7 @@ to send the samples and optionally existing labels in a [`Dataset`](../api/fifty
 
 The basic syntax is:
 
-```
+```python
 anno_key = "..."
 view.annotate(anno_key, backend="labelstudio", ...)
 
@@ -494,7 +484,7 @@ tasks in Label Studio. In its most verbose form, it is a dictionary that
 defines the label type, annotation type, and possible classes for each label
 field:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -516,7 +506,7 @@ can use the `label_field`, `label_type`, `classes`, and
 `mask_targets` parameters to specify the components of the label schema
 individually:
 
-```
+```python
 anno_key = "..."
 
 label_field = "new_field",
@@ -568,7 +558,7 @@ use the
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 method to download them and merge them back into your FiftyOne dataset.
 
-```
+```python
 view.load_annotations(anno_key)
 
 ```
@@ -605,7 +595,7 @@ For example, you can call
 [`list_annotation_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_annotation_runs "fiftyone.core.collections.SampleCollection.list_annotation_runs")
 to see the available annotation keys on a dataset:
 
-```
+```python
 dataset.list_annotation_runs()
 
 ```
@@ -614,7 +604,7 @@ Or, you can use
 [`get_annotation_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_annotation_info "fiftyone.core.collections.SampleCollection.get_annotation_info")
 to retrieve information about the configuration of an annotation run:
 
-```
+```python
 info = dataset.get_annotation_info(anno_key)
 print(info)
 
@@ -628,7 +618,7 @@ All results objects provide a [`cleanup()`](../api/fiftyone.utils.annotations.ht
 method that you can use to delete all information associated with a run from
 the annotation backend.
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 results.cleanup()
 
@@ -643,7 +633,7 @@ You can use
 [`rename_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_annotation_run "fiftyone.core.collections.SampleCollection.rename_annotation_run")
 to rename the annotation key associated with an existing annotation run:
 
-```
+```python
 dataset.rename_annotation_run(anno_key, new_anno_key)
 
 ```
@@ -652,7 +642,7 @@ Finally, you can use
 [`delete_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_annotation_run "fiftyone.core.collections.SampleCollection.delete_annotation_run")
 to delete the record of an annotation run from your FiftyOne dataset:
 
-```
+```python
 dataset.delete_annotation_run(anno_key)
 
 ```
@@ -680,18 +670,3 @@ Special thanks to [Rustem Galiullin](https://github.com/Rusteam),
 [Ganesh Tata](https://github.com/tataganesh), and
 [Emil Zakirov](https://github.com/bonlime) for building this integration!
 
-- Label Studio Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Label Studio client](#installing-the-label-studio-client)
-    - [Using the Label Studio backend](#using-the-label-studio-backend)
-    - [Authentication](#authentication)
-    - [Server URL](#server-url)
-    - [Configuring local file storage](#configuring-local-file-storage)
-  - [Requesting annotations](#requesting-annotations)
-    - [Label schema](#label-schema)
-    - [Label attributes](#label-attributes)
-  - [Loading annotations](#loading-annotations)
-  - [Managing annotation runs](#managing-annotation-runs)
-  - [Annotating videos](#annotating-videos)
-  - [Acknowledgements](#acknowledgements)

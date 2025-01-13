@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne User Guide
-
-Contents
-
-
 # FiftyOne User Guide [¶](\#fiftyone-user-guide "Permalink to this headline")
 
 Each section in this guide provides an example-centric deep dive into a core
@@ -91,4 +82,3 @@ Customize the default behavior of the FiftyOne library to suit your needs.
 
 [Learn how to configure FiftyOne](config.html)
 
-- FiftyOne User Guide

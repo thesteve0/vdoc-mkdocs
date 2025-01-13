@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Evaluating a Classifier with FiftyOne
-
-Contents
-
-
 # Evaluating a Classifier with FiftyOne [¶](\#Evaluating-a-Classifier-with-FiftyOne "Permalink to this headline")
 
 This notebook demonstrates an end-to-end example of fine-tuning a classification model [using fastai](https://github.com/fastai/fastai) on a [Kaggle dataset](https://www.kaggle.com/iarunava/cell-images-for-detecting-malaria) and using FiftyOne to evaluate it and understand the strengths and weaknesses of both the model and the underlying ground truth annotations.
@@ -49,24 +39,24 @@ Running the workflow presented here on your ML projects will help you to underst
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 We’ll also need `torch` and `torchvision` installed:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 !pip install torch torchvision
 
 ```
@@ -75,22 +65,22 @@ We’ll also need `torch` and `torchvision` installed:
 
 Let’s start by downloading the [Malaria Cell Images Dataset](https://www.kaggle.com/iarunava/cell-images-for-detecting-malaria) from Kaggle using the [Kaggle API](https://github.com/Kaggle/kaggle-api):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install --upgrade kaggle
 
 ```
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 %%bash
 
 # You can create an account for free and get an API token as follows:
@@ -102,22 +92,22 @@ kaggle datasets download -d iarunava/cell-images-for-detecting-malaria
 
 ```
 
-```
+```python
 Downloading cell-images-for-detecting-malaria.zip
 
 ```
 
-```
+```python
 100%|██████████| 675M/675M [00:23<00:00, 30.7MB/s]
 
 ```
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 %%bash
 
 unzip -q cell-images-for-detecting-malaria.zip
@@ -131,12 +121,12 @@ rm cell-images-for-detecting-malaria.zip
 
 The unzipped dataset consists of a `cell_images/` folder with two subdirectories— `Uninfected` and `Parasitized`—that each contain 13782 example images of the respective class of this binary classification task:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 %%bash
 
 ls -lah cell_images/Uninfected | head
@@ -148,7 +138,7 @@ ls -lah cell_images/Parasitized | wc -l
 
 ```
 
-```
+```python
 total 354848
 drwxr-xr-x  13781 voxel51  staff   431K Feb 18 08:56 .
 drwxr-xr-x      4 voxel51  staff   128B Feb 18 08:56 ..
@@ -180,12 +170,12 @@ Class counts
 
 Let’s load the dataset into [FiftyOne](https://voxel51.com/docs/fiftyone) and explore it!
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import os
 import fiftyone as fo
 
@@ -197,12 +187,12 @@ DATASET_DIR = os.path.join(os.getcwd(),"cell_images/")
 
 FiftyOne provides builtin support for loading datasets in [dozens of common formats](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html) with a single line of code:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Create FiftyOne dataset
 dataset = fo.Dataset.from_dir(
     DATASET_DIR,
@@ -215,7 +205,7 @@ print(dataset)
 
 ```
 
-```
+```python
  100% |███| 27558/27558 [35.8s elapsed, 0s remaining, 765.8 samples/s]
 Name:           malaria-cell-images
 Media type:     image
@@ -235,12 +225,12 @@ Sample fields:
 
 Now that the data is loaded into FiftyOne, you can easily [work with](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html) the same dataset in a future session on the same machine by loading it by name:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Load existing dataset
 dataset = fo.load_dataset("malaria-cell-images")
 print(dataset)
@@ -253,19 +243,19 @@ Let’s start by indexing the dataset by visual uniqueness using FiftyOne’s [i
 
 This method adds a scalar `uniqueness` field to each sample that measures the relative visual uniqueness of each sample compared to the other samples in the dataset.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_uniqueness(dataset)
 
 ```
 
-```
+```python
 Loading uniqueness model...
 Downloading model from Google Drive ID '1SIO9XreK0w1ja4EuhBWcR10CnWxCOsom'...
  100% |████|  100.6Mb/100.6Mb [135.7ms elapsed, 0s remaining, 741.3Mb/s]
@@ -285,12 +275,12 @@ Now let’s launch the [FiftyOne App](https://voxel51.com/docs/fiftyone/user_gui
 
 For example, try using the [view bar](https://voxel51.com/docs/fiftyone/user_guide/app.html#using-the-view-bar) to sort the samples so that we can view the _most visually unique_ samples in the dataset:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 # Most of the MOST UNIQUE samples are parasitized
 session = fo.launch_app(dataset)
 
@@ -304,12 +294,12 @@ Now let’s add a `Limit(500)` stage in the view bar and open the `Labels` tab t
 
 Notice that a vast majority of the most visually unique samples in the dataset are `Parasitized`, which makes sense because these are the infected, abnormal cells.
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 session.show()
 
 ```
@@ -320,12 +310,12 @@ Activate
 
 Conversely, if we use the view bar to show the 500 _least visually unique_ samples, we find that 499 of them are `Uninfected`!
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 # All of the LEAST UNIQUE samples are uninfected
 session.show()
 

@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Recipes
-
-Contents
-
-
 # FiftyOne Recipes [¶](\#fiftyone-recipes "Permalink to this headline")
 
 FiftyOne turbocharges your current workflows, transforming hours of scripting
@@ -110,4 +101,3 @@ Check out the
 [fiftyone-examples](https://github.com/voxel51/fiftyone-examples)
 repository for more examples of using FiftyOne!
 
-- FiftyOne Recipes

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Clustering Images with Embeddings
-
-Contents
-
-
 # Clustering Images with Embeddings [¶](\#Clustering-Images-with-Embeddings "Permalink to this headline")
 
 ![Clustering](../_images/clustering_preview.jpg)
@@ -95,36 +85,36 @@ trained for specific tasks like image classification, from which we typically ta
 
 With all that background out of the way, let’s turn theory into practice and learn how to use clustering to structure our unstructured data. We’ll be leveraging two open-source machine learning libraries: [scikit-learn](https://scikit-learn.org/stable/index.html), which comes pre-packaged with [implementations of most common clustering algorithms](https://scikit-learn.org/stable/modules/clustering.html), and fiftyone, which streamlines the management and visualization of unstructured data:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -U scikit-learn fiftyone
 
 ```
 
 The [FiftyOne Clustering Plugin](https://github.com/jacobmarks/clustering-runs-plugin) makes our lives even easier. It provides the connective tissue between scikit-learn’s clustering algorithms and our images and wraps all of this in a simple UI within the [FiftyOne App](https://docs.voxel51.com/user_guide/app.html). We can install the plugin from the CLI:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !fiftyone plugins download https://github.com/jacobmarks/clustering-plugin
 
 ```
 
 We will also need two more libraries: [OpenAI’s CLIP GitHub repo](https://github.com/openai/CLIP), enabling us to generate image features with the CLIP model, and the [umap-learn](https://umap-learn.readthedocs.io/en/latest/) library, which will let us apply a dimensionality reduction technique called Uniform Manifold Approximation and Projection (UMAP) to those features to visualize them in 2D:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install umap-learn git+https://github.com/openai/CLIP.git
 
 ```
@@ -133,12 +123,12 @@ Note that neither of these two libraries is strictly necessary — you could gen
 
 Once you have all of the necessary libraries installed, in a Python process, import the relevant FiftyOne modules, and load a dataset from the [FiftyOne Dataset Zoo](https://docs.voxel51.com/user_guide/dataset_zoo/index.html) (or your data if you’d like!). For this walkthrough, we’ll be using the validation split (5,000 samples) from the [MS COCO](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html#dataset-zoo-coco-2017) dataset:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -167,12 +157,12 @@ Now that we have our data, we must generate the features we will use to cluster.
 To run dimensionality reduction on a FiftyOne sample collection, we will use the FiftyOne Brain’s `compute_visualization()` function, which supports UMAP, PCA, and tSNE via the method keyword argument. We could generate the CLIP embeddings using our dataset’s `compute_embeddings()` method and then explicitly pass this into our dimensionality reduction routine. But instead, we can kill two birds with one stone by implicitly telling `compute_visualization()` to compute embeddings using CLIP
 and store these embeddings in a field `”clip_embeddings”`, then use these to get 2D representations:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 res = fob.compute_visualization(
     dataset,
     model="clip-vit-base32-torch",
@@ -246,12 +236,12 @@ Or…we could use a multimodal large language model to do this for us! The Fifty
 
 To use this functionality, you must have an OpenAI API key environment variable (creating an account if necessary), which you can set as follows:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !export OPENAI_API_KEY=sk-...
 
 ```
@@ -260,7 +250,7 @@ This functionality is provided via the `label_clusters_with_gpt4v` operator, whi
 
 Depending on the number of clusters you have (GPT-4V can be slow, and this scales linearly in the number of clusters), you may want to [delegate execution](https://docs.voxel51.com/plugins/using_plugins.html#delegated-operations) of the operation by checking the box in the operator’s modal and then launch the job from the command line with:
 
-```
+```python
 fiftyone delegated launch
 
 ```
@@ -292,15 +282,3 @@ If you want to dive deeper into the world of clustering, here are a few avenues 
 - **Concept Modeling Techniques**: the built-in concept modeling technique in this walkthrough uses GPT-4V and some light prompting to identify each cluster’s core concept. This is but one way to approach an open-ended problem. Try using [image captioning](https://github.com/jacobmarks/image-captioning) and [topic modeling](https://en.wikipedia.org/wiki/Topic_model), or create your own technique!
 
 
-- Clustering Images with Embeddings
-  - [What is Clustering?](#What-is-Clustering?)
-    - [The Building Blocks of Clustering](#The-Building-Blocks-of-Clustering)
-    - [How Clustering Works](#How-Clustering-Works)
-    - [What Features Do I Cluster On?](#What-Features-Do-I-Cluster-On?)
-  - [Clustering Images with FiftyOne and Scikit-learn](#Clustering-Images-with-FiftyOne-and-Scikit-learn)
-    - [Setup and Installation](#Setup-and-Installation)
-    - [Generating Features](#Generating-Features)
-    - [Computing and Visualizing Clusters](#Computing-and-Visualizing-Clusters)
-    - [Keeping Track of Clustering Runs](#Keeping-Track-of-Clustering-Runs)
-    - [Labeling Clusters with GPT-4V](#Labeling-Clusters-with-GPT-4V)
-  - [Conclusion](#Conclusion)

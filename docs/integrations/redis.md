@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Redis Vector Search Integration
-
-Contents
-
-
 # Redis Vector Search Integration [¶](\#redis-vector-search-integration "Permalink to this headline")
 
 [Redis](https://redis.com) is the leading open source in-memory data store,
@@ -61,7 +51,7 @@ You must [launch a Redis server](https://redis.io/docs/install/install-stack)
 and install the [Redis Python client](https://github.com/redis/redis-py)
 to run this example:
 
-```
+```python
 brew tap redis-stack/redis-stack
 brew install redis-stack
 redis-stack-server
@@ -76,7 +66,7 @@ entering them manually each time you interact with your Redis index.
 
 First let’s load a dataset into FiftyOne and compute embeddings for the samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -96,7 +86,7 @@ redis_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -125,7 +115,7 @@ Redis query patterns.
 The easiest way to get started with Redis is to
 [install Redis Stack](https://redis.io/docs/install/install-stack):
 
-```
+```python
 brew tap redis-stack/redis-stack
 brew install redis-stack
 redis-stack-server
@@ -137,7 +127,7 @@ redis-stack-server
 In order to use the Redis backend, you must also install the
 [Redis Python client](https://github.com/redis/redis-py):
 
-```
+```python
 pip install redis
 
 ```
@@ -152,7 +142,7 @@ will use an sklearn backend.
 To use the Redis backend, simply set the optional `backend` parameter of
 `compute_similarity()` to `"redis"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="redis", ...)
@@ -162,7 +152,7 @@ fob.compute_similarity(..., backend="redis", ...)
 Alternatively, you can permanently configure FiftyOne to use the Redis backend
 by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=redis
 
 ```
@@ -170,7 +160,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=redis
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "redis"
 }
@@ -188,7 +178,7 @@ The recommended way to configure your Redis credentials is to store them in
 the environment variables shown below, which are automatically accessed by
 FiftyOne whenever a connection to Redis is made.
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_REDIS_HOST=localhost
 export FIFTYONE_BRAIN_SIMILARITY_REDIS_PORT=6379
 export FIFTYONE_BRAIN_SIMILARITY_REDIS_DB=0
@@ -202,7 +192,7 @@ export FIFTYONE_BRAIN_SIMILARITY_REDIS_PASSWORD=password
 You can also store your credentials in your [brain config](../brain.html#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "similarity_backends": {
         "redis": {
@@ -225,7 +215,7 @@ You can manually provide credentials as keyword arguments each time you call
 methods like `compute_similarity()`
 that require connections to Redis:
 
-```
+```python
 import fiftyone.brain as fob
 
 redis_index = fob.compute_similarity(
@@ -245,7 +235,7 @@ Note that, when using this strategy, you must manually provide the credentials
 when loading an index later via
 [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results"):
 
-```
+```python
 redis_index = dataset.load_brain_results(
     "redis_index",
     host="localhost",
@@ -280,7 +270,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "redis": {
@@ -297,7 +287,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 redis_index = fob.compute_similarity(
     ...
     backend="redis",
@@ -317,7 +307,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -339,7 +329,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -352,7 +342,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -362,7 +352,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -375,7 +365,7 @@ only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated Redis index, which you can do as
 follows:
 
-```
+```python
 # Delete the Redis vector search index
 redis_index = dataset.load_brain_results(brain_key)
 redis_index.cleanup()
@@ -399,7 +389,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -457,7 +447,7 @@ You can also create a similarity index for
 including the `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -486,7 +476,7 @@ for the samples or patches in your dataset, you can connect to it by passing
 the `index_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -515,7 +505,7 @@ to add and remove embeddings from an existing Redis index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Redis index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -559,7 +549,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Redis index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -602,7 +592,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -652,7 +642,7 @@ interest.
 You can use the `client` property of a Redis index to directly access the
 underlying Redis client instance and use its methods as desired:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -687,7 +677,7 @@ Here’s an example of creating a similarity index backed by a customized Redis
 index. Just for fun, we’ll specify a custom index name, use dot product
 similarity, and populate the index for only a subset of our dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -717,20 +707,3 @@ print(redis_client.ft(index_name).info())
 
 ```
 
-- Redis Vector Search Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Redis client](#installing-the-redis-client)
-    - [Using the Redis backend](#using-the-redis-backend)
-    - [Authentication](#authentication)
-    - [Redis config parameters](#redis-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a Redis index](#querying-a-redis-index)
-    - [Accessing the Redis client](#accessing-the-redis-client)
-    - [Advanced usage](#advanced-usage)

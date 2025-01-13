@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- Plugins Overview
-
-Contents
-
-
 # Plugins Overview [¶](\#plugins-overview "Permalink to this headline")
 
 FiftyOne provides a powerful plugin framework that allows for extending and
@@ -110,5 +101,3 @@ Note
 Look interesting? Learn how to [develop your own](developing_plugins.html#developing-plugins)
 plugins!
 
-- Plugins Overview
-  - [Getting started](#getting-started)

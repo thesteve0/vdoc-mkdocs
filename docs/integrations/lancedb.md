@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- LanceDB Integration
-
-Contents
-
-
 # LanceDB Integration [¶](\#lancedb-integration "Permalink to this headline")
 
 [LanceDB](https://www.lancedb.com) is a serverless vector database with deep
@@ -47,7 +37,7 @@ You must install the
 [LanceDB Python client](https://github.com/lancedb/lancedb) to run this
 example:
 
-```
+```python
 pip install lancedb
 
 ```
@@ -56,7 +46,7 @@ Note that, if you are using a custom LanceDB URI, you can store your
 credentials as described in [this section](#lancedb-setup) to avoid
 entering them manually each time you interact with your LanceDB index.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -77,7 +67,7 @@ lancedb_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -101,7 +91,7 @@ dataset.delete_brain_run("lancedb_index")
 You can get started using LanceDB by simply installing the
 [LanceDB Python client](https://github.com/lancedb/lancedb):
 
-```
+```python
 pip install lancedb
 
 ```
@@ -117,7 +107,7 @@ To use the LanceDB backend, simply set the optional `backend` parameter of
 `compute_similarity()` to
 `"lancedb"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="lancedb", ...)
@@ -127,7 +117,7 @@ fob.compute_similarity(..., backend="lancedb", ...)
 Alternatively, you can permanently configure FiftyOne to use the LanceDB
 backend by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=lancedb
 
 ```
@@ -135,7 +125,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=lancedb
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "lancedb"
 }
@@ -160,7 +150,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "lancedb": {
@@ -177,7 +167,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 lancedb_index = fob.compute_similarity(
     ...
     backend="lancedb",
@@ -197,7 +187,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -219,7 +209,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -232,7 +222,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -242,7 +232,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -254,7 +244,7 @@ Calling
 only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated LanceDB table, which you can do as follows:
 
-```
+```python
 # Delete the LanceDB table
 lancedb_index = dataset.load_brain_results(brain_key)
 lancedb_index.cleanup()
@@ -273,7 +263,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -331,7 +321,7 @@ You can also create a similarity index for
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -360,7 +350,7 @@ the samples or patches in your dataset, you can connect to it by passing the
 `table_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -389,7 +379,7 @@ to add and remove embeddings from an existing Lancedb index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the LanceDB index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -433,7 +423,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a LanceDB index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -476,7 +466,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -526,7 +516,7 @@ interest.
 LanceDB is compatible with the Python ecosystem and can be used with pandas,
 numpy, and arrow:
 
-```
+```python
 lancedb_index = fob.compute_similarity(..., backend="lancedb", ...)
 
 # Retrieve the raw LanceDB table
@@ -537,17 +527,3 @@ pa = table.to_arrow()   # get the table as an arrow table
 
 ```
 
-- LanceDB Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Using the LanceDB backend](#using-the-lancedb-backend)
-    - [LanceDB config parameters](#lancedb-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a LanceDB index](#querying-a-lancedb-index)
-    - [Advanced usage](#advanced-usage)

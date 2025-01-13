@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Using Image Embeddings
-
-Contents
-
-
 # Using Image Embeddings [¶](\#Using-Image-Embeddings "Permalink to this headline")
 
 FiftyOne provides a powerful [embeddings visualization](https://voxel51.com/docs/fiftyone/user_guide/brain.html#visualizing-embeddings) capability that you can use to generate low-dimensional representations of the samples and objects in your datasets.
@@ -46,24 +36,24 @@ Using the FiftyOne Brain’s [embeddings visualization](https://voxel51.com/docs
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 In this tutorial, we’ll use some PyTorch models to generate embeddings, and we’ll use the (default) [UMAP method](https://github.com/lmcinnes/umap) to generate embeddings, so we’ll need to install the corresponding packages:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install torch torchvision umap-learn
 
 ```
@@ -74,12 +64,12 @@ This tutorial will demonstrate the powerful [interactive plotting](https://voxel
 
 In this section, we’ll be working with the [MNIST dataset](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html?highlight=mnist#dataset-zoo-mnist) from the FiftyOne Dataset Zoo.
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -87,7 +77,7 @@ dataset = foz.load_zoo_dataset("mnist")
 
 ```
 
-```
+```python
 Split 'train' already downloaded
 Split 'test' already downloaded
 Loading existing dataset 'mnist'. To reload from disk, either delete the existing dataset or provide a custom `dataset_name` to use
@@ -96,27 +86,27 @@ Loading existing dataset 'mnist'. To reload from disk, either delete the existin
 
 To start, we’ll just use the 10,00010,000 test images from the dataset.
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 test_split = dataset.match_tags("test")
 
 ```
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 print(test_split)
 
 ```
 
-```
+```python
 Dataset:     mnist
 Media type:  image
 Num samples: 10000
@@ -141,12 +131,12 @@ However, for a relatively small and fixed size dataset such as MNIST, we can pas
 
 Let’s use the [compute\_visualization()](https://voxel51.com/docs/fiftyone/api/fiftyone.brain.html#fiftyone.brain.compute_visualization) method to generate our first representation:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 import cv2
 import numpy as np
 
@@ -171,7 +161,7 @@ results = fob.compute_visualization(
 
 ```
 
-```
+```python
 Generating visualization...
 UMAP(random_state=51, verbose=True)
 Wed Mar 27 11:27:43 2024 Construct fuzzy simplicial set
@@ -182,13 +172,13 @@ Wed Mar 27 11:27:43 2024 NN descent for 13 iterations
 
 ```
 
-```
+```python
 /opt/homebrew/Caskroom/miniforge/base/envs/fo-dev/lib/python3.9/site-packages/umap/umap_.py:1943: UserWarning: n_jobs value -1 overridden to 1 by setting random_state. Use no seed for parallelism.
   warn(f"n_jobs value {self.n_jobs} overridden to 1 by setting random_state. Use no seed for parallelism.")
 
 ```
 
-```
+```python
          2  /  13
          3  /  13
          4  /  13
@@ -198,7 +188,7 @@ Wed Mar 27 11:27:43 2024 Construct embedding
 
 ```
 
-```
+```python
         completed  0  /  500 epochs
         completed  50  /  500 epochs
         completed  100  /  500 epochs
@@ -215,18 +205,18 @@ Wed Mar 27 11:27:56 2024 Finished embedding
 
 The method returned a `results` object with a `points` attribute that contains a `10000 x 2` array of 2D embeddings for our samples that we’ll visualize next.
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 print(type(results))
 print(results.points.shape)
 
 ```
 
-```
+```python
 <class 'fiftyone.brain.visualization.VisualizationResults'>
 (10000, 2)
 
@@ -234,22 +224,22 @@ print(results.points.shape)
 
 If you ever want to access this results object again from the dataset, you can do so with the dataset’s `load_brain_results()` method, passing the `brain_key` that you used to store the results:
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 dataset.load_brain_results("mnist_test")
 
 ```
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 <fiftyone.brain.visualization.VisualizationResults at 0x2c8918c40>
 
 ```
@@ -286,12 +276,12 @@ Although we could use this method in isolation, the real power of FiftyOne comes
 
 So, let’s open the test split in the App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Launch App instance
 session = fo.launch_app(test_split)
 
@@ -342,12 +332,12 @@ Let’s see how [compute\_visualization()](https://voxel51.com/docs/fiftyone/api
 
 First, let’s regenerate embeddings for all 70,000 images in the combined test and train splits:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 # Construct a ``num_samples x num_pixels`` array of images
 embeddings = np.array([\
     cv2.imread(f, cv2.IMREAD_UNCHANGED).ravel()\
@@ -367,12 +357,12 @@ results = fob.compute_visualization(
 
 ```
 
-```
+```python
 Generating visualization...
 
 ```
 
-```
+```python
 /opt/homebrew/Caskroom/miniforge/base/envs/fo-dev/lib/python3.9/site-packages/numba/cpython/hashing.py:482: UserWarning: FNV hashing is not implemented in Numba. See PEP 456 https://www.python.org/dev/peps/pep-0456/ for rationale over not using FNV. Numba will continue to work, but hashes for built in types will be computed using siphash24. This will permit e.g. dictionaries to continue to behave as expected, however anything relying on the value of the hash opposed to hash as a derived property is likely to not work as expected.
   warnings.warn(msg)
 /opt/homebrew/Caskroom/miniforge/base/envs/fo-dev/lib/python3.9/site-packages/umap/umap_.py:1943: UserWarning: n_jobs value -1 overridden to 1 by setting random_state. Use no seed for parallelism.
@@ -380,7 +370,7 @@ Generating visualization...
 
 ```
 
-```
+```python
 UMAP(random_state=51, verbose=True)
 Wed Mar 27 11:37:27 2024 Construct fuzzy simplicial set
 Wed Mar 27 11:37:27 2024 Finding Nearest Neighbors
@@ -396,7 +386,7 @@ Wed Mar 27 11:37:40 2024 Construct embedding
 
 ```
 
-```
+```python
         completed  0  /  200 epochs
         completed  20  /  200 epochs
         completed  40  /  200 epochs
@@ -413,12 +403,12 @@ Wed Mar 27 11:38:12 2024 Finished embedding
 
 Of course, our dataset already has ground truth labels for the train split, but let’s pretend that’s not the case and generate an array of `labels` for our visualization that colors the test split by its ground truth labels and marks all images in the train split as `unlabeled`:
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Label `test` split samples by their ground truth label
@@ -430,12 +420,12 @@ dataset.set_values("ground_truth.label", labels)
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Launch a new App instance
 session = fo.launch_app(dataset, auto=False)
 
@@ -454,12 +444,12 @@ Congratulations, you just pre-annotated ~60,000 training images!
 
 You can easily print some statistics about the sample tags that you created:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 # The train split that we pre-annotated
 train_split = dataset.match_tags("train")
 
@@ -468,19 +458,19 @@ print(train_split.count_sample_tags())
 
 ```
 
-```
+```python
 {'8': 5577, '6': 6006, '3': 6104, '7': 6361, '9': 6036, '5': 5389, 'train': 60000, '0': 5981, '4': 5737, '2': 5811, '1': 6937}
 
 ```
 
 The snippet below converts the sample tags into [Classification labels](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#classification) in a new `hypothesis` field of the dataset:
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 # Add a new Classification field called `hypothesis` to store our guesses
 with fo.ProgressBar() as pb:
     for sample in pb(train_split):
@@ -494,7 +484,7 @@ print(train_split.count_values("hypothesis.label"))
 
 ```
 
-```
+```python
  100% |█████████████| 60000/60000 [2.6m elapsed, 0s remaining, 353.0 samples/s]
 {'0': 5981, '9': 6036, '8': 5572, '7': 6361, '6': 6006, '5': 5388, None: 69, '3': 6104, '1': 6937, '4': 5735, '2': 5811}
 
@@ -502,18 +492,18 @@ print(train_split.count_values("hypothesis.label"))
 
 In the example above, notice that 69 samples in the train split were not given a hypothesis (i.e., they were not included in the cluster-based tagging procedure). If you would like to retrieve them and manually assign tags, that is easy:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 no_hypothesis = train_split.exists("hypothesis.label", False)
 print(no_hypothesis)
 
 ```
 
-```
+```python
 Dataset:        mnist
 Media type:     image
 Num samples:    69
@@ -532,12 +522,12 @@ View stages:
 
 Depending on your application, you may be able to start training using the `hypothesis` labels directly by [exporting the dataset](https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html) as, say, a classification directory tree structure:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Export `hypothesis` labels as a classification directory tree format
 # `exists()` ensures that we only export samples with a hypothesis
 train_split.exists("hypothesis.label").export(
@@ -559,12 +549,12 @@ If you provide the `brain_key` argument to [compute\_visualization()](https://vo
 
 For example, we can recall the visualization results that we first computed on the test split:
 
-```
+```python
 [60]:
 
 ```
 
-```
+```python
 # List brain runs saved on the dataset
 print(dataset.list_brain_runs())
 
@@ -578,7 +568,7 @@ print(len(results_view))
 
 ```
 
-```
+```python
 ['mnist', 'mnist_test']
 <class 'fiftyone.brain.visualization.VisualizationResults'>
 10000
@@ -595,12 +585,12 @@ If you want to follow along youself, you will need to register at [https://bdd-d
 
 We’ll be working with the validation split, which contains 10,000 labeled images:
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -611,18 +601,18 @@ dataset = foz.load_zoo_dataset("bdd100k", split="validation", source_dir=source_
 
 ```
 
-```
+```python
 Split 'validation' already prepared
 Loading existing dataset 'bdd100k-validation'. To reload from disk, either delete the existing dataset or provide a custom `dataset_name` to use
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -637,12 +627,12 @@ Using a deep model not only enables us to visualize larger datasets or ones with
 
 You can run the cell below to generate a 2D representation for the BDD100K validation split using FiftyOne’s default model. You will likely want to run this on a machine with GPU, as this requires running inference on 10,000 images:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 # Compute 2D representation
@@ -661,12 +651,12 @@ Alternatively, you can provide your own custom embeddings via the `embeddings` p
 
 For example, the cell below generates a visualization using pre-computed embeddings from a ResNet model from the zoo:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Load a resnet from the model zoo
 model = foz.load_zoo_model("resnet50-imagenet-torch")
 
@@ -697,12 +687,12 @@ Either way, we’re ready to visualize our representation.
 
 As usual, we’ll start by launching an App instance and opening the embeddings panel to interactively explore the results:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -766,19 +756,3 @@ Visualizing your dataset in a low-dimensional embedding space is a powerful work
 
 FiftyOne also supports visualizing embeddings for object detections. Stay tuned for an upcoming tutorial on the topic!
 
-- Using Image Embeddings
-  - [Setup](#Setup)
-  - [Part I: MNIST](#Part-I:-MNIST)
-    - [Computing image embeddings](#Computing-image-embeddings)
-    - [Visualization parameters](#Visualization-parameters)
-    - [Visualizing embeddings](#Visualizing-embeddings)
-    - [Scatterplot controls](#Scatterplot-controls)
-    - [Exploring the embeddings](#Exploring-the-embeddings)
-    - [Pre-annotation of samples](#Pre-annotation-of-samples)
-    - [Loading existing visualizations](#Loading-existing-visualizations)
-  - [Part II: BDD100K](#Part-II:-BDD100K)
-    - [Computing image embeddings](#id1)
-    - [Visualizing embeddings](#id2)
-    - [Investigating outliers](#Investigating-outliers)
-    - [Tagging label mistakes](#Tagging-label-mistakes)
-  - [Summary](#Summary)

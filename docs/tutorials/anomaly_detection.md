@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Anomaly Detection with FiftyOne and Anomalib
-
-Contents
-
-
 # Anomaly Detection with FiftyOne and Anomalib [¶](\#Anomaly-Detection-with-FiftyOne-and-Anomalib "Permalink to this headline")
 
 ![Anomaly Detection Thumbnail](../_images/anomaly_detection_thumbnail.jpg)
@@ -34,7 +24,7 @@ The notebook covers the following:
 
 Make sure you are running this in a virtual environment with `python=3.10`.
 
-```
+```python
 conda create -n anomalib_env python=3.10; conda activate anomalib_env
 
 ```
@@ -43,12 +33,12 @@ Anomalib requires Python 3.10, so make sure you have the correct version install
 
 After this, install Anomalib and its dependencies. If you’re running this in a colab notebook, the installation might take a few minutes, but local installation should be faster.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -U torchvision einops FrEIA timm open_clip_torch imgaug lightning kornia openvino git+https://github.com/openvinotoolkit/anomalib.git
 
 ```
@@ -57,12 +47,12 @@ Install Anomalib from source, per the instructions in the [Anomalib README](http
 
 If you don’t have it already installed, install FiftyOne. Make sure your version is `fiftyone>=0.23.8` so we can use the [Hugging Face Hub integration](https://docs.voxel51.com/integrations/huggingface.html#huggingface-hub) to load the MVTec AD dataset:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -U fiftyone
 
 ```
@@ -76,12 +66,12 @@ Just a few more packages to install, and we’re ready to go. Now you can see wh
 - `umap-learn` for dimensionality reduction
 
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -U huggingface_hub umap-learn git+https://github.com/openai/CLIP.git
 
 ```
@@ -90,12 +80,12 @@ Just a few more packages to install, and we’re ready to go. Now you can see wh
 
 Now let’s import all of the relevant modules we will need from FiftyOne:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import fiftyone as fo # base library and app
 import fiftyone.brain as fob # ML methods
 import fiftyone.zoo as foz # zoo datasets and models
@@ -106,19 +96,19 @@ import fiftyone.utils.huggingface as fouh # Hugging Face integration
 
 And load the [MVTec AD dataset from the Hugging Face Hub](https://huggingface.co/datasets/Voxel51/mvtec-ad):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = fouh.load_from_hub("Voxel51/mvtec-ad", persistent=True, overwrite=True)
 
 ```
 
 💡 It is also possible to load the MVTec AD data directly from Anomalib:
 
-```
+```python
 from anomalib.data import MVTec
 datamodule = MVTec()
 
@@ -128,12 +118,12 @@ But this way we have all of the metadata and annotations in FiftyOne, which is u
 
 Before moving on, let’s take a look at the dataset in the [FiftyOne App](https://docs.voxel51.com/user_guide/app.html):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -148,12 +138,12 @@ One more thing to note is that the dataset is split into training and test sets.
 
 Before we train a model, let’s dig into the dataset a bit more. We can get a feel for the structure and patterns hidden in our data by computing image embeddings and visualizing them in a lower-dimensional space. First, we’ll compute embeddings for all the images in the dataset using the [CLIP model](https://github.com/openai/CLIP):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 model = foz.load_zoo_model(
     "clip-vit-base32-torch"
 )  # load the CLIP model from the zoo
@@ -176,12 +166,12 @@ Refresh the FiftyOne App, click the “+” tab, and select “Embeddings”. Ch
 
 If instead we embed our images using a traditional computer vision model like ResNet, we also see some clustering within a category based on the defect type. However, as we established earlier, we will not have access to defect labels during inference. Instead, we’ll use an unsupervised anomaly detection model.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 model = foz.load_zoo_model(
     "resnet50-imagenet-torch"
 )  # load the ResNet50 model from the zoo
@@ -226,12 +216,12 @@ guide](https://anomalib.readthedocs.io/en/v1.0.1/markdown/guides/reference/model
 
 Import the necessary modules from Anomalib and helper modules for processing images and paths:
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 import numpy as np
 import os
 from pathlib import Path
@@ -240,12 +230,12 @@ from torchvision.transforms.v2 import Resize
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from anomalib import TaskType
 from anomalib.data.image.folder import Folder
 from anomalib.deploy import ExportType, OpenVINOInferencer
@@ -265,12 +255,12 @@ Now define some constants to use throughout the notebook.
 - `IMAGE_SIZE`: The size to resize images to before training the model. We’ll use 256256 x 256256 pixels.
 
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 OBJECT = "bottle" ## object to train on
 ROOT_DIR = Path("/tmp/mvtec_ad") ## root directory to store data for anomalib
 TASK = TaskType.SEGMENTATION ## task type for the model
@@ -291,12 +281,12 @@ The code might look complex, so let’s break down what’s going on:
 
 💡 It is also possible to create a torch `DataLoader` from scratch and pass it to the engine’s `fit()` method. This gives you more control over the data loading process. This is left as an exercise for the reader 😉.
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 def create_datamodule(object_type, transform=None):
     ## Build transform
     if transform is None:
@@ -353,12 +343,12 @@ def create_datamodule(object_type, transform=None):
 
 Now we can put it all together. The `train_and_export_model()` function below trains an anomaly detection model using Anomalib’s `Engine` class, exports the model to OpenVINO, and returns the model “inferencer” object. The inferencer object is used to make predictions on new images.
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 def train_and_export_model(object_type, model, transform=None):
     engine = Engine(task=TASK)
     datamodule = create_datamodule(object_type, transform=transform)
@@ -384,12 +374,12 @@ def train_and_export_model(object_type, model, transform=None):
 
 Let’s try this with `PaDiM` first. The training process should take less than a minute:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 model = Padim()
 
 inferencer = train_and_export_model(OBJECT, model)
@@ -398,12 +388,12 @@ inferencer = train_and_export_model(OBJECT, model)
 
 And just like that, we have an anomaly detection model trained on the “bottle” category. Let’s run our inferencer on a single image and inspect the results:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 ## get the test split of the dataset
 test_split = dataset.match(F("category.label") == OBJECT).match(
     F("split") == "test"
@@ -417,7 +407,7 @@ print(output)
 
 ```
 
-```
+```python
 ImageResult(image=[[[255 255 255]\
   [255 255 255]\
   [255 255 255]\
@@ -581,12 +571,12 @@ ImageResult(image=[[[255 255 255]\
 The output contains a scalar anomaly score `pred_score`, a `pred_mask` denoting the predicted anomalous regions, and a heatmap `anomaly_map` showing the anomaly scores for each pixel. This is all valuable information for understanding the model’s predictions. The `run_inference()` function below will take a FiftyOne sample collection (e.g. our test set) as input, along with the inferencer object, and a key for storing the results in the samples. It will run the model on each sample in
 the collection and store the results. The `threshold` argument acts as a cutoff for the anomaly score. If the score is above the threshold, the sample is considered anomalous. In this example, we’ll use a threshold of 0.50.5, but you can experiment with different values.
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 def run_inference(sample_collection, inferencer, key, threshold=0.5):
     for sample in sample_collection.iter_samples(autosave=True, progress=True):
         output = inferencer.predict(image=Image.open(sample.filepath))
@@ -601,24 +591,24 @@ def run_inference(sample_collection, inferencer, key, threshold=0.5):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 run_inference(test_split, inferencer, "padim")
 
 ```
 
 Let’s visualize these results in the FiftyOne App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(view=test_split)
 
 ```
@@ -631,12 +621,12 @@ We have an anomaly detection model, but how do we know if it’s any good? For o
 
 We need to prepare our data for evaluation. First, we need to add null masks for the “normal” images to ensure the evaluation is fair:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 for sample in test_split.iter_samples(autosave=True, progress=True):
     if sample["defect"].label == "good":
         sample["defect_mask"] = fo.Segmentation(
@@ -647,12 +637,12 @@ for sample in test_split.iter_samples(autosave=True, progress=True):
 
 We also need to ensure consistency in naming/labels between ground truth and predictions. We’ll rename all of our “good” images to “normal” and every type of anomaly to “anomaly”:
 
-```
+```python
 [39]:
 
 ```
 
-```
+```python
 old_labels = test_split.distinct("defect.label")
 label_map = {label:"anomaly" for label in old_labels if label != "good"}
 label_map["good"] = "normal"
@@ -660,12 +650,12 @@ mapped_view = test_split.map_labels("defect", label_map)
 
 ```
 
-```
+```python
 [40]:
 
 ```
 
-```
+```python
 session.view = mapped_view.view()
 
 ```
@@ -674,12 +664,12 @@ session.view = mapped_view.view()
 
 For classification, we’ll use binary evaluation, with “normal” as the negative class and “anomaly” as the positive class:
 
-```
+```python
 [41]:
 
 ```
 
-```
+```python
 eval_classif_padim = mapped_view.evaluate_classifications(
     "pred_anomaly_padim",
     gt_field="defect",
@@ -690,17 +680,17 @@ eval_classif_padim = mapped_view.evaluate_classifications(
 
 ```
 
-```
+```python
 [42]:
 
 ```
 
-```
+```python
 eval_classif_padim.print_report()
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
       normal       0.95      0.90      0.92        20
@@ -718,12 +708,12 @@ If we go back over to the app and sort by anomaly score, we can see that certain
 
 For segmentation evaluation, we will only be interested in pixel values of 00 (normal) and 255255 (anomaly), so we will filter our report for these “classes”:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 eval_seg_padim = mapped_view.evaluate_segmentations(
     "pred_defect_mask_padim",
     gt_field="defect_mask",
@@ -732,17 +722,17 @@ eval_seg_padim = mapped_view.evaluate_segmentations(
 
 ```
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 eval_seg_padim.print_report(classes=[0, 255])
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
            0       0.99      0.96      0.98 63343269.0
@@ -760,12 +750,12 @@ Just because anomaly detection is unsupervised doesn’t mean we can’t compare
 
 Let’s repeat the training process for the `PatchCore` model and compare the two models:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## Train Patchcore model and run inference
 
 model = Patchcore()
@@ -777,12 +767,12 @@ run_inference(mapped_view, inferencer, "patchcore")
 
 ```
 
-```
+```python
 [46]:
 
 ```
 
-```
+```python
 ## Evaluate Patchcore model on classification task
 eval_classif_patchcore = mapped_view.evaluate_classifications(
     "pred_anomaly_patchcore",
@@ -796,7 +786,7 @@ eval_classif_patchcore.print_report()
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
       normal       0.95      1.00      0.98        20
@@ -808,12 +798,12 @@ weighted avg       0.99      0.99      0.99        83
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 eval_seg_patchcore = mapped_view.match(
     F("defect.label") == "anomaly"
 ).evaluate_segmentations(
@@ -824,17 +814,17 @@ eval_seg_patchcore = mapped_view.match(
 
 ```
 
-```
+```python
 [48]:
 
 ```
 
-```
+```python
 eval_seg_patchcore.print_report(classes=[0, 255])
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
            0       0.99      0.95      0.97 47143269.0
@@ -846,12 +836,12 @@ weighted avg       0.96      0.95      0.95 51030000.0
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session.view = mapped_view.shuffle().view()
 
 ```
@@ -879,22 +869,22 @@ The goal is to increase the diversity of the training set without changing the i
 
 First, let’s install [Albumentations](https://albumentations.ai/docs/) and download the plugin:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 pip install -U albumentations
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !fiftyone plugins download https://github.com/jacobmarks/fiftyone-albumentations-plugin
 
 ```
@@ -906,22 +896,22 @@ Depending on the object category, it might also make sense to apply 90 degree ro
 
 Once you’re happy with the transformations, use the `"get_last_albumentations_run_info"` operator to see the transformations applied and their parameters. You can then use these with `torchvision.transforms` to augment the training images.
 
-```
+```python
 [49]:
 
 ```
 
-```
+```python
 from torchvision.transforms.v2 import GaussianBlur, ColorJitter, Compose
 
 ```
 
-```
+```python
 [50]:
 
 ```
 
-```
+```python
 transform = Compose([\
     Resize(IMAGE_SIZE, antialias=True),\
     GaussianBlur(kernel_size=3),\
@@ -930,12 +920,12 @@ transform = Compose([\
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 model = Patchcore()
 augmented_inferencer = train_and_export_model(
     OBJECT, model, transform=transform
@@ -960,22 +950,13 @@ If you want to dive deeper into unsupervised learning, check out these tutorials
 - [Clustering Images with Embeddings](https://docs.voxel51.com/tutorials/clustering.html)
 
 
-```
+```python
 [52]:
 
 ```
 
-```
+```python
 session.view = mapped_view.view()
 
 ```
 
-- Anomaly Detection with FiftyOne and Anomalib
-  - [Setup](#Setup)
-    - [Install dependencies](#Install-dependencies)
-    - [Load and Visualize the MVTec AD dataset](#Load-and-Visualize-the-MVTec-AD-dataset)
-  - [Train an Anomaly Detection Model](#Train-an-Anomaly-Detection-Model)
-  - [Evaluate Anomaly Detection Models](#Evaluate-Anomaly-Detection-Models)
-    - [Compare Anomaly Detection Models](#Compare-Anomaly-Detection-Models)
-  - [Test Data Augmentation Techniques](#Test-Data-Augmentation-Techniques)
-  - [Summary](#Summary)

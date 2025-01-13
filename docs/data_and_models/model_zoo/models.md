@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Model Zoo](index.html) >
-- Built-In Zoo Models
-
-Contents
-
-
 # Built-In Zoo Models [¶](\#built-in-zoo-models "Permalink to this headline")
 
 This page lists all of the natively available models in the FiftyOne Model Zoo.
@@ -1105,7 +1095,7 @@ AlexNet model architecture from [One weird trick for parallelizing convolutional
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1152,7 +1142,7 @@ Hugging Face Transformers model for image classification.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1202,7 +1192,7 @@ CLIP text/image encoder from [Learning Transferable Visual Models From Natural L
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1265,7 +1255,7 @@ DeepLabV3 model from [Rethinking Atrous Convolution for Semantic Image Segmentat
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1315,7 +1305,7 @@ DeepLabV3 model from [Rethinking Atrous Convolution for Semantic Image Segmentat
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1365,7 +1355,7 @@ Densenet-121 model from [Densely Connected Convolutional Networks](https://arxiv
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1414,7 +1404,7 @@ Densenet-161 model from [Densely Connected Convolutional Networks](https://arxiv
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1463,7 +1453,7 @@ Densenet-169 model from [Densely Connected Convolutional Networks](https://arxiv
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1512,7 +1502,7 @@ Densenet-201 model from [Densely Connected Convolutional Networks](https://arxiv
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1559,7 +1549,7 @@ Hugging Face Transformers model for monocular depth estimation.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1607,7 +1597,7 @@ Hugging Face Transformers model for object detection.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1657,7 +1647,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-B/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1705,7 +1695,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-B/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1753,7 +1743,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-g/14.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1801,7 +1791,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-g/14.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1849,7 +1839,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-L/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1897,7 +1887,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-L/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1945,7 +1935,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-S/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1993,7 +1983,7 @@ DINOv2: Learning Robust Visual Features without Supervision. Model: ViT-S/14 dis
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2041,7 +2031,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2091,7 +2081,7 @@ FCN model from [Fully Convolutional Networks for Semantic Segmentation](https://
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2141,7 +2131,7 @@ FCN model from [Fully Convolutional Networks for Semantic Segmentation](https://
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2191,7 +2181,7 @@ GoogLeNet (Inception v1) model from [Going Deeper with Convolutions](https://arx
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2240,7 +2230,7 @@ Inception v3 model from [Rethinking the Inception Architecture for Computer Visi
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2289,7 +2279,7 @@ Keypoint R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) with Re
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2339,7 +2329,7 @@ Mask R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) with ResNet
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2389,7 +2379,7 @@ Fine-tuned SAM2-hiera-tiny model from [Medical SAM 2 - Segment Medical Images as
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -2449,7 +2439,7 @@ MNASNet model from from [MnasNet: Platform-Aware Neural Architecture Search for 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2498,7 +2488,7 @@ MNASNet model from [MnasNet: Platform-Aware Neural Architecture Search for Mobil
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2547,7 +2537,7 @@ MobileNetV2 model from [MobileNetV2: Inverted Residuals and Linear Bottlenecks](
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2594,7 +2584,7 @@ OPEN CLIP text/image encoder from [Learning Transferable Visual Models From Natu
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2657,7 +2647,7 @@ ResNet-101 model from [Deep Residual Learning for Image Recognition](https://arx
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2706,7 +2696,7 @@ ResNet-152 model from [Deep Residual Learning for Image Recognition](https://arx
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2755,7 +2745,7 @@ ResNet-18 model from [Deep Residual Learning for Image Recognition](https://arxi
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2804,7 +2794,7 @@ ResNet-34 model from [Deep Residual Learning for Image Recognition](https://arxi
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2853,7 +2843,7 @@ ResNet-50 model from [Deep Residual Learning for Image Recognition](https://arxi
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2902,7 +2892,7 @@ ResNeXt-101 32x8d model from [Aggregated Residual Transformations for Deep Neura
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2951,7 +2941,7 @@ ResNeXt-50 32x4d model from [Aggregated Residual Transformations for Deep Neural
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3000,7 +2990,7 @@ RetinaNet model from [Focal Loss for Dense Object Detection](https://arxiv.org/a
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3050,7 +3040,7 @@ RT-DETR-l model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3100,7 +3090,7 @@ RT-DETR-x model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3150,7 +3140,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3208,7 +3198,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3266,7 +3256,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3324,7 +3314,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3382,7 +3372,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3440,7 +3430,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3498,7 +3488,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3556,7 +3546,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3614,7 +3604,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3672,7 +3662,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3730,7 +3720,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3788,7 +3778,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3846,7 +3836,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3904,7 +3894,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3962,7 +3952,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4020,7 +4010,7 @@ Segment Anything Model 2 (SAM2) from [SAM2: Segment Anything in Images and Video
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -4078,7 +4068,7 @@ Segment Anything Model (SAM) from [Segment Anything](https://arxiv.org/abs/2304.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4136,7 +4126,7 @@ Segment Anything Model (SAM) from [Segment Anything](https://arxiv.org/abs/2304.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4194,7 +4184,7 @@ Segment Anything Model (SAM) from [Segment Anything](https://arxiv.org/abs/2304.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4250,7 +4240,7 @@ Hugging Face Transformers model for semantic segmentation.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4300,7 +4290,7 @@ ShuffleNetV2 model from [ShuffleNet V2: Practical Guidelines for Efficient CNN A
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4349,7 +4339,7 @@ ShuffleNetV2 model from [ShuffleNet V2: Practical Guidelines for Efficient CNN A
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4398,7 +4388,7 @@ SqueezeNet 1.1 model from [the official SqueezeNet repo](https://github.com/forr
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4447,7 +4437,7 @@ SqueezeNet model from [SqueezeNet: AlexNet-level accuracy with 50x fewer paramet
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4496,7 +4486,7 @@ VGG-11 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4545,7 +4535,7 @@ VGG-11 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4594,7 +4584,7 @@ VGG-13 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4643,7 +4633,7 @@ VGG-13 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4692,7 +4682,7 @@ VGG-16 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4741,7 +4731,7 @@ VGG-16 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4790,7 +4780,7 @@ VGG-19 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4839,7 +4829,7 @@ VGG-19 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4888,7 +4878,7 @@ Wide ResNet-101-2 model from [Wide Residual Networks](https://arxiv.org/abs/1605
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4937,7 +4927,7 @@ Wide ResNet-50-2 model from [Wide Residual Networks](https://arxiv.org/abs/1605.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4984,7 +4974,7 @@ YOLO-NAS is an open-source training library for advanced computer vision models.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5034,7 +5024,7 @@ YOLO11-L model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5084,7 +5074,7 @@ YOLO11-L Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5134,7 +5124,7 @@ YOLO11-M model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5184,7 +5174,7 @@ YOLO11-M Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5234,7 +5224,7 @@ YOLO11-N model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5284,7 +5274,7 @@ YOLO11-N Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5334,7 +5324,7 @@ YOLO11-S model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5384,7 +5374,7 @@ YOLO11-S Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5434,7 +5424,7 @@ YOLO11-X model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5484,7 +5474,7 @@ YOLO11-X Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5534,7 +5524,7 @@ YOLOv10-L model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5584,7 +5574,7 @@ YOLOv10-M model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5634,7 +5624,7 @@ YOLOv10-N model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5684,7 +5674,7 @@ YOLOv10-S model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5734,7 +5724,7 @@ YOLOv10-X model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5784,7 +5774,7 @@ Ultralytics YOLOv5l model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5834,7 +5824,7 @@ Ultralytics YOLOv5m model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5884,7 +5874,7 @@ Ultralytics YOLOv5n model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5934,7 +5924,7 @@ Ultralytics YOLOv5s model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5984,7 +5974,7 @@ Ultralytics YOLOv5x model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6034,7 +6024,7 @@ Ultralytics YOLOv8l model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6084,7 +6074,7 @@ YOLOv8l Oriented Bounding Box model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6134,7 +6124,7 @@ Ultralytics YOLOv8l model trained Open Images v7.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6184,7 +6174,7 @@ Ultralytics YOLOv8l Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6234,7 +6224,7 @@ YOLOv8l-World model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6284,7 +6274,7 @@ Ultralytics YOLOv8m model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6334,7 +6324,7 @@ YOLOv8m Oriented Bounding Box model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6384,7 +6374,7 @@ Ultralytics YOLOv8m model trained Open Images v7.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6434,7 +6424,7 @@ Ultralytics YOLOv8m Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6484,7 +6474,7 @@ YOLOv8m-World model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6534,7 +6524,7 @@ Ultralytics YOLOv8n model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6584,7 +6574,7 @@ YOLOv8n Oriented Bounding Box model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6634,7 +6624,7 @@ Ultralytics YOLOv8n model trained on Open Images v7.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6684,7 +6674,7 @@ Ultralytics YOLOv8n Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6734,7 +6724,7 @@ Ultralytics YOLOv8s model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6784,7 +6774,7 @@ YOLOv8s Oriented Bounding Box model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6834,7 +6824,7 @@ Ultralytics YOLOv8s model trained on Open Images v7.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6884,7 +6874,7 @@ Ultralytics YOLOv8s Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6934,7 +6924,7 @@ YOLOv8s-World model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -6984,7 +6974,7 @@ Ultralytics YOLOv8x model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7034,7 +7024,7 @@ YOLOv8x Oriented Bounding Box model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7084,7 +7074,7 @@ Ultralytics YOLOv8x model trained Open Images v7.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7134,7 +7124,7 @@ Ultralytics YOLOv8x Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7184,7 +7174,7 @@ YOLOv8x-World model.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7234,7 +7224,7 @@ YOLOv9-C model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7284,7 +7274,7 @@ YOLOv9-C Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7334,7 +7324,7 @@ YOLOv9-E model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7384,7 +7374,7 @@ YOLOv9-E Segmentation model trained on COCO.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7432,7 +7422,7 @@ Hugging Face Transformers model for zero-shot image classification.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7483,7 +7473,7 @@ Hugging Face Transformers model for zero-shot object detection.
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7540,7 +7530,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7592,7 +7582,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7644,7 +7634,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7696,7 +7686,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7748,7 +7738,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7800,7 +7790,7 @@ CenterNet model from [Objects as Points](https://arxiv.org/abs/1904.07850) with 
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7852,7 +7842,7 @@ DeepLabv3+ semantic segmentation model from [Encoder-Decoder with Atrous Separab
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7904,7 +7894,7 @@ DeepLabv3+ semantic segmentation model from [Encoder-Decoder with Atrous Separab
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -7956,7 +7946,7 @@ EfficientDet-D0 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8008,7 +7998,7 @@ EfficientDet-D0 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8060,7 +8050,7 @@ EfficientDet-D1 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8112,7 +8102,7 @@ EfficientDet-D1 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8164,7 +8154,7 @@ EfficientDet-D2 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8216,7 +8206,7 @@ EfficientDet-D2 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8268,7 +8258,7 @@ EfficientDet-D3 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8320,7 +8310,7 @@ EfficientDet-D3 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8372,7 +8362,7 @@ EfficientDet-D4 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8424,7 +8414,7 @@ EfficientDet-D4 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8476,7 +8466,7 @@ EfficientDet-D5 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8528,7 +8518,7 @@ EfficientDet-D5 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8580,7 +8570,7 @@ EfficientDet-D6 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8632,7 +8622,7 @@ EfficientDet-D6 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8684,7 +8674,7 @@ EfficientDet-D7 model from [EfficientDet: Scalable and Efficient Object Detectio
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8736,7 +8726,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8788,7 +8778,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8840,7 +8830,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8892,7 +8882,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8944,7 +8934,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -8996,7 +8986,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9048,7 +9038,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9100,7 +9090,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9152,7 +9142,7 @@ Faster R-CNN model from [Faster R-CNN: Towards Real-Time Object Detection with R
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9204,7 +9194,7 @@ Inception v2 model from [Rethinking the Inception Architecture for Computer Visi
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9255,7 +9245,7 @@ Inception v4 model from [Inception-v4, Inception-ResNet and the Impact of Residu
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9306,7 +9296,7 @@ Mask R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) atrous vers
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9358,7 +9348,7 @@ Mask R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) with Incept
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9410,7 +9400,7 @@ Mask R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) atrous vers
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9462,7 +9452,7 @@ Mask R-CNN model from [Mask R-CNN](https://arxiv.org/abs/1703.06870) atrous vers
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9514,7 +9504,7 @@ MobileNetV2 model from [MobileNetV2: Inverted Residuals and Linear Bottlenecks](
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9565,7 +9555,7 @@ ResNet-50 v1 model from [Deep Residual Learning for Image Recognition](https://a
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9616,7 +9606,7 @@ ResNet-50 v2 model from [Deep Residual Learning for Image Recognition](https://a
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9667,7 +9657,7 @@ R-FCN object detection model from [R-FCN: Object Detection via Region-based Full
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9719,7 +9709,7 @@ Inception Single Shot Detector model from [SSD: Single Shot MultiBox Detector](h
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9771,7 +9761,7 @@ Single Shot Detector model from [SSD: Single Shot MultiBox Detector](https://arx
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9823,7 +9813,7 @@ MobileNetV1 model from [MobileNetV2: Inverted Residuals and Linear Bottlenecks](
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9875,7 +9865,7 @@ FPN Single Shot Detector model from [SSD: Single Shot MultiBox Detector](https:/
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9927,7 +9917,7 @@ MobileNetV2 model from [MobileNetV2: Inverted Residuals and Linear Bottlenecks](
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -9979,7 +9969,7 @@ FPN Single Shot Detector model from [SSD: Single Shot MultiBox Detector](https:/
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -10031,7 +10021,7 @@ VGG-16 model from [Very Deep Convolutional Networks for Large-Scale Image Recogn
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -10082,7 +10072,7 @@ YOLOv2 model from [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/161
 
 **Example usage**
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -10102,182 +10092,3 @@ session = fo.launch_app(dataset)
 
 ```
 
-- Built-In Zoo Models
-  - [Torch models](#torch-models)
-    - [alexnet-imagenet-torch](#alexnet-imagenet-torch)
-    - [classification-transformer-torch](#classification-transformer-torch)
-    - [clip-vit-base32-torch](#clip-vit-base32-torch)
-    - [deeplabv3-resnet101-coco-torch](#deeplabv3-resnet101-coco-torch)
-    - [deeplabv3-resnet50-coco-torch](#deeplabv3-resnet50-coco-torch)
-    - [densenet121-imagenet-torch](#densenet121-imagenet-torch)
-    - [densenet161-imagenet-torch](#densenet161-imagenet-torch)
-    - [densenet169-imagenet-torch](#densenet169-imagenet-torch)
-    - [densenet201-imagenet-torch](#densenet201-imagenet-torch)
-    - [depth-estimation-transformer-torch](#depth-estimation-transformer-torch)
-    - [detection-transformer-torch](#detection-transformer-torch)
-    - [dinov2-vitb14-reg-torch](#dinov2-vitb14-reg-torch)
-    - [dinov2-vitb14-torch](#dinov2-vitb14-torch)
-    - [dinov2-vitg14-reg-torch](#dinov2-vitg14-reg-torch)
-    - [dinov2-vitg14-torch](#dinov2-vitg14-torch)
-    - [dinov2-vitl14-reg-torch](#dinov2-vitl14-reg-torch)
-    - [dinov2-vitl14-torch](#dinov2-vitl14-torch)
-    - [dinov2-vits14-reg-torch](#dinov2-vits14-reg-torch)
-    - [dinov2-vits14-torch](#dinov2-vits14-torch)
-    - [faster-rcnn-resnet50-fpn-coco-torch](#faster-rcnn-resnet50-fpn-coco-torch)
-    - [fcn-resnet101-coco-torch](#fcn-resnet101-coco-torch)
-    - [fcn-resnet50-coco-torch](#fcn-resnet50-coco-torch)
-    - [googlenet-imagenet-torch](#googlenet-imagenet-torch)
-    - [inception-v3-imagenet-torch](#inception-v3-imagenet-torch)
-    - [keypoint-rcnn-resnet50-fpn-coco-torch](#keypoint-rcnn-resnet50-fpn-coco-torch)
-    - [mask-rcnn-resnet50-fpn-coco-torch](#mask-rcnn-resnet50-fpn-coco-torch)
-    - [med-sam-2-video-torch](#med-sam-2-video-torch)
-    - [mnasnet0.5-imagenet-torch](#mnasnet0-5-imagenet-torch)
-    - [mnasnet1.0-imagenet-torch](#mnasnet1-0-imagenet-torch)
-    - [mobilenet-v2-imagenet-torch](#mobilenet-v2-imagenet-torch)
-    - [open-clip-torch](#open-clip-torch)
-    - [resnet101-imagenet-torch](#resnet101-imagenet-torch)
-    - [resnet152-imagenet-torch](#resnet152-imagenet-torch)
-    - [resnet18-imagenet-torch](#resnet18-imagenet-torch)
-    - [resnet34-imagenet-torch](#resnet34-imagenet-torch)
-    - [resnet50-imagenet-torch](#resnet50-imagenet-torch)
-    - [resnext101-32x8d-imagenet-torch](#resnext101-32x8d-imagenet-torch)
-    - [resnext50-32x4d-imagenet-torch](#resnext50-32x4d-imagenet-torch)
-    - [retinanet-resnet50-fpn-coco-torch](#retinanet-resnet50-fpn-coco-torch)
-    - [rtdetr-l-coco-torch](#rtdetr-l-coco-torch)
-    - [rtdetr-x-coco-torch](#rtdetr-x-coco-torch)
-    - [segment-anything-2-hiera-base-plus-image-torch](#segment-anything-2-hiera-base-plus-image-torch)
-    - [segment-anything-2-hiera-base-plus-video-torch](#segment-anything-2-hiera-base-plus-video-torch)
-    - [segment-anything-2-hiera-large-image-torch](#segment-anything-2-hiera-large-image-torch)
-    - [segment-anything-2-hiera-large-video-torch](#segment-anything-2-hiera-large-video-torch)
-    - [segment-anything-2-hiera-small-image-torch](#segment-anything-2-hiera-small-image-torch)
-    - [segment-anything-2-hiera-small-video-torch](#segment-anything-2-hiera-small-video-torch)
-    - [segment-anything-2-hiera-tiny-image-torch](#segment-anything-2-hiera-tiny-image-torch)
-    - [segment-anything-2-hiera-tiny-video-torch](#segment-anything-2-hiera-tiny-video-torch)
-    - [segment-anything-2.1-hiera-base-plus-image-torch](#segment-anything-2-1-hiera-base-plus-image-torch)
-    - [segment-anything-2.1-hiera-base-plus-video-torch](#segment-anything-2-1-hiera-base-plus-video-torch)
-    - [segment-anything-2.1-hiera-large-image-torch](#segment-anything-2-1-hiera-large-image-torch)
-    - [segment-anything-2.1-hiera-large-video-torch](#segment-anything-2-1-hiera-large-video-torch)
-    - [segment-anything-2.1-hiera-small-image-torch](#segment-anything-2-1-hiera-small-image-torch)
-    - [segment-anything-2.1-hiera-small-video-torch](#segment-anything-2-1-hiera-small-video-torch)
-    - [segment-anything-2.1-hiera-tiny-image-torch](#segment-anything-2-1-hiera-tiny-image-torch)
-    - [segment-anything-2.1-hiera-tiny-video-torch](#segment-anything-2-1-hiera-tiny-video-torch)
-    - [segment-anything-vitb-torch](#segment-anything-vitb-torch)
-    - [segment-anything-vith-torch](#segment-anything-vith-torch)
-    - [segment-anything-vitl-torch](#segment-anything-vitl-torch)
-    - [segmentation-transformer-torch](#segmentation-transformer-torch)
-    - [shufflenetv2-0.5x-imagenet-torch](#shufflenetv2-0-5x-imagenet-torch)
-    - [shufflenetv2-1.0x-imagenet-torch](#shufflenetv2-1-0x-imagenet-torch)
-    - [squeezenet-1.1-imagenet-torch](#squeezenet-1-1-imagenet-torch)
-    - [squeezenet-imagenet-torch](#squeezenet-imagenet-torch)
-    - [vgg11-bn-imagenet-torch](#vgg11-bn-imagenet-torch)
-    - [vgg11-imagenet-torch](#vgg11-imagenet-torch)
-    - [vgg13-bn-imagenet-torch](#vgg13-bn-imagenet-torch)
-    - [vgg13-imagenet-torch](#vgg13-imagenet-torch)
-    - [vgg16-bn-imagenet-torch](#vgg16-bn-imagenet-torch)
-    - [vgg16-imagenet-torch](#vgg16-imagenet-torch)
-    - [vgg19-bn-imagenet-torch](#vgg19-bn-imagenet-torch)
-    - [vgg19-imagenet-torch](#vgg19-imagenet-torch)
-    - [wide-resnet101-2-imagenet-torch](#wide-resnet101-2-imagenet-torch)
-    - [wide-resnet50-2-imagenet-torch](#wide-resnet50-2-imagenet-torch)
-    - [yolo-nas-torch](#yolo-nas-torch)
-    - [yolo11l-coco-torch](#yolo11l-coco-torch)
-    - [yolo11l-seg-coco-torch](#yolo11l-seg-coco-torch)
-    - [yolo11m-coco-torch](#yolo11m-coco-torch)
-    - [yolo11m-seg-coco-torch](#yolo11m-seg-coco-torch)
-    - [yolo11n-coco-torch](#yolo11n-coco-torch)
-    - [yolo11n-seg-coco-torch](#yolo11n-seg-coco-torch)
-    - [yolo11s-coco-torch](#yolo11s-coco-torch)
-    - [yolo11s-seg-coco-torch](#yolo11s-seg-coco-torch)
-    - [yolo11x-coco-torch](#yolo11x-coco-torch)
-    - [yolo11x-seg-coco-torch](#yolo11x-seg-coco-torch)
-    - [yolov10l-coco-torch](#yolov10l-coco-torch)
-    - [yolov10m-coco-torch](#yolov10m-coco-torch)
-    - [yolov10n-coco-torch](#yolov10n-coco-torch)
-    - [yolov10s-coco-torch](#yolov10s-coco-torch)
-    - [yolov10x-coco-torch](#yolov10x-coco-torch)
-    - [yolov5l-coco-torch](#yolov5l-coco-torch)
-    - [yolov5m-coco-torch](#yolov5m-coco-torch)
-    - [yolov5n-coco-torch](#yolov5n-coco-torch)
-    - [yolov5s-coco-torch](#yolov5s-coco-torch)
-    - [yolov5x-coco-torch](#yolov5x-coco-torch)
-    - [yolov8l-coco-torch](#yolov8l-coco-torch)
-    - [yolov8l-obb-dotav1-torch](#yolov8l-obb-dotav1-torch)
-    - [yolov8l-oiv7-torch](#yolov8l-oiv7-torch)
-    - [yolov8l-seg-coco-torch](#yolov8l-seg-coco-torch)
-    - [yolov8l-world-torch](#yolov8l-world-torch)
-    - [yolov8m-coco-torch](#yolov8m-coco-torch)
-    - [yolov8m-obb-dotav1-torch](#yolov8m-obb-dotav1-torch)
-    - [yolov8m-oiv7-torch](#yolov8m-oiv7-torch)
-    - [yolov8m-seg-coco-torch](#yolov8m-seg-coco-torch)
-    - [yolov8m-world-torch](#yolov8m-world-torch)
-    - [yolov8n-coco-torch](#yolov8n-coco-torch)
-    - [yolov8n-obb-dotav1-torch](#yolov8n-obb-dotav1-torch)
-    - [yolov8n-oiv7-torch](#yolov8n-oiv7-torch)
-    - [yolov8n-seg-coco-torch](#yolov8n-seg-coco-torch)
-    - [yolov8s-coco-torch](#yolov8s-coco-torch)
-    - [yolov8s-obb-dotav1-torch](#yolov8s-obb-dotav1-torch)
-    - [yolov8s-oiv7-torch](#yolov8s-oiv7-torch)
-    - [yolov8s-seg-coco-torch](#yolov8s-seg-coco-torch)
-    - [yolov8s-world-torch](#yolov8s-world-torch)
-    - [yolov8x-coco-torch](#yolov8x-coco-torch)
-    - [yolov8x-obb-dotav1-torch](#yolov8x-obb-dotav1-torch)
-    - [yolov8x-oiv7-torch](#yolov8x-oiv7-torch)
-    - [yolov8x-seg-coco-torch](#yolov8x-seg-coco-torch)
-    - [yolov8x-world-torch](#yolov8x-world-torch)
-    - [yolov9c-coco-torch](#yolov9c-coco-torch)
-    - [yolov9c-seg-coco-torch](#yolov9c-seg-coco-torch)
-    - [yolov9e-coco-torch](#yolov9e-coco-torch)
-    - [yolov9e-seg-coco-torch](#yolov9e-seg-coco-torch)
-    - [zero-shot-classification-transformer-torch](#zero-shot-classification-transformer-torch)
-    - [zero-shot-detection-transformer-torch](#zero-shot-detection-transformer-torch)
-  - [TensorFlow models](#tensorflow-models)
-    - [centernet-hg104-1024-coco-tf2](#centernet-hg104-1024-coco-tf2)
-    - [centernet-hg104-512-coco-tf2](#centernet-hg104-512-coco-tf2)
-    - [centernet-mobilenet-v2-fpn-512-coco-tf2](#centernet-mobilenet-v2-fpn-512-coco-tf2)
-    - [centernet-resnet101-v1-fpn-512-coco-tf2](#centernet-resnet101-v1-fpn-512-coco-tf2)
-    - [centernet-resnet50-v1-fpn-512-coco-tf2](#centernet-resnet50-v1-fpn-512-coco-tf2)
-    - [centernet-resnet50-v2-512-coco-tf2](#centernet-resnet50-v2-512-coco-tf2)
-    - [deeplabv3-cityscapes-tf](#deeplabv3-cityscapes-tf)
-    - [deeplabv3-mnv2-cityscapes-tf](#deeplabv3-mnv2-cityscapes-tf)
-    - [efficientdet-d0-512-coco-tf2](#efficientdet-d0-512-coco-tf2)
-    - [efficientdet-d0-coco-tf1](#efficientdet-d0-coco-tf1)
-    - [efficientdet-d1-640-coco-tf2](#efficientdet-d1-640-coco-tf2)
-    - [efficientdet-d1-coco-tf1](#efficientdet-d1-coco-tf1)
-    - [efficientdet-d2-768-coco-tf2](#efficientdet-d2-768-coco-tf2)
-    - [efficientdet-d2-coco-tf1](#efficientdet-d2-coco-tf1)
-    - [efficientdet-d3-896-coco-tf2](#efficientdet-d3-896-coco-tf2)
-    - [efficientdet-d3-coco-tf1](#efficientdet-d3-coco-tf1)
-    - [efficientdet-d4-1024-coco-tf2](#efficientdet-d4-1024-coco-tf2)
-    - [efficientdet-d4-coco-tf1](#efficientdet-d4-coco-tf1)
-    - [efficientdet-d5-1280-coco-tf2](#efficientdet-d5-1280-coco-tf2)
-    - [efficientdet-d5-coco-tf1](#efficientdet-d5-coco-tf1)
-    - [efficientdet-d6-1280-coco-tf2](#efficientdet-d6-1280-coco-tf2)
-    - [efficientdet-d6-coco-tf1](#efficientdet-d6-coco-tf1)
-    - [efficientdet-d7-1536-coco-tf2](#efficientdet-d7-1536-coco-tf2)
-    - [faster-rcnn-inception-resnet-atrous-v2-coco-tf](#faster-rcnn-inception-resnet-atrous-v2-coco-tf)
-    - [faster-rcnn-inception-resnet-atrous-v2-lowproposals-coco-tf](#faster-rcnn-inception-resnet-atrous-v2-lowproposals-coco-tf)
-    - [faster-rcnn-inception-v2-coco-tf](#faster-rcnn-inception-v2-coco-tf)
-    - [faster-rcnn-nas-coco-tf](#faster-rcnn-nas-coco-tf)
-    - [faster-rcnn-nas-lowproposals-coco-tf](#faster-rcnn-nas-lowproposals-coco-tf)
-    - [faster-rcnn-resnet101-coco-tf](#faster-rcnn-resnet101-coco-tf)
-    - [faster-rcnn-resnet101-lowproposals-coco-tf](#faster-rcnn-resnet101-lowproposals-coco-tf)
-    - [faster-rcnn-resnet50-coco-tf](#faster-rcnn-resnet50-coco-tf)
-    - [faster-rcnn-resnet50-lowproposals-coco-tf](#faster-rcnn-resnet50-lowproposals-coco-tf)
-    - [inception-resnet-v2-imagenet-tf1](#inception-resnet-v2-imagenet-tf1)
-    - [inception-v4-imagenet-tf1](#inception-v4-imagenet-tf1)
-    - [mask-rcnn-inception-resnet-v2-atrous-coco-tf](#mask-rcnn-inception-resnet-v2-atrous-coco-tf)
-    - [mask-rcnn-inception-v2-coco-tf](#mask-rcnn-inception-v2-coco-tf)
-    - [mask-rcnn-resnet101-atrous-coco-tf](#mask-rcnn-resnet101-atrous-coco-tf)
-    - [mask-rcnn-resnet50-atrous-coco-tf](#mask-rcnn-resnet50-atrous-coco-tf)
-    - [mobilenet-v2-imagenet-tf1](#mobilenet-v2-imagenet-tf1)
-    - [resnet-v1-50-imagenet-tf1](#resnet-v1-50-imagenet-tf1)
-    - [resnet-v2-50-imagenet-tf1](#resnet-v2-50-imagenet-tf1)
-    - [rfcn-resnet101-coco-tf](#rfcn-resnet101-coco-tf)
-    - [ssd-inception-v2-coco-tf](#ssd-inception-v2-coco-tf)
-    - [ssd-mobilenet-v1-coco-tf](#ssd-mobilenet-v1-coco-tf)
-    - [ssd-mobilenet-v1-fpn-640-coco17](#ssd-mobilenet-v1-fpn-640-coco17)
-    - [ssd-mobilenet-v1-fpn-coco-tf](#ssd-mobilenet-v1-fpn-coco-tf)
-    - [ssd-mobilenet-v2-320-coco17](#ssd-mobilenet-v2-320-coco17)
-    - [ssd-resnet50-fpn-coco-tf](#ssd-resnet50-fpn-coco-tf)
-    - [vgg16-imagenet-tf1](#vgg16-imagenet-tf1)
-    - [yolo-v2-coco-tf1](#yolo-v2-coco-tf1)

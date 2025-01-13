@@ -1,14 +1,3 @@
-Table of Contents
-
-- [Docs](../../index.html) >
-
-- [FiftyOne User Guide](../index.html) >
-- [Loading data into FiftyOne](index.html) >
-- Using Sample Parsers
-
-Contents
-
-
 # Using Sample Parsers [¶](\#using-sample-parsers "Permalink to this headline")
 
 This page describes how to use the [`SampleParser`](../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser "fiftyone.utils.data.parsers.SampleParser") interface to add samples to
@@ -50,7 +39,7 @@ datasets.
 Use [`Dataset.add_images_dir()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_images_dir "fiftyone.core.dataset.Dataset.add_images_dir")
 to add a directory of images to a dataset:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -68,7 +57,7 @@ dataset.add_images_dir(images_dir)
 Use [`Dataset.add_images_patt()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_images_patt "fiftyone.core.dataset.Dataset.add_images_patt")
 to add a glob pattern of images to a dataset:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -95,7 +84,7 @@ that handles samples that contain either an image that can be converted to
 [numpy format](https://numpy.org) via `np.asarray()` of the path to an
 image on disk.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -132,7 +121,7 @@ format via `np.asarray()` or the path to an image on disk
 The snippet below adds an iterable of image classification data in the above
 format to a dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -158,7 +147,7 @@ datasets.
 Use [`Dataset.add_videos_dir()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_videos_dir "fiftyone.core.dataset.Dataset.add_videos_dir")
 to add a directory of videos to a dataset:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -176,7 +165,7 @@ dataset.add_videos_dir(videos_dir)
 Use [`Dataset.add_videos_patt()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_videos_patt "fiftyone.core.dataset.Dataset.add_videos_patt")
 to add a glob pattern of videos to a dataset:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -201,7 +190,7 @@ FiftyOne provides a
 [`VideoSampleParser`](../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoSampleParser "fiftyone.utils.data.parsers.VideoSampleParser")
 that handles samples that directly contain the path to the video on disk.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -239,7 +228,7 @@ instance, a serialized dict representation of one, or the path to one on disk
 The snippet below adds an iterable of labeled video samples in the above format
 to a dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -305,7 +294,7 @@ that handles samples that contain either an image that can be converted to
 [numpy format](https://numpy.org) via `np.asarray()` of the path to an
 image on disk.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -355,7 +344,7 @@ format via `np.asarray()` or the path to an image on disk
 The snippet below ingests an iterable of image classification data in the above
 format intoa a FiftyOne dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -391,7 +380,7 @@ FiftyOne provides a
 [`VideoSampleParser`](../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.VideoSampleParser "fiftyone.utils.data.parsers.VideoSampleParser")
 that handles samples that directly contain the paths to videos on disk.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -437,7 +426,7 @@ serialized dict representation of one, or the path to one on disk
 The snippet below ingests an iterable of labeled videos in the above format
 into a FiftyOne dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.data as foud
 
@@ -504,24 +493,3 @@ information from a labeled image sample, such as the path to the image on
 disk, the image itself, metadata about the image, and the label (e.g.,
 classification or object detections) associated with the image.
 
-- Using Sample Parsers
-  - [Adding samples to datasets](#adding-samples-to-datasets)
-    - [Basic recipe](#basic-recipe)
-    - [Adding unlabeled images](#adding-unlabeled-images)
-      - [Adding a directory of images](#adding-a-directory-of-images)
-      - [Adding a glob pattern of images](#adding-a-glob-pattern-of-images)
-      - [Adding images using a SampleParser](#adding-images-using-a-sampleparser)
-    - [Adding labeled images](#adding-labeled-images)
-    - [Adding unlabeled videos](#adding-unlabeled-videos)
-      - [Adding a directory of videos](#adding-a-directory-of-videos)
-      - [Adding a glob pattern of videos](#adding-a-glob-pattern-of-videos)
-      - [Adding videos using a SampleParser](#adding-videos-using-a-sampleparser)
-    - [Adding labeled videos](#adding-labeled-videos)
-  - [Ingesting samples into datasets](#ingesting-samples-into-datasets)
-    - [Basic recipe](#id3)
-    - [Ingesting unlabeled images](#ingesting-unlabeled-images)
-    - [Ingesting labeled images](#ingesting-labeled-images)
-    - [Ingesting unlabeled videos](#ingesting-unlabeled-videos)
-    - [Ingesting labeled videos](#ingesting-labeled-videos)
-  - [Built-in SampleParser classes](#built-in-sampleparser-classes)
-  - [Writing a custom SampleParser](#writing-a-custom-sampleparser)

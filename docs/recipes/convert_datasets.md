@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Convert Dataset Formats
-
-Contents
-
-
 # Convert Dataset Formats [¶](\#Convert-Dataset-Formats "Permalink to this headline")
 
 This recipe demonstrates how to use FiftyOne to convert datasets on disk between common formats.
@@ -16,12 +6,12 @@ This recipe demonstrates how to use FiftyOne to convert datasets on disk between
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 pip install fiftyone
 
 ```
@@ -30,12 +20,12 @@ This notebook contains bash commands. To run it as a notebook, you must install 
 
 Alternatively, you can just copy + paste the code blocks into your shell.
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 pip install bash_kernel
 python -m bash_kernel.install
 
@@ -45,12 +35,12 @@ In this recipe we’ll use the [FiftyOne Dataset Zoo](https://voxel51.com/docs/f
 
 Specifically, we’ll need [TensorFlow](https://www.tensorflow.org/) and [TensorFlow Datasets](https://www.tensorflow.org/datasets) installed to [access the datasets](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html#customizing-your-ml-backend):
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 pip install tensorflow tensorflow-datasets
 
 ```
@@ -59,18 +49,18 @@ pip install tensorflow tensorflow-datasets
 
 Download the test split of the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html) from the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html) using the command below:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 # Download the test split of CIFAR-10
 fiftyone zoo datasets download cifar10 --split test
 
 ```
 
-```
+```python
 Downloading split 'test' to '~/fiftyone/cifar10/test'
 Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ~/fiftyone/cifar10/tmp-download/cifar-10-python.tar.gz
 170500096it [00:04, 35887670.65it/s]
@@ -82,18 +72,18 @@ Dataset info written to '~/fiftyone/cifar10/info.json'
 
 Download the validation split of the [KITTI dataset](http://www.cvlibs.net/datasets/kitti) from the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/zoo_datasets.html) using the command below:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 # Download the validation split of KITTI
 fiftyone zoo datasets download kitti --split validation
 
 ```
 
-```
+```python
 Split 'validation' already downloaded
 
 ```
@@ -129,17 +119,17 @@ In addition, you can define your own [custom dataset types](https://voxel51.com/
 
 The usage of the `fiftyone convert` command is as follows:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 fiftyone convert -h
 
 ```
 
-```
+```python
 usage: fiftyone convert [-h] --input-type INPUT_TYPE --output-type OUTPUT_TYPE
                         [--input-dir INPUT_DIR]
                         [--input-kwargs KEY=VAL [KEY=VAL ...]]
@@ -200,17 +190,17 @@ When you downloaded the test split of the CIFAR-10 dataset above, it was written
 
 You can verify this by printing information about the downloaded dataset:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 fiftyone zoo datasets info cifar10
 
 ```
 
-```
+```python
 ***** Dataset description *****
 The CIFAR-10 dataset consists of 60000 32 x 32 color images in 10
     classes, with 6000 images per class. There are 50000 training images and
@@ -258,7 +248,7 @@ test, train
 
 The snippet below uses `fiftyone convert` to convert the test split of the CIFAR-10 dataset to [fiftyone.types.ImageClassificationDirectoryTree](https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#imageclassificationdirectorytree) format, which stores classification datasets on disk in a directory tree structure with images organized per-class:
 
-```
+```python
 <dataset_dir>
 ├── <classA>/
 │   ├── <image1>.<ext>
@@ -272,12 +262,12 @@ The snippet below uses `fiftyone convert` to convert the test split of the CIFAR
 
 ```
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 INPUT_DIR=$(fiftyone zoo datasets find cifar10 --split test)
 OUTPUT_DIR=/tmp/fiftyone/cifar10-dir-tree
 
@@ -287,7 +277,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 Loading dataset from '~/fiftyone/cifar10/test'
 Input format 'fiftyone.types.dataset_types.FiftyOneImageClassificationDataset'
  100% |███| 10000/10000 [4.2s elapsed, 0s remaining, 2.4K samples/s]
@@ -301,17 +291,17 @@ Export complete
 
 Let’s verify that the conversion happened as expected:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/cifar10-dir-tree/
 
 ```
 
-```
+```python
 total 0
 drwxr-xr-x    12 voxel51  wheel   384B Jul 14 11:08 .
 drwxr-xr-x     3 voxel51  wheel    96B Jul 14 11:08 ..
@@ -328,17 +318,17 @@ drwxr-xr-x  1002 voxel51  wheel    31K Jul 14 11:08 truck
 
 ```
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/cifar10-dir-tree/airplane/ | head
 
 ```
 
-```
+```python
 total 8000
 drwxr-xr-x  1002 voxel51  wheel    31K Jul 14 11:08 .
 drwxr-xr-x    12 voxel51  wheel   384B Jul 14 11:08 ..
@@ -354,12 +344,12 @@ drwxr-xr-x    12 voxel51  wheel   384B Jul 14 11:08 ..
 
 Now let’s convert the classification directory tree to [TFRecords](https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#tfimageclassificationdataset) format!
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 INPUT_DIR=/tmp/fiftyone/cifar10-dir-tree
 OUTPUT_DIR=/tmp/fiftyone/cifar10-tfrecords
 
@@ -369,7 +359,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 Loading dataset from '/tmp/fiftyone/cifar10-dir-tree'
 Input format 'fiftyone.types.dataset_types.ImageClassificationDirectoryTree'
  100% |███| 10000/10000 [4.0s elapsed, 0s remaining, 2.5K samples/s]
@@ -386,17 +376,17 @@ Export complete
 
 Let’s verify that the conversion happened as expected:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/cifar10-tfrecords
 
 ```
 
-```
+```python
 total 29696
 drwxr-xr-x  3 voxel51  wheel    96B Jul 14 11:24 .
 drwxr-xr-x  4 voxel51  wheel   128B Jul 14 11:24 ..
@@ -410,17 +400,17 @@ When you downloaded the validation split of the KITTI dataset above, it was writ
 
 You can verify this by printing information about the downloaded dataset:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 fiftyone zoo datasets info kitti
 
 ```
 
-```
+```python
 ***** Dataset description *****
 KITTI contains a suite of vision tasks built using an autonomous
     driving platform.
@@ -472,12 +462,12 @@ test, train, validation
 
 The snippet below uses `fiftyone convert` to convert the test split of the CIFAR-10 dataset to [fiftyone.types.COCODetectionDataset](https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#cocodetectiondataset) format, which writes the dataset to disk with annotations in [COCO format](https://cocodataset.org/#format-data).
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 INPUT_DIR=$(fiftyone zoo datasets find kitti --split validation)
 OUTPUT_DIR=/tmp/fiftyone/kitti-coco
 
@@ -487,7 +477,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 Loading dataset from '~/fiftyone/kitti/validation'
 Input format 'fiftyone.types.dataset_types.FiftyOneImageDetectionDataset'
  100% |███████| 423/423 [1.2s elapsed, 0s remaining, 351.0 samples/s]
@@ -501,17 +491,17 @@ Export complete
 
 Let’s verify that the conversion happened as expected:
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/kitti-coco/
 
 ```
 
-```
+```python
 total 880
 drwxr-xr-x    4 voxel51  wheel   128B Jul 14 11:24 .
 drwxr-xr-x    5 voxel51  wheel   160B Jul 14 11:24 ..
@@ -520,17 +510,17 @@ drwxr-xr-x  425 voxel51  wheel    13K Jul 14 11:24 data
 
 ```
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/kitti-coco/data | head
 
 ```
 
-```
+```python
 total 171008
 drwxr-xr-x  425 voxel51  wheel    13K Jul 14 11:24 .
 drwxr-xr-x    4 voxel51  wheel   128B Jul 14 11:24 ..
@@ -544,19 +534,19 @@ drwxr-xr-x    4 voxel51  wheel   128B Jul 14 11:24 ..
 
 ```
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 cat /tmp/fiftyone/kitti-coco/labels.json | python -m json.tool 2> /dev/null | head -20
 echo "..."
 cat /tmp/fiftyone/kitti-coco/labels.json | python -m json.tool 2> /dev/null | tail -20
 
 ```
 
-```
+```python
 {
     "info": {
         "year": "",
@@ -603,12 +593,12 @@ cat /tmp/fiftyone/kitti-coco/labels.json | python -m json.tool 2> /dev/null | ta
 
 Now let’s convert from COCO format to [CVAT Image format](https://voxel51.com/docs/fiftyone/user_guide/export_datasets.html#cvatimageformat) format!
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 INPUT_DIR=/tmp/fiftyone/kitti-coco
 OUTPUT_DIR=/tmp/fiftyone/kitti-cvat
 
@@ -618,7 +608,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 Loading dataset from '/tmp/fiftyone/kitti-coco'
 Input format 'fiftyone.types.dataset_types.COCODetectionDataset'
  100% |███████| 423/423 [2.0s elapsed, 0s remaining, 206.4 samples/s]
@@ -632,17 +622,17 @@ Export complete
 
 Let’s verify that the conversion happened as expected:
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 ls -lah /tmp/fiftyone/kitti-cvat
 
 ```
 
-```
+```python
 total 584
 drwxr-xr-x    4 voxel51  wheel   128B Jul 14 11:25 .
 drwxr-xr-x    6 voxel51  wheel   192B Jul 14 11:25 ..
@@ -651,19 +641,19 @@ drwxr-xr-x  425 voxel51  wheel    13K Jul 14 11:25 data
 
 ```
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 cat /tmp/fiftyone/kitti-cvat/labels.xml | head -20
 echo "..."
 cat /tmp/fiftyone/kitti-cvat/labels.xml | tail -20
 
 ```
 
-```
+```python
 <?xml version="1.0" encoding="utf-8"?>
 <annotations>
     <version>1.1</version>
@@ -712,20 +702,13 @@ cat /tmp/fiftyone/kitti-cvat/labels.xml | tail -20
 
 You can cleanup the files generated by this recipe by running the command below:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 rm -rf /tmp/fiftyone
 
 ```
 
-- Convert Dataset Formats
-  - [Setup](#Setup)
-  - [Download datasets](#Download-datasets)
-  - [The fiftyone convert command](#The-fiftyone-convert-command)
-  - [Convert CIFAR-10 dataset](#Convert-CIFAR-10-dataset)
-  - [Convert KITTI dataset](#Convert-KITTI-dataset)
-  - [Cleanup](#Cleanup)

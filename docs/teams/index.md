@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Teams
-
-Contents
-
-
 # FiftyOne Teams [¶](\#fiftyone-teams "Permalink to this headline")
 
 [FiftyOne Teams](https://voxel51.com/fiftyone-teams/) enables multiple users
@@ -110,4 +101,3 @@ Look interesting?
 [Schedule a demo](https://voxel51.com/schedule-teams-workshop) to get
 started with Teams
 
-- FiftyOne Teams

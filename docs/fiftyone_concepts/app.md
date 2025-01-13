@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Using the FiftyOne App
-
-Contents
-
-
 # Using the FiftyOne App [¶](\#using-the-fiftyone-app "Permalink to this headline")
 
 The FiftyOne App is a powerful graphical user interface that enables you to
@@ -42,7 +32,7 @@ You can launch an instance of the App by calling
 [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") instance, which you can subsequently use to interact programmatically
 with the App!
 
-```
+```python
 import fiftyone as fo
 
 session = fo.launch_app()
@@ -69,7 +59,7 @@ Therefore, if you are using the App in a script, you should use
 [`session.wait()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.wait "fiftyone.core.session.Session.wait") to block
 execution until you close it manually:
 
-```
+```python
 # Launch the App
 session = fo.launch_app(...)
 
@@ -90,7 +80,7 @@ detect and appropriately configure networking. However, if you are unable
 to load the App in your browser, you many need to manually
 [set the App address](../environments/index.html#restricting-app-address) to `0.0.0.0`:
 
-```
+```python
 session = fo.launch_app(..., address="0.0.0.0")
 
 ```
@@ -105,7 +95,7 @@ the pattern below to avoid
 [multiprocessing issues](https://stackoverflow.com/q/20360686), since the
 App is served via a separate process:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset(...)
@@ -123,7 +113,7 @@ Sessions can be updated to show a new [`Dataset`](../api/fiftyone.core.dataset.h
 [`Session.dataset`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.dataset "fiftyone.core.session.Session.dataset") property of the
 session object:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("cifar10")
@@ -145,7 +135,7 @@ session.
 For example, the command below loads a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") in the App that shows the
 first 10 samples in the dataset sorted by their `uniqueness` field:
 
-```
+```python
 session.view = dataset.sort_by("uniqueness").limit(10)
 
 ```
@@ -158,7 +148,7 @@ You can immediately load a specific sample
 [in the modal](#app-sample-view) when launching a new [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") by
 providing its ID via the `sample_id` parameter:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -173,7 +163,7 @@ You can also programmatically load a sample in the modal on an existing session
 by setting its
 [`session.sample_id`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.sample_id "fiftyone.core.session.Session.sample_id") property:
 
-```
+```python
 sample_id = dataset.take(1).first().id
 
 session.sample_id = sample_id
@@ -189,7 +179,7 @@ Similarly, for [group datasets](groups.html#groups), you can immediately load a
 specific group in the modal when launching a new [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") by providing its ID
 via the `group_id` parameter:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -204,7 +194,7 @@ You can also programmatically load a group in the modal on an existing session
 by setting its
 [`session.group_id`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.group_id "fiftyone.core.session.Session.group_id") property:
 
-```
+```python
 group_id = dataset.take(1).first().group.id
 
 session.group_id = group_id
@@ -292,7 +282,7 @@ The above GIF shows query performance in action on the train split of the
 [BDD100K dataset](../dataset_zoo/datasets.html#dataset-zoo-bdd100k) with an index on the
 `detections.detections.label` field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -341,7 +331,7 @@ indexes natively in the App via the
 In general, we recommend indexing _only_ the specific fields that you wish to
 perform initial filters on:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -377,7 +367,7 @@ For [grouped datasets](groups.html#groups), you should create two indexes for ea
 field you wish to filter by: the field itself and a compound index that
 includes the group slice name:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -395,7 +385,7 @@ For datasets with a small number of fields, you can index all fields by adding
 a single
 [global wildcard index](https://www.mongodb.com/docs/manual/core/indexes/index-types/index-wildcard/create-wildcard-index-all-fields/#std-label-create-wildcard-index-all-fields):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -415,7 +405,7 @@ selectively indexing a smaller number of fields.
 You can also wildcard index all attributes of a specific embedded document
 field:
 
-```
+```python
 # Wildcard index for all attributes of ground truth detections
 dataset.create_index("ground_truth.detections.$**")
 
@@ -449,7 +439,7 @@ You can also disable Query Performance by default for all datasets by setting
 You can customize the layout of the App’s sidebar by creating/renaming/deleting
 groups and dragging fields between groups directly in the App:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -469,7 +459,7 @@ You can also programmatically modify a dataset’s sidebar groups by editing the
 [`sidebar_groups`](../api/fiftyone.core.odm.dataset.html#fiftyone.core.odm.dataset.DatasetAppConfig "fiftyone.core.odm.dataset.DatasetAppConfig") property
 of the [dataset’s App config](using_datasets.html#dataset-app-config):
 
-```
+```python
 # Get the default sidebar groups for the dataset
 sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
 
@@ -491,7 +481,7 @@ session = fo.launch_app(dataset)
 You can conveniently reset the sidebar groups to their default state by setting
 [`sidebar_groups`](../api/fiftyone.core.odm.dataset.html#fiftyone.core.odm.dataset.DatasetAppConfig "fiftyone.core.odm.dataset.DatasetAppConfig") to `None`:
 
-```
+```python
 # Reset sidebar groups
 dataset.app_config.sidebar_groups = None
 dataset.save()  # must save after edits
@@ -550,7 +540,7 @@ visibility modal.
 
 Consider the following example:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from datetime import datetime
@@ -629,7 +619,7 @@ clicking on the color palette icon above the sample grid.
 
 Consider the following example:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -695,7 +685,7 @@ in detail:
 You can also programmatically configure a session’s color scheme by creating
 [`ColorScheme`](../api/fiftyone.core.odm.dataset.html#fiftyone.core.odm.dataset.ColorScheme "fiftyone.core.odm.dataset.ColorScheme") instances in Python:
 
-```
+```python
 # Create a custom color scheme
 fo.ColorScheme(
     color_pool=["#ff0000", "#00ff00", "#0000ff", "pink", "yellowgreen"],
@@ -759,7 +749,7 @@ You can launch the App with a custom color scheme by passing the optional
 `color_scheme` parameter to
 [`launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app"):
 
-```
+```python
 # Launch App with a custom color scheme
 session = fo.launch_app(dataset, color_scheme=color_scheme)
 
@@ -770,14 +760,14 @@ time via the
 [`session.color_scheme`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.color_scheme "fiftyone.core.session.Session.color_scheme")
 property:
 
-```
+```python
 print(session.color_scheme)
 
 ```
 
 You can also dynamically edit your current color scheme by modifying it:
 
-```
+```python
 # Change the session's current color scheme
 session.color_scheme = fo.ColorScheme(...)
 
@@ -991,7 +981,7 @@ In addition, if you have populated
 [orthographic projection images](using_datasets.html#orthographic-projection-images) on your
 dataset, the projection images will be rendered for each sample in the grid:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.utils3d as fou3d
 import fiftyone.zoo as foz
@@ -1018,7 +1008,7 @@ The 3D visualizer can be configured by including any subset of the settings
 shown below under the `plugins.3d` key of your
 [App config](config.html#configuring-fiftyone-app):
 
-```
+```python
 // The default values are shown below
 {
     "plugins": {
@@ -1045,7 +1035,7 @@ shown below under the `plugins.3d` key of your
 You can also store dataset-specific plugin settings by storing any subset of
 the above values on a [dataset’s App config](using_datasets.html#dataset-app-config):
 
-```
+```python
 # Configure the 3D visualizer for a dataset's PCD/Label data
 dataset.app_config.plugins["3d"] = {
     "defaultCameraPosition": {"x": 0, "y": 0, "z": 100},
@@ -1092,7 +1082,7 @@ You can also configure custom Panels [via plugins](../plugins/index.html#fiftyon
 
 Consider the following example dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -1127,7 +1117,7 @@ You can also programmatically configure your Space layout and the states of the
 individual Panels via the `Space` and `Panel` classes in Python, as shown
 below:
 
-```
+```python
 samples_panel = fo.Panel(type="Samples", pinned=True)
 
 histograms_panel = fo.Panel(
@@ -1178,7 +1168,7 @@ You can launch the App with an initial spaces layout by passing the optional
 `spaces` parameter to
 [`launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app"):
 
-```
+```python
 # Launch the App with an initial Spaces layout
 session = fo.launch_app(dataset, spaces=spaces)
 
@@ -1187,7 +1177,7 @@ session = fo.launch_app(dataset, spaces=spaces)
 Once the App is launched, you can retrieve your current layout at any time via
 the [`session.spaces`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.spaces "fiftyone.core.session.Session.spaces") property:
 
-```
+```python
 print(session.spaces)
 
 ```
@@ -1196,7 +1186,7 @@ You can also programmatically configure the App’s current layout by setting
 [`session.spaces`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.spaces "fiftyone.core.session.Session.spaces") to any valid
 `Space` instance:
 
-```
+```python
 # Change the session's current Spaces layout
 session.spaces = spaces
 
@@ -1211,7 +1201,7 @@ way to discover the available state options for each Panel type!
 You can reset your spaces to their default state by setting
 [`session.spaces`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.spaces "fiftyone.core.session.Session.spaces") to None:
 
-```
+```python
 # Reset spaces layout in the App
 session.spaces = None
 
@@ -1260,7 +1250,7 @@ You can also programmatically create and manage saved workspaces!
 Use [`save_workspace()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.save_workspace "fiftyone.core.dataset.Dataset.save_workspace")
 to create a new saved workspace with a name of your choice:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1306,7 +1296,7 @@ Note
 Pro tip! You can save your current spaces layout in the App via
 [`session.spaces`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.spaces "fiftyone.core.session.Session.spaces"):
 
-```
+```python
 workspace = session.spaces
 dataset.save_workspace("my-workspace", workspace, ...)
 
@@ -1315,7 +1305,7 @@ dataset.save_workspace("my-workspace", workspace, ...)
 Then in a future session you can load the workspace by name with
 [`load_workspace()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.load_workspace "fiftyone.core.dataset.Dataset.load_workspace"):
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("quickstart")
@@ -1335,7 +1325,7 @@ and color that you can view via
 and update via
 [`update_workspace_info()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.get_workspace_info "fiftyone.core.dataset.Dataset.get_workspace_info"):
 
-```
+```python
 # Get a saved workspace's editable info
 print(dataset.get_workspace_info("my-workspace"))
 
@@ -1373,7 +1363,7 @@ space with the Samples panel active:
 When configuring spaces [in Python](#app-spaces-python), you can create a
 Samples panel as follows:
 
-```
+```python
 samples_panel = fo.Panel(type="Samples")
 
 ```
@@ -1385,7 +1375,7 @@ When you load a dataset in the App that contains an
 the Embeddings panel to visualize and interactively explore a scatterplot of
 the embeddings in the App:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -1453,7 +1443,7 @@ of each class of points:
 When configuring spaces [in Python](#app-spaces-python), you can define an
 Embeddings panel as follows:
 
-```
+```python
 embeddings_panel = fo.Panel(
     type="Embeddings",
     state=dict(brainResult="img_viz", colorByField="uniqueness"),
@@ -1477,7 +1467,7 @@ When you load a dataset in the App that contains one or more
 [evaluations](evaluation.html#evaluating-models), you can open the Model Evaluation panel
 to visualize and interactively explore the evaluation results in the App:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1561,7 +1551,7 @@ the corresponding labels in the Samples panel:
 When a dataset contains multiple evaluations, you can compare two model’s
 performance by selecting a “Compare against” key:
 
-```
+```python
 model = foz.load_zoo_model("yolo11s-coco-torch")
 
 dataset.apply_model(model, label_field="predictions_yolo11")
@@ -1585,7 +1575,7 @@ When you load a dataset in the App that contains a [`GeoLocation`](../api/fiftyo
 open the Map panel to visualize and interactively explore a scatterplot of the
 location data:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1629,7 +1619,7 @@ current view’s location data
 When configuring spaces [in Python](#app-spaces-python), you can define a
 Map panel as follows:
 
-```
+```python
 map_panel = fo.Panel(type="Map")
 
 ```
@@ -1638,7 +1628,7 @@ Additionally, the map UI can be configured by including any subset of the
 settings shown below under the `plugins.map` key of your
 [App config](config.html#configuring-fiftyone-app):
 
-```
+```python
 // The default values are shown below
 {
     "plugins": {
@@ -1683,7 +1673,7 @@ settings shown below under the `plugins.map` key of your
 If you prefer, you can provide your Mapbox token by setting the `MAPBOX_TOKEN`
 environment variable:
 
-```
+```python
 export MAPBOX_TOKEN=XXXXXXXX
 
 ```
@@ -1691,7 +1681,7 @@ export MAPBOX_TOKEN=XXXXXXXX
 You can also store dataset-specific plugin settings by storing any subset of
 the above values on a [dataset’s App config](using_datasets.html#dataset-app-config):
 
-```
+```python
 # Disable clustering for this dataset
 dataset.app_config.plugins["map"] = {"clustering": False}
 dataset.save()
@@ -1734,7 +1724,7 @@ The statistics in the plots automatically update to reflect the current
 When configuring spaces [in Python](#app-spaces-python), you can define a
 Histograms panel as follows:
 
-```
+```python
 histograms_panel = fo.Panel(type="Histograms", state=dict(plot="Labels"))
 
 ```
@@ -1768,7 +1758,7 @@ You can also access the
 [`Session.selected`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.selected "fiftyone.core.session.Session.selected") property of
 your session to retrieve the IDs of the currently selected samples in the App:
 
-```
+```python
 # Print the IDs of the currently selected samples
 print(session.selected)
 
@@ -1777,7 +1767,7 @@ selected_view = dataset.select(session.selected)
 
 ```
 
-```
+```python
 ['5ef0eef405059ebb0ddfa6cc',\
  '5ef0eef405059ebb0ddfa7c4',\
  '5ef0eef405059ebb0ddfa86e',\
@@ -1810,7 +1800,7 @@ You can also access the
 property of your session to retrieve information about the currently selected
 labels in the App:
 
-```
+```python
 # Print information about the currently selected samples in the App
 fo.pprint(session.selected_labels)
 
@@ -1822,7 +1812,7 @@ excluded_view = dataset.exclude_labels(session.selected_labels)
 
 ```
 
-```
+```python
 [\
     {\
         'object_id': '5f99d2eb36208058abbfc02a',\
@@ -2171,7 +2161,7 @@ configuring your dataset to expose these multiple media fields in the App.
 For example, let’s create thumbnail images for use in the App’s grid view and
 store their paths in a `thumbnail_path` field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.image as foui
 import fiftyone.zoo as foz
@@ -2190,7 +2180,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:        quickstart
 Media type:  image
 Num samples: 200
@@ -2213,7 +2203,7 @@ Sample fields:
 We can expose the thumbnail images to the App by modifying the
 [dataset’s App config](using_datasets.html#dataset-app-config):
 
-```
+```python
 # Modify the dataset's App config
 dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
 dataset.app_config.grid_media_field = "thumbnail_path"
@@ -2268,7 +2258,7 @@ on your machine.
 
 You can also customize the global App config on a per-session basis:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2296,7 +2286,7 @@ You can configure a live [`Session`](../api/fiftyone.core.session.html#fiftyone.
 calling [`session.refresh()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.refresh "fiftyone.core.session.Session.refresh") to
 apply the changes:
 
-```
+```python
 print(session.config)
 
 # Customize the config of a live session
@@ -2311,7 +2301,7 @@ session.refresh()  # must refresh after edits
 Datasets also provide an [app\_config property](using_datasets.html#dataset-app-config) that
 you can use to customize the behavior of the App for that particular dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.image as foui
 import fiftyone.zoo as foz
@@ -2345,66 +2335,3 @@ Any settings stored in a dataset’s
 the corresponding settings from your
 [global App config](config.html#configuring-fiftyone-app).
 
-- Using the FiftyOne App
-  - [App environments](#app-environments)
-  - [Sessions](#sessions)
-    - [Creating a session](#creating-a-session)
-    - [Updating a session’s dataset](#updating-a-session-s-dataset)
-    - [Updating a session’s view](#updating-a-session-s-view)
-    - [Loading a sample or group](#loading-a-sample-or-group)
-  - [Remote sessions](#remote-sessions)
-    - [Remote machine](#remote-machine)
-    - [Local machine](#local-machine)
-  - [Using the sidebar](#using-the-sidebar)
-    - [Filtering sample fields](#filtering-sample-fields)
-    - [Optimizing Query Performance](#optimizing-query-performance)
-    - [Disabling Query Performance](#disabling-query-performance)
-    - [Sidebar groups](#sidebar-groups)
-  - [Using the view bar](#using-the-view-bar)
-  - [Grouping samples](#grouping-samples)
-  - [Field visibility](#field-visibility)
-    - [Manual selection](#manual-selection)
-    - [Filter rules](#filter-rules)
-  - [Color schemes](#color-schemes)
-    - [Color schemes in the App](#color-schemes-in-the-app)
-    - [Color schemes in Python](#color-schemes-in-python)
-  - [Saving views](#saving-views)
-  - [Viewing a sample](#viewing-a-sample)
-  - [Using the image visualizer](#using-the-image-visualizer)
-  - [Using the video visualizer](#using-the-video-visualizer)
-  - [Using the 3D visualizer](#using-the-3d-visualizer)
-    - [Viewing 3D samples in the grid](#viewing-3d-samples-in-the-grid)
-    - [Configuring the 3D visualizer](#configuring-the-3d-visualizer)
-  - [Spaces](#spaces)
-    - [Configuring spaces in the App](#configuring-spaces-in-the-app)
-    - [Configuring spaces in Python](#configuring-spaces-in-python)
-  - [Saving workspaces](#saving-workspaces)
-    - [Saving workspaces in the App](#saving-workspaces-in-the-app)
-    - [Saving workspaces in Python](#saving-workspaces-in-python)
-  - [Samples panel](#samples-panel)
-  - [Embeddings panel](#embeddings-panel)
-  - [Model Evaluation panel **NEW**](#model-evaluation-panel-sub-new)
-    - [Review status](#review-status)
-    - [Evaluation notes](#evaluation-notes)
-    - [Summary](#summary)
-    - [Metric performance](#metric-performance)
-    - [Class performance](#class-performance)
-    - [Confusion matrices](#confusion-matrices)
-    - [Comparing models](#comparing-models)
-  - [Map panel](#map-panel)
-  - [Histograms panel](#histograms-panel)
-  - [Selecting samples](#selecting-samples)
-  - [Selecting labels](#selecting-labels)
-  - [Tags and tagging](#tags-and-tagging)
-  - [Viewing object patches](#viewing-object-patches)
-  - [Viewing evaluation patches](#viewing-evaluation-patches)
-  - [Viewing video clips](#viewing-video-clips)
-  - [Sorting by similarity](#sorting-by-similarity)
-    - [Image similarity](#image-similarity)
-    - [Object similarity](#object-similarity)
-    - [Text similarity](#text-similarity)
-  - [Multiple media fields](#multiple-media-fields)
-  - [Configuring the App](#configuring-the-app)
-    - [Global App config](#global-app-config)
-    - [Modifying your session](#modifying-your-session)
-    - [Dataset App config](#dataset-app-config)

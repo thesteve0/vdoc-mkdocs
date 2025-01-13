@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Teams Management SDK
-
-Contents
-
-
 # Teams Management SDK [¶](\#teams-management-sdk "Permalink to this headline")
 
 One of FiftyOne’s core design principles is that you should be able to do
@@ -42,14 +32,3 @@ MongoDB connection) in order to use Management SDK methods.
 
 ### Group management [¶](\#group-management "Permalink to this headline")
 
-- Teams Management SDK
-  - [API reference](#api-reference)
-    - [Connections](#connections)
-    - [API keys](#api-keys)
-    - [Cloud credentials](#cloud-credentials)
-    - [Dataset permissions](#dataset-permissions)
-    - [Organization settings](#organization-settings)
-    - [Plugin management](#plugin-management)
-    - [Snapshots](#snapshots)
-    - [User management](#user-management)
-    - [Group management](#group-management)

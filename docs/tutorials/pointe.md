@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Build a 3D self-driving dataset from scratch with OpenAI’s Point-E and FiftyOne
-
-Contents
-
-
 # Build a 3D self-driving dataset from scratch with OpenAI’s Point-E and FiftyOne [¶](\#Build-a-3D-self-driving-dataset-from-scratch-with-OpenAI’s-Point-E-and-FiftyOne "Permalink to this headline")
 
 In this walkthrough, we will show you how to build your own 3D3D point cloud dataset using OpenAI’s [Point-E](https://github.com/openai/point-e) for 3D3D point cloud synthesis, and FiftyOne for dataset curation and visualization.
@@ -35,60 +25,60 @@ To get started, you need to install [FiftyOne](https://docs.voxel51.com/getting_
 
 To install FiftyOne, you can use the Python package installer `pip`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 To install Point-E, you will need to clone the [Point-E github repo](https://github.com/openai/point-e):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !git clone https://github.com/openai/point-e.git
 
 ```
 
 And then `cd` into the `point-e` directory and install the package locally:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -e .
 
 ```
 
 You will also need to have [Open3D](http://www.open3d.org/) and [PyTorch](https://pytorch.org/) installed:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install open3d torch
 
 ```
 
 Next, we’ll import all of the relevant modules that we will be using in this walkthrough:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import numpy as np
 import open3d as o3d
 import random
@@ -98,12 +88,12 @@ import uuid
 
 ```
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -112,12 +102,12 @@ from fiftyone import ViewField as F
 
 ```
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 from point_e.diffusion.configs import DIFFUSION_CONFIGS, diffusion_from_config
 from point_e.diffusion.sampler import PointCloudSampler
 from point_e.models.download import load_checkpoint
@@ -128,12 +118,12 @@ from point_e.util.plotting import plot_point_cloud
 
 We will also set our device:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 ```
@@ -144,12 +134,12 @@ Following the OpenAI’s [text2pointcloud](https://github.com/openai/point-e/tre
 
 For this walkthrough, we will use OpenAI’s `base40M-textvec` model, which is a model with 40M40M parameters which takes a text prompt as input and generates an embedding vector.
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 base_name = 'base40M-textvec'
 base_model = model_from_config(MODEL_CONFIGS[base_name], device)
 base_model.eval();
@@ -160,12 +150,12 @@ base_diffusion = diffusion_from_config(DIFFUSION_CONFIGS[base_name])
 
 Applied on its own, this model will generate a point cloud with 10241024 points. We will also use an upsampler to generate from this a point cloud with 40964096 points:
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 upsampler_model = model_from_config(MODEL_CONFIGS['upsample'], device)
 upsampler_model.eval()
 upsampler_diffusion = diffusion_from_config(DIFFUSION_CONFIGS['upsample'])
@@ -173,24 +163,24 @@ upsampler_model.load_state_dict(load_checkpoint('upsample', device))
 
 ```
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 <All keys matched successfully>
 
 ```
 
 The base diffusion model and upsampling diffusion model are joined together in a `PointCloudSampler` object, which will take in a text prompt, and output a point cloud with 40964096 points:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 sampler = PointCloudSampler(
     device=device,
     models=[base_model, upsampler_model],
@@ -205,12 +195,12 @@ sampler = PointCloudSampler(
 
 Let’s see this point cloud diffusion model in action, with the text prompt ‘red and silver headphones’:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Set a prompt to condition on.
 prompt = 'red and silver headphones'
 
@@ -223,12 +213,12 @@ for x in tqdm(sampler.sample_batch_progressive(batch_size=1, model_kwargs=dict(t
 
 We can visualize this with Point-E’s native visualizer:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 pc = sampler.output_to_point_clouds(samples)[0]
 fig = plot_point_cloud(pc, grid_size=3, fixed_bounds=((-0.75, -0.75, -0.75),(0.75, 0.75, 0.75)))
 
@@ -244,17 +234,17 @@ It is nice that Point-E provides its own native visualizer, but these two-dimens
 
 In order to load the point cloud into FiftyOne, we will convert the point cloud from Point-E’s native format into a more standard Open3D format, and create a sample in FiftyOne. First, let’s see what the data structure for Point-E point clouds look like:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 print(pc)
 
 ```
 
-```
+```python
 PointCloud(coords=array([[ 0.00992463,  0.18218482, -0.40539104],\
     [ 0.0122245 ,  0.21034709, -0.32078362],\
     [ 0.10288931,  0.4029989 , -0.40072548],\
@@ -270,35 +260,35 @@ PointCloud(coords=array([[ 0.00992463,  0.18218482, -0.40539104],\
 
 Position coordinates are represented by a (4096,3)(4096,3) array in the `coords` attribute:
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 print(pc.coords.shape)
 
 ```
 
-```
+```python
 (4096, 3)
 
 ```
 
 And point colors are stored in a dict object within `channels`:
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 print(pc.channels.keys())
 print(len(pc.channels['R']))
 
 ```
 
-```
+```python
 dict_keys(['R', 'G', 'B'])
 4096
 
@@ -306,12 +296,12 @@ dict_keys(['R', 'G', 'B'])
 
 We can write a simple function that will take in a text prompt, generate the Point-E point cloud, and convert this into a standard Open3D point cloud ( `open3d.geometry.PointCloud`) object:
 
-```
+```python
 [32]:
 
 ```
 
-```
+```python
 def generate_pcd_from_text(prompt):
     samples = None
     for x in sampler.sample_batch_progressive(batch_size=1, model_kwargs=dict(texts=[prompt])):
@@ -332,24 +322,24 @@ def generate_pcd_from_text(prompt):
 
 To load this Open3D point cloud into FiftyOne, we can use Open3D’s `open3d.io` module to write the point cloud to a `.pcd` file, and then create a FiftyOne Sample object associated with this file:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 headphone_pcd = generate_pcd_from_text('red and silver headphones')
 headphone_file = "headphone.pcd"
 o3d.io.write_point_cloud(headphone_file, headphone_pcd)
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 headphone_dataset = fo.Dataset(name = "headphone_dataset")
 headphone_dataset.add_sample(
     fo.Sample(filepath=headphone_file)
@@ -368,12 +358,12 @@ In this walkthrough, we will generate a variety of vehicles. In particular, we w
 
 To add even more variety, we will instruct Point-E to paint each of the vehicles two randomly chosen colors with a prompt of the form: `"a $(COLOR1) $(VEHICLE_TYPE) with $(COLOR2) wheels"`. This is just an illustrative example.
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 VEHICLE_TYPES = ["car", "bus", "bike", "motorcycle"]
 VEHICLE_COLORS = ["red", "blue", "green", "yellow", "white"]
 
@@ -381,24 +371,24 @@ VEHICLE_COLORS = ["red", "blue", "green", "yellow", "white"]
 
 In this example, we will generate random filenames for each of the point cloud models, but you can specify filenames however you’d like:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 def generate_filename():
     rand_str = str(uuid.uuid1()).split('-')[0]
     return "pointe_vehicles/" + rand_str + ".pcd"
 
 ```
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 def generate_pointe_vehicle_dataset(
     dataset_name = "point-e-vehicles",
     num_samples = 100
@@ -424,12 +414,12 @@ def generate_pointe_vehicle_dataset(
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 vehicle_dataset = generate_pointe_vehicle_dataset(
     dataset_name = "point-e-vehicles",
     num_samples = 100
@@ -439,24 +429,24 @@ vehicle_dataset = generate_pointe_vehicle_dataset(
 
 We will then make the dataset persistent so that it saves to database and we can load it at a later time.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 vehicle_dataset.persistent = True
 
 ```
 
 Before viewing this in the FiftyOne App, we can use FiftyOne’s 3D3D utils to generate a two dimensional image for each point cloud, which will allow us to preview our samples in the sample grid. To do this, we will project the point clouds onto a 2D2D plane with the `fou3d.compute_orthographic_projection_images()` method. We will pass in a vector for the `projection_normal` argument to specify the plane about which to perform the orthographic projection.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 size = (-1, 608)
 ## height of images should be 608 pixels
 ## - with aspect ratio preserved
@@ -473,12 +463,12 @@ fou3d.compute_orthographic_projection_images(
 
 Now we are ready to look at our 3D3D point cloud models of vehicles:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(vehicle_dataset)
 
 ```
@@ -496,12 +486,12 @@ Additionally, as we are curating a high quality dataset of vehicle point cloud a
 
 Once we have tagged all of our samples, we can convert the orientation tags into a new `orientation` field on our samples:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 orientations = ["left", "right", "front", "back"]
 
 vehicle_dataset.add_sample_field("orientation", fo.StringField)
@@ -514,12 +504,12 @@ for orientation in orientations:
 
 Additionally, we can pick out our desired subset of vehicle assets by matching for samples without the `bad` tag:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 usable_vehicles_dataset = vehicle_dataset.match(~F("tags").contains("bad"))
 
 ```
@@ -532,12 +522,12 @@ Now that we have a dataset of usable 3D3D point cloud models for vehicles, we ca
 
 In this walkthough, we will limit our scope to basic roads with one lane of traffic going in each direction, separated by a dashed yellow line. We will use the same road as the foundation for each scene. Let’s construct a simple point cloud model for the road:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ROAD_LENGTH = 40
 ROAD_WIDTH = 6
 FRONT = -ROAD_LENGTH/2.
@@ -549,12 +539,12 @@ LINE_POINTS = 1000
 
 We will build the point cloud model for the road out of two white lines, for the left and right edges of the scene, and a dashed yellow line as a divider. We will save the point cloud model in the file `road.pcd`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def generate_road_pcd():
     ## LEFT LINE
     road_line_left_points = np.vstack(
@@ -603,12 +593,12 @@ def generate_road_pcd():
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 generate_road_pcd()
 
 ```
@@ -641,12 +631,12 @@ With these considerations in mind, we compose the following steps:
 
 In the cells below, we implement minimal functions for these steps, leveraging Open3D’s comprehensive point cloud functionality:
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 ORIGIN = (0.0, 0.0, 0.0)
 
 def center_vehicle(vehicle_pcd):
@@ -654,12 +644,12 @@ def center_vehicle(vehicle_pcd):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 VEHICLE_SCALE_MAP = {
     "car": 4.0,
     "bus": 6.0,
@@ -673,23 +663,23 @@ def scale_vehicle(vehicle_pcd, vehicle_type):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def choose_side_of_road():
     return random.choice(["left", "right"])
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ORIENTATION_TO_ROTATION = {
     "back": 0.,
     "right": np.pi/2.,
@@ -708,12 +698,12 @@ def orient_vehicle(vehicle_pcd, side_of_road, initial_orientation):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## randomly position the vehicle in its lane
 def position_vehicle(vehicle_pcd, side_of_road):
     ## raise vehicle so it is ON the road
@@ -732,12 +722,12 @@ def position_vehicle(vehicle_pcd, side_of_road):
 
 We can then wrap all of this up in a function which takes in a sample from the usable subset of the FiftyOne point cloud vehicle asset dataset, and returns a tuple containing the transformed point cloud for the vehicle, and a label for its vehicle type:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def generate_scene_vehicle(sample):
     vehicle_type = sample.vehicle_type.label
 
@@ -755,12 +745,12 @@ def generate_scene_vehicle(sample):
 
 We can generate a “scene” with this vehicle placed on the road by adding this point cloud to the point cloud for the road:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 sample = usable_vehicles_dataset.take(1).first()
 vehicle_pcd, vehicle_type = generate_scene_vehicle(sample)
 road_pcd = o3d.io.read_point_cloud("road.pcd")
@@ -779,12 +769,12 @@ is below some threshold, then we retry randomly placing a vehicle in the scene.
 
 We will wrap this logic in a new `check_compatibility()` function:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def check_compatibility(
     vehicle,
     scene_vehicles,
@@ -800,12 +790,12 @@ def check_compatibility(
 
 The last ingredient is a simple function to randomly select a single sample from our usable vehicle assets dataset:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def choose_vehicle_sample():
     return usable_vehicles_dataset.take(1).first()
 
@@ -813,12 +803,12 @@ def choose_vehicle_sample():
 
 Finally, we are ready to generate road scenes! The following function generates a FiftyOne point cloud sample for a road scene with `num_vehicles` vehicles, and stores the point cloud for the scene in `scene_filepath`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def generate_scene_sample(num_vehicles, scene_filepath):
     ZERO_ROT = [0., 0., 0.]
 
@@ -868,12 +858,12 @@ All that is left to do is populate a new FiftyOne dataset with these generated r
 
 To generate this dataset, we will randomly select a number of vehicles for each scene, from within a set range:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 MIN_SCENE_VEHICLES = 1
 MAX_SCENE_VEHICLES = 7
 
@@ -887,12 +877,12 @@ def choose_num_scene_vehicles():
 
 And we will randomly generate filepaths for the scenes:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def generate_scene_filepath():
     rand_str = str(uuid.uuid1()).split('-')[0]
     return "pointe_road_scenes/" + rand_str + ".pcd"
@@ -901,12 +891,12 @@ def generate_scene_filepath():
 
 Putting it all together:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 def generate_road_scenes_dataset(num_scenes):
     samples = []
     for i in range(num_scenes):
@@ -926,12 +916,12 @@ def generate_road_scenes_dataset(num_scenes):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 num_scenes = 100
 road_scene_dataset = generate_road_scenes_dataset(num_scenes)
 
@@ -939,12 +929,12 @@ road_scene_dataset = generate_road_scenes_dataset(num_scenes)
 
 If you’d like, you can also generate bird’s eye view projection images for these scenes, so you can preview scenes in the sample grid:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 size = (-1, 608)
 
 fou3d.compute_orthographic_projection_images(
@@ -956,12 +946,12 @@ fou3d.compute_orthographic_projection_images(
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(road_scene_dataset)
 
 ```
@@ -972,13 +962,3 @@ session = fo.launch_app(road_scene_dataset)
 
 FiftyOne is a valuable tool that can help you to build high quality computer vision datasets. This is true whether you are working with images, videos, point clouds, or geo data. And this is true whether you are adapting existing datasets, or constructing your own datasets from scratch!
 
-- Build a 3D self-driving dataset from scratch with OpenAI’s Point-E and FiftyOne
-  - [Setup](#Setup)
-  - [Generating a point cloud from text](#Generating-a-point-cloud-from-text)
-  - [Loading a Point-E point cloud into FiftyOne](#Loading-a-Point-E-point-cloud-into-FiftyOne)
-  - [Curating synthetic 3D3D point cloud assets](#Curating-synthetic-3D-point-cloud-assets)
-  - [Constructing a self-driving dataset](#Constructing-a-self-driving-dataset)
-    - [Constructing a road point cloud](#Constructing-a-road-point-cloud)
-    - [Placing a vehicle on the road](#Placing-a-vehicle-on-the-road)
-    - [Constructing road scenes](#Constructing-road-scenes)
-  - [Conclusion](#Conclusion)

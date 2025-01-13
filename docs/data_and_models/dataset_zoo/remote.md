@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Dataset Zoo](index.html) >
-- Remotely-Sourced Zoo Datasets
-
-Contents
-
-
 # Remotely-Sourced Zoo Datasets [¶](\#remotely-sourced-zoo-datasets "Permalink to this headline")
 
 This page describes how to work with and create zoo datasets whose
@@ -44,7 +34,7 @@ Here’s the basic recipe for working with remotely-sourced zoo datasets:
 A remotely-sourced dataset is defined by a directory with the following
 contents:
 
-```
+```python
 fiftyone.yml
 __init__.py
     def download_and_prepare(dataset_dir, split=None, **kwargs):
@@ -91,7 +81,7 @@ Here are two example dataset YAML files:
 All dataset’s `__init__.py` files must define a `download_and_prepare()`
 method with the signature below:
 
-```
+```python
 def download_and_prepare(dataset_dir, split=None, **kwargs):
     """Downloads the dataset and prepares it for loading into FiftyOne.
 
@@ -152,7 +142,7 @@ advantage of this by simply returning the appropriate `dataset_type` from
 FiftyOne as follows:
 
 
-```
+```python
 # If the dataset has splits, `dataset_dir` will be the split directory
 dataset_importer_cls = dataset_type.get_dataset_importer_cls()
 dataset_importer = dataset_importer_cls(dataset_dir=dataset_dir, **kwargs)
@@ -166,7 +156,7 @@ dataset.add_importer(dataset_importer, **kwargs)
 below that handles loading the data into FiftyOne as follows:
 
 
-```
+```python
 load_dataset(dataset, dataset_dir, **kwargs)
 
 ```
@@ -176,7 +166,7 @@ load_dataset(dataset, dataset_dir, **kwargs)
 Datasets that don’t use a built-in importer must also define a
 `load_dataset()` method in their `__init__.py` with the signature below:
 
-```
+```python
 def load_dataset(dataset, dataset_dir, split=None, **kwargs):
     """Loads the dataset into the given FiftyOne dataset.
 
@@ -217,7 +207,7 @@ subset of the samples to get familiar with the dataset
 Datasets that support partial downloads should declare this in their
 [fiftyone.yml](#zoo-dataset-remote-fiftyone-yml):
 
-```
+```python
 supports_partial_downloads: true
 
 ```
@@ -225,7 +215,7 @@ supports_partial_downloads: true
 The partial download behavior itself is defined via `**kwargs` in the
 dataset’s `__init__.py` methods:
 
-```
+```python
 def download_and_prepare(dataset_dir, split=None, **kwargs):
     pass
 
@@ -249,10 +239,3 @@ Note
 Check out [voxel51/coco-2017](https://github.com/voxel51/coco-2017) for
 an example of a remotely-sourced dataset that supports partial downloads.
 
-- Remotely-Sourced Zoo Datasets
-  - [Working with remotely-sourced datasets](#working-with-remotely-sourced-datasets)
-  - [Creating remotely-sourced datasets](#creating-remotely-sourced-datasets)
-    - [fiftyone.yml](#fiftyone-yml)
-    - [Download and prepare](#download-and-prepare)
-    - [Load dataset](#load-dataset)
-  - [Partial downloads](#partial-downloads)

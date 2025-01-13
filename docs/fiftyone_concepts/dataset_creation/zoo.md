@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Dataset Zoo
-
-Contents
-
-
 # FiftyOne Dataset Zoo [¶](\#fiftyone-dataset-zoo "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides a powerful interface for downloading datasets
@@ -45,8 +36,3 @@ visualizing it in the App is shown below.
 
 ![Dataset Zoo](../_images/dataset_zoo_coco_2017.png)
 
-- FiftyOne Dataset Zoo
-  - [Built-in datasets](#built-in-datasets)
-  - [Remotely-sourced datasets](#remotely-sourced-datasets)
-  - [API reference](#api-reference)
-  - [Basic recipe](#basic-recipe)

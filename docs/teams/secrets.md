@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- FiftyOne Teams Secrets
-
-Contents
-
-
 # FiftyOne Teams Secrets [¶](\#fiftyone-teams-secrets "Permalink to this headline")
 
 FiftyOne Teams provides a Secrets interface for storing sensitive information
@@ -55,7 +45,7 @@ For example, the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin declares the following secrets:
 
-```
+```python
 secrets:
   - FIFTYONE_CVAT_URL
   - FIFTYONE_CVAT_USERNAME
@@ -72,7 +62,7 @@ At runtime, the plugin’s execution context will automatically be hydrated with
 any available secrets that are declared by the plugin. Operators access these
 secrets via the `ctx.secrets` dict:
 
-```
+```python
 def execute(self, ctx):
     url = ctx.secrets["FIFTYONE_CVAT_URL"]
     username = ctx.secrets["FIFTYONE_CVAT_USERNAME"]
@@ -96,6 +86,3 @@ variables
 - Open source FiftyOne
 
 
-- FiftyOne Teams Secrets
-  - [Adding secrets](#adding-secrets)
-  - [Using secrets](#using-secrets)

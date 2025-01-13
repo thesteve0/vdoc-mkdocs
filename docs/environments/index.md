@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Environments
-
-Contents
-
-
 # FiftyOne Environments [¶](\#fiftyone-environments "Permalink to this headline")
 
 This guide describes best practices for using FiftyOne with data stored in
@@ -38,7 +29,7 @@ When working with data that is stored on disk on a machine with a display, you
 can directly [load a dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) and then
 [launch the App](../fiftyone_concepts/app.html#creating-an-app-session):
 
-```
+```python
 # On local machine
 import fiftyone as fo
 
@@ -71,7 +62,7 @@ First, `ssh` into your remote machine and
 Then [load a dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) using Python on the remote
 machine and launch a remote session:
 
-```
+```python
 # On remote machine
 import fiftyone as fo
 
@@ -94,7 +85,7 @@ To connect to your remote session, open a new terminal window on your local
 machine and execute the following command to setup port forwarding to connect
 to your remote session:
 
-```
+```python
 # On local machine
 ssh -N -L 5151:127.0.0.1:XXXX [<username>@]<hostname>
 
@@ -112,7 +103,7 @@ Alternatively, if you have FiftyOne installed on your local machine, you can
 [use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
-```
+```python
 # On local machine
 fiftyone app connect --destination [<username>@]<hostname>
 
@@ -156,7 +147,7 @@ accessed from a remote host or from the local machine itself. Using `"0.0.0.0"`
 will bind the App to all available interfaces and will allow access to the App
 from any remote resource with access to your network.
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset(...)
@@ -171,7 +162,7 @@ If desired, you can permanently configure an App address by setting the
 You can achieve this by adding the following entry to your
 `~/.fiftyone/config.json` file:
 
-```
+```python
 {
     "default_app_address": "0.0.0.0"
 }
@@ -180,7 +171,7 @@ You can achieve this by adding the following entry to your
 
 or by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_DEFAULT_APP_ADDRESS='0.0.0.0'
 
 ```
@@ -197,7 +188,7 @@ cloud notebook that has an accessible network proxy via configured
 
 To use FiftyOne in a notebook, simply install `fiftyone` via `pip`:
 
-```
+```python
 !pip install fiftyone
 
 ```
@@ -206,7 +197,7 @@ and load datasets as usual. When you run
 [`launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app") in a notebook, an App
 window will be opened in the output of your current cell.
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset("my-dataset")
@@ -223,7 +214,7 @@ will be automatically opened in the output of the current cell. The previously
 active App will be “frozen”, i.e., replaced with a screenshot of its current
 state.
 
-```
+```python
 # A new App window will be created in the output of this cell, and the
 # previously active App instance will be replaced with a screenshot
 session.view = dataset.take(10)
@@ -247,7 +238,7 @@ useful when you are finished with your notebook and ready to share it with
 others, as an active App instance itself cannot be viewed outside of the
 current notebook session.
 
-```
+```python
 # Replace active App instance with screenshot so App state is viewable offline
 session.freeze()
 
@@ -259,7 +250,7 @@ If you would like to manually control when new App instances are created in a
 notebook, you can pass the `auto=False` flag to
 [`launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app"):
 
-```
+```python
 # Creates a session but does not open an App instance
 session = fo.launch_app(dataset, auto=False)
 
@@ -268,7 +259,7 @@ session = fo.launch_app(dataset, auto=False)
 When `auto=False` is provided, a new App window is created only when you call
 [`session.show()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.show "fiftyone.core.session.Session.show"):
 
-```
+```python
 # Update the session's view; no App window is created
 session.view = dataset.take(10)
 
@@ -302,7 +293,7 @@ To do this, pass the `auto=False` flag to
 App (so that additional App instances will not be created as you work) and then
 call [`session.open_tab()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.open_tab "fiftyone.core.session.Session.open_tab"):
 
-```
+```python
 # Launch the App in a dedicated browser tab
 session = fo.launch_app(dataset, auto=False)
 session.open_tab()
@@ -319,7 +310,7 @@ where your data is located. Follow the instructions below to achieve this.
 
 Start the Jupyter server on a port of your choice:
 
-```
+```python
 # On remote machine
 jupyter notebook --no-browser --port=XXXX /path/to/notebook.ipynb
 
@@ -330,7 +321,7 @@ jupyter notebook --no-browser --port=XXXX /path/to/notebook.ipynb
 Back on your local machine, you will need to forward the remote port `XXXX` to
 a local port (we’ll also use `XXXX` here, for consistency):
 
-```
+```python
 # On local machine
 ssh -N -L XXXX:localhost:XXXX [<username>@]<hostname>
 
@@ -343,7 +334,7 @@ need to forward the port used by the App to your local machine. By default,
 the App uses port `5151`, but you can [specify any port](#remote-data),
 say `YYYY`, not currently in use on your remote machine:
 
-```
+```python
 # On local machine
 ssh -N -L 5151:localhost:YYYY [<username>@]<hostname>
 
@@ -354,7 +345,7 @@ ssh -N -L 5151:localhost:YYYY [<username>@]<hostname>
 When you launch the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) in your notebook, you
 should now see the App as expected!
 
-```
+```python
 # Launch the App in a notebook cell
 session = fo.launch_app(dataset)  # port=YYYY
 
@@ -366,7 +357,7 @@ specify it when launching App instances per the commented argument above.
 Note that you can also open the App
 [in a dedicated tab](#opening-app-dedicated-tab):
 
-```
+```python
 # Launch the App in a dedicated browser tab
 session = fo.launch_app(dataset, auto=False)  # port=YYYY
 session.open_tab()
@@ -384,7 +375,7 @@ or release builds of FiftyOne.
 
 First, clone the repository:
 
-```
+```python
 git clone https://github.com/voxel51/fiftyone
 cd fiftyone
 
@@ -392,7 +383,7 @@ cd fiftyone
 
 If you want a source install of FiftyOne, then build a wheel:
 
-```
+```python
 make python
 
 ```
@@ -403,7 +394,7 @@ in the
 
 Next, build the image:
 
-```
+```python
 docker build -t voxel51/fiftyone .
 
 ```
@@ -411,7 +402,7 @@ docker build -t voxel51/fiftyone .
 The default image uses Python 3.11, but you can customize these
 via optional build arguments:
 
-```
+```python
 docker build \
     --build-arg PYTHON_VERSION=3.10 \
     -t voxel51/fiftyone .
@@ -427,7 +418,7 @@ additional Python packages that you may wish to include in your build.
 The image is designed to persist all data in a single `/fiftyone` directory
 with the following organization:
 
-```
+```python
 /fiftyone/
     db/             # FIFTYONE_DATABASE_DIR
     default/        # FIFTYONE_DEFAULT_DATASET_DIR
@@ -440,7 +431,7 @@ with the following organization:
 Therefore, to run a container, you should mount `/fiftyone` as a local volume
 via `--mount` or `-v`, as shown below:
 
-```
+```python
 SHARED_DIR=/path/to/shared/dir
 
 docker run -v ${SHARED_DIR}:/fiftyone -p 5151:5151 -it voxel51/fiftyone
@@ -457,7 +448,7 @@ You can also include the `-e` or `--env-file` options if you need to further
 By default, running the image launches an IPython shell, which you can use as
 normal:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -479,7 +470,7 @@ container. However, if you are unable to load the App in your browser, you
 may need to manually [set the App address](#restricting-app-address)
 to `0.0.0.0`:
 
-```
+```python
 session = fo.launch_app(..., address="0.0.0.0")
 
 ```
@@ -533,7 +524,7 @@ The steps below outline the process.
 Now [ssh into the instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
 and [install FiftyOne](../getting_started/install.html#installing-fiftyone) if necessary.
 
-```
+```python
 # On remote machine
 pip install fiftyone
 
@@ -552,7 +543,7 @@ You can use [s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) to do this.
 You will need to make a `.passwd-s3fs` file that contains your AWS credentials
 as outlined in the [s3fs-fuse README](https://github.com/s3fs-fuse/s3fs-fuse).
 
-```
+```python
 # On remote machine
 s3fs <bucket-name> /path/to/mount/point \
     -o passwd_file=.passwd-s3fs \
@@ -584,7 +575,7 @@ The steps below outline the process.
 Now [ssh into the instance](https://cloud.google.com/compute/docs/quickstart-linux#connect_to_your_instance)
 and [install FiftyOne](../getting_started/install.html#installing-fiftyone) if necessary.
 
-```
+```python
 # On remote machine
 pip install fiftyone
 
@@ -602,7 +593,7 @@ Mount the GCS bucket as a local drive.
 You can use [gcsfuse](https://github.com/GoogleCloudPlatform/gcsfuse) to do
 this:
 
-```
+```python
 # On remote machine
 gcsfuse --implicit-dirs my-bucket /path/to/mount
 
@@ -633,7 +624,7 @@ Now
 [ssh into the instance](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal#connect-to-virtual-machine)
 and [install FiftyOne](../getting_started/install.html#installing-fiftyone) if necessary.
 
-```
+```python
 # On remote machine
 pip install fiftyone
 
@@ -667,7 +658,7 @@ For example, the script below shows a set of commands that may be used to
 configure a Debian-like Linux instance, after which you should be able to
 successfully [install FiftyOne](../getting_started/install.html#installing-fiftyone).
 
-```
+```python
 # Example setup script for a Debian-like virtual machine
 
 # System packages
@@ -702,21 +693,3 @@ pip install ipython
 
 ```
 
-- FiftyOne Environments
-  - [Terminology](#terminology)
-  - [Local data](#local-data)
-  - [Remote data](#remote-data)
-    - [Restricting the App address](#restricting-the-app-address)
-  - [Notebooks](#notebooks)
-    - [Manually controlling App instances](#manually-controlling-app-instances)
-    - [Opening the App in a dedicated tab](#opening-the-app-in-a-dedicated-tab)
-    - [Remote notebooks](#remote-notebooks)
-  - [Docker](#docker)
-    - [Building an image](#building-an-image)
-    - [Running an image](#running-an-image)
-    - [Connecting to a localhost database](#connecting-to-a-localhost-database)
-  - [Cloud storage](#cloud-storage)
-    - [AWS](#aws)
-    - [Google Cloud](#google-cloud)
-    - [Microsoft Azure](#microsoft-azure)
-  - [Setting up a cloud instance](#setting-up-a-cloud-instance)

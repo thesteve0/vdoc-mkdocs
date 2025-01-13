@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Dataset Zoo](index.html) >
-- Built-In Zoo Datasets
-
-Contents
-
-
 # Built-In Zoo Datasets [¶](\#built-in-zoo-datasets "Permalink to this headline")
 
 This page lists all of the natively available datasets in the FiftyOne Dataset
@@ -350,7 +340,7 @@ Note
 In order to load the BDD100K dataset, you must download the source data
 manually. The directory should be organized in the following format:
 
-```
+```python
 source_dir/
     labels/
         bdd100k_labels_images_train.json
@@ -542,7 +532,7 @@ Note
 In order to load the Cityscapes dataset, you must download the source data
 manually. The directory should be organized in the following format:
 
-```
+```python
 source_dir/
     leftImg8bit_trainvaltest.zip
     gtFine_trainvaltest.zip             # optional
@@ -889,7 +879,7 @@ other members in that respective family.
 
 The relationships in FIW are:
 
-```
+```python
 =====  =====
   ID    Type
 =====  =====
@@ -934,7 +924,7 @@ relationship to the j-th other members.
 
 For example, `FID0001.csv` contains:
 
-```
+```python
 MID     1     2     3     Name    Gender
  1      0     4     5     name1     f
  2      1     0     1     name2     f
@@ -956,7 +946,7 @@ dataset. It serves no value to the problem of kinship.
 For more information on the data (e.g., statistics, task evaluations,
 benchmarks, and more), see the recent journal:
 
-```
+```python
 Robinson, JP, M. Shao, and Y. Fu. "Survey on the Analysis and Modeling of
 Visual Kinship: A Decade in the Making." IEEE Transactions on Pattern
 Analysis and Machine Intelligence (PAMI), 2021.
@@ -1043,7 +1033,7 @@ Note
 In order to load the ImageNet dataset, you must download the source data
 manually. The directory should be organized in the following format:
 
-```
+```python
 source_dir/
     ILSVRC2012_devkit_t12.tar.gz    # both splits
     ILSVRC2012_img_train.tar        # train split
@@ -1091,7 +1081,7 @@ the validation split of the ImageNet 2012 dataset.
 
 These images are provided according to the terms below.
 
-```
+```python
 You have been granted access for non-commercial research/educational
 use. By accessing the data, you have agreed to the following terms.
 
@@ -2324,7 +2314,7 @@ In order to work with video datasets, you’ll need to have
 Also, if you don’t already have a utility to uncompress `.rar` archives,
 you may need to install one. For example, on macOS:
 
-```
+```python
 brew install rar
 
 ```
@@ -2421,39 +2411,3 @@ load this dataset.
 
 ![voc-2012-validation](../_images/voc-2012-validation.png)
 
-- Built-In Zoo Datasets
-  - [ActivityNet 100](#activitynet-100)
-  - [ActivityNet 200](#activitynet-200)
-  - [BDD100K](#bdd100k)
-  - [Caltech-101](#caltech-101)
-  - [Caltech-256](#caltech-256)
-  - [CIFAR-10](#cifar-10)
-  - [CIFAR-100](#cifar-100)
-  - [Cityscapes](#cityscapes)
-  - [COCO-2014](#coco-2014)
-  - [COCO-2017](#coco-2017)
-  - [Fashion MNIST](#fashion-mnist)
-  - [Families in the Wild](#families-in-the-wild)
-  - [HMBD51](#hmbd51)
-  - [ImageNet 2012](#imagenet-2012)
-  - [ImageNet Sample](#imagenet-sample)
-  - [Kinetics 400](#kinetics-400)
-  - [Kinetics 600](#kinetics-600)
-  - [Kinetics 700](#kinetics-700)
-  - [Kinetics 700-2020](#kinetics-700-2020)
-  - [KITTI](#kitti)
-  - [KITTI Multiview](#kitti-multiview)
-  - [Labeled Faces in the Wild](#labeled-faces-in-the-wild)
-  - [MNIST](#mnist)
-  - [Open Images V6](#open-images-v6)
-  - [Open Images V7](#open-images-v7)
-  - [Places](#places)
-  - [Quickstart](#quickstart)
-  - [Quickstart Geo](#quickstart-geo)
-  - [Quickstart Video](#quickstart-video)
-  - [Quickstart Groups](#quickstart-groups)
-  - [Quickstart 3D](#quickstart-3d)
-  - [Sama-COCO](#sama-coco)
-  - [UCF101](#ucf101)
-  - [VOC-2007](#voc-2007)
-  - [VOC-2012](#voc-2012)

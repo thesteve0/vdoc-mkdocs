@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Open Images Integration
-
-Contents
-
-
 # Open Images Integration [¶](\#open-images-integration "Permalink to this headline")
 
 We’ve collaborated with the team behind the
@@ -32,7 +22,7 @@ Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
 and load an Open Images V7 split into FiftyOne:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -59,7 +49,7 @@ explore different slices of the dataset without downloading the entire split.
 When performing partial downloads, FiftyOne will use existing downloaded data
 first if possible before resorting to downloading additional data from the web.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -257,7 +247,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -272,7 +262,7 @@ matching object (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: object.<eval_key>
         ID: object.<eval_key>_id
        IoU: object.<eval_key>_iou
@@ -292,7 +282,7 @@ when running Open Images-style evaluation.
 The example below demonstrates Open Images-style detection evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the Dataset Zoo:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -334,7 +324,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.25      0.86      0.39       378
@@ -368,7 +358,7 @@ FiftyOne’s implementation of Open Images-style evaluation matches the
 reference implementation available via the
 [TF Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -402,7 +392,7 @@ positive/negative counts, you will likely want to set the
 parameter to `False` during evaluation so that predicted objects can be
 matched with ground truth objects of different classes.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -453,7 +443,7 @@ The example snippet below loads the
 [Open Images V6](../dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset and runs the
 official Open Images evaluation protocol on some mock model predictions:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -592,12 +582,3 @@ AP by averaging the precision values. Then compute mAP by averaging the AP
 values for each class
 
 
-- Open Images Integration
-  - [Loading Open Images](#loading-open-images)
-  - [Open Images-style evaluation](#open-images-style-evaluation)
-    - [Overview](#overview)
-    - [Example evaluation](#example-evaluation)
-    - [mAP and PR curves](#map-and-pr-curves)
-    - [Confusion matrices](#confusion-matrices)
-  - [Open Images Challenge](#open-images-challenge)
-  - [mAP protocol](#map-protocol)

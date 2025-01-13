@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- MongoDB Vector Search Integration
-
-Contents
-
-
 # MongoDB Vector Search Integration [¶](\#mongodb-vector-search-integration "Permalink to this headline")
 
 [MongoDB](https://www.mongodb.com) is the leading open source database for
@@ -63,7 +53,7 @@ cluster and provide its
 [connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection) to run this
 example:
 
-```
+```python
 export FIFTYONE_DATABASE_NAME=fiftyone
 export FIFTYONE_DATABASE_URI='mongodb+srv://$USERNAME:$PASSWORD@fiftyone.XXXXXX.mongodb.net/?retryWrites=true&w=majority'
 
@@ -71,7 +61,7 @@ export FIFTYONE_DATABASE_URI='mongodb+srv://$USERNAME:$PASSWORD@fiftyone.XXXXXX.
 
 First let’s load a dataset into FiftyOne and compute embeddings for the samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -92,7 +82,7 @@ mongodb_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Wait for the index to be ready for querying...
 assert mongodb_index.ready
 
@@ -140,7 +130,7 @@ to use MongoDB 7, you must upgrade to an M10 cluster, which starts at $0.08/hour
 You can connect FiftyOne to your MongoDB Atlas cluster by simply providing its
 [connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection):
 
-```
+```python
 export FIFTYONE_DATABASE_NAME=fiftyone
 export FIFTYONE_DATABASE_URI='mongodb+srv://$USERNAME:$PASSWORD@fiftyone.XXXXXX.mongodb.net/?retryWrites=true&w=majority'
 
@@ -157,7 +147,7 @@ To use the MongoDB backend, simply set the optional `backend` parameter of
 `compute_similarity()` to
 `"mongodb"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="mongodb", ...)
@@ -167,7 +157,7 @@ fob.compute_similarity(..., backend="mongodb", ...)
 Alternatively, you can permanently configure FiftyOne to use the MonogDB
 backend by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=mongodb
 
 ```
@@ -175,7 +165,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=mongodb
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "mongodb"
 }
@@ -202,7 +192,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "mongodb": {
@@ -218,7 +208,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 mongodb_index = fob.compute_similarity(
     ...
     backend="mongodb",
@@ -237,7 +227,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -259,7 +249,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -272,7 +262,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -282,7 +272,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -295,7 +285,7 @@ only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated MongoDB vector search index, which you can
 do as follows:
 
-```
+```python
 # Delete the MongoDB vector search index
 mongodb_index = dataset.load_brain_results(brain_key)
 mongodb_index.cleanup()
@@ -319,7 +309,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -387,7 +377,7 @@ You can also create a similarity index for
 including the `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -417,7 +407,7 @@ for the samples or patches in your dataset, you can connect to it by passing
 the `index_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -446,7 +436,7 @@ to add and remove embeddings from an existing Mongodb index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Mongodb index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -491,7 +481,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Mongodb index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -535,7 +525,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -595,7 +585,7 @@ This may result in fewer samples than requested being returned by the search.
 You can use the `ready` property of a MongoDB index to check whether a newly
 created vector search index is ready for querying:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -625,7 +615,7 @@ Here’s an example of creating a similarity index backed by a customized MongoD
 index. Just for fun, we’ll specify a custom index name, use dot product
 similarity, and populate the index for only a subset of our dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -655,19 +645,3 @@ print(mongodb_index.config.metric)  # dotproduct
 
 ```
 
-- MongoDB Vector Search Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Configuring your connection string](#configuring-your-connection-string)
-    - [Using the MongoDB backend](#using-the-mongodb-backend)
-    - [MongoDB config parameters](#mongodb-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a MongoDB index](#querying-a-mongodb-index)
-    - [Checking if an index is ready](#checking-if-an-index-is-ready)
-    - [Advanced usage](#advanced-usage)

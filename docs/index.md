@@ -1,15 +1,3 @@
-Table of Contents
-
--
-Docs
-
-    >
-
-- FiftyOne
-
-Contents
-
-
 # FiftyOne [¶](\#fiftyone "Permalink to this headline")
 
 **The open-source tool for building high-quality datasets and computer vision models**
@@ -158,7 +146,7 @@ adding custom tags, model predictions and more.
 
 [Explore the library](fiftyone_concepts/basics.html)
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset("my_dataset")
@@ -206,7 +194,7 @@ models.
 
 [Learn more about the Brain](brain.html)
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_uniqueness(dataset)
@@ -242,7 +230,7 @@ download/preparation methods are provided via GitHub repositories or URLs.
 
 [Check out the Dataset Zoo](dataset_zoo/index.html)
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -265,7 +253,7 @@ provided via GitHub repositories or URLs.
 
 [Check out the Model Zoo](data_and_models/model_zoo/index.html)
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -313,14 +301,3 @@ If you run into any issues with FiftyOne or have any burning questions, feel
 free to [connect with us on Discord](https://community.voxel51.com) or reach out to
 us at [support@voxel51.com](mailto:support%40voxel51.com).
 
-- FiftyOne
-  - [Core Capabilities](#core-capabilities)
-  - [Core Concepts](#core-concepts)
-    - [FiftyOne Library](#fiftyone-library)
-    - [FiftyOne App](#fiftyone-app)
-    - [FiftyOne Brain](#fiftyone-brain)
-    - [FiftyOne Plugins](#fiftyone-plugins)
-    - [Dataset Zoo](#dataset-zoo)
-    - [Model Zoo](#model-zoo)
-  - [What’s Next?](#what-s-next)
-  - [Need Support?](#need-support)

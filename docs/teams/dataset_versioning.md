@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](https://thesteve0.github.io/zxcv/index.html) >
-
-- [FiftyOne Teams](https://thesteve0.github.io/zxcv/teams/index.html) >
-- Dataset Versioning
-
-Contents
-
-
 # Dataset Versioning [¶](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html\#dataset-versioning "Permalink to this headline")
 
 FiftyOne Teams provides native support for versioning your datasets!
@@ -275,7 +265,7 @@ You can also list Snapshot names for a dataset using the
 `list_snapshots()` method
 from the Management SDK.
 
-```
+```python
 import fiftyone.management as fom
 
 dataset_name = "quickstart"
@@ -287,7 +277,7 @@ Then you can get more detailed information on a single Snapshot using the
 `get_snapshot_info()`
 method.
 
-```
+```python
 import fiftyone.management as fom
 
 dataset = "quickstart"
@@ -318,7 +308,7 @@ We can also link directly to this Snapshot page by copying the URL from the
 address bar or from the “Share Dataset” page which opens from the “Share”
 button. For the above Snapshot, it would look like this:
 
-```
+```python
 https://<your-teams-url>/datasets/roadscene-vehicle-detection/samples?snapshot=new+snapshot
 
 ```
@@ -348,7 +338,7 @@ following snippet will load an existing Snapshot of a dataset. It can then be
 interacted with as if it is a normal dataset, except for any operations that
 would cause modifications.
 
-```
+```python
 import fiftyone as fo
 
 dataset_name = "quickstart"
@@ -407,7 +397,7 @@ You can also create Snapshots via the Management SDK.
 To get the latest changes summary as in the Create snapshot panel, use
 `get_dataset_latest_changes_summary()`.
 
-```
+```python
 import fiftyone.management as fom
 
 fom.get_dataset_latest_changes_summary(dataset.name)
@@ -418,7 +408,7 @@ To recalculate the latest changes summary as in the Refresh button in that
 panel, use
 `calculate_dataset_latest_changes_summary()`.
 
-```
+```python
 import fiftyone.management as fom
 
 old = fom.calculate_dataset_latest_changes_summary(dataset.name)
@@ -438,7 +428,7 @@ To create a new Snapshot, use the
 `create_snapshot()`
 method.
 
-```
+```python
 import fiftyone.management as fom
 
 dataset_name = "quickstart"
@@ -480,7 +470,7 @@ You can also use the
 `delete_snapshot()` method
 in the Management SDK.
 
-```
+```python
 import fiftyone.management as fom
 
 dataset = "quickstart"
@@ -516,7 +506,7 @@ You can also use the
 `revert_dataset_to_snapshot()`
 method in the Management SDK.
 
-```
+```python
 import fiftyone.management as fom
 
 dataset = "quickstart"
@@ -562,7 +552,7 @@ You can also use the
 `archive_snapshot()`
 method in the Management SDK:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.management as fom
 
@@ -594,7 +584,7 @@ You can also use the
 `unarchive_snapshot()`
 method in the Management SDK:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.management as fom
 
@@ -760,46 +750,3 @@ support for modification summaries for these datasets
 datasets alongside your models and media
 
 
-- [Dataset Versioning](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#)
-  - [Overview](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#overview)
-  - [Snapshots](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#snapshots)
-    - [Snapshot states](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#snapshot-states)
-    - [Snapshot archival](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#snapshot-archival)
-      - [Automatic archival](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#automatic-archival)
-      - [Manual archival](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#manual-archival)
-      - [Unarchival](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#unarchival)
-      - [Usage notes](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#usage-notes)
-  - [Snapshot permissions](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#snapshot-permissions)
-  - [Using snapshots](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#using-snapshots)
-    - [List snapshots](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#list-snapshots)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#teams-ui)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#sdk)
-    - [Loading snapshots](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#loading-snapshots)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id2)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id3)
-  - [Snapshot management](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#snapshot-management)
-    - [Creating a snapshot](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#creating-a-snapshot)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id4)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id5)
-    - [Deleting a snapshot](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#deleting-a-snapshot)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id6)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id7)
-    - [Rollback dataset to snapshot](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#rollback-dataset-to-snapshot)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id8)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id9)
-    - [Archive snapshot](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#archive-snapshot)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id10)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id11)
-    - [Unarchive snapshot](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#unarchive-snapshot)
-      - [Teams UI](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id12)
-      - [SDK](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#id13)
-  - [Pluggable backends](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#pluggable-backends)
-    - [Internal duplication backend](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#internal-duplication-backend)
-      - [Time and space](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#time-and-space)
-      - [Strengths](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#strengths)
-      - [Limitations](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#limitations)
-      - [Configuration](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#configuration)
-  - [Usage considerations](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#usage-considerations)
-    - [Best practices](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#best-practices)
-    - [Configuration](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#dataset-versioning-configuration)
-  - [Roadmap](https://thesteve0.github.io/zxcv/teams/dataset_versioning.html#roadmap)

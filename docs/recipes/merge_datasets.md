@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Merging Datasets
-
-Contents
-
-
 # Merging Datasets [¶](\#Merging-Datasets "Permalink to this headline")
 
 This recipe demonstrates a simple pattern for merging FiftyOne Datasets via [Dataset.merge\_samples()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html?highlight=merge_samples#fiftyone.core.dataset.Dataset.merge_samples).
@@ -23,12 +13,12 @@ Merging datasets is an easy way to:
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
@@ -37,30 +27,30 @@ In this recipe, we’ll work with a dataset downloaded from the [FiftyOne Datase
 
 To access the dataset, install `torch` and `torchvision`, if necessary:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install torch torchvision
 
 ```
 
 Then download the test split of [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html):
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 # Download the validation split of COCO-2017
 !fiftyone zoo datasets download cifar10 --splits test
 
 ```
 
-```
+```python
 Split 'test' already downloaded
 
 ```
@@ -69,12 +59,12 @@ Split 'test' already downloaded
 
 Load the test split of CIFAR-10 into FiftyOne:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import random
 import os
 
@@ -89,7 +79,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Split 'test' already downloaded
 Loading 'cifar10' split 'test'
  100% |███| 10000/10000 [14.1s elapsed, 0s remaining, 718.2 samples/s]
@@ -109,18 +99,18 @@ Sample fields:
 
 The dataset contains ground truth labels in its `ground_truth` field:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 # Print a sample from the dataset
 print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '5fee1a40f653ce52a9d077b1',
     'media_type': 'image',
@@ -141,12 +131,12 @@ Suppose you would like to add model predictions to some samples from the dataset
 
 The usual way to do this is to just iterate over the dataset and add your predictions directly to the samples:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 def run_inference(filepath):
     # Run inference on `filepath` here.
     # For simplicity, we'll just generate a random label
@@ -156,12 +146,12 @@ def run_inference(filepath):
 
 ```
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 # Choose 100 samples at random
 random_samples = dataset.take(100)
 
@@ -174,7 +164,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:           merge-example
 Media type:     image
 Num samples:    10000
@@ -192,12 +182,12 @@ Sample fields:
 
 However, suppose you store the predictions in a separate dataset:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 # Filepaths of images to proces
 filepaths = [s.filepath for s in dataset.take(100)]
 
@@ -214,7 +204,7 @@ print(predictions)
 
 ```
 
-```
+```python
 Name:           2020.12.31.12.37.09
 Media type:     image
 Num samples:    100
@@ -233,18 +223,18 @@ You can easily merge the `predictions` dataset into the main dataset via [Datase
 
 Let’s start by creating a fresh copy of CIFAR-10 that doesn’t have predictions:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 dataset2 = dataset.exclude_fields("predictions").clone(name="merge-example2")
 print(dataset2)
 
 ```
 
-```
+```python
 Name:           merge-example2
 Media type:     image
 Num samples:    10000
@@ -261,12 +251,12 @@ Sample fields:
 
 Now let’s merge the predictions into the fresh dataset:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 # Merge predictions
 dataset2.merge_samples(predictions)
 
@@ -275,7 +265,7 @@ print(dataset2.exists("predictions"))
 
 ```
 
-```
+```python
 Dataset:        merge-example2
 Media type:     image
 Num samples:    100
@@ -293,18 +283,18 @@ View stages:
 
 Let’s print a sample with predictions to verify that the merge happened as expected:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 # Print a sample with predictions
 print(dataset2.exists("predictions").first())
 
 ```
 
-```
+```python
 <SampleView: {
     'id': '5fee1a40f653ce52a9d07883',
     'media_type': 'image',
@@ -333,12 +323,12 @@ By default, samples with the same absolute `filepath` are merged. However, you c
 
 For example, the command below will merge samples with the same base filename, ignoring the directory:
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 # Create another fresh dataset to work with
 dataset3 = dataset.exclude_fields("predictions").clone(name="merge-example3")
 
@@ -350,7 +340,7 @@ dataset3.merge_samples(predictions, key_fcn=key_fcn)
 
 ```
 
-```
+```python
 Indexing dataset...
  100% |███| 10000/10000 [3.6s elapsed, 0s remaining, 2.8K samples/s]
 Merging samples...
@@ -360,18 +350,18 @@ Merging samples...
 
 Let’s print a sample with predictions to verify that the merge happened as expected:
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 # Print a sample with predictions
 print(dataset3.exists("predictions").first())
 
 ```
 
-```
+```python
 <SampleView: {
     'id': '5fee1a40f653ce52a9d07883',
     'media_type': 'image',
@@ -394,7 +384,3 @@ print(dataset3.exists("predictions").first())
 
 ```
 
-- Merging Datasets
-  - [Setup](#Setup)
-  - [Merging model predictions](#Merging-model-predictions)
-  - [Customizing the merge key](#Customizing-the-merge-key)

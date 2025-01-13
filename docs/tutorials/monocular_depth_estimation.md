@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Monocular Depth Estimation with FiftyOne
-
-Contents
-
-
 # Monocular Depth Estimation with FiftyOne [¶](\#Monocular-Depth-Estimation-with-FiftyOne "Permalink to this headline")
 
 In this walkthrough, you’ll learn how to run monocular depth estimation models on your data using FiftyOne, Replicate, and Hugging Face libraries!
@@ -59,22 +49,22 @@ Beyond these industry applications, the ability to extract high-quality depth in
 
 First, we import all the necessary libraries, installing `fiftyone` if necessary:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from glob import glob
 import numpy as np
 from PIL import Image
@@ -89,24 +79,24 @@ from fiftyone import ViewField as F
 
 Download the SUN RGB-D dataset from [here](https://rgbd.cs.princeton.edu/) and unzip it, or use the following command to download it directly:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !curl -o sunrgbd.zip https://rgbd.cs.princeton.edu/data/SUNRGBD.zip
 
 ```
 
 and then unzip it:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !unzip sunrgbd.zip
 
 ```
@@ -118,24 +108,24 @@ If you want to use the dataset for other tasks, you can fully convert the annota
 
 Because we are just interested in getting the point across, we’ll restrict ourselves to the first 20 samples.
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 dataset = fo.Dataset(name="SUNRGBD-20", persistent=True)
 
 ```
 
 Load in images and ground truth data
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 ## restrict to 20 scenes
 scene_dirs = glob("SUNRGBD/k*/*/*")[:20]
 
@@ -145,12 +135,12 @@ We will be representing depth maps with FiftyOne’s [Heatmap](https://docs.voxe
 
 We are going to store everything in terms of normalized, _relative_ distances, where 255 represents the maximum distance in the scene and 0 represents the minimum distance in the scene. This is a common way to represent depth maps, although it is far from the only way to do so. If we were interested in _absolute_ distances, we could store sample-wise parameters for the minimum and maximum distances in the scene, and use these to reconstruct the absolute distances from the relative distances.
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 samples = []
 for scene_dir in scene_dirs:
     ## Get image file path from scene directory
@@ -172,19 +162,19 @@ dataset.add_samples(samples);
 
 ```
 
-```
+```python
  100% |███████████████████| 20/20 [192.2ms elapsed, 0s remaining, 104.1 samples/s]
 
 ```
 
 We can then visualize our images and depth maps in the [FiftyOne App](https://docs.voxel51.com/user_guide/app.html):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset, auto=False)
 ## then open tab to localhost:5151 in browser
 
@@ -215,22 +205,22 @@ The first model we’ll run is a Transformer-based model called [DPT](https://hu
 
 If necessary, install `transformers`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install transformers
 
 ```
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 from transformers import AutoImageProcessor, AutoModelForDepthEstimation
 
 image_processor = AutoImageProcessor.from_pretrained("Intel/dpt-hybrid-midas")
@@ -267,17 +257,17 @@ for sample in dataset.iter_samples(autosave=True, progress=True):
 
 ```
 
-```
+```python
  100% |███████████████████| 20/20 [15.1s elapsed, 0s remaining, 1.5 samples/s]
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -296,12 +286,12 @@ In this example, we manually applied the `transformers` model to our data to gen
 
 You can load the transformer models via Hugging Face’s `transformers` library, and then just apply them to FiftyOne datasets via the `apply_model()` method:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # DPT
 from transformers import DPTForDepthEstimation
 model = DPTForDepthEstimation.from_pretrained("Intel/dpt-large")
@@ -322,12 +312,12 @@ session = fo.launch_app(dataset)
 
 Alternatively, you can load any Hugging Face Transformers model directly from the [FiftyOne Model Zoo](https://docs.voxel51.com/user_guide/model_zoo/index.html) via the name `depth-estimation-transformer-torch`, and specifying the model’s location on the Hugging Face Hub ( `repo_id`) via the `name_or_path` parameter. To load and apply [this DPT MiDaS hybrid model](https://huggingface.co/Intel/dpt-hybrid-midas), for instance, you would use the following:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -344,12 +334,12 @@ session = fo.launch_app(dataset)
 
 Install the `replicate` Python client if necessary:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install replicate
 
 ```
@@ -358,24 +348,24 @@ And set your API Token:
 
 Then run the following command:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !export REPLICATE_API_TOKEN=r8_<your_token_here>
 
 ```
 
 💡 It might take a minute for the model to load into memory on the server (cold-start problem), but once it does the prediction should only take a few seconds.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import replicate
 import requests
 
@@ -400,22 +390,22 @@ While diffusion is a very powerful approach to monocular depth estimation, it is
 
 Clone the Marigold GH repo:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !git clone https://github.com/prs-eth/Marigold.git
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from Marigold.marigold import MarigoldPipeline
 pipe = MarigoldPipeline.from_pretrained("Bingxin/Marigold")
 
@@ -423,12 +413,12 @@ pipe = MarigoldPipeline.from_pretrained("Bingxin/Marigold")
 
 Then prediction looks like:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 rgb_image = Image.open(dataset.first().filepath)
 output = pipe(rgb_image)
 depth_image = output['depth_colored']
@@ -439,12 +429,12 @@ depth_image = output['depth_colored']
 
 💡 It might take a minute for the model to load into memory on the server (cold-start problem), but once it does the prediction should only take a few seconds.
 
-```
+```python
 [29]:
 
 ```
 
-```
+```python
 import replicate
 import requests
 import io
@@ -473,17 +463,17 @@ for sample in dataset.iter_samples(autosave=True, progress=True):
 
 ```
 
-```
+```python
  100% |███████████████████| 20/20 [5.3m elapsed, 0s remaining, 0.1 samples/s]
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -496,12 +486,12 @@ Now that we have predictions from multiple models, let’s evaluate them! We wil
 
 💡 Higher PSNR and SSIM scores indicate better predictions, while lower RMSE scores indicate better predictions.
 
-```
+```python
 [38]:
 
 ```
 
-```
+```python
 from skimage.metrics import peak_signal_noise_ratio, mean_squared_error, structural_similarity
 
 def rmse(gt, pred):
@@ -510,12 +500,12 @@ def rmse(gt, pred):
 
 ```
 
-```
+```python
 [48]:
 
 ```
 
-```
+```python
 def evaluate_depth(dataset, prediction_field, gt_field):
     for sample in dataset.iter_samples(autosave=True, progress=True):
         gt_map = sample[gt_field].map
@@ -531,12 +521,12 @@ def evaluate_depth(dataset, prediction_field, gt_field):
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 evaluate_depth(dataset, "dpt", "gt_depth")
 evaluate_depth(dataset, "marigold", "gt_depth")
 
@@ -544,12 +534,12 @@ evaluate_depth(dataset, "marigold", "gt_depth")
 
 We can then compute average metrics across the entire dataset very easily:
 
-```
+```python
 [66]:
 
 ```
 
-```
+```python
 print("Mean Error Metrics")
 for model in ["dpt", "marigold"]:
     print("-"*50)
@@ -559,7 +549,7 @@ for model in ["dpt", "marigold"]:
 
 ```
 
-```
+```python
 Mean Error Metrics
 --------------------------------------------------
 Mean rmse for dpt: 49.8915828817003
@@ -600,23 +590,3 @@ Metrics are not always a good indicator of model performance. For example, a mod
 In this walkthrough, we learned how to run monocular depth estimation models on your data using FiftyOne, Replicate, and Hugging Face libraries! We also learned how to evaluate the predictions using common metrics, and how to visualize the results in FiftyOne. In real-world applications, it is important to look at the depth maps themselves, and not just the metrics! It is also important to understand that model performance is limited by the quality, quantity, and diversity of data they are
 trained on.
 
-- Monocular Depth Estimation with FiftyOne
-  - [What is Monocular Depth Estimation?](#What-is-Monocular-Depth-Estimation?)
-    - [Applications](#Applications)
-  - [Create Dataset](#Create-Dataset)
-    - [Ground Truth?](#Ground-Truth?)
-  - [Run Monocular Depth Estimation Models](#Run-Monocular-Depth-Estimation-Models)
-    - [DPT (Transformer Models)](#DPT-(Transformer-Models))
-    - [Option 1: Run locally with Hugging Face Transformers](#Option-1:-Run-locally-with-Hugging-Face-Transformers)
-      - [Interpolating Depth Maps](#Interpolating-Depth-Maps)
-      - [Hugging Face Transformers Integration](#Hugging-Face-Transformers-Integration)
-    - [Option 2: Run with Replicate](#Option-2:-Run-with-Replicate)
-    - [Marigold (Diffusion Models)](#Marigold-(Diffusion-Models))
-    - [Option 1: Download and run locally with Hugging Face Diffusers](#Option-1:-Download-and-run-locally-with-Hugging-Face-Diffusers)
-    - [Option 2: Run via Replicate](#Option-2:-Run-via-Replicate)
-  - [Evaluate Predictions](#Evaluate-Predictions)
-  - [Key Challenges with Monocular Depth Estimation](#Key-Challenges-with-Monocular-Depth-Estimation)
-    - [Data quality and quantity](#Data-quality-and-quantity)
-    - [Poor generalization](#Poor-generalization)
-    - [Precarious metrics](#Precarious-metrics)
-  - [Summary](#Summary)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Annotating Datasets with CVAT
-
-Contents
-
-
 # Annotating Datasets with CVAT [¶](\#Annotating-Datasets-with-CVAT "Permalink to this headline")
 
 [FiftyOne](https://fiftyone.ai) and [CVAT](https://github.com/opencv/cvat) are two leading open-source tools, each tackling different parts of the dataset curation and improvement workflows.
@@ -31,12 +21,12 @@ FiftyOne makes it incredibly easy to explore datasets, understand them, and disc
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
@@ -49,12 +39,12 @@ Another option is to [set up CVAT locally](https://opencv.github.io/cvat/docs/ad
 
 In any case, FiftyOne will need to connect to your CVAT account. The easiest way to configure your CVAT login credentials is to store them in environment variables:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !export FIFTYONE_CVAT_USERNAME=<YOUR_USERNAME>
 !export FIFTYONE_CVAT_PASSWORD=<YOUR_PASSWORD>
 !export FIFTYONE_CVAT_EMAIL=<YOUR_EMAIL>  # if applicable
@@ -65,12 +55,12 @@ There are also [other ways](https://voxel51.com/docs/fiftyone/integrations/cvat.
 
 In this tutorial we’ll use the UMAP technique for visualizing samples in a 2D scatterplot. We’ll also **optionally** run an object detection model that requires TensorFlow:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install umap-learn tensorflow
 
 ```
@@ -87,12 +77,12 @@ FiftyOne provides a [visual similarity capability](https://voxel51.com/docs/fift
 
 We begin by [loading a set of unlabeled images into FiftyOne](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html). This can be done in just one line of code. For example, if you are [using your own data](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html) you can run the following:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 # Example
 import fiftyone as fo
 
@@ -107,19 +97,19 @@ dataset = fo.Dataset.from_dir(
 
 ```
 
-```
+```python
  100% |█████████████████████| 0/0 [3.5ms elapsed, ? remaining, ? samples/s]
 
 ```
 
 However, in this walkthrough, we’ll download some images from the [Open Images V6 dataset](https://voxel51.com/docs/fiftyone/integrations/open_images.html) using the built-in [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html).
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -132,7 +122,7 @@ dataset = foz.load_zoo_dataset(
 
 ```
 
-```
+```python
 Downloading split 'validation' to '/home/voxel51/fiftyone/open-images-v6/validation' if necessary
 Necessary images already downloaded
 Existing download of split 'validation' is sufficient
@@ -144,24 +134,24 @@ Dataset 'open-images-v6-validation-200' created
 
 Now let’s make the dataset [persistent](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#dataset-persistence) so that we can access it in future Python sessions.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.persistent = True
 
 ```
 
 Now that the data is loaded, let’s visualize it in the [FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html):
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -170,12 +160,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
@@ -186,12 +176,12 @@ Now let’s run the [compute\_similarity()](https://voxel51.com/docs/fiftyone/us
 
 Once this is done, we can then use the index to find the most unique samples:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 results = fob.compute_similarity(dataset, brain_key="img_sim")
@@ -199,7 +189,7 @@ results.find_unique(100)
 
 ```
 
-```
+```python
 Computing embeddings...
  100% |█████████████████| 200/200 [2.2m elapsed, 0s remaining, 1.7 samples/s]
 Generating index...
@@ -224,12 +214,12 @@ Uniqueness computation complete
 
 We can also visualize the exact samples that were selected.
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 vis_results = fob.compute_visualization(dataset, brain_key="img_vis")
 
 plot = results.visualize_unique(visualization=vis_results)
@@ -237,7 +227,7 @@ plot.show()
 
 ```
 
-```
+```python
 Computing embeddings...
  100% |█████████████████| 200/200 [2.1m elapsed, 0s remaining, 1.7 samples/s]
 Generating visualization...
@@ -266,12 +256,12 @@ This plot [can be interacted with](https://voxel51.com/docs/fiftyone/user_guide/
 
 _Note: Interactive plots currently only work in Jupyter notebook environments._
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 session.plots.attach(plot, name="unique")
 session.show()
 
@@ -283,12 +273,12 @@ Activate
 
 Now let’s create a [DatasetView](https://voxel51.com/docs/fiftyone/user_guide/using_views.html) into the dataset containing only the unique samples that were selected and visualize them.
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 unique_view = dataset.select(results.unique_ids)
 session.view = unique_view
 
@@ -298,12 +288,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -319,12 +309,12 @@ For example, let’s annotate instance segmentation masks for the classes “per
 We’ll only include a few samples to be annotated in our view for brevity. To create annotation jobs in CVAT for these samples, we simply call [annotate()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate) passing in a unique name for this annotation run and the relevant label schema information for the annotation task. Since we’ll be annotating these samples ourselves, we pass `launch_editor=True` to automatically
 launch a browser window with the CVAT editor open once the data has been loaded.
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 # Randomly select 5 samples to load to CVAT
 unique_5_view = unique_view.take(5)
 
@@ -342,7 +332,7 @@ anno_results = unique_5_view.annotate(
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Computing image metadata...
  100% |█████████████████████| 5/5 [151.6ms elapsed, 0s remaining, 33.0 samples/s]
@@ -353,17 +343,17 @@ Launching editor at 'https://app.cvat.ai/tasks/386/jobs/441'...
 
 The `CVATAnnotationResults` object that was returned can be used to get the current status of the tasks that were created:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 anno_results.print_status()
 
 ```
 
-```
+```python
 Status for label field 'segmentations':
 
         Task 386 (FiftyOne_open-images-v6-validation-200_segmentations):
@@ -385,19 +375,19 @@ Once the annotation is complete and saved in CVAT, we can download the annotatio
 
 Since accounts on app.cvat.ai only allow for 10 tasks, we’ll set `cleanup=True` so that the CVAT tasks are automatically deleted after the annotations are loaded.
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 unique_5_view.load_annotations("segs_run", cleanup=True)
 
 session.view = unique_5_view
 
 ```
 
-```
+```python
 Downloading labels from CVAT...
 Download complete
 Adding labels for 'segmentations'...
@@ -409,24 +399,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
 
 If you want to upload the dataset to a team of annotators, you can provide the CVAT usernames of the annotators and reviewers that will be assigned round-robin style. The `segment_size` parameter is used to define the maximum number of images in each job in your CVAT task.
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 anno_key = "full_annot"
 unique_view.annotate(
     anno_key,
@@ -441,18 +431,18 @@ unique_view.annotate(
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Upload complete
 
 ```
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 
 ```
 
@@ -460,24 +450,24 @@ Upload complete
 
 For larger datasets, the annotation process may take some time. The `anno_key` that we provided stores the relevant information about this annotation run on the dataset itself. When the annotations are ready to be imported back into FiftyOne, we can easily do so.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.name = "example_dataset"
 
 ```
 
 In practice, annotation tasks can take awhile. But don’t worry, you can always load your annotations back onto your dataset in the future in a new Python session:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("example_dataset")
@@ -557,12 +547,12 @@ Note that only scalar-valued label attributes are supported. Other attribute typ
 
 For example, the following will create `attr1` with text-box input and `attr2` with drop-down selection of the given values:
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -591,7 +581,7 @@ random_view.annotate(
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Computing image metadata...
  100% |█████████████████████| 1/1 [141.7ms elapsed, 0s remaining, 7.1 samples/s]
@@ -606,22 +596,22 @@ In CVAT, `attr1` and `attr2` are now available for annotation on every new and e
 
 These annotations can now be loaded back into FiftyOne with [load\_annotations()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations).
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 random_view.load_annotations("random_attrs")
 
 ```
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 session.view = random_view
 
 ```
@@ -630,12 +620,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -647,7 +637,7 @@ if you sent only a subset of the label’s attributes to CVAT.
 
 In order to annotate multiple label fields at once, or just to specify the field name, label type, classes and attributes in one structure, the `label_schema` argument to [annotate()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate) can be used. This argument accepts a dictionary keyed by label field names that contain a dictionary setting up the type, classes and attributes as follows:
 
-```
+```python
 label_schema = {
     "new_field": {
         "type": "detections",
@@ -667,12 +657,12 @@ label_schema = {
 
 For existing fields, the dictionary entry can be left blank and the relevant information will be parsed. For new fields, the type and classes are required (except for “scalar” type fields) and attributes are optional just like before.
 
-```
+```python
 [39]:
 
 ```
 
-```
+```python
 label_schema = {
     "ground_truth": {},
     "gt_segmentations": {
@@ -695,7 +685,7 @@ random_view.annotate(anno_key, label_schema=label_schema, launch_editor=True)
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Samples uploaded successfully
 Launching editor for label field 'ground_truth' of type instances at https://app.cvat.ai/tasks/354/jobs/398
@@ -704,22 +694,22 @@ Launching editor for label field 'ground_truth' of type instances at https://app
 
 ![cvat-segmentation](../_images/cvat_segmentation_2.png)
 
-```
+```python
 [40]:
 
 ```
 
-```
+```python
 random_view.load_annotations("random_segs")
 
 ```
 
-```
+```python
 [41]:
 
 ```
 
-```
+```python
 session.view = random_view
 
 ```
@@ -728,12 +718,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [42]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -748,12 +738,12 @@ FiftyOne provides a powerful API and App workflows to identify the samples/annot
 
 To demonstrate this workflow, let’s load a subset of the [COCO object detection dataset](https://voxel51.com/docs/fiftyone/integrations/coco.html) from the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html).
 
-```
+```python
 [54]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -765,7 +755,7 @@ dataset = foz.load_zoo_dataset(
 
 ```
 
-```
+```python
 Downloading split 'validation' to '/home/voxel51/fiftyone/coco-2017/validation' if necessary
 Found annotations at '/home/voxel51/fiftyone/coco-2017/raw/instances_val2017.json'
 Sufficient images already downloaded
@@ -778,30 +768,30 @@ Dataset 'coco-2017-validation-200' created
 
 **If your machine has a GPU**, then you can run the following code to generate predictions on the dataset with an object detection model from the [FiftyOne Model Zoo](https://voxel51.com/docs/fiftyone/user_guide/model_zoo/index.html). Note that you can also easily [load your own model predictions](https://voxel51.com/docs/fiftyone/user_guide/dataset_creation/index.html#custom-formats) onto your FiftyOne dataset.
 
-```
+```python
 [48]:
 
 ```
 
-```
+```python
 model = foz.load_zoo_model("faster-rcnn-resnet50-coco-tf")
 dataset.apply_model(model, "predictions")
 
 ```
 
-```
+```python
  100% |█████████████████| 250/250 [3.6m elapsed, 0s remaining, 1.2 samples/s]
 
 ```
 
 **For CPU only machines**, let’s save time and just load the `quickstart` dataset from the dataset zoo, which contains a small subset of COCO with precomputed predictions.
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -809,7 +799,7 @@ dataset = foz.load_zoo_dataset("quickstart")
 
 ```
 
-```
+```python
 Dataset already downloaded
 Loading 'quickstart'
  100% |█████████████████| 200/200 [4.3s elapsed, 0s remaining, 38.8 samples/s]
@@ -819,12 +809,12 @@ Dataset 'quickstart' created
 
 Let’s visualize these model predictions.
 
-```
+```python
 [60]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -833,24 +823,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
 
 In order to find specific cases of how this model performed, we can [evaluate the object detections](https://voxel51.com/docs/fiftyone/user_guide/evaluation.html). When running evaluation, we can provide an `eval_key`, which will cause per-label TP/FP/FN evaluation results to be stored on our samples for future use.
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 results = dataset.evaluate_detections(
     "predictions",
     gt_field="ground_truth",
@@ -861,7 +851,7 @@ print(results.mAP())
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 200/200 [6.5s elapsed, 0s remaining, 22.3 samples/s]
 Performing IoU sweep...
@@ -872,12 +862,12 @@ Performing IoU sweep...
 
 Using the query language of FiftyOne, we can construct [different views into the dataset](https://voxel51.com/docs/fiftyone/user_guide/using_views.html). Specifically, let’s find the samples where the model was confident in its prediction but the prediction was labeled incorrect (false positive). This indicates that the model may have been correct but the ground truth annotation was incorrect.
 
-```
+```python
 [61]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 view = dataset.filter_labels(
@@ -896,12 +886,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [63]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
@@ -910,12 +900,12 @@ Browsing through some of these results, we can see a pattern emerge. The COCO da
 
 We can tag some of these samples for annotation by clicking selecting the relevant samples and clicking the tag button.
 
-```
+```python
 [64]:
 
 ```
 
-```
+```python
 session.show()
 
 ```
@@ -924,22 +914,22 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [65]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 tagged_view = dataset.match_tags("requires_annotation")
 
 ```
@@ -948,18 +938,18 @@ We can now use the `annotate()` method to upload these samples and labels to CVA
 
 The following code creates a new task in your account in CVAT containing only the samples with the `requires_annotation` tag.
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 anno_key = "tagged_anno"
 tagged_view.annotate(anno_key, label_field="ground_truth", launch_editor=True)
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Upload complete
 Launching editor at 'https://app.cvat.ai/tasks/383/jobs/434'...
@@ -972,18 +962,18 @@ In CVAT, click on the box whose `iscrowd` attribute we want to modify. On the at
 
 After updating the relevant annotations in all of the samples, make sure to hit the save button in CVAT. Now that the re-annotation is complete, let’s load the updated labels back into FiftyOne and clean up the tasks that were created in CVAT.
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 tagged_view.load_annotations("tagged_anno", cleanup=True)
 session.view = tagged_view
 
 ```
 
-```
+```python
 Downloading labels from CVAT...
 Download complete
 Merging labels for 'ground_truth'...
@@ -996,24 +986,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 session.freeze() # screen shot the App for this example
 
 ```
 
 As we can see, the ground truth labels on the dataset have been updated. Let’s evaluate the same model again on these updated labels.
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 results = dataset.evaluate_detections(
     "predictions",
     gt_field="ground_truth",
@@ -1024,7 +1014,7 @@ print(results.mAP())
 
 ```
 
-```
+```python
 Evaluating detections...
  100% |█████████████████| 200/200 [6.1s elapsed, 0s remaining, 28.2 samples/s]
 Performing IoU sweep...
@@ -1037,12 +1027,12 @@ The mAP of the model has improved from 39.57% to 39.85% just by updating a singl
 
 In practice, the next step is to spend more time exploring the dataset in FiftyOne finding more annotation mistakes and sending them to a team of annotators in CVAT for review and re-annotation. Specific users can be assigned to annotate or review the tasks that are created through this API.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 anno_key = "all_mistakes"
 tagged_view.annotate(
     anno_key,
@@ -1070,28 +1060,28 @@ All CVAT label types except `tags` provide an option to annotate **tracks** in v
 
 Let’s upload and modify some labels from the `quickstart-video` dataset. The workflow in FiftyOne looks identical to the image-based workflow. The only difference is needing to navigate to each video task separately inside of CVAT.
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
 ```
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset("quickstart-video")
 
 ```
 
-```
+```python
 Dataset already downloaded
 Loading 'quickstart-video'
  100% |███████████████████| 10/10 [5.0s elapsed, 0s remaining, 1.9 samples/s]
@@ -1099,28 +1089,28 @@ Dataset 'quickstart-video' created
 
 ```
 
-```
+```python
 [45]:
 
 ```
 
-```
+```python
 random_view = dataset.take(2, seed=51)
 
 ```
 
-```
+```python
 [50]:
 
 ```
 
-```
+```python
 anno_key = "vid_anno"
 random_view.annotate(anno_key, label_field="frames.detections", launch_editor=True)
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Computing video metadata...
  100% |█████████████████████| 1/1 [296.8ms elapsed, 0s remaining, 3.4 samples/s]
@@ -1139,22 +1129,22 @@ In the attributes, the tracks that are shown provide some additional options ove
 
 Let’s save our annotation work and then load the labels back into FiftyOne.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 random_view.load_annotations("vid_anno", cleanup=True)
 
 ```
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 session.view = random_view
 
 ```
@@ -1163,12 +1153,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 session.freeze()
 
 ```
@@ -1179,17 +1169,3 @@ Building high-quality datasets is the best way to produce high-performing models
 
 Thanks to the tight integration between FiftyOne and CVAT, the power of one of the most popular open-source annotation tools is just one command away when working with your datasets in FiftyOne.
 
-- Annotating Datasets with CVAT
-  - [Setup](#Setup)
-  - [Unlabeled dataset annotation](#Unlabeled-dataset-annotation)
-    - [Loading data](#Loading-data)
-    - [Finding unique samples](#Finding-unique-samples)
-    - [Annotating samples in CVAT](#Annotating-samples-in-CVAT)
-    - [Additional annotation parameters](#Additional-annotation-parameters)
-      - [Single label fields](#Single-label-fields)
-      - [Label types](#Label-types)
-      - [Attributes](#Attributes)
-      - [Label schema](#Label-schema)
-  - [Dataset improvement](#Dataset-improvement)
-  - [Annotating videos in CVAT](#Annotating-videos-in-CVAT)
-  - [Summary](#Summary)

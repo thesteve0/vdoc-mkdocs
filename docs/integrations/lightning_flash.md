@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Lightning Flash Integration
-
-Contents
-
-
 # Lightning Flash Integration [¶](\#lightning-flash-integration "Permalink to this headline")
 
 We’ve collaborated with the
@@ -41,7 +31,7 @@ roll out native support for them in FiftyOne via this integration!
 In order to use the Lightning Flash integration, you’ll need to
 [install Flash](https://lightning-flash.readthedocs.io/en/latest/installation.html):
 
-```
+```python
 # This integration currently requires these versions explicitly
 pip install lightning-flash>=0.7.0dev
 pip install pytorch-lightning
@@ -51,7 +41,7 @@ pip install pytorch-lightning
 Depending on the type of Flash tasks that you intend to use, you will also need
 to install some package extras:
 
-```
+```python
 # Required to use image tasks
 pip install 'lightning-flash[image]'
 
@@ -92,7 +82,7 @@ Behind the scenes, FiftyOne will construct the appropriate Flash
 inference and output the predictions as [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances that are added to
 your dataset.
 
-```
+```python
 from flash.core.classification import FiftyOneLabelsOutput
 from flash.image import ImageClassifier, ObjectDetector
 
@@ -155,7 +145,7 @@ Specifying FiftyOne outputs will result in predictions returned as
 [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") objects that you can easily add to your FiftyOne datasets via
 [`set_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values").
 
-```
+```python
 from itertools import chain
 
 from flash import Trainer
@@ -214,7 +204,7 @@ model. However, if necessary, you can also explicitly pass the labels to most
 [`Output`](https://lightning-flash.readthedocs.io/en/latest/api/generated/flash.core.data.io.output.Output.html#flash.core.data.io.output.Output "(in Flash)") instances,
 FiftyOne-style outputs included:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -276,7 +266,7 @@ Flash model’s embeddings and execute powerful workflows like
 [cluster analysis](../tutorials/image_embeddings.html) and
 [similarity search](../fiftyone_concepts/app.html#app-similarity), all in only a few lines of code!
 
-```
+```python
 import numpy as np
 
 from flash.core.data.utils import download_data
@@ -335,11 +325,3 @@ and let FiftyOne handle performing the inference!
 
 ![embeddings_example](../_images/flash_embeddings.png)
 
-- Lightning Flash Integration
-  - [Setup](#setup)
-  - [Model training](#model-training)
-  - [Model predictions](#model-predictions)
-    - [Applying Flash models to FiftyOne datasets](#applying-flash-models-to-fiftyone-datasets)
-    - [Manually adding predictions](#manually-adding-predictions)
-    - [Specifying class names](#specifying-class-names)
-  - [Image embeddings](#image-embeddings)

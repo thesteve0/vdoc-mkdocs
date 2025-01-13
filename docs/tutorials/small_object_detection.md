@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Detecting Small Objects with SAHI
-
-Contents
-
-
 # Detecting Small Objects with SAHI [¶](\#Detecting-Small-Objects-with-SAHI "Permalink to this headline")
 
 ![Teaser](../_images/small_object_detection.jpg)
@@ -42,17 +32,17 @@ For this walkthrough, we’ll be using the following libraries:
 
 If you haven’t already, install the latest versions of these libraries:
 
-```
+```python
 [62]:
 
 ```
 
-```
+```python
 pip install -U fiftyone sahi ultralytics huggingface_hub --quiet
 
 ```
 
-```
+```python
 Note: you may need to restart the kernel to use updated packages.
 
 ```
@@ -61,12 +51,12 @@ Let’s get started! 🚀
 
 First, import the necessary modules from FiftyOne:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.huggingface as fouh
@@ -76,17 +66,17 @@ from fiftyone import ViewField as F
 
 Now, let’s download some data. We’ll be taking advantage of FiftyOne’s [Hugging Face Hub integration](https://docs.voxel51.com/integrations/huggingface.html#huggingface-hub) to load a subset of the [VisDrone dataset](https://github.com/VisDrone/VisDrone-Dataset) directly from the [Hugging Face Hub](https://huggingface.co/docs/hub/en/index):
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 dataset = fouh.load_from_hub("Voxel51/VisDrone2019-DET", name="sahi-test", max_samples=100, overwrite=True)
 
 ```
 
-```
+```python
 Downloading config file fiftyone.yml from Voxel51/VisDrone2019-DET
 Loading dataset
 Importing samples...
@@ -96,17 +86,17 @@ Importing samples...
 
 Before adding any predictions, let’s take a look at the dataset:
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 Session launched. Run `session.show()` to open the App in a cell output.
 
 ```
@@ -117,12 +107,12 @@ Session launched. Run `session.show()` to open the App in a cell output.
 
 Now that we know what our data looks like, let’s run our standard inference pipeline with a YOLOv8 (large-variant) model. We can load the model from Ultralytics and then apply this directly to our FiftyOne dataset using `apply_model()`, thanks to [FiftyOne’s Ultralytics integration](https://docs.voxel51.com/integrations/ultralytics.html):
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 from ultralytics import YOLO
 
 ckpt_path = "yolov8l.pt"
@@ -133,19 +123,19 @@ dataset.apply_model(model, label_field="base_model")
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [25.0s elapsed, 0s remaining, 4.0 samples/s]
 
 ```
 
 Alternatively, if we want FiftyOne to handle the model downloading and location management for us, we can load the same model directly from the [FiftyOne Model Zoo](https://docs.voxel51.com/user_guide/model_zoo/index.html):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## comment this out if you want to use the model from the zoo
 # model = foz.load_zoo_model("yolov8l-coco-torch")
 # ckpt_path = model.config.model_path
@@ -155,12 +145,12 @@ Alternatively, if we want FiftyOne to handle the model downloading and location 
 
 Now that we have predictions, we can visualize them in the App:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -172,12 +162,12 @@ Looking at the model’s predictions next to the ground truth, we can see a few 
 First and foremost, the classes detected by our _YOLOv8l_ model are different from the ground truth classes in the VisDrone dataset. Our YOLO model was trained on the [COCO dataset](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html#coco-2017), which has 80 classes, while the VisDrone dataset has 12 classes, including an `ignore_regions` class. To simplify the comparison, we’ll focus on just the few most common classes in the dataset, and will map the VisDrone classes to the COCO
 classes as follows:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 mapping = {"pedestrians": "person", "people": "person", "van": "car"}
 mapped_view = dataset.map_labels("ground_truth", mapping)
 
@@ -185,12 +175,12 @@ mapped_view = dataset.map_labels("ground_truth", mapping)
 
 And then filter our labels to only include the classes we’re interested in:
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 def get_label_fields(sample_collection):
     """Get the (detection) label fields of a Dataset or DatasetView."""
     label_fields = list(
@@ -211,22 +201,22 @@ def filter_all_labels(sample_collection):
 
 ```
 
-```
+```python
 [51]:
 
 ```
 
-```
+```python
 filtered_view = filter_all_labels(mapped_view)
 
 ```
 
-```
+```python
 [52]:
 
 ```
 
-```
+```python
 session.view = filtered_view.view()
 
 ```
@@ -247,23 +237,23 @@ Illustration of Slicing Aided Hyper Inference. Image courtesy of SAHI Github Rep
 The SAHI technique is implemented in the `sahi` Python package that we installed earlier. SAHI is a framework which is compatible with many object detection models, including YOLOv8. We can choose the detection model we want to use and create an instance of any of the classes that subclass `sahi.models.DetectionModel`, including YOLOv8, YOLOv5, and even Hugging Face Transformers models. We will create our model object using SAHI’s `AutoDetectionModel` class, specifying the model type and
 the path to the checkpoint file:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 from sahi import AutoDetectionModel
 from sahi.predict import get_prediction, get_sliced_prediction
 
 ```
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 detection_model = AutoDetectionModel.from_pretrained(
     model_type='yolov8',
     model_path=ckpt_path,
@@ -276,35 +266,35 @@ detection_model = AutoDetectionModel.from_pretrained(
 
 Before we generate sliced predictions, let’s inspect the model’s predictions on a trial image, using SAHI’s `get_prediction()` function:
 
-```
+```python
 [60]:
 
 ```
 
-```
+```python
 result = get_prediction(dataset.first().filepath, detection_model, verbose=0)
 print(result)
 
 ```
 
-```
+```python
 <sahi.prediction.PredictionResult object at 0x2b0e9c250>
 
 ```
 
 Fortunately, SAHI results objects have a `to_fiftyone_detections()` method, which converts the results to FiftyOne detections:
 
-```
+```python
 [61]:
 
 ```
 
-```
+```python
 print(result.to_fiftyone_detections())
 
 ```
 
-```
+```python
 [<Detection: {\
     'id': '661858c20ae3edf77139db7a',\
     'attributes': {},\
@@ -551,12 +541,12 @@ This makes our lives easy, so we can focus on the data and not the nitty gritty 
 
 SAHI’s `get_sliced_prediction()` function works in the same way as `get_prediction()`, with a few additional hyperparameters that let us configure how the image is sliced. In particular, we can specify the slice height and width, and the overlap between slices. Here’s an example:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 sliced_result = get_sliced_prediction(
     dataset.skip(40).first().filepath,
     detection_model,
@@ -570,12 +560,12 @@ sliced_result = get_sliced_prediction(
 
 As a sanity check, we can compare the number of detections in the sliced predictions to the number of detections in the original predictions:
 
-```
+```python
 [91]:
 
 ```
 
-```
+```python
 num_sliced_dets = len(sliced_result.to_fiftyone_detections())
 num_orig_dets = len(result.to_fiftyone_detections())
 
@@ -584,7 +574,7 @@ print(f"Detections predicted with slicing: {num_sliced_dets}")
 
 ```
 
-```
+```python
 Detections predicted without slicing: 17
 Detections predicted with slicing: 73
 
@@ -594,12 +584,12 @@ We can see that the number of predictions increased substantially! We have yet t
 
 To simplify the process, we’ll define a function that adds predictions to a sample in a specified label field, and then we will iterate over the dataset, applying the function to each sample. This function will pass the sample’s filepath and slicing hyperparameters to `get_sliced_prediction()`, and then add the predictions to the sample in the specified label field:
 
-```
+```python
 [70]:
 
 ```
 
-```
+```python
 def predict_with_slicing(sample, label_field, **kwargs):
     result = get_sliced_prediction(
         sample.filepath, detection_model, verbose=0, **kwargs
@@ -610,12 +600,12 @@ def predict_with_slicing(sample, label_field, **kwargs):
 
 We’ll keep the slice overlap fixed at 0.20.2, and see how the slice height and width affect the quality of the predictions:
 
-```
+```python
 [92]:
 
 ```
 
-```
+```python
 kwargs = {"overlap_height_ratio": 0.2, "overlap_width_ratio": 0.2}
 
 for sample in dataset.iter_samples(progress=True, autosave=True):
@@ -624,12 +614,12 @@ for sample in dataset.iter_samples(progress=True, autosave=True):
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [13.6m elapsed, 0s remaining, 0.1 samples/s]
 
 ```
 
-```
+```python
 04/12/2024 10:06:59 - INFO - eta.core.utils -    100% |█████████████████| 100/100 [13.6m elapsed, 0s remaining, 0.1 samples/s]
 
 ```
@@ -638,32 +628,32 @@ Note how these inference times are much longer than the original inference time.
 
 Now let’s once again filter our labels to only include the classes we’re interested in, and visualize the results in the FiftyOne App:
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 filtered_view = filter_all_labels(mapped_view)
 
 ```
 
-```
+```python
 [98]:
 
 ```
 
-```
+```python
 session = fo.launch_app(filtered_view, auto=False)
 
 ```
 
-```
+```python
 Session launched. Run `session.show()` to open the App in a cell output.
 
 ```
 
-```
+```python
 04/12/2024 10:18:33 - INFO - fiftyone.core.session.session -   Session launched. Run `session.show()` to open the App in a cell output.
 
 ```
@@ -679,12 +669,12 @@ method to do this:
 
 Sticking with our filtered view of the dataset, let’s run an evaluation routine comparing our predictions from each of the prediction label fields to the ground truth labels. We will use the `evaluate_detections()` method, which will mark each detection as a true positive, false positive, or false negative. Here we use the default IoU threshold of 0.50.5, but you can adjust this as needed:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 base_results = filtered_view.evaluate_detections("base_model", gt_field="ground_truth", eval_key="eval_base_model")
 large_slice_results = filtered_view.evaluate_detections("large_slices", gt_field="ground_truth", eval_key="eval_large_slices")
 small_slice_results = filtered_view.evaluate_detections("small_slices", gt_field="ground_truth", eval_key="eval_small_slices")
@@ -693,12 +683,12 @@ small_slice_results = filtered_view.evaluate_detections("small_slices", gt_field
 
 Let’s print a report for each:
 
-```
+```python
 [107]:
 
 ```
 
-```
+```python
 print("Base model results:")
 base_results.print_report()
 
@@ -712,7 +702,7 @@ small_slice_results.print_report()
 
 ```
 
-```
+```python
 Base model results:
               precision    recall  f1-score   support
 
@@ -756,12 +746,12 @@ We can see that as we introduce more slices, the number of false positives incre
 
 Let’s dive a little bit deeper into these results. We noted earlier that the model struggles with small objects, so let’s see how these three approaches fare on objects smaller than 32×3232×32 pixels. We can perform this filtering using FiftyOne’s [ViewField](https://docs.voxel51.com/recipes/creating_views.html#View-expressions):
 
-```
+```python
 [110]:
 
 ```
 
-```
+```python
 ## Filtering for only small boxes
 
 box_width, box_height = F("bounding_box")[2], F("bounding_box")[3]
@@ -776,96 +766,96 @@ for lf in get_label_fields(filtered_view):
 
 ```
 
-```
+```python
 [111]:
 
 ```
 
-```
+```python
 session.view = small_boxes_view.view()
 
 ```
 
 ![Small Box View](../_images/sahi_small_boxes_view.gif)
 
-```
+```python
 [112]:
 
 ```
 
-```
+```python
 small_boxes_base_results = small_boxes_view.evaluate_detections("base_model", gt_field="ground_truth", eval_key="eval_small_boxes_base_model")
 small_boxes_large_slice_results = small_boxes_view.evaluate_detections("large_slices", gt_field="ground_truth", eval_key="eval_small_boxes_large_slices")
 small_boxes_small_slice_results = small_boxes_view.evaluate_detections("small_slices", gt_field="ground_truth", eval_key="eval_small_boxes_small_slices")
 
 ```
 
-```
+```python
 Evaluating detections...
 
 ```
 
-```
+```python
 04/12/2024 10:54:36 - INFO - fiftyone.utils.eval.detection -   Evaluating detections...
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [1.1m elapsed, 0s remaining, 7.8 samples/s]
 
 ```
 
-```
+```python
 04/12/2024 10:55:44 - INFO - eta.core.utils -    100% |█████████████████| 100/100 [1.1m elapsed, 0s remaining, 7.8 samples/s]
 
 ```
 
-```
+```python
 Evaluating detections...
 
 ```
 
-```
+```python
 04/12/2024 10:55:44 - INFO - fiftyone.utils.eval.detection -   Evaluating detections...
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [1.2m elapsed, 0s remaining, 6.2 samples/s]
 
 ```
 
-```
+```python
 04/12/2024 10:56:59 - INFO - eta.core.utils -    100% |█████████████████| 100/100 [1.2m elapsed, 0s remaining, 6.2 samples/s]
 
 ```
 
-```
+```python
 Evaluating detections...
 
 ```
 
-```
+```python
 04/12/2024 10:56:59 - INFO - fiftyone.utils.eval.detection -   Evaluating detections...
 
 ```
 
-```
+```python
  100% |█████████████████| 100/100 [1.4m elapsed, 0s remaining, 5.7 samples/s]
 
 ```
 
-```
+```python
 04/12/2024 10:58:23 - INFO - eta.core.utils -    100% |█████████████████| 100/100 [1.4m elapsed, 0s remaining, 5.7 samples/s]
 
 ```
 
-```
+```python
 [113]:
 
 ```
 
-```
+```python
 print("Small Box — Base model results:")
 small_boxes_base_results.print_report()
 
@@ -879,7 +869,7 @@ small_boxes_small_slice_results.print_report()
 
 ```
 
-```
+```python
 Small Box — Base model results:
               precision    recall  f1-score   support
 
@@ -923,22 +913,22 @@ This makes the value of SAHI crystal clear! The recall when using SAHI is much h
 
 Now that we know SAHI is effective at detecting small objects, let’s look at the places where our predictions are most confident but do not align with the ground truth labels. We can do this by creating an evaluation patches view, filtering for predictions tagged as false positives and sorting by confidence:
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 high_conf_fp_view = filtered_view.to_evaluation_patches(eval_key="eval_small_slices").match(F("type")=="fp").sort_by("small_slices.detection.confidence")
 
 ```
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 session.view = high_conf_fp_view.view()
 
 ```
@@ -980,13 +970,3 @@ If you found this tutorial helpful, you may also be interested in the following 
 - [FiftyOne Plugin for Comparing Models on Specific Detections](https://github.com/allenleetc/model-comparison)
 
 
-- Detecting Small Objects with SAHI
-  - [Setup and Installation](#Setup-and-Installation)
-  - [Standard Inference with YOLOv8](#Standard-Inference-with-YOLOv8)
-  - [Detecting Small Objects with SAHI](#id1)
-  - [Evaluating SAHI Predictions](#Evaluating-SAHI-Predictions)
-    - [Using FiftyOne’s Evaluation API](#Using-FiftyOne’s-Evaluation-API)
-    - [Evaluating Performance on Small Objects](#Evaluating-Performance-on-Small-Objects)
-    - [Identifying Edge Cases](#Identifying-Edge-Cases)
-  - [Summary](#Summary)
-  - [Additional Resources](#Additional-Resources)

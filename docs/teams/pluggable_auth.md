@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Pluggable Authentication
-
-Contents
-
-
 # Pluggable Authentication [¶](\#pluggable-authentication "Permalink to this headline")
 
 FiftyOne Teams v1.6.0 introduces Pluggable Authentication that provides the
@@ -125,7 +115,7 @@ configure FiftyOne teams to authenticate users via OIDC or OAuth2 compatible
 Identity Providers. Below is an example configuration for KeyCloak as an
 Identity Provider.
 
-```
+```python
 {
     "id": "keycloak-example",
     "wellKnown": "https://keycloak.dev.acme.ai/auth/realms/acme/.well-known/openid-configuration",
@@ -222,7 +212,7 @@ beyond simple authentication to interact with external APIs and internal
 services for complex user management and group assignment tasks. Here’s a
 breakdown of the example:
 
-```
+```python
 // Example JavaScript hook implementation
 async function Hook(context) {
     const { params, services, trigger } = context;
@@ -358,7 +348,7 @@ hook.
 
 ### Example JavaScript Hook [¶](\#example-javascript-hook "Permalink to this headline")
 
-```
+```python
 // Example JavaScript hook implementation
 async function Hook(context) {
     const { params, services, trigger } = context;
@@ -438,22 +428,3 @@ async function Hook(context) {
 | `services.webhookService` | Experimental |
 | `process.env['MY_ENV_VAR']` | Syntax for reading environment variables in a JS Hook. |
 
-- Pluggable Authentication
-  - [FiftyOne Authentication Modes](#fiftyone-authentication-modes)
-    - [Legacy Mode](#legacy-mode)
-    - [Internal Mode](#internal-mode)
-  - [Super Admin UI](#super-admin-ui)
-    - [New User Invitations](#new-user-invitations)
-  - [Identity Providers (IdP)](#identity-providers-idp)
-  - [Getting Started with Internal Mode](#getting-started-with-internal-mode)
-  - [Syncing with 3rd Party Directories (Open Directory, LDAP, and Active Directory)](#syncing-with-3rd-party-directories-open-directory-ldap-and-active-directory)
-    - [**Context Object**](#context-object)
-    - [**External API Integration**](#external-api-integration)
-    - [Error Handling](#error-handling)
-    - [Summary](#summary)
-  - [REST API](#rest-api)
-  - [Configuration](#configuration)
-  - [JavaScript Hooks](#javascript-hooks)
-    - [Overview](#overview)
-    - [Example JavaScript Hook](#example-javascript-hook)
-    - [Actionable Triggers](#actionable-triggers)

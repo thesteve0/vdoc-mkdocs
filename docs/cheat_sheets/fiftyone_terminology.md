@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Cheat Sheets](index.html) >
-- FiftyOne terminology
-
-Contents
-
-
 # FiftyOne terminology [¶](\#fiftyone-terminology "Permalink to this headline")
 
 This cheat sheet introduces the key terminology in the world of FiftyOne.
@@ -56,8 +46,3 @@ This cheat sheet introduces the key terminology in the world of FiftyOne.
 | Sidebar | Vertical component on [left side of App](../fiftyone_concepts/app.html#app-fields-sidebar)<br>that provides convenient options for filtering the dataset and<br>toggling the visibility of fields in the sample grid. |
 | View bar | [Horizontal bar at the top of the App](../fiftyone_concepts/app.html#app-create-view) where<br>you can create and compose view stages via point and click operations<br>to filter your dataset and show only the content of interest. |
 
-- FiftyOne terminology
-  - [The basics](#the-basics)
-  - [Other components](#other-components)
-  - [Data model](#data-model)
-  - [FiftyOne App](#fiftyone-app)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- ActivityNet Integration
-
-Contents
-
-
 # ActivityNet Integration [¶](\#activitynet-integration "Permalink to this headline")
 
 With FiftyOne, you can easily download, visualize, and evaluate on the
@@ -25,7 +15,7 @@ Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
 and load an ActivityNet split into FiftyOne:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -55,7 +45,7 @@ explore different slices of the dataset without downloading the entire split.
 When performing partial downloads, FiftyOne will use existing downloaded data
 first if possible before resorting to downloading additional data from YouTube.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -148,7 +138,7 @@ To download the source files, you must fill out
 
 After downloading the source files, they can be loaded into FiftyOne like so:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -163,7 +153,7 @@ session = fo.launch_app(dataset)
 
 where `source_dir` contains the source files in the following format:
 
-```
+```python
 source_dir/
     missing_files.zip
     missing_files_v1-2_test.zip
@@ -178,7 +168,7 @@ source_dir/
 
 If you have already decompressed the archives, that is okay too:
 
-```
+```python
 source_dir/
     missing_files/
         v_<id>.<ext>
@@ -261,7 +251,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -276,7 +266,7 @@ of the matching segment (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: segment.<eval_key>
         ID: segment.<eval_key>_id
        IoU: segment.<eval_key>_iou
@@ -296,7 +286,7 @@ when running ActivityNet-style evaluation.
 The example below demonstrates ActivityNet-style temporal detection evaluation
 on the [ActivityNet 200 dataset](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200):
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -356,7 +346,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                  precision    recall  f1-score   support
 
     Bathing dog       0.50      0.40      0.44         5
@@ -381,7 +371,7 @@ Note
 All mAP calculations are performed according to the
 [ActivityNet evaluation protocol](https://github.com/activitynet/ActivityNet/tree/master/Evaluation).
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -440,7 +430,7 @@ positive/negative counts, you will likely want to set the
 parameter to `False` during evaluation so that predicted segments can be
 matched with ground truth segments of different classes.
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -505,7 +495,7 @@ The example snippet below loads the
 [ActivityNet 200](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200) dataset and runs the
 official ActivityNet evaluation protocol on some mock model predictions:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -617,14 +607,3 @@ IoU thresholds. Then compute mAP by averaging the per-class AP values over
 all classes
 
 
-- ActivityNet Integration
-  - [Loading the ActivityNet dataset](#loading-the-activitynet-dataset)
-    - [Partial Downloads](#partial-downloads)
-    - [Full Split Downloads](#full-split-downloads)
-  - [ActivityNet-style evaluation](#activitynet-style-evaluation)
-    - [Overview](#overview)
-    - [Example evaluation](#example-evaluation)
-    - [mAP and PR curves](#map-and-pr-curves)
-    - [Confusion matrices](#confusion-matrices)
-  - [ActivityNet Challenge](#activitynet-challenge)
-  - [mAP protocol](#map-protocol)

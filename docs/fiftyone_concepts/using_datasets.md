@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Using FiftyOne Datasets
-
-Contents
-
-
 # Using FiftyOne Datasets [¶](\#using-fiftyone-datasets "Permalink to this headline")
 
 After a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") has been loaded or created, FiftyOne provides powerful
@@ -21,7 +11,7 @@ FiftyOne [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dat
 
 Instantiating a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") object creates a new dataset.
 
-```
+```python
 import fiftyone as fo
 
 dataset1 = fo.Dataset("my_first_dataset")
@@ -32,7 +22,7 @@ dataset3 = fo.Dataset()  # generates a default unique name
 
 Check to see what datasets exist at any time via [`list_datasets()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.list_datasets "fiftyone.core.dataset.list_datasets"):
 
-```
+```python
 print(fo.list_datasets())
 # ['my_first_dataset', 'my_second_dataset', '2020.08.04.12.36.29']
 
@@ -42,7 +32,7 @@ Load a dataset using
 [`load_dataset()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.load_dataset "fiftyone.core.dataset.load_dataset").
 Dataset objects are singletons. Cool!
 
-```
+```python
 _dataset2 = fo.load_dataset("my_second_dataset")
 _dataset2 is dataset2  # True
 
@@ -52,7 +42,7 @@ If you try to load a dataset via `Dataset(...)` or create a new dataset via
 [`load_dataset()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.load_dataset "fiftyone.core.dataset.load_dataset") you’re going to
 have a bad time:
 
-```
+```python
 _dataset2 = fo.Dataset("my_second_dataset")
 # Dataset 'my_second_dataset' already exists; use `fiftyone.load_dataset()`
 # to load an existing dataset
@@ -70,7 +60,7 @@ The media type of a dataset is determined by the
 The [`media_type`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.media_type "fiftyone.core.dataset.Dataset.media_type") property of a
 dataset is set based on the first sample added to it:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -89,7 +79,7 @@ print(dataset.media_type)
 Note that datasets are homogeneous; they must contain samples of the same media
 type (except for [grouped datasets](groups.html#groups)):
 
-```
+```python
 sample = fo.Sample(filepath="/path/to/video.mp4")
 dataset.add_sample(sample)
 # MediaTypeError: Sample media type 'video' does not match dataset media type 'image'
@@ -117,7 +107,7 @@ To make a dataset persistent, set its
 [`persistent`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.persistent "fiftyone.core.dataset.Dataset.persistent") property to
 `True`:
 
-```
+```python
 # Make the dataset persistent
 dataset1.persistent = True
 
@@ -125,7 +115,7 @@ dataset1.persistent = True
 
 Without closing your current Python shell, open a new shell and run:
 
-```
+```python
 import fiftyone as fo
 
 # Verify that both persistent and non-persistent datasets still exist
@@ -140,7 +130,7 @@ been terminated.
 However, if you exit all processes with `fiftyone` imported, then open a new
 shell and run the command again:
 
-```
+```python
 import fiftyone as fo
 
 # Verify that non-persistent datasets have been deleted
@@ -168,7 +158,7 @@ All [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset 
 [`tags`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.tags "fiftyone.core.dataset.Dataset.tags") property that you can use to
 store an arbitrary list of string tags.
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -197,7 +187,7 @@ a dataset to obtain information about the size of the dataset on disk,
 including its metadata in the database and optionally the size of the physical
 media on disk:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -207,7 +197,7 @@ fo.pprint(dataset.stats(include_media=True))
 
 ```
 
-```
+```python
 {
     'samples_count': 200,
     'samples_bytes': 1290762,
@@ -225,14 +215,14 @@ You can also invoke
 [dataset view](using_views.html#using-views) to retrieve stats for a specific subset of
 the dataset:
 
-```
+```python
 view = dataset[:10].select_fields("ground_truth")
 
 fo.pprint(view.stats(include_media=True))
 
 ```
 
-```
+```python
 {
     'samples_count': 10,
     'samples_bytes': 10141,
@@ -256,7 +246,7 @@ Datasets can also store more specific types of ancillary information such as
 [class lists](#storing-classes) and
 [mask targets](#storing-mask-targets).
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -288,7 +278,7 @@ contains a [`DatasetAppConfig`](../api/fiftyone.core.odm.dataset.html#fiftyone.c
 settings that customize how the dataset is visualized in the
 [FiftyOne App](app.html#fiftyone-app).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -306,7 +296,7 @@ You can declare [multiple media fields](app.html#app-multiple-media-fields) on a
 dataset and configure which field is used by various components of the App by
 default:
 
-```
+```python
 import fiftyone.utils.image as foui
 
 # Generate some thumbnail images
@@ -330,7 +320,7 @@ You can set `media_fallback=True` if you want the App to fallback to the
 `filepath` field if an alternate media field is missing for a particular
 sample in the grid and/or modal:
 
-```
+```python
 # Fallback to `filepath` if an alternate media field is missing
 dataset.app_config.media_fallback = True
 dataset.save()
@@ -342,7 +332,7 @@ dataset.save()
 You can store a [custom color scheme](app.html#app-color-schemes) on a dataset
 that should be used by default whenever the dataset is loaded in the App:
 
-```
+```python
 dataset.evaluate_detections(
     "predictions", gt_field="ground_truth", eval_key="eval"
 )
@@ -393,7 +383,7 @@ Did you know? You can also configure color schemes
 You can configure the organization and default expansion state of the
 [sidebar’s field groups](app.html#app-sidebar-groups):
 
-```
+```python
 # Get the default sidebar groups for the dataset
 sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
 
@@ -416,7 +406,7 @@ expensive when the dataset is large.
 
 You can disable frame filtering for a video dataset as follows:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -439,7 +429,7 @@ datasets via your [App config](config.html#configuring-fiftyone-app).
 You can conveniently reset any property of a dataset’s App config by setting it
 to `None`:
 
-```
+```python
 # Reset the dataset's color scheme
 dataset.app_config.color_scheme = None
 dataset.save()  # must save after edits
@@ -454,7 +444,7 @@ or you can reset the entire App config by setting the
 [`app_config`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.app_config "fiftyone.core.dataset.Dataset.app_config") property to
 `None`:
 
-```
+```python
 # Reset App config
 dataset.app_config = None
 print(dataset.app_config)
@@ -491,7 +481,7 @@ You can also pass your class lists to methods such as
 and [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export") that
 require knowledge of the possible classes in a dataset or field(s).
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -553,7 +543,7 @@ require knowledge of the mask targets for a dataset or field(s).
 
 If you are working with 2D segmentation masks, specify target keys as integers:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -580,7 +570,7 @@ dataset.save()  # must save after edits
 If you are working with RGB segmentation masks, specify target keys as RGB hex
 strings:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -650,13 +640,13 @@ defines the label strings for each node in the skeleton.
 For example, the skeleton below is defined by edges between the following
 nodes:
 
-```
+```python
 left hand <-> left shoulder <-> right shoulder <-> right hand
 left eye <-> right eye <-> mouth
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -707,7 +697,7 @@ is deleted, any existing reference in memory will be in a volatile state.
 attributes, but calling any other attribute or method will raise a
 `DoesNotExistError`.
 
-```
+```python
 dataset = fo.load_dataset("my_first_dataset")
 dataset.delete()
 
@@ -730,7 +720,7 @@ print(dataset.persistent)
 An individual [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") is always initialized with a `filepath` to the
 corresponding data on disk.
 
-```
+```python
 # An image sample
 sample = fo.Sample(filepath="/path/to/image.png")
 
@@ -748,7 +738,7 @@ data is read only as needed by the App.
 
 A [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") can easily be added to an existing [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"):
 
-```
+```python
 dataset = fo.Dataset("example_dataset")
 dataset.add_sample(sample)
 
@@ -757,7 +747,7 @@ dataset.add_sample(sample)
 When a sample is added to a dataset, the relevant attributes of the [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample")
 are automatically updated:
 
-```
+```python
 print(sample.in_dataset)
 # True
 
@@ -768,7 +758,7 @@ print(sample.dataset_name)
 
 Every sample in a dataset is given a unique ID when it is added:
 
-```
+```python
 print(sample.id)
 # 5ee0ebd72ceafe13e7741c42
 
@@ -776,7 +766,7 @@ print(sample.id)
 
 Multiple samples can be efficiently added to a dataset in batches:
 
-```
+```python
 print(len(dataset))
 # 1
 
@@ -799,7 +789,7 @@ FiftyOne provides multiple ways to access a [`Sample`](../api/fiftyone.core.samp
 
 You can iterate over the samples in a dataset:
 
-```
+```python
 for sample in dataset:
     print(sample)
 
@@ -809,7 +799,7 @@ Use [`first()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.
 [`last()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.last "fiftyone.core.dataset.Dataset.last") to retrieve the first and
 last samples in a dataset, respectively:
 
-```
+```python
 first_sample = dataset.first()
 last_sample = dataset.last()
 
@@ -819,7 +809,7 @@ Samples can be accessed directly from datasets by their IDs or their filepaths.
 [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") objects are singletons, so the same [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") instance is returned
 whenever accessing the sample from the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"):
 
-```
+```python
 same_sample = dataset[sample.id]
 print(same_sample is sample)
 # True
@@ -840,7 +830,7 @@ best practice is to lookup individual samples by ID or filepath, or use
 array slicing to extract a range of samples, and iterate over samples in a
 view.
 
-```
+```python
 dataset[0]
 # KeyError: Accessing dataset samples by numeric index is not supported.
 # Use sample IDs, filepaths, slices, boolean arrays, or a boolean ViewExpression instead
@@ -853,7 +843,7 @@ Samples can be removed from a [`Dataset`](../api/fiftyone.core.dataset.html#fift
 or in batches via
 [`delete_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_samples "fiftyone.core.dataset.Dataset.delete_samples"):
 
-```
+```python
 dataset.delete_samples(sample_id)
 
 # equivalent to above
@@ -866,7 +856,7 @@ dataset.delete_samples([sample_id1, sample_id2])
 Samples can also be removed from a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") by passing [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") instance(s)
 or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") instances:
 
-```
+```python
 # Remove a random sample
 sample = dataset.take(1).first()
 dataset.delete_samples(sample)
@@ -880,7 +870,7 @@ dataset.delete_samples(view)
 If a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") object in memory is deleted from a dataset, it will revert to
 a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") that has not been added to a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"):
 
-```
+```python
 print(sample.in_dataset)
 # False
 
@@ -925,7 +915,7 @@ The `created_at` and `last_modified_at` fields are
 [read-only](#read-only-fields) and are automatically populated/updated
 when you add samples to datasets and modify them, respectively.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -934,7 +924,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -951,7 +941,7 @@ print(sample)
 
 The names of available fields can be checked on any individual [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"):
 
-```
+```python
 sample.field_names
 # ('id', 'filepath', 'tags', 'metadata', 'created_at', 'last_modified_at')
 
@@ -960,7 +950,7 @@ sample.field_names
 The value of a [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyone.core.fields.Field") for a given [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") can be accessed either by either
 attribute or item access:
 
-```
+```python
 sample.filepath
 sample["filepath"]  # equivalent
 
@@ -972,7 +962,7 @@ You can use
 [`get_field_schema()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.get_field_schema "fiftyone.core.dataset.Dataset.get_field_schema") to
 retrieve detailed information about the schema of the samples in a dataset:
 
-```
+```python
 dataset = fo.Dataset("a_dataset")
 dataset.add_sample(sample)
 
@@ -980,7 +970,7 @@ dataset.get_field_schema()
 
 ```
 
-```
+```python
 OrderedDict([\
     ('id', <fiftyone.core.fields.ObjectIdField at 0x7fbaa862b358>),\
     ('filepath', <fiftyone.core.fields.StringField at 0x11c77ae10>),\
@@ -995,12 +985,12 @@ OrderedDict([\
 You can also view helpful information about a dataset, including its schema, by
 printing it:
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:           a_dataset
 Media type:     image
 Num samples:    1
@@ -1025,7 +1015,7 @@ as descriptions on your dataset’s fields!
 
 New fields can be added to a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") using item assignment:
 
-```
+```python
 sample["integer_field"] = 51
 sample.save()
 
@@ -1034,12 +1024,12 @@ sample.save()
 If the [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") belongs to a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"), the dataset’s schema will automatically
 be updated to reflect the new field:
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:           a_dataset
 Media type:     image
 Num samples:    1
@@ -1060,7 +1050,7 @@ A [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyon
 `date`, `datetime`, `list`, `dict`, or more complex data structures
 [like label types](#using-labels):
 
-```
+```python
 sample["animal"] = fo.Classification(label="alligator")
 sample.save()
 
@@ -1072,7 +1062,7 @@ on every other sample in the dataset with the value `None`.
 Fields must have the same type (or `None`) across all samples in the dataset.
 Setting a field to an inappropriate type raises an error:
 
-```
+```python
 sample2.integer_field = "a string"
 sample2.save()
 # ValidationError: a string could not be converted to int
@@ -1092,7 +1082,7 @@ You can also use
 declare new sample fields directly on datasets without explicitly populating
 any values on its samples:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(
@@ -1125,7 +1115,7 @@ print(dataset.get_field_schema())
 
 ```
 
-```
+```python
 {
     'id': <fiftyone.core.fields.ObjectIdField object at 0x7f9280803910>,
     'filepath': <fiftyone.core.fields.StringField object at 0x7f92d273e0d0>,
@@ -1147,12 +1137,12 @@ print(dataset.get_field_schema())
 Whenever a new field is added to a dataset, the field is immediately available
 on all samples in the dataset with the value `None`:
 
-```
+```python
 print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '642d8848f291652133df8d3a',
     'media_type': 'image',
@@ -1181,7 +1171,7 @@ print(sample)
 You can also declare nested fields on existing embedded documents using dot
 notation:
 
-```
+```python
 # Declare a new attribute on a `Classification` field
 dataset.add_sample_field("predictions.breed", fo.StringField)
 
@@ -1198,7 +1188,7 @@ field contains an embedded document, you can call
 [`get_field_schema()`](../api/fiftyone.core.fields.html#fiftyone.core.fields.EmbeddedDocumentField.get_field_schema "fiftyone.core.fields.EmbeddedDocumentField.get_field_schema")
 to recursively inspect its nested fields:
 
-```
+```python
 field = dataset.get_field("predictions")
 print(field.document_type)
 # <class 'fiftyone.core.labels.Classification'>
@@ -1216,7 +1206,7 @@ print(type(field))
 If your dataset contains a [`ListField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.ListField "fiftyone.core.fields.ListField") with no value type declared, you can add
 the type later by appending `[]` to the field path:
 
-```
+```python
 field = dataset.get_field("more_tags")
 print(field.field)  # None
 
@@ -1248,7 +1238,7 @@ by the list’s values [in the App](app.html#app-filtering).
 
 You can make any edits you wish to the fields of an existing [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"):
 
-```
+```python
 sample = fo.Sample(
     filepath="/path/to/image.jpg",
     ground_truth=fo.Detections(
@@ -1283,7 +1273,7 @@ datasets.
 A common workflow is to iterate over a dataset
 [or view](using_views.html#editing-view-fields) and edit each sample:
 
-```
+```python
 for sample in dataset:
     sample["new_field"] = ...
     sample.save()
@@ -1295,7 +1285,7 @@ is an equivalent way to iterate over a dataset that provides a
 `progress=True` option that prints a progress bar tracking the status of the
 iteration:
 
-```
+```python
 # Prints a progress bar tracking the status of the iteration
 for sample in dataset.iter_samples(progress=True):
     sample["new_field"] = ...
@@ -1308,7 +1298,7 @@ also provides an `autosave=True` option that causes all changes to samples
 emitted by the iterator to be automatically saved using efficient batch
 updates:
 
-```
+```python
 # Automatically saves sample edits in efficient batches
 for sample in dataset.iter_samples(autosave=True):
     sample["new_field"] = ...
@@ -1323,7 +1313,7 @@ on batch update patterns.
 
 A field can be deleted from a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") using `del`:
 
-```
+```python
 del sample["integer_field"]
 
 ```
@@ -1334,7 +1324,7 @@ the sample. If the [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sam
 Fields can also be deleted at the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") level, in which case they are
 removed from every [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in the dataset:
 
-```
+```python
 dataset.delete_sample_field("integer_field")
 
 sample.integer_field
@@ -1351,7 +1341,7 @@ One approach is to manually declare the field with
 [`add_sample_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_sample_field "fiftyone.core.dataset.Dataset.add_sample_field")
 with the appropriate metadata provided:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -1368,7 +1358,7 @@ You can also use
 [`get_field()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_field "fiftyone.core.collections.SampleCollection.get_field") to
 retrieve a field and update it’s metadata at any time:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1415,7 +1405,7 @@ over fields or attributes [in the sidebar](app.html#app-fields-sidebar)!
 Certain [default sample fields](#default-sample-fields) like `created_at`
 and `last_modified_at` are read-only and thus cannot be manually edited:
 
-```
+```python
 from datetime import datetime
 import fiftyone as fo
 
@@ -1435,7 +1425,7 @@ sample.last_modified_at = datetime.utcnow()
 You can also manually mark additional fields or embedded fields as read-only
 at any time:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1475,7 +1465,7 @@ attributes in-place to save the changes to the database.
 Note that read-only fields do not interfere with the ability to add/delete
 samples from datasets:
 
-```
+```python
 sample = fo.Sample(filepath="/path/to/image.jpg", uuid="1234")
 dataset.add_sample(sample)
 
@@ -1486,7 +1476,7 @@ dataset.delete_samples(sample)
 Any fields that you’ve manually marked as read-only may be reverted to
 editable at any time:
 
-```
+```python
 sample = dataset.first()
 
 # Revert 'filepath' to editable
@@ -1516,7 +1506,7 @@ For example, suppose you’re working on a
 interested in finding videos that contain specific classes of interest, eg
 `person`, in at least one frame:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1540,7 +1530,7 @@ A more efficient approach is to first use
 [`create_summary_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.create_summary_field "fiftyone.core.dataset.Dataset.create_summary_field")
 to summarize the relevant input field path(s):
 
-```
+```python
 # Generate a summary field for object labels
 field_name = dataset.create_summary_field("frames.detections.detections.label")
 
@@ -1579,7 +1569,7 @@ You can use
 [`list_summary_fields()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.list_summary_fields "fiftyone.core.dataset.Dataset.list_summary_fields")
 to list the names of the summary fields on your dataset:
 
-```
+```python
 print(dataset.list_summary_fields())
 # ['frames_detections_label', 'frames_detections_confidence', ...]
 
@@ -1590,7 +1580,7 @@ updated whenever there have been modifications to its source field. You can use
 [`check_summary_fields()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.check_summary_fields "fiftyone.core.dataset.Dataset.check_summary_fields")
 to check for summary fields that _may_ need to be updated:
 
-```
+```python
 # Newly created summary fields don't needed updating
 print(dataset.check_summary_fields())
 # []
@@ -1615,7 +1605,7 @@ the summary’s source field.
 Use [`update_summary_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.update_summary_field "fiftyone.core.dataset.Dataset.update_summary_field")
 to regenerate a summary field based on the current values of its source field:
 
-```
+```python
 dataset.update_summary_field("frames_detections_label")
 
 ```
@@ -1625,7 +1615,7 @@ Finally, use
 or [`delete_summary_fields()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_summary_fields "fiftyone.core.dataset.Dataset.delete_summary_fields")
 to delete existing summary field(s) that you no longer need:
 
-```
+```python
 dataset.delete_summary_field("frames_detections_label")
 
 ```
@@ -1660,7 +1650,7 @@ All [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fif
 this list is empty, but you can use it to store information like dataset splits
 or application-specific issues like low quality images:
 
-```
+```python
 dataset = fo.Dataset("tagged_dataset")
 
 dataset.add_samples(
@@ -1682,7 +1672,7 @@ Did you know? You can add, edit, and filter by sample tags
 
 The `tags` field can be used like a standard Python list:
 
-```
+```python
 sample = dataset.first()
 sample.tags.append("new_tag")
 sample.save()
@@ -1703,7 +1693,7 @@ and
 [`match_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags")
 that you can use to perform batch queries and edits to sample tags:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1735,7 +1725,7 @@ some workflows when it is available.
 You can store date information in FiftyOne datasets by populating fields with
 `date` or `datetime` values:
 
-```
+```python
 from datetime import date, datetime
 import fiftyone as fo
 
@@ -1770,7 +1760,7 @@ any valid `datetime` object when setting a [`DateTimeField`](../api/fiftyone.cor
 including timezone-aware datetimes, which are internally converted to UTC
 format for safekeeping.
 
-```
+```python
 # A datetime in your local timezone
 now = datetime.utcnow().astimezone()
 
@@ -1818,7 +1808,7 @@ Note
 All [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances are dynamic! You can add custom fields to your
 labels to store custom information:
 
-```
+```python
 # Provide some default fields
 label = fo.Classification(label="cat", confidence=0.98)
 
@@ -1851,7 +1841,7 @@ be used to store a score associated with the model prediction and can be
 visualized in the App or used, for example, when
 [evaluating regressions](evaluation.html#evaluating-regressions).
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -1863,7 +1853,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -1905,7 +1895,7 @@ used to store metadata about the model prediction. These additional fields can
 be visualized in the App or used by Brain methods, e.g., when
 [computing label mistakes](../brain.html#brain-label-mistakes).
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -1917,7 +1907,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -1962,7 +1952,7 @@ overarching model (if applicable) in the
 [`logits`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classifications.logits "fiftyone.core.labels.Classifications.logits") attribute of the
 [`Classifications`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classifications "fiftyone.core.labels.Classifications") object.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -1986,7 +1976,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2069,7 +2059,7 @@ FiftyOne stores box coordinates as floats in `[0, 1]` relative to the
 dimensions of the image. Bounding boxes are represented by a length-4 list
 in the format:
 
-```
+```python
 [<top-left-x>, <top-left-y>, <width>, <height>]
 
 ```
@@ -2082,7 +2072,7 @@ In the case of model predictions, an optional confidence score for each
 detection can be stored in the
 [`confidence`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection.confidence "fiftyone.core.labels.Detection.confidence") attribute.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -2104,7 +2094,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2151,7 +2141,7 @@ models on your datasets.
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your detections
 by dynamically adding new fields to each [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection") instance:
 
-```
+```python
 import fiftyone as fo
 
 detection = fo.Detection(
@@ -2165,7 +2155,7 @@ print(detection)
 
 ```
 
-```
+```python
 <Detection: {
     'id': '60f7458c467d81f41c200551',
     'attributes': {},
@@ -2212,7 +2202,7 @@ value indicates the object.
 Masks can be of any size; they are stretched as necessary to fill the
 object’s bounding box when visualizing in the App.
 
-```
+```python
 import numpy as np
 from PIL import Image
 
@@ -2240,7 +2230,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2271,7 +2261,7 @@ print(sample)
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your instance
 segmentations by dynamically adding new fields to each [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection") instance:
 
-```
+```python
 import numpy as np
 import fiftyone as fo
 
@@ -2287,7 +2277,7 @@ print(detection)
 
 ```
 
-```
+```python
 <Detection: {
     'id': '60f74568467d81f41c200550',
     'attributes': {},
@@ -2339,7 +2329,7 @@ Note
 
 Did you know? FiftyOne also supports [3D polylines](#d-polylines)!
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -2365,7 +2355,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2403,7 +2393,7 @@ print(sample)
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your polylines by
 dynamically adding new fields to each [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instance:
 
-```
+```python
 import fiftyone as fo
 
 polyline = fo.Polyline(
@@ -2418,7 +2408,7 @@ print(polyline)
 
 ```
 
-```
+```python
 <Polyline: {
     'id': '60f746b4467d81f41c200555',
     'attributes': {},
@@ -2448,7 +2438,7 @@ method.
 The method accepts a list of 8 `(x, y)` points describing the vertices of the
 cuboid in the format depicted below:
 
-```
+```python
    7--------6
   /|       /|
  / |      / |
@@ -2465,7 +2455,7 @@ Note
 FiftyOne stores vertex coordinates as floats in `[0, 1]` relative to the
 dimensions of the image.
 
-```
+```python
 import cv2
 import numpy as np
 import fiftyone as fo
@@ -2505,7 +2495,7 @@ session = fo.launch_app(dataset)
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your cuboids by
 dynamically adding new fields to each [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instance:
 
-```
+```python
 polyline = fo.Polyline.from_cuboid(
     vertics, frame_size=frame_size,
     label="vehicle",
@@ -2532,7 +2522,7 @@ Note
 FiftyOne stores vertex coordinates as floats in `[0, 1]` relative to the
 dimensions of the image.
 
-```
+```python
 import cv2
 import numpy as np
 import fiftyone as fo
@@ -2569,7 +2559,7 @@ session = fo.launch_app(dataset)
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your rotated
 bounding boxes by dynamically adding new fields to each [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instance:
 
-```
+```python
 polyline = fo.Polyline.from_rotated_box(
     xc, yc, width, height, theta, frame_size=frame_size,
     label="cat",
@@ -2608,7 +2598,7 @@ Each [`Keypoint`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint
 optionally have a list of per-point confidences in `[0, 1]` in its
 [`confidence`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint.confidence "fiftyone.core.labels.Keypoint.confidence") attribute:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -2627,7 +2617,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2658,7 +2648,7 @@ if you add a custom list attribute to a [`Keypoint`](../api/fiftyone.core.labels
 matches the number of points, these values will be interpreted as per-point
 attributes and rendered as such in the App:
 
-```
+```python
 import fiftyone as fo
 
 keypoint = fo.Keypoint(
@@ -2673,7 +2663,7 @@ print(keypoint)
 
 ```
 
-```
+```python
 <Keypoint: {
     'id': '60f74723467d81f41c200556',
     'attributes': {},
@@ -2695,7 +2685,7 @@ encode the meanings.
 If you are working with keypoint skeletons and a particular point is missing or
 not visible for an instance, use nan values for its coordinates:
 
-```
+```python
 keypoint = fo.Keypoint(
     label="rectangle",
     points=[\
@@ -2744,7 +2734,7 @@ Segmentation masks can be stored in either of these formats:
 Segmentation masks can have any size; they are stretched as necessary to fit
 the image’s extent when visualizing in the App.
 
-```
+```python
 import cv2
 import numpy as np
 
@@ -2763,7 +2753,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2844,7 +2834,7 @@ Note that [`map_path`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Hea
 must contain the **absolute path** to the map on disk in order to use the
 dataset from different current working directories in the future.
 
-```
+```python
 import cv2
 import numpy as np
 
@@ -2863,7 +2853,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -2916,7 +2906,7 @@ colormap defined by the `colorscale` of your
 
 
 
-```
+```python
 [\
       [0.000, "rgb(165,0,38)"],\
       [0.111, "rgb(215,48,39)"],\
@@ -2937,7 +2927,7 @@ The example code below demonstrates the possibilities that heatmaps provide by
 overlaying random gaussian kernels with positive or negative sign on an image
 dataset and configuring the App’s colorscale in various ways on-the-fly:
 
-```
+```python
 import os
 import numpy as np
 import fiftyone as fo
@@ -2969,21 +2959,21 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 # Select `Settings -> Color by value` in the App
 # Heatmaps will now be rendered using your default colorscale (printed below)
 print(session.config.colorscale)
 
 ```
 
-```
+```python
 # Switch to a different named colorscale
 session.config.colorscale = "RdBu"
 session.refresh()
 
 ```
 
-```
+```python
 # Switch to a custom colorscale
 session.config.colorscale = [\
     [0.00, "rgb(166,206,227)"],\
@@ -3019,7 +3009,7 @@ attribute can be used to store a model prediction score, and you can add
 [custom attributes](#using-labels) as well, which can be visualized in the
 App.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/video.mp4")
@@ -3029,7 +3019,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'video',
@@ -3056,7 +3046,7 @@ can use the
 factory method to perform the necessary conversion to frames automatically
 based on the sample’s [video metadata](#using-metadata):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3075,7 +3065,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'video',
@@ -3108,7 +3098,7 @@ print(sample)
 The [`TemporalDetections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.TemporalDetections "fiftyone.core.labels.TemporalDetections") class holds a list of temporal detections for a
 sample:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/video.mp4")
@@ -3123,7 +3113,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'video',
@@ -3166,7 +3156,7 @@ The App’s [3D visualizer](app.html#app-3d-visualizer) supports rendering 3D ob
 detections represented as [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection") instances with their `label`, `location`,
 `dimensions`, and `rotation` attributes populated as shown below:
 
-```
+```python
 import fiftyone as fo
 
 # Object label
@@ -3202,7 +3192,7 @@ The App’s [3D visualizer](app.html#app-3d-visualizer) supports rendering 3D
 polylines represented as [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instances with their `label` and `points3d`
 attributes populated as shown below:
 
-```
+```python
 import fiftyone as fo
 
 # Object label
@@ -3237,7 +3227,7 @@ and latitude coordinates stored in the following format:
 
 
 
-```
+```python
 [[lon1, lat1], [lon2, lat2], ...]
 
 ```
@@ -3251,7 +3241,7 @@ entries describe holes:
 
 
 
-```
+```python
 [\
       [[lon1, lat1], [lon2, lat2], ...],\
       [[lon1, lat1], [lon2, lat2], ...],\
@@ -3270,7 +3260,7 @@ If you have multiple geometries of each type that you wish to store on a single
 sample, then you can use the [`GeoLocations`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocations "fiftyone.core.labels.GeoLocations") class and its appropriate
 properties to do so.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -3292,7 +3282,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -3331,7 +3321,7 @@ All location data is stored in
 can easily retrieve the raw GeoJSON data for a slice of your dataset using the
 [values()](using_aggregations.html#aggregations-values) aggregation:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3342,7 +3332,7 @@ print(values)
 
 ```
 
-```
+```python
 [{'type': 'Point', 'coordinates': [-73.9592175465766, 40.71052995514191]},\
  {'type': 'Point', 'coordinates': [-73.97748118760413, 40.74660360881843]},\
  {'type': 'Point', 'coordinates': [-73.9508690871987, 40.766631164626]},\
@@ -3357,7 +3347,7 @@ All [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fifty
 this list is empty, but you can use it to store application-specific
 information like whether the label is incorrect:
 
-```
+```python
 detection = fo.Detection(label="cat", bounding_box=[0, 0, 1, 1])
 
 detection.tags.append("mistake")
@@ -3381,7 +3371,7 @@ and
 [`select_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_labels "fiftyone.core.collections.SampleCollection.select_labels")
 that you can use to perform batch queries and edits to label tags:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -3427,7 +3417,7 @@ will be removed in an upcoming release.
 Instead, [add custom attributes directly](#using-labels) to your
 [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") objects:
 
-```
+```python
 detection = fo.Detection(label="cat", bounding_box=[0.1, 0.1, 0.8, 0.8])
 detection["custom_attribute"] = 51
 
@@ -3452,7 +3442,7 @@ schema of the attributes that you’re storing.
 | [`ListAttribute`](../api/fiftyone.core.labels.html#fiftyone.core.labels.ListAttribute "fiftyone.core.labels.ListAttribute") | `list` | A list attribute |
 | [`Attribute`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Attribute "fiftyone.core.labels.Attribute") | arbitrary | A generic attribute of any type |
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -3489,7 +3479,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -3556,7 +3546,7 @@ and [polylines](#polylines).
 Let’s load some instance segmentations from the COCO dataset to see this in
 action:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3579,7 +3569,7 @@ For example, you can use
 [`Detections.to_polylines()`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections.to_polylines "fiftyone.core.labels.Detections.to_polylines")
 to convert instance segmentations to polylines:
 
-```
+```python
 # Convert `Detections` to `Polylines`
 polylines = detections.to_polylines(tolerance=2)
 print(polylines)
@@ -3590,7 +3580,7 @@ Or you can use
 [`Detections.to_segmentation()`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections.to_segmentation "fiftyone.core.labels.Detections.to_segmentation")
 to convert instance segmentations to semantic segmentation masks:
 
-```
+```python
 metadata = fo.ImageMetadata.build_for(sample.filepath)
 
 # Convert `Detections` to `Segmentation`
@@ -3615,7 +3605,7 @@ In addition, the [`fiftyone.utils.labels`](../api/fiftyone.utils.labels.html#mod
 utility methods for converting entire collections’ labels between common
 formats:
 
-```
+```python
 import fiftyone.utils.labels as foul
 
 # Convert instance segmentations to semantic segmentations stored on disk
@@ -3643,7 +3633,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:        coco-2017-validation-25
 Media type:  image
 Num samples: 25
@@ -3669,7 +3659,7 @@ format based on the type of the `label_field` and the `dataset_type` that you
 specify for the export without explicitly storing the transformed labels as a
 new field on your dataset:
 
-```
+```python
 # Export the instance segmentations in the `instances` field as semantic
 # segmentation images on disk
 dataset.export(
@@ -3690,7 +3680,7 @@ For example, all [Label classes](#using-labels) and
 [Metadata classes](#using-metadata) are dynamic, so you can add custom
 attributes to them as follows:
 
-```
+```python
 # Provide some default attributes
 label = fo.Classification(label="cat", confidence=0.98)
 
@@ -3716,7 +3706,7 @@ You can use
 to detect the names and type(s) of any undeclared dynamic embedded document
 attributes on a dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -3726,7 +3716,7 @@ print(dataset.get_dynamic_field_schema())
 
 ```
 
-```
+```python
 {
     'ground_truth.detections.iscrowd': <fiftyone.core.fields.FloatField>,
     'ground_truth.detections.area': <fiftyone.core.fields.FloatField>,
@@ -3738,7 +3728,7 @@ You can then use
 [`add_sample_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_sample_field "fiftyone.core.dataset.Dataset.add_sample_field") to
 declare a specific dynamic embedded document attribute:
 
-```
+```python
 dataset.add_sample_field("ground_truth.detections.iscrowd", fo.FloatField)
 
 ```
@@ -3748,7 +3738,7 @@ or you can use the
 method to declare all dynamic embedded document attribute(s) that contain
 values of a single type:
 
-```
+```python
 dataset.add_dynamic_sample_fields()
 
 ```
@@ -3765,12 +3755,12 @@ You can provide the optional `flat=True` option to
 retrieve a flattened version of a dataset’s schema that includes all embedded
 document attributes as top-level keys:
 
-```
+```python
 print(dataset.get_field_schema(flat=True))
 
 ```
 
-```
+```python
 {
     'id': <fiftyone.core.fields.ObjectIdField>,
     'filepath': <fiftyone.core.fields.StringField>,
@@ -3798,7 +3788,7 @@ print(dataset.get_field_schema(flat=True))
 By default, dynamic attributes are not declared on a dataset’s schema when
 samples are added to it:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(
@@ -3838,7 +3828,7 @@ provide an optional `dynamic=True` option that you can provide to automatically
 declare any dynamic embedded document attributes encountered while importing
 data:
 
-```
+```python
 dataset = fo.Dataset()
 
 dataset.add_sample(sample, dynamic=True)
@@ -3858,7 +3848,7 @@ and
 [`add_samples(..., dynamic=True)`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples "fiftyone.core.dataset.Dataset.add_samples")
 do not validate newly declared field’s types against existing field values:
 
-```
+```python
 import fiftyone as fo
 
 sample1 = fo.Sample(
@@ -3897,7 +3887,7 @@ dataset’s schema using
 [`remove_dynamic_sample_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.remove_dynamic_sample_field "fiftyone.core.dataset.Dataset.remove_dynamic_sample_field")
 in order for the dataset to be usable again:
 
-```
+```python
 # Removes dynamic field from dataset's schema without deleting the values
 dataset.remove_dynamic_sample_field("ground_truth.age")
 
@@ -3910,7 +3900,7 @@ and
 to create [views](using_views.html#using-views) that select/exclude specific dynamic
 attributes from your dataset and its schema:
 
-```
+```python
 dataset.add_sample_field("ground_truth.age", fo.Field)
 sample = dataset.first()
 
@@ -3958,7 +3948,7 @@ populate new [dynamic attributes](#dynamic-attributes) as needed.
 
 To illustrate, let’s start by defining an empty embedded document field:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -3978,7 +3968,7 @@ field.
 You can explicitly declare new fields using
 [`add_sample_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_sample_field "fiftyone.core.dataset.Dataset.add_sample_field"):
 
-```
+```python
 # Declare a new `camera_id` attribute
 dataset.add_sample_field("camera_info.camera_id", fo.StringField)
 
@@ -3990,7 +3980,7 @@ or you can implicitly declare new fields using
 [`add_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples "fiftyone.core.dataset.Dataset.add_samples") with the
 `dynamic=True` flag:
 
-```
+```python
 # Includes a new `quality` attribute
 sample1 = fo.Sample(
     filepath="/path/to/image1.jpg",
@@ -4016,7 +4006,7 @@ or you can implicitly declare new fields using
 [`set_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values")
 with the `dynamic=True` flag:
 
-```
+```python
 # Populate a new `description` attribute on each sample in the dataset
 dataset.set_values("camera_info.description", ["foo", "bar"], dynamic=True)
 
@@ -4049,7 +4039,7 @@ To avoid this requirement, consider defining custom documents
 For example, suppose you add the following embedded document classes to a
 `foo.bar` module:
 
-```
+```python
 from datetime import datetime
 
 import fiftyone as fo
@@ -4068,7 +4058,7 @@ class LabelMetadata(fo.DynamicEmbeddedDocument):
 and then `foo.bar` to FiftyOne’s `module_path` config setting (see
 [this page](config.html#configuring-fiftyone) for more ways to register this):
 
-```
+```python
 export FIFTYONE_MODULE_PATH=foo.bar
 
 # Verify module path
@@ -4079,7 +4069,7 @@ fiftyone config
 You’re now free to use your custom embedded document classes as you please,
 whether this be top-level sample fields or nested fields:
 
-```
+```python
 import fiftyone as fo
 import foo.bar as fb
 
@@ -4110,7 +4100,7 @@ dataset.persistent = True
 As long as `foo.bar` is on your `module_path`, this dataset can be loaded in
 future sessions and manipulated as usual:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("test")
@@ -4118,7 +4108,7 @@ print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '6217b696d181786cff360740',
     'media_type': 'image',
@@ -4154,7 +4144,7 @@ Any [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fif
 as a image sample, and datasets composed of image samples have media type
 `image`:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -4167,7 +4157,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '6655ca275e20e244f2c8fe31',
     'media_type': 'image',
@@ -4185,7 +4175,7 @@ print(sample)
 To get started exploring image datasets, try loading the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the zoo:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4208,7 +4198,7 @@ Any [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fif
 as a video sample, and datasets composed of video samples have media type
 `video`:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/video.mp4")
@@ -4221,7 +4211,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '6403ccef0a3af5bc780b5a10',
     'media_type': 'video',
@@ -4250,7 +4240,7 @@ well as primitive fields such as integers, strings, and booleans using the same
 dynamic attribute syntax that you use to
 [interact with samples](#adding-sample-fields):
 
-```
+```python
 frame = fo.Frame(
     quality=97.12,
     weather=fo.Classification(label="sunny"),
@@ -4274,7 +4264,7 @@ You must call [`sample.save()`](../api/fiftyone.core.sample.html#fiftyone.core.s
 order to persist changes to the database when editing video samples and/or
 their frames that are in datasets.
 
-```
+```python
 <Sample: {
     'id': '6403ccef0a3af5bc780b5a10',
     'media_type': 'video',
@@ -4296,13 +4286,13 @@ it.
 
 You can iterate over the frames in a video sample using the expected syntax:
 
-```
+```python
 for frame_number, frame in sample.frames.items():
     print(frame)
 
 ```
 
-```
+```python
 <Frame: {
     'id': '6403cd972a54cee076f88bd2',
     'frame_number': 1,
@@ -4347,12 +4337,12 @@ for frame_number, frame in sample.frames.items():
 Notice that the dataset’s summary indicates that the dataset has media type
 `video` and includes the schema of any frame fields you add:
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:           2021.05.03.18.30.20
 Media type:     video
 Num samples:    1
@@ -4384,7 +4374,7 @@ The samples in video datasets can be accessed
 [like usual](#accessing-samples-in-a-dataset), and the sample’s frame
 labels can be modified by updating the `frames` attribute of a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"):
 
-```
+```python
 sample = dataset.first()
 for frame_number, frame in sample.frames.items():
     frame["frame_str"] = str(frame_number)
@@ -4397,7 +4387,7 @@ print(sample.frames[1])
 
 ```
 
-```
+```python
 <Frame: {
     'id': '6403cd972a54cee076f88bd2',
     'frame_number': 1,
@@ -4425,7 +4415,7 @@ building labeled video samples.
 To get started exploring video datasets, try loading the
 [quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) from the zoo:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4467,7 +4457,7 @@ After a scene is constructed, it should be written to the disk using the
 [`scene.write()`](../api/fiftyone.core.threed.html#fiftyone.core.threed.Scene.write "fiftyone.core.threed.Scene.write") method, which
 serializes the scene into an FO3D file.
 
-```
+```python
 import fiftyone as fo
 
 scene = fo.Scene()
@@ -4501,7 +4491,7 @@ To modify an exising scene, load it via
 [`Scene.from_fo3d()`](../api/fiftyone.core.threed.html#fiftyone.core.threed.Scene.from_fo3d "fiftyone.core.threed.Scene.from_fo3d"), perform any
 necessary updates, and then re-write it to disk:
 
-```
+```python
 import fiftyone as fo
 
 scene = fo.Scene.from_fo3d("/path/to/scene.fo3d")
@@ -4543,7 +4533,7 @@ We recommend the [`GLTF`](../api/fiftyone.core.threed.html#fiftyone.core.threed.
 3D meshes where possible, as it is the most compact, efficient, and
 web-friendly format for storing and transmitting 3D models.
 
-```
+```python
 import fiftyone as fo
 
 scene = fo.Scene()
@@ -4569,7 +4559,7 @@ FiftyOne supports the
 point cloud format. A code snippet to create a PCD object that can be added
 to a FiftyOne 3D scene is shown below:
 
-```
+```python
 import fiftyone as fo
 
 pcd = fo.PointCloud("my-pcd", "point-cloud.pcd")
@@ -4599,7 +4589,7 @@ initializing it with `flag_for_projection=True`.
 
 Here’s how a typical PCD file is structured:
 
-```
+```python
 import numpy as np
 import open3d as o3d
 
@@ -4643,7 +4633,7 @@ position, rotation, and scale. Their appearance can be customized either by
 setting the `default_material` attribute of the shape object, or dynamically
 from the app.
 
-```
+```python
 import fiftyone as fo
 
 scene = fo.Scene()
@@ -4680,7 +4670,7 @@ being embedded in FO3D files, they can be queried and filtered via
 [dataset views](using_views.html#view-filtering) and [in the App](app.html#app-filtering)
 just like other primitive/label fields.
 
-```
+```python
 import fiftyone as fo
 
 scene = fo.Scene()
@@ -4707,7 +4697,7 @@ In order to visualize 3D datasets in the App’s grid view, you can use
 [`compute_orthographic_projection_images()`](../api/fiftyone.utils.utils3d.html#fiftyone.utils.utils3d.compute_orthographic_projection_images "fiftyone.utils.utils3d.compute_orthographic_projection_images")
 to generate orthographic projection images of each scene:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.utils3d as fou3d
 import fiftyone.zoo as foz
@@ -4733,7 +4723,7 @@ session = fo.launch_app(dataset)
 Note that the method also supports [grouped datasets](groups.html#groups) that
 contain 3D slice(s):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.utils3d as fou3d
 import fiftyone.zoo as foz
@@ -4772,7 +4762,7 @@ documentation for available parameters to customize the projections.
 To get started exploring 3D datasets, try loading the
 [quickstart-3d dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-3d) from the zoo:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4791,7 +4781,7 @@ Also check out the
 [quickstart-groups dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-groups), which
 contains a point cloud slice:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.utils3d as fou3d
 import fiftyone.zoo as foz
@@ -4827,7 +4817,7 @@ Any [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fif
 with extension `.pcd` is recognized as a point cloud sample, and datasets
 composed of point cloud samples have media type `point-cloud`:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/point-cloud.pcd")
@@ -4840,7 +4830,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '6403ce64c8957c42bc8f9e67',
     'media_type': 'point-cloud',
@@ -4881,7 +4871,7 @@ of a sample with [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.l
 
 [Learn more about DatasetViews](using_views.html)
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -4944,7 +4934,7 @@ whole rather than merging their elements
 For example, the following snippet demonstrates merging a new field into an
 existing dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -4977,7 +4967,7 @@ Consider the following variation of the above snippet, which demonstrates a
 workflow where [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") from another dataset are merged into a dataset with
 existing [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") in the same field:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Create a new dataset that only contains predictions with confidence >= 0.9
@@ -5001,7 +4991,7 @@ print(dataset3.count("predictions.detections"))  # 5620
 Finally, the example below demonstrates the use of a custom merge key to define
 which samples to merge:
 
-```
+```python
 import os
 
 # Create a dataset with 100 samples of ground truth labels
@@ -5039,7 +5029,7 @@ perform the merge.
 You can use [`clone()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.clone "fiftyone.core.dataset.Dataset.clone") to create a
 copy of a dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -5081,7 +5071,7 @@ and
 methods to efficiently perform common actions on the sample fields of a
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -5109,7 +5099,7 @@ You can also use
 [dot notation](https://docs.mongodb.com/manual/core/document/#dot-notation)
 to manipulate the fields or subfields of embedded documents in your dataset:
 
-```
+```python
 sample = dataset.first()
 
 # Clone an existing embedded field
@@ -5140,7 +5130,7 @@ dataset.delete_sample_field("predictions.detections.still_label")
 You are always free to perform arbitrary edits to a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") by iterating over
 its contents and editing the samples directly:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -5168,7 +5158,7 @@ provides an `autosave=True` option that causes all changes to samples
 emitted by the iterator to be automatically saved using an efficient batch
 update strategy:
 
-```
+```python
 # Automatically saves sample edits in efficient batches
 for sample in dataset.select_fields().iter_samples(autosave=True):
     sample["random"] = random.random()
@@ -5190,7 +5180,7 @@ You can also use the
 [`save_context()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.save_context "fiftyone.core.collections.SampleCollection.save_context")
 method to perform batched edits using the pattern below:
 
-```
+```python
 # Use a context to save sample edits in efficient batches
 with dataset.save_context() as context:
     for sample in dataset.select_fields():
@@ -5212,7 +5202,7 @@ Another strategy for performing efficient batch edits is to use
 set a field (or embedded field) on each sample in the dataset in a single
 batch operation:
 
-```
+```python
 # Delete the field we added earlier
 dataset.delete_sample_field("random")
 
@@ -5236,7 +5226,7 @@ explicit iteration over the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyo
 Similarly, you can edit nested sample fields of a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") by iterating over
 the dataset and editing the necessary data:
 
-```
+```python
 # Add a tag to all low confidence predictions in the dataset
 for sample in dataset:
     for detection in sample["predictions"].detections:
@@ -5256,7 +5246,7 @@ extract the slice of data you wish to modify and then use
 [`set_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values") to
 save the updated data in a single batch operation:
 
-```
+```python
 # Remove the tags we added in the previous variation
 dataset.untag_labels("low_confidence")
 
@@ -5286,7 +5276,7 @@ attribute values to set on each [`Label`](../api/fiftyone.core.labels.html#fifty
 [`set_label_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_label_values "fiftyone.core.collections.SampleCollection.set_label_values")
 to conveniently perform the updates:
 
-```
+```python
 # Grab some random label IDs
 view = dataset.take(5, seed=51)
 label_ids = view.values("predictions.detections.id", unwind=True)
@@ -5300,83 +5290,3 @@ print(dataset.count_values("predictions.detections.random"))
 
 ```
 
-- Using FiftyOne Datasets
-  - [Datasets](#datasets)
-    - [Dataset media type](#dataset-media-type)
-    - [Dataset persistence](#dataset-persistence)
-    - [Dataset version](#dataset-version)
-    - [Dataset tags](#dataset-tags)
-    - [Dataset stats](#dataset-stats)
-    - [Storing info](#storing-info)
-    - [Dataset App config](#dataset-app-config)
-      - [Multiple media fields](#multiple-media-fields)
-      - [Custom color scheme](#custom-color-scheme)
-      - [Sidebar groups](#sidebar-groups)
-      - [Disable frame filtering](#disable-frame-filtering)
-      - [Resetting a dataset’s App config](#resetting-a-dataset-s-app-config)
-    - [Storing class lists](#storing-class-lists)
-    - [Storing mask targets](#storing-mask-targets)
-    - [Storing keypoint skeletons](#storing-keypoint-skeletons)
-    - [Deleting a dataset](#deleting-a-dataset)
-  - [Samples](#samples)
-    - [Adding samples to a dataset](#adding-samples-to-a-dataset)
-    - [Accessing samples in a dataset](#accessing-samples-in-a-dataset)
-    - [Deleting samples from a dataset](#deleting-samples-from-a-dataset)
-  - [Fields](#fields)
-    - [Default sample fields](#default-sample-fields)
-    - [Accessing fields of a sample](#accessing-fields-of-a-sample)
-    - [Field schemas](#field-schemas)
-    - [Adding fields to a sample](#adding-fields-to-a-sample)
-    - [Adding fields to a dataset](#adding-fields-to-a-dataset)
-    - [Editing sample fields](#editing-sample-fields)
-    - [Removing fields from a sample](#removing-fields-from-a-sample)
-    - [Storing field metadata](#storing-field-metadata)
-    - [Read-only fields](#read-only-fields)
-    - [Summary fields](#summary-fields)
-  - [Media type](#media-type)
-  - [Tags](#tags)
-  - [Metadata](#metadata)
-  - [Dates and datetimes](#dates-and-datetimes)
-  - [Labels](#labels)
-    - [Regression](#regression)
-    - [Classification](#classification)
-    - [Multilabel classification](#multilabel-classification)
-    - [Object detection](#object-detection)
-    - [Instance segmentations](#instance-segmentations)
-    - [Polylines and polygons](#polylines-and-polygons)
-    - [Cuboids](#cuboids)
-    - [Rotated bounding boxes](#rotated-bounding-boxes)
-    - [Keypoints](#keypoints)
-    - [Semantic segmentation](#semantic-segmentation)
-    - [Heatmaps](#heatmaps)
-    - [Temporal detection](#temporal-detection)
-    - [3D detections](#d-detections)
-    - [3D polylines](#d-polylines)
-    - [Geolocation](#geolocation)
-    - [Label tags](#label-tags)
-    - [Label attributes](#label-attributes)
-    - [Converting label types](#converting-label-types)
-  - [Dynamic attributes](#dynamic-attributes)
-  - [Custom embedded documents](#custom-embedded-documents)
-    - [Defining custom documents on-the-fly](#defining-custom-documents-on-the-fly)
-    - [Defining custom documents in modules](#defining-custom-documents-in-modules)
-  - [Image datasets](#image-datasets)
-    - [Example image dataset](#example-image-dataset)
-  - [Video datasets](#video-datasets)
-    - [Example video dataset](#example-video-dataset)
-  - [3D datasets](#d-datasets)
-    - [3D meshes](#d-meshes)
-    - [3D point clouds](#d-point-clouds)
-    - [3D shapes](#d-shapes)
-    - [3D annotations](#d-annotations)
-    - [Orthographic projection images](#orthographic-projection-images)
-    - [Example 3D datasets](#example-3d-datasets)
-  - [Point cloud datasets](#point-cloud-datasets)
-  - [DatasetViews](#datasetviews)
-  - [Merging datasets](#merging-datasets)
-  - [Cloning datasets](#cloning-datasets)
-  - [Batch updates](#batch-updates)
-    - [Cloning, renaming, clearing, and deleting fields](#cloning-renaming-clearing-and-deleting-fields)
-    - [Efficient batch edits](#efficient-batch-edits)
-    - [Setting values](#setting-values)
-    - [Setting label values](#setting-label-values)

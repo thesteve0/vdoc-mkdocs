@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Ultralytics Integration
-
-Contents
-
-
 # Ultralytics Integration [¶](\#ultralytics-integration "Permalink to this headline")
 
 FiftyOne integrates natively with
@@ -21,7 +11,7 @@ To get started with
 [Ultralytics](https://github.com/ultralytics/ultralytics), just install the
 following packages:
 
-```
+```python
 pip install "ultralytics>=8.1.0" "torch>=1.8"
 
 ```
@@ -31,7 +21,7 @@ pip install "ultralytics>=8.1.0" "torch>=1.8"
 The examples below show how to run inference with various Ultralytics models on
 the following sample dataset:
 
-```
+```python
 # Suppress Ultralytics logging
 import os; os.environ["YOLO_VERBOSE"] = "False"
 
@@ -52,7 +42,7 @@ dataset.select_fields().keep_fields()
 You can directly pass Ultralytics `YOLO` classification models to
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"):
 
-```
+```python
 # YOLOv8
 model = YOLO("yolov8n-cls.pt")
 # model = YOLO("yolov8s-cls.pt")
@@ -71,7 +61,7 @@ session = fo.launch_app(dataset)
 You can directly pass Ultralytics `YOLO` or `RTDETR` detection models to
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"):
 
-```
+```python
 # YOLOv8
 model = YOLO("yolov8s.pt")
 # model = YOLO("yolov8m.pt")
@@ -117,7 +107,7 @@ Alternatively, you can use the
 manually convert Ultralytics predictions to
 [FiftyOne format](../fiftyone_concepts/using_datasets.html#object-detection):
 
-```
+```python
 for sample in dataset.iter_samples(progress=True):
     result = model(sample.filepath)[0]
     sample["boxes"] = fou.to_detections(result)
@@ -130,7 +120,7 @@ for sample in dataset.iter_samples(progress=True):
 You can also load any of these models directly from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
 
-```
+```python
 model_name = "yolov5l-coco-torch"
 # model_name = "yolov8m-coco-torch"
 # model_name = "yolov9e-coco-torch"
@@ -154,7 +144,7 @@ session = fo.launch_app(dataset)
 You can use [`list_zoo_models()`](../api/fiftyone.zoo.html#fiftyone.zoo.list_zoo_models "fiftyone.zoo.list_zoo_models") to see all
 available YOLO models that are compatible with Ultralytics or SuperGradients:
 
-```
+```python
 print(foz.list_zoo_models(tags="yolo"))
 
 ```
@@ -169,7 +159,7 @@ label classes (“coco” for MS COCO or “world” for open-world), followed b
 You can directly pass Ultralytics YOLO segmentation models to
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"):
 
-```
+```python
 model = YOLO("yolov8s-seg.pt")
 # model = YOLO("yolov8m-seg.pt")
 # model = YOLO("yolov8l-seg.pt")
@@ -192,7 +182,7 @@ Alternatively, you can use the
 manually convert Ultralytics predictions into the desired
 [FiftyOne format](../fiftyone_concepts/using_datasets.html#instance-segmentation):
 
-```
+```python
 for sample in dataset.iter_samples(progress=True):
     result = model(sample.filepath)[0]
     sample["detections"] = fou.to_detections(result)
@@ -207,7 +197,7 @@ for sample in dataset.iter_samples(progress=True):
 You can also load YOLOv8, YOLOv9, and YOLO11 segmentation models from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
 
-```
+```python
 model_name = "yolov8n-seg-coco-torch"
 # model_name = "yolov8s-seg-coco-torch"
 # model_name = "yolov8m-seg-coco-torch"
@@ -236,7 +226,7 @@ session = fo.launch_app(dataset)
 You can directly pass Ultralytics YOLO pose models to
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"):
 
-```
+```python
 model = YOLO("yolov8s-pose.pt")
 # model = YOLO("yolov8m-pose.pt")
 # model = YOLO("yolov8l-pose.pt")
@@ -267,7 +257,7 @@ Alternatively, you can use the
 `to_keypoints()` utility to
 manually convert Ultralytics predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#keypoints):
 
-```
+```python
 for sample in dataset.iter_samples(progress=True):
     result = model(sample.filepath)[0]
     sample["keypoints"] = fou.to_keypoints(result)
@@ -282,7 +272,7 @@ for sample in dataset.iter_samples(progress=True):
 You can directly pass Ultralytics YOLO oriented bounding box models to
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"):
 
-```
+```python
 model = YOLO("yolov8n-obb.pt")
 # model = YOLO("yolov8s-obb.pt")
 # model = YOLO("yolov8m-obb.pt")
@@ -298,7 +288,7 @@ session = fo.launch_app(dataset)
 You can also load YOLOv8 oriented bounding box models from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
 
-```
+```python
 model_name = "yolov8n-obb-dotav1-torch"
 # model_name = "yolov8s-obb-dotav1-torch"
 # model_name = "yolov8m-obb-dotav1-torch"
@@ -329,7 +319,7 @@ object detection via
 The usage syntax is the same as for regular object detection, with the caveat
 that you can set the classes that the model should detect:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -369,7 +359,7 @@ You can also load these open-vocabulary models from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo), optionally specifying the classes that
 the model should detect:
 
-```
+```python
 model_name = "yolov8l-world-torch"
 # model_name = "yolov8m-world-torch"
 # model_name = "yolov8x-world-torch"
@@ -391,7 +381,7 @@ When using
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
 you can request batch inference by passing the optional `batch_size` parameter:
 
-```
+```python
 dataset.apply_model(model, label_field="predictions", batch_size=16)
 
 ```
@@ -399,7 +389,7 @@ dataset.apply_model(model, label_field="predictions", batch_size=16)
 The manual inference loops can be also executed using batch inference via the
 pattern below:
 
-```
+```python
 from fiftyone.core.utils import iter_batches
 
 filepaths = dataset.values("filepath")
@@ -427,7 +417,7 @@ export your FiftyOne datasets for use with Ultralytics models.
 For example, the code below prepares a random subset of the
 [Open Images v7 dataset](../dataset_zoo/datasets.html#dataset-zoo-open-images-v7) for fine-tuning:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.ultralytics as fou
 import fiftyone.zoo as foz
@@ -478,7 +468,7 @@ From here,
 [training an Ultralytics model](https://docs.ultralytics.com/modes/train) is
 as simple as passing the path to the dataset YAML file:
 
-```
+```python
 from ultralytics import YOLO
 
 # The path to the `dataset.yaml` file we created above
@@ -499,14 +489,3 @@ path = model.export(format="onnx")
 
 ```
 
-- Ultralytics Integration
-  - [Setup](#setup)
-  - [Inference](#inference)
-    - [Image classification](#image-classification)
-    - [Object detection](#object-detection)
-    - [Instance segmentation](#instance-segmentation)
-    - [Keypoints](#keypoints)
-    - [Oriented bounding boxes](#oriented-bounding-boxes)
-    - [Open vocabulary detection](#open-vocabulary-detection)
-    - [Batch inference](#batch-inference)
-  - [Training](#training)

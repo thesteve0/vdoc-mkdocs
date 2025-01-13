@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Migrations
-
-Contents
-
-
 # Migrations [¶](\#migrations "Permalink to this headline")
 
 This page describes how to migrate between FiftyOne Teams versions, both for
@@ -23,14 +13,14 @@ existing datasets from open source to Teams.
 Users can upgrade their FiftyOne Teams Python client to the latest version as
 follows:
 
-```
+```python
 pip install --index-url https://${TOKEN}@pypi.fiftyone.ai –-upgrade fiftyone
 
 ```
 
 A specific FiftyOne Teams client version can be installed like so:
 
-```
+```python
 pip install --index-url https://${TOKEN}@pypi.fiftyone.ai fiftyone==${VERSION}
 
 ```
@@ -65,7 +55,7 @@ require database migrations when upgrading your deployment.
 Admins can check a deployment’s current version via the Python SDK as shown
 below:
 
-```
+```python
 $ fiftyone migrate --info
 FiftyOne Teams version: 0.7.1
 FiftyOne compatibility version: 0.15.1
@@ -87,7 +77,7 @@ database with a newer Python client version. Instead, an admin must manually
 upgrade your Teams database by installing the newest version of the Teams SDK
 locally, assuming admin privileges, and running the command shown below:
 
-```
+```python
 export FIFTYONE_DATABASE_ADMIN=true
 
 # Option 1: update the database version only (datasets lazily migrated on load)
@@ -117,7 +107,7 @@ the database version.
 
 For example, you can downgrade to Teams v0.10 like so:
 
-```
+```python
 OS_COMPAT_VERSION=0.18.0  # OS compatibility version for Teams v0.10.0
 
 export FIFTYONE_DATABASE_ADMIN=true
@@ -141,7 +131,7 @@ Any datasets that you have created via open source FiftyOne can be migrated to
 your Teams deployment by exporting them in
 [FiftyOneDataset](../fiftyone_concepts/export_datasets.html#fiftyonedataset-export) format:
 
-```
+```python
 # Open source SDK
 import fiftyone as fo
 
@@ -158,7 +148,7 @@ dataset.export(
 and then re-importing them with the Teams SDK connected to your Teams
 deployment:
 
-```
+```python
 # Teams SDK
 import fiftyone as fo
 
@@ -176,7 +166,7 @@ use the dataset in Teams.
 If you need to upload the local media to the cloud, the Teams SDK provides a
 builtin utility for this:
 
-```
+```python
 import fiftyone.core.storage as fos
 
 fos.upload_media(
@@ -205,7 +195,7 @@ to avoid overwriting existing media.
 If the files already exist in cloud buckets, you can manually update the
 filepaths on the dataset:
 
-```
+```python
 cloud_paths = []
 for filepath in dataset.values("filepath"):
     cloud_path = get_cloud_path(filepath)  # your function
@@ -217,13 +207,8 @@ dataset.set_values("filepath", cloud_paths)
 
 When you’re finished, delete the local export of the dataset:
 
-```
+```python
 shutil.rmtree("/tmp/dataset")
 
 ```
 
-- Migrations
-  - [Upgrading your Python SDK](#upgrading-your-python-sdk)
-  - [Upgrading your deployment](#upgrading-your-deployment)
-  - [Downgrading your deployment](#downgrading-your-deployment)
-  - [Migrating datasets to Teams](#migrating-datasets-to-teams)

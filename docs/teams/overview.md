@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- FiftyOne Teams Overview
-
-Contents
-
-
 # FiftyOne Teams Overview [¶](\#fiftyone-teams-overview "Permalink to this headline")
 
 FiftyOne Teams is purpose-built to integrate into your existing ML workflows,
@@ -134,8 +124,3 @@ auditing purposes, and (b) access the system at the customer’s request to
 provide technical support. We are flexible in the mechanisms used to accomplish
 these goals.
 
-- FiftyOne Teams Overview
-  - [FiftyOne vs FiftyOne Teams](#fiftyone-vs-fiftyone-teams)
-  - [Backwards compatibility](#backwards-compatibility)
-  - [System architecture](#system-architecture)
-  - [Security considerations](#security-considerations)

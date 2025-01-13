@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Command-Line Interface (CLI)
-
-Contents
-
-
 # FiftyOne Command-Line Interface (CLI) [¶](\#fiftyone-command-line-interface-cli "Permalink to this headline")
 
 Installing FiftyOne automatically installs `fiftyone`, a command-line interface
@@ -19,14 +10,14 @@ and downloading datasets from the FiftyOne Dataset Zoo.
 
 To see the available top-level commands, type:
 
-```
+```python
 fiftyone --help
 
 ```
 
 You can learn more about any available subcommand via:
 
-```
+```python
 fiftyone <command> --help
 
 ```
@@ -38,14 +29,14 @@ For example, to see your current FiftyOne config, you can execute
 
 To enable tab completion in `bash`, add the following line to your `~/.bashrc`:
 
-```
+```python
 eval "$(register-python-argcomplete fiftyone)"
 
 ```
 
 To enable tab completion in `zsh`, add these lines to your `~/.zshrc`:
 
-```
+```python
 autoload bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete fiftyone)"
@@ -54,7 +45,7 @@ eval "$(register-python-argcomplete fiftyone)"
 
 To enable tab completion in `tcsh`, add these lines to your `~/.tcshrc`:
 
-```
+```python
 eval `register-python-argcomplete --shell tcsh fiftyone`
 
 ```
@@ -63,7 +54,7 @@ eval `register-python-argcomplete --shell tcsh fiftyone`
 
 The FiftyOne command-line interface.
 
-```
+```python
 fiftyone [-h] [-v] [--all-help]
          {quickstart,annotation,brain,evaluation,app,config,constants,convert,datasets,migrate,operators,delegated,plugins,utils,zoo}
          ...
@@ -72,7 +63,7 @@ fiftyone [-h] [-v] [--all-help]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -v, --version         show version info
@@ -102,14 +93,14 @@ available commands:
 
 Launch a FiftyOne quickstart.
 
-```
+```python
 fiftyone quickstart [-h] [-v] [-p PORT] [-A ADDRESS] [-r] [-a] [-w WAIT]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -v, --video           launch the quickstart with a video dataset
@@ -126,19 +117,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Launch the quickstart
 fiftyone quickstart
 
 ```
 
-```
+```python
 # Launch the quickstart with a video dataset
 fiftyone quickstart --video
 
 ```
 
-```
+```python
 # Launch the quickstart as a remote session
 fiftyone quickstart --remote
 
@@ -148,14 +139,14 @@ fiftyone quickstart --remote
 
 Tools for working with your FiftyOne config.
 
-```
+```python
 fiftyone config [-h] [-l] [FIELD]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   FIELD         a config field to print
 
@@ -167,19 +158,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print your entire config
 fiftyone config
 
 ```
 
-```
+```python
 # Print a specific config field
 fiftyone config <field>
 
 ```
 
-```
+```python
 # Print the location of your config on disk (if one exists)
 fiftyone config --locate
 
@@ -189,14 +180,14 @@ fiftyone config --locate
 
 Print constants from `fiftyone.constants`.
 
-```
+```python
 fiftyone constants [-h] [CONSTANT]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   CONSTANT    the constant to print
 
@@ -207,13 +198,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print all constants
 fiftyone constants
 
 ```
 
-```
+```python
 # Print a specific constant
 fiftyone constants <CONSTANT>
 
@@ -223,7 +214,7 @@ fiftyone constants <CONSTANT>
 
 Convert datasets on disk between supported formats.
 
-```
+```python
 fiftyone convert [-h] --input-type INPUT_TYPE --output-type OUTPUT_TYPE
                  [--input-dir INPUT_DIR]
                  [--input-kwargs KEY=VAL [KEY=VAL ...]]
@@ -234,7 +225,7 @@ fiftyone convert [-h] --input-type INPUT_TYPE --output-type OUTPUT_TYPE
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --input-dir INPUT_DIR
@@ -259,7 +250,7 @@ required arguments:
 
 **Examples**
 
-```
+```python
 # Convert an image classification directory tree to TFRecords format
 fiftyone convert \
     --input-dir /path/to/image-classification-directory-tree \
@@ -269,7 +260,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 # Convert a COCO detection dataset to CVAT image format
 fiftyone convert \
     --input-dir /path/to/coco-detection-dataset \
@@ -279,7 +270,7 @@ fiftyone convert \
 
 ```
 
-```
+```python
 # Perform a customized conversion via optional kwargs
 fiftyone convert \
     --input-dir /path/to/coco-detection-dataset \
@@ -296,7 +287,7 @@ fiftyone convert \
 
 Tools for working with FiftyOne datasets.
 
-```
+```python
 fiftyone datasets [-h] [--all-help]
                   {list,info,create,head,tail,stream,export,delete} ...
 
@@ -304,7 +295,7 @@ fiftyone datasets [-h] [--all-help]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -329,14 +320,14 @@ available commands:
 
 List FiftyOne datasets.
 
-```
+```python
 fiftyone datasets list [-h] [-p PATT] [-t TAG [TAG ...]]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help        show this help message and exit
   -p PATT, --glob-patt PATT
@@ -348,19 +339,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List available datasets
 fiftyone datasets list
 
 ```
 
-```
+```python
 # List datasets matching a given pattern
 fiftyone datasets list --glob-patt 'quickstart-*'
 
 ```
 
-```
+```python
 # List datasets with the given tag(s)
 fiftyone datasets list --tags automotive healthcare
 
@@ -370,14 +361,14 @@ fiftyone datasets list --tags automotive healthcare
 
 Print information about FiftyOne datasets.
 
-```
+```python
 fiftyone datasets info [-h] [-p PATT] [-t TAG [TAG ...]] [-s FIELD] [-r] [NAME]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of a dataset
 
@@ -395,7 +386,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print basic information about multiple datasets
 fiftyone datasets info
 fiftyone datasets info --glob-patt 'quickstart-*'
@@ -405,7 +396,7 @@ fiftyone datasets info --sort-by name --reverse
 
 ```
 
-```
+```python
 # Print information about a specific dataset
 fiftyone datasets info <name>
 
@@ -415,14 +406,14 @@ fiftyone datasets info <name>
 
 Print stats about FiftyOne datasets on disk.
 
-```
+```python
 fiftyone datasets stats [-h] [-m] [-c] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                 the name of the dataset
 
@@ -437,7 +428,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print stats about the given dataset on disk
 fiftyone datasets stats <name>
 
@@ -447,7 +438,7 @@ fiftyone datasets stats <name>
 
 Tools for creating FiftyOne datasets.
 
-```
+```python
 fiftyone datasets create [-h] [-n NAME] [-d DATASET_DIR] [-j JSON_PATH]
                          [-t TYPE] [-k KEY=VAL [KEY=VAL ...]]
 
@@ -455,7 +446,7 @@ fiftyone datasets create [-h] [-n NAME] [-d DATASET_DIR] [-j JSON_PATH]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -n NAME, --name NAME  a name for the dataset
@@ -472,14 +463,14 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Create a dataset from the given data on disk
 fiftyone datasets create \
     --name <name> --dataset-dir <dataset-dir> --type <type>
 
 ```
 
-```
+```python
 # Create a dataset from a random subset of the data on disk
 fiftyone datasets create \
     --name <name> --dataset-dir <dataset-dir> --type <type> \
@@ -487,7 +478,7 @@ fiftyone datasets create \
 
 ```
 
-```
+```python
 # Create a dataset from the given samples JSON file
 fiftyone datasets create --json-path <json-path>
 
@@ -497,14 +488,14 @@ fiftyone datasets create --json-path <json-path>
 
 Prints the first few samples in a FiftyOne dataset.
 
-```
+```python
 fiftyone datasets head [-h] [-n NUM_SAMPLES] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset
 
@@ -517,13 +508,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Prints the first few samples in a dataset
 fiftyone datasets head <name>
 
 ```
 
-```
+```python
 # Prints the given number of samples from the head of a dataset
 fiftyone datasets head <name> --num-samples <num-samples>
 
@@ -533,14 +524,14 @@ fiftyone datasets head <name> --num-samples <num-samples>
 
 Prints the last few samples in a FiftyOne dataset.
 
-```
+```python
 fiftyone datasets tail [-h] [-n NUM_SAMPLES] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset
 
@@ -553,13 +544,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print the last few samples in a dataset
 fiftyone datasets tail <name>
 
 ```
 
-```
+```python
 # Print the given number of samples from the tail of a dataset
 fiftyone datasets tail <name> --num-samples <num-samples>
 
@@ -569,14 +560,14 @@ fiftyone datasets tail <name> --num-samples <num-samples>
 
 Stream samples in a FiftyOne dataset to the terminal.
 
-```
+```python
 fiftyone datasets stream [-h] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the name of the dataset
 
@@ -587,7 +578,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Stream the samples of the dataset to the terminal
 fiftyone datasets stream <name>
 
@@ -597,7 +588,7 @@ fiftyone datasets stream <name>
 
 Export FiftyOne datasets to disk in supported formats.
 
-```
+```python
 fiftyone datasets export [-h] [-d EXPORT_DIR] [-j JSON_PATH]
                          [-f LABEL_FIELD] [-t TYPE]
                          [--filters KEY=VAL [KEY=VAL ...]]
@@ -608,7 +599,7 @@ fiftyone datasets export [-h] [-d EXPORT_DIR] [-j JSON_PATH]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset to export
 
@@ -634,20 +625,20 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Export the dataset to disk in the specified format
 fiftyone datasets export <name> \
     --export-dir <export-dir> --type <type> --label-field <label-field>
 
 ```
 
-```
+```python
 # Export the dataset to disk in JSON format
 fiftyone datasets export <name> --json-path <json-path>
 
 ```
 
-```
+```python
 # Only export cats and dogs from the validation split
 fiftyone datasets export <name> \\
     --filters tags=validation ground_truth=cat,dog \\
@@ -655,7 +646,7 @@ fiftyone datasets export <name> \\
 
 ```
 
-```
+```python
 # Perform a customized export of a dataset
 fiftyone datasets export <name> \
     --type <type> \
@@ -667,14 +658,14 @@ fiftyone datasets export <name> \
 
 Renders annotated versions of samples in FiftyOne datasets to disk.
 
-```
+```python
 fiftyone datasets draw [-h] [-d OUTPUT_DIR] [-f LABEL_FIELDS] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset
 
@@ -689,7 +680,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Write annotated versions of the media in the dataset with the
 # specified label field(s) overlaid to disk
 fiftyone datasets draw <name> \
@@ -701,14 +692,14 @@ fiftyone datasets draw <name> \
 
 Rename FiftyOne datasets.
 
-```
+```python
 fiftyone datasets rename [-h] NAME NEW_NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the name of the dataset
   NEW_NAME    a new name for the dataset
@@ -720,7 +711,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Rename the dataset
 fiftyone datasets rename <old-name> <new-name>
 
@@ -730,7 +721,7 @@ fiftyone datasets rename <old-name> <new-name>
 
 Delete FiftyOne datasets.
 
-```
+```python
 fiftyone datasets delete [-h] [-g GLOB_PATT] [--non-persistent]
                          [NAME [NAME ...]]
 
@@ -738,7 +729,7 @@ fiftyone datasets delete [-h] [-g GLOB_PATT] [--non-persistent]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the dataset name(s) to delete
 
@@ -752,19 +743,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete the datasets with the given name(s)
 fiftyone datasets delete <name1> <name2> ...
 
 ```
 
-```
+```python
 # Delete the datasets whose names match the given glob pattern
 fiftyone datasets delete --glob-patt <glob-patt>
 
 ```
 
-```
+```python
 # Delete all non-persistent datasets
 fiftyone datasets delete --non-persistent
 
@@ -777,7 +768,7 @@ Tools for migrating the FiftyOne database.
 See [this page](../fiftyone_concepts/config.html#database-migrations) for more information about migrating
 FiftyOne deployments.
 
-```
+```python
 fiftyone migrate [-h] [-i] [-a]
                  [-v VERSION]
                  [-n DATASET_NAME [DATASET_NAME ...]]
@@ -788,7 +779,7 @@ fiftyone migrate [-h] [-i] [-a]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -i, --info            whether to print info about the current revisions
@@ -805,31 +796,31 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print information about the current revisions of all datasets
 fiftyone migrate --info
 
 ```
 
-```
+```python
 # Migrate the database and all datasets to the current client version
 fiftyone migrate --all
 
 ```
 
-```
+```python
 # Migrate to a specific revision
 fiftyone migrate --all --version <VERSION>
 
 ```
 
-```
+```python
 # Migrate a specific dataset
 fiftyone migrate ... --dataset-name <DATASET_NAME>
 
 ```
 
-```
+```python
 # Update the database version without migrating any existing datasets
 fiftyone migrate
 
@@ -839,14 +830,14 @@ fiftyone migrate
 
 Tools for working with FiftyOne operators and panels.
 
-```
+```python
 fiftyone operators [-h] [--all-help] {list,info} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help   show this help message and exit
   --all-help   show help recursively and exit
@@ -862,14 +853,14 @@ available commands:
 
 List operators and panels that you’ve installed locally.
 
-```
+```python
 fiftyone operators list [-h] [-e] [-d] [-o] [-p] [-n]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -e, --enabled         only show enabled operators and panels
@@ -882,25 +873,25 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List all available operators and panels
 fiftyone operators list
 
 ```
 
-```
+```python
 # List enabled operators and panels
 fiftyone operators list --enabled
 
 ```
 
-```
+```python
 # List disabled operators and panels
 fiftyone operators list --disabled
 
 ```
 
-```
+```python
 # Only list panels
 fiftyone operators list --panels-only
 
@@ -910,14 +901,14 @@ fiftyone operators list --panels-only
 
 Prints information about operators and panels that you’ve installed locally.
 
-```
+```python
 fiftyone operators info [-h] URI
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   URI         the operator or panel URI
 
@@ -928,7 +919,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Prints information about an operator or panel
 fiftyone operators info <uri>
 
@@ -938,14 +929,14 @@ fiftyone operators info <uri>
 
 Tools for working with FiftyOne delegated operations.
 
-```
+```python
 fiftyone delegated [-h] [--all-help] {launch,list,info,fail,delete,cleanup} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help   show this help message and exit
   --all-help   show help recursively and exit
@@ -965,14 +956,14 @@ available commands:
 
 Launches a service for running delegated operations.
 
-```
+```python
 fiftyone delegated launch [-h] [-t TYPE]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -t TYPE, --type TYPE  the type of service to launch. The default is 'local'
@@ -981,7 +972,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Launch a local service
 fiftyone delegated launch
 
@@ -991,7 +982,7 @@ fiftyone delegated launch
 
 List delegated operations.
 
-```
+```python
 fiftyone delegated list [-h]
                         [-o OPERATOR]
                         [-d DATASET]
@@ -1004,7 +995,7 @@ fiftyone delegated list [-h]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -o OPERATOR, --operator OPERATOR
@@ -1024,13 +1015,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List all delegated operations
 fiftyone delegated list
 
 ```
 
-```
+```python
 # List some specific delegated operations
 fiftyone delegated list \
     --dataset quickstart \
@@ -1045,14 +1036,14 @@ fiftyone delegated list \
 
 Prints information about a delegated operation.
 
-```
+```python
 fiftyone delegated info [-h] ID
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   ID          the operation ID
 
@@ -1063,7 +1054,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print information about a delegated operation
 fiftyone delegated info <id>
 
@@ -1073,14 +1064,14 @@ fiftyone delegated info <id>
 
 Manually mark delegated operations as failed.
 
-```
+```python
 fiftyone delegated fail [-h] [IDS ...]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   IDS         an operation ID or list of operation IDs
 
@@ -1091,7 +1082,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Manually mark the specified operation(s) as FAILED
 fiftyone delegated fail <id1> <id2> ...
 
@@ -1101,14 +1092,14 @@ fiftyone delegated fail <id1> <id2> ...
 
 Delete delegated operations.
 
-```
+```python
 fiftyone delegated delete [-h] [IDS ...]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   IDS         an operation ID or list of operation IDs
 
@@ -1119,7 +1110,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete the specified operation(s)
 fiftyone delegated delete <id1> <id2> ...
 
@@ -1129,7 +1120,7 @@ fiftyone delegated delete <id1> <id2> ...
 
 Cleanup delegated operations.
 
-```
+```python
 fiftyone delegated cleanup [-h]
                            [-o OPERATOR]
                            [-d DATASET]
@@ -1141,7 +1132,7 @@ fiftyone delegated cleanup [-h]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -o OPERATOR, --operator OPERATOR
@@ -1160,19 +1151,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete all failed operations associated with a given dataset
 fiftyone delegated cleanup --dataset quickstart --state FAILED
 
 ```
 
-```
+```python
 # Delete all delegated operations associated with non-existent datasets
 fiftyone delegated cleanup --orphan
 
 ```
 
-```
+```python
 # Print information about operations rather than actually deleting them
 fiftyone delegated cleanup --orphan --dry-run
 
@@ -1182,14 +1173,14 @@ fiftyone delegated cleanup --orphan --dry-run
 
 Tools for working with FiftyOne plugins.
 
-```
+```python
 fiftyone plugins [-h] [--all-help] {list,info,download,requirements,create,enable,disable,delete} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -1211,14 +1202,14 @@ available commands:
 
 List plugins that you’ve downloaded or created locally.
 
-```
+```python
 fiftyone plugins list [-h] [-e] [-d] [-n]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help        show this help message and exit
   -e, --enabled     only show enabled plugins
@@ -1229,19 +1220,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List all locally available plugins
 fiftyone plugins list
 
 ```
 
-```
+```python
 # List enabled plugins
 fiftyone plugins list --enabled
 
 ```
 
-```
+```python
 # List disabled plugins
 fiftyone plugins list --disabled
 
@@ -1251,14 +1242,14 @@ fiftyone plugins list --disabled
 
 List plugins that you’ve downloaded or created locally.
 
-```
+```python
 fiftyone plugins info [-h] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the plugin name
 
@@ -1269,7 +1260,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Prints information about a plugin
 fiftyone plugins info <name>
 
@@ -1296,14 +1287,14 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone plugins download [-h] [-n [PLUGIN_NAMES ...]] [-o] URL_OR_GH_REPO
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   URL_OR_GH_REPO        A URL or <user>/<repo>[/<ref>] of a GitHub repository
 
@@ -1317,19 +1308,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Download plugins from a GitHub repository URL
 fiftyone plugins download <github-repo-url>
 
 ```
 
-```
+```python
 # Download plugins by specifying the GitHub repository details
 fiftyone plugins download <user>/<repo>[/<ref>]
 
 ```
 
-```
+```python
 # Download specific plugins from a URL
 fiftyone plugins download <url> --plugin-names <name1> <name2> <name3>
 
@@ -1339,14 +1330,14 @@ fiftyone plugins download <url> --plugin-names <name1> <name2> <name3>
 
 Handles package requirements for plugins.
 
-```
+```python
 fiftyone plugins requirements [-h] [-p] [-i] [-e] [--error-level LEVEL] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                 the plugin name
 
@@ -1361,19 +1352,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print requirements for a plugin
 fiftyone plugins requirements <name> --print
 
 ```
 
-```
+```python
 # Install any requirements for the plugin
 fiftyone plugins requirements <name> --install
 
 ```
 
-```
+```python
 # Ensures that the requirements for the plugin are satisfied
 fiftyone plugins requirements <name> --ensure
 
@@ -1383,7 +1374,7 @@ fiftyone plugins requirements <name> --ensure
 
 Creates or initializes a plugin.
 
-```
+```python
 fiftyone plugins create [-h]
                         [-f [FILES ...]]
                         [-d OUTDIR]
@@ -1398,7 +1389,7 @@ fiftyone plugins create [-h]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the plugin name(s)
 
@@ -1420,13 +1411,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Initialize a new plugin
 fiftyone plugins create <name>
 
 ```
 
-```
+```python
 # Create a plugin from existing files
 fiftyone plugins create \
     <name> \
@@ -1440,14 +1431,14 @@ fiftyone plugins create \
 
 Enables the given plugin(s).
 
-```
+```python
 fiftyone plugins enable [-h] [-a] [NAME ...]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the plugin name(s)
 
@@ -1459,19 +1450,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Enable a plugin
 fiftyone plugins enable <name>
 
 ```
 
-```
+```python
 # Enable multiple plugins
 fiftyone plugins enable <name1> <name2> ...
 
 ```
 
-```
+```python
 # Enable all plugins
 fiftyone plugins enable --all
 
@@ -1481,14 +1472,14 @@ fiftyone plugins enable --all
 
 Disables the given plugin(s).
 
-```
+```python
 fiftyone plugins disable [-h] [-a] [NAME ...]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the plugin name(s)
 
@@ -1500,19 +1491,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Disable a plugin
 fiftyone plugins disable <name>
 
 ```
 
-```
+```python
 # Disable multiple plugins
 fiftyone plugins disable <name1> <name2> ...
 
 ```
 
-```
+```python
 # Disable all plugins
 fiftyone plugins disable --all
 
@@ -1522,14 +1513,14 @@ fiftyone plugins disable --all
 
 Delete plugins from your local machine.
 
-```
+```python
 fiftyone plugins delete [-h] [-a] [NAME ...]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the plugin name(s)
 
@@ -1541,19 +1532,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete a plugin from local disk
 fiftyone plugins delete <name>
 
 ```
 
-```
+```python
 # Delete multiple plugins from local disk
 fiftyone plugins delete <name1> <name2> ...
 
 ```
 
-```
+```python
 # Delete all plugins from local disk
 fiftyone plugins delete --all
 
@@ -1563,7 +1554,7 @@ fiftyone plugins delete --all
 
 FiftyOne utilities.
 
-```
+```python
 fiftyone utils [-h] [--all-help]
                {compute-metadata,transform-images,transform-videos} ...
 
@@ -1571,7 +1562,7 @@ fiftyone utils [-h] [--all-help]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -1588,14 +1579,14 @@ available commands:
 
 Populates the `metadata` field of all samples in the dataset.
 
-```
+```python
 fiftyone utils compute-metadata [-h] [-o] [-n NUM_WORKERS] [-s] DATASET_NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset
 
@@ -1611,13 +1602,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Populate all missing `metadata` sample fields
 fiftyone utils compute-metadata <dataset-name>
 
 ```
 
-```
+```python
 # (Re)-populate the `metadata` field for all samples
 fiftyone utils compute-metadata <dataset-name> --overwrite
 
@@ -1627,7 +1618,7 @@ fiftyone utils compute-metadata <dataset-name> --overwrite
 
 Transforms the images in a dataset per the specified parameters.
 
-```
+```python
 fiftyone utils transform-images [-h] [--size SIZE] [--min-size MIN_SIZE]
                                 [--max-size MAX_SIZE] [-i INTERPOLATION]
                                 [-e EXT] [-f] [--media-field MEDIA_FIELD]
@@ -1641,7 +1632,7 @@ fiftyone utils transform-images [-h] [--size SIZE] [--min-size MIN_SIZE]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   DATASET_NAME          the name of the dataset
 
@@ -1688,13 +1679,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Convert the images in the dataset to PNGs
 fiftyone utils transform-images <dataset-name> --ext .png --delete-originals
 
 ```
 
-```
+```python
 # Ensure that no images in the dataset exceed 1920 x 1080
 fiftyone utils transform-images <dataset-name> --max-size 1920,1080
 
@@ -1704,7 +1695,7 @@ fiftyone utils transform-images <dataset-name> --max-size 1920,1080
 
 Transforms the videos in a dataset per the specified parameters.
 
-```
+```python
 fiftyone utils transform-videos [-h] [--fps FPS] [--min-fps MIN_FPS]
                                 [--max-fps MAX_FPS] [--size SIZE]
                                 [--min-size MIN_SIZE] [--max-size MAX_SIZE]
@@ -1721,7 +1712,7 @@ fiftyone utils transform-videos [-h] [--fps FPS] [--min-fps MIN_FPS]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   DATASET_NAME          the name of the dataset
 
@@ -1769,13 +1760,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Re-encode the videos in the dataset as H.264 MP4s
 fiftyone utils transform-videos <dataset-name> --reencode
 
 ```
 
-```
+```python
 # Ensure that no videos in the dataset exceed 1920 x 1080 and 30fps
 fiftyone utils transform-videos <dataset-name> \
     --max-size 1920,1080 --max-fps 30.0
@@ -1786,14 +1777,14 @@ fiftyone utils transform-videos <dataset-name> \
 
 Tools for working with the FiftyOne annotation API.
 
-```
+```python
 fiftyone annotation [-h] [--all-help] {config} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -1808,14 +1799,14 @@ available commands:
 
 Tools for working with your FiftyOne annotation config.
 
-```
+```python
 fiftyone annotation config [-h] [-l] [FIELD]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   FIELD         an annotation config field to print
 
@@ -1827,19 +1818,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print your entire annotation config
 fiftyone annotation config
 
 ```
 
-```
+```python
 # Print a specific annotation config field
 fiftyone annotation config <field>
 
 ```
 
-```
+```python
 # Print the location of your annotation config on disk (if one exists)
 fiftyone annotation config --locate
 
@@ -1849,14 +1840,14 @@ fiftyone annotation config --locate
 
 Tools for working with the FiftyOne App.
 
-```
+```python
 fiftyone app [-h] [--all-help] {config,launch,view,connect} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -1874,14 +1865,14 @@ available commands:
 
 Tools for working with your FiftyOne App config.
 
-```
+```python
 fiftyone app config [-h] [-l] [FIELD]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   FIELD         an App config field to print
 
@@ -1893,19 +1884,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print your entire App config
 fiftyone app config
 
 ```
 
-```
+```python
 # Print a specific App config field
 fiftyone app config <field>
 
 ```
 
-```
+```python
 # Print the location of your App config on disk (if one exists)
 fiftyone app config --locate
 
@@ -1915,14 +1906,14 @@ fiftyone app config --locate
 
 Launch the FiftyOne App.
 
-```
+```python
 fiftyone app launch [-h] [-p PORT] [-A ADDRESS] [-b BROWSER] [-r] [-a] [-w WAIT] [NAME]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of a dataset to open
 
@@ -1943,25 +1934,25 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Launch the App
 fiftyone app launch
 
 ```
 
-```
+```python
 # Launch the App with the given dataset loaded
 fiftyone app launch <name>
 
 ```
 
-```
+```python
 # Launch a remote App session
 fiftyone app launch ... --remote
 
 ```
 
-```
+```python
 # Launch an App session with a specific browser
 fiftyone app launch ... --browser <name>
 
@@ -1971,7 +1962,7 @@ fiftyone app launch ... --browser <name>
 
 View datasets in the FiftyOne App without persisting them to the database.
 
-```
+```python
 fiftyone app view [-h] [-n NAME] [-d DATASET_DIR] [-t TYPE] [-z NAME]
                   [-s SPLITS [SPLITS ...]] [--images-dir IMAGES_DIR]
                   [--images-patt IMAGES_PATT] [--videos-dir VIDEOS_DIR]
@@ -1983,7 +1974,7 @@ fiftyone app view [-h] [-n NAME] [-d DATASET_DIR] [-t TYPE] [-z NAME]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -n NAME, --name NAME  a name for the dataset
@@ -2020,55 +2011,55 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # View a dataset stored on disk in the App
 fiftyone app view --dataset-dir <dataset-dir> --type <type>
 
 ```
 
-```
+```python
 # View a zoo dataset in the App
 fiftyone app view --zoo-dataset <name> --splits <split1> ...
 
 ```
 
-```
+```python
 # View a directory of images in the App
 fiftyone app view --images-dir <images-dir>
 
 ```
 
-```
+```python
 # View a glob pattern of images in the App
 fiftyone app view --images-patt <images-patt>
 
 ```
 
-```
+```python
 # View a directory of videos in the App
 fiftyone app view --videos-dir <videos-dir>
 
 ```
 
-```
+```python
 # View a glob pattern of videos in the App
 fiftyone app view --videos-patt <videos-patt>
 
 ```
 
-```
+```python
 # View a dataset stored in JSON format on disk in the App
 fiftyone app view --json-path <json-path>
 
 ```
 
-```
+```python
 # View the dataset in a remote App session
 fiftyone app view ... --remote
 
 ```
 
-```
+```python
 # View a random subset of the data stored on disk in the App
 fiftyone app view ... --kwargs max_samples=50 shuffle=True
 
@@ -2078,7 +2069,7 @@ fiftyone app view ... --kwargs max_samples=50 shuffle=True
 
 Connect to a remote FiftyOne App in your web browser.
 
-```
+```python
 fiftyone app connect [-h] [-d DESTINATION] [-p PORT] [-A ADDRESS] [-l PORT]
                      [-i KEY]
 
@@ -2086,7 +2077,7 @@ fiftyone app connect [-h] [-d DESTINATION] [-p PORT] [-A ADDRESS] [-l PORT]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -d DESTINATION, --destination DESTINATION
@@ -2101,25 +2092,25 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Connect to a remote App with port forwarding already configured
 fiftyone app connect
 
 ```
 
-```
+```python
 # Connect to a remote App session
 fiftyone app connect --destination <destination> --port <port>
 
 ```
 
-```
+```python
 # Connect to a remote App session using an ssh key
 fiftyone app connect ... --ssh-key <path/to/key>
 
 ```
 
-```
+```python
 # Connect to a remote App using a custom local port
 fiftyone app connect ... --local-port <port>
 
@@ -2129,14 +2120,14 @@ fiftyone app connect ... --local-port <port>
 
 Tools for working with the FiftyOne Brain.
 
-```
+```python
 fiftyone brain [-h] [--all-help] {config} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -2151,14 +2142,14 @@ available commands:
 
 Tools for working with your FiftyOne Brain config.
 
-```
+```python
 fiftyone brain config [-h] [-l] [FIELD]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   FIELD         a brain config field to print
 
@@ -2170,19 +2161,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print your entire brain config
 fiftyone brain config
 
 ```
 
-```
+```python
 # Print a specific brain config field
 fiftyone brain config <field>
 
 ```
 
-```
+```python
 # Print the location of your brain config on disk (if one exists)
 fiftyone brain config --locate
 
@@ -2192,14 +2183,14 @@ fiftyone brain config --locate
 
 Tools for working with the FiftyOne evaluation API.
 
-```
+```python
 fiftyone evaluation [-h] [--all-help] {config} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -2214,14 +2205,14 @@ available commands:
 
 Tools for working with your FiftyOne evaluation config.
 
-```
+```python
 fiftyone evaluation config [-h] [-l] [FIELD]
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   FIELD         an evaluation config field to print
 
@@ -2233,19 +2224,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print your entire evaluation config
 fiftyone evaluation config
 
 ```
 
-```
+```python
 # Print a specific evaluation config field
 fiftyone evaluation config <field>
 
 ```
 
-```
+```python
 # Print the location of your evaluation config on disk (if one exists)
 fiftyone evaluation config --locate
 
@@ -2255,14 +2246,14 @@ fiftyone evaluation config --locate
 
 Tools for working with the FiftyOne Zoo.
 
-```
+```python
 fiftyone zoo [-h] [--all-help] {datasets,models} ...
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help         show this help message and exit
   --all-help         show help recursively and exit
@@ -2278,7 +2269,7 @@ available commands:
 
 Tools for working with the FiftyOne Dataset Zoo.
 
-```
+```python
 fiftyone zoo datasets [-h] [--all-help]
                       {list,find,info,download,load,delete} ...
 
@@ -2286,7 +2277,7 @@ fiftyone zoo datasets [-h] [--all-help]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -2306,14 +2297,14 @@ available commands:
 
 List datasets in the FiftyOne Dataset Zoo.
 
-```
+```python
 fiftyone zoo datasets list [-h] [-n] [-d] [-s SOURCE] [-t TAGS]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -n, --names-only      only show dataset names
@@ -2327,31 +2318,31 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List available datasets
 fiftyone zoo datasets list
 
 ```
 
-```
+```python
 # List available dataset names
 fiftyone zoo datasets list --names-only
 
 ```
 
-```
+```python
 # List downloaded datasets
 fiftyone zoo datasets list --downloaded-only
 
 ```
 
-```
+```python
 # List available datasets from the given source
 fiftyone zoo datasets list --source <source>
 
 ```
 
-```
+```python
 # List available datasets with the given tag
 fiftyone zoo datasets list --tags <tag>
 
@@ -2361,14 +2352,14 @@ fiftyone zoo datasets list --tags <tag>
 
 Locate a downloaded zoo dataset on disk.
 
-```
+```python
 fiftyone zoo datasets find [-h] [-s SPLIT] NAME_OR_URL
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the dataset
 
@@ -2380,20 +2371,20 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print the location of a downloaded zoo dataset on disk
 fiftyone zoo datasets find <name>
 
 ```
 
-```
+```python
 # Print the location of a remotely-sourced zoo dataset on disk
 fiftyone zoo datasets find https://github.com/<user>/<repo>
 fiftyone zoo datasets find <url>
 
 ```
 
-```
+```python
 # Print the location of a specific split of a dataset
 fiftyone zoo datasets find <name> --split <split>
 
@@ -2403,14 +2394,14 @@ fiftyone zoo datasets find <name> --split <split>
 
 Print information about datasets in the FiftyOne Dataset Zoo.
 
-```
+```python
 fiftyone zoo datasets info [-h] NAME_OR_URL
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the dataset
 
@@ -2421,13 +2412,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print information about a zoo dataset
 fiftyone zoo datasets info <name>
 
 ```
 
-```
+```python
 # Print information about a remote zoo dataset
 fiftyone zoo datasets info https://github.com/<user>/<repo>
 fiftyone zoo datasets info <url>
@@ -2457,7 +2448,7 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo datasets download [-h] [-s SPLITS [SPLITS ...]]
                                [-k KEY=VAL [KEY=VAL ...]]
                                NAME_OR_URL
@@ -2466,7 +2457,7 @@ fiftyone zoo datasets download [-h] [-s SPLITS [SPLITS ...]]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the dataset
 
@@ -2483,26 +2474,26 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Download a zoo dataset
 fiftyone zoo datasets download <name>
 
 ```
 
-```
+```python
 # Download a remotely-sourced zoo dataset
 fiftyone zoo datasets download https://github.com/<user>/<repo>
 fiftyone zoo datasets download <url>
 
 ```
 
-```
+```python
 # Download the specified split(s) of a zoo dataset
 fiftyone zoo datasets download <name> --splits <split1> ...
 
 ```
 
-```
+```python
 # Download a zoo dataset that requires extra keyword arguments
 fiftyone zoo datasets download <name> \
     --kwargs source_dir=/path/to/source/files
@@ -2532,7 +2523,7 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo datasets load [-h] [-s SPLITS [SPLITS ...]]
                            [-n DATASET_NAME] [-k KEY=VAL [KEY=VAL ...]]
                            NAME_OR_URL
@@ -2541,7 +2532,7 @@ fiftyone zoo datasets load [-h] [-s SPLITS [SPLITS ...]]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the dataset
 
@@ -2559,39 +2550,39 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Load the zoo dataset with the given name
 fiftyone zoo datasets load <name>
 
 ```
 
-```
+```python
 # Load a remotely-sourced zoo dataset
 fiftyone zoo datasets load https://github.com/<user>/<repo>
 fiftyone zoo datasets load <url>
 
 ```
 
-```
+```python
 # Load the specified split(s) of a zoo dataset
 fiftyone zoo datasets load <name> --splits <split1> ...
 
 ```
 
-```
+```python
 # Load a zoo dataset with a custom name
 fiftyone zoo datasets load <name> --dataset-name <dataset-name>
 
 ```
 
-```
+```python
 # Load a zoo dataset that requires custom keyword arguments
 fiftyone zoo datasets load <name> \
     --kwargs source_dir=/path/to/source_files
 
 ```
 
-```
+```python
 # Load a random subset of a zoo dataset
 fiftyone zoo datasets load <name> \
     --kwargs max_samples=50 shuffle=True
@@ -2602,14 +2593,14 @@ fiftyone zoo datasets load <name> \
 
 Deletes the local copy of the zoo dataset on disk.
 
-```
+```python
 fiftyone zoo datasets delete [-h] [-s SPLIT] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the dataset
 
@@ -2622,13 +2613,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete an entire zoo dataset from disk
 fiftyone zoo datasets delete <name>
 
 ```
 
-```
+```python
 # Delete a specific split of a zoo dataset from disk
 fiftyone zoo datasets delete <name> --split <split>
 
@@ -2638,7 +2629,7 @@ fiftyone zoo datasets delete <name> --split <split>
 
 Tools for working with the FiftyOne Model Zoo.
 
-```
+```python
 fiftyone zoo models [-h] [--all-help]
                     {list,find,info,requirements,download,apply,embed,delete,list-sources,register-source,delete-source}
                     ...
@@ -2647,7 +2638,7 @@ fiftyone zoo models [-h] [--all-help]
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   --all-help            show help recursively and exit
@@ -2672,14 +2663,14 @@ available commands:
 
 List models in the FiftyOne Model Zoo.
 
-```
+```python
 fiftyone zoo models list [-h] [-n] [-d] [-t TAGS] [-s SOURCE]
 
 ```
 
 **Arguments**
 
-```
+```python
 optional arguments:
   -h, --help            show this help message and exit
   -n, --names-only      only show model names
@@ -2693,31 +2684,31 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # List available models
 fiftyone zoo models list
 
 ```
 
-```
+```python
 # List available models (names only)
 fiftyone zoo models list --names-only
 
 ```
 
-```
+```python
 # List downloaded models
 fiftyone zoo models list --downloaded-only
 
 ```
 
-```
+```python
 # List available models with the given tag
 fiftyone zoo models list --tags <tag>
 
 ```
 
-```
+```python
 # List available models from the given remote source
 fiftyone zoo models list --source <source>
 
@@ -2727,14 +2718,14 @@ fiftyone zoo models list --source <source>
 
 Locate the downloaded zoo model on disk.
 
-```
+```python
 fiftyone zoo models find [-h] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the model
 
@@ -2745,7 +2736,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print the location of the downloaded zoo model on disk
 fiftyone zoo models find <name>
 
@@ -2755,14 +2746,14 @@ fiftyone zoo models find <name>
 
 Print information about models in the FiftyOne Model Zoo.
 
-```
+```python
 fiftyone zoo models info [-h] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                  the name of the model
 
@@ -2773,7 +2764,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print information about a zoo model
 fiftyone zoo models info <name>
 
@@ -2783,7 +2774,7 @@ fiftyone zoo models info <name>
 
 Handles package requirements for zoo models.
 
-```
+```python
 fiftyone zoo models requirements [-h] [-p] [-i] [-e]
                                  [--error-level LEVEL]
                                  NAME
@@ -2792,7 +2783,7 @@ fiftyone zoo models requirements [-h] [-p] [-i] [-e]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME                 the name of the model
 
@@ -2808,19 +2799,19 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Print requirements for a zoo model
 fiftyone zoo models requirements <name> --print
 
 ```
 
-```
+```python
 # Install any requirements for the zoo model
 fiftyone zoo models requirements <name> --install
 
 ```
 
-```
+```python
 # Ensures that the requirements for the zoo model are satisfied
 fiftyone zoo models requirements <name> --ensure
 
@@ -2847,14 +2838,14 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo models download [-h] [-n MODEL_NAME] [-o] NAME_OR_URL
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the model
 
@@ -2869,13 +2860,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Download a zoo model
 fiftyone zoo models download <name>
 
 ```
 
-```
+```python
 # Download a remotely-sourced zoo model
 fiftyone zoo models download https://github.com/<user>/<repo> \
     --model-name <name>
@@ -2906,7 +2897,7 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo models apply [-h] [-n MODEL_NAME] [-b BATCH_SIZE] [-t THRESH]
                           [-l] [-i] [--error-level LEVEL]
                           NAME_OR_URL DATASET_NAME LABEL_FIELD
@@ -2915,7 +2906,7 @@ fiftyone zoo models apply [-h] [-n MODEL_NAME] [-b BATCH_SIZE] [-t THRESH]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the zoo model
   DATASET_NAME          the name of the FiftyOne dataset to process
@@ -2940,13 +2931,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Apply a zoo model to a dataset
 fiftyone zoo models apply <model-name> <dataset-name> <label-field>
 
 ```
 
-```
+```python
 # Apply a remotely-sourced zoo model to a dataset
 fiftyone zoo models apply https://github.com/<user>/<repo> \
     <dataset-name> <label-field> --model-name <model-name>
@@ -2955,7 +2946,7 @@ fiftyone zoo models apply <url> \
 
 ```
 
-```
+```python
 # Apply a zoo classifier with some customized parameters
 fiftyone zoo models apply \
     <model-name> <dataset-name> <label-field> \
@@ -2988,7 +2979,7 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo models embed [-h] [-n MODEL_NAME] [-b BATCH_SIZE] [-i]
                           [--error-level LEVEL]
                           NAME_OR_URL DATASET_NAME EMBEDDINGS_FIELD
@@ -2997,7 +2988,7 @@ fiftyone zoo models embed [-h] [-n MODEL_NAME] [-b BATCH_SIZE] [-i]
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME_OR_URL           the name or remote location of the zoo model
   DATASET_NAME          the name of the FiftyOne dataset to process
@@ -3018,13 +3009,13 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Generate embeddings for a dataset with a zoo model
 fiftyone zoo models embed <model-name> <dataset-name> <embeddings-field>
 
 ```
 
-```
+```python
 # Generate embeddings for a dataset with a remotely-sourced zoo model
 fiftyone zoo models embed https://github.com/<user>/<repo> \
     <dataset-name> <embeddings-field> --model-name <model-name>
@@ -3037,14 +3028,14 @@ fiftyone zoo models embed <url> \
 
 Deletes the local copy of the zoo model on disk.
 
-```
+```python
 fiftyone zoo models delete [-h] NAME
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   NAME        the name of the model
 
@@ -3055,7 +3046,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete the zoo model from disk
 fiftyone zoo models delete <name>
 
@@ -3065,14 +3056,14 @@ fiftyone zoo models delete <name>
 
 Lists remote zoo model sources that are registered locally.
 
-```
+```python
 fiftyone zoo models list-sources [-h]
 
 ```
 
 **Examples**
 
-```
+```python
 # Lists the registered remote zoo model sources
 fiftyone zoo models list-sources
 
@@ -3100,14 +3091,14 @@ To download from a private GitHub repository that you have access to,
 provide your GitHub personal access token by setting the `GITHUB_TOKEN`
 environment variable.
 
-```
+```python
 fiftyone zoo models register-source [-h] [-o] URL_OR_GH_REPO
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   URL_OR_GH_REPO   the remote source to register
 
@@ -3119,7 +3110,7 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Register a remote zoo model source
 fiftyone zoo models register-source https://github.com/<user>/<repo>
 fiftyone zoo models register-source <url>
@@ -3142,14 +3133,14 @@ You can provide any of the following formats:
 - a publicly accessible URL of an archive (eg zip or tar) file
 
 
-```
+```python
 fiftyone zoo models delete-source [-h] URL_OR_GH_REPO
 
 ```
 
 **Arguments**
 
-```
+```python
 positional arguments:
   URL_OR_GH_REPO   the remote source to delete
 
@@ -3160,85 +3151,10 @@ optional arguments:
 
 **Examples**
 
-```
+```python
 # Delete a remote zoo model source
 fiftyone zoo models delete-source https://github.com/<user>/<repo>
 fiftyone zoo models delete-source <url>
 
 ```
 
-- FiftyOne Command-Line Interface (CLI)
-  - [Quickstart](#quickstart)
-    - [Tab completion](#tab-completion)
-  - [FiftyOne CLI](#cli-fiftyone-main)
-  - [FiftyOne quickstart](#fiftyone-quickstart)
-  - [FiftyOne config](#fiftyone-config)
-  - [Print constants](#print-constants)
-  - [Convert dataset formats](#convert-dataset-formats)
-  - [FiftyOne datasets](#fiftyone-datasets)
-    - [List datasets](#list-datasets)
-    - [Print dataset information](#print-dataset-information)
-    - [Print dataset stats](#print-dataset-stats)
-    - [Create datasets](#create-datasets)
-    - [Print dataset head](#print-dataset-head)
-    - [Print dataset tail](#print-dataset-tail)
-    - [Stream samples to the terminal](#stream-samples-to-the-terminal)
-    - [Export datasets](#export-datasets)
-    - [Drawing labels on samples](#drawing-labels-on-samples)
-    - [Rename datasets](#rename-datasets)
-    - [Delete datasets](#delete-datasets)
-  - [FiftyOne migrations](#fiftyone-migrations)
-  - [FiftyOne operators](#fiftyone-operators)
-    - [List operators](#list-operators)
-    - [Operator info](#operator-info)
-  - [FiftyOne delegated operations](#fiftyone-delegated-operations)
-    - [Launch delegated service](#launch-delegated-service)
-    - [List delegated operations](#list-delegated-operations)
-    - [Delegated operation info](#delegated-operation-info)
-    - [Mark delegated operations as failed](#mark-delegated-operations-as-failed)
-    - [Delete delegated operations](#delete-delegated-operations)
-    - [Cleanup delegated operations](#cleanup-delegated-operations)
-  - [FiftyOne plugins](#fiftyone-plugins)
-    - [List plugins](#list-plugins)
-    - [Plugin info](#plugin-info)
-    - [Download plugins](#download-plugins)
-    - [Plugin requirements](#plugin-requirements)
-    - [Create plugins](#create-plugins)
-    - [Enable plugins](#enable-plugins)
-    - [Disable plugins](#disable-plugins)
-    - [Delete plugins](#delete-plugins)
-  - [FiftyOne utilities](#fiftyone-utilities)
-    - [Compute metadata](#compute-metadata)
-    - [Transform images](#transform-images)
-    - [Transform videos](#transform-videos)
-  - [FiftyOne Annotation](#fiftyone-annotation)
-    - [Annotation Config](#annotation-config)
-  - [FiftyOne App](#fiftyone-app)
-    - [App Config](#app-config)
-    - [Launch the App](#launch-the-app)
-    - [View datasets in App](#view-datasets-in-app)
-    - [Connect to remote App](#connect-to-remote-app)
-  - [FiftyOne Brain](#fiftyone-brain)
-    - [Brain Config](#brain-config)
-  - [FiftyOne Evaluation](#fiftyone-evaluation)
-    - [Evaluation Config](#evaluation-config)
-  - [FiftyOne Zoo](#fiftyone-zoo)
-  - [FiftyOne Dataset Zoo](#fiftyone-dataset-zoo)
-    - [List datasets in zoo](#list-datasets-in-zoo)
-    - [Find zoo datasets on disk](#find-zoo-datasets-on-disk)
-    - [Show zoo dataset info](#show-zoo-dataset-info)
-    - [Download zoo datasets](#download-zoo-datasets)
-    - [Load zoo datasets](#load-zoo-datasets)
-    - [Delete zoo datasets](#delete-zoo-datasets)
-  - [FiftyOne Model Zoo](#fiftyone-model-zoo)
-    - [List models in zoo](#list-models-in-zoo)
-    - [Find zoo models on disk](#find-zoo-models-on-disk)
-    - [Show zoo model info](#show-zoo-model-info)
-    - [Zoo model requirements](#zoo-model-requirements)
-    - [Download zoo models](#download-zoo-models)
-    - [Apply zoo models to datasets](#apply-zoo-models-to-datasets)
-    - [Generate embeddings with zoo models](#generate-embeddings-with-zoo-models)
-    - [Delete zoo models](#delete-zoo-models)
-    - [List zoo model sources](#list-zoo-model-sources)
-    - [Register zoo model sources](#register-zoo-model-sources)
-    - [Delete zoo model sources](#delete-zoo-model-sources)

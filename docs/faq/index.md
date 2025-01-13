@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- Frequently Asked Questions
-
-Contents
-
-
 # Frequently Asked Questions [¶](\#frequently-asked-questions "Permalink to this headline")
 
 ## Can I open the FiftyOne App in a browser? [¶](\#can-i-open-the-fiftyone-app-in-a-browser "Permalink to this headline")
@@ -38,7 +29,7 @@ If you are using the App in a script, you should use
 [`session.wait()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.wait "fiftyone.core.session.Session.wait") to block execution
 until you close it manually:
 
-```
+```python
 # Launch the App
 session = fo.launch_app(...)
 
@@ -62,7 +53,7 @@ a script, you should use the pattern below to avoid
 [multiprocessing issues](https://stackoverflow.com/q/20360686), since the App
 is served via a separate process:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset(...)
@@ -122,7 +113,7 @@ proper packages and/or Jupyter notebook extensions.
 If the proper packages are installed but plots are still not displaying, try
 including the following commands in your notebook before creating any plots:
 
-```
+```python
 # Ensure that plotly.js is downloaded
 import plotly.offline as po
 po.init_notebook_mode(connected=True)
@@ -150,7 +141,7 @@ Note
 If installing on Ubuntu 22.04+, Debian, or RHEL/CentOS,
 `fiftyone-db==0.4.3` must be requested.
 
-```
+```python
 pip install fiftyone-db==0.4.3 fiftyone
 
 ```
@@ -219,7 +210,7 @@ To make a dataset persistent, set its
 [`persistent`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.persistent "fiftyone.core.dataset.Dataset.persistent") property to
 `True`:
 
-```
+```python
 import fiftyone as fo
 
 # This dataset will be deleted when you exit Python
@@ -256,7 +247,7 @@ Refer to [this section](../fiftyone_concepts/using_datasets.html#adding-sample-f
 modifying samples and [this section](../fiftyone_concepts/using_datasets.html#storing-info) for more details about
 storing dataset-level information.
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset(...)
@@ -376,13 +367,13 @@ If you do not have FiftyOne installed on your local machine, open a new
 terminal window on your local machine and execute the following command to
 setup port forwarding to connect to your remote sessions:
 
-```
+```python
 ssh -N -L XXXX:localhost:RRRR1 [<username1>@]<hostname1>
 # Then open `http://localhost:XXXX` in your web browser
 
 ```
 
-```
+```python
 ssh -N -L YYYY:localhost:RRRR2 [<username2>@]<hostname2>
 # Then open `http://localhost:YYYY` in your web browser
 
@@ -395,7 +386,7 @@ Alternatively, if you have FiftyOne installed on your local machine, you can
 [use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
-```
+```python
 # Connect to first remote session
 fiftyone app connect \
     --destination [<username1>@]<hostname1> \
@@ -404,7 +395,7 @@ fiftyone app connect \
 
 ```
 
-```
+```python
 # Connect to second remote session
 fiftyone app connect \
     --destination [<username2>@]<hostname2> \
@@ -427,13 +418,13 @@ On your local machine(s), you can now
 [connect to the remote sessions](../fiftyone_concepts/app.html#remote-app-local-machine). Connections
 can be set up using port forwarding in the following way:
 
-```
+```python
 ssh -N -L WWWW:localhost:XXXX [<username>@]<hostname>
 # Then open `http://localhost:WWWW` in your web browser
 
 ```
 
-```
+```python
 ssh -N -L ZZZZ:localhost:YYYY [<username>@]<hostname>
 # Then open `http://localhost:ZZZZ` in your web browser
 
@@ -446,7 +437,7 @@ Alternatively, if you have FiftyOne installed on your local machine, you can
 [use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
-```
+```python
 # On a local machine
 
 # Connect to first remote session
@@ -457,7 +448,7 @@ fiftyone app connect \
 
 ```
 
-```
+```python
 # On a local machine
 
 # Connect to second remote session
@@ -508,32 +499,3 @@ Note
 You can disable tracking by setting the `do_not_track` flag of your
 [FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
 
-- Frequently Asked Questions
-  - [Can I open the FiftyOne App in a browser?](#can-i-open-the-fiftyone-app-in-a-browser)
-  - [Which web browsers does the FiftyOne App support?](#which-web-browsers-does-the-fiftyone-app-support)
-  - [Why isn’t the App opening? Not connected to a session?](#why-isn-t-the-app-opening-not-connected-to-a-session)
-  - [Why can’t I open the App from a script on Windows?](#why-can-t-i-open-the-app-from-a-script-on-windows)
-  - [Can I use FiftyOne in a notebook?](#can-i-use-fiftyone-in-a-notebook)
-  - [Why isn’t the App loading in my cloud notebook?](#why-isn-t-the-app-loading-in-my-cloud-notebook)
-  - [Can I use FiftyOne in a remote notebook?](#can-i-use-fiftyone-in-a-remote-notebook)
-  - [Can I restrict access to my remote App instance?](#can-i-restrict-access-to-my-remote-app-instance)
-  - [Why aren’t plots appearing in my notebook?](#why-aren-t-plots-appearing-in-my-notebook)
-  - [Can I access data stored on a remote server?](#can-i-access-data-stored-on-a-remote-server)
-  - [Can I access data stored in the cloud?](#can-i-access-data-stored-in-the-cloud)
-  - [What operating systems does FiftyOne support?](#what-operating-systems-does-fiftyone-support)
-  - [What image file types are supported?](#what-image-file-types-are-supported)
-  - [What video file types are supported?](#what-video-file-types-are-supported)
-  - [What label types are supported?](#what-label-types-are-supported)
-  - [What happened to my datasets from previous sessions?](#what-happened-to-my-datasets-from-previous-sessions)
-  - [Why didn’t changes to my dataset save?](#why-didn-t-changes-to-my-dataset-save)
-  - [Can I share a dataset with someone else?](#can-i-share-a-dataset-with-someone-else)
-  - [Can I use FiftyOne in multiple shells?](#can-i-use-fiftyone-in-multiple-shells)
-  - [Can I launch multiple App instances on a machine?](#can-i-launch-multiple-app-instances-on-a-machine)
-  - [Can I connect multiple App instances to the same dataset?](#can-i-connect-multiple-app-instances-to-the-same-dataset)
-  - [Can I connect to multiple remote sessions?](#can-i-connect-to-multiple-remote-sessions)
-  - [Can I serve multiple remote sessions from a machine?](#can-i-serve-multiple-remote-sessions-from-a-machine)
-  - [Can I use my own MongoDB database?](#can-i-use-my-own-mongodb-database)
-  - [Too many open files in system?](#too-many-open-files-in-system)
-  - [Can I downgrade to an older version of FiftyOne?](#can-i-downgrade-to-an-older-version-of-fiftyone)
-  - [Are the Brain methods open source?](#are-the-brain-methods-open-source)
-  - [Does FiftyOne track me?](#does-fiftyone-track-me)

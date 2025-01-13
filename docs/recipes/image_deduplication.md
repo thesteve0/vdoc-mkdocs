@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Image Deduplication with FiftyOne
-
-Contents
-
-
 # Image Deduplication with FiftyOne [¶](\#Image-Deduplication-with-FiftyOne "Permalink to this headline")
 
 This recipe demonstrates a simple use case of using FiftyOne to detect and remove duplicate images from your dataset.
@@ -16,24 +6,24 @@ This recipe demonstrates a simple use case of using FiftyOne to detect and remov
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 This notebook also requires the `tensorflow` package:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install tensorflow
 
 ```
@@ -42,19 +32,19 @@ This notebook also requires the `tensorflow` package:
 
 First we download the dataset to disk. The dataset is a 1000 sample subset of CIFAR-100, a dataset of 32x32 pixel images with one of 100 different classification labels such as `apple`, `bicycle`, `porcupine`, etc. You can use this [helper script](https://raw.githubusercontent.com/voxel51/fiftyone/develop/docs/source/recipes/image_deduplication_helpers.py).
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 from image_deduplication_helpers import download_dataset
 
 download_dataset()
 
 ```
 
-```
+```python
 Downloading dataset of 1000 samples to:
         /tmp/fiftyone/cifar100_with_duplicates
 and corrupting the data (5% duplicates)
@@ -66,7 +56,7 @@ The above script uses `tensorflow.keras.datasets` to download the dataset, so yo
 
 The dataset is organized on disk as follows:
 
-```
+```python
 /tmp/fiftyone/
 └── cifar100_with_duplicates/
     ├── <classA>/
@@ -87,24 +77,24 @@ As we will soon come to discover, some of these samples are duplicates and we ha
 
 Let’s start by importing the FiftyOne library:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 ```
 
 Let’s use a utililty method provided by FiftyOne to load the image classification dataset from disk:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import os
 
 dataset_name = "cifar100_with_duplicates"
@@ -118,7 +108,7 @@ dataset = fo.Dataset.from_dir(
 
 ```
 
-```
+```python
  100% |████████████| 1000/1000 [1.2s elapsed, 0s remaining, 718.5 samples/s]
 
 ```
@@ -127,18 +117,18 @@ dataset = fo.Dataset.from_dir(
 
 We can poke around in the dataset:
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 # Print summary information about the dataset
 print(dataset)
 
 ```
 
-```
+```python
 Name:           cifar100_with_duplicates
 Media type:     image
 Num samples:    1000
@@ -153,18 +143,18 @@ Sample fields:
 
 ```
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 # Print a sample
 print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '5ff8dc665b5b9368e094de5a',
     'media_type': 'image',
@@ -183,12 +173,12 @@ print(dataset.first())
 
 Create a view that contains only samples whose ground truth label is `mountain`:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 # Used to write view expressions that involve sample fields
 from fiftyone import ViewField as F
 
@@ -199,7 +189,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:        cifar100_with_duplicates
 Media type:     image
 Num samples:    8
@@ -214,18 +204,18 @@ View stages:
 
 ```
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 # Print the first sample in the view
 print(view.first())
 
 ```
 
-```
+```python
 <SampleView: {
     'id': '5ff8dc675b5b9368e094e436',
     'media_type': 'image',
@@ -244,12 +234,12 @@ print(view.first())
 
 Create a view with samples sorted by their ground truth labels in reverse alphabetical order:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 view = dataset.sort_by("ground_truth", reverse=True)
 
 # Print summary information about the view
@@ -257,7 +247,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:        cifar100_with_duplicates
 Media type:     image
 Num samples:    1000
@@ -272,18 +262,18 @@ View stages:
 
 ```
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 # Print the first sample in the view
 print(view.first())
 
 ```
 
-```
+```python
 <SampleView: {
     'id': '5ff8dc685b5b9368e094ea0f',
     'media_type': 'image',
@@ -304,12 +294,12 @@ print(view.first())
 
 Start browsing the dataset:
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -318,12 +308,12 @@ session = fo.launch_app(dataset)
 
 Narrow your scope to 10 random samples:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 session.view = dataset.take(10)
 
 ```
@@ -332,12 +322,12 @@ session.view = dataset.take(10)
 
 Click on some some samples in the App to select them and access their IDs from code!
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 # Get the IDs of the currently selected samples in the App
 sample_ids = session.selected
 
@@ -345,24 +335,24 @@ sample_ids = session.selected
 
 Create a view that contains your currently selected samples:
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 selected_view = dataset.select(session.selected)
 
 ```
 
 Update the App to only show your selected samples:
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 session.view = selected_view
 
 ```
@@ -373,12 +363,12 @@ session.view = selected_view
 
 Iterate over the samples and compute their file hashes:
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 import fiftyone.core.utils as fou
 
 for sample in dataset:
@@ -389,7 +379,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:           cifar100_with_duplicates
 Media type:     image
 Num samples:    1000
@@ -409,18 +399,18 @@ We have two ways to visualize this new information.
 
 First, you can view the sample from your Terminal:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 sample = dataset.first()
 print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': '5ff8dc665b5b9368e094de5a',
     'media_type': 'image',
@@ -440,12 +430,12 @@ print(sample)
 
 Or you can refresh the App and toggle on the new `file_hash` field:
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 session.dataset = dataset
 
 ```
@@ -456,12 +446,12 @@ session.dataset = dataset
 
 Now let’s use a simple Python statement to locate the duplicate files in the dataset, i.e., those with the same file hashses:
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 from collections import Counter
 
 filehash_counts = Counter(sample.file_hash for sample in dataset)
@@ -471,19 +461,19 @@ print("Number of duplicate file hashes: %d" % len(dup_filehashes))
 
 ```
 
-```
+```python
 Number of duplicate file hashes: 36
 
 ```
 
 Now let’s create a view that contains only the samples with these duplicate file hashes:
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 dup_view = (dataset
     # Extract samples with duplicate file hashes
     .match(F("file_hash").is_in(dup_filehashes))
@@ -496,7 +486,7 @@ print("Number of duplicates: %d" % (len(dup_view) - len(dup_filehashes)))
 
 ```
 
-```
+```python
 Number of images that have a duplicate: 72
 Number of duplicates: 36
 
@@ -504,12 +494,12 @@ Number of duplicates: 36
 
 Of course, we can always use the App to visualize our work!
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 session.view = dup_view
 
 ```
@@ -520,12 +510,12 @@ session.view = dup_view
 
 Now let’s delete the duplicate samples from the dataset using our `dup_view` to restrict our attention to known duplicates:
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 print("Length of dataset before: %d" % len(dataset))
 
 _dup_filehashes = set()
@@ -543,7 +533,7 @@ print("Number of unique file hashes: %d" % len({s.file_hash for s in dataset}))
 
 ```
 
-```
+```python
 Length of dataset before: 1000
 Length of dataset after: 964
 Number of unique file hashes: 964
@@ -554,12 +544,12 @@ Number of unique file hashes: 964
 
 Finally, let’s export a fresh copy of our now-duplicate-free dataset:
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 EXPORT_DIR = "/tmp/fiftyone/image-deduplication"
 dataset.export
 
@@ -567,7 +557,7 @@ dataset.export(label_field="ground_truth", export_dir=EXPORT_DIR, dataset_type=f
 
 ```
 
-```
+```python
  100% |████████████| 964/964 [408.8ms elapsed, 0s remaining, 2.4K samples/s]
 
 ```
@@ -576,12 +566,12 @@ Check out the contents of `/tmp/fiftyone/image-deduplication` on disk to see how
 
 You can load the deduplicated dataset that you exported back into FiftyOne at any time as follows:
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 no_dups_dataset = fo.Dataset.from_dir(
     EXPORT_DIR,
     fo.types.FiftyOneImageClassificationDataset,
@@ -592,7 +582,7 @@ print(no_dups_dataset)
 
 ```
 
-```
+```python
  100% |████████████| 964/964 [1.1s elapsed, 0s remaining, 838.4 samples/s]
 Name:           no_duplicates
 Media type:     image
@@ -612,34 +602,23 @@ Sample fields:
 
 You can cleanup the files generated by this recipe by running:
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 !rm -rf /tmp/fiftyone
 
 ```
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 session.freeze() # screenshot the active App for sharing
 
 ```
 
-- Image Deduplication with FiftyOne
-  - [Setup](#Setup)
-  - [Download the data](#Download-the-data)
-  - [Create a dataset](#Create-a-dataset)
-  - [Explore the dataset](#Explore-the-dataset)
-  - [Visualize the dataset](#Visualize-the-dataset)
-  - [Compute file hashes](#Compute-file-hashes)
-  - [Check for duplicates](#Check-for-duplicates)
-  - [Delete duplicates](#Delete-duplicates)
-  - [Export the deduplicated dataset](#Export-the-deduplicated-dataset)
-  - [Cleanup](#Cleanup)

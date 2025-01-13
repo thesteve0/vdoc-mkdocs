@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Model Zoo](index.html) >
-- Model Zoo API Reference
-
-Contents
-
-
 # Model Zoo API Reference [¶](\#model-zoo-api-reference "Permalink to this headline")
 
 You can interact with the Model Zoo either via the Python library or the CLI.
@@ -28,7 +18,7 @@ You can load a zoo model via
 By default, the model will be automatically downloaded from the web the first
 time you access it if it is not already downloaded:
 
-```
+```python
 import fiftyone.zoo as foz
 
 # The model will be downloaded from the web the first time you access it
@@ -40,7 +30,7 @@ You can also provide additional arguments to
 [`load_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model") to customize
 the import behavior:
 
-```
+```python
 # Load the zoo model and install any necessary requirements in order to
 # use it (logging warnings if any issues arise)
 model = foz.load_zoo_model(
@@ -105,7 +95,7 @@ below adds a second copy of the `yolo-v2-coco-tf1` model to the zoo under the
 alias `yolo-v2-coco-tf1-high-conf` that only returns predictions whose
 confidence is at least 0.5:
 
-```
+```python
 {
     "models": [\
         {\
@@ -171,7 +161,7 @@ Finally, expose your new models(s) to FiftyOne by adding your manifest to the
 [FiftyOne config](../user_guide/config.html#configuring-fiftyone). One way to do this is to set the
 `FIFTYONE_MODEL_ZOO_MANIFEST_PATHS` environment variable:
 
-```
+```python
 export FIFTYONE_MODEL_ZOO_MANIFEST_PATHS=/path/to/custom/manifest.json
 
 ```
@@ -179,7 +169,7 @@ export FIFTYONE_MODEL_ZOO_MANIFEST_PATHS=/path/to/custom/manifest.json
 Now you can load and apply the `yolo-v2-coco-tf1-high-conf` model as you
 would any other zoo model:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -192,14 +182,3 @@ dataset.apply_model(model, label_field="predictions")
 
 ```
 
-- Model Zoo API Reference
-  - [Listing zoo models](#listing-zoo-models)
-  - [Getting information about zoo models](#getting-information-about-zoo-models)
-  - [Downloading zoo models](#downloading-zoo-models)
-  - [Installing zoo model requirements](#installing-zoo-model-requirements)
-  - [Loading zoo models](#loading-zoo-models)
-  - [Applying zoo models](#applying-zoo-models)
-  - [Generating embeddings with zoo models](#generating-embeddings-with-zoo-models)
-  - [Controlling where zoo models are downloaded](#controlling-where-zoo-models-are-downloaded)
-  - [Deleting zoo models](#deleting-zoo-models)
-  - [Adding models to the zoo](#adding-models-to-the-zoo)

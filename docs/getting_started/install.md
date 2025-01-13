@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Installation
-
-Contents
-
-
 # FiftyOne Installation [¶](\#fiftyone-installation "Permalink to this headline")
 
 Note
@@ -32,7 +23,7 @@ We encourage installing FiftyOne in a virtual environment. See
 To install FiftyOne, ensure you have activated any virtual environment that you
 are using, then run:
 
-```
+```python
 pip install fiftyone
 
 ```
@@ -41,7 +32,7 @@ This will install FiftyOne and all of its dependencies. Once this has
 completed, you can verify that FiftyOne is installed in your virtual
 environment by importing the `fiftyone` package:
 
-```
+```python
 $ python
 >>>
 >>> import fiftyone as fo
@@ -62,7 +53,7 @@ Dive right into FiftyOne by opening a Python shell and running the snippet
 below, which downloads a [small dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) and
 launches the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) so you can explore it!
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -86,7 +77,7 @@ Note
 Most installation issues can be fixed by upgrading some packages and then
 rerunning the FiftyOne install:
 
-```
+```python
 pip install --upgrade pip setuptools wheel build
 pip install fiftyone
 
@@ -163,7 +154,7 @@ you will see a helpful message telling you what to install.
 You can upgrade an existing FiftyOne installation by passing the `--upgrade`
 option to `pip install`:
 
-```
+```python
 pip install --upgrade fiftyone
 
 ```
@@ -194,7 +185,7 @@ command to perform any necessary downward database migrations
 
 Here’s the workflow for downgrading to an older version of FiftyOne:
 
-```
+```python
 # The version that you wish to downgrade to
 VERSION=0.15.1
 
@@ -228,17 +219,8 @@ which clients are allowed to downgrade your FiftyOne deployment.
 
 FiftyOne and all of its subpackages can be uninstalled with:
 
-```
+```python
 pip uninstall fiftyone fiftyone-brain fiftyone-db
 
 ```
 
-- FiftyOne Installation
-  - [Prerequisites](#prerequisites)
-  - [Installing FiftyOne](#installing-fiftyone)
-  - [Quickstart](#quickstart)
-  - [Troubleshooting](#troubleshooting)
-  - [Installing extras](#installing-extras)
-  - [Upgrading FiftyOne](#upgrading-fiftyone)
-  - [Downgrading FiftyOne](#downgrading-fiftyone)
-  - [Uninstalling FiftyOne](#uninstalling-fiftyone)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- CVAT Integration
-
-Contents
-
-
 # CVAT Integration [¶](\#cvat-integration "Permalink to this headline")
 
 [CVAT](https://github.com/opencv/cvat) is one of the most popular
@@ -101,7 +91,7 @@ you interact with CVAT.
 
 First, we create the annotation tasks in CVAT:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -152,7 +142,7 @@ print(dataset.get_annotation_info(anno_key))
 Then, once the annotation work is complete, we merge the annotations back into
 FiftyOne:
 
-```
+```python
 import fiftyone as fo
 
 anno_key = "cvat_basic_recipe"
@@ -198,7 +188,7 @@ have changed your default backend, you can opt-in to using CVAT on a
 one-off basis by passing the optional `backend` parameter to
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
-```
+```python
 view.annotate(anno_key, backend="cvat", ...)
 
 ```
@@ -218,7 +208,7 @@ in the `FIFTYONE_CVAT_USERNAME` and `FIFTYONE_CVAT_PASSWORD` environment
 variables. These are automatically accessed by FiftyOne whenever a connection
 to CVAT is made.
 
-```
+```python
 export FIFTYONE_CVAT_USERNAME=...
 export FIFTYONE_CVAT_PASSWORD=...
 export FIFTYONE_CVAT_EMAIL=...  # if applicable
@@ -231,7 +221,7 @@ You can also store your credentials in your
 [annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "backends": {
         "cvat": {
@@ -260,7 +250,7 @@ you call methods like
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 that require connections to CVAT:
 
-```
+```python
 view.annotate(anno_key, ..., username=..., password=...)
 
 ```
@@ -271,12 +261,12 @@ If you have not stored your login credentials via another method, you will be
 prompted to enter them interactively in your shell each time you call a method
 that requires a connection to CVAT:
 
-```
+```python
 view.annotate(anno_key, label_field="ground_truth", launch_editor=True)
 
 ```
 
-```
+```python
 Please enter your login credentials.
 You can avoid this in the future by setting your `FIFTYONE_CVAT_USERNAME` and `FIFTYONE_CVAT_PASSWORD` environment variables.
 Username: ...
@@ -293,7 +283,7 @@ you can configure the URL of your server in any of the following ways:
 - Set the `FIFTYONE_CVAT_URL` environment variable:
 
 
-```
+```python
 export FIFTYONE_CVAT_URL=http://localhost:8080
 
 ```
@@ -303,7 +293,7 @@ export FIFTYONE_CVAT_URL=http://localhost:8080
 `~/.fiftyone/annotation_config.json`:
 
 
-```
+```python
 {
     "backends": {
         "cvat": {
@@ -319,7 +309,7 @@ export FIFTYONE_CVAT_URL=http://localhost:8080
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
 
-```
+```python
 view.annotate(anno_key, ..., url="http://localhost:8080")
 
 ```
@@ -332,7 +322,7 @@ requests, you can provide them in either of the following ways:
 `~/.fiftyone/annotation_config.json`:
 
 
-```
+```python
 {
     "backends": {
         "cvat": {
@@ -353,7 +343,7 @@ and
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations"):
 
 
-```
+```python
 view.annotate(anno_key, ... headers=...)
 view.load_annotations(anno_key, ... headers=...)
 
@@ -368,7 +358,7 @@ to send the samples and optionally existing labels in a [`Dataset`](../api/fifty
 
 The basic syntax is:
 
-```
+```python
 anno_key = "..."
 view.annotate(anno_key, ...)
 
@@ -618,7 +608,7 @@ tasks in CVAT. In its most verbose form, it is a dictionary that defines the
 label type, annotation type, possible classes, and possible attributes for each
 label field:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -657,7 +647,7 @@ You can also define class-specific attributes by setting elements of the
 corresponding `attributes`. For example, in the configuration below, `attr1`
 only applies to `class1` and `class2` while `attr2` applies to all classes:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -696,7 +686,7 @@ can use the `label_field`, `label_type`, `classes`, `attributes`, and
 `mask_targets` parameters to specify the components of the label schema
 individually:
 
-```
+```python
 anno_key = "..."
 
 label_field = "new_field",
@@ -749,7 +739,7 @@ When adding new label fields for which you want to include attributes, you must
 use the dictionary syntax demonstrated below to define the schema of each
 attribute that you wish to label:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -851,7 +841,7 @@ attributes to all people in this field while also strictly enforcing that no
 objects can be added, deleted, or have their labels or bounding boxes modified.
 You can configure an annotation run for this as follows:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -887,7 +877,7 @@ want to populate a new `model` attribute based on this information without
 allowing changes to the vehicle’s `make`, you can configure an annotation run
 for this as follows:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -943,7 +933,7 @@ First, each object attribute specification can include a `mutable` property
 that controls whether the attribute’s value can change between frames for each
 object:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -1092,7 +1082,7 @@ use the
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 method to download them and merge them back into your FiftyOne dataset.
 
-```
+```python
 view.load_annotations(anno_key)
 
 ```
@@ -1149,7 +1139,7 @@ For example, you can call
 [`list_annotation_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_annotation_runs "fiftyone.core.collections.SampleCollection.list_annotation_runs")
 to see the available annotation keys on a dataset:
 
-```
+```python
 dataset.list_annotation_runs()
 
 ```
@@ -1158,7 +1148,7 @@ Or, you can use
 [`get_annotation_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_annotation_info "fiftyone.core.collections.SampleCollection.get_annotation_info")
 to retrieve information about the configuration of an annotation run:
 
-```
+```python
 info = dataset.get_annotation_info(anno_key)
 print(info)
 
@@ -1172,7 +1162,7 @@ All results objects provide a [`cleanup()`](../api/fiftyone.utils.annotations.ht
 method that you can use to delete all information associated with a run from
 the annotation backend.
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 results.cleanup()
 
@@ -1187,7 +1177,7 @@ You can use
 [`rename_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_annotation_run "fiftyone.core.collections.SampleCollection.rename_annotation_run")
 to rename the annotation key associated with an existing annotation run:
 
-```
+```python
 dataset.rename_annotation_run(anno_key, new_anno_key)
 
 ```
@@ -1196,7 +1186,7 @@ Finally, you can use
 [`delete_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_annotation_run "fiftyone.core.collections.SampleCollection.delete_annotation_run")
 to delete the record of an annotation run from your FiftyOne dataset:
 
-```
+```python
 dataset.delete_annotation_run(anno_key)
 
 ```
@@ -1227,7 +1217,7 @@ In order to annotate a new label field, you can provide the `label_field`,
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
 define the annotation schema for the field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1255,7 +1245,7 @@ dataset.delete_annotation_run(anno_key)
 Alternatively, you can use the `label_schema` argument to define the same
 labeling task:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1292,7 +1282,7 @@ You can easily edit the labels in an existing field of your FiftyOne dataset
 by simply passing the name of the field via the `label_field` parameter of
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1317,7 +1307,7 @@ The above code snippet will infer the possible classes and label attributes
 from your FiftyOne dataset. However, the `classes` and `attributes` parameters
 can be used to annotate new classes and/or attributes:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1382,7 +1372,7 @@ attributes to all people in this field while also strictly enforcing that no
 objects can be added, deleted, or have their labels or bounding boxes modified.
 You can configure an annotation run for this as follows:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1438,7 +1428,7 @@ For example, the snippet below uploads the vehicle tracks in a video dataset
 along with their existing `type` attributes and requests that a new `make`
 attribute be populated without allowing edits to the vehicle’s `type`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1499,7 +1489,7 @@ rejected. See [this section](#cvat-limitations) for details.
 The `label_schema` argument allows you to define an annotation task that
 involves multiple fields:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1573,7 +1563,7 @@ then polyline annotations are added instead. When
 is called, the default behavior is to present a command prompt asking you what
 field(s) (if any) to store these unexpected labels in:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1611,7 +1601,7 @@ As with tasks, you can delete the project associated with an annotation run by
 passing the `cleanup=True` option to
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations").
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1669,7 +1659,7 @@ group id attributes defined there will also be ignored. In order to connect
 occluded or group id attributes, use the `occluded_attr` and
 `group_id_attr` arguments directly.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1750,7 +1740,7 @@ in CVAT v1 servers
 If the number of jobs exceeds the number of assignees or reviewers, the jobs
 will be assigned using a round-robin strategy.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1814,7 +1804,7 @@ The `task_size` parameter can also be used in conjunction with the
 `segment_size` parameter to configure both the number of images per task as
 well as the number of images per job within each task.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1857,7 +1847,7 @@ If `classes` are provided, you will be able to select from these values in
 CVAT; otherwise, the CVAT tag will show the `label_field` name and you must
 enter the appropriate scalar in the `value` attribute of the tag.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1903,7 +1893,7 @@ dataset. You can then specify this field via the `media_field` parameter of
 
 For example, let’s upload some blurred images to CVAT for annotation:
 
-```
+```python
 import os
 import cv2
 
@@ -1967,7 +1957,7 @@ You can only specify the `occluded` type for at most one attribute of each
 label field/class in your label schema, and, if you are editing existing
 labels, the attribute that you choose must contain boolean values.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2007,7 +1997,7 @@ This parameter is especially useful when working with existing CVAT projects,
 since CVAT project schemas are not able to retain information about occluded
 attributes between annotation runs.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2060,7 +2050,7 @@ You can only specify the `group_id` type for at most one attribute of each
 label field/class in your label schema, and, if you are editing existing
 labels, the attribute that you choose must contain integer values.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2099,7 +2089,7 @@ This parameter is especially useful when working with existing CVAT projects,
 since CVAT project schemas are not able to retain information about group id
 attributes between annotation runs.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2144,7 +2134,7 @@ If your annotation run involves multiple fields, `dest_field` should be
 a dictionary mapping existing field names in your run’s label schema to updated
 destination fields.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2189,7 +2179,7 @@ corresponding integer value.
 Note: Uploading existing annotation tracks while using the `frame_step`
 argument is not currently supported.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2268,7 +2258,7 @@ Note
 Prepend `"frames."` to reference frame-level fields when calling
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate").
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2330,7 +2320,7 @@ The example below edits the existing detections of a video dataset. Note that,
 since the dataset’s labels do not have keyframe markings, we artificially tag
 every 10th frame as a keyframe to provide a better editing experience in CVAT:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2395,7 +2385,7 @@ However, if you have created CVAT tasks outside of FiftyOne, you can use the
 [`import_annotations()`](../api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations") utility
 to import individual task(s) or an entire project into a FiftyOne dataset.
 
-```
+```python
 import os
 
 import fiftyone as fo
@@ -2480,7 +2470,7 @@ which is a wrapper around the
 that provides convenient methods for performing common actions on your CVAT
 tasks:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.annotations as foua
@@ -2513,7 +2503,7 @@ You can use the
 methods to get information about the current status of the task(s) and job(s)
 for that annotation run:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2539,7 +2529,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-```
+```python
 Status for label field 'ground_truth':
 
     Task 331 (FiftyOne_quickstart_ground_truth):
@@ -2569,7 +2559,7 @@ shown below to reuse a single
 [`CVATAnnotationAPI`](../api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATAnnotationAPI "fiftyone.utils.cvat.CVATAnnotationAPI") instance
 and avoid reauthenticating with CVAT for each run:
 
-```
+```python
 import fiftyone.utils.annotations as foua
 
 api = foua.connect_to_api()
@@ -2587,7 +2577,7 @@ You can use the
 [`delete_task()`](../api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATAnnotationAPI.delete_task "fiftyone.utils.cvat.CVATAnnotationAPI.delete_task")
 method to delete specific CVAT tasks associated with an annotation run:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2608,40 +2598,3 @@ api.delete_task(372)
 
 ```
 
-- CVAT Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Authentication](#authentication)
-    - [Self-hosted servers](#cvat-self-hosted-server)
-  - [Requesting annotations](#requesting-annotations)
-    - [Label schema](#label-schema)
-    - [Label attributes](#label-attributes)
-    - [Restricting additions, deletions, and edits](#restricting-additions-deletions-and-edits)
-    - [Labeling videos](#labeling-videos)
-    - [CVAT limitations](#cvat-limitations)
-  - [Loading annotations](#loading-annotations)
-  - [Managing annotation runs](#managing-annotation-runs)
-  - [Examples](#examples)
-    - [Adding new label fields](#adding-new-label-fields)
-    - [Editing existing labels](#editing-existing-labels)
-    - [Restricting label edits](#restricting-label-edits)
-    - [Annotating multiple fields](#annotating-multiple-fields)
-    - [Unexpected annotations](#unexpected-annotations)
-    - [Creating projects](#creating-projects)
-    - [Uploading to existing projects](#uploading-to-existing-projects)
-    - [Assigning users](#assigning-users)
-    - [Large annotation runs](#large-annotation-runs)
-    - [Scalar labels](#scalar-labels)
-    - [Uploading alternate media](#uploading-alternate-media)
-    - [Using CVAT’s occlusion widget](#using-cvat-s-occlusion-widget)
-    - [Using CVAT groups](#using-cvat-groups)
-    - [Changing destination field](#changing-destination-field)
-    - [Using frame start, stop, step](#using-frame-start-stop-step)
-  - [Annotating videos](#annotating-videos)
-    - [Adding new frame labels](#adding-new-frame-labels)
-    - [Editing frame-level label tracks](#editing-frame-level-label-tracks)
-  - [Importing existing tasks](#importing-existing-tasks)
-  - [Additional utilities](#additional-utilities)
-    - [Using the CVAT API](#using-the-cvat-api)
-    - [Viewing task statuses](#viewing-task-statuses)
-    - [Deleting tasks](#deleting-tasks)

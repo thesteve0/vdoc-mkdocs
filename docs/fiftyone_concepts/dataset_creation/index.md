@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../../index.html) >
-
-- [FiftyOne User Guide](../index.html) >
-- Loading data into FiftyOne
-
-Contents
-
-
 # Loading data into FiftyOne [¶](\#loading-data-into-fiftyone "Permalink to this headline")
 
 The first step to using FiftyOne is to load your data into a
@@ -42,7 +32,7 @@ If your data is stored on disk in one of the
 FiftyOne, then you can automatically load your data into a [`Dataset`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") via the
 following simple pattern:
 
-```
+```python
 import fiftyone as fo
 
 # A name for the dataset
@@ -112,7 +102,7 @@ predictions to take advantage of FiftyOne’s
 The [FiftyOne Dataset Zoo](../../dataset_zoo/index.html#dataset-zoo) contains dozens of popular public
 datasets that you can load into FiftyOne in a single line of code:
 
-```
+```python
 import fiftyone.zoo as foz
 
 # List available datasets
@@ -128,10 +118,3 @@ Note
 
 Check out the [available zoo datasets](../../dataset_zoo/datasets.html#dataset-zoo-datasets)!
 
-- Loading data into FiftyOne
-  - [Common formats](#common-formats)
-  - [Custom formats](#custom-formats)
-  - [Loading images](#loading-images)
-  - [Loading videos](#loading-videos)
-  - [Model predictions](#model-predictions)
-  - [Need data?](#need-data)

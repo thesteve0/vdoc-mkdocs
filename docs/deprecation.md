@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](index.html) >
-
-- FiftyOne Deprecation Notices
-
-Contents
-
-
 # FiftyOne Deprecation Notices [¶](\#fiftyone-deprecation-notices "Permalink to this headline")
 
 ## FiftyOne Desktop [¶](\#fiftyone-desktop "Permalink to this headline")
@@ -36,7 +27,3 @@ transitioned to `end-of-life` effective July of 2024. FiftyOne Teams
 releases after October 31, 2024 might no longer be compatible with
 Kubernetes 1.27 and older.
 
-- FiftyOne Deprecation Notices
-  - [FiftyOne Desktop](#fiftyone-desktop)
-  - [Python 3.8](#python-3-8)
-  - [Kubernetes 1.27](#kubernetes-1-27)

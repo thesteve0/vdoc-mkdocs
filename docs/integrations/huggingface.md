@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Hugging Face Integration
-
-Contents
-
-
 # Hugging Face Integration [¶](\#hugging-face-integration "Permalink to this headline")
 
 FiftyOne integrates natively with Hugging Face’s
@@ -27,7 +17,7 @@ To get started with
 [Transformers](https://huggingface.co/docs/transformers), just install the
 `transformers` package:
 
-```
+```python
 pip install -U transformers
 
 ```
@@ -44,7 +34,7 @@ method.
 The examples below show how to run inference with various Transformers models
 on the following sample dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -60,7 +50,7 @@ dataset’s
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 # BeiT
 from transformers import BeitForImageClassification
 model = BeitForImageClassification.from_pretrained(
@@ -111,7 +101,7 @@ model = AutoModelForImageClassification.from_pretrained(
 
 ```
 
-```
+```python
 dataset.apply_model(model, label_field="classif_predictions")
 
 session = fo.launch_app(dataset)
@@ -123,7 +113,7 @@ then use the
 [`to_classification()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_classification "fiftyone.utils.transformers.to_classification")
 utility to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#classification):
 
-```
+```python
 from PIL import Image
 import torch
 import fiftyone.utils.transformers as fout
@@ -153,7 +143,7 @@ To load a `transformers` classification model from the zoo, specify
 `"classification-transformer-torch"` as the first argument, and pass in the
 model’s name or path as a keyword argument:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -174,7 +164,7 @@ dataset’s
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 # DETA
 from transformers import DetaForObjectDetection
 model = DetaForObjectDetection.from_pretrained(
@@ -213,7 +203,7 @@ model = AutoModelForObjectDetection.from_pretrained(
 
 ```
 
-```
+```python
 dataset.apply_model(model, label_field="det_predictions")
 
 session = fo.launch_app(dataset)
@@ -225,7 +215,7 @@ then use the
 [`to_detections()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_detections "fiftyone.utils.transformers.to_detections") utility to
 convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#object-detection):
 
-```
+```python
 from PIL import Image
 import torch
 
@@ -264,7 +254,7 @@ To load a `transformers` detection model from the zoo, specify
 `"detection-transformer-torch"` as the first argument, and pass in the model’s
 name or path as a keyword argument:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -285,7 +275,7 @@ FiftyOne dataset’s
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 # Mask2Former
 from transformers import Mask2FormerForUniversalSegmentation
 model = Mask2FormerForUniversalSegmentation.from_pretrained(
@@ -312,7 +302,7 @@ model = AutoModelForSemanticSegmentation.from_pretrained(
 
 ```
 
-```
+```python
 dataset.apply_model(model, label_field="seg_predictions")
 dataset.default_mask_targets = model.config.id2label
 
@@ -325,7 +315,7 @@ then use the
 [`to_segmentation()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_segmentation "fiftyone.utils.transformers.to_segmentation") utility
 to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#semantic-segmentation):
 
-```
+```python
 from PIL import Image
 import fiftyone.utils.transformers as fout
 
@@ -357,7 +347,7 @@ To load a `transformers` semantic segmentation model from the zoo, specify
 `"segmentation-transformer-torch"` as the first argument, and pass in the
 model’s name or path as a keyword argument:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -377,7 +367,7 @@ You can pass a `transformers` monocular depth estimation model directly to your
 FiftyOne dataset’s [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 # DPT
 from transformers import DPTForDepthEstimation
 model = DPTForDepthEstimation.from_pretrained("Intel/dpt-large")
@@ -396,7 +386,7 @@ model = AutoModelForDepthEstimation.from_pretrained("depth-anything/Depth-Anythi
 
 ```
 
-```
+```python
 dataset.apply_model(model, label_field="depth_predictions")
 
 session = fo.launch_app(dataset)
@@ -410,7 +400,7 @@ To load a `transformers` depth estimation model from the zoo, specify
 `"depth-estimation-transformer-torch"` as the first argument, and pass in the
 model’s name or path as a keyword argument:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -433,7 +423,7 @@ To load a `transformers` zero-shot classification model from the zoo, specify
 `"zero-shot-classification-transformer-torch"` as the first argument, and pass
 in the model’s name or path as a keyword argument:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -448,7 +438,7 @@ Once loaded, you can pass the model directly to your FiftyOne dataset’s
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 dataset.apply_model(model, label_field="altclip")
 
 session = fo.launch_app(dataset)
@@ -458,7 +448,7 @@ session = fo.launch_app(dataset)
 You can also generate embeddings for the samples in your dataset with zero shot
 models as follows:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -475,7 +465,7 @@ session = fo.launch_app(dataset)
 You can also change the label classes of zero shot models any time by setting
 the `classes` attribute of the model:
 
-```
+```python
 model.classes = ["cat", "dog", "bird", "fish", "turtle"]
 
 dataset.apply_model(model, label_field="altclip")
@@ -489,7 +479,7 @@ The
 utility also allows you to manually convert a zero-shot `transformers` model to
 FiftyOne format:
 
-```
+```python
 import fiftyone.utils.transformers as fout
 
 from transformers import CLIPSegModel
@@ -519,7 +509,7 @@ To load a `transformers` zero-shot object detection model from the zoo, specify
 in the model’s name or path as a keyword argument. You can optionally pass in a
 list of label classes as a keyword argument `classes`:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -535,7 +525,7 @@ The
 utility also allows you to manually convert a zero-shot `transformers` model to
 FiftyOne format:
 
-```
+```python
 import fiftyone.utils.transformers as fout
 
 from transformers import OwlViTForObjectDetection
@@ -559,7 +549,7 @@ As of `transformers>=4.40.0` and `fiftyone>=0.24.0`, you can also use
 [Grounding DINO](https://huggingface.co/docs/transformers/main/en/model_doc/grounding-dino)
 models for zero-shot object detection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 model = foz.load_zoo_model(
@@ -586,7 +576,7 @@ When using
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
 you can request batch inference by passing the optional `batch_size` parameter:
 
-```
+```python
 dataset.apply_model(model, label_field="det_predictions", batch_size=16)
 
 ```
@@ -594,7 +584,7 @@ dataset.apply_model(model, label_field="det_predictions", batch_size=16)
 The manual inference loops can be also executed using batch inference via the
 pattern below:
 
-```
+```python
 from fiftyone.core.utils import iter_batches
 import fiftyone.utils.transformers as fout
 
@@ -654,7 +644,7 @@ directly to your FiftyOne dataset’s
 [`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings")
 method:
 
-```
+```python
 # Embeddings from base model
 from transformers import BeitModel
 model = BeitModel.from_pretrained(
@@ -687,7 +677,7 @@ model = OwlViTForObjectDetection.from_pretrained(
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -705,7 +695,7 @@ to check the model’s
 [`has_embeddings`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.has_embeddings "fiftyone.core.models.Model.has_embeddings") property to
 see if the model can be used to generate embeddings:
 
-```
+```python
 import numpy as np
 from PIL import Image
 import fiftyone.utils.transformers as fout
@@ -729,7 +719,7 @@ embedding = model.embed(np.array(image))
 Zero-shot image classification and object detection models from `transformers`
 can also be used to compute embeddings for text:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -749,7 +739,7 @@ You can check whether a model supports text embeddings by checking the
 [`can_embed_prompts`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.ZeroShotTransformerPromptMixin.embed_prompts "fiftyone.utils.transformers.ZeroShotTransformerPromptMixin.embed_prompts")
 property:
 
-```
+```python
 import fiftyone.zoo as foz
 
 # A zero-shot model that supports text embeddings
@@ -774,7 +764,7 @@ You can request batch inference by passing the optional `batch_size` parameter
 to
 [`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"):
 
-```
+```python
 dataset.compute_embeddings(model, embeddings_field="embeddings", batch_size=16)
 
 ```
@@ -786,7 +776,7 @@ directly to your FiftyOne dataset’s
 [`compute_patch_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_patch_embeddings "fiftyone.core.collections.SampleCollection.compute_patch_embeddings")
 method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.transformers as fout
@@ -813,7 +803,7 @@ passed to [Brain methods](../brain.html#fiftyone-brain) like
 `compute_similarity()` and
 `compute_visualization()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -846,14 +836,14 @@ transformers_model = OwlViTForObjectDetection.from_pretrained(
 
 ```
 
-```
+```python
 # Option 1: directly pass `transformers` model
 fob.compute_similarity(dataset, model=transformers_model, brain_key="sim1")
 fob.compute_visualization(dataset, model=transformers_model, brain_key="vis1")
 
 ```
 
-```
+```python
 # Option 2: pass pre-computed embeddings
 dataset.compute_embeddings(transformers_model, embeddings_field="embeddings")
 
@@ -871,7 +861,7 @@ method, along with any necessary keyword arguments that must be passed to
 [`load_zoo_model()`](../api/fiftyone.zoo.html#fiftyone.zoo.load_zoo_model "fiftyone.zoo.load_zoo_model") to load the correct
 model:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -907,7 +897,7 @@ To push datasets to and load datasets from the
 [Hugging Face Hub Python client](https://github.com/huggingface/huggingface_hub),
 which you can install via PyPI:
 
-```
+```python
 pip install "huggingface_hub>=0.20.0"
 
 ```
@@ -923,7 +913,7 @@ profile. At the bottom of this page, you can create a new token with write or
 read access to the Hub. Once you have your token, you can set it as an
 environment variable:
 
-```
+```python
 export HF_TOKEN="<your-token-here>"
 
 ```
@@ -953,7 +943,7 @@ code. As a starting point, let’s use the example
 [Quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) dataset from the
 [FiftyOne Dataset Zoo](../dataset_zoo/index.html#dataset-zoo):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -965,7 +955,7 @@ To push the dataset to the Hugging Face Hub, all you need to do is call
 [`push_to_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.push_to_hub "fiftyone.utils.huggingface.push_to_hub") with the dataset
 and the desired `repo_name`:
 
-```
+```python
 from fiftyone.utils.huggingface import push_to_hub
 
 push_to_hub(dataset, "my-quickstart-dataset")
@@ -990,7 +980,7 @@ and a code snippet illustrating how to load the dataset from the hub.
 
 Your dataset will be available on the Hub at the following URL:
 
-```
+```python
 https://huggingface.co/datasets/<your-username-or-org-name>/my-quickstart-dataset
 
 ```
@@ -1001,7 +991,7 @@ predictions with high confidence, you can do so by creating the view as usual,
 and then passing that in to
 [`push_to_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.push_to_hub "fiftyone.utils.huggingface.push_to_hub"):
 
-```
+```python
 from fiftyone.utils.huggingface import push_to_hub
 
 # Create view with high confidence predictions
@@ -1021,7 +1011,7 @@ displayed on the dataset page. To do this, you can pass the `preview_path`
 argument to [`push_to_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.push_to_hub "fiftyone.utils.huggingface.push_to_hub"), with
 either a relative or absolute path to the preview file on your local machine:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1056,7 +1046,7 @@ automatically when pushing large datasets to the Hub, but you can manually
 configure the number of samples per directory by passing the `chunk_size`
 argument to [`push_to_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.push_to_hub "fiftyone.utils.huggingface.push_to_hub"):
 
-```
+```python
 from fiftyone.utils.huggingface import push_to_hub
 
 # Limit to 100 images per directory
@@ -1092,7 +1082,7 @@ exists. Defaults to `False`.
 
 For example, to push a dataset to the Hub as private, you can do the following:
 
-```
+```python
 from fiftyone.utils.huggingface import push_to_hub
 
 push_to_hub(dataset, "my-private-dataset", private=True)
@@ -1104,7 +1094,7 @@ all of which will propagate to the `fiftyone.yml` config file and the Hugging
 Face Dataset Card. For example, to push a video action recognition dataset with
 an MIT license and a description, you can do the following:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone.utils.huggingface import push_to_hub
@@ -1147,7 +1137,7 @@ but you can also specify the data is uploaded in any of these
 quickstart dataset in [COCO](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) format, with a
 Creative Commons Attribution 4.0 license, you can do the following:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone.utils.huggingface import push_to_hub
@@ -1179,7 +1169,7 @@ the dataset by passing the `min_fiftyone_version` argument. This is useful when
 the dataset utilizes features that are only available in versions above a certain
 release. For example, to specify that the dataset requires `fiftyone>=0.23.0`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone.utils.huggingface import push_to_hub
@@ -1212,7 +1202,7 @@ only requires the `repo_id` of the dataset you want to load. For example, to
 load the [private dataset](#huggingface-hub-push-dataset-advanced) that we
 pushed to the Hub earlier, you can do the following:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub("<username-or-org>/my-private-dataset")
@@ -1239,7 +1229,7 @@ additional arguments.
 
 For example, to load the `quickstart` dataset that we pushed to the Hub earlier,
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub("<username>/my-quickstart-dataset")
@@ -1263,7 +1253,7 @@ dataset via the `config_file` keyword argument.
 For example, to load the `mnist` dataset from the Hub, you might have a local
 yaml config file like this:
 
-```
+```python
 format: ParquetFilesDataset
 classification_fields: label
 
@@ -1272,7 +1262,7 @@ classification_fields: label
 To load the dataset from the Hub, you can pass the `repo_id` of the dataset and
 the path to the local yaml config file:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1297,7 +1287,7 @@ simple enough that you can specify the necessary arguments directly.
 For example, to load the `mnist` dataset from the Hub, you can pass the `format`
 and `classification_fields` arguments directly:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1511,7 +1501,7 @@ need to do is pass the `repo_id` of the dataset — in this case `"ylecun/mnist
 [`load_from_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.load_from_hub "fiftyone.utils.huggingface.load_from_hub"), specify the
 format as `"parquet"`, and specify the `classification_fields` as `"label"`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1559,7 +1549,7 @@ _multiple_ classification fields, such as
 to load the CIFAR-100 dataset, you can specify the `classification_fields` as
 `["coarse_label", "fine_label"]`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1576,7 +1566,7 @@ session = fo.launch_app(dataset)
 To load the [WikiArt](https://huggingface.co/datasets/huggan/wikiart) dataset,
 you can specify the `classification_fields` as `["artist", "genre", "style"]`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1594,7 +1584,7 @@ As touched upon earlier, you can also load a classification _subset_ of a
 dataset. For example, to load the `cropped_digits` subset of the
 [Street View House Numbers](https://huggingface.co/datasets/svhn) dataset:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1616,7 +1606,7 @@ the [MS COCO](https://huggingface.co/datasets/detection-datasets/coco)
 dataset, you can specify the `detection_fields` as `"objects"`, which is the
 standard column name for detection features in Hugging Face datasets:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1650,7 +1640,7 @@ different name. For example, the `full_numbers` subset of the
 stores its detections under the column `digits`. To load this subset, you can
 specify the `detection_fields` as `"digits"`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1680,7 +1670,7 @@ load the “instance\_segmentation” subset from
 [SceneParse150](https://huggingface.co/datasets/zhoubolei/scene_parse_150), all you
 need to do is specify the `mask_fields` as `"annotation"`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1698,7 +1688,7 @@ session = fo.launch_app(dataset)
 Many other segmentation datasets on the Hub can be loaded in the same way, such
 as [ADE 20K Tiny](https://huggingface.co/datasets/nateraw/ade20k-tiny):
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1720,7 +1710,7 @@ example, to load the
 [Sidewalk Semantic](https://huggingface.co/datasets/segments/sidewalk-semantic)
 dataset:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 # Note: you need access to the dataset to load it!
@@ -1757,7 +1747,7 @@ Let’s look at a few examples:
 For [DiffusionDB](https://huggingface.co/datasets/poloclub/diffusiondb), you
 can load the dataset as follows:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1798,7 +1788,7 @@ modifications to `filepath` or other arguments as needed. Here are a few example
 For [COYO-700M](https://huggingface.co/datasets/kakaobrain/coyo-700m), we just
 need to specify the `filepath` as `"url"`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1815,7 +1805,7 @@ session = fo.launch_app(dataset)
 For [RedCaps](https://huggingface.co/datasets/kdexd/red_caps), we instead use
 `"image_url"` as the `filepath`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1833,7 +1823,7 @@ For [MMMU](https://huggingface.co/datasets/MMMU/MMMU)
 (A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for
 Expert AGI), we use `"image_1"` as the `filepath`:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1861,7 +1851,7 @@ revision of the dataset. However, you can also load a specific revision of the
 dataset by specifying the `revision` argument. For example, to load the last
 revision of DiffusionDB before NSFW scores were added, you can specify this via:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1886,7 +1876,7 @@ load this dataset, you can specify the `filepath` as `"source_img"` and the
 target image via `additional_media_fields`. Because this is getting a bit more
 complex, we’ll create a local yaml config file to specify the dataset format:
 
-```
+```python
 format: ParquetFilesDataset
 name: magicbrush
 filepath: source_img
@@ -1898,7 +1888,7 @@ mask_fields: mask_img
 
 Now, you can load the dataset using the local yaml config file:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1918,7 +1908,7 @@ specifying the `batch_size`, `num_workers`, and `overwrite` arguments. For
 example, to download the `full_numbers` subset of the [Street View House Numbers](https://huggingface.co/datasets/ufldl-stanford/svhn) dataset with a batch size of 50 and 4
 workers, you can do the following:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1944,7 +1934,7 @@ set as an environment variable `HF_TOKEN`, this is as simple as specifying the
 a specific token for a specific dataset, you can specify the `token` argument.
 You can do so following this recipe:
 
-```
+```python
 from fiftyone.utils.huggingface import load_from_hub
 
 dataset = load_from_hub(
@@ -1957,34 +1947,3 @@ session = fo.launch_app(dataset)
 
 ```
 
-- Hugging Face Integration
-  - [Transformers Library](#transformers-library)
-    - [Setup](#setup)
-    - [Inference](#inference)
-      - [Image classification](#image-classification)
-      - [Object detection](#object-detection)
-      - [Semantic segmentation](#semantic-segmentation)
-      - [Monocular depth estimation](#monocular-depth-estimation)
-      - [Zero-shot classification](#zero-shot-classification)
-      - [Zero-shot object detection](#zero-shot-object-detection)
-      - [Batch inference](#batch-inference)
-    - [Embeddings](#embeddings)
-      - [Image embeddings](#image-embeddings)
-      - [Text embeddings](#text-embeddings)
-      - [Batch embeddings](#batch-embeddings)
-      - [Patch embeddings](#patch-embeddings)
-    - [Brain methods](#brain-methods)
-  - [Hugging Face Hub](#huggingface-hub)
-    - [Setup](#huggingface-hub-setup)
-    - [Pushing datasets to the Hub](#pushing-datasets-to-the-hub)
-      - [Basic usage](#basic-usage)
-      - [Pushing large datasets](#pushing-large-datasets)
-      - [Advanced usage](#advanced-usage)
-    - [Loading datasets from the Hub](#loading-datasets-from-the-hub)
-      - [Loading datasets from repo configs](#loading-datasets-from-repo-configs)
-      - [Loading datasets from local configs](#loading-datasets-from-local-configs)
-      - [Loading datasets with config kwargs](#loading-datasets-with-config-kwargs)
-      - [Supported config fields](#supported-config-fields)
-      - [Configuring the download process](#configuring-the-download-process)
-      - [Basic examples](#basic-examples)
-      - [Advanced examples](#advanced-examples)

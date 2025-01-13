@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- API Connection
-
-Contents
-
-
 # API Connection [¶](\#api-connection "Permalink to this headline")
 
 This page describes how to create API keys and configure your
@@ -36,7 +26,7 @@ FiftyOne config as described below:
 
 For example, you can set environment variables:
 
-```
+```python
 export FIFTYONE_API_URI==XXXXXXXX
 export FIFTYONE_API_KEY==YYYYYYYY
 
@@ -102,9 +92,3 @@ Note
 
 Admins can delete API keys for other users, if desired.
 
-- API Connection
-  - [Configuring an API connection](#configuring-an-api-connection)
-  - [Generating an API key](#generating-an-api-key)
-    - [Generating keys via the UI](#generating-keys-via-the-ui)
-    - [Generating keys programmatically](#generating-keys-programmatically)
-  - [Deleting an API key](#deleting-an-api-key)

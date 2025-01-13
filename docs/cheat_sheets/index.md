@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Cheat Sheets
-
-Contents
-
-
 # FiftyOne Cheat Sheets [¶](\#fiftyone-cheat-sheets "Permalink to this headline")
 
 Check out the links below for topic-focused, informationally dense documents
@@ -36,4 +27,3 @@ Perform pandas-style computer vision queries in FiftyOne.
 
 [Queue the queries](pandas_vs_fiftyone.html)
 
-- FiftyOne Cheat Sheets

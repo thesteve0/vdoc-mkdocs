@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [Plugins Overview](index.html) >
-- Using Plugins
-
-Contents
-
-
 # Using Plugins [¶](\#using-plugins "Permalink to this headline")
 
 Every plugin that you [download](#plugins-download) exposes one or more
@@ -58,7 +48,7 @@ By default, plugins are downloaded to `~/fiftyone/__plugins__`, but you can
 customize this directory by setting the `FIFTYONE_PLUGINS_DIR` environment
 variable:
 
-```
+```python
 export FIFTYONE_PLUGINS_DIR=/path/to/your/plugins
 
 ```
@@ -66,7 +56,7 @@ export FIFTYONE_PLUGINS_DIR=/path/to/your/plugins
 You can also permanently configure this directory by adding it to your
 [FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
 
-```
+```python
 {
     "plugins_dir": "/path/to/your/plugins"
 }
@@ -75,7 +65,7 @@ You can also permanently configure this directory by adding it to your
 
 You can locate your current plugins directory by running the following command:
 
-```
+```python
 fiftyone config plugins_dir
 # ~/fiftyone/__plugins__
 
@@ -96,25 +86,25 @@ variety of plugin-related actions.
 You can use the [fiftyone plugins list](../cli/index.html#cli-fiftyone-plugins-list)
 command to list the plugins that you’ve downloaded or created locally:
 
-```
+```python
 # List all locally available plugins
 fiftyone plugins list
 
 ```
 
-```
+```python
 # List enabled plugins
 fiftyone plugins list --enabled
 
 ```
 
-```
+```python
 # List disabled plugins
 fiftyone plugins list --disabled
 
 ```
 
-```
+```python
 plugin               version   enabled  directory
 -------------------  -------  -------  ----------------------------------------------------------
 @voxel51/annotation  1.0.0    ✓        ~/fiftyone/__plugins__/fiftyone-plugins/plugins/annotation
@@ -134,31 +124,31 @@ You can use the [fiftyone operators list](../cli/index.html#cli-fiftyone-operato
 command to list the individual operators and panels within the plugins that
 you’ve installed locally:
 
-```
+```python
 # List all available operators and panels
 fiftyone operators list
 
 ```
 
-```
+```python
 # List enabled operators and panels
 fiftyone operators list --enabled
 
 ```
 
-```
+```python
 # List disabled operators and panels
 fiftyone operators list --disabled
 
 ```
 
-```
+```python
 # Only list panels
 fiftyone operators list --panels-only
 
 ```
 
-```
+```python
 uri                                          enabled   builtin   panel   unlisted
 -------------------------------------------  --------  --------  ------  ---------
 @voxel51/annotation/request_annotations      ✓
@@ -212,19 +202,19 @@ You can use the
 [fiftyone plugins download](../cli/index.html#cli-fiftyone-plugins-download) command to
 list the plugins that you’ve downloaded or created locally:
 
-```
+```python
 # Download plugins from a GitHub repository URL
 fiftyone plugins download <github-repo-url>
 
 ```
 
-```
+```python
 # Download plugins by specifying the GitHub repository details
 fiftyone plugins download <user>/<repo>[/<ref>]
 
 ```
 
-```
+```python
 # Download specific plugins from a URL with a custom search depth
 fiftyone plugins download \
     <url> \
@@ -239,12 +229,12 @@ You can use the
 [fiftyone plugins info](../cli/index.html#cli-fiftyone-plugins-info) command to view the
 available metadata about a plugin:
 
-```
+```python
 fiftyone plugins info @voxel51/annotation
 
 ```
 
-```
+```python
 key                     value
 ----------------------  --------------------------------------------------------------------
 name                    @voxel51/annotation
@@ -285,12 +275,12 @@ You can use the [fiftyone operators info](../cli/index.html#cli-fiftyone-operato
 view the available metadata about an individual operator or panel within a
 plugin:
 
-```
+```python
 fiftyone operators info @voxel51/io/import_samples
 
 ```
 
-```
+```python
 key                                  value
 -----------------------------------  ----------------------
 name                                 import_samples
@@ -319,19 +309,19 @@ You can use the
 [fiftyone plugins requirements](../cli/index.html#cli-fiftyone-plugins-requirements)
 command to view, install, and ensure installation of a plugin’s requirements:
 
-```
+```python
 # Print requirements for a plugin
 fiftyone plugins requirements <name> --print
 
 ```
 
-```
+```python
 # Install any requirements for the plugin
 fiftyone plugins requirements <name> --install
 
 ```
 
-```
+```python
 # Ensures that the requirements for the plugin are satisfied
 fiftyone plugins requirements <name> --ensure
 
@@ -344,7 +334,7 @@ You can use the
 [fiftyone plugins disable](../cli/index.html#cli-fiftyone-plugins-disable) commands to
 enable and disable plugins that you’ve downloaded:
 
-```
+```python
 # Enable a plugin
 fiftyone plugins enable <name>
 
@@ -356,7 +346,7 @@ fiftyone plugins enable --all
 
 ```
 
-```
+```python
 # Disable a plugin
 fiftyone plugins disable <name>
 
@@ -376,13 +366,13 @@ Operators associated with disabled plugins will not appear in the App’s
 Plugin disablement is stored as an `enabled: false` entry in the plugin’s
 [config settings](#plugins-configuration).
 
-```
+```python
 fiftyone plugins disable @voxel51/zoo
 fiftyone app config plugins
 
 ```
 
-```
+```python
 {
     "map": {
         "mapboxAccessToken": "XXXXXXXX"
@@ -401,19 +391,19 @@ You can use the
 [fiftyone plugins delete](../cli/index.html#cli-fiftyone-plugins-delete) command to delete
 plugins from your local machine.
 
-```
+```python
 # Delete a plugin from local disk
 fiftyone plugins delete <name>
 
 ```
 
-```
+```python
 # Delete multiple plugins from local disk
 fiftyone plugins delete <name1> <name2> ...
 
 ```
 
-```
+```python
 # Delete all plugins from local disk
 fiftyone plugins delete --all
 
@@ -443,7 +433,7 @@ For example, the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin declares the following secrets:
 
-```
+```python
 secrets:
   - FIFTYONE_CVAT_URL
   - FIFTYONE_CVAT_USERNAME
@@ -468,7 +458,7 @@ use the CVAT backend with the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml)
 plugin, you would set:
 
-```
+```python
 FIFTYONE_CVAT_URL=...
 FIFTYONE_CVAT_USERNAME=...
 FIFTYONE_CVAT_PASSWORD=...
@@ -480,7 +470,7 @@ At runtime, the plugin’s execution context will automatically be hydrated with
 any available secrets that are declared by the plugin. Operators access these
 secrets via the `ctx.secrets` dict:
 
-```
+```python
 def execute(self, ctx):
     url = ctx.secrets["FIFTYONE_CVAT_URL"]
     username = ctx.secrets["FIFTYONE_CVAT_USERNAME"]
@@ -559,7 +549,7 @@ For example, the
 [@voxel51/utils/compute\_metadata](https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/utils)
 operator can be invoked like so:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.zoo as foz
@@ -580,7 +570,7 @@ used to retrieve the operator by its URI.
 Behind the scenes, the operator’s `__call__()` method is implemented as
 follows:
 
-```
+```python
 class ComputeMetadata(foo.Operator):
     def __call__(
         self,
@@ -607,7 +597,7 @@ For operators whose
 data, you can access it via the `result` property of the returned
 `ExecutionResult` object:
 
-```
+```python
 op = foo.get_operator("@an-operator/with-results")
 
 result = op(...)
@@ -621,7 +611,7 @@ When working in notebook contexts, executing operators returns an
 `asyncio.Task` that you can `await` to retrieve the
 `ExecutionResult`:
 
-```
+```python
 op = foo.get_operator("@an-operator/with-results")
 
 result = await op(...)
@@ -640,7 +630,7 @@ In fact, the
 [@voxel51/utils/compute\_metadata](https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/utils)
 operator does just that:
 
-```
+```python
 class ComputeMetadata(foo.Operator):
     return foo.OperatorConfig(
         ...
@@ -671,7 +661,7 @@ class ComputeMetadata(foo.Operator):
 
 which means that it can be invoked like so:
 
-```
+```python
 compute_metadata = foo.get_operator("@voxel51/utils/compute_metadata")
 
 # Schedule a delegated operation to (re)compute metadata
@@ -684,7 +674,7 @@ compute_metadata(dataset, overwrite=True, delegate=True)
 You can programmatically execute any operator by directly calling
 `execute_operator()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.zoo as foz
@@ -718,7 +708,7 @@ For operators whose
 data, you can access it via the `result` property of the returned
 `ExecutionResult` object:
 
-```
+```python
 result = foo.execute_operator("@an-operator/with-results", ctx)
 print(result.result)  # {...}
 
@@ -730,7 +720,7 @@ When working in notebook contexts, executing operators returns an
 `asyncio.Task` that you can `await` to retrieve the
 `ExecutionResult`:
 
-```
+```python
 result = await foo.execute_operator("@an-operator/with-results", ctx)
 print(result.result)  # {...}
 
@@ -744,7 +734,7 @@ If an operation supports both immediate and
 delegated execution by passing the `request_delegation=True` flag to
 `execute_operator()`:
 
-```
+```python
 foo.execute_operator(operator_uri, ctx=ctx, request_delegation=True)
 
 ```
@@ -759,7 +749,7 @@ Note
 [FiftyOne Teams](../teams/index.html#fiftyone-teams) users can also specify an optional
 delegation target for their delegated operations:
 
-```
+```python
 foo.execute_operator(
     operator_uri,
     ctx=ctx,
@@ -789,7 +779,7 @@ call that can be expressed in any of the following forms:
 Here’s some examples of delegating common tasks that can be expressed in the
 above forms:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.operators as foo
 import fiftyone.zoo as foz
@@ -880,7 +870,7 @@ co-develop your data and models together 📈
 FiftyOne Open Source users can run delegated operations via the
 [fiftyone delegated launch](../cli/index.html#cli-fiftyone-delegated-launch) CLI command:
 
-```
+```python
 fiftyone delegated launch
 
 ```
@@ -892,7 +882,7 @@ You must also ensure that the
 [allow\_legacy\_orchestrators](../fiftyone_concepts/config.html#configuring-fiftyone) config flag is set
 in the environment where you run the App/SDK, e.g. by setting:
 
-```
+```python
 export FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS=true
 
 ```
@@ -928,13 +918,13 @@ number of useful utilities for viewing the status of your delegated operations.
 You can use the [fiftyone delegated list](../cli/index.html#cli-fiftyone-delegated-list)
 command to list the delegated operations that you’ve run:
 
-```
+```python
 # List all delegated operations
 fiftyone delegated list
 
 ```
 
-```
+```python
 # List some specific delegated operations
 fiftyone delegated list \
     --dataset quickstart \
@@ -952,7 +942,7 @@ You can use the
 the available metadata about a delegated operation, including its inputs,
 execution status, and error stack trace, if applicable.
 
-```
+```python
 # Print information about a delegated operation
 fiftyone delegated info <id>
 
@@ -964,51 +954,21 @@ You can use the
 [fiftyone delegated cleanup](../cli/index.html#cli-fiftyone-delegated-cleanup) command to
 cleanup delegated operations:
 
-```
+```python
 # Delete all failed operations associated with a given dataset
 fiftyone delegated cleanup --dataset quickstart --state FAILED
 
 ```
 
-```
+```python
 # Delete all delegated operations associated with non-existent datasets
 fiftyone delegated cleanup --orphan
 
 ```
 
-```
+```python
 # Print information about operations rather than actually deleting them
 fiftyone delegated cleanup --orphan --dry-run
 
 ```
 
-- Using Plugins
-  - [Downloading plugins](#downloading-plugins)
-  - [Your plugins directory](#your-plugins-directory)
-  - [Managing plugins](#managing-plugins)
-    - [Listing plugins](#listing-plugins)
-    - [Listing operators](#listing-operators)
-    - [Downloading plugins](#id2)
-    - [Getting plugin info](#getting-plugin-info)
-    - [Getting operator info](#getting-operator-info)
-    - [Installing plugin requirements](#installing-plugin-requirements)
-    - [Enabling and disabling plugins](#enabling-and-disabling-plugins)
-    - [Deleting plugins](#deleting-plugins)
-  - [Configuring plugins](#configuring-plugins)
-  - [Plugin secrets](#plugin-secrets)
-  - [Using panels](#using-panels)
-  - [Using operators](#using-operators)
-  - [Executing operators via SDK](#executing-operators-via-sdk)
-    - [Calling operators](#calling-operators)
-      - [Requesting delegation](#requesting-delegation)
-    - [Direct execution](#direct-execution)
-      - [Requesting delegation](#id8)
-    - [Delegating function calls](#delegating-function-calls)
-  - [Delegated operations](#delegated-operations)
-  - [Setting up an orchestrator](#setting-up-an-orchestrator)
-    - [FiftyOne Open Source](#fiftyone-open-source)
-    - [FiftyOne Teams](#fiftyone-teams)
-  - [Managing delegated operations](#managing-delegated-operations)
-    - [Listing delegated operations](#listing-delegated-operations)
-    - [Getting delegated operation info](#getting-delegated-operation-info)
-    - [Cleaning up delegated operations](#cleaning-up-delegated-operations)

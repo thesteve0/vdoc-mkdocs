@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Data Quality
-
-Contents
-
-
 # Data Quality [¶](\#data-quality "Permalink to this headline")
 
 **Available in FiftyOne Teams v2.2+**
@@ -185,9 +175,3 @@ Did you know? You can delete sample fields from the App using the
 `delete_sample_field` operator available via the
 [Operator browser](../plugins/using_plugins.html#using-operators).
 
-- Data Quality
-  - [Data Quality panel](#data-quality-panel)
-  - [Scanning for issues](#scanning-for-issues)
-  - [Analyzing scan results](#analyzing-scan-results)
-  - [Updating a scan](#updating-a-scan)
-  - [Deleting a scan](#deleting-a-scan)

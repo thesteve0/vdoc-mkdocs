@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Finding Classification Mistakes with FiftyOne
-
-Contents
-
-
 # Finding Classification Mistakes with FiftyOne [¶](\#Finding-Classification-Mistakes-with-FiftyOne "Permalink to this headline")
 
 Annotations mistakes create an artificial ceiling on the performance of your models. However, finding these mistakes by hand is at least as arduous as the original annotation work! Enter FiftyOne.
@@ -33,36 +23,36 @@ FiftyOne can help you find and correct label mistakes in your datasets, enabling
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 We’ll also need `torch` and `torchvision` installed:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 !pip install torch torchvision
 
 ```
 
 In this tutorial, we’ll use a pretrained CIFAR-10 PyTorch model (a ResNet-50) from the web:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 # Download the software
 !git clone --depth 1 --branch v2.1 https://github.com/huyvnphan/PyTorch_CIFAR10.git
 
@@ -79,12 +69,12 @@ For this walkthrough, we will artificially perturb an existing dataset with mist
 
 The code block below loads the test split of the [CIFAR-10 dataset](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html#cifar-10) into FiftyOne and randomly breaks 10% (1000 samples) of the labels:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -112,18 +102,18 @@ for sample in dataset.take(_num_mistakes):
 
 Let’s print some information about the dataset to verify the operation that we performed:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 # Verify that the `mistake` tag is now in the dataset's schema
 print(dataset)
 
 ```
 
-```
+```python
 Name:           cifar10-test
 Media type:     image
 Num samples:    10000
@@ -137,19 +127,19 @@ Sample fields:
 
 ```
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 # Count the number of samples with the `mistake` tag
 num_mistakes = len(dataset.match_tags("mistake"))
 print("%d ground truth labels are now mistakes" % num_mistakes)
 
 ```
 
-```
+```python
 1000 ground truth labels are now mistakes
 
 ```
@@ -160,12 +150,12 @@ Using an off-the-shelf model, let’s now add predictions to the dataset, which 
 
 The code block below adds model predictions to another randomly chosen 10% (1000 samples) of the dataset:
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 import sys
 
 import numpy as np
@@ -239,19 +229,19 @@ with fo.ProgressBar() as pb:
 
 ```
 
-```
+```python
  100% |███████████████████| 50/50 [11.0s elapsed, 0s remaining, 4.7 samples/s]
 
 ```
 
 Let’s print some information about the predictions that were generated and how many of them correspond to samples whose ground truth labels were corrupted:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 # Count the number of samples with the `processed` tag
 num_processed = len(dataset.match_tags("processed"))
 
@@ -263,7 +253,7 @@ print("%d of these samples have label mistakes" % num_corrupted)
 
 ```
 
-```
+```python
 Added predictions to 1000 samples
 86 of these samples have label mistakes
 
@@ -273,12 +263,12 @@ Added predictions to 1000 samples
 
 Now we can run a method from FiftyOne that estimates the mistakenness of the ground samples for which we generated predictions:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 # Get samples for which we added predictions
@@ -289,7 +279,7 @@ fob.compute_mistakenness(h_view, model_name, label_field="ground_truth", use_log
 
 ```
 
-```
+```python
 Computing mistakenness...
  100% |███████████████| 1000/1000 [2.4s elapsed, 0s remaining, 446.1 samples/s]
 Mistakenness computation complete
@@ -298,12 +288,12 @@ Mistakenness computation complete
 
 The above method added `mistakenness` field to all samples for which we added predictions. We can easily sort by likelihood of mistakenness from code:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 # Sort by likelihood of mistake (most likely first)
 mistake_view = (dataset
     .match_tags("processed")
@@ -315,7 +305,7 @@ print(mistake_view)
 
 ```
 
-```
+```python
 Dataset:        cifar10-test
 Media type:     image
 Num samples:    1000
@@ -333,18 +323,18 @@ View stages:
 
 ```
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 # Inspect the first few samples
 print(mistake_view.head())
 
 ```
 
-```
+```python
 [<SampleView: {\
     'id': '6064c24201257d68b7b046d7',\
     'media_type': 'image',\
@@ -420,12 +410,12 @@ print(mistake_view.head())
 
 Let’s open the [FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html) to visually inspect the results:
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset)
 
 ```
@@ -434,12 +424,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 # Show only the samples that were processed
 session.view = dataset.match_tags("processed")
 
@@ -449,12 +439,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 # Show only the samples for which we added label mistakes
 session.view = dataset.match_tags("mistake")
 
@@ -464,12 +454,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 # Show the samples we processed in rank order by the mistakenness
 session.view = mistake_view
 
@@ -481,18 +471,13 @@ Activate
 
 In a real world scenario, we would then take the ground truth classifications that are likely mistakes and send them off to our annotation provider of choice as annotations to be reviewed. FiftyOne currently offers integrations for both [Labelbox](https://voxel51.com/docs/fiftyone/api/fiftyone.utils.labelbox.html) and [Scale](https://voxel51.com/docs/fiftyone/api/fiftyone.utils.scale.html).
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 session.freeze() # screenshot the active App for sharing
 
 ```
 
-- Finding Classification Mistakes with FiftyOne
-  - [Setup](#Setup)
-  - [Manipulating the data](#Manipulating-the-data)
-  - [Add predictions to the dataset](#Add-predictions-to-the-dataset)
-  - [Find the mistakes](#Find-the-mistakes)

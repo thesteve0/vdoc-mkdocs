@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Using Aggregations
-
-Contents
-
-
 # Using Aggregations [¶](\#using-aggregations "Permalink to this headline")
 
 [Datasets](using_datasets.html#using-datasets) are the core data structure in FiftyOne,
@@ -33,7 +23,7 @@ encapsulating the computation of a different statistic about your data.
 Aggregations are conveniently exposed as methods on all [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and
 [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") objects:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -47,7 +37,7 @@ print(dataset.list_aggregations())
 Think of aggregations as more efficient, concise alternatives to writing
 explicit loops over your dataset to compute a statistic:
 
-```
+```python
 from collections import defaultdict
 
 # Compute label histogram manually
@@ -65,7 +55,7 @@ print(counts)  # same as `manual_counts` above
 You can even [aggregate on expressions](#aggregations-expressions) that
 transform the data in arbitrarily complex ways:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Expression that computes the number of predicted objects
@@ -100,7 +90,7 @@ You can use the
 aggregation to compute the `[min, max]` range of a numeric field of a
 dataset:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -123,7 +113,7 @@ You can use the
 [`count()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.count "fiftyone.core.collections.SampleCollection.count") aggregation
 to compute the number of non- `None` field values in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -151,7 +141,7 @@ You can use the
 [`count_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.count_values "fiftyone.core.collections.SampleCollection.count_values")
 aggregation to compute the occurrences of field values in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -174,7 +164,7 @@ You can use the
 [`distinct()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.distinct "fiftyone.core.collections.SampleCollection.distinct")
 aggregation to compute the distinct values of a field in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -197,7 +187,7 @@ You can use the
 [`histogram_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.histogram_values "fiftyone.core.collections.SampleCollection.histogram_values")
 aggregation to compute the histograms of numeric fields of a collection:
 
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -236,7 +226,7 @@ Schema aggregations are useful for detecting the presence and types of
 [dynamic attributes](using_datasets.html#dynamic-attributes) of [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") fields across a
 collection.
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -247,7 +237,7 @@ print(dataset.schema("ground_truth.detections", dynamic_only=True))
 
 ```
 
-```
+```python
 {
     'area': <fiftyone.core.fields.FloatField object at 0x7fc94015fb50>,
     'iscrowd': <fiftyone.core.fields.FloatField object at 0x7fc964869fd0>,
@@ -260,7 +250,7 @@ You can also use the
 aggregation to extract the value type(s) in a list field across all samples in
 a collection:
 
-```
+```python
 from datetime import datetime
 import fiftyone as fo
 
@@ -344,7 +334,7 @@ You can use the
 [`sum()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sum "fiftyone.core.collections.SampleCollection.sum") aggregation to
 compute the sum of the (non- `None`) values of a field in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -364,7 +354,7 @@ You can use the
 [`min()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.min "fiftyone.core.collections.SampleCollection.min") aggregation to
 compute the minimum of the (non- `None`) values of a field in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -381,7 +371,7 @@ You can use the
 [`max()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.max "fiftyone.core.collections.SampleCollection.max") aggregation to
 compute the maximum of the (non- `None`) values of a field in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -399,7 +389,7 @@ You can use the
 compute the arithmetic mean of the (non- `None`) values of a field in a
 collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -417,7 +407,7 @@ You can use the
 aggregation to compute the quantile(s) of the (non- `None`) values of a field
 in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -443,7 +433,7 @@ You can use the
 compute the standard deviation of the (non- `None`) values of a field in a
 collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -462,7 +452,7 @@ You can use the
 aggregation to extract a list containing the values of a field across all
 samples in a collection:
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -499,7 +489,7 @@ of list fields by appending `[]` to the list component of the field path.
 
 The example below demonstrates this capability:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -591,7 +581,7 @@ change in default behavior allows for the possibility that the
 [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression "fiftyone.core.expressions.ViewExpression") you provide is intended to operate on the array as a
 whole.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -622,7 +612,7 @@ or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView
 directly. In this case, the aggregation is not tied to any dataset or view,
 only to the parameters such as field name that define it.
 
-```
+```python
 import fiftyone as fo
 
 # will count the number of samples in a dataset
@@ -640,7 +630,7 @@ Instantiating aggregations in this way allows you to execute multiple
 aggregations on a dataset or view efficiently in a batch via
 [`aggregate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.aggregate "fiftyone.core.collections.SampleCollection.aggregate"):
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -674,7 +664,7 @@ a dataset with certain labels grouped into a single category. You can use
 [`count_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.count_values "fiftyone.core.collections.SampleCollection.count_values")
 to succinctly express this:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -701,7 +691,7 @@ predictions, ignoring any values less than 0.5. You can use
 [`count()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.count "fiftyone.core.collections.SampleCollection.count")
 to succinctly express this:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -724,7 +714,7 @@ print(avg_conf)
 You can compute aggregations on the frame labels of a video dataset by adding
 the `frames` prefix to the relevant frame field name:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -742,24 +732,3 @@ print(counts)
 
 ```
 
-- Using Aggregations
-  - [Overview](#overview)
-  - [Compute bounds](#compute-bounds)
-  - [Count items](#count-items)
-  - [Count values](#count-values)
-  - [Distinct values](#distinct-values)
-  - [Histogram values](#histogram-values)
-  - [Schema](#schema)
-  - [Sum values](#sum-values)
-  - [Min values](#min-values)
-  - [Max values](#max-values)
-  - [Mean values](#mean-values)
-  - [Quantiles](#quantiles)
-  - [Standard deviation](#standard-deviation)
-  - [Values](#values)
-  - [Advanced usage](#advanced-usage)
-    - [Aggregating list fields](#aggregating-list-fields)
-    - [Aggregating expressions](#aggregating-expressions)
-    - [Batching aggregations](#batching-aggregations)
-    - [Transforming data before aggregating](#transforming-data-before-aggregating)
-    - [Aggregating frame labels](#aggregating-frame-labels)

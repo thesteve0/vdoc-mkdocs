@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Dataset Zoo](index.html) >
-- Dataset Zoo API
-
-Contents
-
-
 # Dataset Zoo API [¶](\#dataset-zoo-api "Permalink to this headline")
 
 You can interact with the Dataset Zoo either via the Python library or the CLI:
@@ -42,7 +32,7 @@ dataset into FiftyOne.
 For example, the following snippet shows how to load the BDD100K dataset from
 the zoo:
 
-```
+```python
 import fiftyone.zoo as foz
 
 # First parse the manually downloaded files in `source_dir`
@@ -85,7 +75,7 @@ the format below to tell FiftyOne about the dataset. For example, the manifest
 below adds a second copy of the `quickstart` dataset to the zoo under the
 alias `quickstart-copy`:
 
-```
+```python
 {
     "custom": {
         "quickstart-copy": "fiftyone.zoo.datasets.base.QuickstartDataset"
@@ -109,7 +99,7 @@ Finally, expose your new dataset(s) to FiftyOne by adding your manifest to the
 [FiftyOne config](../user_guide/config.html#configuring-fiftyone). One way to do this is to set the
 `FIFTYONE_DATASET_ZOO_MANIFEST_PATHS` environment variable:
 
-```
+```python
 export FIFTYONE_DATASET_ZOO_MANIFEST_PATHS=/path/to/custom/manifest.json
 
 ```
@@ -117,7 +107,7 @@ export FIFTYONE_DATASET_ZOO_MANIFEST_PATHS=/path/to/custom/manifest.json
 Now you can access the `quickstart-copy` dataset as you would any other zoo
 dataset:
 
-```
+```python
 # Will contain `quickstart-copy`
 fiftyone zoo datasets list
 
@@ -148,13 +138,3 @@ through both backends, it will use the backend specified by the
 You can customize this backend by modifying the `default_ml_backend` setting
 of your [FiftyOne config](../user_guide/config.html#configuring-fiftyone).
 
-- Dataset Zoo API
-  - [Listing zoo datasets](#listing-zoo-datasets)
-  - [Getting information about zoo datasets](#getting-information-about-zoo-datasets)
-  - [Downloading zoo datasets](#downloading-zoo-datasets)
-  - [Loading zoo datasets](#loading-zoo-datasets)
-  - [Loading zoo datasets with manual downloads](#loading-zoo-datasets-with-manual-downloads)
-  - [Controlling where zoo datasets are downloaded](#controlling-where-zoo-datasets-are-downloaded)
-  - [Deleting zoo datasets](#deleting-zoo-datasets)
-  - [Adding datasets to the zoo](#adding-datasets-to-the-zoo)
-  - [Customizing your ML backend](#customizing-your-ml-backend)

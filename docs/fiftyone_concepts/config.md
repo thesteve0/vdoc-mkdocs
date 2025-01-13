@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Configuring FiftyOne
-
-Contents
-
-
 # Configuring FiftyOne [¶](\#configuring-fiftyone "Permalink to this headline")
 
 FiftyOne can be configured in various ways. This guide covers the various
@@ -92,7 +82,7 @@ desired subset of config fields that you wish to customize.
 
 For example, a valid config JSON file is:
 
-```
+```python
 {
     "default_ml_backend": "tensorflow",
     "show_progress_bars": true
@@ -119,7 +109,7 @@ per the order of precedence described above.
 For example, you can customize your FiftyOne config in a Terminal session by
 issuing the following commands prior to launching your Python interpreter:
 
-```
+```python
 export FIFTYONE_DEFAULT_ML_BACKEND=tensorflow
 export FIFTYONE_SHOW_PROGRESS_BARS=true
 
@@ -134,7 +124,7 @@ Any changes to your FiftyOne config applied via this manner will immediately
 take effect for all subsequent calls to `fiftyone.config` during your current
 session.
 
-```
+```python
 import fiftyone as fo
 
 fo.config.default_ml_backend = "tensorflow"
@@ -156,7 +146,7 @@ FiftyOne config to any valid
 You can achieve this by adding the following entry to your
 `~/.fiftyone/config.json` file:
 
-```
+```python
 {
     "database_uri": "mongodb://[username:password@]host[:port]"
 }
@@ -165,7 +155,7 @@ You can achieve this by adding the following entry to your
 
 or you can set the following environment variable:
 
-```
+```python
 export FIFTYONE_DATABASE_URI=mongodb://[username:password@]host[:port]
 
 ```
@@ -175,7 +165,7 @@ FiftyOne must connect as a root user.
 
 You can create a root user with the Mongo shell as follows:
 
-```
+```python
 mongo --shell
 > use admin
 > db.createUser({user: "username", pwd: passwordPrompt(), roles: ["root"]})
@@ -184,7 +174,7 @@ mongo --shell
 
 You must also add `?authSource=admin` to your database URI:
 
-```
+```python
 mongodb://[username:password@]host[:port]/?authSource=admin
 
 ```
@@ -201,7 +191,7 @@ will otherwise occur.
 You can achieve this by adding the following entry to your
 `~/.fiftyone/config.json` file:
 
-```
+```python
 {
     "database_validation": false
 }
@@ -210,7 +200,7 @@ You can achieve this by adding the following entry to your
 
 or you can set the following environment variable:
 
-```
+```python
 export FIFTYONE_DATABASE_VALIDATION=false
 
 ```
@@ -230,7 +220,7 @@ for this, including running the database as a daemon automatically.
 
 In the simplest case, you can just run `mongod` in one shell:
 
-```
+```python
 mkdir -p /path/for/db
 mongod --dbpath /path/for/db
 
@@ -238,12 +228,12 @@ mongod --dbpath /path/for/db
 
 Then, in another shell, configure the database URI and launch FiftyOne:
 
-```
+```python
 export FIFTYONE_DATABASE_URI=mongodb://localhost
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -275,13 +265,13 @@ Database downgrades must be manually performed. See
 You can use the [fiftyone migrate](../cli/index.html#cli-fiftyone-migrate) command to view
 the current versions of your client, database, and datasets:
 
-```
+```python
 # View your client, database, and dataset versions
 fiftyone migrate --info
 
 ```
 
-```
+```python
 Client version: 0.16.6
 Compatible versions: >=0.16.3,<0.17
 
@@ -316,7 +306,7 @@ will see an informative error message when you import the library
 You can restrict migrations by adding the following entry to your
 `~/.fiftyone/config.json` file:
 
-```
+```python
 {
     "database_admin": false
 }
@@ -325,7 +315,7 @@ You can restrict migrations by adding the following entry to your
 
 or by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_DATABASE_ADMIN=false
 
 ```
@@ -349,7 +339,7 @@ deployment:
 e.g., by adding this to their `~/.fiftyone/config.json`:
 
 
-```
+```python
 {
     "database_admin": false
 }
@@ -360,7 +350,7 @@ e.g., by adding this to their `~/.fiftyone/config.json`:
 your current database version:
 
 
-```
+```python
 # In a test environment
 pip install --upgrade fiftyone
 
@@ -369,7 +359,7 @@ fiftyone migrate --info
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 # Convince yourself that the new client can load a dataset
@@ -380,7 +370,7 @@ dataset = fo.load_dataset(...)
 3. Now upgrade the client version used by all services:
 
 
-```
+```python
 # In all client environments
 pip install --upgrade fiftyone
 
@@ -390,7 +380,7 @@ pip install --upgrade fiftyone
 with admin privileges:
 
 
-```
+```python
 export FIFTYONE_DATABASE_ADMIN=true
 
 pip install --upgrade fiftyone
@@ -424,7 +414,7 @@ The `timezone` property can be set to any timezone string supported by
 
 For example, you could set the `FIFTYONE_TIMEZONE` environment variable:
 
-```
+```python
 # Local timezone
 export FIFTYONE_TIMEZONE=local
 
@@ -435,7 +425,7 @@ export FIFTYONE_TIMEZONE=US/Eastern
 
 Or, you can even dynamically change the timezone while you work in Python:
 
-```
+```python
 from datetime import datetime
 import fiftyone as fo
 
@@ -468,7 +458,7 @@ created when you launch the App. A session’s config can be inspected and
 modified via the [`session.config`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.config "fiftyone.core.session.Session.config")
 property.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -555,7 +545,7 @@ settings at runtime:
 You can launch the FiftyOne App with a customized App config on a one-off basis
 via the following pattern:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -575,7 +565,7 @@ You can also configure a live [`Session`](../api/fiftyone.core.session.html#fift
 calling [`session.refresh()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.refresh "fiftyone.core.session.Session.refresh") to
 apply the changes:
 
-```
+```python
 # Customize the config of a live session
 session.config.show_confidence = True
 session.config.show_label = True
@@ -591,7 +581,7 @@ any desired subset of config fields that you wish to customize.
 
 For example, a valid App config JSON file is:
 
-```
+```python
 {
     "show_confidence": false,
     "show_label": false
@@ -618,7 +608,7 @@ as per the order of precedence described above.
 For example, you can customize your App config in a Terminal session by
 issuing the following commands prior to launching your Python interpreter:
 
-```
+```python
 export FIFTYONE_APP_SHOW_CONFIDENCE=false
 export FIFTYONE_APP_SHOW_LABEL=false
 
@@ -633,7 +623,7 @@ Any changes to your App config applied via this manner will immediately
 take effect for all subsequent calls to `fiftyone.app_config` during your
 current session.
 
-```
+```python
 import fiftyone as fo
 
 fo.app_config.show_confidence = False
@@ -659,7 +649,7 @@ For example, you may add the following to your JSON App config
 ( `~/.fiftyone/app_config.json`) to register a Mapbox token globally on your
 system:
 
-```
+```python
 {
     "plugins": {
         "map": {
@@ -685,7 +675,7 @@ in order for browser windows or notebook cells to point to a correct App URL.
 For [SageMaker Notebooks](https://aws.amazon.com/sagemaker/notebooks/), the
 below code snippet shows how to configure the proxy based on your instance.
 
-```
+```python
 import fiftyone as fo
 
 # before launching the App, configure a proxy_url
@@ -695,29 +685,3 @@ session = fo.launch_app(port=<port>)
 
 ```
 
-- Configuring FiftyOne
-  - [Configuration options](#configuration-options)
-  - [Viewing your config](#viewing-your-config)
-  - [Modifying your config](#modifying-your-config)
-    - [Order of precedence](#order-of-precedence)
-    - [Editing your JSON config](#editing-your-json-config)
-    - [Setting environment variables](#setting-environment-variables)
-    - [Modifying your config in code](#modifying-your-config-in-code)
-  - [Configuring a MongoDB connection](#configuring-a-mongodb-connection)
-    - [Using a different MongoDB version](#using-a-different-mongodb-version)
-    - [Controlling database migrations](#controlling-database-migrations)
-    - [Example custom database usage](#example-custom-database-usage)
-  - [Database migrations](#database-migrations)
-    - [Restricting migrations](#restricting-migrations)
-    - [Coordinating a migration](#coordinating-a-migration)
-  - [Configuring a timezone](#configuring-a-timezone)
-- [Configuring the App](#configuring-the-app)
-  - [Viewing your App config](#viewing-your-app-config)
-  - [Modifying your App config](#modifying-your-app-config)
-    - [Order of precedence](#id4)
-    - [Launching the App with a custom config](#launching-the-app-with-a-custom-config)
-    - [Editing your JSON App config](#editing-your-json-app-config)
-    - [Setting App environment variables](#setting-app-environment-variables)
-    - [Modifying your App config in code](#modifying-your-app-config-in-code)
-  - [Configuring plugins](#configuring-plugins)
-  - [Configuring a proxy URL](#configuring-a-proxy-url)

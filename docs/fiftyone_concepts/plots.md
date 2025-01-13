@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Interactive Plots
-
-Contents
-
-
 # Interactive Plots [¶](\#interactive-plots "Permalink to this headline")
 
 FiftyOne provides a powerful [`fiftyone.core.plots`](../api/fiftyone.core.plots.html#module-fiftyone.core.plots "fiftyone.core.plots") framework that contains
@@ -161,7 +151,7 @@ generate a 2D visualization of the images in the test split of the
 method of the returned results object, where each point is colored by its
 ground truth label:
 
-```
+```python
 import cv2
 import numpy as np
 
@@ -223,7 +213,7 @@ locations will be selected in the scatterplot.
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import cv2
 import numpy as np
 
@@ -246,7 +236,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 # Visualize embeddings, colored by ground truth label
 plot = results.visualize(labels="ground_truth.label")
 plot.show(height=720)
@@ -300,7 +290,7 @@ The example below demonstrates this usage using the
 [quickstart-geo](../dataset_zoo/datasets.html#dataset-zoo-quickstart-geo) dataset from the zoo, which
 contains [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in its `location` field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -335,7 +325,7 @@ plot.show()
 You can also change the style to `style="density"` in order to view the data
 as a density plot:
 
-```
+```python
 # Create density plot
 plot = fo.location_scatterplot(
     locations=locations,
@@ -373,7 +363,7 @@ locations will be selected in the scatterplot.
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -385,7 +375,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Computes the number of ground truth objects in each sample
@@ -436,7 +426,7 @@ current view.
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import random
 import numpy as np
 
@@ -468,7 +458,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 # Plot a scatterplot of the results colored by `weather` and scaled by
 # `confidence`
 plot = results.plot_results(labels="weather", sizes="predictions.confidence")
@@ -497,7 +487,7 @@ App.
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -511,7 +501,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 view = dataset.filter_labels("frames.detections", F("label") == "vehicle")
 
 # Plot the number of vehicles in each frame of a video dataset
@@ -570,7 +560,7 @@ are included in the current view.
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -588,7 +578,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 # Plot confusion matrix
 plot = results.plot_confusion_matrix(classes=classes)
 plot.show(height=600)
@@ -607,14 +597,14 @@ when you select cell(s), the corresponding
 App. This allows you to visualize each TP, FP, and FN example in a fine-grained
 manner:
 
-```
+```python
 results = dataset.evaluate_detections(
     "predictions", gt_field="ground_truth", eval_key="eval"
 )
 
 ```
 
-```
+```python
 # Since these results have an `eval_key`, selecting cells in this plot will
 # load evaluation patch views
 plot = results.plot_confusion_matrix(classes=classes)
@@ -651,7 +641,7 @@ session’s [`view`](../api/fiftyone.core.session.html#fiftyone.core.session.Ses
 Each block in the example code below denotes a separate cell in a Jupyter
 notebook:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -669,7 +659,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 # Construct a custom dashboard of plots
 plot = fo.ViewGrid([plot1, plot2, plot3, plot4], init_view=dataset)
 plot.show(height=720)
@@ -710,7 +700,7 @@ See [this section](#working-in-notebooks) for more information.
 The code below demonstrates the basic pattern of connecting a [`ResponsivePlot`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot "fiftyone.core.plots.base.ResponsivePlot")
 to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -730,12 +720,12 @@ session.plots.attach(plot)
 
 You can view details about the plots attached to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") by printing it:
 
-```
+```python
 print(session)
 
 ```
 
-```
+```python
 Dataset:          quickstart-geo
 Media type:       image
 Num samples:      500
@@ -754,7 +744,7 @@ you can customize their names via the optional `name` parameter of
 You can retrieve a [`ResponsivePlot`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot "fiftyone.core.plots.base.ResponsivePlot") instance from its connected session by its
 name:
 
-```
+```python
 same_plot = session.plots["plot1"]
 same_plot is plot  # True
 
@@ -767,7 +757,7 @@ means that any necessary state updates will happen automatically. If you wish
 to temporarily suspend updates for an individual plot, you can use
 [`plot.disconnect()`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.disconnect "fiftyone.core.plots.base.ResponsivePlot.disconnect"):
 
-```
+```python
 # Disconnect an individual plot
 # Plot updates will no longer update the session, and vice versa
 plot.disconnect()
@@ -777,7 +767,7 @@ print(session)
 
 ```
 
-```
+```python
 Dataset:          quickstart-geo
 Media type:       image
 Num samples:      500
@@ -792,7 +782,7 @@ Disconnected plots:
 You can reconnect a plot by calling
 [`plot.connect()`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.connect "fiftyone.core.plots.base.ResponsivePlot.connect"):
 
-```
+```python
 # Reconnect an individual plot
 plot.connect()
 
@@ -801,7 +791,7 @@ print(session)
 
 ```
 
-```
+```python
 Dataset:          quickstart-geo
 Media type:       image
 Num samples:      500
@@ -826,7 +816,7 @@ If you would like to permanently detach a plot from a [`Session`](../api/fiftyon
 [`session.plots.pop()`](../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.pop "fiftyone.core.plots.manager.PlotManager.pop") or
 [`session.plots.remove()`](../api/fiftyone.core.plots.manager.html#fiftyone.core.plots.manager.PlotManager.remove "fiftyone.core.plots.manager.PlotManager.remove"):
 
-```
+```python
 # Detach plot from its session
 plot = session.plots.pop("plot1")
 
@@ -835,7 +825,7 @@ print(session)
 
 ```
 
-```
+```python
 Dataset:          quickstart-geo
 Media type:       image
 Num samples:      500
@@ -857,7 +847,7 @@ You can conveniently freeze your currently active App instance and any attached
 plots by calling
 [`session.freeze()`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.freeze "fiftyone.core.session.Session.freeze"):
 
-```
+```python
 # Replace current App instance and all attached plots with static images
 session.freeze()
 
@@ -870,7 +860,7 @@ your notebook later.
 You can also freeze an individual plot by calling
 [`plot.freeze()`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.ResponsivePlot.freeze "fiftyone.core.plots.base.ResponsivePlot.freeze"):
 
-```
+```python
 # Replace a plot with a static image
 plot.freeze()
 
@@ -896,7 +886,7 @@ configuring the export.
 
 For example, you can save a [histogram view plot](#id11):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -917,7 +907,7 @@ plot.save("./histogram.jpg", scale=2.0)
 
 Or you can save an [embedding scatterplot](#embeddings-plots):
 
-```
+```python
 import fiftyone.brain as fob
 
 results = fob.compute_visualization(dataset)
@@ -932,7 +922,7 @@ plot.save("./embeddings.png", height=300, width=800)
 You can also save plots generated using the
 [matplotlib backend](#plotting-backend):
 
-```
+```python
 plot = results.visualize(
     labels="uniqueness",
     backend="matplotlib",
@@ -964,7 +954,7 @@ keyword arguments for [`plotly.graph_objects.Figure.update_layout()`](https://pl
 The examples below demonstrate some common layout customizations that you may
 wish to perform:
 
-```
+```python
 # Increase the default height of the figure, in pixels
 plot.show(height=720)
 
@@ -1024,7 +1014,7 @@ corresponding ground truth and predicted objects in an
 [evaluation patches view](evaluation.html#evaluation-patches) view in the App. Run the
 code blocks below in Jupyter notebook cells to see this:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1043,7 +1033,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-```
+```python
 plot = results.plot_confusion_matrix(classes=classes)
 plot.show(height=600)
 
@@ -1055,13 +1045,13 @@ However, you can change this behavior by updating the
 [`selection_mode`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode "fiftyone.core.plots.base.InteractivePlot.selection_mode")
 property of the plot like so:
 
-```
+```python
 # Selecting cells will now show unfiltered samples containing selected objects
 plot.selection_mode = "match"
 
 ```
 
-```
+```python
 # Selecting cells will now show filtered samples containing only selected objects
 plot.selection_mode = "select"
 
@@ -1072,13 +1062,13 @@ Similarly, selecting scatter points in an
 show the corresponding objects in the App as a
 [patches view](using_views.html#object-patches-views):
 
-```
+```python
 # Continuing from the code above
 session.freeze()
 
 ```
 
-```
+```python
 import fiftyone.brain as fob
 
 results = fob.compute_visualization(
@@ -1093,7 +1083,7 @@ session.show()
 
 ```
 
-```
+```python
 plot = results.visualize(labels="ground_truth.detections.label")
 plot.show(height=800)
 
@@ -1105,13 +1095,13 @@ However, you can change this behavior by updating the
 [`selection_mode`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode "fiftyone.core.plots.base.InteractivePlot.selection_mode")
 property of the plot:
 
-```
+```python
 # Selecting points will now show unfiltered samples containing selected objects
 plot.selection_mode = "match"
 
 ```
 
-```
+```python
 # Selecting points will now show filtered samples containing only selected objects
 plot.selection_mode = "select"
 
@@ -1137,7 +1127,7 @@ this backend, plots will be rendered as matplotlib figures. Many
 matplotlib-powered plot types support interactivity, but you must
 [enable this behavior](#matplotlib-in-notebooks):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1151,7 +1141,7 @@ classes = sorted(counts, key=counts.get, reverse=True)[:10]
 
 ```
 
-```
+```python
 # Use the default plotly backend
 plot = results.plot_confusion_matrix(classes=classes)
 plot.show(height=512)
@@ -1160,7 +1150,7 @@ plot.show(height=512)
 
 ![plotly-backend](../_images/plotly-backend.png)
 
-```
+```python
 import matplotlib.pyplot as plt
 
 # Use the matplotlib backend instead
@@ -1186,29 +1176,3 @@ display, but they will not be interactive.
 Follow the instructions for your environment below to enable interactive
 matplotlib plots:
 
-- Interactive Plots
-  - [Overview](#overview)
-    - [Interactive plots](#id3)
-    - [View plots](#view-plots)
-  - [Working in notebooks](#working-in-notebooks)
-  - [Visualizing embeddings](#visualizing-embeddings)
-    - [Standalone plots](#standalone-plots)
-    - [Interactive plots](#id5)
-  - [Geolocation plots](#geolocation-plots)
-    - [Standalone plots](#id7)
-    - [Interactive plots](#id8)
-  - [Regression plots](#regression-plots)
-  - [Line plots](#line-plots)
-  - [Confusion matrices](#confusion-matrices)
-  - [View plots](#id11)
-  - [Attaching plots to the App](#attaching-plots-to-the-app)
-    - [Attaching a plot](#attaching-a-plot)
-    - [Connecting and disconnecting plots](#connecting-and-disconnecting-plots)
-    - [Detaching plots](#detaching-plots)
-    - [Freezing plots](#freezing-plots)
-  - [Saving plots](#saving-plots)
-  - [Advanced usage](#advanced-usage)
-    - [Customizing plot layouts](#customizing-plot-layouts)
-    - [Plot selection modes](#plot-selection-modes)
-    - [Plotting backend](#plotting-backend)
-    - [Interactive matplotlib plots](#interactive-matplotlib-plots)

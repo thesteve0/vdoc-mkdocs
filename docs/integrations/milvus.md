@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Milvus Integration
-
-Contents
-
-
 # Milvus Integration [¶](\#milvus-integration "Permalink to this headline")
 
 [Milvus](https://milvus.io/) is one of the most popular vector databases
@@ -59,7 +49,7 @@ and install the
 [Milvus Python client](https://github.com/milvus-io/pymilvus)
 to run this example:
 
-```
+```python
 wget https://github.com/milvus-io/milvus/releases/download/v2.2.11/milvus-standalone-docker-compose.yml -O docker-compose.yml
 sudo docker compose up -d
 
@@ -74,7 +64,7 @@ entering them manually each time you interact with your Milvus index.
 First let’s load a dataset into FiftyOne and compute embeddings for the
 samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -94,7 +84,7 @@ milvus_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -123,7 +113,7 @@ Milvus query patterns.
 The easiest way to get started is to
 [install Milvus standalone via Docker Compose](https://milvus.io/docs/install_standalone-docker.md):
 
-```
+```python
 wget https://github.com/milvus-io/milvus/releases/download/v2.2.11/milvus-standalone-docker-compose.yml -O docker-compose.yml
 sudo docker compose up -d
 
@@ -134,7 +124,7 @@ sudo docker compose up -d
 In order to use the Milvus backend, you must also install the
 [Milvus Python client](https://github.com/milvus-io/pymilvus):
 
-```
+```python
 pip install pymilvus
 
 ```
@@ -150,7 +140,7 @@ To use the Milvus backend, simply set the optional `backend` parameter of
 `compute_similarity()` to
 `"milvus"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="milvus", ...)
@@ -160,7 +150,7 @@ fob.compute_similarity(..., backend="milvus", ...)
 Alternatively, you can permanently configure FiftyOne to use the Milvus
 backend by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=milvus
 
 ```
@@ -168,7 +158,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=milvus
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "milvus"
 }
@@ -186,7 +176,7 @@ The recommended way to configure your Milvus credentials is to store them
 in the environment variables shown below, which are automatically accessed by
 FiftyOne whenever a connection to Milvus is made.
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_MILVUS_URI=XXXXXX
 export FIFTYONE_BRAIN_SIMILARITY_MILVUS_USER=XXXXXX
 export FIFTYONE_BRAIN_SIMILARITY_MILVUS_PASSWORD=XXXXXX
@@ -208,7 +198,7 @@ export FIFTYONE_BRAIN_SIMILARITY_MILVUS_SERVER_NAME=XXXXXX
 You can also store your credentials in your [brain config](../brain.html#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "similarity_backends": {
         "milvus": {
@@ -240,7 +230,7 @@ time you call methods like
 `compute_similarity()` that require
 connections to Milvus:
 
-```
+```python
 import fiftyone.brain as fob
 
 milvus_index = fob.compute_similarity(
@@ -268,7 +258,7 @@ Note that, when using this strategy, you must manually provide the credentials
 when loading an index later via
 [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results"):
 
-```
+```python
 milvus_index = dataset.load_brain_results(
     "milvus_index",
     uri="XXXXXX",
@@ -312,7 +302,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "milvus": {
@@ -329,7 +319,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 milvus_index = fob.compute_similarity(
     ...
     backend="milvus",
@@ -349,7 +339,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -371,7 +361,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -384,7 +374,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -394,7 +384,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -406,7 +396,7 @@ Calling
 only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated Milvus collection, which you can do as follows:
 
-```
+```python
 # Delete the Milvus collection
 milvus_index = dataset.load_brain_results(brain_key)
 milvus_index.cleanup()
@@ -430,7 +420,7 @@ the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -488,7 +478,7 @@ You can also create a similarity index for
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -517,7 +507,7 @@ for the samples or patches in your dataset, you can connect to it by passing
 the `collection_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -546,7 +536,7 @@ to add and remove embeddings from an existing Milvus similarity index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Milvus similarity index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -590,7 +580,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Milvus index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -633,7 +623,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -683,7 +673,7 @@ interest.
 You can use the `collection` property of a Milvus index to directly access the
 underlying Milvus collection and use its methods as desired:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -716,7 +706,7 @@ Milvus similarity index. Just for fun, we’ll specify a custom collection name,
 use euclidean distance, and populate the index for only a subset of our
 dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -747,20 +737,3 @@ print(pymilvus.utility.list_collections())
 
 ```
 
-- Milvus Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Milvus client](#installing-the-milvus-client)
-    - [Using the Milvus backend](#using-the-milvus-backend)
-    - [Authentication](#authentication)
-    - [Milvus config parameters](#milvus-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing collection](#connect-to-an-existing-collection)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a Milvus index](#querying-a-milvus-index)
-    - [Accessing the Milvus client](#accessing-the-milvus-client)
-    - [Advanced usage](#advanced-usage)

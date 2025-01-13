@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Integrations
-
-Contents
-
-
 # FiftyOne Integrations [¶](\#fiftyone-integrations "Permalink to this headline")
 
 FiftyOne integrates naturally with other ML tools that you know and love. Click
@@ -182,4 +173,3 @@ Model-Training,Model-Evaluation,Models
 
 ![](../_static/images/integrations/lightning_flash.png)
 
-- FiftyOne Integrations

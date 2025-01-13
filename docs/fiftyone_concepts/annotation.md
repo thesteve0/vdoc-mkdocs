@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Annotating Datasets
-
-Contents
-
-
 # Annotating Datasets [¶](\#annotating-datasets "Permalink to this headline")
 
 FiftyOne provides a powerful annotation API that makes it easy to add or edit
@@ -67,7 +57,7 @@ you interact with CVAT.
 
 First, we create the annotation tasks:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -118,7 +108,7 @@ print(dataset.get_annotation_info(anno_key))
 Then, once the annotation work is complete, we merge the annotations back into
 FiftyOne:
 
-```
+```python
 import fiftyone as fo
 
 anno_key = "cvat_basic_recipe"
@@ -168,7 +158,7 @@ You can use a specific backend for a particular annotation run by passing the
 `backend` parameter to
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
-```
+```python
 view.annotate(..., backend="<backend>", ...)
 
 ```
@@ -177,7 +167,7 @@ Alternatively, you can change your default annotation backend for an entire
 session by setting the `FIFTYONE_ANNOTATION_DEFAULT_BACKEND` environment
 variable.
 
-```
+```python
 export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=<backend>
 
 ```
@@ -186,7 +176,7 @@ Finally, you can permanently change your default annotation backend by updating
 the `default_backend` key of your [annotation config](#annotation-config)
 at `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "default_backend": "<backend>",
     "backends": {
@@ -216,7 +206,7 @@ You can configure an annotation backend’s parameters for a specific run by
 simply passing supported config parameters as keyword arguments each time you call
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
-```
+```python
 view.annotate(
     ...
     backend="cvat",
@@ -275,7 +265,7 @@ contain any desired subset of config fields that you wish to customize.
 For example, the following config JSON file customizes the URL of your CVAT
 server without changing any other default config settings:
 
-```
+```python
 {
     "backends": {
         "cvat": {
@@ -302,7 +292,7 @@ the `FIFTYONE_XXX` environment variable(s) for the desired config settings.
 The `FIFTYONE_ANNOTATION_DEFAULT_BACKEND` environment variable allows you to
 configure your default backend:
 
-```
+```python
 export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=labelbox
 
 ```
@@ -316,7 +306,7 @@ whenever the corresponding backend is in use. For example, you can configure
 the URL, username, password, and email (if applicable) of your CVAT server as
 follows:
 
-```
+```python
 export FIFTYONE_CVAT_URL=http://localhost:8080
 export FIFTYONE_CVAT_USERNAME=...
 export FIFTYONE_CVAT_PASSWORD=...
@@ -329,7 +319,7 @@ The `FIFTYONE_ANNOTATION_BACKENDS` environment variable can be set to a
 native backends and/or declare additional custom backends whose parameters are
 defined via additional config modifications of any kind:
 
-```
+```python
 export FIFTYONE_ANNOTATION_BACKENDS=custom,cvat,labelbox
 
 ```
@@ -338,7 +328,7 @@ When declaring new backends, you can include `*` to append new backend(s)
 without omitting or explicitly enumerating the builtin backends. For example,
 you can add a `custom` annotation backend as follows:
 
-```
+```python
 export FIFTYONE_ANNOTATION_BACKENDS=*,custom
 export FIFTYONE_CUSTOM_CONFIG_CLS=your.custom.AnnotationConfig
 
@@ -353,7 +343,7 @@ Any changes to your annotation config applied via this manner will immediately
 take effect in all subsequent calls to `fiftyone.annotation_config` during your
 current session.
 
-```
+```python
 import fiftyone as fo
 
 fo.annotation_config.default_backend = "<backend>"
@@ -369,7 +359,7 @@ to send the samples and optionally existing labels in a [`Dataset`](../api/fifty
 
 The basic syntax is:
 
-```
+```python
 anno_key = "..."
 view.annotate(anno_key, ...)
 
@@ -533,7 +523,7 @@ tasks in CVAT. In its most verbose form, it is a dictionary that defines the
 label type, annotation type, possible classes, and possible attributes for each
 label field:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -572,7 +562,7 @@ You can also define class-specific attributes by setting elements of the
 corresponding `attributes`. For example, in the configuration below, `attr1`
 only applies to `class1` and `class2` while `attr2` applies to all classes:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -611,7 +601,7 @@ can use the `label_field`, `label_type`, `classes`, `attributes`, and
 `mask_targets` parameters to specify the components of the label schema
 individually:
 
-```
+```python
 anno_key = "..."
 
 label_field = "new_field",
@@ -664,7 +654,7 @@ When adding new label fields for which you want to include attributes, you must
 use the dictionary syntax demonstrated below to define the schema of each
 attribute that you wish to label:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -763,7 +753,7 @@ attributes to all people in this field while also strictly enforcing that no
 objects can be added, deleted, or have their labels or bounding boxes modified.
 You can configure an annotation run for this as follows:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -799,7 +789,7 @@ want to populate a new `model` attribute based on this information without
 allowing changes to the vehicle’s `make`, you can configure an annotation run
 for this as follows:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -841,7 +831,7 @@ First, each object attribute specification can include a `mutable` property
 that controls whether the attribute’s value can change between frames for each
 object:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -896,7 +886,7 @@ use the
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 method to download them and merge them back into your FiftyOne dataset.
 
-```
+```python
 view.load_annotations(anno_key)
 
 ```
@@ -951,7 +941,7 @@ For example, you can call
 [`list_annotation_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_annotation_runs "fiftyone.core.collections.SampleCollection.list_annotation_runs")
 to see the available annotation keys on a dataset:
 
-```
+```python
 dataset.list_annotation_runs()
 
 ```
@@ -960,7 +950,7 @@ Or, you can use
 [`get_annotation_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_annotation_info "fiftyone.core.collections.SampleCollection.get_annotation_info")
 to retrieve information about the configuration of an annotation run:
 
-```
+```python
 info = dataset.get_annotation_info(anno_key)
 print(info)
 
@@ -974,7 +964,7 @@ All results objects provide a [`cleanup()`](../api/fiftyone.utils.annotations.ht
 method that you can use to delete all information associated with a run from
 the annotation backend.
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 results.cleanup()
 
@@ -989,7 +979,7 @@ You can use
 [`rename_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_annotation_run "fiftyone.core.collections.SampleCollection.rename_annotation_run")
 to rename the annotation key associated with an existing annotation run:
 
-```
+```python
 dataset.rename_annotation_run(anno_key, new_anno_key)
 
 ```
@@ -998,7 +988,7 @@ Finally, you can use
 [`delete_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_annotation_run "fiftyone.core.collections.SampleCollection.delete_annotation_run")
 to delete the record of an annotation run from your FiftyOne dataset:
 
-```
+```python
 dataset.delete_annotation_run(anno_key)
 
 ```
@@ -1055,7 +1045,7 @@ The recommended way to expose a custom backend is to add it to your
 [annotation config](#annotation-config) at
 `~/.fiftyone/annotation_config.json` as follows:
 
-```
+```python
 {
     "default_backend": "<backend>",
     "backends": {
@@ -1082,28 +1072,8 @@ automatically use your backend.
 Alternatively, you can manually opt to use your custom backend on a per-run
 basis by passing the `backend` parameter:
 
-```
+```python
 view.annotate(..., backend="<backend>", ...)
 
 ```
 
-- Annotating Datasets
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Changing your annotation backend](#changing-your-annotation-backend)
-    - [Configuring your backend](#configuring-your-backend)
-  - [Annotation config](#annotation-config)
-    - [Viewing your config](#viewing-your-config)
-    - [Modifying your config](#modifying-your-config)
-      - [Order of precedence](#order-of-precedence)
-      - [Editing your JSON config](#editing-your-json-config)
-      - [Setting environment variables](#setting-environment-variables)
-      - [Modifying your config in code](#modifying-your-config-in-code)
-  - [Requesting annotations](#requesting-annotations)
-    - [Label schema](#label-schema)
-    - [Label attributes](#label-attributes)
-    - [Restricting additions, deletions, and edits](#restricting-additions-deletions-and-edits)
-    - [Labeling videos](#labeling-videos)
-  - [Loading annotations](#loading-annotations)
-  - [Managing annotation runs](#managing-annotation-runs)
-  - [Custom annotation backends](#custom-annotation-backends)

@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- FiftyOne Tutorials
-
-Contents
-
-
 # FiftyOne Tutorials [¶](\#fiftyone-tutorials "Permalink to this headline")
 
 Each tutorial below is a curated demonstration of how FiftyOne can help refine
@@ -188,4 +179,3 @@ Check out the
 [fiftyone-examples](https://github.com/voxel51/fiftyone-examples)
 repository for more examples of using FiftyOne!
 
-- FiftyOne Tutorials

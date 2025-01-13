@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Cloud-Backed Media
-
-Contents
-
-
 # Cloud-Backed Media [¶](\#cloud-backed-media "Permalink to this headline")
 
 FiftyOne Teams datasets may contain samples whose filepath refers to cloud
@@ -28,7 +18,7 @@ pixels of the media files. This design minimizes bandwidth usage and can
 significantly improve performance in workflows where you access the same media
 file repeatedly:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -43,7 +33,7 @@ When launching the App locally using the Teams SDK, media will be served from
 your local cache whenever possible; otherwise it will be automatically
 retrieved from the cloud:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("a-teams-dataset")
@@ -64,7 +54,7 @@ Note
 We recommend that you populate the metadata on your datasets at creation
 time:
 
-```
+```python
 dataset.compute_metadata()
 
 ```
@@ -89,7 +79,7 @@ following ways.
 1\. Configure your media cache on a per-session basis by setting any of the
 following environment variables (default values shown):
 
-```
+```python
 export FIFTYONE_MEDIA_CACHE_DIR=/path/for/media-cache
 export FIFTYONE_MEDIA_CACHE_SIZE_BYTES=34359738368  # 32GB
 export FIFTYONE_MEDIA_CACHE_DOWNLOAD_SIZE_BYTES=134217728  # 128MB
@@ -101,7 +91,7 @@ export FIFTYONE_MEDIA_CACHE_APP_IMAGES=false
 2\. Create a media cache config file at `~/.fiftyone/media_cache_config.json`
 that contains any of the following keys (default values shown):
 
-```
+```python
 {
     "cache_dir": "/path/for/media-cache",
     "cache_size_bytes": 34359738368,
@@ -124,7 +114,7 @@ When writing Python code using the Teams client that may involve cloud-backed
 datasets, use `sample.local_path` instead of `sample.filepath` to retrieve
 the location of the locally cached version of a media file:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("a-teams-dataset")
@@ -153,7 +143,7 @@ You can use `download_media()` to efficiently download and cache the source
 media files for an entire dataset or view using the cache’s full thread pool to
 maximize throughput:
 
-```
+```python
 import fiftyone as fo
 
 # Download media for a view
@@ -173,7 +163,7 @@ media.
 You can also use `download_context()` to download smaller batches of media
 when iterating over samples in a collection:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("a-teams-dataset")
@@ -198,7 +188,7 @@ You can configure the default size of each download batch via the
 
 Download contexts provide a middle ground between the two extremes:
 
-```
+```python
 # Download all media in advance
 dataset.download_media()
 for sample in dataset:
@@ -218,7 +208,7 @@ the media in the dataset you’re working with simultaneously.
 You can also use `get_local_paths()` to retrieve the list of local paths
 for each sample in a potentially cloud-backed dataset or view:
 
-```
+```python
 # These methods support full datasets or views into them
 sample_collection = dataset
 # sample_collection = dataset.limit(10)
@@ -240,13 +230,13 @@ print(cloud_paths[0])
 You can get information about currently cached media files for a sample
 collection by calling `cache_stats()`:
 
-```
+```python
 # View cache stats for the current collection
 sample_collection.cache_stats()
 
 ```
 
-```
+```python
 {'cache_dir': '~/fiftyone/__cache__',
  'cache_size': 34359738368,
  'cache_size_str': '32.0GB',
@@ -260,7 +250,7 @@ sample_collection.cache_stats()
 and you can call `clear_media()` to delete any cached copies of media in the
 collection:
 
-```
+```python
 # Clear this collection's media from the cache
 sample_collection.clear_media()
 
@@ -268,13 +258,13 @@ sample_collection.clear_media()
 
 You can also perform these operations on the full cache as follows:
 
-```
+```python
 # View global cache stats
 print(fo.media_cache.stats())
 
 ```
 
-```
+```python
 {'cache_dir': '~/fiftyone/__cache__',
  'cache_size': 34359738368,
  'cache_size_str': '32.0GB',
@@ -285,7 +275,7 @@ print(fo.media_cache.stats())
 
 ```
 
-```
+```python
 # Clear the entire cache
 fo.media_cache.clear()
 
@@ -297,7 +287,7 @@ methods that can be used to manipulate cloud and/or local media.
 The `upload_media()` method provides a convenient wrapper for uploading a local
 dataset’s media to the cloud:
 
-```
+```python
 import fiftyone.core.storage as fos
 
 # Create a dataset from media stored locally
@@ -316,7 +306,7 @@ fos.upload_media(
 The `fiftyone.core.storage` module also provides a number of lower-level
 methods that you can use to work with cloud and local assets.
 
-```
+```python
 import fiftyone.core.storage as fos
 
 s3_paths = [\
@@ -342,7 +332,7 @@ local_paths = [\
 
 For example, you can use `list_files()` to list the contents of a folder:
 
-```
+```python
 cloud_paths = fos.list_files(
     "s3://voxel51-test", abs_paths=True, recursive=True
 )
@@ -355,7 +345,7 @@ print(cloud_paths)[0]
 or you can use `copy_files()` and `move_files()` to transfer files between
 destinations:
 
-```
+```python
 # S3 -> local
 fos.copy_files(s3_paths, local_paths)
 fos.move_files(s3_paths, local_paths)
@@ -372,7 +362,7 @@ fos.move_files(s3_paths, gcs_paths)
 
 or you can use `delete_files()` to delete assets:
 
-```
+```python
 fos.delete_files(s3_paths)
 fos.delete_files(gcs_paths)
 fos.delete_files(local_paths)
@@ -388,7 +378,7 @@ throughput.
 
 ### `Dataset` methods [¶](\#dataset-methods "Permalink to this headline")
 
-```
+```python
 import fiftyone as fo
 
 fo.Dataset.download_media?
@@ -400,7 +390,7 @@ fo.Dataset.clear_media?
 
 ```
 
-```
+```python
 fo.Dataset.download_media(
     self,
     media_fields=None,
@@ -437,7 +427,7 @@ fo.Dataset.download_media(
 
 ```
 
-```
+```python
 fo.Dataset.download_scenes(
     self,
     update=False,
@@ -464,7 +454,7 @@ fo.Dataset.download_scenes(
 
 ```
 
-```
+```python
 fo.Dataset.download_context(
     self,
     batch_size=None,
@@ -518,7 +508,7 @@ fo.Dataset.download_context(
 
 ```
 
-```
+```python
 fo.Dataset.get_local_paths(
     self,
     media_field="filepath",
@@ -548,7 +538,7 @@ fo.Dataset.get_local_paths(
 
 ```
 
-```
+```python
 fo.Dataset.cache_stats(
     self,
     media_fields=None,
@@ -574,7 +564,7 @@ fo.Dataset.cache_stats(
 
 ```
 
-```
+```python
 fo.Dataset.clear_media(
     self,
     media_fields=None,
@@ -600,7 +590,7 @@ fo.Dataset.clear_media(
 
 ### `fiftyone.core.storage` [¶](\#fiftyone-core-storage "Permalink to this headline")
 
-```
+```python
 import fiftyone.core.storage as fos
 
 fos.list_files?
@@ -611,7 +601,7 @@ fos.upload_media?
 
 ```
 
-```
+```python
 fos.list_files(
     dirpath,
     abs_paths=False,
@@ -636,7 +626,7 @@ fos.list_files(
 
 ```
 
-```
+```python
 fos.copy_files(inpaths, outpaths, skip_failures=False, progress=None):
     """Copies the files to the given locations.
 
@@ -652,7 +642,7 @@ fos.copy_files(inpaths, outpaths, skip_failures=False, progress=None):
 
 ```
 
-```
+```python
 fos.move_files(inpaths, outpaths, skip_failures=False, progress=None):
     """Moves the files to the given locations.
 
@@ -668,7 +658,7 @@ fos.move_files(inpaths, outpaths, skip_failures=False, progress=None):
 
 ```
 
-```
+```python
 fos.delete_files(paths, skip_failures=False, progress=None):
     """Deletes the files from the given locations.
 
@@ -686,7 +676,7 @@ fos.delete_files(paths, skip_failures=False, progress=None):
 
 ```
 
-```
+```python
 fos.upload_media(
     sample_collection,
     remote_dir,
@@ -751,7 +741,7 @@ to attach a cloud storage bucket to CVAT. Then, simply provide the
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
 specify the URL of the manifest file in your cloud bucket:
 
-```
+```python
 anno_key = "cloud_annotations"
 
 results = dataset.annotate(
@@ -766,7 +756,7 @@ Alternatively, if your cloud manifest has the default name `manifest.jsonl`
 and exists in the root of the bucket containing the data in the sample
 collection being annotated, then you can simply pass `cloud_manifest=True`:
 
-```
+```python
 results = dataset.annotate(
     anno_key,
     label_field="ground_truth",
@@ -794,7 +784,7 @@ to configure external storage for V7. Then, simply provide the
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") and
 specify the sluggified external storage name:
 
-```
+```python
 anno_key = "cloud_annotations"
 
 results = dataset.annotate(
@@ -819,7 +809,7 @@ If so, then you can provide the `upload_media=False` keyword argument to
 the [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate")
 method to pass URLs for your S3-backed media when creating Labelbox data rows.
 
-```
+```python
 results = dataset.annotate(
     anno_key,
     label_field="ground_truth",
@@ -849,7 +839,7 @@ passing your token as a build environment variable, e.g.,
 `FIFTYONE_TEAMS_TOKEN` and then using the syntax below to specify the version
 of the Teams client to use:
 
-```
+```python
 https://${FIFTYONE_TEAMS_TOKEN}@pypi.fiftyone.ai/packages/fiftyone-0.6.6-py3-none-any.whl
 
 ```
@@ -859,7 +849,7 @@ https://${FIFTYONE_TEAMS_TOKEN}@pypi.fiftyone.ai/packages/fiftyone-0.6.6-py3-non
 Lambda/GCFs cannot use services, so you must disable the media the cache by
 setting the following runtime environment variable:
 
-```
+```python
 export FIFTYONE_MEDIA_CACHE_SIZE_BYTES=-1  # disable media cache
 
 ```
@@ -867,19 +857,8 @@ export FIFTYONE_MEDIA_CACHE_SIZE_BYTES=-1  # disable media cache
 From there, you can configure your database URI and any necessary cloud storage
 credentials via runtime environment variables as you normally would, eg:
 
-```
+```python
 export FIFTYONE_DATABASE_URI=mongodb://...
 
 ```
 
-- Cloud-Backed Media
-  - [Cloud media caching](#cloud-media-caching)
-  - [Media cache config](#media-cache-config)
-  - [Working with cloud-backed datasets](#working-with-cloud-backed-datasets)
-  - [API reference](#api-reference)
-    - [`Dataset` methods](#dataset-methods)
-    - [`fiftyone.core.storage`](#fiftyone-core-storage)
-  - [Annotating cloud-backed datasets with CVAT](#annotating-cloud-backed-datasets-with-cvat)
-  - [Annotating cloud-backed datasets with V7 Darwin](#annotating-cloud-backed-datasets-with-v7-darwin)
-  - [Annotating cloud-backed datasets with Labelbox](#annotating-cloud-backed-datasets-with-labelbox)
-  - [AWS Lambda and Google Cloud Functions](#aws-lambda-and-google-cloud-functions)

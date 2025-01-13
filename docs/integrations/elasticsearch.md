@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Elasticsearch Vector Search Integration
-
-Contents
-
-
 # Elasticsearch Vector Search Integration [¶](\#elasticsearch-vector-search-integration "Permalink to this headline")
 
 [Elasticsearch](https://www.elastic.co/enterprise-search/vector-search) is
@@ -63,7 +53,7 @@ and install the
 [Elasticsearch Python client](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html)
 to run this example:
 
-```
+```python
 pip install elasticsearch
 
 ```
@@ -75,7 +65,7 @@ Elasticsearch index.
 
 First let’s load a dataset into FiftyOne and compute embeddings for the samples:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -95,7 +85,7 @@ elasticsearch_index = fob.compute_similarity(
 Once the similarity index has been generated, we can query our data in FiftyOne
 by specifying the `brain_key`:
 
-```
+```python
 # Step 4: Query your data
 query = dataset.first().id  # query by sample ID
 view = dataset.sort_by_similarity(
@@ -129,7 +119,7 @@ The easiest way to get started with Elasticsearch is to
 In order to use the Elasticsearch backend, you must also install the
 [Elasticsearch Python client](https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/getting-started-python.html):
 
-```
+```python
 pip install elasticsearch
 
 ```
@@ -145,7 +135,7 @@ To use the Elasticsearch backend, simply set the optional `backend` parameter of
 `compute_similarity()` to
 `"elasticsearch"`:
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.compute_similarity(..., backend="elasticsearch", ...)
@@ -155,7 +145,7 @@ fob.compute_similarity(..., backend="elasticsearch", ...)
 Alternatively, you can permanently configure FiftyOne to use the Elasticsearch
 backend by setting the following environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=elasticsearch
 
 ```
@@ -163,7 +153,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=elasticsearch
 or by setting the `default_similarity_backend` parameter of your
 [brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "elasticsearch"
 }
@@ -182,7 +172,7 @@ The recommended way to configure your Elasticsearch credentials is to store
 them in the environment variables shown below, which are automatically accessed
 by FiftyOne whenever a connection to Elasticsearch is made.
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_HOSTS=http://localhost:9200
 export FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_USERNAME=XXXXXXXX
 export FIFTYONE_BRAIN_SIMILARITY_ELASTICSEARCH_PASSWORD=XXXXXXXX
@@ -198,7 +188,7 @@ Elasticsearch client. Find more information
 You can also store your credentials in your [brain config](../brain.html#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "similarity_backends": {
         "elasticsearch": {
@@ -219,7 +209,7 @@ You can manually provide credentials as keyword arguments each time you call
 methods like `compute_similarity()`
 that require connections to Elasticsearch:
 
-```
+```python
 import fiftyone.brain as fob
 
 elasticsearch_index = fob.compute_similarity(
@@ -237,7 +227,7 @@ Note that, when using this strategy, you must manually provide the credentials
 when loading an index later via
 [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results"):
 
-```
+```python
 elasticsearch_index = dataset.load_brain_results(
     "elasticsearch_index",
     hosts="http://localhost:9200",
@@ -267,7 +257,7 @@ You can specify these parameters via any of the strategies described in the
 previous section. Here’s an example of a [brain config](../brain.html#brain-config)
 that includes all of the available parameters:
 
-```
+```python
 {
     "similarity_backends": {
         "elasticsearch": {
@@ -283,7 +273,7 @@ However, typically these parameters are directly passed to
 `compute_similarity()` to configure
 a specific new index:
 
-```
+```python
 elasticsearch_index = fob.compute_similarity(
     ...
     backend="elasticsearch",
@@ -302,7 +292,7 @@ For example, you can call
 [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 to see the available brain keys on a dataset:
 
-```
+```python
 import fiftyone.brain as fob
 
 # List all brain runs
@@ -324,7 +314,7 @@ Or, you can use
 [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 to retrieve information about the configuration of a brain run:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info)
 
@@ -337,7 +327,7 @@ You can use
 [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 to rename the brain key associated with an existing similarity results run:
 
-```
+```python
 dataset.rename_brain_run(brain_key, new_brain_key)
 
 ```
@@ -347,7 +337,7 @@ Finally, you can use
 to delete the record of a similarity index computation from your FiftyOne
 dataset:
 
-```
+```python
 dataset.delete_brain_run(brain_key)
 
 ```
@@ -360,7 +350,7 @@ only deletes the **record** of the brain run from your FiftyOne dataset; it
 will not delete any associated Elasticsearch index, which you can do as
 follows:
 
-```
+```python
 # Delete the Elasticsearch index
 elasticsearch_index = dataset.load_brain_results(brain_key)
 elasticsearch_index.cleanup()
@@ -384,7 +374,7 @@ either the `embeddings` or `model` argument to
 `compute_similarity()`. Here’s a few
 possibilities:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -437,7 +427,7 @@ You can also create a similarity index for
 including the `patches_field` argument to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -461,7 +451,7 @@ for the samples or patches in your dataset, you can connect to it by passing
 the `index_name` to
 `compute_similarity()`:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -490,7 +480,7 @@ to add and remove embeddings from an existing Elasticsearch index.
 These methods can come in handy if you modify your FiftyOne dataset and need
 to update the Elasticsearch index to reflect these changes:
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -534,7 +524,7 @@ You can use
 `get_embeddings()`
 to retrieve embeddings from a Elasticsearch index by ID:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -577,7 +567,7 @@ stage to any dataset or view. The query can be any of the following:
 - A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
 
 
-```
+```python
 import numpy as np
 
 import fiftyone as fo
@@ -627,7 +617,7 @@ interest.
 You can use the `client` property of a Elasticsearch index to directly access
 the underlying Elasticsearch client instance and use its methods as desired:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -656,7 +646,7 @@ Here’s an example of creating a similarity index backed by a customized
 Elasticsearch index. Just for fun, we’ll specify a custom index name, use dot
 product similarity, and populate the index for only a subset of our dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -681,20 +671,3 @@ elasticsearch_index.add_to_index(embeddings, sample_ids)
 
 ```
 
-- Elasticsearch Vector Search Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Elasticsearch client](#installing-the-elasticsearch-client)
-    - [Using the Elasticsearch backend](#using-the-elasticsearch-backend)
-    - [Authentication](#authentication)
-    - [Elasticsearch config parameters](#elasticsearch-config-parameters)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Examples](#examples)
-    - [Create a similarity index](#create-a-similarity-index)
-    - [Create a patch similarity index](#create-a-patch-similarity-index)
-    - [Connect to an existing index](#connect-to-an-existing-index)
-    - [Add/remove embeddings from an index](#add-remove-embeddings-from-an-index)
-    - [Retrieve embeddings from an index](#retrieve-embeddings-from-an-index)
-    - [Querying a Elasticsearch index](#querying-a-elasticsearch-index)
-    - [Accessing the Elasticsearch client](#accessing-the-elasticsearch-client)
-    - [Advanced usage](#advanced-usage)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Removing Duplicate Objects
-
-Contents
-
-
 # Removing Duplicate Objects [¶](\#Removing-Duplicate-Objects "Permalink to this headline")
 
 This recipe demonstrates a simple workflow for finding and removing duplicate objects in your FiftyOne datasets using [intersection over union (IoU)](https://en.wikipedia.org/wiki/Jaccard_index).
@@ -29,12 +19,12 @@ Also, check out [our blog post](https://towardsdatascience.com/iou-a-better-dete
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
@@ -45,12 +35,12 @@ In this recipe, we’ll work with the validation split of the [COCO dataset](htt
 
 The snippet below downloads and loads a subset of the validation split into FiftyOne:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -58,7 +48,7 @@ dataset = foz.load_zoo_dataset("coco-2017", split="validation", max_samples=1000
 
 ```
 
-```
+```python
 Downloading split 'validation' to '/Users/Brian/fiftyone/coco-2017/validation' if necessary
 Found annotations at '/Users/Brian/fiftyone/coco-2017/raw/instances_val2017.json'
 Sufficient images already downloaded
@@ -71,17 +61,17 @@ Dataset 'coco-2017-validation-1000' created
 
 Let’s print the dataset to see what we downloaded:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:        coco-2017-validation-1000
 Media type:  image
 Num samples: 1000
@@ -102,12 +92,12 @@ Now let’s use the [compute\_max\_ious()](https://voxel51.com/docs/fiftyone/api
 
 The max IOU will be stored in a `max_iou` attribute of each object, and the idea here is that duplicate objects will necessarily have high [IoU](https://en.wikipedia.org/wiki/Jaccard_index) with another object.
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import fiftyone.utils.iou as foui
 
 foui.compute_max_ious(dataset, "ground_truth", iou_attr="max_iou", classwise=True)
@@ -115,7 +105,7 @@ print("Max IoU range: (%f, %f)" % dataset.bounds("ground_truth.detections.max_io
 
 ```
 
-```
+```python
  100% |███████████████| 1000/1000 [3.2s elapsed, 0s remaining, 348.2 samples/s]
 Max IoU range: (0.000000, 0.951640)
 
@@ -125,12 +115,12 @@ Note that [compute\_max\_ious()](https://voxel51.com/docs/fiftyone/api/fiftyone.
 
 In any case, let’s [create a view](https://voxel51.com/docs/fiftyone/user_guide/using_views.html#filtering-sample-contents) that contains only labels with a max IoU > 0.75:
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Retrieve detections that overlap above a chosen threshold
@@ -139,7 +129,7 @@ print(dups_view)
 
 ```
 
-```
+```python
 Dataset:     coco-2017-validation-1000
 Media type:  image
 Num samples: 7
@@ -157,12 +147,12 @@ View stages:
 
 and load it in the App:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 session = fo.launch_app(view=dups_view)
 
 ```
@@ -175,12 +165,12 @@ Activate
 
 One simple approach to removing the duplicate labels is to review them in the App and [assign label tags](https://voxel51.com/docs/fiftyone/user_guide/app.html#tags-and-tagging) to the labels that we deem to be duplicates:
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 session.show()
 
 ```
@@ -191,12 +181,12 @@ Activate
 
 Then we can simply delete the labels with the duplicate tag that we populated:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 dataset.delete_labels(tags="duplicate")
 
 # Verify that tagged labels were deleted
@@ -204,7 +194,7 @@ print(dataset.count_label_tags())
 
 ```
 
-```
+```python
 {}
 
 ```
@@ -213,30 +203,30 @@ print(dataset.count_label_tags())
 
 Another approach to resolve the duplicate labegls is to use FiftyOne’s [CVAT integration](https://voxel51.com/docs/fiftyone/integrations/cvat.html) to upload the duplicate labels to CVAT for review, editing, and/or deletion:
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 anno_key = "remove_dups"
 dups_view.annotate(anno_key, label_field="ground_truth", launch_editor=True)
 
 ```
 
-```
+```python
 Uploading samples to CVAT...
 Upload complete
 Launching editor at 'http://localhost:8080/tasks/286/jobs/292'...
 
 ```
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 <fiftyone.utils.cvat.CVATAnnotationResults at 0x7fc07c97c7b8>
 
 ```
@@ -245,24 +235,24 @@ Launching editor at 'http://localhost:8080/tasks/286/jobs/292'...
 
 Once we’re finished editing in CVAT, we simply load the results back into FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset.load_annotations(anno_key)
 
 ```
 
 and refresh the App to verify that the duplicates have been properly addressed:
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 session.show()
 
 ```
@@ -275,12 +265,12 @@ Activate
 
 A third approach is to use the [find\_duplicates()](https://voxel51.com/docs/fiftyone/api/fiftyone.utils.iou.html#fiftyone.utils.iou.find_duplicates) utility to automatically retrieve the IDs of duplicate labels:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 dup_ids = foui.find_duplicates(
     dataset, "ground_truth", iou_thresh=0.75, classwise=True
 )
@@ -288,7 +278,7 @@ print("Found %d duplicates" % len(dup_ids))
 
 ```
 
-```
+```python
  100% |███████████████| 1000/1000 [3.5s elapsed, 0s remaining, 315.1 samples/s]
 Found 7 duplicates
 
@@ -302,30 +292,30 @@ Alternatively, you can pass the `method="greedy"` option to instead use a greedy
 
 In either case, it is recommended to visualize the duplicates in the App before taking any action. One convenient way to do this is to first tag the duplicates:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 # Cleanup any previous tags (if necessary)
 dataset.untag_labels("duplicate")
 
 ```
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 # Tag the automatically selected duplicates
 dataset.select_labels(ids=dup_ids).tag_labels("duplicate")
 print(dataset.count_label_tags())
 
 ```
 
-```
+```python
 {'duplicate': 7}
 
 ```
@@ -334,12 +324,12 @@ Then, use [match\_labels()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.
 
 If you see any erroneous duplicates, simply remove the `duplicate` tag in the App:
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 session.view = dataset.match_labels(ids=dup_ids)
 
 ```
@@ -350,12 +340,12 @@ Activate
 
 When you’re ready to act, you can then easily delete the duplicate labels as follows:
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 dataset.delete_labels(tags="duplicate")
 
 # If you want to delete every label flagged by `find_duplicates()`
@@ -363,20 +353,13 @@ dataset.delete_labels(tags="duplicate")
 
 ```
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 session.freeze() # screenshot the active App for sharing
 
 ```
 
-- Removing Duplicate Objects
-  - [Setup](#Setup)
-  - [Load a dataset](#Load-a-dataset)
-  - [Finding duplicate objects](#Finding-duplicate-objects)
-  - [Removing duplicates in the App](#Removing-duplicates-in-the-App)
-  - [Removing duplicates in CVAT](#Removing-duplicates-in-CVAT)
-  - [Automatically finding duplicates](#Automatically-finding-duplicates)

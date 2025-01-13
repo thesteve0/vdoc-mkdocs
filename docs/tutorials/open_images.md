@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Downloading and Evaluating Open Images
-
-Contents
-
-
 # Downloading and Evaluating Open Images [¶](\#Downloading-and-Evaluating-Open-Images "Permalink to this headline")
 
 Downloading Google’s [Open Images dataset](https://storage.googleapis.com/openimages/web/download.html) is now easier than ever with the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/index.html#dataset-zoo-open-images-v7)! You can load all three splits of Open Images V7, including image-level labels, detections, segmentations, visual relationships, and point labels.
@@ -39,24 +29,24 @@ While metrics like mAP are often used to compare models, the best way to improve
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 In this tutorial, we’ll use some [TensorFlow models](https://github.com/tensorflow/models) and [PyTorch](https://pytorch.org/vision/stable/index.html) to generate predictions and embeddings, and we’ll use the [UMAP method](https://github.com/lmcinnes/umap) to reduce the dimensionality of embeddings, so we need to install the corresponding packages:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 !pip install tensorflow torch torchvision umap-learn
 
 ```
@@ -67,12 +57,12 @@ The recommended way to work with FiftyOne’s interactive plots is in [Jupyter n
 
 To use interactive plots in Jupyter notebooks, ensure that you have the `ipywidgets` package installed:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 !pip install 'ipywidgets>=8,<9'
 
 ```
@@ -87,23 +77,23 @@ In this section, we’ll load various subsets of Open Images from the [FiftyOne 
 
 Let’s start by downloading a small sample of 100 randomly chosen images + annotations:
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
 ```
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     "open-images-v7",
     split="validation",
@@ -116,17 +106,17 @@ dataset = foz.load_zoo_dataset(
 
 Now let’s launch the [FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html) so we can explore the [dataset](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#datasets) we just downloaded.
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 session = fo.launch_app(dataset.view())
 
 ```
 
-```
+```python
 Connected to FiftyOne on port 5151 at localhost.
 If you are not connecting to a remote session, you may need to start a new session and specify a port
 
@@ -138,17 +128,17 @@ Activate
 
 Loading Open Images with FiftyOne also automatically stores relevant [labels](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#labels) and [metadata](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#metadata) like classes, attributes, and a class hierarchy that is used for evaluation in the dataset’s `info` dictionary:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 print(dataset.info.keys())
 
 ```
 
-```
+```python
 dict_keys(['hierarchy', 'attributes_map', 'attributes', 'segmentation_classes', 'point_classes', 'classes_map'])
 
 ```
@@ -179,12 +169,12 @@ In addition, [like all other zoo datasets](https://voxel51.com/docs/fiftyone/use
 
 Let’s use some of these parameters to download a 100 sample subset of Open Images containing segmentations and image-level labels for the classes “Burrito”, “Cheese”, and “Popcorn”.
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     "open-images-v7",
     split="validation",
@@ -198,7 +188,7 @@ dataset = foz.load_zoo_dataset(
 
 ```
 
-```
+```python
 Downloading split 'validation' to 'datasets/open-images-v7/validation' if necessary
 Only found 83 (<100) samples matching your requirements
 Necessary images already downloaded
@@ -207,12 +197,12 @@ Loading existing dataset 'open-images-food'. To reload from disk, either delete 
 
 ```
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 session.view = dataset.view()
 
 ```
@@ -221,24 +211,24 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 session.freeze() # screenshots App for sharing
 
 ```
 
 We can do the same for visual relationships. For example, we can download only samples that contain a relationship with the “Wooden” attribute.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset(
     "open-images-v7",
     split="validation",
@@ -256,12 +246,12 @@ You can visualize relationships in the App by clicking on a sample to open the [
 
 Alternatively, you can use the settings menu in the lower-right corner of the media player to set `show_attributes` to True to make attributes appear as persistent boxes (as shown below). This can also be achieved programmatically by [configuring the App](https://voxel51.com/docs/fiftyone/user_guide/config.html#configuring-the-app):
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 # Launch a new App instance with a customized config
 app_config = fo.AppConfig()
 app_config.show_attributes = True

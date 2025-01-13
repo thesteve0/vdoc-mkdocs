@@ -1,12 +1,3 @@
-Table of Contents
-
-- [Docs](index.html) >
-
-- FiftyOne Brain
-
-Contents
-
-
 # FiftyOne Brain [¶](\#fiftyone-brain "Permalink to this headline")
 
 The [FiftyOne Brain](https://github.com/voxel51/fiftyone-brain) provides
@@ -159,7 +150,7 @@ methods are:
 - **manual**: provide a manually computed low-dimensional representation
 
 
-```
+```python
 import fiftyone.brain as fob
 
 results = fob.compute_visualization(
@@ -229,7 +220,7 @@ validation split colored by the `time of day` labels provided by the BDD100K
 dataset. When points are lasso-ed in the plot, the corresponding samples are
 automatically selected in the [Samples panel](user_guide/app.html#app-samples-panel):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -294,7 +285,7 @@ by their `label`. When points are lasso-ed in the plot, the corresponding
 object patches are automatically selected in the
 [Samples panel](user_guide/app.html#app-samples-panel):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -338,7 +329,7 @@ You can use a specific dimensionality reduction method for a particular
 visualization run by passing the `method` parameter to
 `compute_visualization()`:
 
-```
+```python
 index = fob.compute_visualization(..., method="<method>", ...)
 
 ```
@@ -347,7 +338,7 @@ Alternatively, you can change your default dimensionality reduction method for
 an entire session by setting the `FIFTYONE_BRAIN_DEFAULT_VISUALIZATION_METHOD`
 environment variable:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_VISUALIZATION_METHOD=<method>
 
 ```
@@ -356,7 +347,7 @@ Finally, you can permanently change your default dimensionality reduction
 method by updating the `default_visualization_method` key of your
 [brain config](#brain-config) at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_visualization_method": "<method>",
     "visualization_methods": {
@@ -389,7 +380,7 @@ run by simply passing supported config parameters as keyword arguments each
 time you call
 `compute_visualization()`:
 
-```
+```python
 index = fob.compute_visualization(
     ...
     method="umap",
@@ -466,7 +457,7 @@ another supported backend:
 - **lancedb**: a [LanceDB backend](integrations/lancedb.html#lancedb-integration)
 
 
-```
+```python
 import fiftyone.brain as fob
 
 results = fob.compute_similarity(
@@ -510,7 +501,7 @@ You can use the advanced settings menu to choose between multiple brain keys
 and optionally specify a maximum number of matches to return ( `k`) and whether
 to query by greatest or least similarity (if supported).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -541,7 +532,7 @@ Alternatively, you can use the
 view stage to programmatically [construct a view](user_guide/using_views.html#using-views) that
 contains the sorted results:
 
-```
+```python
 # Choose a random image from the dataset
 query_id = dataset.take(1).first().id
 
@@ -604,7 +595,7 @@ You can use the advanced settings menu to choose between multiple brain keys
 and optionally specify a maximum number of matches to return ( `k`) and whether
 to query by greatest or least similarity (if supported).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -636,7 +627,7 @@ Alternatively, you can directly use the
 view stage to programmatically [construct a view](user_guide/using_views.html#using-views) that
 contains the sorted results:
 
-```
+```python
 # Convert to patches view
 patches = dataset.to_patches("ground_truth")
 
@@ -698,7 +689,7 @@ You can use a specific backend for a particular similarity index by passing the
 `backend` parameter to
 `compute_similarity()`:
 
-```
+```python
 index = fob.compute_similarity(..., backend="<backend>", ...)
 
 ```
@@ -707,7 +698,7 @@ Alternatively, you can change your default similarity backend for an entire
 session by setting the `FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND` environment
 variable.
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=<backend>
 
 ```
@@ -716,7 +707,7 @@ Finally, you can permanently change your default similarity backend by
 updating the `default_similarity_backend` key of your
 [brain config](#brain-config) at `~/.fiftyone/brain_config.json`:
 
-```
+```python
 {
     "default_similarity_backend": "<backend>",
     "similarity_backends": {
@@ -756,7 +747,7 @@ You can configure a similarity backend’s parameters for a specific index by
 simply passing supported config parameters as keyword arguments each time you
 call `compute_similarity()`:
 
-```
+```python
 index = fob.compute_similarity(
     ...
     backend="qdrant",
@@ -774,7 +765,7 @@ The `compute_similarity()` method
 provides a number of different syntaxes for initializing a similarity index.
 Let’s see some common patterns on the quickstart dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -898,7 +889,7 @@ The leaks of a dataset can be computed directly without the need for the
 predictions of a pre-trained model via the
 `compute_leaky_splits()` method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -969,7 +960,7 @@ The example code below runs leaky splits analysis on the
 [COCO dataset](https://cocodataset.org/#home). Try it for yourself and see
 what you find!
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -994,7 +985,7 @@ method returns a view that contains only the leaks in the input splits. Once
 you have these leaks, it is wise to look through them. You may gain some
 insight into the source of the leaks:
 
-```
+```python
 session = fo.launch_app(leaks)
 
 ```
@@ -1003,7 +994,7 @@ Before evaluating your model on your test set, consider getting a version of it
 with the leaks removed. This can be easily done via
 `no_leaks_view()`:
 
-```
+```python
 # The original test split
 test_set = index.split_views["test"]
 
@@ -1029,7 +1020,7 @@ The `compute_near_duplicates()`
 method leverages embeddings to automatically surface near-duplicate samples in
 your dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -1074,7 +1065,7 @@ The following example demonstrates how to use
 detect near duplicate images on the
 [CIFAR-10 dataset](dataset_zoo/datasets.html#dataset-zoo-cifar10):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1092,7 +1083,7 @@ In this case, we’ll use a classifier that has been fine-tuned on CIFAR-10 to
 pre-compute embeddings and them feed them to
 `compute_near_duplicates()`:
 
-```
+```python
 import fiftyone.brain as fob
 import fiftyone.brain.internal.models as fbm
 
@@ -1119,12 +1110,12 @@ the values are lists of `(id, distance)` tuples listing the sample IDs of the
 duplicate samples for each reference sample together with the embedding
 distance between the two samples:
 
-```
+```python
 print(index.neighbors_map)
 
 ```
 
-```
+```python
 {
     '61143408db40df926c571a6b': [\
         ('61143409db40df926c573075', 5.667297674385298),\
@@ -1150,7 +1141,7 @@ method of the index, which constructs a view with the duplicate samples
 arranged directly after their corresponding reference sample, with optional
 additional fields recording the type and nearest reference sample ID/distance:
 
-```
+```python
 duplicates_view = index.duplicates_view(
     type_field="dup_type",
     id_field="dup_id",
@@ -1179,7 +1170,7 @@ You can also use the
 method of the index to identify a set of samples of any desired size that are
 maximally unique with respect to each other:
 
-```
+```python
 # Use the similarity index to identify 500 maximally unique samples
 index.find_unique(500)
 print(index.unique_ids[:5])
@@ -1191,7 +1182,7 @@ We can also conveniently visualize the results of this operation via the
 method of the index, which generates a scatterplot with the unique samples
 colored separately:
 
-```
+```python
 # Generate a 2D visualization
 viz_results = fob.compute_visualization(dataset, embeddings=embeddings)
 
@@ -1206,7 +1197,7 @@ plot.show(height=800, yaxis_scaleanchor="x")
 And of course we can load a view containing the unique samples in the App to
 explore the results in detail:
 
-```
+```python
 # Visualize the unique images in the App
 unique_view = dataset.select(index.unique_ids)
 session = fo.launch_app(view=unique_view)
@@ -1225,7 +1216,7 @@ The `compute_exact_duplicates()`
 method scans your dataset and determines if you have duplicate data either
 under the same or different filenames:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -1261,7 +1252,7 @@ The uniqueness of a [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dat
 predictions of a pre-trained model via the
 `compute_uniqueness()` method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -1332,7 +1323,7 @@ In order to compute hardness, all you need to do is add your model predictions
 and their logits to your FiftyOne [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and then run the
 `compute_hardness()` method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -1380,7 +1371,7 @@ for the predictions of a pre-trained model via the
 `compute_representativeness()`
 method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -1445,7 +1436,7 @@ methods on your dataset:
 
 The example below demonstrates the basic interface:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -1529,7 +1520,7 @@ For example, the following config JSON file customizes the URL of your
 [Qdrant server](integrations/qdrant.html#qdrant-integration) without changing any other default
 config settings:
 
-```
+```python
 {
     "similarity_backends": {
         "qdrant": {
@@ -1556,7 +1547,7 @@ Brain config settings may be customized on a per-session basis by setting the
 The `FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND` environment variable allows you
 to configure your default similarity backend:
 
-```
+```python
 export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=qdrant
 
 ```
@@ -1571,7 +1562,7 @@ declare in this way will be passed as keyword arguments to methods like
 corresponding backend is in use. For example, you can configure the URL of your
 [Qdrant server](integrations/qdrant.html#qdrant-integration) as follows:
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_QDRANT_URL=http://localhost:8080
 
 ```
@@ -1581,7 +1572,7 @@ The `FIFTYONE_BRAIN_SIMILARITY_BACKENDS` environment variable can be set to a
 native backends and/or declare additional custom backends whose parameters are
 defined via additional config modifications of any kind:
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_BACKENDS=custom,sklearn,qdrant
 
 ```
@@ -1590,7 +1581,7 @@ When declaring new backends, you can include `*` to append new backend(s)
 without omitting or explicitly enumerating the builtin backends. For example,
 you can add a `custom` similarity backend as follows:
 
-```
+```python
 export FIFTYONE_BRAIN_SIMILARITY_BACKENDS=*,custom
 export FIFTYONE_BRAIN_SIMILARITY_CUSTOM_CONFIG_CLS=your.custom.SimilarityConfig
 
@@ -1606,7 +1597,7 @@ declare in this way will be passed as keyword arguments to methods like
 the corresponding method is in use. For example, you can suppress logging
 messages for the UMAP method as follows:
 
-```
+```python
 export FIFTYONE_BRAIN_VISUALIZATION_UMAP_VERBOSE=false
 
 ```
@@ -1616,7 +1607,7 @@ The `FIFTYONE_BRAIN_VISUALIZATION_METHODS` environment variable can be set to a
 native methods and/or declare additional custom methods whose parameters are
 defined via additional config modifications of any kind:
 
-```
+```python
 export FIFTYONE_BRAIN_VISUALIZATION_METHODS=custom,umap,tsne
 
 ```
@@ -1625,7 +1616,7 @@ When declaring new methods, you can include `*` to append new method(s)
 without omitting or explicitly enumerating the builtin methods. For example,
 you can add a `custom` visualization method as follows:
 
-```
+```python
 export FIFTYONE_BRAIN_VISUALIZATION_METHODS=*,custom
 export FIFTYONE_BRAIN_VISUALIZATION_CUSTOM_CONFIG_CLS=your.custom.VisualzationConfig
 
@@ -1640,7 +1631,7 @@ Any changes to your brain config applied via this manner will immediately
 take effect in all subsequent calls to `fiftyone.brain.brain_config` during
 your current session.
 
-```
+```python
 import fiftyone.brain as fob
 
 fob.brain_config.default_similarity_backend = "qdrant"
@@ -1648,48 +1639,3 @@ fob.brain_config.default_visualization_method = "tsne"
 
 ```
 
-- FiftyOne Brain
-  - [Visualizing embeddings](#visualizing-embeddings)
-    - [Embedding methods](#embedding-methods)
-    - [Dimensionality reduction methods](#dimensionality-reduction-methods)
-    - [Applications](#applications)
-    - [Image embeddings example](#image-embeddings-example)
-    - [Object embeddings example](#object-embeddings-example)
-    - [Visualization API](#visualization-api)
-      - [Changing your visualization method](#changing-your-visualization-method)
-      - [Configuring your visualization method](#configuring-your-visualization-method)
-  - [Similarity](#similarity)
-    - [Embedding methods](#id5)
-    - [Similarity backends](#similarity-backends)
-    - [Image similarity](#image-similarity)
-    - [Object similarity](#object-similarity)
-    - [Text similarity](#text-similarity)
-    - [Similarity API](#similarity-api)
-      - [Changing your similarity backend](#changing-your-similarity-backend)
-      - [Configuring your backend](#configuring-your-backend)
-      - [Creating an index](#creating-an-index)
-        - [Default behavior](#default-behavior)
-        - [Custom model, custom backend, add embeddings later](#custom-model-custom-backend-add-embeddings-later)
-        - [Precomputed embeddings](#precomputed-embeddings)
-      - [Adding embeddings to an index](#adding-embeddings-to-an-index)
-      - [Retrieving embeddings in an index](#retrieving-embeddings-in-an-index)
-      - [Removing embeddings from an index](#removing-embeddings-from-an-index)
-      - [Deleting an index](#deleting-an-index)
-    - [Applications](#brain-similarity-applications)
-  - [Leaky splits](#leaky-splits)
-  - [Near duplicates](#near-duplicates)
-    - [Finding near-duplicate samples](#finding-near-duplicate-samples)
-    - [Finding maximally unique samples](#finding-maximally-unique-samples)
-  - [Exact duplicates](#exact-duplicates)
-  - [Image uniqueness](#image-uniqueness)
-  - [Label mistakes](#label-mistakes)
-  - [Sample hardness](#sample-hardness)
-  - [Image representativeness](#image-representativeness)
-  - [Managing brain runs](#managing-brain-runs)
-  - [Brain config](#brain-config)
-    - [Viewing your config](#viewing-your-config)
-    - [Modifying your config](#modifying-your-config)
-      - [Order of precedence](#order-of-precedence)
-      - [Editing your JSON config](#editing-your-json-config)
-      - [Setting environment variables](#setting-environment-variables)
-      - [Modifying your config in code](#modifying-your-config-in-code)

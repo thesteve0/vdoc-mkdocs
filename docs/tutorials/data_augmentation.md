@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Augmenting Datasets with Albumentations
-
-Contents
-
-
 # Augmenting Datasets with Albumentations [¶](\#Augmenting-Datasets-with-Albumentations "Permalink to this headline")
 
 Traditionally, [data augmentation]((https://en.wikipedia.org/wiki/Data_augmentation)) is performed on-the-fly during training. This is great… _if_ you know exactly what augmentations you want to apply to your dataset.
@@ -103,26 +93,26 @@ Segmentations](https://github.com/jacobmarks/fiftyone-albumentations-plugin?tab=
 
 To get started, first make sure you have FiftyOne and Albumentations installed:
 
-```
+```python
 pip install -U fiftyone albumentations
 
 ```
 
 Then download the Albumentations plugin with FiftyOne’s plugin CLI syntax:
 
-```
+```python
 fiftyone plugins download https://github.com/jacobmarks/fiftyone-albumentations-plugin
 
 ```
 
 For this walkthrough, we’ll pretend that our goal is to train a vision model for an autonomous vehicle application, but we are starting from just a handful of labeled images. In particular, we’ll take just the first 10 images from the [KITTI](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html#kitti) dataset, which contains left stereo images from road scenes.
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -137,17 +127,17 @@ Subset of 10 images from the train split of the KITTI dataset, visualized in the
 
 To make things more fun — and to show that this plugin allows you to experiment with all different types of labels — let’s add some pose estimation keypoints with [Ultralytics](https://docs.ultralytics.com/), and some relative depth maps with Hugging Face’s [Transformers](https://huggingface.co/docs/transformers/index) library:
 
-```
+```python
 pip install -U transformers ultralytics
 
 ```
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## Add depth maps
 from transformers import AutoModelForDepthEstimation
 depth_model = AutoModelForDepthEstimation.from_pretrained(
@@ -210,13 +200,3 @@ Whether you’re building a low-latency embedded vision model for real-time dete
 
 But if you’re optimizing your model architecture, and painstakingly pouring over your ground truth data to ensure the highest quality, there’s no reason not to take the same care with your data augmentation. I hope this post hammers home the importance of understanding what transformations you are applying, and gives you the tools you need to start treating data augmentation like data curation!
 
-- Augmenting Datasets with Albumentations
-  - [What is Data Augmentation?](#What-is-Data-Augmentation?)
-  - [The Perils of Blind Data Augmentation](#The-Perils-of-Blind-Data-Augmentation)
-  - [Testing Transformations with Albumentations and FiftyOne](#Testing-Transformations-with-Albumentations-and-FiftyOne)
-    - [Setup](#Setup)
-    - [Creating Augmentations](#Creating-Augmentations)
-    - [Isolating the Augmented Samples](#Isolating-the-Augmented-Samples)
-    - [Inspecting the Generating Transformation](#Inspecting-the-Generating-Transformation)
-    - [Composing Transformations](#Composing-Transformations)
-  - [Summary](#Summary)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Super Gradients Integration
-
-Contents
-
-
 # Super Gradients Integration [¶](\#super-gradients-integration "Permalink to this headline")
 
 FiftyOne integrates natively with Deci AI’s
@@ -21,7 +11,7 @@ To get started with
 [SuperGradients](https://github.com/Deci-AI/super-gradients), just install
 the `super-gradients` package:
 
-```
+```python
 pip install super-gradients
 
 ```
@@ -32,7 +22,7 @@ You can directly pass SuperGradients YOLO-NAS models to your FiftyOne dataset’
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -56,7 +46,7 @@ session = fo.launch_app(dataset)
 SuperGradients YOLO-NAS is also available directly from the
 [FiftyOne Model Zoo](../data_and_models/model_zoo/models.html#model-zoo-yolo-nas-torch)!
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -69,7 +59,3 @@ session = fo.launch_app(dataset)
 
 ```
 
-- Super Gradients Integration
-  - [Setup](#setup)
-  - [Inference](#inference)
-  - [Model zoo](#model-zoo)

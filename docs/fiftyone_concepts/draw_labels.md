@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Drawing Labels on Samples
-
-Contents
-
-
 # Drawing Labels on Samples [¶](\#drawing-labels-on-samples "Permalink to this headline")
 
 FiftyOne provides native support for rendering annotated versions of image and
@@ -28,7 +18,7 @@ your datasets that you have identified by constructing a [`DatasetView`](../api/
 The following snippet renders the ground truth and predicted labels on a few
 samples from the [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -49,7 +39,7 @@ The following snippet renders both sample-level and frame-level labels on a
 few videos from the
 [quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -93,7 +83,7 @@ For example, you can render an annotated version of an image sample with
 [`Classification`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification "fiftyone.core.labels.Classification") and [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") labels overlaid via
 [`draw_labeled_image()`](../api/fiftyone.utils.annotations.html#fiftyone.utils.annotations.draw_labeled_image "fiftyone.utils.annotations.draw_labeled_image"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.utils.annotations as foua
 
@@ -158,7 +148,7 @@ for a complete description of the available parameters.
 For example, the snippet below increases the font size and line thickness of
 the labels in the example above and includes the confidence of the predictions:
 
-```
+```python
 # Continuing from example above...
 
 # Customize annotation rendering
@@ -178,10 +168,3 @@ foua.draw_labeled_image(sample, outpath, config=config)
 
 ![image-annotated.jpg](../_images/example2.jpg)
 
-- Drawing Labels on Samples
-  - [Basic recipe](#basic-recipe)
-  - [Examples](#examples)
-    - [Drawing labels on images](#drawing-labels-on-images)
-    - [Drawing labels on videos](#drawing-labels-on-videos)
-  - [Individual samples](#individual-samples)
-  - [Customizing label rendering](#customizing-label-rendering)

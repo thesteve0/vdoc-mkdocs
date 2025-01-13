@@ -1,14 +1,3 @@
-Table of Contents
-
-- [Docs](../../index.html) >
-
-- [FiftyOne User Guide](../index.html) >
-- [Loading data into FiftyOne](index.html) >
-- Loading Datasets From Disk
-
-Contents
-
-
 # Loading Datasets From Disk [¶](\#loading-datasets-from-disk "Permalink to this headline")
 
 FiftyOne provides native support for importing datasets from disk in a
@@ -81,7 +70,7 @@ images.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -109,7 +98,7 @@ videos.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -137,7 +126,7 @@ files.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     <filename1>.<ext>
     <filename2>.<ext>
@@ -168,7 +157,7 @@ label(s) stored in a simple JSON format.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -180,7 +169,7 @@ Datasets of this type are read in the following format:
 
 In the simplest case, `labels.json` can be a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -210,7 +199,7 @@ may or may not be in `data/`.
 Alternatively, `labels.json` can contain predictions with associated
 confidences and additional attributes in the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -243,7 +232,7 @@ confidences and additional attributes in the following format:
 You can also load multilabel classifications in this format by storing lists
 of targets in `labels.json`:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -289,7 +278,7 @@ directory tree whose subfolders define an image classification dataset.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     <classA>/
         <image1>.<ext>
@@ -324,7 +313,7 @@ directory tree whose subfolders define a video classification dataset.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     <classA>/
         <video1>.<ext>
@@ -361,7 +350,7 @@ stored as
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     tf.records-?????-of-?????
 
@@ -370,7 +359,7 @@ Datasets of this type are read in the following format:
 where the features of the (possibly sharded) TFRecords are stored in the
 following format:
 
-```
+```python
 {
     # Image dimensions
     "height": tf.io.FixedLenFeature([], tf.int64),
@@ -415,7 +404,7 @@ stored in a simple JSON format.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -427,7 +416,7 @@ Datasets of this type are read in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         <labelA>,\
@@ -499,7 +488,7 @@ stored in a simple JSON format.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -511,7 +500,7 @@ Datasets of this type are read in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         "<labelA>",\
@@ -609,7 +598,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename0>.<ext>
@@ -621,7 +610,7 @@ Datasets of this type are read in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "info": {...},
     "licenses": [\
@@ -705,7 +694,7 @@ segmentations, and keypoints). However, you can choose specific type(s) to
 load by passing the optional `label_types` argument to methods like
 [`Dataset.from_dir()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.from_dir "fiftyone.core.dataset.Dataset.from_dir"):
 
-```
+```python
 # Only load bounding boxes
 dataset = fo.Dataset.from_dir(
     dataset_type=fo.types.COCODetectionDataset,
@@ -734,7 +723,7 @@ add the labels to the dataset. The example below demonstrates a round-trip
 export and then re-import of both images-and-labels and labels-only data in
 COCO format:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.coco as fouc
@@ -795,7 +784,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -810,7 +799,7 @@ Datasets of this type are read in the following format:
 
 where the labels XML files are in the following format:
 
-```
+```python
 <annotation>
     <folder></folder>
     <filename>image.ext</filename>
@@ -891,7 +880,7 @@ dataset consisting of images and their associated object detections saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -950,7 +939,7 @@ consisting of images and their associated object detections saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     obj.names
     images.txt
@@ -965,7 +954,7 @@ Datasets of this type are read in the following format:
 
 where `obj.names` contains the object class labels:
 
-```
+```python
 <label-0>
 <label-1>
 ...
@@ -974,7 +963,7 @@ where `obj.names` contains the object class labels:
 
 and `images.txt` contains the list of images in `data/`:
 
-```
+```python
 data/<uuid1>.<ext>
 data/<uuid2>.<ext>
 ...
@@ -989,7 +978,7 @@ available images.
 The TXT files in `data/` are space-delimited files where each row corresponds
 to an object in the image of the same name, in one of the following formats:
 
-```
+```python
 # Detections
 <target> <x-center> <y-center> <width> <height>
 <target> <x-center> <y-center> <width> <height> <confidence>
@@ -1015,7 +1004,7 @@ load YOLO annotations as [`Polylines`](../../api/fiftyone.core.labels.html#fifty
 argument to methods like
 [`Dataset.from_dir()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.from_dir "fiftyone.core.dataset.Dataset.from_dir"):
 
-```
+```python
 # Load annotations as polygons
 dataset = fo.Dataset.from_dir(
     dataset_type=fo.types.YOLOv4Dataset,
@@ -1045,7 +1034,7 @@ add the labels to the dataset.
 The example below demonstrates a round-trip export and then re-import of both
 images-and-labels and labels-only data in YOLO format:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.yolo as fouy
@@ -1106,7 +1095,7 @@ consisting of images and their associated object detections saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     dataset.yaml
     images/
@@ -1132,7 +1121,7 @@ Datasets of this type are read in the following format:
 
 where `dataset.yaml` contains the following information:
 
-```
+```python
 path: <dataset_dir>  # optional
 train: ./images/train/
 val: ./images/val/
@@ -1161,7 +1150,7 @@ directory.
 The TXT files in `labels/` are space-delimited files where each row corresponds
 to an object in the image of the same name, in one of the following formats:
 
-```
+```python
 # Detections
 <target> <x-center> <y-center> <width> <height>
 <target> <x-center> <y-center> <width> <height> <confidence>
@@ -1190,7 +1179,7 @@ load YOLO annotations as [`Polylines`](../../api/fiftyone.core.labels.html#fifty
 argument to methods like
 [`Dataset.from_dir()`](../../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.from_dir "fiftyone.core.dataset.Dataset.from_dir"):
 
-```
+```python
 # Load annotations as polygons
 dataset = fo.Dataset.from_dir(
     dataset_type=fo.types.YOLOv5Dataset,
@@ -1208,7 +1197,7 @@ customize the import of datasets of this type.
 You can create a FiftyOne dataset from a YOLOv5 dataset stored in the above
 format as follows:
 
-```
+```python
 import fiftyone as fo
 
 name = "my-dataset"
@@ -1243,7 +1232,7 @@ add the labels to the dataset.
 The example below demonstrates a round-trip export and then re-import of both
 images-and-labels and labels-only data in YOLO format:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.utils.yolo as fouy
@@ -1310,7 +1299,7 @@ dataset consisting of images and their associated object detections stored as
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     tf.records-?????-of-?????
 
@@ -1319,7 +1308,7 @@ Datasets of this type are read in the following format:
 where the features of the (possibly sharded) TFRecords are stored in the
 following format:
 
-```
+```python
 {
     # Image dimensions
     "image/height": tf.io.FixedLenFeature([], tf.int64),
@@ -1389,7 +1378,7 @@ segmentations stored as images on disk.
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename1>.<ext>
@@ -1431,7 +1420,7 @@ consisting of images and their associated tags and object detections stored in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1443,7 +1432,7 @@ Datasets of this type are read in the following format:
 
 where `labels.xml` is an XML file in the following format:
 
-```
+```python
 <?xml version="1.0" encoding="utf-8"?>
 <annotations>
     <version>1.1</version>
@@ -1568,7 +1557,7 @@ consisting of videos and their associated object detections stored in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1583,7 +1572,7 @@ Datasets of this type are read in the following format:
 
 where the labels XML files are stored in the following format:
 
-```
+```python
 <?xml version="1.0" encoding="utf-8"?>
 <annotations>
     <version>1.1</version>
@@ -1709,7 +1698,7 @@ associated with the image of the same name. In this case, the `labels_path`
 argument is expected to be a directory, if provided:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1729,7 +1718,7 @@ images. Specifically, the image filepath corresponding to a label must be
 stored as a stream:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1746,7 +1735,7 @@ cannot be used to match labels to images, the image filepaths must again be
 stored as streams in the labels files:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1768,7 +1757,7 @@ Note
 All object information stored in the `frames` key is applied to the
 corresponding image.
 
-```
+```python
 {
     "openlabel": {
         "metadata": {
@@ -1908,7 +1897,7 @@ associated with the video of the same name. In this case, the `labels_path`
 argument is expected to be a directory, if provided:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1928,7 +1917,7 @@ videos. Specifically, the video filepath corresponding to a label must be
 stored as a stream:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1945,7 +1934,7 @@ cannot be used to match labels to videos, the video filepaths must again be
 stored as streams in the labels files:
 
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -1962,7 +1951,7 @@ As for the actual structure of the labels files themselves, labels are stored
 in one or more JSON files and can follow a variety of formats. In general
 following this format:
 
-```
+```python
 {
     "openlabel": {
         "metadata": {
@@ -2097,7 +2086,7 @@ stored in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -2113,7 +2102,7 @@ Datasets of this type are read in the following format:
 
 where `manifest.json` is a JSON file in the following format:
 
-```
+```python
 {
     "type": "eta.core.datasets.LabeledImageDataset",
     "description": "",
@@ -2155,7 +2144,7 @@ labeled dataset consisting of videos and their associated labels stored in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -2171,7 +2160,7 @@ Datasets of this type are read in the following format:
 
 where `manifest.json` is a JSON file in the following format:
 
-```
+```python
 {
     "type": "eta.core.datasets.LabeledVideoDataset",
     "description": "",
@@ -2213,7 +2202,7 @@ consisting of images and their associated multitask predictions saved in
 
 Datasets of this type are read in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <filename0>.<ext>
@@ -2225,7 +2214,7 @@ Datasets of this type are read in the following format:
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 [\
     {\
         "name": "<filename0>.<ext>",\
@@ -2761,38 +2750,3 @@ about defining custom [`DatasetExporter`](../../api/fiftyone.utils.data.exporter
 Custom dataset types can be declared by implementing the [`Dataset`](../../api/fiftyone.types.html#fiftyone.types.Dataset "fiftyone.types.Dataset") subclass\
 corresponding to the type of dataset that you are working with.\
 \
-- Loading Datasets From Disk\
-  - [Basic recipe](#basic-recipe)\
-  - [Supported formats](#supported-formats)\
-  - [ImageDirectory](#imagedirectory)\
-  - [VideoDirectory](#videodirectory)\
-  - [MediaDirectory](#mediadirectory)\
-  - [FiftyOneImageClassificationDataset](#fiftyoneimageclassificationdataset)\
-  - [ImageClassificationDirectoryTree](#imageclassificationdirectorytree)\
-  - [VideoClassificationDirectoryTree](#videoclassificationdirectorytree)\
-  - [TFImageClassificationDataset](#tfimageclassificationdataset)\
-  - [FiftyOneImageDetectionDataset](#fiftyoneimagedetectiondataset)\
-  - [FiftyOneTemporalDetectionDataset](#fiftyonetemporaldetectiondataset)\
-  - [COCODetectionDataset](#cocodetectiondataset)\
-  - [VOCDetectionDataset](#vocdetectiondataset)\
-  - [KITTIDetectionDataset](#kittidetectiondataset)\
-  - [YOLOv4Dataset](#yolov4dataset)\
-  - [YOLOv5Dataset](#yolov5dataset)\
-  - [TFObjectDetectionDataset](#tfobjectdetectiondataset)\
-  - [ImageSegmentationDirectory](#imagesegmentationdirectory)\
-  - [CVATImageDataset](#cvatimagedataset)\
-  - [CVATVideoDataset](#cvatvideodataset)\
-  - [OpenLABELImageDataset](#openlabelimagedataset)\
-  - [OpenLABELVideoDataset](#openlabelvideodataset)\
-  - [FiftyOneImageLabelsDataset](#fiftyoneimagelabelsdataset)\
-  - [FiftyOneVideoLabelsDataset](#fiftyonevideolabelsdataset)\
-  - [BDDDataset](#bdddataset)\
-  - [CSVDataset](#csvdataset)\
-  - [DICOMDataset](#dicomdataset)\
-  - [GeoJSONDataset](#geojsondataset)\
-  - [GeoTIFFDataset](#geotiffdataset)\
-  - [FiftyOneDataset](#fiftyonedataset)\
-  - [Custom formats](#custom-formats)\
-    - [Writing a custom DatasetImporter](#writing-a-custom-datasetimporter)\
-    - [Importing dataset-level information](#importing-dataset-level-information)\
-    - [Writing a custom Dataset type](#writing-a-custom-dataset-type)

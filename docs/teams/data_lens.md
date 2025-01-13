@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Teams](index.html) >
-- Data Lens
-
-Contents
-
-
 # Data Lens [¶](\#data-lens "Permalink to this headline")
 
 **Available in FiftyOne Teams v2.2+**
@@ -206,7 +196,7 @@ base class provided with the Teams SDK. This base class handles the
 implementation for the operator’s `execute()` method, and defines a single
 abstract method that we’ll implement.
 
-```
+```python
 # my_plugin/__init__.py
 from typing import Generator
 
@@ -241,7 +231,7 @@ class MyCustomDataLensOperator(DataLensOperator):
 
 Let’s take a look at what we have so far.
 
-```
+```python
 class MyCustomDataLensOperator(DataLensOperator):
 
 ```
@@ -252,7 +242,7 @@ provided by the Teams SDK. This base class defines the abstract
 `handle_lens_search_request()`
 method, which we will need to implement.
 
-```
+```python
 @property
 def config(self) -> foo.OperatorConfig:
     return foo.OperatorConfig(
@@ -279,7 +269,7 @@ The [`config`](../api/fiftyone.operators.operator.html#fiftyone.operators.operat
 is part of the standard [operator interface](../plugins/developing_plugins.html#operator-interface) and
 provides configuration options for your operator.
 
-```
+```python
 def handle_lens_search_request(
     self,
     request: DataLensSearchRequest,
@@ -361,7 +351,7 @@ below.
 To see how Data Lens works, let’s yield a response with a single synthetic
 sample.
 
-```
+```python
 def handle_lens_search_request(
     self,
     request: DataLensSearchRequest,
@@ -395,7 +385,7 @@ yields a single sample, and we see that sample shown in the preview.
 
 Let’s modify our operator to incorporate the `request.batch_size` property.
 
-```
+```python
 def handle_lens_search_request(
     self,
     request: DataLensSearchRequest,
@@ -442,7 +432,7 @@ in the
 [`resolve_input()`](../api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.resolve_input "fiftyone.operators.operator.Operator.resolve_input")
 method.
 
-```
+```python
 def resolve_input(self):
     # We define our inputs as an object.
     # We'll add specific fields to this object which represent a single input.
@@ -468,7 +458,7 @@ to define any or all of these inputs.
 We can then use this data to change the behavior of our operator. Let’s add
 logic to integrate `sample_text` into our operator.
 
-```
+```python
 def handle_lens_search_request(
     self,
     request: DataLensSearchRequest,
@@ -554,7 +544,7 @@ sources.
 Below is an example of a Data Lens connector for Databricks. This example uses
 a schema consistent with the Berkeley DeepDrive dataset format.
 
-```
+```python
 import json
 import time
 from typing import Generator
@@ -887,7 +877,7 @@ class DatabricksHandler:
 
 Below is an example of a Data Lens connector for BigQuery:
 
-```
+```python
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
 from fiftyone.operators.data_lens import (
@@ -1010,7 +1000,7 @@ class BigQueryHandler:
 
 Let’s take a look at a few parts in detail.
 
-```
+```python
 # Create our client
 client = bigquery.Client()
 
@@ -1019,7 +1009,7 @@ client = bigquery.Client()
 In practice, you’ll likely need to use [secrets](secrets.html#teams-secrets) to
 securely provide credentials to connect to your data source.
 
-```
+```python
 # Retrieve our Data Lens search parameters
 detection_label = request.search_params.get("detection_label", "")
 
@@ -1038,7 +1028,7 @@ Here we’re using our user-provided input parameters to tailor our query to onl
 the samples of interest. This logic can be as simple or complex as needed to
 match our use case.
 
-```
+```python
 # Wait for results
 rows = query_job.result(
     # BigQuery will handle pagination automatically, but
@@ -1056,7 +1046,7 @@ BigQuery align its performance with our use case. In cases where
 preview or small imports), we can prevent fetching more data than we need,
 improving both query performance and operational cost.
 
-```
+```python
 # Transform sample data from BigQuery format to FiftyOne
 samples.append(self.convert_to_sample(row))
 
@@ -1080,7 +1070,7 @@ the user. In this example, we’ll look at how we can use
 [dynamic operators](../plugins/developing_plugins.html#operator-inputs) to conditionally expose
 configuration options to Data Lens users.
 
-```
+```python
 class MyOperator(DataLensOperator):
     @property
     def config(self) -> foo.OperatorConfig:
@@ -1097,7 +1087,7 @@ customize the options shown to a Data Lens user based on the current state.
 Let’s use this to optionally show an “advanced options” section in our query
 parameters.
 
-```
+```python
 def resolve_input(self, ctx: foo.ExecutionContext):
     inputs = types.Object()
 
@@ -1127,7 +1117,7 @@ Lens user’s behavior. In this example, we’re optionally displaying advanced
 configuration that allows a user to remap sample fields. Applying this
 remapping might look something like this.
 
-```
+```python
 def _remap_sample_fields(self, sample: dict, request: DataLensSearchRequest):
     remappable_fields = ("field_a", "field_b")
     for field_name in remappable_fields:
@@ -1149,17 +1139,3 @@ able to select samples with only red, yellow, or green lights. In this way,
 dynamic operators provide a simple mechanism for developing intuitive and
 context-sensitive search experiences for Data Lens users.
 
-- Data Lens
-  - [How it works](#how-it-works)
-    - [Connecting a data source](#connecting-a-data-source)
-    - [Exploring samples](#exploring-samples)
-    - [Importing samples to FiftyOne](#importing-samples-to-fiftyone)
-  - [Integrating with Data Lens](#integrating-with-data-lens)
-    - [Setting up your operator](#setting-up-your-operator)
-    - [Generating search responses](#generating-search-responses)
-    - [Working with user-provided data](#working-with-user-provided-data)
-    - [Differences in preview and import](#differences-in-preview-and-import)
-  - [Example data source connectors](#example-data-source-connectors)
-    - [Databricks](#databricks)
-    - [Google BigQuery](#google-bigquery)
-    - [Snippet: Dynamic user inputs](#snippet-dynamic-user-inputs)

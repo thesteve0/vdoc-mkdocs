@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Recipes](index.html) >
-- Adding Classifier Predictions to a Dataset
-
-Contents
-
-
 # Adding Classifier Predictions to a Dataset [¶](\#Adding-Classifier-Predictions-to-a-Dataset "Permalink to this headline")
 
 This recipe provides a glimpse into the possibilities for integrating FiftyOne into your ML workflows. Specifically, it covers:
@@ -25,42 +15,42 @@ This recipe provides a glimpse into the possibilities for integrating FiftyOne i
 
 If you haven’t already, install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 You’ll also need to install `torch` and `torchvision`, if necessary:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 !pip install torch torchvision
 
 ```
 
 In this example, we’ll work with the test split of the CIFAR-10 dataset, which is conveniently available for download from the [FiftyOne Dataset Zoo](https://voxel51.com/docs/fiftyone/user_guide/dataset_zoo/datasets.html#dataset-zoo-cifar10):
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 # Downloads the test split of CIFAR-10
 !fiftyone zoo datasets download cifar10 --splits test
 
 ```
 
-```
+```python
 Downloading split 'test' to '/Users/Brian/fiftyone/cifar10/test'
 Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to /Users/Brian/fiftyone/cifar10/tmp-download/cifar-10-python.tar.gz
 170500096it [00:05, 30536650.39it/s]
@@ -72,12 +62,12 @@ Dataset info written to '/Users/Brian/fiftyone/cifar10/info.json'
 
 We’ll also download a pre-trained CIFAR-10 PyTorch model that we’ll use to generate some predictions:
 
-```
+```python
 [1]:
 
 ```
 
-```
+```python
 # Download the software
 !git clone --depth 1 --branch v2.1 https://github.com/huyvnphan/PyTorch_CIFAR10.git
 
@@ -88,7 +78,7 @@ We’ll also download a pre-trained CIFAR-10 PyTorch model that we’ll use to g
 
 ```
 
-```
+```python
 Cloning into 'PyTorch_CIFAR10'...
 remote: Enumerating objects: 82, done.
 remote: Counting objects: 100% (82/82), done.
@@ -115,7 +105,7 @@ Downloading '1dGfpeFK_QG0kV-U6QDHMX2EOGXPqaNzu' to 'PyTorch_CIFAR10/cifar10_mode
 
 Suppose you have an image classification dataset on disk in the following format:
 
-```
+```python
 <dataset_dir>/
     data/
         <uuid1>.<ext>
@@ -127,7 +117,7 @@ Suppose you have an image classification dataset on disk in the following format
 
 where `labels.json` is a JSON file in the following format:
 
-```
+```python
 {
     "classes": [\
         <labelA>,\
@@ -145,12 +135,12 @@ where `labels.json` is a JSON file in the following format:
 
 In your current workflow, you may parse this data into a list of `(image_path, label)` tuples as follows:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import json
 import os
 
@@ -183,7 +173,7 @@ for sample in data[:5]:
 
 ```
 
-```
+```python
 ('/Users/Brian/fiftyone/cifar10/test/data/000001.jpg', 'cat')
 ('/Users/Brian/fiftyone/cifar10/test/data/000002.jpg', 'ship')
 ('/Users/Brian/fiftyone/cifar10/test/data/000003.jpg', 'ship')
@@ -194,12 +184,12 @@ for sample in data[:5]:
 
 Building a [FiftyOne dataset](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html) from your samples in this format is simple:
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 
 # Load the data into FiftyOne samples
@@ -221,7 +211,7 @@ print(dataset)
 
 ```
 
-```
+```python
  100% |███████████████████| 10000/10000 [44.9s elapsed, 0s remaining, 221.4 samples/s]
 Name:           classifier-recipe
 Media type:     image
@@ -237,18 +227,18 @@ Sample fields:
 
 ```
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 # Print a sample from the dataset
 print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '603031c01ec865586e477d8e',
     'media_type': 'image',
@@ -271,12 +261,12 @@ FiftyOne provides a powerful notion of [dataset views](https://voxel51.com/docs/
 
 Here’s an example operation:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 # Used to write view expressions that involve sample fields
 from fiftyone import ViewField as F
 
@@ -291,7 +281,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:        classifier-recipe
 Media type:     image
 Num samples:    5
@@ -307,18 +297,18 @@ View stages:
 
 ```
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 # Print a sample from the view
 print(view.first())
 
 ```
 
-```
+```python
 <SampleView: {
     'id': '603031c01ec865586e477d94',
     'media_type': 'image',
@@ -337,18 +327,18 @@ print(view.first())
 
 Iterating over the samples in a view is easy:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 for sample in view:
     print(sample.filepath)
 
 ```
 
-```
+```python
 /Users/Brian/fiftyone/cifar10/test/data/000004.jpg
 /Users/Brian/fiftyone/cifar10/test/data/000011.jpg
 /Users/Brian/fiftyone/cifar10/test/data/000022.jpg
@@ -361,12 +351,12 @@ for sample in view:
 
 Now let’s [add our classifier’s predictions](https://voxel51.com/docs/fiftyone/user_guide/using_datasets.html#classification) to our FiftyOne dataset in a new `predictions` field:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 import sys
 
 import numpy as np
@@ -442,24 +432,24 @@ with fo.ProgressBar() as pb:
 
 ```
 
-```
+```python
  100% |███████████████████████████| 5/5 [1.4s elapsed, 0s remaining, 3.6 batches/s]
 
 ```
 
 We can print our dataset to verify that a `predictions` field has been added to its schema:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 print(dataset)
 
 ```
 
-```
+```python
 Name:           classifier-recipe
 Media type:     image
 Num samples:    10000
@@ -477,12 +467,12 @@ Sample fields:
 
 Let’s explore the predictions we added by creating a view that sorts the samples in order of prediction confidence:
 
-```
+```python
 [15]:
 
 ```
 
-```
+```python
 pred_view = (
     dataset
     .exists("predictions")
@@ -495,7 +485,7 @@ print(pred_view.first())
 
 ```
 
-```
+```python
 Number of samples with predictions: 25
 
 Highest confidence prediction:
@@ -528,12 +518,12 @@ The [FiftyOne App](https://voxel51.com/docs/fiftyone/user_guide/app.html) allows
 
 You can explore the App interactively through the GUI, and you can even interact with it in real-time from your Python interpreter!
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 # Open the dataset in the App
 session = fo.launch_app(dataset)
 
@@ -543,12 +533,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 # Show five random samples in the App
 session.view = dataset.take(5)
 
@@ -558,12 +548,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 # Show the samples for which we added predictions above
 session.view = pred_view
 
@@ -573,12 +563,12 @@ Activate
 
 ![](<Base64-Image-Removed>)
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 # Show the full dataset again
 session.view = None
 
@@ -592,12 +582,12 @@ You can select samples in the App by clicking on the images. Try it!
 
 After you’ve selected some images in the App, you can hop back over to Python and make a view that contains those samples!
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 # Make a view containing the currently selected samples in the App
 selected_view = dataset.select(session.selected)
 
@@ -606,7 +596,7 @@ print(selected_view)
 
 ```
 
-```
+```python
 Dataset:        classifier-recipe
 Media type:     image
 Num samples:    8
@@ -622,19 +612,13 @@ View stages:
 
 ```
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 session.freeze() # screenshot the active App for sharing
 
 ```
 
-- Adding Classifier Predictions to a Dataset
-  - [Setup](#Setup)
-  - [Loading an image classification dataset](#Loading-an-image-classification-dataset)
-  - [Working with views](#Working-with-views)
-  - [Adding model predictions](#Adding-model-predictions)
-  - [Using the FiftyOne App](#Using-the-FiftyOne-App)

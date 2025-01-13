@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- pandas-style queries in FiftyOne
-
-Contents
-
-
 # pandas-style queries in FiftyOne [¶](\#pandas-style-queries-in-FiftyOne "Permalink to this headline")
 
 ## Overview [¶](\#Overview "Permalink to this headline")
@@ -24,36 +14,36 @@ If you’re already a pandas power user, then you’ll be a FiftyOne power user 
 
 The first thing to do is to install FiftyOne:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install fiftyone
 
 ```
 
 Then we will import pandas and FiftyOne:
 
-```
+```python
 [2]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F  # For handling expressions in matching and filtering
 
 ```
 
-```
+```python
 [3]:
 
 ```
 
-```
+```python
 import numpy as np
 import pandas as pd
 
@@ -65,34 +55,34 @@ In this tutorial, we will download example data for illustrative purposes. Befor
 
 #### Create empty `pd.DataFrame` [¶](\#Create-empty-pd.DataFrame "Permalink to this headline")
 
-```
+```python
 [4]:
 
 ```
 
-```
+```python
 empty_df = pd.DataFrame()
 
 ```
 
 we can get basic information about the `DataFrame` using the [info](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.info) property:
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 empty_df.info
 
 ```
 
-```
+```python
 [5]:
 
 ```
 
-```
+```python
 <bound method DataFrame.info of Empty DataFrame
 Columns: []
 Index: []>
@@ -101,12 +91,12 @@ Index: []>
 
 We can also give the `DataFrame` object a name:
 
-```
+```python
 [6]:
 
 ```
 
-```
+```python
 empty_df.name = 'empty_df'
 
 ```
@@ -115,29 +105,29 @@ empty_df.name = 'empty_df'
 
 We can similarly create a `Dataset` object by calling the FiftyOne core [fo.Dataset()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset) method without any arguments:
 
-```
+```python
 [7]:
 
 ```
 
-```
+```python
 empty_dataset = fo.Dataset()
 
 ```
 
 We can get basic info about the `Dataset` object using `print`:
 
-```
+```python
 [8]:
 
 ```
 
-```
+```python
 print(empty_dataset)
 
 ```
 
-```
+```python
 Name:        2022.11.18.18.14.41
 Media type:  None
 Num samples: 0
@@ -156,27 +146,27 @@ We can see a few things: 1. Calling the `fo.DataFrame()` method without an input
 
 If we wanted to name an existing `Dataset`, we could do so in analogous fashion to pandas:
 
-```
+```python
 [9]:
 
 ```
 
-```
+```python
 empty_dataset.name = "empty-dataset"
 
 ```
 
-```
+```python
 [10]:
 
 ```
 
-```
+```python
 print(empty_dataset)
 
 ```
 
-```
+```python
 Name:        empty-dataset
 Media type:  None
 Num samples: 0
@@ -192,12 +182,12 @@ Sample fields:
 
 Alternatively, if we want to initialize the dataset with a name, we can pass a name in:
 
-```
+```python
 [11]:
 
 ```
 
-```
+```python
 empty_dataset = fo.Dataset('empty-ds')
 
 ```
@@ -208,27 +198,27 @@ For the rest of this tutorial, we will use the following example data:
 
 #### [Iris Dataset](https://archive.ics.uci.edu/ml/datasets/iris) [¶](\#Iris-Dataset "Permalink to this headline")
 
-```
+```python
 [12]:
 
 ```
 
-```
+```python
 df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv')
 
 ```
 
-```
+```python
 [13]:
 
 ```
 
-```
+```python
 df.info()
 
 ```
 
-```
+```python
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 150 entries, 0 to 149
 Data columns (total 5 columns):
@@ -244,22 +234,22 @@ memory usage: 6.0+ KB
 
 ```
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 df.columns
 
 ```
 
-```
+```python
 [14]:
 
 ```
 
-```
+```python
 Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width',\
        'species'],
       dtype='object')
@@ -268,27 +258,27 @@ Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width',\
 
 #### [FiftyOne Quickstart Data](https://github.com/voxel51/fiftyone-examples/blob/master/examples/quickstart.ipynb) [¶](\#FiftyOne-Quickstart-Data "Permalink to this headline")
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ds = foz.load_zoo_dataset("quickstart")
 
 ```
 
-```
+```python
 [16]:
 
 ```
 
-```
+```python
 print(ds)
 
 ```
 
-```
+```python
 Name:        quickstart
 Media type:  image
 Num samples: 200
@@ -319,17 +309,17 @@ To start to get a feel for the data, we might want to inspect a few entries. For
 
 #### Head [¶](\#Head "Permalink to this headline")
 
-```
+```python
 [17]:
 
 ```
 
-```
+```python
 df.head(5)
 
 ```
 
-```
+```python
 [17]:
 
 ```
@@ -342,12 +332,12 @@ df.head(5)
 | 3 | 4.6 | 3.1 | 1.5 | 0.2 | setosa |
 | 4 | 5.0 | 3.6 | 1.4 | 0.2 | setosa |
 
-```
+```python
 [18]:
 
 ```
 
-```
+```python
 first_few_samples = ds.head()
 
 ```
@@ -372,17 +362,17 @@ to contain the same number of predicted objects, so it is preferable for samples
 
 To get the last nn entries (rows or samples), we can use the `tail(n)` method
 
-```
+```python
 [19]:
 
 ```
 
-```
+```python
 df.tail(5)
 
 ```
 
-```
+```python
 [19]:
 
 ```
@@ -395,12 +385,12 @@ df.tail(5)
 | 148 | 6.2 | 3.4 | 5.4 | 2.3 | virginica |
 | 149 | 5.9 | 3.0 | 5.1 | 1.8 | virginica |
 
-```
+```python
 [20]:
 
 ```
 
-```
+```python
 last_few_samples = ds.tail()
 
 ```
@@ -409,24 +399,24 @@ last_few_samples = ds.tail()
 
 If we only want the first sample in a `Dataset`, we can use the [first()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.first) method, which is equivalent to `ds.head()[0]`
 
-```
+```python
 [21]:
 
 ```
 
-```
+```python
 first_sample = ds.first()
 
 ```
 
 Similarly, if we only want the last sample, we can use the [last()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.last) method, which is equivalent to `ds.tail()[0]`
 
-```
+```python
 [22]:
 
 ```
 
-```
+```python
 last_sample = ds.last()
 
 ```
@@ -435,32 +425,32 @@ last_sample = ds.last()
 
 In pandas, if we want to get the element at index jj in a `DataFrame`, we can employ the `loc[j]` or `iloc[j]` functionality, depending on our usage. For instance,
 
-```
+```python
 [23]:
 
 ```
 
-```
+```python
 j = 10
 
 ```
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 df.loc[j]
 
 ```
 
-```
+```python
 [24]:
 
 ```
 
-```
+```python
 sepal_length       5.4
 sepal_width        3.7
 petal_length       1.5
@@ -472,30 +462,30 @@ Name: 10, dtype: object
 
 In FiftyOne, we can achieve the same functionality of picking out the jthjth sample by running:
 
-```
+```python
 [25]:
 
 ```
 
-```
+```python
 sample = ds.skip(j).first()
 
 ```
 
 However, in many cases, one is more interested in extracting samples based on their sample id or filepath. In these cases, the syntactical sugar mirrors pandas: both `sample = ds[id]` and `sample = ds[filepath]` achieve the desired result.
 
-```
+```python
 [26]:
 
 ```
 
-```
+```python
 filepath = sample.filepath
 print(ds[filepath].id == sample.id)
 
 ```
 
-```
+```python
 True
 
 ```
@@ -504,42 +494,42 @@ True
 
 We can get the number of samples in a `fo.Dataset` just the same as we would get the number of rows in a `pd.DataFrame` object - by passing it to Python’s `len()` function.
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 len(df)
 
 ```
 
-```
+```python
 [27]:
 
 ```
 
-```
+```python
 150
 
 ```
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 len(ds)
 
 ```
 
-```
+```python
 [28]:
 
 ```
 
-```
+```python
 200
 
 ```
@@ -550,22 +540,22 @@ There are 150150 flowers in the Iris dataset, and 200200 images in our FiftyOne 
 
 In pandas, where all rows in a `DataFrame` share the same columns, we can get the names of the columns with the `DataFrame.columns` property.
 
-```
+```python
 [29]:
 
 ```
 
-```
+```python
 df.columns
 
 ```
 
-```
+```python
 [29]:
 
 ```
 
-```
+```python
 Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width',\
        'species'],
       dtype='object')
@@ -574,22 +564,22 @@ Index(['sepal_length', 'sepal_width', 'petal_length', 'petal_width',\
 
 In FiftyOne, the core field schema is shared among samples, but the structure within these first-level fields can vary. We can get the field schema by calling the [get\_field\_schema()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.get_field_schema) method.
 
-```
+```python
 [30]:
 
 ```
 
-```
+```python
 ds.get_field_schema()
 
 ```
 
-```
+```python
 [30]:
 
 ```
 
-```
+```python
 OrderedDict([('id', <fiftyone.core.fields.ObjectIdField at 0x2a0a65a90>),\
              ('filepath', <fiftyone.core.fields.StringField at 0x2a0a5b2b0>),\
              ('tags', <fiftyone.core.fields.ListField at 0x2a0a8c460>),\
@@ -619,18 +609,18 @@ Some of the field types, such as [FloatField](https://voxel51.com/docs/fiftyone/
 
 If we just want the field names for all samples in the dataset, you can do the following:
 
-```
+```python
 [31]:
 
 ```
 
-```
+```python
 field_names = list(ds.get_field_schema().keys())
 print(field_names)
 
 ```
 
-```
+```python
 ['id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'predictions', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field']
 
 ```
@@ -639,37 +629,37 @@ print(field_names)
 
 In pandas, the entries in each column or `pd.Series` object must themselves be objects of the type of one of the numpy data types. Thus, when all of the values in a column are extracted, the resulting list will have depth one:
 
-```
+```python
 [33]:
 
 ```
 
-```
+```python
 col = "sepal_length"
 sepal_lengths = df[col].tolist()
 print(sepal_lengths[:10])
 
 ```
 
-```
+```python
 [5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9]
 
 ```
 
 FiftyOne supports this functionality as well. For instance, each image in our dataset has a [uniqueness](https://voxel51.com/docs/fiftyone/tutorials/uniqueness.html) score, which is a measure of how unique a given image is in the context of the complete dataset. We can extract these values for each image using the [values()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.values) method as follows:
 
-```
+```python
 [34]:
 
 ```
 
-```
+```python
 uniqueness = ds.values("uniqueness")
 print(uniqueness[:10])
 
 ```
 
-```
+```python
 [0.8175834390151201, 0.6844698885072961, 0.725267119762334, 0.7164587220038886, 0.6874799405473135, 0.6773349111042449, 0.6948791555330056, 0.6157872732023304, 0.6692531238595459, 0.7257486965960712]
 
 ```
@@ -678,29 +668,29 @@ Some of the relevant information for computer vision tasks, however, is less str
 
 Let’s see this in action by using the `values` method to pull out the confidence score for each predicted detection:
 
-```
+```python
 [35]:
 
 ```
 
-```
+```python
 pred_confs = ds.values("predictions.detections.confidence")
 
 ```
 
-```
+```python
 [36]:
 
 ```
 
-```
+```python
 print(type(pred_confs))
 print(len(pred_confs))
 print(type(pred_confs[0]))
 
 ```
 
-```
+```python
 <class 'list'>
 200
 <class 'list'>
@@ -709,35 +699,35 @@ print(type(pred_confs[0]))
 
 As with `values("uniqueness")`, we get a list with one result per image. However, now we have a sublist for each image, rather than just a single value. We can peak inside one of these sublists at the confidence scores for each detection:
 
-```
+```python
 [37]:
 
 ```
 
-```
+```python
 print(pred_confs[0])
 
 ```
 
-```
+```python
 [0.9750854969024658, 0.759726881980896, 0.6569182276725769, 0.2359301745891571, 0.221974179148674, 0.1965726613998413, 0.18904592096805573, 0.11480894684791565, 0.11089690029621124, 0.0971052274107933, 0.08403241634368896, 0.07699568569660187, 0.058097004890441895, 0.0519101656973362]
 
 ```
 
 Let’s get the lengths of these sublists and print the first few. In the section on `fo.Expression`, we will see a more natural (and efficient) way of performing this operation.
 
-```
+```python
 [38]:
 
 ```
 
-```
+```python
 pred_conf_lens = [len(p) for p in pred_confs]
 print(pred_conf_lens[:10])
 
 ```
 
-```
+```python
 [14, 20, 10, 51, 27, 13, 2, 9, 7, 13]
 
 ```
@@ -752,19 +742,19 @@ Suppose we want to make a copy of the original data and modify the copy without 
 
 In pandas, we can do this with the `copy` method:
 
-```
+```python
 [39]:
 
 ```
 
-```
+```python
 copy_df = df.copy()
 copy_df['species'] = 'none'
 df.head()
 
 ```
 
-```
+```python
 [39]:
 
 ```
@@ -779,19 +769,19 @@ df.head()
 
 In FiftyOne, we can do this with the [clone()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.clone) method:
 
-```
+```python
 [40]:
 
 ```
 
-```
+```python
 copy_ds = ds.clone()
 copy_ds.name = 'copy_ds'
 print(ds.name)
 
 ```
 
-```
+```python
 quickstart
 
 ```
@@ -800,28 +790,28 @@ quickstart
 
 In pandas if we want to get a slice of a `DataFrame`, we can do so with the notation `df[start:end]`.
 
-```
+```python
 [41]:
 
 ```
 
-```
+```python
 start = 10
 end = 14
 
 ```
 
-```
+```python
 [42]:
 
 ```
 
-```
+```python
 df[start:end]
 
 ```
 
-```
+```python
 [42]:
 
 ```
@@ -835,22 +825,22 @@ df[start:end]
 
 In FiftyOne, a `Dataset` can be sliced using the same notation:
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 ds[start:end]
 
 ```
 
-```
+```python
 [43]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 4
@@ -876,22 +866,22 @@ View stages:
 
 However, as we can see from the output of the preceding command, this is merely syntactical sugar for the expression:
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 ds.skip(start).limit(end - start)
 
 ```
 
-```
+```python
 [44]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 4
@@ -923,39 +913,39 @@ When working with datasets, it is often the case that one might want to select a
 
 #### Select kk random samples [¶](\#Select-k-random-samples "Permalink to this headline")
 
-```
+```python
 [45]:
 
 ```
 
-```
+```python
 k = 20
 
 ```
 
 In pandas, you can use the `sample()` method, passing in either a number, as in `sample(n = k)`, or a fraction, as we show below
 
-```
+```python
 [46]:
 
 ```
 
-```
+```python
 rand_samples_df = df.sample(n=k)
 
 ```
 
-```
+```python
 [47]:
 
 ```
 
-```
+```python
 rand_samples_df.head()
 
 ```
 
-```
+```python
 [47]:
 
 ```
@@ -970,32 +960,32 @@ rand_samples_df.head()
 
 In FiftyOne, we can use the [take()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.take) method, to which we can pass in a random seed, or let it seed the random number generator with the time.
 
-```
+```python
 [48]:
 
 ```
 
-```
+```python
 rand_samples_ds = ds.take(k, seed=123)
 
 ```
 
-```
+```python
 [49]:
 
 ```
 
-```
+```python
 rand_samples_ds
 
 ```
 
-```
+```python
 [49]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 20
@@ -1022,27 +1012,27 @@ With the [random utils](https://voxel51.com/docs/fiftyone/api/fiftyone.utils.ran
 
 #### Randomly select fraction p<1p<1 of samples [¶](\#Randomly-select-fraction-p<1-of-samples "Permalink to this headline")
 
-```
+```python
 [50]:
 
 ```
 
-```
+```python
 p = 0.05
 
 ```
 
-```
+```python
 [51]:
 
 ```
 
-```
+```python
 df.sample(frac=p).head()
 
 ```
 
-```
+```python
 [51]:
 
 ```
@@ -1055,24 +1045,24 @@ df.sample(frac=p).head()
 | 58 | 6.6 | 2.9 | 4.6 | 1.3 | versicolor |
 | 90 | 5.5 | 2.6 | 4.4 | 1.2 | versicolor |
 
-```
+```python
 [52]:
 
 ```
 
-```
+```python
 # We need to convert from fraction p to an integer k
 k = int(len(ds) * p)
 ds.take(k, seed=123)
 
 ```
 
-```
+```python
 [52]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 10
@@ -1101,24 +1091,24 @@ In a similar vein to randomly selecting samples, one might want to create a new 
 
 In pandas, we can accomplish this by randomly sampling all the rows (frac=1frac=1) without replacement:
 
-```
+```python
 [53]:
 
 ```
 
-```
+```python
 shuffled_df_view = df.sample(frac=1)
 
 ```
 
 In FiftyOne, we can just call the [shuffle()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.shuffle) method:
 
-```
+```python
 [54]:
 
 ```
 
-```
+```python
 shuffled_ds_view = ds.shuffle(seed=123)
 
 ```
@@ -1127,29 +1117,29 @@ shuffled_ds_view = ds.shuffle(seed=123)
 
 It is also quite natural to want to filter out the data based on some condition. For the Iris data, for instance, let’s get all of the flowers that have a sepal length greater than seven:
 
-```
+```python
 [55]:
 
 ```
 
-```
+```python
 sepal_length_thresh = 7
 large_sepal_len_view = df[df.sepal_length > sepal_length_thresh]
 
 ```
 
-```
+```python
 [56]:
 
 ```
 
-```
+```python
 print(len(large_sepal_len_view))
 print(large_sepal_len_view.head())
 
 ```
 
-```
+```python
 12
      sepal_length  sepal_width  petal_length  petal_width    species
 102           7.1          3.0           5.9          2.1  virginica
@@ -1162,12 +1152,12 @@ print(large_sepal_len_view.head())
 
 In FiftyOne, we can perform an analogous filtering operation on the quickstart images, using the [match()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.match) method and the [ViewField](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewField) to select all images that have a “uniqueness” score above some threshold:
 
-```
+```python
 [57]:
 
 ```
 
-```
+```python
 unique_thresh = 0.75
 unique_view = ds.match(F("uniqueness") > unique_thresh)
 print(unique_view)
@@ -1175,7 +1165,7 @@ print("values: ", unique_view.values("uniqueness"))
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 8
@@ -1203,12 +1193,12 @@ However, in FiftyOne, given the potentially nested structure of the data in a `D
 
 As an example, let’s say we want to filter for all images in our dataset that had at least one object prediction with very high confidence. In this case, the confidence score is an embedded field within the predicted detections for each image. Thus, we can create a filter on confidence scores, and then apply this filter to the embedded `detections` field within `predictions`:
 
-```
+```python
 [58]:
 
 ```
 
-```
+```python
 high_conf_filter = F("confidence") > 0.995
 
 high_conf_view = ds.match(
@@ -1217,22 +1207,22 @@ high_conf_view = ds.match(
 
 ```
 
-```
+```python
 [59]:
 
 ```
 
-```
+```python
 high_conf_view
 
 ```
 
-```
+```python
 [59]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 116
@@ -1267,27 +1257,27 @@ In pandas, we use the `sort_values` method.
 
 Suppose that we want to sort by petal length. We can do this as follows:
 
-```
+```python
 [60]:
 
 ```
 
-```
+```python
 petal_length_view = df.sort_values(by="petal_length", ascending=False)
 
 ```
 
-```
+```python
 [61]:
 
 ```
 
-```
+```python
 petal_length_view.head()
 
 ```
 
-```
+```python
 [61]:
 
 ```
@@ -1302,29 +1292,29 @@ petal_length_view.head()
 
 In FiftyOne, we use the [sort\_by()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by) method. Let’s sort the samples by the number of “ground truth” objects in the sample images:
 
-```
+```python
 [62]:
 
 ```
 
-```
+```python
 field = "ground_truth.detections"
 view = ds.sort_by(F(field).length(), reverse=True)
 
 ```
 
-```
+```python
 [63]:
 
 ```
 
-```
+```python
 print(len(view.first().ground_truth.detections))  # 39
 print(len(view.last().ground_truth.detections))  # 0
 
 ```
 
-```
+```python
 39
 0
 
@@ -1338,48 +1328,48 @@ If we are resource-constrained, we can delete old `DataFrame` or `Dataset` objec
 
 In pandas we do this using the `del` command and the garbage collector utility. To delete the `petal_length_view` view, we can do the following:
 
-```
+```python
 [64]:
 
 ```
 
-```
+```python
 import gc
 del petal_length_view
 gc.collect()
 
 ```
 
-```
+```python
 [64]:
 
 ```
 
-```
+```python
 16
 
 ```
 
 In FiftyOne, we can use the built-in [delete()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.delete_dataset) method:
 
-```
+```python
 [65]:
 
 ```
 
-```
+```python
 copy_ds.delete()
 
 ```
 
 It is also worth mentioning that in FiftyOne, the `Dataset` is best thought of as an in-memory object. This means that a `Dataset` is deleted after closing Python (this is true in both Python interpreters and notebooks). If you want to use the dataset in the future, you can avoid this end-of-session deletion by setting the `persistent` property to `True`:
 
-```
+```python
 [66]:
 
 ```
 
-```
+```python
 ds.persistent = True
 
 ```
@@ -1396,18 +1386,18 @@ In both pandas and FiftyOne, the [count()](https://voxel51.com/docs/fiftyone/api
 
 In pandas, this counts the number of values in the column, which is by construction equal to the number of rows in the `DataFrame`:
 
-```
+```python
 [67]:
 
 ```
 
-```
+```python
 print(df['species'].count())
 print(len(df))
 
 ```
 
-```
+```python
 150
 150
 
@@ -1415,19 +1405,19 @@ print(len(df))
 
 In FiftyOne, the `count` method returns the total number of occurrences of a certain field, which is _not_ necessarily the same as the number of samples.
 
-```
+```python
 [68]:
 
 ```
 
-```
+```python
 num_predictions = ds.count("predictions.detections.label")
 print(len(ds))
 print(num_predictions)
 
 ```
 
-```
+```python
 200
 5620
 
@@ -1437,34 +1427,34 @@ print(num_predictions)
 
 Both pandas and FiftyOne have the [sum()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.sum) method
 
-```
+```python
 [69]:
 
 ```
 
-```
+```python
 sum_sepal_lengths = df.sepal_length.sum()
 print(sum_sepal_lengths)
 
 ```
 
-```
+```python
 876.5
 
 ```
 
-```
+```python
 [70]:
 
 ```
 
-```
+```python
 sum_pred_confs = ds.sum("predictions.detections.confidence")
 print(sum_pred_confs)
 
 ```
 
-```
+```python
 1966.6705134399235
 
 ```
@@ -1473,44 +1463,44 @@ print(sum_pred_confs)
 
 In pandas, the `unique` method returns a list of all unique values in the input `pd.Series`.
 
-```
+```python
 [71]:
 
 ```
 
-```
+```python
 df.species.unique()
 
 ```
 
-```
+```python
 [71]:
 
 ```
 
-```
+```python
 array(['setosa', 'versicolor', 'virginica'], dtype=object)
 
 ```
 
 In FiftyOne, the [distinct()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.distinct) method reproduces this functionality.
 
-```
+```python
 [72]:
 
 ```
 
-```
+```python
 rand_samples_ds.distinct("predictions.detections.label")
 
 ```
 
-```
+```python
 [72]:
 
 ```
 
-```
+```python
 ['banana',\
  'bed',\
  'bench',\
@@ -1569,37 +1559,37 @@ rand_samples_ds.distinct("predictions.detections.label")
 
 In pandas, you compute the minimum and maximum value of a `pd.Series` separately:
 
-```
+```python
 [73]:
 
 ```
 
-```
+```python
 min_sepal_len = df.sepal_length.min()
 max_sepal_len = df.sepal_length.max()
 print("min_sepal_len: {}, max_sepal_len: {}".format(min_sepal_len, max_sepal_len))
 
 ```
 
-```
+```python
 min_sepal_len: 4.3, max_sepal_len: 7.9
 
 ```
 
 When working with a FiftyOne Dataset or DataView, the min and max are returned together in a tuple when the [bounds()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.bounds) method is called on a field:
 
-```
+```python
 [74]:
 
 ```
 
-```
+```python
 (min_pred_conf, max_pred_conf) = ds.bounds("predictions.detections.confidence")
 print("min_pred_conf: {}, max_pred_conf: {}".format(min_pred_conf, max_pred_conf))
 
 ```
 
-```
+```python
 min_pred_conf: 0.05003104358911514, max_pred_conf: 0.9999035596847534
 
 ```
@@ -1608,34 +1598,34 @@ min_pred_conf: 0.05003104358911514, max_pred_conf: 0.9999035596847534
 
 Both pandas `DataFrame` objects and FiftyOne `Dataset` objects employ the method [mean()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.mean)
 
-```
+```python
 [75]:
 
 ```
 
-```
+```python
 mean_sepal_len = df.sepal_length.mean()
 print(mean_sepal_len)
 
 ```
 
-```
+```python
 5.843333333333334
 
 ```
 
-```
+```python
 [76]:
 
 ```
 
-```
+```python
 mean_pred_conf = ds.mean("predictions.detections.confidence")
 print(mean_pred_conf)
 
 ```
 
-```
+```python
 0.34994137249820706
 
 ```
@@ -1644,34 +1634,34 @@ print(mean_pred_conf)
 
 Both pandas `DataFrame` objects and FiftyOne `Dataset` objects employ the method [std()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.std):
 
-```
+```python
 [77]:
 
 ```
 
-```
+```python
 std_sepal_len = df.sepal_length.std()
 print(std_sepal_len)
 
 ```
 
-```
+```python
 0.828066127977863
 
 ```
 
-```
+```python
 [78]:
 
 ```
 
-```
+```python
 std_pred_conf = ds.std("predictions.detections.confidence")
 print(std_pred_conf)
 
 ```
 
-```
+```python
 0.3184061813934825
 
 ```
@@ -1680,28 +1670,28 @@ print(std_pred_conf)
 
 If you don’t want just the mean, but instead want the value for a given column or field at arbitrary percentiles in the dataset, you can use the [quantiles()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.quantiles) method, which takes in a list of percentiles.
 
-```
+```python
 [79]:
 
 ```
 
-```
+```python
 percentiles = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
 
 ```
 
-```
+```python
 [80]:
 
 ```
 
-```
+```python
 sepal_len_quanties = df.sepal_length.quantile(percentiles)
 print(sepal_len_quanties)
 
 ```
 
-```
+```python
 0.0    4.30
 0.2    5.00
 0.4    5.60
@@ -1712,18 +1702,18 @@ Name: sepal_length, dtype: float64
 
 ```
 
-```
+```python
 [81]:
 
 ```
 
-```
+```python
 pred_conf_quantiles = ds.quantiles("predictions.detections.confidence", percentiles)
 print(pred_conf_quantiles)
 
 ```
 
-```
+```python
 [0.05003104358911514, 0.08101843297481537, 0.14457139372825623, 0.2922309935092926, 0.6890143156051636, 0.9999035596847534]
 
 ```
@@ -1734,19 +1724,19 @@ Some aggregations which are native to pandas, such as computing the median, are 
 
 Here we illustrate this procedure for computing the median. If you use the `values` method on the `predictions.detections.confidence` field with default arguments, we get a jagged array.
 
-```
+```python
 [82]:
 
 ```
 
-```
+```python
 pred_confs_jagged = ds.values("predictions.detections.confidence")
 print([len(pc) for pc in pred_confs_jagged][:10])
 print(sum([len(pc) for pc in pred_confs_jagged]))
 
 ```
 
-```
+```python
 [14, 20, 10, 51, 27, 13, 2, 9, 7, 13]
 5620
 
@@ -1754,36 +1744,36 @@ print(sum([len(pc) for pc in pred_confs_jagged]))
 
 However, we can simplify our lives by flattening the result passing in the argument `unwind = True`:
 
-```
+```python
 [83]:
 
 ```
 
-```
+```python
 pred_confs_flat = ds.values("predictions.detections.confidence", unwind = True)
 print(len(pred_confs_flat))
 
 ```
 
-```
+```python
 5620
 
 ```
 
 And from this we can easily compute the median:
 
-```
+```python
 [84]:
 
 ```
 
-```
+```python
 pred_confs_median = np.median(pred_confs_flat)
 print(pred_confs_median)
 
 ```
 
-```
+```python
 0.20251326262950897
 
 ```
@@ -1800,18 +1790,18 @@ In this section we show how to efficiently handle each of these cases in pandas 
 
 In pandas, the easiest way to create a new column `const_col` with constant value `const_val` is:
 
-```
+```python
 [85]:
 
 ```
 
-```
+```python
 df['const_col'] = 'const_val'
 df.head()
 
 ```
 
-```
+```python
 [85]:
 
 ```
@@ -1833,12 +1823,12 @@ There is one key distinction in usage between `set_field` and `set_values`. Wher
 
 Before illustrating these more efficient approaches, it is also worth mentioning that you can also loop through the samples in a `Dataset` or `DatasetView` and add or set fields one at a time.
 
-```
+```python
 [86]:
 
 ```
 
-```
+```python
 for sample in ds.iter_samples(autosave=True):
     sample["new_const_field"] = 51
     sample["computed_field"] = len(sample.ground_truth.detections)
@@ -1849,12 +1839,12 @@ However, this is _not_ an efficient approach. It is recommended to use `set_fiel
 
 In the simplest scenario - analogous to the Pandas example above, we can pass a single value into `set_field` along with the name of the field:
 
-```
+```python
 [87]:
 
 ```
 
-```
+```python
 ds.add_sample_field("const_field", fo.StringField)
 view = ds.set_field("const_field", "const_val")
 view.save()
@@ -1864,7 +1854,7 @@ print(ds.values("const_field")[:10])
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'predictions', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field', 'const_field')
 ['const_val', 'const_val', 'const_val', 'const_val', 'const_val', 'const_val', 'const_val', 'const_val', 'const_val', 'const_val']
 
@@ -1878,39 +1868,39 @@ Starting with pandas, suppose that our data team comes to us and tells us that n
 
 For instance, let’s say the stem lengths are:
 
-```
+```python
 [88]:
 
 ```
 
-```
+```python
 stem_lengths = np.random.uniform(5, 10, len(df))
 
 ```
 
 We can add this into our dataset using a similar syntax as above. The only difference is that this time, the assignment is taking in an array (here a numpy array) instead of a single value.
 
-```
+```python
 [89]:
 
 ```
 
-```
+```python
 df['stem_length'] = stem_lengths
 
 ```
 
-```
+```python
 [90]:
 
 ```
 
-```
+```python
 df.head()
 
 ```
 
-```
+```python
 [90]:
 
 ```
@@ -1927,29 +1917,29 @@ In FiftyOne, we can do something similar by passing an array of values into `set
 
 As an example, let’s say we have an `abstractness` score between zero and one for each image.
 
-```
+```python
 [91]:
 
 ```
 
-```
+```python
 abstractness = np.random.uniform(0, 1, len(ds))
 
 ```
 
-```
+```python
 [92]:
 
 ```
 
-```
+```python
 ds.set_values("abstractness", abstractness)
 print(ds.first().field_names)
 print(ds.values("abstractness")[:10])
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'predictions', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field', 'const_field')
 [0.18992196548662132, 0.4195423356383746, 0.9782249923275138, 0.3555547463728417, 0.9019379850096877, 0.3647814428112852, 0.3030278060870243, 0.241988161650587, 0.7872455674533378, 0.44774858997738953]
 
@@ -1963,27 +1953,27 @@ Finally, often either in the process of feature engineering or data analysis, yo
 
 In pandas, the canonical way of doing this is with the `apply` method. Suppose we want to create a new feature called “sepal volume” derived by taking the product of sepal length and sepal width. With `apply` we can map row-wise onto the columns:
 
-```
+```python
 [93]:
 
 ```
 
-```
+```python
 df["sepal_volume"] = df.apply(lambda x: x["sepal_length"]*x["sepal_width"], axis=1)
 
 ```
 
-```
+```python
 [94]:
 
 ```
 
-```
+```python
 df.head()
 
 ```
 
-```
+```python
 [94]:
 
 ```
@@ -2000,12 +1990,12 @@ In FiftyOne, we can perform operations like this by combining `set_field` with t
 
 To compute the number of predicted object detections for each sample in the `Dataset` we can write:
 
-```
+```python
 [95]:
 
 ```
 
-```
+```python
 view = ds.set_field(
     "predictions.num_predictions",
     F("$predictions.detections").length(),
@@ -2016,7 +2006,7 @@ print(ds.values("predictions.num_predictions")[:10])
 
 ```
 
-```
+```python
 ('detections', 'num_predictions')
 [14, 20, 10, 51, 27, 13, 2, 9, 7, 13]
 
@@ -2032,17 +2022,17 @@ Here, we show how to do both of these in Pandas and FiftyOne.
 
 In pandas, you can create a view without specific columns using the `drop` method:
 
-```
+```python
 [96]:
 
 ```
 
-```
+```python
 df.head()
 
 ```
 
-```
+```python
 [96]:
 
 ```
@@ -2055,12 +2045,12 @@ df.head()
 | 3 | 4.6 | 3.1 | 1.5 | 0.2 | setosa | const\_val | 6.762648 | 14.26 |
 | 4 | 5.0 | 3.6 | 1.4 | 0.2 | setosa | const\_val | 8.624046 | 18.00 |
 
-```
+```python
 [97]:
 
 ```
 
-```
+```python
 no_const_view = df.drop(["const_col"], axis=1)
 # equvalent to df.drop(columns=["const"])
 
@@ -2068,7 +2058,7 @@ no_const_view.head()
 
 ```
 
-```
+```python
 [97]:
 
 ```
@@ -2083,18 +2073,18 @@ no_const_view.head()
 
 If one wants to delete the column from the original `DataFrame`, one does so by assigning the variable for the original `DataFrame` to the dropped view:
 
-```
+```python
 [98]:
 
 ```
 
-```
+```python
 df = df.drop(["const_col"], axis=1)
 df.head()
 
 ```
 
-```
+```python
 [98]:
 
 ```
@@ -2109,54 +2099,54 @@ df.head()
 
 In FiftyOne, you can create a `ViewStage` without a particular field using the [exclude\_fields()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.exclude_fields) method:
 
-```
+```python
 [99]:
 
 ```
 
-```
+```python
 no_predictions_view = ds.exclude_fields("predictions")
 print(no_predictions_view.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field', 'const_field')
 
 ```
 
 Alternatively, you can delete a field from the `Dataset` using [delete\_sample\_field()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_sample_field).
 
-```
+```python
 [100]:
 
 ```
 
-```
+```python
 ds.delete_sample_field("const_field")
 print(ds.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'predictions', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field')
 
 ```
 
 Both the `exclude_field` and `delete_sample_field` methods also work with embedded fields:
 
-```
+```python
 [101]:
 
 ```
 
-```
+```python
 ds.delete_sample_field("predictions.num_predictions")
 print(ds.first().predictions.field_names)
 
 ```
 
-```
+```python
 ('detections',)
 
 ```
@@ -2169,18 +2159,18 @@ Alternatively, if you only want to create a view with a small subset of columns/
 
 In pandas, to create a new view with only the “sepal\_length” and “sepal\_width” columns, one could write:
 
-```
+```python
 [102]:
 
 ```
 
-```
+```python
 sepal_df = df[["sepal_length", "sepal_width"]]
 sepal_df.head()
 
 ```
 
-```
+```python
 [102]:
 
 ```
@@ -2195,18 +2185,18 @@ sepal_df.head()
 
 In contrast, the following propagates the changes back to the original `DataFrame`:
 
-```
+```python
 [103]:
 
 ```
 
-```
+```python
 sepal_df = sepal_df[["sepal_length"]]
 sepal_df.head()
 
 ```
 
-```
+```python
 [103]:
 
 ```
@@ -2224,12 +2214,12 @@ changes propagate from the `DatasetView` back to the underlying `Dataset`.
 
 Let’s create two clones of our base `Dataset` to showcase this distinction.
 
-```
+```python
 [104]:
 
 ```
 
-```
+```python
 ds_clone1 = ds.clone()
 ds_clone2 = ds.clone()
 
@@ -2237,12 +2227,12 @@ ds_clone2 = ds.clone()
 
 For both of these clones, let’s create views which select only the `ground_truth` field:
 
-```
+```python
 [105]:
 
 ```
 
-```
+```python
 clone1_view = ds_clone1.select_fields("ground_truth")
 clone2_view = ds_clone2.select_fields("ground_truth")
 print(clone1_view.first().field_names)
@@ -2250,7 +2240,7 @@ print(clone2_view.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth')
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth')
 
@@ -2258,28 +2248,28 @@ print(clone2_view.first().field_names)
 
 The `id`, `filepath`, `tags`, and `metadata` are by default preserved, even when not passed in to `select_fields`. Aside from these and `ground_truth`, all other fields have been omitted from view. Now let’s only apply `keep_fields` on the first clone, and see what changes propagate back.
 
-```
+```python
 [106]:
 
 ```
 
-```
+```python
 clone1_view.keep_fields()
 
 ```
 
-```
+```python
 [107]:
 
 ```
 
-```
+```python
 print(ds_clone1.first().field_names)
 print(ds_clone2.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth')
 ('id', 'filepath', 'tags', 'metadata', 'ground_truth', 'uniqueness', 'predictions', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field')
 
@@ -2297,12 +2287,12 @@ In both pandas and FiftyOne, we can concatenate them using the `concat` method.
 
 In pandas, we can combine two `DataFrame` objects:
 
-```
+```python
 [108]:
 
 ```
 
-```
+```python
 df1 = df[df.species == 'setosa']
 df2 = df[df.species == 'virginica']
 concat_df = pd.concat([df1, df2])
@@ -2310,54 +2300,54 @@ print(len(concat_df))
 
 ```
 
-```
+```python
 100
 
 ```
 
 In FiftyOne, we can use the [concat()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.concat) method to combine views from the same dataset:
 
-```
+```python
 [109]:
 
 ```
 
-```
+```python
 view1 = ds.match(F("uniqueness") < 0.2)
 view2 = ds.match(F("uniqueness") > 0.7)
 
 ```
 
-```
+```python
 [110]:
 
 ```
 
-```
+```python
 print(len(view1))
 print(len(view2))
 
 ```
 
-```
+```python
 19
 17
 
 ```
 
-```
+```python
 [111]:
 
 ```
 
-```
+```python
 concat_view = view1.concat(view2)
 print(len(view1) + len(view2))
 print(len(concat_view))
 
 ```
 
-```
+```python
 36
 36
 
@@ -2371,51 +2361,51 @@ Often times, we just want to enhance a dataset by adding in one sample at a time
 
 In pandas, the fastest way to do this is to use the same `concat` method as above. If the row data is in a dictionary format, we convert it to its own `DataFrame` first.
 
-```
+```python
 [112]:
 
 ```
 
-```
+```python
 len(df1)
 
 ```
 
-```
+```python
 [112]:
 
 ```
 
-```
+```python
 50
 
 ```
 
-```
+```python
 [113]:
 
 ```
 
-```
+```python
 single_row = df2.iloc[0]
 df1_plus = pd.concat([df1, pd.DataFrame([single_row])], axis=1)
 print(len(df1_plus))
 
 ```
 
-```
+```python
 51
 
 ```
 
 In FiftyOne, we can use the [add\_sample()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_sample) method. Notice that this is an _in-place_ operation, and no assignment is needed. Also note that this does not work for views - a sample can only be added to a `Dataset`, not to a `Dataview`. As such, we first clone the view to turn it into its own `Dataset`.
 
-```
+```python
 [114]:
 
 ```
 
-```
+```python
 single_sample = view2.first()
 view1_plus = view1.clone()
 print(len(view1_plus))
@@ -2424,7 +2414,7 @@ print(len(view1_plus))
 
 ```
 
-```
+```python
 19
 20
 
@@ -2432,19 +2422,19 @@ print(len(view1_plus))
 
 We can also add a collection of samples to a dataset using the [add\_samples()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples) method, which takes as input a list of `fo.Sample` objects.
 
-```
+```python
 [115]:
 
 ```
 
-```
+```python
 print(len(view1_plus))
 view1_plus.add_samples(view2.skip(1).head(3))
 print(len(view1_plus))
 
 ```
 
-```
+```python
 20
  100% |█████████████████████| 3/3 [35.6ms elapsed, 0s remaining, 84.2 samples/s]
 23
@@ -2457,12 +2447,12 @@ The same in-place vs out-of-place considerations for pandas, and `Dataset` vs `D
 
 In pandas, rows are removed by index using the `drop` method.
 
-```
+```python
 [116]:
 
 ```
 
-```
+```python
 ### Randomly select a set of rows to remove
 import random
 rows_to_remove = random.sample(range(len(df)), 10)
@@ -2471,19 +2461,19 @@ rows_to_remove = random.sample(range(len(df)), 10)
 
 To create a new view:
 
-```
+```python
 [117]:
 
 ```
 
-```
+```python
 sub_df = df.drop(rows_to_remove)
 print(len(sub_df))
 print(len(df))
 
 ```
 
-```
+```python
 140
 150
 
@@ -2491,41 +2481,41 @@ print(len(df))
 
 To remove the rows from the original `DataFrame`:
 
-```
+```python
 [118]:
 
 ```
 
-```
+```python
 copy_df = df.copy()
 copy_df = copy_df.drop(rows_to_remove)
 print(len(copy_df))
 
 ```
 
-```
+```python
 140
 
 ```
 
 In FiftyOne, [exclude()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.exclude) creates a view without the specified samples:
 
-```
+```python
 [119]:
 
 ```
 
-```
+```python
 samples_to_remove = ds.take(10)
 
 ```
 
-```
+```python
 [120]:
 
 ```
 
-```
+```python
 sub_view = ds.exclude(samples_to_remove)
 print(len(ds))
 print(len(sub_view))
@@ -2533,7 +2523,7 @@ print(type(sub_view))
 
 ```
 
-```
+```python
 200
 190
 <class 'fiftyone.core.view.DatasetView'>
@@ -2542,19 +2532,19 @@ print(type(sub_view))
 
 On the other hand, [delete\_samples()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.delete_samples) is an in-place operation which deletes the samples from the underlying `Dataset`:
 
-```
+```python
 [121]:
 
 ```
 
-```
+```python
 sub_ds = ds.clone()
 sub_ds.delete_samples(samples_to_remove)
 print(len(sub_ds))
 
 ```
 
-```
+```python
 190
 
 ```
@@ -2563,38 +2553,38 @@ print(len(sub_ds))
 
 As with columns/fields, one might want to pick out specific rows/samples. In the section on filtering and expressions, we’ll cover more advanced operations. Here we show how to select the data corresponding to a given list of rows/samples.
 
-```
+```python
 [122]:
 
 ```
 
-```
+```python
 rows_to_keep = list(random.sample(range(len(df)), 80))
 
 ```
 
-```
+```python
 [123]:
 
 ```
 
-```
+```python
 sub_df = df.iloc[rows_to_keep]
 print(len(sub_df))
 
 ```
 
-```
+```python
 80
 
 ```
 
-```
+```python
 [124]:
 
 ```
 
-```
+```python
 sample_ids = ds.values("id")
 ids_to_keep = [sample_ids[ind] for ind in rows_to_keep]
 print(len(ids_to_keep))
@@ -2602,7 +2592,7 @@ print(len(ds.select(ids_to_keep)))
 
 ```
 
-```
+```python
 80
 80
 
@@ -2612,18 +2602,18 @@ print(len(ds.select(ids_to_keep)))
 
 In pandas, you can rename columns by passing a dictionary or mapping into the `rename()` method with the `columns` argument. This is _not_ an in-place operation:
 
-```
+```python
 [125]:
 
 ```
 
-```
+```python
 renamed_df = df.rename(columns = {"sepal_length": "sl", "sepal_width": "sw"})
 renamed_df.head()
 
 ```
 
-```
+```python
 [125]:
 
 ```
@@ -2638,75 +2628,75 @@ renamed_df.head()
 
 In FiftyOne, you can rename fields using an analogous (but in-place) name mapping, passed in to the [rename\_sample\_fields()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.rename_sample_fields) method.
 
-```
+```python
 [126]:
 
 ```
 
-```
+```python
 renamed_ds = ds.clone()
 renamed_ds.rename_sample_fields({"ground_truth": "gt", "predictions":"pred"})
 print(renamed_ds.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'gt', 'uniqueness', 'pred', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field')
 
 ```
 
 Alternatively, if you just want to rename a single field, you can also do so with the [rename\_sample\_field()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.rename_sample_field) method as `rename_sample_field(old_field_name, new_field_name)`:
 
-```
+```python
 [127]:
 
 ```
 
-```
+```python
 renamed_ds.rename_sample_field("gt", "gt_new")
 print(renamed_ds.first().field_names)
 
 ```
 
-```
+```python
 ('id', 'filepath', 'tags', 'metadata', 'gt_new', 'uniqueness', 'pred', 'eval_tp', 'eval_fp', 'eval_fn', 'abstractness', 'new_const_field', 'computed_field')
 
 ```
 
 Both of these methods extend naturally to embedded fields:
 
-```
+```python
 [128]:
 
 ```
 
-```
+```python
 renamed_ds.first().pred.detections[0].eval_iou
 
 ```
 
-```
+```python
 [128]:
 
 ```
 
-```
+```python
 0.8575063187115628
 
 ```
 
-```
+```python
 [129]:
 
 ```
 
-```
+```python
 renamed_ds.rename_sample_field("pred.detections.eval_iou", "pred.detections.iou")
 print(renamed_ds.first().pred.detections[0].field_names)
 
 ```
 
-```
+```python
 ('id', 'attributes', 'tags', 'label', 'bounding_box', 'mask', 'confidence', 'index', 'eval', 'eval_id', 'iou')
 
 ```
@@ -2724,38 +2714,38 @@ In both pandas and FiftyOne, the element comparison operators `==`, `>`, `<`, `!
 
 #### Exact equality [¶](\#Exact-equality "Permalink to this headline")
 
-```
+```python
 [130]:
 
 ```
 
-```
+```python
 setosa_df = df[df.species == "setosa"]
 print(len(setosa_df))
 
 ```
 
-```
+```python
 50
 
 ```
 
-```
+```python
 [131]:
 
 ```
 
-```
+```python
 ds.match(F("filepath") == '/root/fiftyone/quickstart/data/000880.jpg')
 
 ```
 
-```
+```python
 [131]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 0
@@ -2780,19 +2770,19 @@ View stages:
 
 #### Less than or equal to [¶](\#Less-than-or-equal-to "Permalink to this headline")
 
-```
+```python
 [132]:
 
 ```
 
-```
+```python
 short_sepal_cond = df.sepal_length <= 5
 short_sepal_df = df[short_sepal_cond]
 short_sepal_df.head()
 
 ```
 
-```
+```python
 [132]:
 
 ```
@@ -2805,24 +2795,24 @@ short_sepal_df.head()
 | 4 | 5.0 | 3.6 | 1.4 | 0.2 | setosa | 8.624046 | 18.00 |
 | 6 | 4.6 | 3.4 | 1.4 | 0.3 | setosa | 5.066091 | 15.64 |
 
-```
+```python
 [133]:
 
 ```
 
-```
+```python
 non_unique_filter = F("uniqueness") <= 0.2
 non_unique_view = ds.match(non_unique_filter)
 non_unique_view
 
 ```
 
-```
+```python
 [133]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 19
@@ -2851,18 +2841,18 @@ View stages:
 
 If we have an expression and we want to find all rows/samples that do not satisfy this expression, we can use the complement operator `~`. Let’s use this to get the complementary rows/samples to those picked out by the expression above:
 
-```
+```python
 [134]:
 
 ```
 
-```
+```python
 non_short_sepal_df = df[~short_sepal_cond]
 non_short_sepal_df.head()
 
 ```
 
-```
+```python
 [134]:
 
 ```
@@ -2875,23 +2865,23 @@ non_short_sepal_df.head()
 | 14 | 5.8 | 4.0 | 1.2 | 0.2 | setosa | 5.914960 | 23.20 |
 | 15 | 5.7 | 4.4 | 1.5 | 0.4 | setosa | 6.215238 | 25.08 |
 
-```
+```python
 [135]:
 
 ```
 
-```
+```python
 unique_view = ds.match(~non_unique_filter)
 unique_view
 
 ```
 
-```
+```python
 [135]:
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 181
@@ -2918,12 +2908,12 @@ View stages:
 
 In pandas and FiftyOne, the logical `AND` of two conditions can be evaluated with the `&` operator:
 
-```
+```python
 [136]:
 
 ```
 
-```
+```python
 pd_cond1 = (df.sepal_volume < 20)
 pd_cond2 = (df.species == "setosa")
 print("{} rows satisfy condition1".format(len(df[pd_cond1])))
@@ -2932,19 +2922,19 @@ print("{} rows satisfy condition1 AND condition2".format(len(df[pd_cond1 & pd_co
 
 ```
 
-```
+```python
 109 rows satisfy condition1
 50 rows satisfy condition2
 43 rows satisfy condition1 AND condition2
 
 ```
 
-```
+```python
 [137]:
 
 ```
 
-```
+```python
 fo_cond1 = F("uniqueness") > 0.4
 fo_cond2 = F("uniqueness") < 0.55
 print("{} samples satisfy condition1".format(len(ds.match(fo_cond1))))
@@ -2953,7 +2943,7 @@ print("{} samples satisfy condition1 AND condition2".format(len(ds.match(fo_cond
 
 ```
 
-```
+```python
 100 samples satisfy condition1
 109 samples satisfy condition2
 9 samples satisfy condition1 AND condition2
@@ -2962,18 +2952,18 @@ print("{} samples satisfy condition1 AND condition2".format(len(ds.match(fo_cond
 
 Additionally, if we want to evaluate the logical `AND` of a list of conditions, in FiftyOne we can do so using [all()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.all):
 
-```
+```python
 [138]:
 
 ```
 
-```
+```python
 fo_cond3 = F("predictions.detections").length() >= 10
 print(ds.match(F.all([fo_cond1, fo_cond2, fo_cond3])))
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 5
@@ -3000,38 +2990,38 @@ View stages:
 
 In pandas and FiftyOne, the logical `OR` of two conditions can be evaluated with the `|` operator:
 
-```
+```python
 [139]:
 
 ```
 
-```
+```python
 print("{} rows satisfy condition1".format(len(df[pd_cond1])))
 print("{} rows satisfy condition2".format(len(df[pd_cond2])))
 print("{} rows satisfy condition1 OR condition2".format(len(df[pd_cond1 | pd_cond2])))
 
 ```
 
-```
+```python
 109 rows satisfy condition1
 50 rows satisfy condition2
 116 rows satisfy condition1 OR condition2
 
 ```
 
-```
+```python
 [140]:
 
 ```
 
-```
+```python
 print("{} samples satisfy condition1".format(len(ds.match(fo_cond1))))
 print("{} samples satisfy condition3".format(len(ds.match(fo_cond3))))
 print("{} samples satisfy condition1 OR condition3".format(len(ds.match(fo_cond1 | fo_cond3))))
 
 ```
 
-```
+```python
 100 samples satisfy condition1
 134 samples satisfy condition3
 166 samples satisfy condition1 OR condition3
@@ -3040,17 +3030,17 @@ print("{} samples satisfy condition1 OR condition3".format(len(ds.match(fo_cond1
 
 Mirroring our usage of `all`, in FiftyOne we can use [any()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.any) to evaluate the logical `OR` of a list of conditions:
 
-```
+```python
 [141]:
 
 ```
 
-```
+```python
 print(ds.match(F.any([fo_cond1, fo_cond3])))
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 166
@@ -3081,22 +3071,22 @@ We note that these `all` and `any` methods in FiftyOne are distinctly different 
 
 In pandas, we can check whether the entries in a column are in a given list of values using the `isin` method:
 
-```
+```python
 [142]:
 
 ```
 
-```
+```python
 df.species.isin(['setosa', 'versicolor'])
 
 ```
 
-```
+```python
 [142]:
 
 ```
 
-```
+```python
 0       True
 1       True
 2       True
@@ -3114,12 +3104,12 @@ Name: species, Length: 150, dtype: bool
 
 In FiftyOne, the analogous method is [is\_in()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_in). We can filter our dataset for only detected animals, for instance, with the following:
 
-```
+```python
 [143]:
 
 ```
 
-```
+```python
 ANIMALS = [\
     "bear", "bird", "cat", "cow", "dog", "elephant", "giraffe",\
     "horse", "sheep", "zebra"\
@@ -3130,7 +3120,7 @@ print(animal_view)
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 87
@@ -3155,12 +3145,12 @@ View stages:
 
 Additionally, when the FiftyOne fields contain lists, we might want to check if these lists are subsets of other lists. We can do this with the [is\_subset()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_subset) method:
 
-```
+```python
 [144]:
 
 ```
 
-```
+```python
 empty_dataset.add_samples(
     [\
         fo.Sample(\
@@ -3174,7 +3164,7 @@ print(empty_dataset.values(F("tags").is_subset(["a", "b", "c"])))
 
 ```
 
-```
+```python
  100% |█████████████████████| 1/1 [6.3ms elapsed, 0s remaining, 177.5 samples/s]
 [True]
 
@@ -3184,40 +3174,40 @@ print(empty_dataset.values(F("tags").is_subset(["a", "b", "c"])))
 
 We can also flip this operation on its head and ask whether the column/field entries contain something else. In pandas, the entries in a `DataFrame` cannot be lists, so the only sensible type of containment is string containment, i.e., checking whether the strings in a column contain a substring:
 
-```
+```python
 [145]:
 
 ```
 
-```
+```python
 df.species.str.contains("set").sum()
 
 ```
 
-```
+```python
 [145]:
 
 ```
 
-```
+```python
 50
 
 ```
 
 This has a parallel in FiftyOne: [contains\_str()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.contains_str):
 
-```
+```python
 [146]:
 
 ```
 
-```
+```python
 ze_view = ds.filter_labels("predictions", F("label").contains_str("ze"))
 print(ze_view)
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num samples: 5
@@ -3246,12 +3236,12 @@ What’s more, in FiftyOne, where fields themselves _can_ be lists, we can check
 
 If we want to create a view which contains either cats _or_ dogs, we can do so with:
 
-```
+```python
 [147]:
 
 ```
 
-```
+```python
 # Only contains samples with "cat" or "dog" predictions
 cats_or_dogs_view = ds.match(
     F("predictions.detections.label").contains(["cat", "dog"])
@@ -3260,19 +3250,19 @@ print(cats_or_dogs_view.count())
 
 ```
 
-```
+```python
 39
 
 ```
 
 If instead we want a view of all samples that contain both cats _and_ dogs, we can pass in the `all=True` argument:
 
-```
+```python
 [148]:
 
 ```
 
-```
+```python
 # Only contains samples with "cat" and "dog" predictions
 cats_and_dogs_view = ds.match(
     F("predictions.detections.label").contains(["cat", "dog"], all=True)
@@ -3281,7 +3271,7 @@ print(cats_and_dogs_view.count())
 
 ```
 
-```
+```python
 10
 
 ```
@@ -3292,12 +3282,12 @@ print(cats_and_dogs_view.count())
 
 In recent versions of pandas, one can check if the data type of a `DataFrame` column is numeric or is a string by importing the corresponding functions:
 
-```
+```python
 [149]:
 
 ```
 
-```
+```python
 from pandas.api.types import is_string_dtype
 from pandas.api.types import is_numeric_dtype
 print(is_numeric_dtype(df.sepal_length))
@@ -3305,7 +3295,7 @@ print(is_string_dtype(df.sepal_length))
 
 ```
 
-```
+```python
 True
 False
 
@@ -3313,18 +3303,18 @@ False
 
 In FiftyOne, these are taken care of by the [is\_number()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_number) and [is\_strin()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_string) methods:
 
-```
+```python
 [150]:
 
 ```
 
-```
+```python
 print(ds.match(F("uniqueness").is_number()).count())
 print(ds.match(F("uniqueness").is_string()).count())
 
 ```
 
-```
+```python
 200
 0
 
@@ -3334,22 +3324,22 @@ print(ds.match(F("uniqueness").is_string()).count())
 
 In pandas, one checks whether data is null using the `isna` method:
 
-```
+```python
 [151]:
 
 ```
 
-```
+```python
 df.isna().any()
 
 ```
 
-```
+```python
 [151]:
 
 ```
 
-```
+```python
 sepal_length    False
 sepal_width     False
 petal_length    False
@@ -3363,12 +3353,12 @@ dtype: bool
 
 In FiftyOne, the [is\_null()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_null) method does this:
 
-```
+```python
 [152]:
 
 ```
 
-```
+```python
 null_view = ds.set_field(
     "uniqueness",
     (F("uniqueness") >= 0.25).if_else(F("uniqueness"), None)
@@ -3381,7 +3371,7 @@ print(len(not_unique_view))
 
 ```
 
-```
+```python
 92
 
 ```
@@ -3393,22 +3383,22 @@ field has a value.
 
 In FiftyOne, fields can also contain arrays. We can check for this with the [is\_array()](https://voxel51.com/docs/fiftyone/api/fiftyone.core.expressions.html?highlight=viewexpression#fiftyone.core.expressions.ViewExpression.is_array) method:
 
-```
+```python
 [153]:
 
 ```
 
-```
+```python
 ds.match(F("tags").is_array()).count()
 
 ```
 
-```
+```python
 [153]:
 
 ```
 
-```
+```python
 200
 
 ```
@@ -3417,68 +3407,3 @@ ds.match(F("tags").is_array()).count()
 
 FiftyOne and pandas are both open source Python libraries that make dealing with your data easy. While they serve different purposes - pandas is built for tabular data, while FiftyOne helps users tackle the unstructured data prevalent in computer vision tasks - their syntax and functionality are closely aligned. Both pandas and FiftyOne are important components to many data science and machine learning workflows!
 
-- pandas-style queries in FiftyOne
-  - [Overview](#Overview)
-  - [Getting started](#Getting-started)
-    - [Create empty](#Create-empty)
-      - [Create empty `pd.DataFrame`](#Create-empty-pd.DataFrame)
-      - [Create empty `fo.Dataset`](#Create-empty-fo.Dataset)
-    - [Example data](#Example-data)
-      - [Iris Dataset](#Iris-Dataset)
-      - [FiftyOne Quickstart Data](#FiftyOne-Quickstart-Data)
-  - [Basics](#Basics)
-    - [Head and tail](#Head-and-tail)
-      - [Head](#Head)
-      - [Tail](#Tail)
-    - [First and last](#First-and-last)
-    - [Get single element](#Get-single-element)
-    - [Number of rows/samples](#Number-of-rows/samples)
-    - [Getting columns/field schema](#Getting-columns/field-schema)
-    - [All values in a column/field](#All-values-in-a-column/field)
-  - [View stages](#View-stages)
-    - [Making a copy](#Making-a-copy)
-    - [Slicing](#Slicing)
-    - [Get random samples](#Get-random-samples)
-      - [Select kk random samples](#Select-k-random-samples)
-      - [Randomly select fraction p<1p<1 of samples](#Randomly-select-fraction-p<1-of-samples)
-    - [Shuffle data](#Shuffle-data)
-    - [Filtering](#Filtering)
-    - [Sorting](#Sorting)
-    - [Deleting](#Deleting)
-  - [Aggregations](#Aggregations)
-    - [Count](#Count)
-    - [Sum](#Sum)
-    - [Unique](#Unique)
-    - [Bounds](#Bounds)
-    - [Mean](#Mean)
-    - [Standard deviation](#Standard-deviation)
-    - [Quantiles](#Quantiles)
-    - [Median and other aggregations](#Median-and-other-aggregations)
-  - [Structural change operations](#Structural-change-operations)
-    - [Add new column/field](#Add-new-column/field)
-      - [Add new column/field with default value](#Add-new-column/field-with-default-value)
-      - [Add new column/field from external data](#Add-new-column/field-from-external-data)
-      - [Add a new column/frame from existing columns/fields](#Add-a-new-column/frame-from-existing-columns/fields)
-    - [Remove a column/field](#Remove-a-column/field)
-    - [Keep only specified columns/fields](#Keep-only-specified-columns/fields)
-    - [Concatenation](#Concatenation)
-    - [Adding a single row/sample](#Adding-a-single-row/sample)
-    - [Remove rows/samples](#Remove-rows/samples)
-    - [Keep only specified rows/samples](#Keep-only-specified-rows/samples)
-    - [Rename column/field](#Rename-column/field)
-  - [Expressions](#Expressions)
-    - [Element comparison expressions](#Element-comparison-expressions)
-      - [Exact equality](#Exact-equality)
-      - [Less than or equal to](#Less-than-or-equal-to)
-    - [Logical expressions](#Logical-expressions)
-      - [Logical complement](#Logical-complement)
-      - [Logical AND](#Logical-AND)
-      - [Logical OR](#Logical-OR)
-    - [Subset-superset](#Subset-superset)
-      - [Is in](#Is-in)
-      - [Contains](#Contains)
-    - [Checking data types](#Checking-data-types)
-      - [Numeric and string types](#Numeric-and-string-types)
-      - [Null](#Null)
-      - [Array](#Array)
-  - [Conclusion](#Conclusion)

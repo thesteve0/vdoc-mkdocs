@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Tutorials](index.html) >
-- Visualizing Data with Dimensionality Reduction Techniques
-
-Contents
-
-
 # Visualizing Data with Dimensionality Reduction Techniques [¶](\#Visualizing-Data-with-Dimensionality-Reduction-Techniques "Permalink to this headline")
 
 In this walkthrough, you’ll learn how to run PCA, t-SNE, UMAP, and custom dimensionality reduction techniques on your data in FiftyOne!
@@ -41,24 +31,24 @@ _It is also important to note that dimensionality reduction techniques often hav
 
 For this walkthrough, we will be using the FiftyOne library for data management and visualization. We will use [scikit-learn](https://scikit-learn.org/stable/) for PCA and t-SNE, and [umap-learn](https://umap-learn.readthedocs.io/en/latest/#) for UMAP dimension reduction implementations:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !pip install -U fiftyone scikit-learn umap-learn
 
 ```
 
 We will be using the test split of the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset as our testbed, which contains 10,000 images of size 32x32 pixels, spanning 10 image classes. We can load the dataset/split directly from the [FiftyOne Dataset Zoo](https://docs.voxel51.com/user_guide/dataset_zoo/datasets.html):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -74,12 +64,12 @@ We will compare and contrast our four dimensionality reduction techniques with t
 
 We can load both from the [FiftyOne Model Zoo](https://docs.voxel51.com/user_guide/model_zoo/index.html):
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 clip = foz.load_zoo_model("clip-vit-base32-torch")
 resnet101 = foz.load_zoo_model("resnet101-imagenet-torch")
 
@@ -87,12 +77,12 @@ resnet101 = foz.load_zoo_model("resnet101-imagenet-torch")
 
 Then generating embeddings for each model amounts to making a single call to the dataset’s `compute_embeddings()` method:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## compute and store resnet101 embeddings
 dataset.compute_embeddings(
     resnet101,
@@ -144,12 +134,12 @@ You can use `method="manual"` if you already have the dimensionality-reduced dat
 
 Once you have specified what you want to reduce the dimensionality of, and how you want to do it, you need to specify where you want to store the results. This is done via the `brain_key` argument. Once you have run the `compute_visualization()` method, you will be able to select this brain key in the FiftyOne App to visualize the results. You can also use the brain key to access the results programmatically:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -192,12 +182,12 @@ the singular vectors with the smallest eigenvalues.
 
 PCA is natively supported by the FiftyOne Brain’s `compute_visualization()`. To reduce dimensionality for a set of embeddings, we can specify the field the embeddings are stored in, and pass in `method="pca"`. In the app, we can open up an Embeddings panel to view the results:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## PCA with ResNet101 embeddings
 fob.compute_visualization(
     dataset,
@@ -253,12 +243,12 @@ possible. Mathematically, this learning is achieved by minimizing the [Kullback-
 
 Like PCA, t-SNE is natively supported by the FiftyOne Brain’s `compute_visualization()`, so we can run dimensionality reduction on our embeddings by passing `method="tsne"`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## t-SNE with ResNet101 embeddings
 fob.compute_visualization(
     dataset,
@@ -310,12 +300,12 @@ called a manifold (technically here a [Riemannian manifold](https://en.wikipedia
 
 Like PCA and t-SNE, UMAP is natively supported by the FiftyOne Brain’s `compute_visualization()`, so we can run dimensionality reduction on our embeddings by passing `method="umap"`:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 ## UMAP with ResNet101 embeddings
 fob.compute_visualization(
     dataset,
@@ -352,12 +342,12 @@ Depending on the specific structure of your data, you may find that none of the 
 
 Like UMAP, Isomap is also a nonlinear manifold learning technique. Isomap is built into scikit-learn, so we can fit our high-dimensional data and generate low-dimensional transformed data points as follows:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import numpy as np
 from sklearn.manifold import Isomap
 
@@ -372,12 +362,12 @@ z = manifold_embedding.fit_transform(embeddings)
 
 We can then create a visualization in FiftyOne by passing `method=’manual’` into `compute_visualization()` and providing these lower-dimensional points via the `points` argument:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 fob.compute_visualization(
     dataset,
     method='manual',
@@ -397,24 +387,24 @@ Any dimensionality reduction method supported by scikit-learn can be used in ana
 
 To run CompressionVAE, clone this forked repo:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !git clone https://github.com/jacobmarks/CompressionVAE.git
 
 ```
 
 Then `cd` into the directory and install the package locally:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 !cd CompressionVAE
 !pip install .
 
@@ -422,12 +412,12 @@ Then `cd` into the directory and install the package locally:
 
 Embed the input data (embeddings) into a lower-dimensional space, and create a visualization in FiftyOne via the same `manual` method:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 from cvae import cvae
 
 X = np.array(dataset.values("clip_embeddings"))
@@ -455,12 +445,12 @@ If you find yourself running the same custom dimensionality reduction technique 
 
 Here’s a simple example using Isomap:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import numpy as np
 from sklearn.manifold import Isomap
 
@@ -484,12 +474,12 @@ class IsomapVisualization(fob.Visualization):
 
 You can then use this by passing in the new visualization config in for the `method` argument:
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 dataset = foz.load_zoo_dataset("quickstart")
 
 model = foz.load_zoo_model("clip-vit-base32-torch")
@@ -510,12 +500,12 @@ All of the dimensionality reduction techniques we have discussed so far have bee
 
 To do this, pass in the name of the field containing the object patches you would like to reduce via the `patches_field` argument.
 
-```
+```python
 [ ]:
 
 ```
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -535,23 +525,3 @@ fob.compute_visualization(
 
 Dimensionality reduction is critical to understanding our data, and our models. But it is important to think of dimensionality reduction not just as a single tool, but rather as a collection of techniques. Each technique has its own advantages; and each method projects certain assumptions onto the data, which may or may not hold for your data. I hope this walkthrough helps you to see your data in a new way!
 
-- Visualizing Data with Dimensionality Reduction Techniques
-  - [Why Dimensionality Reduction?](#Why-Dimensionality-Reduction?)
-  - [Setup](#Setup)
-  - [Dimensionality Reduction API in FiftyOne](#Dimensionality-Reduction-API-in-FiftyOne)
-    - [What to reduce the dimensionality of](#What-to-reduce-the-dimensionality-of)
-    - [How to reduce the dimensionality](#How-to-reduce-the-dimensionality)
-    - [Where to store the results](#Where-to-store-the-results)
-  - [Dimensionality Reduction with PCA](#Dimensionality-Reduction-with-PCA)
-    - [Running PCA on Embeddings](#Running-PCA-on-Embeddings)
-  - [Dimensionality Reduction with t-SNE](#Dimensionality-Reduction-with-t-SNE)
-    - [Running t-SNE on Embeddings](#Running-t-SNE-on-Embeddings)
-  - [Dimensionality Reduction with UMAP](#Dimensionality-Reduction-with-UMAP)
-    - [Running UMAP on Embeddings](#Running-UMAP-on-Embeddings)
-  - [Dimensionality Reduction with Custom Methods](#Dimensionality-Reduction-with-Custom-Methods)
-    - [Isomap](#Isomap)
-    - [CompressionVAE](#CompressionVAE)
-  - [Advanced Dimensionality Reduction in FiftyOne](#Advanced-Dimensionality-Reduction-in-FiftyOne)
-    - [Registerting Custom Visualization Methods](#Registerting-Custom-Visualization-Methods)
-    - [Dimensionality Reduction with Object Patches](#Dimensionality-Reduction-with-Object-Patches)
-  - [Summary](#Summary)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Dataset Views
-
-Contents
-
-
 # Dataset Views [¶](\#dataset-views "Permalink to this headline")
 
 FiftyOne provides methods that allow you to sort, slice, and search your
@@ -32,7 +22,7 @@ operation is performed on a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyo
 You can explicitly create a view that contains an entire dataset via
 [`Dataset.view()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.view "fiftyone.core.dataset.Dataset.view"):
 
-```
+```python
 import fiftyone.zoo as foz
 
 dataset = foz.load_zoo_dataset("quickstart")
@@ -43,7 +33,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:        quickstart
 Media type:     image
 Num samples:    200
@@ -64,7 +54,7 @@ View stages:
 
 You can access specific information about a view in the natural ways:
 
-```
+```python
 len(view)
 # 200
 
@@ -75,7 +65,7 @@ view.media_type
 
 Like datasets, you access the samples in a view by iterating over it:
 
-```
+```python
 for sample in view:
     # Do something with `sample`
 
@@ -83,7 +73,7 @@ for sample in view:
 
 Or, you can access individual samples in a view by their ID or filepath:
 
-```
+```python
 sample = view.take(1).first()
 
 print(type(sample))
@@ -111,7 +101,7 @@ If you find yourself frequently using/recreating certain views, you can use
 [`save_view()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.save_view "fiftyone.core.dataset.Dataset.save_view") to save them on
 your dataset under a name of your choice:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -136,7 +126,7 @@ Then you can conveniently use
 [`load_saved_view()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.load_saved_view "fiftyone.core.dataset.Dataset.load_saved_view")
 to load the view in a future session:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset("quickstart")
@@ -158,7 +148,7 @@ view via
 and update via
 [`update_saved_view_info()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.update_saved_view_info "fiftyone.core.dataset.Dataset.update_saved_view_info"):
 
-```
+```python
 # Get a saved view's editable info
 print(dataset.get_saved_view_info("cats-view"))
 
@@ -199,7 +189,7 @@ samples appear in the view (and perhaps what subset of their contents).
 
 Each view operation is captured by a [`ViewStage`](../api/fiftyone.core.stages.html#fiftyone.core.stages.ViewStage "fiftyone.core.stages.ViewStage"):
 
-```
+```python
 # List available view operations on a dataset
 print(dataset.list_view_stages())
 # ['exclude', 'exclude_fields', 'exists', ..., 'skip', 'sort_by', 'take']
@@ -209,7 +199,7 @@ print(dataset.list_view_stages())
 These operations are conveniently exposed as methods on [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") instances,
 in which case they create an initial [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"):
 
-```
+```python
 # Random set of 100 samples from the dataset
 random_view = dataset.take(100)
 
@@ -222,7 +212,7 @@ They are also exposed on [`DatasetView`](../api/fiftyone.core.view.html#fiftyone
 another [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") with the operation appended to its internal pipeline so
 that multiple operations can be chained together:
 
-```
+```python
 # Sort `random_view` by filepath
 sorted_random_view = random_view.sort_by("filepath")
 
@@ -239,7 +229,7 @@ You can extract a range of [`Sample`](../api/fiftyone.core.sample.html#fiftyone.
 [`limit()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.limit "fiftyone.core.collections.SampleCollection.limit") or,
 equivalently, by using array slicing:
 
-```
+```python
 # Skip the first 2 samples and take the next 3
 range_view1 = dataset.skip(2).limit(3)
 
@@ -255,7 +245,7 @@ This includes using [`first()`](../api/fiftyone.core.view.html#fiftyone.core.vie
 last samples in a view, respectively, or accessing a sample directly from a
 [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") by its ID or filepath:
 
-```
+```python
 view = dataset[10:100]
 
 sample10 = view.first()
@@ -275,7 +265,7 @@ Note that, [unlike datasets](using_datasets.html#accessing-samples-in-a-dataset)
 [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.sample.SampleView "fiftyone.core.sample.SampleView") objects are not singletons, since there are an infinite number of
 possible views into a particular [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"):
 
-```
+```python
 print(sample10 is also_sample10)
 # False
 
@@ -288,7 +278,7 @@ The best practice is to lookup individual samples by ID or filepath, or use
 array slicing to extract a range of samples, and iterate over samples in a
 view.
 
-```
+```python
 view[0]
 # KeyError: Accessing samples by numeric index is not supported.
 # Use sample IDs, filepaths, slices, boolean arrays, or a boolean ViewExpression instead
@@ -299,7 +289,7 @@ You can also use boolean array indexing to create a [`DatasetView`](../api/fifty
 dataset or view given an array-like of bools defining the samples you wish to
 extract:
 
-```
+```python
 import numpy as np
 
 # A boolean array encoding the samples to extract
@@ -314,7 +304,7 @@ print(len(view))
 The above syntax is equivalent to the following
 [`select()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select "fiftyone.core.collections.SampleCollection.select") statement:
 
-```
+```python
 import itertools
 
 ids = itertools.compress(dataset.values("id"), bool_array)
@@ -327,7 +317,7 @@ print(len(view))
 Note that, whenever possible, the above operations are more elegantly
 implemented using [match filters](#querying-samples):
 
-```
+```python
 from fiftyone import ViewField as F
 
 # ViewExpression defining the samples to match
@@ -353,7 +343,7 @@ to sort the samples in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.
 samples in the returned [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") can be sorted in ascending or descending
 order:
 
-```
+```python
 view = dataset.sort_by("filepath")
 view = dataset.sort_by("filepath", reverse=True)
 
@@ -361,7 +351,7 @@ view = dataset.sort_by("filepath", reverse=True)
 
 You can also sort by [expressions](#querying-samples)!
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Sort by number of detections in `Detections` field `ground_truth`
@@ -377,7 +367,7 @@ print(len(view.last().ground_truth.detections))  # 0
 The samples in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") can be randomly shuffled using
 [`shuffle()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.shuffle "fiftyone.core.collections.SampleCollection.shuffle"):
 
-```
+```python
 # Randomly shuffle the order of the samples in the dataset
 view1 = dataset.shuffle()
 
@@ -385,7 +375,7 @@ view1 = dataset.shuffle()
 
 An optional `seed` can be provided to make the shuffle deterministic:
 
-```
+```python
 # Randomly shuffle the samples in the dataset with a fixed seed
 
 view2 = dataset.shuffle(seed=51)
@@ -403,7 +393,7 @@ print(also_view2.first().id)
 You can extract a random subset of the samples in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView")
 using [`take()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.take "fiftyone.core.collections.SampleCollection.take"):
 
-```
+```python
 # Take 5 random samples from the dataset
 view1 = dataset.take(5)
 
@@ -411,7 +401,7 @@ view1 = dataset.take(5)
 
 An optional `seed` can be provided to make the sampling deterministic:
 
-```
+```python
 # Take 5 random samples from the dataset with a fixed seed
 
 view2 = dataset.take(5, seed=51)
@@ -435,7 +425,7 @@ You can query for a subset of the samples in a dataset via the
 [`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") method. The
 syntax is:
 
-```
+```python
 match_view = dataset.match(expression)
 
 ```
@@ -454,7 +444,7 @@ Any resulting [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.
 The code below shows a few examples. See the API reference for [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression "fiftyone.core.expressions.ViewExpression")
 for a full list of supported operations.
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Populate metadata on all samples
@@ -480,7 +470,7 @@ Use the
 [`match_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags")
 method to match samples that have the specified tag(s) in their `tags` field:
 
-```
+```python
 # The validation split of the dataset
 val_view = dataset.match_tags("validation")
 
@@ -492,7 +482,7 @@ val_test_view = dataset.match_tags(("validation", "test"))
 Use [`exists()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exists "fiftyone.core.collections.SampleCollection.exists") to
 only include samples for which a given [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyone.core.fields.Field") exists and is not `None`:
 
-```
+```python
 # The subset of samples where predictions have been computed
 predictions_view = dataset.exists("predictions")
 
@@ -502,7 +492,7 @@ Use [`select()`](../api/fiftyone.core.collections.html#fiftyone.core.collections
 [`exclude()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude "fiftyone.core.collections.SampleCollection.exclude") to
 restrict attention to or exclude samples from a view by their IDs:
 
-```
+```python
 # Get the IDs of two random samples
 sample_ids = [\
     dataset.take(1).first().id,\
@@ -549,7 +539,7 @@ and
 [`exclude_fields()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude_fields "fiftyone.core.collections.SampleCollection.exclude_fields")
 stages to select or exclude fields from the returned [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.sample.SampleView "fiftyone.core.sample.SampleView"):
 
-```
+```python
 for sample in dataset.select_fields("ground_truth"):
     print(sample.id)            # OKAY: `id` is always available
     print(sample.ground_truth)  # OKAY: `ground_truth` was selected
@@ -574,7 +564,7 @@ You can also use the
 [`filter_field()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_field "fiftyone.core.collections.SampleCollection.filter_field")
 stage to filter the contents of arbitrarily-typed fields:
 
-```
+```python
 # Remove tags from samples that don't include the "validation" tag
 clean_tags_view = dataset.filter_field("tags", F().contains("validation"))
 
@@ -589,7 +579,7 @@ even if you [`save()`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sam
 label is updated individually, and other labels in the field are left
 unchanged.
 
-```
+```python
 view = dataset.filter_labels("predictions", ...)
 
 for sample in view:
@@ -608,7 +598,7 @@ for sample in view:
 If you _do want to delete data_ from your samples, assign a new value to
 the field:
 
-```
+```python
 view = dataset.filter_labels("predictions", ...)
 
 for sample in view:
@@ -626,7 +616,7 @@ You can use
 [`group_by()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.group_by "fiftyone.core.collections.SampleCollection.group_by") to
 dynamically group the samples in a collection by a specified field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -652,7 +642,7 @@ optional `order_by` and `reverse` arguments to
 [`group_by()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.group_by "fiftyone.core.collections.SampleCollection.group_by") to
 specify an ordering for the samples in each group:
 
-```
+```python
 # Create an image dataset that contains one sample per frame of the
 # `quickstart-video` dataset
 dataset2 = (
@@ -680,7 +670,7 @@ print(video.values("frame_number"))
 
 You can also group by an arbitrary [expressions](#querying-samples):
 
-```
+```python
 dataset3 = foz.load_zoo_dataset("quickstart")
 
 # Group samples by the number of ground truth objects they contain
@@ -696,7 +686,7 @@ When you iterate over a dynamic grouped view, you get one example from each
 group. Like any other view, you can chain additional view stages to further
 refine the view’s contents:
 
-```
+```python
 # Sort the groups by label
 sorted_view = view.sort_by("ground_truth.label")
 
@@ -705,7 +695,7 @@ for sample in sorted_view:
 
 ```
 
-```
+```python
 airplane
 automobile
 bird
@@ -723,7 +713,7 @@ In particular, you can use
 [`flatten()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.flatten "fiftyone.core.collections.SampleCollection.flatten") to
 unravel the samples in a dynamic grouped view back into a flat view:
 
-```
+```python
 # Unwind the sorted groups back into a flat collection
 flat_sorted_view = sorted_view.flatten()
 
@@ -745,7 +735,7 @@ You can use
 to retrieve a view containing the samples with a specific group value of
 interest:
 
-```
+```python
 group = view.get_dynamic_group("horse")
 print(len(group))  # 11
 
@@ -755,13 +745,13 @@ You can also use
 [`iter_dynamic_groups()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.iter_dynamic_groups "fiftyone.core.view.DatasetView.iter_dynamic_groups")
 to iterate over all groups in a dynamic group view:
 
-```
+```python
 for group in sorted_view.iter_dynamic_groups():
     print("%s: %d" % (group.first().ground_truth.label, len(group)))
 
 ```
 
-```
+```python
 airplane: 11
 automobile: 10
 bird: 8
@@ -781,7 +771,7 @@ You can use
 [`concat()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.concat "fiftyone.core.collections.SampleCollection.concat") to
 concatenate views into the same dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -799,7 +789,7 @@ print(len(view) == len(view1) + len(view2))  # True
 
 or you can use the equivalent `+` syntax sugar:
 
-```
+```python
 view = view1 + view2
 
 print(len(view) == len(view1) + len(view2))  # True
@@ -809,7 +799,7 @@ print(len(view) == len(view1) + len(view2))  # True
 Concatenating _generated views_ such as [patches](#object-patches-views)
 and [frames](#frame-views) is also allowed:
 
-```
+```python
 gt_patches = dataset.to_patches("ground_truth")
 
 patches1 = gt_patches[:10]
@@ -823,7 +813,7 @@ print(len(patches) == len(patches1) + len(patches2))  # True
 
 as long as each view is derived from the same root generated view:
 
-```
+```python
 patches1 = dataset[:10].to_patches("ground_truth")
 patches2 = dataset[-10:].to_patches("ground_truth")
 
@@ -838,7 +828,7 @@ or
 to manipulate the schema of individual views, the concatenated view will
 respect the schema of the _first view_ in the chain:
 
-```
+```python
 view1 = dataset[:10].select_fields()
 view2 = dataset[-10:]
 
@@ -849,7 +839,7 @@ print(view.last())
 
 ```
 
-```
+```python
 view1 = dataset[:10]
 view2 = dataset[-10:].select_fields()
 
@@ -865,7 +855,7 @@ will not prevent you from creating concatenated views that contain multiple
 (possibly filtered) versions of the same [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"), which results in views that
 contains duplicate sample IDs:
 
-```
+```python
 sample_id = dataset.first().id
 view = (dataset + dataset).shuffle()
 
@@ -890,7 +880,7 @@ For example, you can use the
 [`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") stage to
 filter a dataset by date as follows:
 
-```
+```python
 from datetime import datetime, timedelta
 
 import fiftyone as fo
@@ -945,7 +935,7 @@ field of your dataset.
 For example, you can extract patches for all ground truth objects in a
 detection dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -963,7 +953,7 @@ session.view = gt_patches
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num patches: 1232
@@ -991,7 +981,7 @@ include from their parent samples.
 Or, you could [chain view stages](#chaining-views) to create a view that
 contains patches for a filtered set of predictions:
 
-```
+```python
 # Now extract patches for confident person predictions
 person_patches = (
     dataset
@@ -1070,7 +1060,7 @@ predicted fields populated, while false positive/negative examples will only
 have one of their corresponding predicted/ground truth fields populated,
 respectively.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1095,7 +1085,7 @@ session.view = eval_patches
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num patches: 5363
@@ -1179,7 +1169,7 @@ Most view stages naturally support video datasets. For example, stages that
 refer to fields can be applied to the frame-level fields of video samples by
 prepending `"frames."` to the relevant parameters:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1210,7 +1200,7 @@ on your dataset, then you can create a clips view that contains one sample per
 temporal segment by simply passing the name of the temporal detection field to
 [`to_clips()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_clips "fiftyone.core.collections.SampleCollection.to_clips"):
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.Dataset()
@@ -1248,7 +1238,7 @@ print(len(view))  # 4
 
 ```
 
-```
+```python
 Dataset:    2021.09.03.09.44.57
 Media type: video
 Num clips:  4
@@ -1297,7 +1287,7 @@ Continuing from the example above, if you would like to see clips only for
 specific temporal detection labels, you can achieve this by first
 [filtering the labels](#filtering-sample-contents):
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Create a clips view with one clip per meeting
@@ -1322,7 +1312,7 @@ In the simplest case, you can provide the name of a frame-level list field
 will create one clip per contiguous range of frames that contain at least one
 label in the specified field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1341,7 +1331,7 @@ first [filter the objects](#filtering-sample-contents) so that we can
 construct a clips view that contains one clip per contiguous range of frames
 that contains at least one person:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Create a view that contains one clip per contiguous range of frames that
@@ -1355,7 +1345,7 @@ print(view)
 
 ```
 
-```
+```python
 Dataset:    quickstart-video
 Media type: video
 Num clips:  8
@@ -1383,7 +1373,7 @@ View stages:
 When you iterate over the frames of a sample in a clip view, you will only get
 the frames within the `[first, last]` support of each clip:
 
-```
+```python
 sample = view.last()
 
 print(sample.support)
@@ -1419,7 +1409,7 @@ defines a boolean expression to apply to each frame. In this case, the clips
 view will contain one clip per contiguous range of frames for which the
 expression evaluates to true:
 
-```
+```python
 # Create a view that contains one clip per contiguous range of frames that
 # contains at least 10 vehicles
 view = (
@@ -1501,7 +1491,7 @@ and
 [`to_trajectories()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_trajectories "fiftyone.core.collections.SampleCollection.to_trajectories")
 as shown below:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1520,7 +1510,7 @@ session = fo.launch_app(view=trajectories)
 
 ```
 
-```
+```python
 Dataset:    quickstart-video
 Media type: video
 Num clips:  109
@@ -1571,7 +1561,7 @@ to the frames of your video datasets!
 In the simplest case, you can create a view that contains a sample for every
 frame of the videos in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1592,7 +1582,7 @@ session.view = frames
 
 ```
 
-```
+```python
 Dataset:     quickstart-video
 Media type:  image
 Num samples: 1279
@@ -1634,7 +1624,7 @@ frame field.
 
 Then you can work with frame views efficiently via the default syntax:
 
-```
+```python
 # Creates a view with one sample per frame whose `filepath` is set
 frames = dataset.to_frames()
 
@@ -1652,7 +1642,7 @@ to achieve fine-grained control over the specific frames you want to study.
 For example, the snippet below creates a frames view that only contains samples
 for frames with at least 10 objects, sampling at most one frame per second:
 
-```
+```python
 from fiftyone import ViewField as F
 
 #
@@ -1721,7 +1711,7 @@ chain
 to create **frame patch views** into your video datasets that contain one
 sample per object patch in the frames of the dataset!
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1745,7 +1735,7 @@ session.view = frame_patches
 
 ```
 
-```
+```python
 Dataset:     quickstart-video
 Media type:  image
 Num patches: 11345
@@ -1772,7 +1762,7 @@ You can query for a subset of the frames in a video dataset via
 [`match_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
 The syntax is:
 
-```
+```python
 match_view = dataset.match_frames(expression)
 
 ```
@@ -1791,7 +1781,7 @@ Any resulting [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.
 The snippet below demonstrates a possible workflow. See the API reference for
 [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression "fiftyone.core.expressions.ViewExpression") for a full list of supported operations.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1813,7 +1803,7 @@ You can also use
 [`exclude_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude_frames "fiftyone.core.collections.SampleCollection.exclude_frames")
 to restrict attention to or exclude frames from a view by their IDs:
 
-```
+```python
 # Get the IDs of a couple frames
 frame_ids = [\
     dataset.first().frames.first().id,\
@@ -1843,7 +1833,7 @@ The example below indexes a dataset by image similarity using
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 to sort the dataset by similarity to a chosen image:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -1882,7 +1872,7 @@ similarity using
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 to retrieve the 15 most similar objects to a chosen object:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.brain as fob
 import fiftyone.zoo as foz
@@ -1929,7 +1919,7 @@ along with the `brain_key` of a compatible similarity index:
 You can verify that a similarity index supports text queries by checking that
 it `supports_prompts`:
 
-```
+```python
 info = dataset.get_brain_info(brain_key)
 print(info.config.supports_prompts)  # True
 
@@ -1954,7 +1944,7 @@ For example, you can use
 [`geo_near()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_near "fiftyone.core.collections.SampleCollection.geo_near") to
 sort your samples by proximity to a location:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1973,7 +1963,7 @@ Or, you can use
 only include samples that lie within a longitude-latitude polygon of your
 choice:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -2002,7 +1992,7 @@ and [`untag_samples()`](../api/fiftyone.core.collections.html#fiftyone.core.coll
 methods to add or remove [sample tags](using_datasets.html#using-tags) from the samples in a
 view:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -2025,7 +2015,7 @@ and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.colle
 methods to add or remove [label tags](using_datasets.html#label-tags) from the labels in one
 or more fields of a view:
 
-```
+```python
 # Add a tag to all low confidence predictions
 view = dataset.filter_labels("predictions", F("confidence") < 0.06)
 view.tag_labels("low_confidence", label_fields="predictions")
@@ -2040,7 +2030,7 @@ print(dataset.count_label_tags())
 You can perform arbitrary edits to a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") by iterating over its
 contents and editing the samples directly:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -2070,7 +2060,7 @@ provides an `autosave=True` option that causes all changes to samples
 emitted by the iterator to be automatically saved using an efficient batch
 update strategy:
 
-```
+```python
 # Automatically saves sample edits in efficient batches
 for sample in view.select_fields().iter_samples(autosave=True):
     sample["random"] = random.random()
@@ -2092,7 +2082,7 @@ You can also use the
 [`save_context()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.save_context "fiftyone.core.collections.SampleCollection.save_context")
 method to perform batched edits using the pattern below:
 
-```
+```python
 # Use a context to save sample edits in efficient batches
 with view.save_context() as context:
     for sample in view.select_fields():
@@ -2112,7 +2102,7 @@ Another strategy for performing efficient batch edits is to use
 set a field (or embedded field) on each sample in the collection in a single
 batch operation:
 
-```
+```python
 # Delete the field we added earlier
 dataset.delete_sample_field("random")
 
@@ -2136,7 +2126,7 @@ read [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample
 Naturally, you can edit nested sample fields of a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") by iterating
 over the view and editing the necessary data:
 
-```
+```python
 # Create a view that contains only low confidence predictions
 view = dataset.filter_labels("predictions", F("confidence") < 0.06)
 
@@ -2158,7 +2148,7 @@ extract the slice of data you wish to modify and then use
 [`set_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values") to
 save the updated data in a single batch operation:
 
-```
+```python
 # Remove the tags we added in the previous variation
 dataset.untag_labels("low_confidence")
 
@@ -2186,7 +2176,7 @@ can use
 [`set_label_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_label_values "fiftyone.core.collections.SampleCollection.set_label_values")
 to conveniently perform the updates:
 
-```
+```python
 # Grab the IDs of all labels in `view`
 label_ids = view.values("predictions.detections.id", unwind=True)
 
@@ -2214,7 +2204,7 @@ category in order to run your evaluation routine. You can use
 [`map_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.map_labels "fiftyone.core.collections.SampleCollection.map_labels")
 to do this:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -2241,7 +2231,7 @@ Or, suppose you would like to lower bound all confidences of objects in the
 [`set_field()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_field "fiftyone.core.collections.SampleCollection.set_field")
 to do this:
 
-```
+```python
 # Lower bound all confidences in the `predictions` field to 0.5
 bounded_view = dataset.set_field(
     "predictions.detections.confidence",
@@ -2260,7 +2250,7 @@ In order to populate a _new field_ using
 you must first declare the new field on the dataset via
 [`add_sample_field()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_sample_field "fiftyone.core.dataset.Dataset.add_sample_field"):
 
-```
+```python
 # Record the number of predictions in each sample in a new field
 dataset.add_sample_field("num_predictions", fo.IntField)
 view = dataset.set_field("num_predictions", F("predictions.detections").length())
@@ -2277,7 +2267,7 @@ desired manipulation.
 For example, the snippet below visualizes the top-5 highest confidence
 predictions for each sample in the dataset:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Extracts the 5 highest confidence predictions for each sample
@@ -2298,7 +2288,7 @@ dataset, you can do so by calling
 [`save()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.save "fiftyone.core.view.DatasetView.save") on the view and optionally
 passing the name(s) of specific field(s) that you want to save:
 
-```
+```python
 # Saves `predictions` field's contents in the view permanently to dataset
 top5_view.save("predictions")
 
@@ -2311,7 +2301,7 @@ a dataset and its fields, the underlying [`Dataset`](../api/fiftyone.core.datase
 you can use [`save()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.save "fiftyone.core.view.DatasetView.save") to save the
 contents of a view you’ve created to the underlying dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -2343,7 +2333,7 @@ other samples are left unchanged.
 You can use [`keep()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.keep "fiftyone.core.view.DatasetView.keep") to delete
 samples from the underlying dataset that do not appear in a view you created:
 
-```
+```python
 print(len(dataset))
 # 200
 
@@ -2361,7 +2351,7 @@ and you can use
 to delete any sample/frame fields from the underlying dataset that you have
 excluded from a view you created:
 
-```
+```python
 # Delete the `predictions` field
 view = dataset.exclude_fields("predictions")
 view.keep_fields()
@@ -2380,7 +2370,7 @@ Alternatively, you can use
 [`clone()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.clone "fiftyone.core.view.DatasetView.clone") to create a new
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") that contains a copy of (only) the contents of a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"):
 
-```
+```python
 # Reload full quickstart dataset
 dataset.delete()
 dataset = foz.load_zoo_dataset("quickstart")
@@ -2399,7 +2389,7 @@ You can also use
 to copy the contents of a view’s field into a new field of the underlying
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"):
 
-```
+```python
 print(dataset.count("predictions.detections"))  # 5620
 
 # Make view containing only high confidence predictions
@@ -2418,7 +2408,7 @@ print(dataset.count("high_conf_predictions.detections"))  # 1564
 
 View stages can be chained together to perform complex operations:
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Extract the first 5 samples with the "validation" tag, alphabetically by
@@ -2438,7 +2428,7 @@ complex_view = (
 
 Need to filter your detections by bounding box area? Use this [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression "fiftyone.core.expressions.ViewExpression")!
 
-```
+```python
 from fiftyone import ViewField as F
 
 # Bboxes are in [top-left-x, top-left-y, width, height] format
@@ -2454,7 +2444,7 @@ medium_boxes_view = dataset.filter_labels(
 FiftyOne stores bounding box coordinates as relative values in `[0, 1]`.
 However, you can use the expression below to filter by absolute pixel area:
 
-```
+```python
 from fiftyone import ViewField as F
 
 dataset.compute_metadata()
@@ -2478,7 +2468,7 @@ You can easily remove a batch of samples from a [`Dataset`](../api/fiftyone.core
 [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") that contains the samples, and then deleting them from the
 dataset as follows:
 
-```
+```python
 # Choose 10 samples at random
 unlucky_samples = dataset.take(10)
 
@@ -2497,7 +2487,7 @@ to load only the fields of interest.
 
 Let’s say you have a dataset that looks like this:
 
-```
+```python
 Name:        open-images-v4-test
 Media type:  image
 Num samples: 1000
@@ -2525,7 +2515,7 @@ dataset. Loading other fields is unnecessary; in fact, using
 to load only the `open_images_id` field speeds up the operation below by
 ~200X!
 
-```
+```python
 import time
 
 start = time.time()
@@ -2546,40 +2536,3 @@ print(time.time() - start)
 
 ```
 
-- Dataset Views
-  - [Overview](#overview)
-  - [Saving views](#saving-views)
-  - [View stages](#view-stages)
-  - [Slicing](#slicing)
-  - [Sorting](#sorting)
-  - [Shuffling](#shuffling)
-  - [Random sampling](#random-sampling)
-  - [Filtering](#filtering)
-    - [Querying samples](#querying-samples)
-    - [Common filters](#common-filters)
-    - [Filtering sample contents](#filtering-sample-contents)
-  - [Grouping](#grouping)
-  - [Concatenating views](#concatenating-views)
-  - [Date-based views](#date-based-views)
-  - [Object patches](#object-patches)
-  - [Evaluation patches](#evaluation-patches)
-  - [Video views](#video-views)
-    - [Clip views](#clip-views)
-    - [Trajectory views](#trajectory-views)
-    - [Frame views](#frame-views)
-    - [Frame patches views](#frame-patches-views)
-    - [Querying frames](#querying-frames)
-  - [Similarity views](#similarity-views)
-    - [Image similarity](#image-similarity)
-    - [Object similarity](#object-similarity)
-    - [Text similarity](#text-similarity)
-  - [Geolocation](#geolocation)
-  - [Tagging contents](#tagging-contents)
-  - [Editing fields](#editing-fields)
-  - [Transforming fields](#transforming-fields)
-  - [Saving and cloning](#saving-and-cloning)
-  - [Tips & tricks](#tips-tricks)
-    - [Chaining view stages](#chaining-view-stages)
-    - [Filtering detections by area](#filtering-detections-by-area)
-    - [Removing a batch of samples from a dataset](#removing-a-batch-of-samples-from-a-dataset)
-    - [Efficiently iterating samples](#efficiently-iterating-samples)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- FiftyOne Basics
-
-Contents
-
-
 # FiftyOne Basics [¶](\#fiftyone-basics "Permalink to this headline")
 
 This page provides a brief overview of FiftyOne’s basic concepts.
@@ -59,7 +49,7 @@ obtain a desired subset of the samples.
 
 [Learn more about using datasets](using_datasets.html#using-datasets)
 
-```
+```python
 import fiftyone as fo
 
 # Create an empty dataset
@@ -69,7 +59,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:           test-dataset
 Media type:     None
 Num samples:    0
@@ -96,7 +86,7 @@ store additional custom information about the sample.
 
 [Learn more about using samples](using_datasets.html#using-samples)
 
-```
+```python
 import fiftyone as fo
 
 # An image sample
@@ -118,7 +108,7 @@ source data for the sample on disk. By default, samples are also given `id`,
 `media_type`, `tags`, `metadata`, `created_at`, and `last_modified_at` fields
 that store common information:
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -127,7 +117,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -173,7 +163,7 @@ Note
 If a [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyone.core.fields.Field") has not been set on a particular [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"), its
 value will be `None`.
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -193,7 +183,7 @@ print(dataset)
 
 ```
 
-```
+```python
 Name:           fields-test
 Media type:     image
 Num samples:    1
@@ -232,7 +222,7 @@ like.
 
 [See more information about using tags](using_datasets.html#using-tags)
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png", tags=["train"])
@@ -250,7 +240,7 @@ metadata about the source media of the sample.
 
 [Learn more about adding metadata to your samples](using_datasets.html#using-metadata)
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -265,7 +255,7 @@ print(dataset.first())
 
 ```
 
-```
+```python
 <Sample: {
     'id': '60302b9dca4a8b5f74e84f16',
     'media_type': 'image',
@@ -332,7 +322,7 @@ Using FiftyOne’s [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labe
 
 [Learn more about storing labels in your samples](using_datasets.html#using-labels)
 
-```
+```python
 import fiftyone as fo
 
 sample = fo.Sample(filepath="/path/to/image.png")
@@ -349,7 +339,7 @@ print(sample)
 
 ```
 
-```
+```python
 <Sample: {
     'id': None,
     'media_type': 'image',
@@ -387,7 +377,7 @@ datasets to perform the analysis that you need.
 
 [Get a full walkthrough of dataset views](using_views.html)
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 import fiftyone.brain as fob
@@ -419,7 +409,7 @@ data.
 
 [Learn more about using aggregations](using_aggregations.html)
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -440,13 +430,3 @@ print(
 
 ```
 
-- FiftyOne Basics
-  - [Datasets](#datasets)
-  - [Samples](#samples)
-  - [Fields](#fields)
-  - [Media type](#media-type)
-  - [Tags](#tags)
-  - [Metadata](#metadata)
-  - [Labels](#labels)
-  - [DatasetViews](#datasetviews)
-  - [Aggregations](#aggregations)

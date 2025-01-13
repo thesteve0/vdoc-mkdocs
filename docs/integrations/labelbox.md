@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- Labelbox Integration
-
-Contents
-
-
 # Labelbox Integration [¶](\#labelbox-integration "Permalink to this headline")
 
 [Labelbox](https://labelbox.com/) is one of the most popular cloud-based
@@ -87,14 +77,14 @@ time you interact with Labelbox.
 You’ll also need to install the
 [Labelbox Python client](https://github.com/Labelbox/labelbox-python):
 
-```
+```python
 pip install labelbox
 
 ```
 
 First, we create the annotation tasks in Labelbox:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -157,7 +147,7 @@ print(dataset.get_annotation_info(anno_key))
 Then, once the annotation work is complete, we merge the annotations back into
 FiftyOne:
 
-```
+```python
 import fiftyone as fo
 
 anno_key = "labelbox_basic_recipe"
@@ -202,7 +192,7 @@ an account and then providing your API key as shown below.
 In order to use the Labelbox backend, you must install the
 [Labelbox Python client](https://github.com/Labelbox/labelbox-python):
 
-```
+```python
 pip install labelbox
 
 ```
@@ -217,7 +207,7 @@ To use the Labelbox backend, simply set the optional `backend` parameter of
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
 `"labelbox"`:
 
-```
+```python
 view.annotate(anno_key, backend="labelbox", ...)
 
 ```
@@ -226,7 +216,7 @@ Alternatively, you can permanently configure FiftyOne to use the Labelbox
 backend by setting the `FIFTYONE_ANNOTATION_DEFAULT_BACKEND` environment
 variable:
 
-```
+```python
 export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=labelbox
 
 ```
@@ -235,7 +225,7 @@ or by setting the `default_backend` parameter of your
 [annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "default_backend": "labelbox"
 }
@@ -253,7 +243,7 @@ The recommended way to configure your Labelbox API key is to store it in the
 `FIFTYONE_LABELBOX_API_KEY` environment variable. This is automatically
 accessed by FiftyOne whenever a connection to Labelbox is made.
 
-```
+```python
 export FIFTYONE_LABELBOX_API_KEY=...
 
 ```
@@ -264,7 +254,7 @@ You can also store your credentials in your
 [annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
-```
+```python
 {
     "backends": {
         "labelbox": {
@@ -285,7 +275,7 @@ methods like
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 that require connections to Labelbox:
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelbox",
@@ -301,7 +291,7 @@ If you have not stored your API key via another method, you will be prompted to
 enter it interactively in your shell each time you call a method that requires
 a connection to Labelbox:
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelbox",
@@ -311,7 +301,7 @@ view.annotate(
 
 ```
 
-```
+```python
 Please enter your API key.
 You can avoid this in the future by setting your `FIFTYONE_LABELBOX_API_KEY` environment variable.
 API key: ...
@@ -327,7 +317,7 @@ you can configure the URL of your server in any of the following ways:
 - Set the `FIFTYONE_LABELBOX_URL` environment variable:
 
 
-```
+```python
 export FIFTYONE_LABELBOX_URL=http://localhost:8080
 
 ```
@@ -337,7 +327,7 @@ export FIFTYONE_LABELBOX_URL=http://localhost:8080
 `~/.fiftyone/annotation_config.json`:
 
 
-```
+```python
 {
     "backends": {
         "labelbox": {
@@ -352,7 +342,7 @@ export FIFTYONE_LABELBOX_URL=http://localhost:8080
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate"):
 
 
-```
+```python
 view.annotate(
     anno_key,
     backend="labelbox",
@@ -372,7 +362,7 @@ to send the samples and optionally existing labels in a [`Dataset`](../api/fifty
 
 The basic syntax is:
 
-```
+```python
 anno_key = "..."
 view.annotate(anno_key, backend="labelbox", ...)
 
@@ -550,7 +540,7 @@ tasks in Labelbox. In its most verbose form, it is a dictionary that defines
 the label type, annotation type, possible classes, and possible attributes for
 each label field:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -587,7 +577,7 @@ You can also define class-specific attributes by setting elements of the
 corresponding `attributes`. For example, in the configuration below, `attr1`
 only applies to `class1` and `class2` while `attr2` applies to all classes:
 
-```
+```python
 anno_key = "..."
 
 label_schema = {
@@ -624,7 +614,7 @@ can use the `label_field`, `label_type`, `classes`, `attributes`, and
 `mask_targets` parameters to specify the components of the label schema
 individually:
 
-```
+```python
 anno_key = "..."
 
 label_field = "new_field",
@@ -681,7 +671,7 @@ When adding new label fields for which you want to include attributes, you must
 use the dictionary syntax demonstrated below to define the schema of each
 attribute that you wish to label:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -750,7 +740,7 @@ When annotating spatiotemporal objects in videos, each object attribute
 specification can include a `mutable` property that controls whether the
 attribute’s value can change between frames for each object:
 
-```
+```python
 anno_key = "..."
 
 attributes = {
@@ -793,7 +783,7 @@ use the
 [`load_annotations()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_annotations "fiftyone.core.collections.SampleCollection.load_annotations")
 method to download them and merge them back into your FiftyOne dataset.
 
-```
+```python
 view.load_annotations(anno_key)
 
 ```
@@ -833,7 +823,7 @@ For example, you can call
 [`list_annotation_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_annotation_runs "fiftyone.core.collections.SampleCollection.list_annotation_runs")
 to see the available annotation keys on a dataset:
 
-```
+```python
 dataset.list_annotation_runs()
 
 ```
@@ -842,7 +832,7 @@ Or, you can use
 [`get_annotation_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_annotation_info "fiftyone.core.collections.SampleCollection.get_annotation_info")
 to retrieve information about the configuration of an annotation run:
 
-```
+```python
 info = dataset.get_annotation_info(anno_key)
 print(info)
 
@@ -856,7 +846,7 @@ All results objects provide a [`cleanup()`](../api/fiftyone.utils.annotations.ht
 method that you can use to delete all information associated with a run from
 the annotation backend.
 
-```
+```python
 results = dataset.load_annotation_results(anno_key)
 results.cleanup()
 
@@ -871,7 +861,7 @@ You can use
 [`rename_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_annotation_run "fiftyone.core.collections.SampleCollection.rename_annotation_run")
 to rename the annotation key associated with an existing annotation run:
 
-```
+```python
 dataset.rename_annotation_run(anno_key, new_anno_key)
 
 ```
@@ -880,7 +870,7 @@ Finally, you can use
 [`delete_annotation_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_annotation_run "fiftyone.core.collections.SampleCollection.delete_annotation_run")
 to delete the record of an annotation run from your FiftyOne dataset:
 
-```
+```python
 dataset.delete_annotation_run(anno_key)
 
 ```
@@ -911,7 +901,7 @@ In order to annotate a new label field, you can provide the `label_field`,
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
 define the annotation schema for the field:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -940,7 +930,7 @@ dataset.delete_annotation_run(anno_key)
 Alternatively, you can use the `label_schema` argument to define the same
 labeling task:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1006,7 +996,7 @@ labels that you edited
 
 The example snippet below demonstrates this workflow:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1081,7 +1071,7 @@ workflow for editing existing labels with Labelbox.
 The `label_schema` argument allows you to define annotation tasks for multiple
 fields at once:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1147,7 +1137,7 @@ project. The supported roles are:
 If any email addresses do not correspond to users already in your organization,
 an email invitation will be sent to them.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1197,7 +1187,7 @@ If `classes` are provided, you will be able to select from these values in
 Labelbox; otherwise, the Labelbox tag will show the `label_field` name and you
 must enter the appropriate scalar in the `value` attribute of the tag.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1248,7 +1238,7 @@ dataset. You can then specify this field via the `media_field` parameter of
 
 For example, let’s upload some blurred images to Labelbox for annotation:
 
-```
+```python
 import os
 import cv2
 
@@ -1312,7 +1302,7 @@ label is allowed. For example, only one “detections” label field can be
 annotated. Annotating multiple “scalar”, “classification”, an
 “classifications” fields is still allowed.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1347,7 +1337,7 @@ You can annotate for video datasets using the Labelbox backend through the
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate")
 method.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1409,7 +1399,7 @@ and
 methods to get information about the current status of the project for that
 annotation run:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1435,7 +1425,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-```
+```python
 Project: FiftyOne_quickstart
 ID: cktixtv70e8zm0yba501v0ltz
 Created at: 2021-09-13 17:46:21+00:00
@@ -1470,7 +1460,7 @@ or
 methods to delete specific Labelbox project(s) associated with an annotation
 run.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1514,29 +1504,3 @@ Note that passing `delete_batches=True` when deleting projects will not
 delete the corresponding data rows from Labelbox when using the V2 export
 API (the default).
 
-- Labelbox Integration
-  - [Basic recipe](#basic-recipe)
-  - [Setup](#setup)
-    - [Installing the Labelbox client](#installing-the-labelbox-client)
-    - [Using the Labelbox backend](#using-the-labelbox-backend)
-    - [Authentication](#authentication)
-    - [On-premises servers](#on-premises-servers)
-  - [Requesting annotations](#requesting-annotations)
-    - [Label schema](#label-schema)
-    - [Label attributes](#label-attributes)
-    - [Video label attributes](#video-label-attributes)
-  - [Loading annotations](#loading-annotations)
-  - [Managing annotation runs](#managing-annotation-runs)
-  - [Examples](#examples)
-    - [Adding new label fields](#adding-new-label-fields)
-    - [Editing labels with a free Labelbox account](#editing-labels-with-a-free-labelbox-account)
-    - [Editing existing labels](#editing-existing-labels)
-    - [Annotating multiple fields](#annotating-multiple-fields)
-    - [Configuring Labelbox projects](#configuring-labelbox-projects)
-    - [Scalar labels](#scalar-labels)
-    - [Uploading alternate media](#uploading-alternate-media)
-    - [Annotating classes directly](#annotating-classes-directly)
-  - [Annotating videos](#annotating-videos)
-  - [Additional utilities](#additional-utilities)
-    - [Viewing project status](#viewing-project-status)
-    - [Deleting projects](#deleting-projects)

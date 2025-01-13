@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne User Guide](index.html) >
-- Evaluating Models
-
-Contents
-
-
 # Evaluating Models [¶](\#evaluating-models "Permalink to this headline")
 
 FiftyOne provides a variety of builtin methods for evaluating your model
@@ -46,7 +36,7 @@ detections in its `predictions` field using the
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
 method:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -81,7 +71,7 @@ Running an evaluation returns an instance of a task-specific subclass of
 [`EvaluationResults`](../api/fiftyone.core.evaluation.html#fiftyone.core.evaluation.EvaluationResults "fiftyone.core.evaluation.EvaluationResults") that provides a handful of methods for generating aggregate
 statistics about your dataset.
 
-```
+```python
 # Get the 10 most common classes in the dataset
 counts = dataset.count_values("ground_truth.detections.label")
 classes = sorted(counts, key=counts.get, reverse=True)[:10]
@@ -91,7 +81,7 @@ results.print_report(classes=classes)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.45      0.74      0.56       783
@@ -128,7 +118,7 @@ the [FiftyOne App](app.html#fiftyone-app) to leverage these sample metrics to
 investigate the samples with the most false positive predictions in the
 dataset:
 
-```
+```python
 import fiftyone as fo
 from fiftyone import ViewField as F
 
@@ -173,7 +163,7 @@ that support confusion matrices, you can use the
 method to render responsive plots that can be attached to App instances to
 interactively explore specific cases of your model’s performance:
 
-```
+```python
 # Plot confusion matrix
 plot = results.plot_confusion_matrix(classes=classes)
 plot.show()
@@ -219,7 +209,7 @@ on using the following methods on your dataset:
 
 The example below demonstrates the basic interface:
 
-```
+```python
 # List evaluations you've run on a dataset
 dataset.list_evaluations()
 # ['eval']
@@ -283,7 +273,7 @@ The example below demonstrates simple evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) with some fake regression
 data added to it to demonstrate the workflow:
 
-```
+```python
 import random
 import numpy as np
 
@@ -332,7 +322,7 @@ session.view = dataset.sort_by("eval", reverse=True)
 
 ```
 
-```
+```python
 mean squared error        59.69
 root mean squared error   7.73
 mean absolute error       5.48
@@ -393,7 +383,7 @@ The example below demonstrates simple evaluation on the
 [CIFAR-10 dataset](../dataset_zoo/datasets.html#dataset-zoo-cifar10) with some fake predictions added
 to it to demonstrate the workflow:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -452,7 +442,7 @@ session.view = dataset.match(F("eval_simple") == False)
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
     airplane       0.91      0.90      0.91       118
@@ -506,7 +496,7 @@ The example below demonstrates top-k evaluation on a
 [small ImageNet sample](../dataset_zoo/datasets.html#dataset-zoo-imagenet-sample) with predictions
 from a pre-trained model from the [Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -583,7 +573,7 @@ The example below demonstrates binary evaluation on the
 [CIFAR-10 dataset](../dataset_zoo/datasets.html#dataset-zoo-cifar10) with some fake binary predictions
 added to it to demonstrate the workflow:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -641,7 +631,7 @@ plot.show()
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
        other       0.90      0.48      0.63       906
@@ -800,7 +790,7 @@ The example below demonstrates loading an evaluation patches view for the
 results of an evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -825,7 +815,7 @@ session.view = eval_patches
 
 ```
 
-```
+```python
 Dataset:     quickstart
 Media type:  image
 Num patches: 5363
@@ -933,7 +923,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -948,7 +938,7 @@ matching object (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: object.<eval_key>
         ID: object.<eval_key>_id
        IoU: object.<eval_key>_iou
@@ -968,7 +958,7 @@ when running COCO-style evaluation.
 The example below demonstrates COCO-style detection evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1009,7 +999,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.45      0.74      0.56       783
@@ -1048,7 +1038,7 @@ Note
 All mAP and mAR calculations are performed according to the
 [COCO evaluation protocol](https://cocodataset.org/#detection-eval).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1086,7 +1076,7 @@ positive/negative counts, you will likely want to set the
 to `False` during evaluation so that predicted objects can be matched with
 ground truth objects of different classes.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1170,7 +1160,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -1185,7 +1175,7 @@ of the matching object (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: object.<eval_key>
         ID: object.<eval_key>_id
        IoU: object.<eval_key>_iou
@@ -1205,7 +1195,7 @@ when running Open Images-style evaluation.
 The example below demonstrates Open Images-style detection evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1247,7 +1237,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.25      0.86      0.39       378
@@ -1286,7 +1276,7 @@ FiftyOne’s implementation of Open Images-style evaluation matches the
 reference implementation available via the
 [TF Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1320,7 +1310,7 @@ positive/negative counts, you will likely want to set the
 parameter to `False` during evaluation so that predicted objects can be
 matched with ground truth objects of different classes.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1385,7 +1375,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -1400,7 +1390,7 @@ of the matching segment (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: segment.<eval_key>
         ID: segment.<eval_key>_id
        IoU: segment.<eval_key>_iou
@@ -1420,7 +1410,7 @@ when running ActivityNet-style evaluation.
 The example below demonstrates ActivityNet-style temporal detection evaluation
 on the [ActivityNet 200 dataset](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1480,7 +1470,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                  precision    recall  f1-score   support
 
     Bathing dog       0.50      0.40      0.44         5
@@ -1510,7 +1500,7 @@ Note
 All mAP calculations are performed according to the
 [ActivityNet evaluation protocol](https://github.com/activitynet/ActivityNet/tree/master/Evaluation).
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -1569,7 +1559,7 @@ positive/negative counts, you will likely want to set the
 parameter to `False` during evaluation so that predicted segments can be
 matched with ground truth segments of different classes.
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -1665,7 +1655,7 @@ parameter to `"simple"`.
 When you specify an `eval_key` parameter, the accuracy, precision, and recall
 of each sample is recorded in top-level fields of each sample:
 
-```
+```python
  Accuracy: sample.<eval_key>_accuracy
 Precision: sample.<eval_key>_precision
    Recall: sample.<eval_key>_recall
@@ -1683,7 +1673,7 @@ masks generated by two DeepLabv3 models (with
 [ResNet50](../data_and_models/model_zoo/models.html#model-zoo-deeplabv3-resnet50-coco-torch) and
 [ResNet101](../data_and_models/model_zoo/models.html#model-zoo-deeplabv3-resnet101-coco-torch) backbones):
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -1754,7 +1744,7 @@ on those.
 For example, the snippet below evaluates only the medium-sized objects in a
 dataset:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -1810,7 +1800,7 @@ was run on a view into your dataset, you can use
 [`load_evaluation_view()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_evaluation_view "fiftyone.core.collections.SampleCollection.load_evaluation_view")
 to retrieve the exact view on which you evaluated:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset(...)
@@ -1833,7 +1823,7 @@ method to hide any fields that were populated by other evaluation runs,
 allowing you to, for example, focus on a specific set of evaluation results
 in the App:
 
-```
+```python
 import fiftyone as fo
 
 dataset = fo.load_dataset(...)
@@ -1864,7 +1854,7 @@ The example below demonstrates evaluating (mocked) frame-level detections on
 the [quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) from the
 Dataset Zoo:
 
-```
+```python
 import random
 
 import fiftyone as fo
@@ -1924,7 +1914,7 @@ results.print_report()
 
 ```
 
-```
+```python
               precision    recall  f1-score   support
 
       person       0.76      0.93      0.84      1108
@@ -1941,7 +1931,7 @@ You can also view frame-level evaluation results as
 [evaluation patches](#evaluation-patches) by first converting
 [to frames](using_views.html#frame-views) and then [to patches](using_views.html#eval-patches-views)!
 
-```
+```python
 # Convert to frame evaluation patches
 frames = dataset.to_frames(sample_frames=True)
 frame_eval_patches = frames.to_evaluation_patches("eval")
@@ -1954,7 +1944,7 @@ session = fo.launch_app(view=frame_eval_patches)
 
 ```
 
-```
+```python
 Dataset:     video-eval-demo
 Media type:  image
 Num patches: 12112
@@ -2031,7 +2021,7 @@ contain any desired subset of config fields that you wish to customize.
 For example, the following config JSON file declares a new `custom` detection
 evaluation backend without changing any other default config settings:
 
-```
+```python
 {
     "default_detection_backend": "custom",
     "detection_backends": {
@@ -2061,7 +2051,7 @@ settings, where `<TYPE>` can be `REGRESSION`, `CLASSIFICATION`, `DETECTION`, or
 The `FIFTYONE_DEFAULT_<TYPE>_BACKEND` environment variables allows you to
 configure your default backend:
 
-```
+```python
 export FIFTYONE_DEFAULT_DETECTION_BACKEND=coco
 
 ```
@@ -2073,7 +2063,7 @@ methods like
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
 whenever the corresponding backend is in use:
 
-```
+```python
 export FIFTYONE_DETECTION_COCO_ISCROWD=is_crowd
 
 ```
@@ -2083,7 +2073,7 @@ The `FIFTYONE_<TYPE>_BACKENDS` environment variables can be set to a
 native backends and/or declare additional custom backends whose parameters are
 defined via additional config modifications of any kind:
 
-```
+```python
 export FIFTYONE_DETECTION_BACKENDS=custom,coco,open-images
 
 ```
@@ -2092,7 +2082,7 @@ When declaring new backends, you can include `*` to append new backend(s)
 without omitting or explicitly enumerating the builtin backends. For example,
 you can add a `custom` detection evaluation backend as follows:
 
-```
+```python
 export FIFTYONE_DETECTION_BACKENDS=*,custom
 export FIFTYONE_DETECTION_CUSTOM_CONFIG_CLS=your.custom.DetectionEvaluationConfig
 
@@ -2107,55 +2097,10 @@ Any changes to your evaluation config applied via this manner will immediately
 take effect in all subsequent calls to `fiftyone.evaluation_config` during your
 current session.
 
-```
+```python
 import fiftyone as fo
 
 fo.evaluation_config.default_detection_backend = "custom"
 
 ```
 
-- Evaluating Models
-  - [Overview](#overview)
-    - [Model Evaluation panel **NEW**](#model-evaluation-panel-sub-new)
-    - [Per-class metrics](#per-class-metrics)
-    - [Per-sample metrics](#per-sample-metrics)
-    - [Confusion matrices](#confusion-matrices)
-    - [Managing evaluations](#managing-evaluations)
-  - [Regressions](#regressions)
-    - [Simple evaluation (default)](#simple-evaluation-default)
-  - [Classifications](#classifications)
-    - [Simple evaluation (default)](#id4)
-    - [Top-k evaluation](#top-k-evaluation)
-    - [Binary evaluation](#binary-evaluation)
-  - [Detections](#detections)
-    - [Supported types](#supported-types)
-    - [Evaluation patches views](#evaluation-patches-views)
-    - [COCO-style evaluation (default spatial)](#coco-style-evaluation-default-spatial)
-      - [Overview](#id5)
-      - [Example evaluation](#example-evaluation)
-      - [mAP, mAR and PR curves](#map-mar-and-pr-curves)
-      - [Confusion matrices](#id6)
-    - [Open Images-style evaluation](#open-images-style-evaluation)
-      - [Overview](#id8)
-      - [Example evaluation](#id9)
-      - [mAP and PR curves](#map-and-pr-curves)
-      - [Confusion matrices](#id11)
-    - [ActivityNet-style evaluation (default temporal)](#activitynet-style-evaluation-default-temporal)
-      - [Overview](#id12)
-      - [Example evaluation](#id13)
-      - [mAP and PR curves](#id14)
-      - [Confusion matrices](#id15)
-  - [Semantic segmentations](#semantic-segmentations)
-    - [Simple evaluation (default)](#id16)
-  - [Advanced usage](#advanced-usage)
-    - [Evaluating views into your dataset](#evaluating-views-into-your-dataset)
-    - [Loading a previous evaluation result](#loading-a-previous-evaluation-result)
-    - [Evaluating videos](#evaluating-videos)
-  - [Custom evaluation backends](#custom-evaluation-backends)
-  - [Evaluation config](#evaluation-config)
-    - [Viewing your config](#viewing-your-config)
-    - [Modifying your config](#modifying-your-config)
-      - [Order of precedence](#order-of-precedence)
-      - [Editing your JSON config](#editing-your-json-config)
-      - [Setting environment variables](#setting-environment-variables)
-      - [Modifying your config in code](#modifying-your-config-in-code)

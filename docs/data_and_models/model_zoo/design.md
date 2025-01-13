@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Model Zoo](index.html) >
-- Model Interface
-
-Contents
-
-
 # Model Interface [¶](\#model-interface "Permalink to this headline")
 
 All models in the Model Zoo are exposed via the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") class, which defines a
@@ -47,7 +37,7 @@ In order to be compatible with built-in methods like
 models should support the following basic signature of running inference and
 storing the output labels:
 
-```
+```python
 labels = model.predict(arg)
 sample.add_labels(labels, label_field=label_field)
 
@@ -66,7 +56,7 @@ and the output `labels` can be any of the following:
 specified `label_field` of the sample
 
 
-```
+```python
 # Single sample-level label
 sample[label_field] = labels
 
@@ -76,7 +66,7 @@ sample[label_field] = labels
 added as follows:
 
 
-```
+```python
 # Multiple sample-level labels
 for key, value in labels.items():
     sample[label_key(key)] = value
@@ -88,7 +78,7 @@ provided labels are interpreted as frame-level labels that should be added
 as follows:
 
 
-```
+```python
 # Single set of per-frame labels
 sample.frames.merge(
     {
@@ -104,7 +94,7 @@ this case, the provided labels are interpreted as frame-level labels that
 should be added as follows:
 
 
-```
+```python
 # Multiple per-frame labels
 sample.frames.merge(
     {
@@ -118,7 +108,7 @@ sample.frames.merge(
 In the above snippets, the `label_key` function maps label dict keys to field
 names, and is defined from `label_field` as follows:
 
-```
+```python
 if isinstance(label_field, dict):
     label_key = lambda k: label_field.get(k, k)
 elif label_field is not None:
@@ -195,7 +185,7 @@ and
 For example, the snippet below loads a pretrained model from `torchvision`
 and uses it both as a classifier and to generate image embeddings:
 
-```
+```python
 import os
 import eta
 
@@ -235,7 +225,7 @@ load and any necessary preprocessing and post-processing.
 
 Under the hood, the torch model is loaded via:
 
-```
+```python
 torch_model = entrypoint_fcn(**entrypoint_args)
 
 ```
@@ -256,7 +246,7 @@ must be set to the fully-qualified class name of an
 defines how to translate the model’s raw output into the suitable FiftyOne
 [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, and is instantiated as follows:
 
-```
+```python
 output_processor = output_processor_cls(classes=classes, **output_processor_args)
 
 ```
@@ -292,14 +282,9 @@ Did you know? You can also
 [register your custom model](api.html#model-zoo-add) under a name of your
 choice so that it can be loaded and used as follows:
 
-```
+```python
 model = foz.load_zoo_model("your-custom-model")
 dataset.apply_model(model, label_field="predictions")
 
 ```
 
-- Model Interface
-  - [Prediction](#prediction)
-  - [Embeddings](#embeddings)
-  - [Logits](#logits)
-  - [Custom models](#custom-models)

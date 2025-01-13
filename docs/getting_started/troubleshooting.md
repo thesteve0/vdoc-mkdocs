@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Installation](install.html) >
-- Install Troubleshooting
-
-Contents
-
-
 # Install Troubleshooting [¶](\#install-troubleshooting "Permalink to this headline")
 
 This page lists common issues encountered when installing FiftyOne and possible
@@ -21,7 +11,7 @@ Note
 Most installation issues can be fixed by upgrading some packages and then
 rerunning the FiftyOne install. So, try this first before reading on:
 
-```
+```python
 pip install --upgrade pip setuptools wheel build
 pip install fiftyone
 
@@ -34,19 +24,19 @@ pip install fiftyone
 If you attempt to install FiftyOne with a version of Python or pip that is too
 old, you may encounter errors like these:
 
-```
+```python
 ERROR: Could not find a version that satisfies the requirement fiftyone (from versions: none)
 ERROR: No matching distribution found for fiftyone
 
 ```
 
-```
+```python
 Could not find a version that satisfies the requirement fiftyone-brain (from versions: )
 No matching distribution found for fiftyone-brain
 
 ```
 
-```
+```python
 fiftyone requires Python '>=3.9' but the running Python is 3.4.10
 
 ```
@@ -112,19 +102,19 @@ be installed in the virtual environment, per the
 system-wide IPython installation in a virtual environment with FiftyOne, you
 may encounter errors such as:
 
-```
+```python
 .../IPython/core/interactiveshell.py:935: UserWarning: Attempting to work in a virtualenv. If you encounter problems, please install IPython inside the virtualenv.
 
 ```
 
-```
+```python
 File ".../fiftyone/core/../_service_main.py", line 29, in <module>
     import psutil
 ModuleNotFoundError: No module named 'psutil'
 
 ```
 
-```
+```python
 ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused
 
 ```
@@ -132,7 +122,7 @@ ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused
 To resolve this, install IPython in your active virtual environment (see the
 [virtual environment guide](virtualenv.html#virtualenv-guide) for more information):
 
-```
+```python
 pip install ipython
 
 ```
@@ -154,7 +144,7 @@ prior to v0.7.3 (to a yet older version), then you will first need to
 [upgrade](install.html#upgrading-fiftyone) to v0.7.3 or later and then
 [downgrade](install.html#downgrading-fiftyone):
 
-```
+```python
 # The version that you wish to downgrade to
 VERSION=0.7.0
 
@@ -166,7 +156,7 @@ pip install fiftyone==$VERSION
 
 To install a FiftyOne version prior to v0.7.0, you must add `--index`:
 
-```
+```python
 pip install --index https://pypi.voxel51.com fiftyone==<version>
 
 ```
@@ -192,7 +182,7 @@ work in your environment, you may encounter a `FiftyOneConfigError`.
 If you have output similar to the below, you may just need to install
 `libssl` packages.
 
-```
+```python
 Subprocess ['.../site-packages/fiftyone/db/bin/mongod', ...] exited with error 127:
 .../site-packages/fiftyone/db/bin/mongod: error while loading shared libraries:
   libcrypto.so.1.1: cannot open shared object file: No such file or directory
@@ -201,7 +191,7 @@ Subprocess ['.../site-packages/fiftyone/db/bin/mongod', ...] exited with error 1
 
 On Ubuntu, `libssl` packages can be install with the following command:
 
-```
+```python
 sudo apt install libssl-dev
 
 ```
@@ -215,7 +205,7 @@ FiftyOne to use a MongoDB instance that you have installed yourself.
 If your encounter a `psutil.NoSuchProcessExists` exists when importing
 `fiftyone`, you are likely missing the C++ libraries MongoDB requires.
 
-```
+```python
 psutil.NoSuchProcess: psutil.NoSuchProcess process no longer exists (pid=XXXX)
 
 ```
@@ -225,15 +215,3 @@ Downloading and installing the Microsoft Visual C++ Redistributable from this
 should resolve the issue. Specifically, you will want to download the
 `vc_redist.x64.exe` redistributable.
 
-- Install Troubleshooting
-  - [Python/pip incompatibilities](#python-pip-incompatibilities)
-    - [“No matching distribution found”](#no-matching-distribution-found)
-    - [“Package ‘fiftyone’ requires a different Python”](#package-fiftyone-requires-a-different-python)
-    - [“No module named skbuild”](#no-module-named-skbuild)
-  - [Videos do not load in the App](#videos-do-not-load-in-the-app)
-  - [IPython installation](#ipython-installation)
-  - [Import and database issues](#import-and-database-issues)
-  - [Downgrading to old versions](#downgrading-to-old-versions)
-  - [Database exits](#database-exits)
-    - [Troubleshooting Linux imports](#troubleshooting-linux-imports)
-    - [Troubleshooting Windows imports](#troubleshooting-windows-imports)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Integrations](index.html) >
-- COCO Integration
-
-Contents
-
-
 # COCO Integration [¶](\#coco-integration "Permalink to this headline")
 
 With support from the team behind the [COCO dataset](https://cocodataset.org),
@@ -31,7 +21,7 @@ Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
 and load a COCO split into FiftyOne:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -64,7 +54,7 @@ different slices of the dataset without downloading the entire split.
 When performing partial downloads, FiftyOne will use existing downloaded data
 first if possible before resorting to downloading additional data from the web.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -182,7 +172,7 @@ easy to load your own datasets and model predictions stored in
 The example code below demonstrates this workflow. First, we generate a JSON
 file containing COCO-formatted labels to work with:
 
-```
+```python
 import os
 
 import fiftyone as fo
@@ -205,12 +195,12 @@ dataset.take(5, seed=51).export(
 Now we have a `/tmp/coco.json` file on disk containing COCO labels
 corresponding to the images in `IMAGES_DIR`:
 
-```
+```python
 python -m json.tool /tmp/coco.json
 
 ```
 
-```
+```python
 {
     "info": {...},
     "licenses": [],
@@ -258,7 +248,7 @@ We can now use
 [COCO-formatted labels](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) into a new FiftyOne
 dataset:
 
-```
+```python
 # Load COCO formatted dataset
 coco_dataset = fo.Dataset.from_dir(
     dataset_type=fo.types.COCODetectionDataset,
@@ -275,7 +265,7 @@ print(coco_dataset)
 
 ```
 
-```
+```python
 Name:        2021.06.28.15.14.38
 Media type:  image
 Num samples: 5
@@ -311,7 +301,7 @@ If your workflow generates model predictions in COCO format, you can use the
 [`add_coco_labels()`](../api/fiftyone.utils.coco.html#fiftyone.utils.coco.add_coco_labels "fiftyone.utils.coco.add_coco_labels") utility method
 to add them to your dataset as follows:
 
-```
+```python
 import fiftyone.utils.coco as fouc
 
 #
@@ -382,7 +372,7 @@ for the each sample are saved in top-level fields of each sample:
 
 
 
-```
+```python
 TP: sample.<eval_key>_tp
 FP: sample.<eval_key>_fp
 FN: sample.<eval_key>_fn
@@ -397,7 +387,7 @@ matching object (if any), and the matching IoU:
 
 
 
-```
+```python
 TP/FP/FN: object.<eval_key>
         ID: object.<eval_key>_id
        IoU: object.<eval_key>_iou
@@ -417,7 +407,7 @@ when running COCO-style evaluation.
 The example below demonstrates COCO-style detection evaluation on the
 [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the Dataset Zoo:
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 from fiftyone import ViewField as F
@@ -459,7 +449,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-```
+```python
                precision    recall  f1-score   support
 
        person       0.45      0.74      0.56       783
@@ -493,7 +483,7 @@ Note
 All mAP and mAR calculations are performed according to the
 [COCO evaluation protocol](https://cocodataset.org/#detection-eval).
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -532,7 +522,7 @@ positive/negative counts, you will likely want to set the
 to `False` during evaluation so that predicted objects can be matched with
 ground truth objects of different classes.
 
-```
+```python
 import fiftyone as fo
 import fiftyone.zoo as foz
 
@@ -645,12 +635,3 @@ thresholds. Then compute mAP by averaging the per-class AP values over all
 classes
 
 
-- COCO Integration
-  - [Loading the COCO dataset](#loading-the-coco-dataset)
-  - [Loading COCO-formatted data](#loading-coco-formatted-data)
-  - [COCO-style evaluation](#coco-style-evaluation)
-    - [Overview](#overview)
-    - [Example evaluation](#example-evaluation)
-    - [mAP and PR curves](#map-and-pr-curves)
-    - [Confusion matrices](#confusion-matrices)
-  - [mAP protocol](#map-protocol)

@@ -1,13 +1,3 @@
-Table of Contents
-
-- [Docs](../index.html) >
-
-- [FiftyOne Model Zoo](index.html) >
-- Remotely-Sourced Zoo Models
-
-Contents
-
-
 # Remotely-Sourced Zoo Models [¶](\#remotely-sourced-zoo-models "Permalink to this headline")
 
 This page describes how to work with and create zoo models whose definitions
@@ -43,7 +33,7 @@ Here’s the basic recipe for working with remotely-sourced zoo models:
 
 A remote source of models is defined by a directory with the following contents:
 
-```
+```python
 manifest.json
 __init__.py
     def download_model(model_name, model_path):
@@ -93,7 +83,7 @@ It can also provide optional metadata about the remote source itself:
 
 Here’s an exaxmple model manifest file that declares a single model:
 
-```
+```python
 {
     "name": "voxel51/openai-clip",
     "url": "https://github.com/voxel51/openai-clip",
@@ -137,7 +127,7 @@ If a remote source contains model(s) that don’t use the `manager` key in its
 `__init__.py` file that defines a `download_model()` method with the
 signature below:
 
-```
+```python
 def download_model(model_name, model_path):
     """Downloads the model.
 
@@ -170,7 +160,7 @@ If a remote source contains model(s) that don’t use the
 `__init__.py` file that defines a `load_model()` method with the signature
 below:
 
-```
+```python
 def load_model(model_name, model_path, **kwargs):
     """Loads the model.
 
@@ -218,9 +208,3 @@ Note
 Check out [voxel51/openai-clip](https://github.com/voxel51/openai-clip)
 for an example of a remote model source.
 
-- Remotely-Sourced Zoo Models
-  - [Working with remotely-sourced models](#working-with-remotely-sourced-models)
-  - [Creating remotely-sourced models](#creating-remotely-sourced-models)
-    - [manifest.json](#manifest-json)
-    - [Download model](#download-model)
-    - [Load model](#load-model)
