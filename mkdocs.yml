@@ -27,6 +27,13 @@ markdown_extensions:
 plugins:
   - search:
       lang: en
+  - mkdocs-jupyter:
+      include_requirejs: true # required for plotly
+      ignore: ["tutorials/evaluate_classifications.ipynb", "tutorials/image_embeddings.ipynb"]
+      # include_source: True if we want to ease making a download button
+      # https://github.com/danielfrg/mkdocs-jupyter?tab=readme-ov-file#download-notebook-link
+      # execute: true  if we want to execute the code before rendering
+      # https://github.com/danielfrg/mkdocs-jupyter?tab=readme-ov-file#execute-notebook
 
 extra:
   version:
@@ -39,13 +46,13 @@ nav:
       - Virtualenvs: getting_started/virtualenv.md
       - Datasets, Samples, and Fields: getting_started/datasets_samples_fields.md
       - Tour of the Applications: getting_started/application_tour.md
-#      - Visualizing Embeddings
-#      - Subsetting and Sample Data
-#      - Zero Shot Classification for Labeling
-#      - Creating and Editing Fields and Labels
-#      - Model Fine-Tuning
-#      - Model Evaluation
-#      - What's Next
+      #      - Visualizing Embeddings
+      #      - Subsetting and Sample Data
+      #      - Zero Shot Classification for Labeling
+      #      - Creating and Editing Fields and Labels
+      #      - Model Fine-Tuning
+      #      - Model Evaluation
+      #      - What's Next
       - Troubleshooting: getting_started/troubleshooting.md
   - FiftyOne Concepts:
       - fiftyone_concepts/index.md
@@ -54,13 +61,13 @@ nav:
   - How Do I: recipes/
   - Tutorials: tutorials/
   - "Data and Models":
-    - data_and_models/index.md
-    - Zoo Datasets:
-        - Dataset Zoo: data_and_models/dataset_zoo/index.md
-        - Built-In Zoo Datasets: data_and_models/dataset_zoo/datasets.md
-        - Remotely-Sourced Zoo Datasets: data_and_models/dataset_zoo/remote.md
-        - Zoo Data API: data_and_models/dataset_zoo/api.md
-    - Hugging Face Datasets: data_and_models/hugging_face_data.md
+      - data_and_models/index.md
+      - Zoo Datasets:
+          - Dataset Zoo: data_and_models/dataset_zoo/index.md
+          - Built-In Zoo Datasets: data_and_models/dataset_zoo/datasets.md
+          - Remotely-Sourced Zoo Datasets: data_and_models/dataset_zoo/remote.md
+          - Zoo Data API: data_and_models/dataset_zoo/api.md
+      - Hugging Face Datasets: data_and_models/hugging_face_data.md
   - Integrations: integrations/
   - References:
       API: api/index.md
@@ -70,3 +77,4 @@ nav:
   - Releases: release-notes.md
   - FAQ: faq/
 
+  q
