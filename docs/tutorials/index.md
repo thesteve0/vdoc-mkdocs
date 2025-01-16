@@ -7,7 +7,7 @@ your datasets and turn your good models into _great models_.
 
 #### pandas-style queries in FiftyOne
 
-Translate your pandas knowledge to FiftyOne. This tutorial gives a side-by-side comparison of performing common operations in pandas and FiftyOne.
+Translate your pandas knowledge to FiftyOne. [This tutorial](./pandas_comparison.ipynb) gives a side-by-side comparison of performing common operations in pandas and FiftyOne.
 
 Filtering,Dataset-Evaluation
 
