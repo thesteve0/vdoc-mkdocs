@@ -19,6 +19,6 @@ To do:
 [//]: # (3. move plugins inside integrations and link to it)
 
 [//]: # (4. move CLI into API and link to it)
-5. Make sure the directory structure are all good and there is nothing extra
+[//]: # (5. Make sure the directory structure are all good and there is nothing extra)
 5. Then run a link checker on the site for broken links and figure out how to fix them all
 6. https://linkchecker.github.io/linkchecker/index.html
