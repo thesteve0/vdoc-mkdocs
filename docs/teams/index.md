@@ -15,85 +15,85 @@ pages on this site apply to Teams deployments as well.
 
 What's FiftyOne Teams? We think you'll be glad you asked!
 
-[Learn the basics](overview.html)
+[Learn the basics](overview.md)
 
 ### Installation
 
 Learn how to install the FiftyOne Teams Python SDK.
 
-[Install the SDK](installation.html)
+[Install the SDK](installation.md)
 
 ### Cloud-backed media
 
 Integrate FiftyOne Teams with your media stored in the cloud.
 
-[Get started with cloud media](cloud_media.html)
+[Get started with cloud media](cloud_media.md)
 
 ### Roles and permissions
 
 Learn how to configure roles, groups and access permissions for users of your deployment.
 
-[Learn more about permissions](roles_and_permissions.html)
+[Learn more about permissions](roles_and_permissions.md)
 
 ### Dataset Versioning
 
 Explore or revert to historical snapshots of your FiftyOne Teams datasets.
 
-[Version your FiftyOne datasets](dataset_versioning.html)
+[Version your FiftyOne datasets](dataset_versioning.md)
 
 ### FiftyOne Teams App
 
 See how you can collaboratively work on datasets in the FiftyOne Teams App.
 
-[Explore the Teams App](teams_app.html)
+[Explore the Teams App](teams_app.md)
 
 ### Data Lens **NEW**
 
 Use FiftyOne Teams to explore and import samples from external data sources.
 
-[Connect your data lake](data_lens.html)
+[Connect your data lake](data_lens.md)
 
 ### Data Quality **NEW**
 
 Automatically scan your data for quality issues and take action to resolve them.
 
-[Find quality issues](data_quality.html)
+[Find quality issues](data_quality.md)
 
 ### Model Evaluation **NEW**
 
 Evaluate your models and interactively and visually analyze their performance.
 
-[Evaluate models](../fiftyone_concepts/app.html#app-model-evaluation-panel)
+[Evaluate models](../fiftyone_concepts/app.md#app-model-evaluation-panel)
 
 ### Query Performance **NEW**
 
 Configure your massive datasets to support fast queries at scale.
 
-[Fast queries at scale](query_performance.html)
+[Fast queries at scale](query_performance.md)
 
 ### Plugins
 
 Learn how to install and manage shared plugins for your Teams deployment.
 
-[Get plugins for Teams](teams_plugins.html)
+[Get plugins for Teams](teams_plugins.md)
 
 ### Secrets
 
 Safely store and access secrets in your Teams deployment.
 
-[Learn more about secrets](secrets.html)
+[Learn more about secrets](secrets.md)
 
 ### Management SDK
 
 Learn how to programmatically manage your deployment with the Management SDK.
 
-[Manage your Teams deployment](management_sdk.html)
+[Manage your Teams deployment](management_sdk.md)
 
 ### Migrations
 
 Learn how to migrate to FiftyOne Teams and manage your Teams deployment.
 
-[Migrate to Teams](migrations.html)
+[Migrate to Teams](migrations.md)
 
 Note
 

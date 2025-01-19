@@ -45,32 +45,32 @@ For example, do you wish you could import data from within the App? With the
 [@voxel51/io](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/io/README.md),
 plugin, you can!
 
-![../_images/import.gif](../_images/import.gif)
+![../../_images/import.gif](../../_images/import.gif)
 
 Want to send data for annotation from within the App? Sure thing! Just install the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/README.md)
 plugin:
 
-![../_images/annotation.gif](../_images/annotation.gif)
+![../../_images/annotation.gif](../../_images/annotation.gif)
 
 Have model predictions on your dataset that you want to evaluate? The
 [@voxel51/evaluation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/evaluation/README.md)
 plugin makes it easy:
 
-![../_images/evaluation.gif](../_images/evaluation.gif)
+![../../_images/evaluation.gif](../../_images/evaluation.gif)
 
 Need to compute embedding for your dataset? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
-![../_images/embeddings.gif](../_images/embeddings.gif)
+![../../_images/embeddings.gif](../../_images/embeddings.gif)
 
 Want to create a custom dashboard that displays statistics of interest about
 the current dataset? Just install the
 [@voxel51/dashboard](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/dashboard/README.md)
 plugin and build away:
 
-![../_images/dashboard-panel.gif](../_images/dashboard-panel.gif)
+![../../_images/dashboard-panel.gif](../../_images/dashboard-panel.gif)
 
 Note
 
@@ -89,12 +89,12 @@ in the App.
 Does your dataset have geolocation data? Use the
 [Map panel](../fiftyone_concepts/app.html#app-map-panel) to view it:
 
-![../_images/app-map-panel.gif](../_images/app-map-panel.gif)
+![../../_images/app-map-panel.gif](../../_images/app-map-panel.gif)
 
 Want to [visualize embeddings](../brain.html#brain-embeddings-visualization) in the
 App? Just open the [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel):
 
-![../_images/brain-object-visualization.gif](../_images/brain-object-visualization.gif)
+![../../_images/brain-object-visualization.gif](../../_images/brain-object-visualization.gif)
 
 Note
 

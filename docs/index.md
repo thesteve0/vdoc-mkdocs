@@ -288,7 +288,7 @@ capabilities of FiftyOne
 - Explore [recipes](recipes/index.html) for integrating FiftyOne into
 your current ML workflows
 
-- Check out the [cheat sheets](cheat_sheets/index.html) for topics you may
+- Check out the [cheat sheets](how_do_i/cheat_sheets/index.html) for topics you may
 want to master quickly
 
 - Consult the [user guide](fiftyone_concepts/index.html) for detailed instructions on

@@ -1,4 +1,4 @@
-# Introduction to Datasets and Models with FiftyOne
+# Datasets and Models with FiftyOne
 
 This page introduces the section. Talks about how to bring in data and models in general but then also refers to some of the suggested ways to do it like zoos, hugging face, integrations...
 
@@ -7,3 +7,5 @@ Our [conceptual documentation](../fiftyone_concepts/dataset_creation/index.md) o
 
 
 ## Models
+
+We need a discussion on the different ways to work with models in FiftyOne - from zoo, to integrations, to use your own but then add the Label you want back to your data

@@ -3902,16 +3902,16 @@ label formats [#2498](https://github.com/voxel51/fiftyone/pull/2498)
 - Added a [pandas vs FiftyOne](tutorials/pandas_comparison.html) tutorial
 [#2310](https://github.com/voxel51/fiftyone/pull/2310)
 
-- Added a [pandas vs FiftyOne](cheat_sheets/pandas_vs_fiftyone.html#pandas-cheat-sheet) cheat sheet
+- Added a [pandas vs FiftyOne](how_do_i/cheat_sheets/pandas_vs_fiftyone.html#pandas-cheat-sheet) cheat sheet
 [#2329](https://github.com/voxel51/fiftyone/pull/2329)
 
-- Added a [FiftyOne terminology](cheat_sheets/fiftyone_terminology.html#terminology-cheat-sheet) cheat sheet
+- Added a [FiftyOne terminology](how_do_i/cheat_sheets/fiftyone_terminology.html#terminology-cheat-sheet) cheat sheet
 [#2484](https://github.com/voxel51/fiftyone/pull/2484)
 
-- Added a [view stage](cheat_sheets/views_cheat_sheet.html#views-cheat-sheet) cheat sheet
+- Added a [view stage](how_do_i/cheat_sheets/views_cheat_sheet.html#views-cheat-sheet) cheat sheet
 [#2452](https://github.com/voxel51/fiftyone/pull/2452)
 
-- Added a [filtering](cheat_sheets/filtering_cheat_sheet.html#filtering-cheat-sheet) cheat sheet
+- Added a [filtering](how_do_i/cheat_sheets/filtering_cheat_sheet.html#filtering-cheat-sheet) cheat sheet
 [#2447](https://github.com/voxel51/fiftyone/pull/2447)
 
 

@@ -6,3 +6,8 @@ The basic getting started  will cover essentials ideas and functionality in both
 
 After this getting started you should be on your way to tackling your projects with FiftyOne. You can move on to a getting more specific to your work, try some of the tutorials, or just dive right in.
 
+For the bare bones getting started:
+1. [Install](install.md)
+2. [Set up](virtualenv.md) a virtual environment
+3. GO!
+

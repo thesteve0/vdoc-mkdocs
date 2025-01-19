@@ -24,12 +24,13 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
 
+# TODO turn this on for a full build
 plugins:
   - search:
       lang: en
   - mkdocs-jupyter:
       include_requirejs: true # required for plotly
-      ignore: ["tutorials/evaluate_classifications.ipynb", "tutorials/image_embeddings.ipynb"]
+      ignore: ["tutorials/evaluate_classifications.ipynb", "tutorials/image_embeddings.ipynb"] # this may need to be reformatted
       # include_source: True if we want to ease making a download button
       # https://github.com/danielfrg/mkdocs-jupyter?tab=readme-ov-file#download-notebook-link
       # execute: true  if we want to execute the code before rendering
@@ -43,19 +44,20 @@ nav:
   - Home: index.md
   - "Getting started":
       - getting_started/index.md
+      - Installing: getting_started/basic/install.md
       - Basics:
-        - Installing: basic/getting_started/install.md
-        - Virtualenvs: basic/getting_started/virtualenv.md
-        - Datasets, Samples, and Fields: basic/getting_started/datasets_samples_fields.md
-        - Tour of the Application: basic/getting_started/application_tour.md
-        - Visualizing Embeddings: basic/getting_started/viz_embeddings.md
-        - Subsetting and Sample Data: basic/getting_started/subset.sample.md
-        - Zero Shot Classification for Labeling: basic/getting_started/zero_shot_label.md
-        - Creating and Editing Fields and Labels: basic/getting_started/edit_fields.md
-        - Model Fine-Tuning: basic/getting_started/fine_tuning.md
-        - Model Evaluation: basic/getting_started/model_eval.md
-        - What's Next: basic/getting_started/next_steps
-        - Troubleshooting: basic/getting_started/troubleshooting.md
+        - Installing: getting_started/basic/install.md
+        - Virtualenvs: getting_started/basic/virtualenv.md
+        - Datasets, Samples, and Fields: getting_started/basic/datasets_samples_fields.md
+        - Tour of the Application: getting_started/basic/application_tour.md
+        - Visualizing Embeddings: getting_started/basic/viz_embeddings.md
+        - Subsetting and Sample Data: getting_started/basic/subset_sample.md
+        - Zero Shot Classification for Labeling: getting_started/basic/zero_shot_label.md
+        - Creating and Editing Fields and Labels: getting_started/basic/edit_fields.md
+        - Model Fine-Tuning: getting_started/basic/fine_tuning.md
+        - Model Evaluation: getting_started/basic/model_eval.md
+        - What's Next: getting_started/basic/next_steps
+        - Troubleshooting: getting_started/basic/troubleshooting.md
       - Focused Getting Starteds:
         - getting_started/focused_gettings_starteds/index.md
         - Medical Imaging
@@ -72,15 +74,18 @@ nav:
       - Dataset Views: fiftyone_concepts/using_views.md
       - Grouped Datasets: fiftyone_concepts/groups.md
       - Using the App: fiftyone_concepts/app.md
-      - Annotating Datasets: fiftyone_concepts/annotations.md
+      - Annotating Datasets: fiftyone_concepts/annotation.md
       - Evaluating Models: fiftyone_concepts/evaluation.md
       - Using Aggregations: fiftyone_concepts/using_aggregations.md
       - Interactive Plots: fiftyone_concepts/plots.md
-      - Exporting Datasets: fiftyone_concepts/exporting.md
+      - Exporting Datasets: fiftyone_concepts/export_datasets.md
       - Drawing Labels on Samples: fiftyone_concepts/draw_labels.md
       - Configuring FiftyOne: fiftyone_concepts/config.md
-      - Machine Learning: brain.md
-  - How Do I: recipes/
+      - Machine Learning (FiftyOne Brain): fityone_concepts/brain.md
+  - How Do I:
+      - how_do_i/index.md
+      - Cheat Sheets: how_do_i/cheat_sheets
+      - Recipes: how_do_i/recipes
   - Tutorials: tutorials/
   - "Data and Models":
       - data_and_models/index.md
@@ -96,11 +101,19 @@ nav:
           - Remote Models: data_and_models/model_zoo/remote.md
           - Model Interface: data_and_models/model_zoo/design.md
           - API: data_and_models/model_zoo/api.md
-  - Integrations: integrations/
+  - Integrations:
+    - integrations/index.md
+    - Plugins:
+        - integrations/plugins/index.md
+        - Using Plugins: integrations/plugins/using_plugins.md
+        - Developing Plugins: integrations/plugins/developing_plugins.md
+
   - References:
       API: api/index.md
       CLI: cli/index.md
   - Community: community.md
   - Fifty One Teams: teams/
   - Releases: release-notes.md
-  - FAQ: faq/
+  - FAQ:
+    - faq/index.md
+    - Deprecations: faq/index.md
