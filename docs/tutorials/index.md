@@ -15,7 +15,7 @@ Filtering,Dataset-Evaluation
 
 #### Evaluating object detections
 
-Aggregate statistics aren't sufficient for object detection. This tutorial shows how to use FiftyOne to perform powerful evaluation workflows on your detector.
+Aggregate statistics aren't sufficient for object detection. [This tutorial](evaluate_detections.ipynb) shows how to use FiftyOne to perform powerful evaluation workflows on your detector.
 
 Model-Evaluation
 
@@ -23,7 +23,7 @@ Model-Evaluation
 
 #### Evaluating a classifier
 
-Evaluation made easy. This tutorial walks through an end-to-end example of fine-tuning a classifier and understanding its failure modes using FiftyOne.
+Evaluation made easy. [This tutorial](evaluate_classifications.ipynb) walks through an end-to-end example of fine-tuning a classifier and understanding its failure modes using FiftyOne.
 
 Model-Evaluation
 
@@ -31,7 +31,7 @@ Model-Evaluation
 
 #### Using image embeddings
 
-Visualize your data in new ways. This tutorial shows how to use FiftyOne's powerful embeddings visualization capabilities to improve your image datasets.
+Visualize your data in new ways. [This tutorial](image_embeddings.ipynb) shows how to use FiftyOne's powerful embeddings visualization capabilities to improve your image datasets.
 
 Visualization,Brain,Embeddings
 
@@ -39,7 +39,7 @@ Visualization,Brain,Embeddings
 
 #### Annotating with CVAT
 
-So you've loaded and explored your data in FiftyOne... but now what? See how to send it off to CVAT for annotation in just one line of code.
+So you've loaded and explored your data in FiftyOne... but now what? [See how](cvat_annotation.ipynb) to send it off to CVAT for annotation in just one line of code.
 
 Annotation,Dataset-Evaluation
 
@@ -47,7 +47,7 @@ Annotation,Dataset-Evaluation
 
 #### Annotating with Labelbox
 
-Unlock the power of the Labelbox platform. See how you can get your FiftyOne datasets annotated with just one line of code.
+Unlock the power of the Labelbox platform. [See how](labelbox_annotation.ipynb) you can get your FiftyOne datasets annotated with just one line of code.
 
 Annotation,Dataset-Evaluation
 
@@ -55,7 +55,7 @@ Annotation,Dataset-Evaluation
 
 #### Training with Detectron2
 
-Put your FiftyOne datasets to work and learn how to train and evaluate Detectron2 models directly on your data.
+Put your FiftyOne datasets to work and [learn how](detectron2.ipynb) to train and evaluate Detectron2 models directly on your data.
 
 Model-Training,Model-Evaluation
 
@@ -63,7 +63,7 @@ Model-Training,Model-Evaluation
 
 #### Downloading and evaluating Open Images
 
-Expand your data lake and evaluate your object detection models with Google's Open Images dataset and evaluation protocol, all natively within FiftyOne.
+[Expand your](open_images.ipynb) data lake and evaluate your object detection models with Google's Open Images dataset and evaluation protocol, all natively within FiftyOne.
 
 Dataset-Evaluation,Model-Evaluation,Dataset-Zoo
 
@@ -71,7 +71,7 @@ Dataset-Evaluation,Model-Evaluation,Dataset-Zoo
 
 #### Exploring image uniqueness
 
-Your models need diverse data. This tutorial shows how FiftyOne can remove near-duplicate images and recommend unique samples for model training.
+Your models need diverse data. [This tutorial](uniqueness.ipynb) shows how FiftyOne can remove near-duplicate images and recommend unique samples for model training.
 
 Dataset-Evaluation,Brain
 
@@ -79,7 +79,7 @@ Dataset-Evaluation,Brain
 
 #### Finding classification mistakes
 
-Better models start with better data. This tutorial shows how FiftyOne can automatically find label mistakes in your classification datasets.
+Better models start with better data. [This tutorial](classification_mistakes.ipynb) shows how FiftyOne can automatically find label mistakes in your classification datasets.
 
 Dataset-Evaluation,Brain
 
@@ -87,7 +87,7 @@ Dataset-Evaluation,Brain
 
 #### Finding detection mistakes
 
-How good are your ground truth objects? Use the FiftyOne Brain's mistakenness feature to find annotation errors in your object detections.
+How good are your ground truth objects? [Use the](detection_mistakes.ipynb) FiftyOne Brain's mistakenness feature to find annotation errors in your object detections.
 
 Dataset-Evaluation,Brain
 
@@ -95,7 +95,7 @@ Dataset-Evaluation,Brain
 
 #### Nearest Neighbor Embeddings Classification with Qdrant
 
-Easily pre-annotate your FiftyOne datasets using approximate nearest neighbors search on embeddings with Qdrant.
+[Easily pre-annotate](qdrant.ipynb) your FiftyOne datasets using approximate nearest neighbors search on embeddings with Qdrant.
 
 Dataset-Evaluation,Model-Evaluation,Embeddings
 
@@ -103,7 +103,7 @@ Dataset-Evaluation,Model-Evaluation,Embeddings
 
 #### Fine-tuning YOLOv8 model predictions
 
-Visualize and evaluate YOLOv8 model predictions before fine-tuning for your custom use case.
+[Visualize and evaluate](yolov8.ipynb) YOLOv8 model predictions before fine-tuning for your custom use case.
 
 Model-Evaluation
 
@@ -111,7 +111,7 @@ Model-Evaluation
 
 #### Build 3D point cloud datasets with Point-E
 
-Lidar is expensive. This tutorial shows how FiftyOne can help you construct high quality 3D point cloud datasets using Point-E point cloud models.
+Lidar is expensive. [This tutorial](pointe.ipynb) shows how FiftyOne can help you construct high quality 3D point cloud datasets using Point-E point cloud models.
 
 Dataset-Curation,Filtering,Visualization
 
@@ -119,7 +119,7 @@ Dataset-Curation,Filtering,Visualization
 
 #### Monocular Depth Estimation with Hugging Face
 
-Metrics for monocular depth estimation can be deceiving. Run MDE models on your data and visualize their predictions with FiftyOne.
+Metrics for monocular depth estimation can be deceiving. [Run MDE models](monocular_depth_estimation.ipynb) on your data and visualize their predictions with FiftyOne.
 
 Model-Evaluation,Visualization
 
@@ -127,7 +127,7 @@ Model-Evaluation,Visualization
 
 #### Visualizing Data with Dimensionality Reduction
 
-Compare and contrast dimensionality reduction techniques for visualizing your data in FiftyOne.
+[Compare and contrast](dimension_reduction.ipynb) dimensionality reduction techniques for visualizing your data in FiftyOne.
 
 Brain,Visualization
 
@@ -135,7 +135,7 @@ Brain,Visualization
 
 #### Zero-Shot Image Classification
 
-Run and evaluate zero-shot image classification models with OpenCLIP, Hugging Face Transformers, and FiftyOne.
+[Run and evaluate](zero_shot_classification.ipynb) zero-shot image classification models with OpenCLIP, Hugging Face Transformers, and FiftyOne.
 
 Filtering,Model-Evaluation,Model-Zoo
 
@@ -143,7 +143,7 @@ Filtering,Model-Evaluation,Model-Zoo
 
 #### Augmenting Datasets with Albumentations
 
-Learn how to apply and test out different augmentations on your datasets using FiftyOne and Albumentations.
+[Learn how](data_augmentation.ipynb) to apply and test out different augmentations on your datasets using FiftyOne and Albumentations.
 
 App,Dataset-Curation,Visualization
 
@@ -151,7 +151,7 @@ App,Dataset-Curation,Visualization
 
 #### Clustering Images with Embeddings
 
-Use embeddings to cluster images in your dataset and visualize the results in FiftyOne.
+[Use embeddings](clustering.ipynb) to cluster images in your dataset and visualize the results in FiftyOne.
 
 App,Brain,Dataset-Curation,Embeddings,Visualization
 
@@ -159,7 +159,7 @@ App,Brain,Dataset-Curation,Embeddings,Visualization
 
 #### Small Object Detection with SAHI
 
-Detect small objects in your images with Slicing-Aided Hyper-Inference (SAHI) and FiftyOne.
+[Detect small objects](small_object_detection.ipynb) in your images with Slicing-Aided Hyper-Inference (SAHI) and FiftyOne.
 
 Model-Evaluation,Model-Zoo
 
@@ -167,7 +167,7 @@ Model-Evaluation,Model-Zoo
 
 #### Anomaly Detection with Anomalib
 
-Detect anomalies in your images with Anomalib and FiftyOne.
+[Detect anomalies](anomaly_detection.ipynb) in your images with Anomalib and FiftyOne.
 
 Embeddings,Model-Evaluation,Model-Training,Visualization
 

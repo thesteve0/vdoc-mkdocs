@@ -9,7 +9,7 @@ workflows.
 
 #### Creating views and using view expressions
 
-Create views to easily query and explore your datasets in FiftyOne.
+[Create views](creating_views.ipynb) to easily query and explore your datasets in FiftyOne.
 
 Basics,Dataset-Curation
 
@@ -17,7 +17,7 @@ Basics,Dataset-Curation
 
 #### Removing duplicate images from a dataset
 
-Automatically find and remove duplicate and near-duplicate images from your FiftyOne datasets.
+[Automatically find](image_deduplication.ipynb) and remove duplicate and near-duplicate images from your FiftyOne datasets.
 
 Basics,Dataset-Curation
 
@@ -25,7 +25,7 @@ Basics,Dataset-Curation
 
 #### Removing duplicate objects from a dataset
 
-Check out some common workflows for finding and removing duplicate objects from your FiftyOne datasets.
+[Check out](remove_duplicate_annos.ipynb) some common workflows for finding and removing duplicate objects from your FiftyOne datasets.
 
 Basics,Dataset-Curation
 
@@ -33,7 +33,7 @@ Basics,Dataset-Curation
 
 #### Adding classifier predictions to a dataset
 
-Add FiftyOne to your model training and analysis loop to visualize and analyze your classifier's predictions.
+[Add FiftyOne](adding_classifications.ipynb) to your model training and analysis loop to visualize and analyze your classifier's predictions.
 
 Basics,Model-Training
 
@@ -41,7 +41,7 @@ Basics,Model-Training
 
 #### Adding object detections to a dataset
 
-Use FiftyOne to store your object detections and use the FiftyOne App to analyze them.
+[Use FiftyOne](adding_detections.ipynb) to store your object detections and use the FiftyOne App to analyze them.
 
 Basics,Model-Training
 
@@ -49,7 +49,7 @@ Basics,Model-Training
 
 #### Draw labels on samples
 
-Render labels on the samples in your FiftyOne Dataset with a single line of code.
+[Render labels](draw_labels.ipynb) on the samples in your FiftyOne Dataset with a single line of code.
 
 Basics,Visualization
 
@@ -57,7 +57,7 @@ Basics,Visualization
 
 #### Convert dataset formats on disk
 
-Use FiftyOne's powerful dataset import/export features to convert your datasets on disk between standard (or custom) formats.
+[Use FiftyOne's](convert_datasets.ipynb) powerful dataset import/export features to convert your datasets on disk between standard (or custom) formats.
 
 Basics,I/O
 
@@ -65,7 +65,7 @@ Basics,I/O
 
 #### Merging datasets
 
-Easily merge datasets on disk or in-memory using FiftyOne; e.g., to add a new set of model predictions to a dataset.
+[Easily merge](merge_datasets.ipynb) datasets on disk or in-memory using FiftyOne; e.g., to add a new set of model predictions to a dataset.
 
 Basics,I/O
 
@@ -73,7 +73,7 @@ Basics,I/O
 
 #### Import datasets in custom formats
 
-Write your own custom DatasetImporter and use it to import datasets in your custom format into FiftyOne.
+[Write your](custom_importer.ipynb) own custom DatasetImporter and use it to import datasets in your custom format into FiftyOne.
 
 Advanced,I/O
 
@@ -81,7 +81,7 @@ Advanced,I/O
 
 #### Export datasets in custom formats
 
-Write your own custom DatasetExporter and use it to export a FiftyOne Dataset to disk in your custom format.
+[Write your](custom_exporter.ipynb) own custom DatasetExporter and use it to export a FiftyOne Dataset to disk in your custom format.
 
 Advanced,I/O
 
@@ -89,7 +89,7 @@ Advanced,I/O
 
 #### Parse samples in custom formats
 
-Write your own custom SampleParser and use it to add samples in your custom format to a FiftyOne Dataset.
+[Write your](custom_parser.ipynb) own custom SampleParser and use it to add samples in your custom format to a FiftyOne Dataset.
 
 Advanced,I/O
 
