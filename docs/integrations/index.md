@@ -165,11 +165,3 @@ Model-Training,Model-Evaluation,Models
 
 ![](../_static/images/integrations/pytorch.png)
 
-#### Lightning Flash
-
-Train Flash models on FiftyOne datasets and use the FiftyOne App to visualize and improve your Flash models, all with just a few lines of code.
-
-Model-Training,Model-Evaluation,Models
-
-![](../_static/images/integrations/lightning_flash.png)
-
