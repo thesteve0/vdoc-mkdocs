@@ -2,23 +2,17 @@
 
 To install and edit the doc:
 
-1. make and activate a virtual environment
-2. `pip install mkdocs-material`
-3. In the top level of the repo run `mkdocs serve`
-4.  PARTY!
+1. Make and activate a virtual environment
+2. Be in the root directory of the repo
+3. `pip install -r requirements.txt`
+4. Run `mkdocs serve`
+5.  PARTY!
 
 
 To do:
 
-[//]: # (1. create a how-do-i directory)
 
-[//]: # (   2. move cheat sheets and recipes inside there)
+Run a link checker on the site for broken links and figure out how to fix them all
+ https://linkchecker.github.io/linkchecker/index.html
 
-[//]: # (   3. Link it up in the nav)
-
-[//]: # (3. move plugins inside integrations and link to it)
-
-[//]: # (4. move CLI into API and link to it)
-[//]: # (5. Make sure the directory structure are all good and there is nothing extra)
-5. Then run a link checker on the site for broken links and figure out how to fix them all
-6. https://linkchecker.github.io/linkchecker/index.html
+Also need to figure out how to handle built in redirects
