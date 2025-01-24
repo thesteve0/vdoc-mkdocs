@@ -1,6 +1,9 @@
 site_name: Voxel51 Documentation
 theme:
   name: material
+  palette: 
+    primary: custom
+    accent: custom
   features:
     - navigation.path
     - navigation.indexes
@@ -23,6 +26,7 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.details
+  - md_in_html
 
 # TODO turn this on for a full build
 plugins:
@@ -39,6 +43,9 @@ plugins:
 extra:
   version:
     provider: mike
+
+extra_css:
+  - _static/css/voxel51-docs.css
 
 nav:
   - Home: index.md

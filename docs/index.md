@@ -22,6 +22,8 @@ failure modes, finding annotation mistakes, and much more!
 FiftyOne integrates naturally with your favorite tools. Click on a logo to
 learn how:
 
+<div class="grid-3-col grid-images" markdown="1">
+
 [![PyTorch](https://voxel51.com/images/integrations/pytorch-128.png)](recipes/adding_detections.html "PyTorch")
 
 [![PyTorch Lightning](https://voxel51.com/images/integrations/pytorch-lightning-128.png)](integrations/lightning_flash.html "PyTorch Lightning")
@@ -79,6 +81,8 @@ learn how:
 [![Amazon Web Services](https://voxel51.com/images/integrations/aws-128.png)](teams/installation.html#amazon-s3 "Amazon Web Services")
 
 [![Azure](https://voxel51.com/images/integrations/azure-128.png)](teams/installation.html#microsoft-azure "Azure")
+
+</div><!--End LOGOS -->
 
 Note
 
