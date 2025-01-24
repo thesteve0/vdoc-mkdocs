@@ -21,7 +21,7 @@ pip install timm --upgrade
 ## Model zoo [¶](\#model-zoo "Permalink to this headline")
 
 You can load the original ViT-B-32 OpenAI pretrained model from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo) as follows:
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo) as follows:
 
 ```python
 import fiftyone.zoo as foz

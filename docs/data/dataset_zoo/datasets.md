@@ -182,7 +182,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![activitynet-100-validation](../_images/activitynet-100-validation.png)
+![activitynet-100-validation](../../_images/activitynet-100-validation.png)
 
 ## ActivityNet 200 [¶](\#activitynet-200 "Permalink to this headline")
 
@@ -313,7 +313,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![activitynet-200-validation](../_images/activitynet-200-validation.png)
+![activitynet-200-validation](../../_images/activitynet-200-validation.png)
 
 ## BDD100K [¶](\#bdd100k "Permalink to this headline")
 
@@ -374,7 +374,7 @@ to download the data.
 
 **Example usage**
 
-![bdd100k-validation](../_images/bdd100k-validation.png)
+![bdd100k-validation](../../_images/bdd100k-validation.png)
 
 ## Caltech-101 [¶](\#caltech-101 "Permalink to this headline")
 
@@ -406,7 +406,7 @@ pixels. This version contains image-level labels only.
 
 **Example usage**
 
-![caltech101](../_images/caltech101.png)
+![caltech101](../../_images/caltech101.png)
 
 ## Caltech-256 [¶](\#caltech-256 "Permalink to this headline")
 
@@ -437,7 +437,7 @@ Images are of variable sizes, with typical edge lengths of 80-800 pixels.
 
 **Example usage**
 
-![caltech256](../_images/caltech256.png)
+![caltech256](../../_images/caltech256.png)
 
 ## CIFAR-10 [¶](\#cifar-10 "Permalink to this headline")
 
@@ -472,7 +472,7 @@ load this dataset.
 
 **Example usage**
 
-![cifar10-test](../_images/cifar10-test.png)
+![cifar10-test](../../_images/cifar10-test.png)
 
 ## CIFAR-100 [¶](\#cifar-100 "Permalink to this headline")
 
@@ -508,7 +508,7 @@ load this dataset.
 
 **Example usage**
 
-![cifar100-test](../_images/cifar100-test.png)
+![cifar100-test](../../_images/cifar100-test.png)
 
 ## Cityscapes [¶](\#cityscapes "Permalink to this headline")
 
@@ -562,7 +562,7 @@ to get links to download the data.
 
 **Example usage**
 
-![cityscapes-validation](../_images/cityscapes-validation.png)
+![cityscapes-validation](../../_images/cityscapes-validation.png)
 
 ## COCO-2014 [¶](\#coco-2014 "Permalink to this headline")
 
@@ -691,7 +691,7 @@ pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.da
 
 **Example usage**
 
-![coco-2014-validation](../_images/coco-2014-validation.png)
+![coco-2014-validation](../../_images/coco-2014-validation.png)
 
 ## COCO-2017 [¶](\#coco-2017 "Permalink to this headline")
 
@@ -820,7 +820,7 @@ pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.da
 
 **Example usage**
 
-![coco-2017-validation](../_images/coco-2017-validation.png)
+![coco-2017-validation](../../_images/coco-2017-validation.png)
 
 ## Fashion MNIST [¶](\#fashion-mnist "Permalink to this headline")
 
@@ -855,7 +855,7 @@ load this dataset.
 
 **Example usage**
 
-![fashion-mnist-test](../_images/fashion-mnist-test.png)
+![fashion-mnist-test](../../_images/fashion-mnist-test.png)
 
 ## Families in the Wild [¶](\#families-in-the-wild "Permalink to this headline")
 
@@ -979,7 +979,7 @@ utilities for FIW.
 
 **Example usage**
 
-![fiw](../_images/fiw.png)
+![fiw](../../_images/fiw.png)
 
 ## HMBD51 [¶](\#hmbd51 "Permalink to this headline")
 
@@ -1009,7 +1009,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![hmdb51-test](../_images/hmdb51-test.png)
+![hmdb51-test](../../_images/hmdb51-test.png)
 
 ## ImageNet 2012 [¶](\#imagenet-2012 "Permalink to this headline")
 
@@ -1070,7 +1070,7 @@ load this dataset.
 
 **Example usage**
 
-![imagenet-2012-validation](../_images/imagenet-2012-validation.png)
+![imagenet-2012-validation](../../_images/imagenet-2012-validation.png)
 
 ## ImageNet Sample [¶](\#imagenet-sample "Permalink to this headline")
 
@@ -1136,7 +1136,7 @@ to the following terms and conditions:
 
 **Example usage**
 
-![imagenet-sample](../_images/imagenet-sample.png)
+![imagenet-sample](../../_images/imagenet-sample.png)
 
 ## Kinetics 400 [¶](\#kinetics-400 "Permalink to this headline")
 
@@ -1251,7 +1251,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![kinetics](../_images/kinetics.png)
+![kinetics](../../_images/kinetics.png)
 
 ## Kinetics 600 [¶](\#kinetics-600 "Permalink to this headline")
 
@@ -1360,7 +1360,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![kinetics](../_images/kinetics.png)
+![kinetics](../../_images/kinetics.png)
 
 ## Kinetics 700 [¶](\#kinetics-700 "Permalink to this headline")
 
@@ -1460,7 +1460,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![kinetics](../_images/kinetics.png)
+![kinetics](../../_images/kinetics.png)
 
 ## Kinetics 700-2020 [¶](\#kinetics-700-2020 "Permalink to this headline")
 
@@ -1570,7 +1570,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![kinetics](../_images/kinetics.png)
+![kinetics](../../_images/kinetics.png)
 
 ## KITTI [¶](\#kitti "Permalink to this headline")
 
@@ -1604,7 +1604,7 @@ object development kit on the KITTI homepage.
 
 **Example usage**
 
-![kitti-train](../_images/kitti-train.png)
+![kitti-train](../../_images/kitti-train.png)
 
 ## KITTI Multiview [¶](\#kitti-multiview "Permalink to this headline")
 
@@ -1644,7 +1644,7 @@ object development kit on the KITTI homepage.
 
 **Example usage**
 
-![kitti-multiview-train](../_images/kitti-multiview-train.png)
+![kitti-multiview-train](../../_images/kitti-multiview-train.png)
 
 ## Labeled Faces in the Wild [¶](\#labeled-faces-in-the-wild "Permalink to this headline")
 
@@ -1675,7 +1675,7 @@ Viola-Jones face detector.
 
 **Example usage**
 
-![lfw-test](../_images/lfw-test.png)
+![lfw-test](../../_images/lfw-test.png)
 
 ## MNIST [¶](\#mnist "Permalink to this headline")
 
@@ -1710,7 +1710,7 @@ load this dataset.
 
 **Example usage**
 
-![mnist-test](../_images/mnist-test.png)
+![mnist-test](../../_images/mnist-test.png)
 
 ## Open Images V6 [¶](\#open-images-v6 "Permalink to this headline")
 
@@ -1840,7 +1840,7 @@ pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.da
 
 **Example usage**
 
-![open-images-v6](../_images/open-images-v6.png)
+![open-images-v6](../../_images/open-images-v6.png)
 
 ## Open Images V7 [¶](\#open-images-v7 "Permalink to this headline")
 
@@ -1970,7 +1970,7 @@ pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.da
 
 **Example usage**
 
-![open-images-v7](../_images/open-images-v7.png)
+![open-images-v7](../../_images/open-images-v7.png)
 
 ## Places [¶](\#places "Permalink to this headline")
 
@@ -2007,7 +2007,7 @@ and diverse list of the types of environments encountered in the world.
 
 **Example usage**
 
-![places-validation](../_images/places-validation.png)
+![places-validation](../../_images/places-validation.png)
 
 ## Quickstart [¶](\#quickstart "Permalink to this headline")
 
@@ -2034,7 +2034,7 @@ from
 
 **Example usage**
 
-![quickstart](../_images/quickstart.png)
+![quickstart](../../_images/quickstart.png)
 
 ## Quickstart Geo [¶](\#quickstart-geo "Permalink to this headline")
 
@@ -2059,7 +2059,7 @@ dataset in the New York City area with object detections and GPS timestamps.
 
 **Example usage**
 
-![quickstart-geo](../_images/quickstart-geo.png)
+![quickstart-geo](../../_images/quickstart-geo.png)
 
 ## Quickstart Video [¶](\#quickstart-video "Permalink to this headline")
 
@@ -2089,7 +2089,7 @@ Note
 In order to work with video datasets, you’ll need to have
 [ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
 
-![quickstart-video](../_images/quickstart-video.png)
+![quickstart-video](../../_images/quickstart-video.png)
 
 ## Quickstart Groups [¶](\#quickstart-groups "Permalink to this headline")
 
@@ -2115,7 +2115,7 @@ annotation data.
 
 **Example usage**
 
-![quickstart-groups](../_images/quickstart-groups.png)
+![quickstart-groups](../../_images/quickstart-groups.png)
 
 ## Quickstart 3D [¶](\#quickstart-3d "Permalink to this headline")
 
@@ -2144,7 +2144,7 @@ Objects have been rescaled and recentered from the original dataset.
 
 **Example usage**
 
-![quickstart-3d](../_images/quickstart-3d.png)
+![quickstart-3d](../../_images/quickstart-3d.png)
 
 ## Sama-COCO [¶](\#sama-coco "Permalink to this headline")
 
@@ -2266,7 +2266,7 @@ pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.da
 
 **Example usage**
 
-![sama-coco-validation](../_images/sama-coco-validation.png)
+![sama-coco-validation](../../_images/sama-coco-validation.png)
 
 ## UCF101 [¶](\#ucf101 "Permalink to this headline")
 
@@ -2319,7 +2319,7 @@ brew install rar
 
 ```
 
-![ucf101-test](../_images/ucf101-test.png)
+![ucf101-test](../../_images/ucf101-test.png)
 
 ## VOC-2007 [¶](\#voc-2007 "Permalink to this headline")
 
@@ -2364,7 +2364,7 @@ load this dataset.
 
 **Example usage**
 
-![voc-2007-validation](../_images/voc-2007-validation.png)
+![voc-2007-validation](../../_images/voc-2007-validation.png)
 
 ## VOC-2012 [¶](\#voc-2012 "Permalink to this headline")
 
@@ -2409,5 +2409,5 @@ load this dataset.
 
 **Example usage**
 
-![voc-2012-validation](../_images/voc-2012-validation.png)
+![voc-2012-validation](../../_images/voc-2012-validation.png)
 

@@ -110,8 +110,8 @@ to use the `vectorSearch` type
 Zoo
 
 - Fixed a bug with loading the
-[rtdetr-l-coco-torch](data_and_models/model_zoo/models.html#model-zoo-rtdetr-l-coco-torch) and
-[rtdetr-x-coco-torch](data_and_models/model_zoo/models.html#model-zoo-rtdetr-x-coco-torch) zoo models
+[rtdetr-l-coco-torch](models/model_zoo/models.html#model-zoo-rtdetr-l-coco-torch) and
+[rtdetr-x-coco-torch](models/model_zoo/models.html#model-zoo-rtdetr-x-coco-torch) zoo models
 [#5220](https://github.com/voxel51/fiftyone/pull/5220)
 
 
@@ -288,14 +288,14 @@ _Released November 8, 2024_
 
 Zoo
 
-- Added [SAM 2.1](data_and_models/model_zoo/models.html#model-zoo-segment-anything-2-1-hiera-base-plus-image-torch)
-to the [Model Zoo](data_and_models/model_zoo/index.html#model-zoo) [#4979](https://github.com/voxel51/fiftyone/pull/4979)
+- Added [SAM 2.1](models/model_zoo/models.html#model-zoo-segment-anything-2-1-hiera-base-plus-image-torch)
+to the [Model Zoo](models/model_zoo/index.html#model-zoo) [#4979](https://github.com/voxel51/fiftyone/pull/4979)
 
 - Added [YOLO11](integrations/ultralytics.html#ultralytics-instance-segmentation) to the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo) [#4899](https://github.com/voxel51/fiftyone/pull/4899)
+[Model Zoo](models/model_zoo/index.html#model-zoo) [#4899](https://github.com/voxel51/fiftyone/pull/4899)
 
 - Added generic model architecture and backbone tags to all relevant models
-[in the zoo](data_and_models/model_zoo/models.html#model-zoo-models) for easier navigation
+[in the zoo](models/model_zoo/models.html#model-zoo-models) for easier navigation
 [#4899](https://github.com/voxel51/fiftyone/pull/4899)
 
 
@@ -420,12 +420,12 @@ download/preparation instructions are stored in GitHub or public URLs
 [#4752](https://github.com/voxel51/fiftyone/pull/4752)
 
 - Added support for loading
-[remotely-sourced zoo models](data_and_models/model_zoo/remote.html#model-zoo-remote) whose definitions are
+[remotely-sourced zoo models](models/model_zoo/remote.html#model-zoo-remote) whose definitions are
 stored in GitHub or public URLs
 [#4786](https://github.com/voxel51/fiftyone/pull/4786)
 
 - Added [Med-SAM2](https://arxiv.org/abs/2408.00874) to the
-[model zoo](data_and_models/model_zoo/models.html#model-zoo-med-sam-2-video-torch)!
+[model zoo](models/model_zoo/models.html#model-zoo-med-sam-2-video-torch)!
 [#4733](https://github.com/voxel51/fiftyone/pull/4733),
 [#4828](https://github.com/voxel51/fiftyone/pull/4828)
 
@@ -689,7 +689,7 @@ that allows users to build custom no-code dashboards that display statistics
 of interest about the current dataset (and beyond)
 
 - Added [Segment Anything 2](https://ai.meta.com/sam2) to the
-[model zoo](data_and_models/model_zoo/models.html#model-zoo-segment-anything-2-hiera-small-video-torch)!
+[model zoo](models/model_zoo/models.html#model-zoo-segment-anything-2-hiera-small-video-torch)!
 [#4671](https://github.com/voxel51/fiftyone/pull/4671)
 
 - Added an [Elasticsearch integration](integrations/elasticsearch.html#elasticsearch-integration) for
@@ -1224,7 +1224,7 @@ to FiftyOne datasets
 [#4238](https://github.com/voxel51/fiftyone/pull/4238)
 
 - Added support for applying
-[Segment Anything](data_and_models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models to the
+[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models to the
 frames of video datasets
 [#4229](https://github.com/voxel51/fiftyone/pull/4229)
 
@@ -1618,11 +1618,11 @@ Models
 [Ultralytics models](integrations/ultralytics.html#ultralytics-integration) models to
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 
-- Added GPU support for [OpenCLIP](data_and_models/model_zoo/models.html#model-zoo-open-clip-torch) models
+- Added GPU support for [OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) models
 [#3986](https://github.com/voxel51/fiftyone/pull/3986)
 
 - Added prompt embedding capabilities to
-[OpenCLIP](data_and_models/model_zoo/models.html#model-zoo-open-clip-torch) models
+[OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) models
 [#3960](https://github.com/voxel51/fiftyone/pull/3960)
 
 
@@ -1675,7 +1675,7 @@ _Released December 21, 2023_
 
 News
 
-- Added [OpenCLIP](data_and_models/model_zoo/models.html#model-zoo-open-clip-torch) to the FiftyOne Model Zoo!
+- Added [OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) to the FiftyOne Model Zoo!
 [#3925](https://github.com/voxel51/fiftyone/pull/3925)
 
 
@@ -2569,11 +2569,11 @@ that allows for browsing file systems and selecting files or directories
 Zoo
 
 - Graceful handling of empty prompts when using
-[Segment Anything](data_and_models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models
+[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models
 [#3505](https://github.com/voxel51/fiftyone/pull/3505)
 
 - Fixed bugs where
-[Segment Anything](data_and_models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) model weights
+[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) model weights
 were not loaded and auto-inference would only return one set of masks
 [#3465](https://github.com/voxel51/fiftyone/pull/3465)
 
@@ -2625,11 +2625,11 @@ _Released August 7, 2023_
 News
 
 - Added [Segment Anything](https://segment-anything.com) to the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo)!
+[Model Zoo](models/model_zoo/index.html#model-zoo)!
 [#3330](https://github.com/voxel51/fiftyone/pull/3330)
 
 - Added [DINOv2](https://github.com/facebookresearch/dinov2) to the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo)!
+[Model Zoo](models/model_zoo/index.html#model-zoo)!
 [#2951](https://github.com/voxel51/fiftyone/pull/2951)
 
 - Added support for loading models from
@@ -3577,7 +3577,7 @@ embedded document creation
 Zoo
 
 - Added a `tensorflow-macos` option when loading TF models from the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo) [#2685](https://github.com/voxel51/fiftyone/pull/2685)
+[Model Zoo](models/model_zoo/index.html#model-zoo) [#2685](https://github.com/voxel51/fiftyone/pull/2685)
 
 
 Tutorials
@@ -4056,7 +4056,7 @@ crash when using the Label Studio backend
 Zoo
 
 - Added support for using CUDA devices when running the
-[CLIP model](data_and_models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) from the zoo
+[CLIP model](models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) from the zoo
 [#2201](https://github.com/voxel51/fiftyone/pull/2201)
 
 
@@ -4165,7 +4165,7 @@ results [#2074](https://github.com/voxel51/fiftyone/pull/2074)
 
 Zoo
 
-- Added [clip-vit-base32-torch](data_and_models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) to the
+- Added [clip-vit-base32-torch](models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) to the
 model zoo! [#2072](https://github.com/voxel51/fiftyone/pull/2072)
 
 - Added the [Quickstart Groups dataset](dataset_zoo/datasets.html#dataset-zoo-quickstart-groups)
@@ -4931,33 +4931,33 @@ downloaded
 
 - Added the following TF2 models to the Model Zoo!
 
-- [centernet-hg104-1024-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-centernet-hg104-1024-coco-tf2)
+- [centernet-hg104-1024-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-hg104-1024-coco-tf2)
 
-- [centernet-resnet101-v1-fpn-512-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-centernet-resnet101-v1-fpn-512-coco-tf2)
+- [centernet-resnet101-v1-fpn-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-resnet101-v1-fpn-512-coco-tf2)
 
-- [centernet-resnet50-v2-512-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-centernet-resnet50-v2-512-coco-tf2)
+- [centernet-resnet50-v2-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-resnet50-v2-512-coco-tf2)
 
-- [centernet-mobilenet-v2-fpn-512-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-centernet-mobilenet-v2-fpn-512-coco-tf2)
+- [centernet-mobilenet-v2-fpn-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-mobilenet-v2-fpn-512-coco-tf2)
 
-- [efficientdet-d0-512-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d0-512-coco-tf2)
+- [efficientdet-d0-512-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d0-512-coco-tf2)
 
-- [efficientdet-d1-640-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d1-640-coco-tf2)
+- [efficientdet-d1-640-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d1-640-coco-tf2)
 
-- [efficientdet-d2-768-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d2-768-coco-tf2)
+- [efficientdet-d2-768-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d2-768-coco-tf2)
 
-- [efficientdet-d3-896-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d3-896-coco-tf2)
+- [efficientdet-d3-896-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d3-896-coco-tf2)
 
-- [efficientdet-d4-1024-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d4-1024-coco-tf2)
+- [efficientdet-d4-1024-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d4-1024-coco-tf2)
 
-- [efficientdet-d5-1280-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d5-1280-coco-tf2)
+- [efficientdet-d5-1280-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d5-1280-coco-tf2)
 
-- [efficientdet-d6-1280-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d6-1280-coco-tf2)
+- [efficientdet-d6-1280-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d6-1280-coco-tf2)
 
-- [efficientdet-d7-1536-coco-tf2](data_and_models/model_zoo/models.html#model-zoo-efficientdet-d7-1536-coco-tf2)
+- [efficientdet-d7-1536-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d7-1536-coco-tf2)
 
-- [ssd-mobilenet-v2-320-coco17](data_and_models/model_zoo/models.html#model-zoo-ssd-mobilenet-v2-320-coco17)
+- [ssd-mobilenet-v2-320-coco17](models/model_zoo/models.html#model-zoo-ssd-mobilenet-v2-320-coco17)
 
-- [ssd-mobilenet-v1-fpn-640-coco17](data_and_models/model_zoo/models.html#model-zoo-ssd-mobilenet-v1-fpn-640-coco17)
+- [ssd-mobilenet-v1-fpn-640-coco17](models/model_zoo/models.html#model-zoo-ssd-mobilenet-v1-fpn-640-coco17)
 
 
 ## FiftyOne 0.14.2 [¶](\#fiftyone-0-14-2 "Permalink to this headline")
@@ -5863,7 +5863,7 @@ Zoo
 - Fixed a string encoding issue that prevented some Windows users from loading
 the [Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset
 
-- Updated the [vgg16-imagenet-tf1](data_and_models/model_zoo/models.html#model-zoo-vgg16-imagenet-tf1) model
+- Updated the [vgg16-imagenet-tf1](models/model_zoo/models.html#model-zoo-vgg16-imagenet-tf1) model
 (formerly named `vgg16-imagenet-tf`) to reflect the fact that it only
 supports TensorFlow 1.X
 
@@ -6078,7 +6078,7 @@ Brain
 - Added a `compute_visualization()` method that uses embeddings and dimensionality reduction methods to generate interactive visualizations of the samples and/or labels in a dataset. Check out [this page](brain.html#brain-embeddings-visualization) for details. Features include:
 
 - Provide your own embeddings, or choose a model from the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo), or use the provided default model
+[Model Zoo](models/model_zoo/index.html#model-zoo), or use the provided default model
 
 - Supported dimensionality reduction methods include
 [UMAP](https://github.com/lmcinnes/umap),
@@ -6094,7 +6094,7 @@ results can now be loaded at any time via
 [`Dataset.load_brain_results()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.load_brain_results "fiftyone.core.dataset.Dataset.load_brain_results")
 
 - Added support for providing a custom [`Model`](api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") or model from the
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo) to
+[Model Zoo](models/model_zoo/index.html#model-zoo) to
 `compute_uniqueness()`
 
 
@@ -6401,11 +6401,11 @@ listing helpful info about the size of various entities of a dataset
 
 Zoo
 
-- Added support for storing logits for many [zoo models](data_and_models/model_zoo/index.html#model-zoo) when
+- Added support for storing logits for many [zoo models](models/model_zoo/index.html#model-zoo) when
 using
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 
-- Default confidence thresholds for [zoo models](data_and_models/model_zoo/index.html#model-zoo) are now
+- Default confidence thresholds for [zoo models](models/model_zoo/index.html#model-zoo) are now
 stored on a per-model basis rather than as a global default value in
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model").
 All detection models still have a default confidence threshold of 0.3, and
@@ -6510,7 +6510,7 @@ directly as builtin types\
 Zoo\
 \
 - Added a default confidence threshold of `0.3` when applying models from the\
-[Model Zoo](data_and_models/model_zoo/index.html#model-zoo) via\
+[Model Zoo](models/model_zoo/index.html#model-zoo) via\
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),\
 which omits spurious low quality predictions from many models\
 \
@@ -6607,10 +6607,10 @@ via efficient DB-only operations\
 \
 Zoo\
 \
-- Added a [CenterNet model](data_and_models/model_zoo/models.html#model-zoo-centernet-hg104-512-coco-tf2) to\
+- Added a [CenterNet model](models/model_zoo/models.html#model-zoo-centernet-hg104-512-coco-tf2) to\
 the model zoo\
 \
-- Upgraded the [Model Zoo](data_and_models/model_zoo/index.html#model-zoo) so that many detection models that\
+- Upgraded the [Model Zoo](models/model_zoo/index.html#model-zoo) so that many detection models that\
 previously required TensorFlow 1.X can now be used with TensorFlow 2.X\
 \
 - Added [Caltech-256](dataset_zoo/datasets.html#dataset-zoo-caltech256) to the dataset zoo\
@@ -6638,7 +6638,7 @@ Docs\
 - Added a [Dataset Zoo listing](dataset_zoo/datasets.html#dataset-zoo-datasets) that describes all\
 datasets in the zoo\
 \
-- Added a [Model Zoo listing](data_and_models/model_zoo/models.html#model-zoo-models) that describes all models\
+- Added a [Model Zoo listing](models/model_zoo/models.html#model-zoo-models) that describes all models\
 in the zoo\
 \
 \
@@ -6662,7 +6662,7 @@ Filters Sidebar\
 \
 Core\
 \
-- Added a [Model Zoo](data_and_models/model_zoo/index.html#model-zoo) containing over 70 pretrained detection,\
+- Added a [Model Zoo](models/model_zoo/index.html#model-zoo) containing over 70 pretrained detection,\
 classification, and segmentation models that you can use to generate\
 predictions and embeddings\
 \

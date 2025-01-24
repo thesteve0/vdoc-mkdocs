@@ -1911,7 +1911,7 @@ similarity via point-and-click in the App!
 ### Text similarity [¶](\#text-similarity "Permalink to this headline")
 
 When you create a [similarity index](../brain.html#brain-similarity) powered by the
-[CLIP model](../data_and_models/model_zoo/models.html#model-zoo-clip-vit-base32-torch), you can pass arbitrary
+[CLIP model](../models/model_zoo/models.html#model-zoo-clip-vit-base32-torch), you can pass arbitrary
 natural language queries to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 along with the `brain_key` of a compatible similarity index:

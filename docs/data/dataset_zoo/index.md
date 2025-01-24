@@ -12,21 +12,21 @@ download/preparation methods are provided via GitHub repositories or URLs.
 The Dataset Zoo provides built-in access to dozens of datasets that you can
 load into FiftyOne with a single command.
 
-[Explore the datasets in the zoo](datasets.html)
+[Explore the datasets in the zoo](datasets.md)
 
 ## Remotely-sourced datasets [¶](\#remotely-sourced-datasets "Permalink to this headline")
 
 The Dataset Zoo also supports loading datasets whose download/preparation
 methods are provided via GitHub repositories or URLs.
 
-[Learn how to download remote datasets](remote.html)
+[Learn how to download remote datasets](remote.md)
 
 ## API reference [¶](\#api-reference "Permalink to this headline")
 
 The Dataset Zoo can be accessed via the Python library and the CLI. Consult the
 API reference below to see how to download, load, and manage zoo datasets.
 
-[Check out the API reference](api.html)
+[Check out the API reference](api.md)
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 

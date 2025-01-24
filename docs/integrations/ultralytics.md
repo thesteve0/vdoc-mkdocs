@@ -118,7 +118,7 @@ for sample in dataset.iter_samples(progress=True):
 ![ultralytics-boxes](../_images/ultralytics_boxes.jpg)
 
 You can also load any of these models directly from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
 
 ```python
 model_name = "yolov5l-coco-torch"
@@ -195,7 +195,7 @@ for sample in dataset.iter_samples(progress=True):
 ![ultralytics-instances](../_images/ultralytics_instances.jpg)
 
 You can also load YOLOv8, YOLOv9, and YOLO11 segmentation models from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
 
 ```python
 model_name = "yolov8n-seg-coco-torch"
@@ -286,7 +286,7 @@ session = fo.launch_app(dataset)
 ```
 
 You can also load YOLOv8 oriented bounding box models from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
 
 ```python
 model_name = "yolov8n-obb-dotav1-torch"
@@ -356,7 +356,7 @@ session = fo.launch_app(patches)
 ![ultralytics-open-world-boxes](../_images/ultralytics_open_world_boxes.png)
 
 You can also load these open-vocabulary models from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo), optionally specifying the classes that
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo), optionally specifying the classes that
 the model should detect:
 
 ```python

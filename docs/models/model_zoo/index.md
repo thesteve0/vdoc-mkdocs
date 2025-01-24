@@ -26,7 +26,7 @@ may be erroneous. In such cases, you can
 The Model Zoo provides built-in access to hundreds of pre-trained models that
 you can apply to your datasets with a few simple commands.
 
-[Explore the models in the zoo](models.html)
+[Explore the models in the zoo](models.md)
 
 Note
 
@@ -40,7 +40,7 @@ and [`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core
 The Model Zoo also supports downloading and applying models whose definitions
 are provided via GitHub repositories or URLs.
 
-[Learn how to download remote models](remote.html)
+[Learn how to download remote models](remote.md)
 
 ## Model interface [¶](\#model-interface "Permalink to this headline")
 
@@ -48,14 +48,14 @@ All models in the Model Zoo are exposed via the [`Model`](../api/fiftyone.core.m
 common interface for loading models and generating predictions with
 defined input and output data formats.
 
-[Grok the Model interface](design.html)
+[Grok the Model interface](design.md)
 
 ## API reference [¶](\#api-reference "Permalink to this headline")
 
 The Model Zoo can be accessed via the Python library and the CLI. Consult the
 API reference belwo to see how to download, apply, and manage zoo models.
 
-[Check out the API reference](api.html)
+[Check out the API reference](api.md)
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 

@@ -137,7 +137,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` classification model from the zoo, specify
 `"classification-transformer-torch"` as the first argument, and pass in the
@@ -248,7 +248,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` detection model from the zoo, specify
 `"detection-transformer-torch"` as the first argument, and pass in the model’s
@@ -341,7 +341,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` semantic segmentation model from the zoo, specify
 `"segmentation-transformer-torch"` as the first argument, and pass in the
@@ -394,7 +394,7 @@ session = fo.launch_app(dataset)
 ```
 
 Alternatively, you can load `transformers` depth estimation models directly from
-the [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` depth estimation model from the zoo, specify
 `"depth-estimation-transformer-torch"` as the first argument, and pass in the
@@ -417,7 +417,7 @@ session = fo.launch_app(dataset)
 #### Zero-shot classification [¶](\#zero-shot-classification "Permalink to this headline")
 
 Zero-shot image classification models from `transformers` can be loaded
-directly from the [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+directly from the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` zero-shot classification model from the zoo, specify
 `"zero-shot-classification-transformer-torch"` as the first argument, and pass
@@ -502,7 +502,7 @@ recommended that you specify the task type when converting the model.
 #### Zero-shot object detection [¶](\#zero-shot-object-detection "Permalink to this headline")
 
 Zero-shot object detection models from `transformers` can be loaded directly
-from the [FiftyOne Model Zoo](../data_and_models/model_zoo/index.html#model-zoo)!
+from the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
 
 To load a `transformers` zero-shot object detection model from the zoo, specify
 `"zero-shot-detection-transformer-torch"` as the first argument, and pass

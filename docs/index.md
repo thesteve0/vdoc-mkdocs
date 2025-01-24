@@ -255,7 +255,7 @@ It provides native access to hundreds of pre-trained models, and it also
 supports downloading arbitrary public or private models whose definitions are
 provided via GitHub repositories or URLs.
 
-[Check out the Model Zoo](data_and_models/model_zoo/index.html)
+[Check out the Model Zoo](models/model_zoo/index.html)
 
 ```python
 import fiftyone as fo
