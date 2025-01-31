@@ -17,70 +17,68 @@ pipeline. Use it to get hands-on with your data, including visualizing complex
 labels, evaluating your models, exploring scenarios of interest, identifying
 failure modes, finding annotation mistakes, and much more!
 
-[Install FiftyOne!](getting_started/install.html)
+[Install FiftyOne!]( getting_started/basic/install.md)
 
 FiftyOne integrates naturally with your favorite tools. Click on a logo to
 learn how:
 
 <div class="grid-3-col grid-images" markdown="1">
 
-[![PyTorch](https://voxel51.com/images/integrations/pytorch-128.png)](recipes/adding_detections.html "PyTorch")
+[![PyTorch](https://voxel51.com/images/integrations/pytorch-128.png)](how_do_i/recipes/adding_detections.ipynb "PyTorch")
 
-[![PyTorch Lightning](https://voxel51.com/images/integrations/pytorch-lightning-128.png)](integrations/lightning_flash.html "PyTorch Lightning")
+[![Hugging Face](https://voxel51.com/images/integrations/hugging-face-128.png)](integrations/huggingface.md "Hugging Face")
 
-[![Hugging Face](https://voxel51.com/images/integrations/hugging-face-128.png)](integrations/huggingface.html "Hugging Face")
+[![Ultralytics](https://voxel51.com/images/integrations/ultralytics-128.png)](integrations/ultralytics.md "Ultralytics")
 
-[![Ultralytics](https://voxel51.com/images/integrations/ultralytics-128.png)](integrations/ultralytics.html "Ultralytics")
+[![SuperGradients](https://voxel51.com/images/integrations/super-gradients-128.png)](integrations/super_gradients.md "SuperGradients")
 
-[![SuperGradients](https://voxel51.com/images/integrations/super-gradients-128.png)](integrations/super_gradients.html "SuperGradients")
+[![TensorFlow](https://voxel51.com/images/integrations/tensorflow-128.png)](how_do_i/recipes/adding_detections.ipynb "TensorFlow")
 
-[![TensorFlow](https://voxel51.com/images/integrations/tensorflow-128.png)](recipes/adding_detections.html "TensorFlow")
+[![Detectron2](https://voxel51.com/images/integrations/detectron2-128.png)](tutorials/detectron2.ipynb "Detectron2")
 
-[![Detectron2](https://voxel51.com/images/integrations/detectron2-128.png)](tutorials/detectron2.html "Detectron2")
+[![Qdrant](https://voxel51.com/images/integrations/qdrant-128.png)](integrations/qdrant.md "Qdrant")
 
-[![Qdrant](https://voxel51.com/images/integrations/qdrant-128.png)](integrations/qdrant.html "Qdrant")
+[![Redis](https://voxel51.com/images/integrations/redis-128.png)](integrations/redis.md "Redis")
 
-[![Redis](https://voxel51.com/images/integrations/redis-128.png)](integrations/redis.html "Redis")
+[![Pinecone](https://voxel51.com/images/integrations/pinecone-128.png)](integrations/pinecone.md "Pinecone")
 
-[![Pinecone](https://voxel51.com/images/integrations/pinecone-128.png)](integrations/pinecone.html "Pinecone")
+[![MongoDB](https://voxel51.com/images/integrations/mongodb-128.png)](integrations/mongodb.md "MongoDB")
 
-[![MongoDB](https://voxel51.com/images/integrations/mongodb-128.png)](integrations/mongodb.html "MongoDB")
+[![Elasticsearch](https://voxel51.com/images/integrations/elasticsearch-128.png)](integrations/elasticsearch.md "Elasticsearch")
 
-[![Elasticsearch](https://voxel51.com/images/integrations/elasticsearch-128.png)](integrations/elasticsearch.html "Elasticsearch")
+[![Milvus](https://voxel51.com/images/integrations/milvus-128.png)](integrations/milvus.md "Milvus")
 
-[![Milvus](https://voxel51.com/images/integrations/milvus-128.png)](integrations/milvus.html "Milvus")
+[![LanceDB](https://voxel51.com/images/integrations/lancedb-128.png)](integrations/lancedb.md "LanceDB")
 
-[![LanceDB](https://voxel51.com/images/integrations/lancedb-128.png)](integrations/lancedb.html "LanceDB")
+[![ActivityNet](https://voxel51.com/images/integrations/activitynet-128.png)](integrations/activitynet.md "ActivityNet")
 
-[![ActivityNet](https://voxel51.com/images/integrations/activitynet-128.png)](integrations/activitynet.html "ActivityNet")
+[![COCO](https://voxel51.com/images/integrations/coco-128.png)](integrations/coco.md "COCO")
 
-[![COCO](https://voxel51.com/images/integrations/coco-128.png)](integrations/coco.html "COCO")
+[![Open Images](https://voxel51.com/images/integrations/open-images-128.png)](integrations/open_images.md "Open Images")
 
-[![Open Images](https://voxel51.com/images/integrations/open-images-128.png)](integrations/open_images.html "Open Images")
+[![Jupyter](https://voxel51.com/images/integrations/jupyter-128.png)](fityone_concepts/running_environments.md#notebooks "Jupyter")
 
-[![Jupyter](https://voxel51.com/images/integrations/jupyter-128.png)](environments/index.html#notebooks "Jupyter")
+[![Google Colab](https://voxel51.com/images/integrations/colab-128.png)](fiftyone_concepts/running_environments.md#notebooks "Google Colab")
 
-[![Google Colab](https://voxel51.com/images/integrations/colab-128.png)](environments/index.html#notebooks "Google Colab")
+[![Plotly](https://voxel51.com/images/integrations/plotly-128.png)](fiftyone_concepts/plots.md "Plotly")
 
-[![Plotly](https://voxel51.com/images/integrations/plotly-128.png)](fiftyone_concepts/plots.html "Plotly")
+[![CVAT](https://voxel51.com/images/integrations/cvat-128.png)](integrations/cvat.md "CVAT")
 
-[![CVAT](https://voxel51.com/images/integrations/cvat-128.png)](integrations/cvat.html "CVAT")
+[![Label Studio](https://voxel51.com/images/integrations/labelstudio-128.png)](integrations/labelstudio.md "Label Studio")
 
-[![Label Studio](https://voxel51.com/images/integrations/labelstudio-128.png)](integrations/labelstudio.html "Label Studio")
-
-[![V7](https://voxel51.com/images/integrations/v7-128.png)](integrations/v7.html "V7")
+[![V7](https://voxel51.com/images/integrations/v7-128.png)](integrations/v7.md "V7")
 
 [![Segments](https://voxel51.com/images/integrations/segments-128.png)](https://github.com/segments-ai/segments-voxel51-plugin "Segments")
 
-[![Labelbox](https://voxel51.com/images/integrations/labelbox-128.png)](integrations/labelbox.html "Labelbox")
+[![Labelbox](https://voxel51.com/images/integrations/labelbox-128.png)](integrations/labelbox.md "Labelbox")
 
 [![Scale AI](https://voxel51.com/images/integrations/scale-128.png)](api/fiftyone.utils.scale.html "Scale AI")
 
-[![Google Cloud](https://voxel51.com/images/integrations/google-cloud-128.png)](teams/installation.html#google-cloud-storage "Google Cloud")
+[![Google Cloud](https://voxel51.com/images/integrations/google-cloud-128.png)](teams/installation.md#google-cloud-storage "Google Cloud")
 
-[![Amazon Web Services](https://voxel51.com/images/integrations/aws-128.png)](teams/installation.html#amazon-s3 "Amazon Web Services")
+[![Amazon Web Services](https://voxel51.com/images/integrations/aws-128.png)](teams/installation.md#amazon-s3 "Amazon Web Services")
 
-[![Azure](https://voxel51.com/images/integrations/azure-128.png)](teams/installation.html#microsoft-azure "Azure")
+[![Azure](https://voxel51.com/images/integrations/azure-128.png)](teams/installation.md#microsoft-azure "Azure")
 
 </div><!--End LOGOS -->
 
@@ -96,7 +94,7 @@ to learn about new features as they come out.
 
 Surveys show that machine learning engineers spend over half of their time wrangling data, but it doesn't have to be that way. Use FiftyOne's powerful dataset import and manipulation capabilities to manage your data with ease.
 
-[Learn how to load data into FiftyOne](fiftyone_concepts/dataset_creation/index.html)
+[Learn how to load data into FiftyOne](fiftyone_concepts/dataset_creation/index.md)
 
 ![](_static/images/homepage_curate.gif)
 
@@ -104,7 +102,7 @@ Surveys show that machine learning engineers spend over half of their time wrang
 
 Aggregate metrics alone don’t give you the full picture of your ML models. In practice, the limiting factor on your model’s performance is often data quality issues that you need to see to address. FiftyOne makes it easy to do just that.
 
-[See how to evaluate models with FiftyOne](tutorials/evaluate_detections.html)
+[See how to evaluate models with FiftyOne](tutorials/evaluate_detections.ipynb)
 
 ![](_static/images/homepage_evaluate.gif)
 
@@ -112,7 +110,7 @@ Aggregate metrics alone don’t give you the full picture of your ML models. In 
 
 Are you using embeddings to analyze your data and models? Use FiftyOne's embeddings visualization capabilities to reveal hidden structure in you data, mine hard samples, pre-annotate data, recommend new samples for annotation, and more.
 
-[Experience the power of embeddings](tutorials/image_embeddings.html)
+[Experience the power of embeddings](tutorials/image_embeddings.ipynb)
 
 ![](_static/images/homepage_embeddings.gif)
 
@@ -120,7 +118,7 @@ Are you using embeddings to analyze your data and models? Use FiftyOne's embeddi
 
 Many datasets have location metadata, but visualizing location-based datasets has traditionally required closed source or cloud-based tools. FiftyOne provides native support for storing, visualizing, and querying datasets by location.
 
-[Visualize your location data](fiftyone_concepts/plots.html#geolocation-plots)
+[Visualize your location data](fiftyone_concepts/plots.md#geolocation-plots)
 
 ![](_static/images/homepage_location.gif)
 
@@ -128,7 +126,7 @@ Many datasets have location metadata, but visualizing location-based datasets ha
 
 Annotations mistakes create an artificial ceiling on the performance of your model. However, finding these mistakes by hand is not feasible! Use FiftyOne to automatically identify possible label mistakes in your datasets.
 
-[Check out the label mistakes tutorial](tutorials/classification_mistakes.html)
+[Check out the label mistakes tutorial](tutorials/classification_mistakes.ipynb)
 
 ![](_static/images/homepage_mistakes.gif)
 
@@ -136,7 +134,7 @@ Annotations mistakes create an artificial ceiling on the performance of your mod
 
 During model training, the best results will be seen when training on unique data. Use FiftyOne to automatically remove duplicate or near-duplicate images from your datasets and curate diverse training datasets from your raw data.
 
-[Try the image uniqueness tutorial](tutorials/uniqueness.html)
+[Try the image uniqueness tutorial](tutorials/uniqueness.ipynb)
 
 ![](_static/images/homepage_redundant.gif)
 
@@ -148,7 +146,7 @@ FiftyOne’s core library provides a structured yet dynamic representation to
 explore your datasets. You can efficiently query and manipulate your dataset by
 adding custom tags, model predictions and more.
 
-[Explore the library](fiftyone_concepts/basics.html)
+[Explore the library](fiftyone_concepts/basics.md)
 
 ```python
 import fiftyone as fo
@@ -175,7 +173,7 @@ your datasets. FiftyOne supports loading datasets in a variety of common
 formats out-of-the-box, and it also provides the extensibility to load
 datasets in custom formats.
 
-Check out [loading datasets](fiftyone_concepts/dataset_creation/index.html) to see
+Check out [loading datasets](fiftyone_concepts/dataset_creation/index.md) to see
 how to load your data into FiftyOne.
 
 ### FiftyOne App [¶](\#fiftyone-app "Permalink to this headline")
@@ -185,7 +183,7 @@ and rapidly gain intuition into your datasets. You can visualize labels like
 bounding boxes and segmentations overlaid on the samples; sort, query and
 slice your dataset into any subset of interest; and more.
 
-[See more of the App](fiftyone_concepts/app.html)
+[See more of the App](fiftyone_concepts/app.md)
 
 ![fiftyone-app](_images/homepage_app.png)
 
@@ -196,7 +194,7 @@ capabilities that provide insights into your datasets and recommend ways to
 modify your datasets that will lead to measurably better performance of your
 models.
 
-[Learn more about the Brain](brain.html)
+[Learn more about the Brain](fiftyone_concepts/brain.md)
 
 ```python
 import fiftyone.brain as fob
@@ -215,11 +213,11 @@ With plugins, you can add new functionality to the FiftyOne App, create
 integrations with other tools and APIs, render custom panels, and add custom
 buttons to menus.
 
-With [FiftyOne Teams](teams/teams_plugins.html#teams-delegated-operations), you can even write
+With [FiftyOne Teams](teams/teams_plugins.md#teams-delegated-operations), you can even write
 plugins that allow users to execute long-running tasks from within the App that
 run on a connected compute cluster.
 
-[Install some plugins!](plugins/index.html)
+[Install some plugins!](plugins/index.md)
 
 ![fiftyone-plugins](_images/embeddings.gif)
 
@@ -232,7 +230,7 @@ It provides native access to dozens of popular benchmark datasets, and it als
 supports downloading arbitrary public or private datasets whose
 download/preparation methods are provided via GitHub repositories or URLs.
 
-[Check out the Dataset Zoo](dataset_zoo/index.html)
+[Check out the Dataset Zoo](data/dataset_zoo/index.md)
 
 ```python
 import fiftyone as fo
@@ -255,7 +253,7 @@ It provides native access to hundreds of pre-trained models, and it also
 supports downloading arbitrary public or private models whose definitions are
 provided via GitHub repositories or URLs.
 
-[Check out the Model Zoo](models/model_zoo/index.html)
+[Check out the Model Zoo](models/model_zoo/index.md)
 
 ```python
 import fiftyone as fo
@@ -284,18 +282,18 @@ session = fo.launch_app(dataset)
 
 Where should you go from here? You could…
 
-- [Install FiftyOne](getting_started/install.html#installing-fiftyone)
+- [Install FiftyOne](getting_started/basic/install.md#installing-fiftyone)
 
-- Try one of the [tutorials](tutorials/index.html) that demonstrate the unique
+- Try one of the [tutorials](tutorials/index.md) that demonstrate the unique
 capabilities of FiftyOne
 
-- Explore [recipes](recipes/index.html) for integrating FiftyOne into
+- Explore [recipes](how_do_i/recipes/index.md) for integrating FiftyOne into
 your current ML workflows
 
-- Check out the [cheat sheets](how_do_i/cheat_sheets/index.html) for topics you may
+- Check out the [cheat sheets](how_do_i/cheat_sheets/index.md) for topics you may
 want to master quickly
 
-- Consult the [user guide](fiftyone_concepts/index.html) for detailed instructions on
+- Consult the [user guide](fiftyone_concepts/index.md) for detailed instructions on
 how to accomplish various tasks with FiftyOne
 
 

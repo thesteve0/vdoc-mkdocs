@@ -477,7 +477,7 @@ should resolve the issue for you.
 
 ## Can I downgrade to an older version of FiftyOne? [¶](\#can-i-downgrade-to-an-older-version-of-fiftyone "Permalink to this headline")
 
-Certainly, refer to [these instructions](../getting_started/install.html#downgrading-fiftyone).
+Certainly, refer to [these instructions](../getting_started/basic/install.md#downgrading-fiftyone).
 
 ## Are the Brain methods open source? [¶](\#are-the-brain-methods-open-source "Permalink to this headline")
 

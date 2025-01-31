@@ -4,10 +4,16 @@ Welcome to getting started with FiftyOne! The goal of this section is to get you
 
 The basic getting started  will cover essentials ideas and functionality in both the API and the Application. 
 
-After this getting started you should be on your way to tackling your projects with FiftyOne. You can move on to a getting more specific to your work, try some of the tutorials, or just dive right in.
+The focused getting starteds are intended to for those with basic familiarty with FifyOne. Their content should be considered a good starting place to learn the basics about more specific tasks and workflows in FiftyOne. 
 
 For the bare bones getting started:
+
 1. [Install](install.md)
 2. [Set up](virtualenv.md) a virtual environment
+3. load data
+4. get a datasummary
+5. look at a sample
+6. load the app
+7. 
 3. GO!
 
