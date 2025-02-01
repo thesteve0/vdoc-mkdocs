@@ -86,7 +86,7 @@ When exporting in either an unlabeled image or image classification format, if
 a spatial label field ( [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection"), [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections"), [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline"), or [`Polylines`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines"))
 is provided to
 [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export"), the
-[object patches](app.html#app-object-patches) of the provided samples will be
+[object patches](app.md#app-object-patches) of the provided samples will be
 exported.
 
 ```python
@@ -121,7 +121,7 @@ dataset.export(
 
 You can also directly call
 [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export") on
-[patches views](using_views.html#object-patches-views) to export the specified object
+[patches views](using_views.md#object-patches-views) to export the specified object
 patches along with their appropriately typed labels.
 
 ```python
@@ -148,7 +148,7 @@ patches.export(
 When exporting in either an unlabeled video or video classification format, if
 a [`TemporalDetection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.TemporalDetection "fiftyone.core.labels.TemporalDetection") or [`TemporalDetections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.TemporalDetections "fiftyone.core.labels.TemporalDetections") field is provided to
 [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export"), the
-specified [video clips](app.html#app-video-clips) will be exported.
+specified [video clips](app.md#app-video-clips) will be exported.
 
 ```python
 import fiftyone as fo
@@ -195,7 +195,7 @@ dataset.export(
 
 You can also directly call
 [`export()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export") on
-[clip views](using_views.html#clip-views) to export the specified video clips along with
+[clip views](using_views.md#clip-views) to export the specified video clips along with
 their appropriately typed labels.
 
 ```python
@@ -240,7 +240,7 @@ dataset when exporting a view.
 
 Note
 
-See [this section](using_datasets.html#storing-classes) for more information about
+See [this section](using_datasets.md#storing-classes) for more information about
 storing class lists on FiftyOne datasets.
 
 ```python
@@ -2253,7 +2253,7 @@ However, if you want to re-import this dataset on a different machine with the\
 source media files stored in a different root directory, you can include the\
 optional `rel_dir` parameter to specify a common prefix to strip from each\
 image’s filepath, and then provide the new `rel_dir` when\
-[importing the dataset](dataset_creation/datasets.html#fiftyonedataset-import):\
+[importing the dataset](dataset_creation/datasets.md#fiftyonedataset-import):\
 \
 Note\
 \
@@ -2262,7 +2262,7 @@ using the `export_media=False` and `rel_dir` parameters is a convenient way\
 to transfer datasets between work environments, since this enables you to\
 store the media files wherever you wish in each environment and then simply\
 provide the appropriate `rel_dir` value when\
-[importing](dataset_creation/datasets.html#fiftyonedataset-import) the dataset into FiftyOne in a\
+[importing](dataset_creation/datasets.md#fiftyonedataset-import) the dataset into FiftyOne in a\
 new environment.\
 \
 You can also pass in a `chunk_size` parameter to create nested directories of\
@@ -2363,7 +2363,7 @@ The primary function of the [`Dataset`](../api/fiftyone.types.html#fiftyone.type
 disk and the [`DatasetExporter`](../api/fiftyone.utils.data.exporters.html#fiftyone.utils.data.exporters.DatasetExporter "fiftyone.utils.data.exporters.DatasetExporter") that should be used to write instances of the\
 dataset to disk.\
 \
-See [this page](dataset_creation/datasets.html#writing-a-custom-dataset-importer) for more information\
+See [this page](dataset_creation/datasets.md#writing-a-custom-dataset-importer) for more information\
 about defining custom [`DatasetImporter`](../api/fiftyone.utils.data.importers.html#fiftyone.utils.data.importers.DatasetImporter "fiftyone.utils.data.importers.DatasetImporter") classes.\
 \
 Custom dataset types can be declared by implementing the [`Dataset`](../api/fiftyone.types.html#fiftyone.types.Dataset "fiftyone.types.Dataset") subclass\

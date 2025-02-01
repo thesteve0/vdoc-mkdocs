@@ -20,19 +20,19 @@ FiftyOne provides an API to create projects, upload data, define label schemas,
 and download annotations using Labelbox, all programmatically in Python. All of
 the following label types are supported, for both image and video datasets:
 
-- [Classifications](../fiftyone_concepts/using_datasets.html#classification)
+- [Classifications](../fiftyone_concepts/using_datasets.md#classification)
 
-- [Detections](../fiftyone_concepts/using_datasets.html#object-detection)
+- [Detections](../fiftyone_concepts/using_datasets.md#object-detection)
 
-- [Instance segmentations](../fiftyone_concepts/using_datasets.html#instance-segmentation)
+- [Instance segmentations](../fiftyone_concepts/using_datasets.md#instance-segmentation)
 
-- [Polygons and polylines](../fiftyone_concepts/using_datasets.html#polylines)
+- [Polygons and polylines](../fiftyone_concepts/using_datasets.md#polylines)
 
-- [Keypoints](../fiftyone_concepts/using_datasets.html#keypoints)
+- [Keypoints](../fiftyone_concepts/using_datasets.md#keypoints)
 
-- [Scalar fields](../fiftyone_concepts/using_datasets.html#adding-sample-fields)
+- [Scalar fields](../fiftyone_concepts/using_datasets.md#adding-sample-fields)
 
-- [Semantic segmentation](../fiftyone_concepts/using_datasets.html#semantic-segmentation)
+- [Semantic segmentation](../fiftyone_concepts/using_datasets.md#semantic-segmentation)
 
 
 ![labelbox-video](../_images/labelbox_video.png)
@@ -42,10 +42,10 @@ the following label types are supported, for both image and video datasets:
 The basic workflow to use Labelbox to add or edit labels on your FiftyOne
 datasets is as follows:
 
-1. Load a [labeled or unlabeled dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
+1. Load a [labeled or unlabeled dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) into FiftyOne
 
-2. Explore the dataset using the [App](../fiftyone_concepts/app.html#fiftyone-app) or
-[dataset views](../fiftyone_concepts/using_views.html#using-views) to locate either unlabeled samples that
+2. Explore the dataset using the [App](../fiftyone_concepts/app.md#fiftyone-app) or
+[dataset views](../fiftyone_concepts/using_views.md#using-views) to locate either unlabeled samples that
 you wish to annotate or labeled samples whose annotations you want to edit
 
 3. Use the
@@ -201,7 +201,7 @@ pip install labelbox
 
 By default, calling
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") will
-use the [CVAT backend](cvat.html#cvat-integration).
+use the [CVAT backend](cvat.md#cvat-integration).
 
 To use the Labelbox backend, simply set the optional `backend` parameter of
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate") to
@@ -222,7 +222,7 @@ export FIFTYONE_ANNOTATION_DEFAULT_BACKEND=labelbox
 ```
 
 or by setting the `default_backend` parameter of your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
 ```python
@@ -251,7 +251,7 @@ export FIFTYONE_LABELBOX_API_KEY=...
 **FiftyOne annotation config**
 
 You can also store your credentials in your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
 ```python
@@ -323,7 +323,7 @@ export FIFTYONE_LABELBOX_URL=http://localhost:8080
 ```
 
 - Store the `url` of your server in your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) at
 `~/.fiftyone/annotation_config.json`:
 
 
@@ -664,7 +664,7 @@ editing existing labels.
 ### Label attributes [¶](\#label-attributes "Permalink to this headline")
 
 The `attributes` parameter allows you to configure whether
-[custom attributes](../fiftyone_concepts/using_datasets.html#using-labels) beyond the default `label` attribute
+[custom attributes](../fiftyone_concepts/using_datasets.md#using-labels) beyond the default `label` attribute
 are included in the annotation tasks.
 
 When adding new label fields for which you want to include attributes, you must
@@ -731,7 +731,7 @@ types like lists, dictionaries, and arrays will be omitted.
 Note
 
 Labelbox does not support default values for attributes, so the `default`
-key [described here](../fiftyone_concepts/annotation.html#annotation-label-attributes) will be ignored if
+key [described here](../fiftyone_concepts/annotation.md#annotation-label-attributes) will be ignored if
 included in label schemas provided when annotating with Labelbox.
 
 ### Video label attributes [¶](\#video-label-attributes "Permalink to this headline")
@@ -976,7 +976,7 @@ recommended workflow for editing existing labels.
 For free Labelbox users, one possible workflow for editing existing labels is
 the following:
 
-- [Tag the labels](../fiftyone_concepts/app.html#app-tagging) that need editing in FiftyOne
+- [Tag the labels](../fiftyone_concepts/app.md#app-tagging) that need editing in FiftyOne
 
 - Use FiftyOne to construct the label schema for the existing label field
 

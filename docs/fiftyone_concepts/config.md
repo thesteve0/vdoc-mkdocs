@@ -15,11 +15,11 @@ FiftyOne supports the configuration options described below:
 | `database_name` | `FIFTYONE_DATABASE_NAME` | `fiftyone` | A name to use for FiftyOne’s backing database in your MongoDB instance. The database<br>is automatically created if necessary. |
 | `database_uri` | `FIFTYONE_DATABASE_URI` | `None` | A [MongoDB URI](https://docs.mongodb.com/manual/reference/connection-string/) to<br>specifying a custom MongoDB database to which to connect. See<br>[this section](#configuring-mongodb-connection) for more information. |
 | `database_validation` | `FIFTYONE_DATABASE_VALIDATION` | `True` | Whether to validate the compatibility of database before connecting to it. See<br>[this section](#configuring-mongodb-connection) for more information. |
-| `dataset_zoo_dir` | `FIFTYONE_DATASET_ZOO_DIR` | `~/fiftyone` | The default directory in which to store datasets that are downloaded from the<br>[FiftyOne Dataset Zoo](../dataset_zoo/index.html#dataset-zoo). |
-| `dataset_zoo_manifest_paths` | `FIFTYONE_ZOO_MANIFEST_PATHS` | `None` | A list of manifest JSON files specifying additional zoo datasets. See<br>[adding datasets to the zoo](../dataset_zoo/api.html#dataset-zoo-add) for more information. |
+| `dataset_zoo_dir` | `FIFTYONE_DATASET_ZOO_DIR` | `~/fiftyone` | The default directory in which to store datasets that are downloaded from the<br>[FiftyOne Dataset Zoo](../dataset_zoo/index.md#dataset-zoo). |
+| `dataset_zoo_manifest_paths` | `FIFTYONE_ZOO_MANIFEST_PATHS` | `None` | A list of manifest JSON files specifying additional zoo datasets. See<br>[adding datasets to the zoo](../dataset_zoo/api.md#dataset-zoo-add) for more information. |
 | `default_dataset_dir` | `FIFTYONE_DEFAULT_DATASET_DIR` | `~/fiftyone` | The default directory to use when performing FiftyOne operations that<br>require writing dataset contents to disk, such as ingesting datasets via<br>[`ingest_labeled_images()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.ingest_labeled_images "fiftyone.core.dataset.Dataset.ingest_labeled_images"). |
 | `default_ml_backend` | `FIFTYONE_DEFAULT_ML_BACKEND` | `torch` | The default ML backend to use when performing operations such as<br>downloading datasets from the FiftyOne Dataset Zoo that support multiple ML<br>backends. Supported values are `torch` and `tensorflow`. By default,<br>`torch` is used if [PyTorch](https://pytorch.org) is installed in your<br>Python environment, and `tensorflow` is used if<br>[TensorFlow](http://tensorflow.org) is installed. If no supported backend<br>is detected, this defaults to `None`, and any operation that requires an<br>installed ML backend will raise an informative error message if invoked in<br>this state. |
-| `default_batch_size` | `FIFTYONE_DEFAULT_BATCH_SIZE` | `None` | A default batch size to use when [applying models to datasets](../models/model_zoo/api.html#model-zoo-apply). |
+| `default_batch_size` | `FIFTYONE_DEFAULT_BATCH_SIZE` | `None` | A default batch size to use when [applying models to datasets](../models/model_zoo/api.md#model-zoo-apply). |
 | `default_batcher` | `FIFTYONE_DEFAULT_BATCHER` | `latency` | Batching implementation to use in some batched database operations such as<br>[`add_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples "fiftyone.core.dataset.Dataset.add_samples"),<br>[`set_values()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values"), and<br>[`save_context()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.save_context "fiftyone.core.collections.SampleCollection.save_context").<br>Supported values are `latency`, `size`, and `static`.<br>`latency` is the default, which uses a dynamic batch size to achieve a target latency<br>of `batcher_target_latency` between calls. The default changes to `size` for the<br>FiftyOne Teams SDK in [API connection mode](../teams/api_connection.html#teams-api-connection), which targets<br>a size of `batcher_target_size_bytes` for each call. `static` uses a fixed batch size<br>of `batcher_static_size`. |
 | `batcher_static_size` | `FIFTYONE_BATCHER_STATIC_SIZE` | `100` | Fixed size of batches. Only used when `default_batcher` is `static`. |
 | `batcher_target_size_bytes` | `FIFTYONE_BATCHER_TARGET_SIZE_BYTES` | `2 ** 20` | Target content size of batches, in bytes. Only used when `default_batcher` is `size`. |
@@ -27,18 +27,18 @@ FiftyOne supports the configuration options described below:
 | `default_sequence_idx` | `FIFTYONE_DEFAULT_SEQUENCE_IDX` | `%06d` | The default numeric string pattern to use when writing sequential lists of<br>files. |
 | `default_image_ext` | `FIFTYONE_DEFAULT_IMAGE_EXT` | `.jpg` | The default image format to use when writing images to disk. |
 | `default_video_ext` | `FIFTYONE_DEFAULT_VIDEO_EXT` | `.mp4` | The default video format to use when writing videos to disk. |
-| `default_app_port` | `FIFTYONE_DEFAULT_APP_PORT` | `5151` | The default port to use to serve the [FiftyOne App](app.html#fiftyone-app). |
-| `default_app_address` | `FIFTYONE_DEFAULT_APP_ADDRESS` | `localhost` | The default address to use to serve the [FiftyOne App](app.html#fiftyone-app). This may<br>be either an IP address or hostname. If it’s a hostname, the App will listen to all<br>IP addresses associated with the name. The default is `localhost`, which means the App<br>will only listen on the local interface. See [this page](../environments/index.html#restricting-app-address)<br>for more information. |
+| `default_app_port` | `FIFTYONE_DEFAULT_APP_PORT` | `5151` | The default port to use to serve the [FiftyOne App](app.md#fiftyone-app). |
+| `default_app_address` | `FIFTYONE_DEFAULT_APP_ADDRESS` | `localhost` | The default address to use to serve the [FiftyOne App](app.md#fiftyone-app). This may<br>be either an IP address or hostname. If it’s a hostname, the App will listen to all<br>IP addresses associated with the name. The default is `localhost`, which means the App<br>will only listen on the local interface. See [this page](../environments/index.md#restricting-app-address)<br>for more information. |
 | `do_not_track` | `FIFTYONE_DO_NOT_TRACK` | `False` | Controls whether UUID based import and App usage events are tracked. |
 | `logging_level` | `FIFTYONE_LOGGING_LEVEL` | `INFO` | Controls FiftyOne’s package-wide logging level. Can be any valid `logging` level as<br>a string: `DEBUG, INFO, WARNING, ERROR, CRITICAL`. |
 | `max_thread_pool_workers` | `FIFTYONE_MAX_THREAD_POOL_WORKERS` | `None` | An optional maximum number of workers to use when creating thread pools |
 | `max_process_pool_workers` | `FIFTYONE_MAX_PROCESS_POOL_WORKERS` | `None` | An optional maximum number of workers to use when creating process pools |
-| `model_zoo_dir` | `FIFTYONE_MODEL_ZOO_DIR` | `~/fiftyone/__models__` | The default directory in which to store models that are downloaded from the<br>[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo). |
-| `model_zoo_manifest_paths` | `FIFTYONE_MODEL_ZOO_MANIFEST_PATHS` | `None` | A list of manifest JSON files specifying additional zoo models. See<br>[adding models to the zoo](../models/model_zoo/api.html#model-zoo-add) for more information. |
-| `module_path` | `FIFTYONE_MODULE_PATH` | `None` | A list of modules that should be automatically imported whenever FiftyOne is imported.<br>See [this page](using_datasets.html#custom-embedded-documents) for an example usage. |
-| `operator_timeout` | `FIFTYONE_OPERATOR_TIMEOUT` | `600` | The timeout for execution of an operator. See [this page](../plugins/index.html#fiftyone-plugins) for<br>more information. |
-| `allow_legacy_orchestrators` | `FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS` | `False` | Whether to allow delegated operations to be scheduled locally.<br>See [this page](../plugins/using_plugins.html#delegated-orchestrator-open-source) for more information. |
-| `plugins_dir` | `FIFTYONE_PLUGINS_DIR` | `None` | A directory containing custom App plugins. See [this page](../plugins/index.html#fiftyone-plugins) for<br>more information. |
+| `model_zoo_dir` | `FIFTYONE_MODEL_ZOO_DIR` | `~/fiftyone/__models__` | The default directory in which to store models that are downloaded from the<br>[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo). |
+| `model_zoo_manifest_paths` | `FIFTYONE_MODEL_ZOO_MANIFEST_PATHS` | `None` | A list of manifest JSON files specifying additional zoo models. See<br>[adding models to the zoo](../models/model_zoo/api.md#model-zoo-add) for more information. |
+| `module_path` | `FIFTYONE_MODULE_PATH` | `None` | A list of modules that should be automatically imported whenever FiftyOne is imported.<br>See [this page](using_datasets.md#custom-embedded-documents) for an example usage. |
+| `operator_timeout` | `FIFTYONE_OPERATOR_TIMEOUT` | `600` | The timeout for execution of an operator. See [this page](../plugins/index.md#fiftyone-plugins) for<br>more information. |
+| `allow_legacy_orchestrators` | `FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS` | `False` | Whether to allow delegated operations to be scheduled locally.<br>See [this page](../plugins/using_plugins.md#delegated-orchestrator-open-source) for more information. |
+| `plugins_dir` | `FIFTYONE_PLUGINS_DIR` | `None` | A directory containing custom App plugins. See [this page](../plugins/index.md#fiftyone-plugins) for<br>more information. |
 | `plugins_cache_enabled` | `FIFTYONE_PLUGINS_CACHE_ENABLED` | `False` | When set to `True` plugins will be cached until their directory’s `mtime` changes.<br>This is intended to be used in production. |
 | `do_not_track` | `FIFTYONE_DO_NOT_TRACK` | `False` | Controls whether UUID based import and App usage events are tracked. |
 | `show_progress_bars` | `FIFTYONE_SHOW_PROGRESS_BARS` | `True` | Controls whether progress bars are printed to the terminal when performing<br>operations such reading/writing large datasets or activating FiftyOne<br>Brain methods on datasets. |
@@ -262,7 +262,7 @@ newer version of the FiftyOne package
 Database downgrades must be manually performed. See
 [this page](../getting_started/basic/install.md#downgrading-fiftyone) for instructions.
 
-You can use the [fiftyone migrate](../cli/index.html#cli-fiftyone-migrate) command to view
+You can use the [fiftyone migrate](../cli/index.md#cli-fiftyone-migrate) command to view
 the current versions of your client, database, and datasets:
 
 ```python
@@ -452,7 +452,7 @@ of datetimes, which are always stored as UTC timestamps.
 
 # Configuring the App [¶](\#configuring-the-app "Permalink to this headline")
 
-The [FiftyOne App](app.html#fiftyone-app) can also be configured in various ways.
+The [FiftyOne App](app.md#fiftyone-app) can also be configured in various ways.
 A new copy of your App config is applied to each [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object that is
 created when you launch the App. A session’s config can be inspected and
 modified via the [`session.config`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.config "fiftyone.core.session.Session.config")
@@ -482,10 +482,10 @@ The FiftyOne App can be configured in the ways described below:
 | --- | --- | --- | --- |
 | `color_by` | `FIFTYONE_APP_COLOR_BY` | `"field"` | Whether to color labels by their field name ( `"field"`), `label` value ( `"label"`), or<br>render each instance ID/trajectory index ( `"instance"`). |
 | `color_pool` | `FIFTYONE_APP_COLOR_POOL` | See below | A list of browser supported color strings from which the App should draw from when<br>drawing labels (e.g., object bounding boxes). |
-| `colorscale` | `FIFTYONE_APP_COLORSCALE` | `"viridis"` | The colorscale to use when rendering heatmaps in the App. See<br>[this section](using_datasets.html#heatmaps) for more details. |
-| `default_query_performance` | `FIFTYONE_APP_DEFAULT_QUERY_PERFORMANCE` | `True` | Default if a user hasn’t selected a query performance mode in their current session. See<br>[this section](app.html#app-optimizing-query-performance) for more details. |
-| `disable_frame_filtering` | `FIFTYONE_APP_DISABLE_FRAME_FILTERING` | `False` | Whether to disable frame filtering for video datasets in the App’s grid view. See<br>[this section](app.html#app-optimizing-query-performance) for more details. |
-| `enable_query_performance` | `FIFTYONE_APP_ENABLE_QUERY_PERFORMANCE` | `True` | Whether to show the query performance toggle in the UI for users to select. See<br>[this section](app.html#app-optimizing-query-performance) for more details. |
+| `colorscale` | `FIFTYONE_APP_COLORSCALE` | `"viridis"` | The colorscale to use when rendering heatmaps in the App. See<br>[this section](using_datasets.md#heatmaps) for more details. |
+| `default_query_performance` | `FIFTYONE_APP_DEFAULT_QUERY_PERFORMANCE` | `True` | Default if a user hasn’t selected a query performance mode in their current session. See<br>[this section](app.md#app-optimizing-query-performance) for more details. |
+| `disable_frame_filtering` | `FIFTYONE_APP_DISABLE_FRAME_FILTERING` | `False` | Whether to disable frame filtering for video datasets in the App’s grid view. See<br>[this section](app.md#app-optimizing-query-performance) for more details. |
+| `enable_query_performance` | `FIFTYONE_APP_ENABLE_QUERY_PERFORMANCE` | `True` | Whether to show the query performance toggle in the UI for users to select. See<br>[this section](app.md#app-optimizing-query-performance) for more details. |
 | `grid_zoom` | `FIFTYONE_APP_GRID_ZOOM` | `5` | The zoom level of the App’s sample grid. Larger values result in larger samples (and thus<br>fewer samples in the grid). Supported values are `{0, 1, ..., 10}`. |
 | `loop_videos` | `FIFTYONE_APP_LOOP_VIDEOS` | `False` | Whether to loop videos by default in the expanded sample view. |
 | `media_fallback` | `FIFTYONE_APP_MEDIA_FALLBACK` | `False` | Whether to fall back to the default media field ( `"filepath"`) when the configured media<br>field’s value for a sample is not defined. |
@@ -520,7 +520,7 @@ Note
 
 Did you know? You can also configure the behavior of the App on a
 per-dataset basis by customizing your
-[dataset’s App config](using_datasets.html#dataset-app-config).
+[dataset’s App config](using_datasets.md#dataset-app-config).
 
 ### Order of precedence [¶](\#id4 "Permalink to this headline")
 
@@ -638,11 +638,11 @@ App config.
 
 Builtin plugins that you can configure include:
 
-- The builtin [Map panel](app.html#app-map-panel)
+- The builtin [Map panel](app.md#app-map-panel)
 
-- The builtin [3D visualizer](app.html#app-3d-visualizer-config)
+- The builtin [3D visualizer](app.md#app-3d-visualizer-config)
 
-- Any [custom plugins](../plugins/index.html#fiftyone-plugins) that you’ve registered
+- Any [custom plugins](../plugins/index.md#fiftyone-plugins) that you’ve registered
 
 
 For example, you may add the following to your JSON App config
@@ -663,7 +663,7 @@ system:
 Note
 
 You can also store dataset-specific plugin settings by storing any subset
-of the above values on a [dataset’s App config](using_datasets.html#dataset-app-config).
+of the above values on a [dataset’s App config](using_datasets.md#dataset-app-config).
 
 ## Configuring a proxy URL [¶](\#configuring-a-proxy-url "Permalink to this headline")
 

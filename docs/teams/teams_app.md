@@ -1,7 +1,7 @@
 # FiftyOne Teams App [¶](\#fiftyone-teams-app "Permalink to this headline")
 
 The FiftyOne Teams App allows you to visualize, browse, and interact with your
-individual datasets like you can with the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app),
+individual datasets like you can with the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app),
 but with expanded features for organizing, permissionsing, versioning, and
 sharing your team’s datasets, all from a centralized web portal.
 
@@ -91,16 +91,16 @@ dataset’s [Manage tab](#teams-managing-datasets).
 
 Note
 
-What next? Use the [Teams Python SDK](installation.html#teams-python-sdk) to upload new
+What next? Use the [Teams Python SDK](installation.md#teams-python-sdk) to upload new
 samples, labels, and metadata to your dataset. A common approach is to
-automate this process via [cloud functions](cloud_media.html#teams-cloud-functions).
+automate this process via [cloud functions](cloud_media.md#teams-cloud-functions).
 
 ## Using a dataset [¶](\#using-a-dataset "Permalink to this headline")
 
 Click on a dataset from the homepage to open the dataset’s “Samples” tab.
 
 From the Samples tab you can visualize, tag, filter, and explore your dataset
-just as you would via the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app).
+just as you would via the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app).
 
 ![samples-page](../_images/samples_page.png)
 
@@ -124,15 +124,15 @@ right hand side of a row of the dataset listing table and selecting
 
 Note
 
-Did you know? You can also use the [Teams SDK](installation.html#teams-python-sdk) to
+Did you know? You can also use the [Teams SDK](installation.md#teams-python-sdk) to
 programmatically, create, edit, and delete datasets.
 
 ### Basic info [¶](\#basic-info "Permalink to this headline")
 
 The “Basic info” tab is accessible to all users with
-[Can view](roles_and_permissions.html#teams-can-view) access to the dataset.
+[Can view](roles_and_permissions.md#teams-can-view) access to the dataset.
 
-Users with [Can manage](roles_and_permissions.html#teams-can-manage) permissions on the dataset can
+Users with [Can manage](roles_and_permissions.md#teams-can-manage) permissions on the dataset can
 edit the name, description, and tags of a dataset from this page.
 
 Additionally, members can create a copy of the dataset by clicking on the
@@ -143,10 +143,10 @@ Additionally, members can create a copy of the dataset by clicking on the
 ### Access [¶](\#access "Permalink to this headline")
 
 The “Access” tab is only accessible to users with
-[Can manage](roles_and_permissions.html#teams-can-manage) permissions on the dataset.
+[Can manage](roles_and_permissions.md#teams-can-manage) permissions on the dataset.
 
 From this tab, users can add, remove, edit, or invite users to the dataset.
-Refer to [this page](roles_and_permissions.html#teams-permissions) for more information about the
+Refer to [this page](roles_and_permissions.md#teams-permissions) for more information about the
 available dataset-level permissions that you can grant.
 
 ![dataset-access](../_images/dataset_access.png)
@@ -154,7 +154,7 @@ available dataset-level permissions that you can grant.
 ### Danger zone [¶](\#danger-zone "Permalink to this headline")
 
 The “Danger zone” tab is only accessible to users with
-[Can manage](roles_and_permissions.html#teams-can-manage) permissions on the dataset.
+[Can manage](roles_and_permissions.md#teams-can-manage) permissions on the dataset.
 
 From this tab, you can select “Delete entire dataset” to permanently delete a
 dataset from your Teams deployment. You must type the dataset’s full name in

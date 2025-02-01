@@ -13,7 +13,7 @@ environment variable.
 
 Working with remotely-sourced zoo datasets is just like
 [built-in zoo datasets](datasets.md#dataset-zoo-datasets), as both varieties support
-the [full zoo API](api.html#dataset-zoo-api).
+the [full zoo API](api.md#dataset-zoo-api).
 
 When specifying remote sources, you can provide any of the following:
 
@@ -60,7 +60,7 @@ about the dataset:
 
 | Field | Required? | Description |
 | --- | --- | --- |
-| `name` | **yes** | The name of the dataset. Once you’ve downloaded all or part of a<br>remotely-sourced zoo dataset, it will subsequently appear as an available<br>zoo dataset under this name when using the<br>[zoo API](api.html#dataset-zoo-api) |
+| `name` | **yes** | The name of the dataset. Once you’ve downloaded all or part of a<br>remotely-sourced zoo dataset, it will subsequently appear as an available<br>zoo dataset under this name when using the<br>[zoo API](api.md#dataset-zoo-api) |
 | `type` |  | Declare that the directory defines a `dataset`. This can be omitted for<br>backwards compatibility, but it is recommended to specify this |
 | `author` |  | The author of the dataset |
 | `version` |  | The version of the dataset |

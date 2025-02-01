@@ -13,7 +13,7 @@ via point-and-click in the App.
 The basic workflow to use LanceDB to create a similarity index on your FiftyOne
 datasets and use this to query your data is as follows:
 
-1. Load a [dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
+1. Load a [dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) into FiftyOne
 
 2. Compute embedding vectors for samples or patches in your dataset, or select
 a model to use to generate embeddings
@@ -123,7 +123,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=lancedb
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {
@@ -147,7 +147,7 @@ a new table. The supported values are `("cosine", "euclidean")`
 
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.html#brain-config)
+previous section. Here’s an example of a [brain config](../brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -317,7 +317,7 @@ You can customize the LanceDB index by passing any
 ### Create a patch similarity index [¶](\#create-a-patch-similarity-index "Permalink to this headline")
 
 You can also create a similarity index for
-[object patches](../brain.html#brain-object-similarity) within your dataset by
+[object patches](../brain.md#brain-object-similarity) within your dataset by
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
@@ -463,7 +463,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
+- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
 
 
 ```python
@@ -508,7 +508,7 @@ in the index, they will never be included in the result.
 
 This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
-[constructing views](../fiftyone_concepts/using_views.html#using-views) that contain the images of
+[constructing views](../fiftyone_concepts/using_views.md#using-views) that contain the images of
 interest.
 
 ### Advanced usage [¶](\#advanced-usage "Permalink to this headline")

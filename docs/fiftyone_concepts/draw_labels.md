@@ -1,14 +1,14 @@
 # Drawing Labels on Samples [¶](\#drawing-labels-on-samples "Permalink to this headline")
 
 FiftyOne provides native support for rendering annotated versions of image and
-video samples with [label fields](using_datasets.html#using-labels) overlaid on the source
+video samples with [label fields](using_datasets.md#using-labels) overlaid on the source
 media.
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 
 The interface for drawing labels on samples is exposed via the Python library
 and the CLI. You can easily annotate one or more
-[label fields](using_datasets.html#using-labels) on entire datasets or arbitrary subsets of
+[label fields](using_datasets.md#using-labels) on entire datasets or arbitrary subsets of
 your datasets that you have identified by constructing a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView").
 
 ## Examples [¶](\#examples "Permalink to this headline")
@@ -16,7 +16,7 @@ your datasets that you have identified by constructing a [`DatasetView`](../api/
 ### Drawing labels on images [¶](\#drawing-labels-on-images "Permalink to this headline")
 
 The following snippet renders the ground truth and predicted labels on a few
-samples from the [quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
+samples from the [quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -37,7 +37,7 @@ print(anno_image_paths)
 
 The following snippet renders both sample-level and frame-level labels on a
 few videos from the
-[quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video):
+[quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video):
 
 ```python
 import fiftyone as fo

@@ -3,7 +3,7 @@
 **Available in FiftyOne Teams v2.2+**
 
 The Data Quality panel is a builtin feature of the
-[FiftyOne Teams App](teams_app.html#teams-app) that automatically scans your dataset
+[FiftyOne Teams App](teams_app.md#teams-app) that automatically scans your dataset
 for common quality issues and helps you explore and take action to resolve
 them.
 
@@ -24,7 +24,7 @@ current analysis/review status:
 - **Entropy**: scans for images that have unusually small or large entropy
 
 - **Near Duplicates**: leverages embeddings to scan for
-[near-duplicate samples](../brain.html#brain-near-duplicates) in your dataset
+[near-duplicate samples](../brain.md#brain-near-duplicates) in your dataset
 
 - **Exact Duplicates**: uses filehashes to scan your dataset for duplicate
 data with either the same or different filenames
@@ -52,7 +52,7 @@ performend synchronously and will timeout if it does not complete within a
 few minutes.
 
 Choose “Schedule” for all production data, which schedules the scan for
-[delegated execution](teams_plugins.html#teams-delegated-operations) on your compute
+[delegated execution](teams_plugins.md#teams-delegated-operations) on your compute
 cluster.
 
 While a scan is in-progress, you’ll see a status page like this:
@@ -60,7 +60,7 @@ While a scan is in-progress, you’ll see a status page like this:
 ![data-quality-brightness-scheduled](../_images/data_quality_brightness_scheduled.png)
 
 Click the link in the notification to navigate to the dataset’s
-[Runs page](teams_plugins.html#teams-managing-delegated-operations) where you can monitor
+[Runs page](teams_plugins.md#teams-managing-delegated-operations) where you can monitor
 the status of the task.
 
 ## Analyzing scan results [¶](\#analyzing-scan-results "Permalink to this headline")
@@ -127,7 +127,7 @@ Otherwise, tags will be added to all samples in your current view (i.e.,
 all potential issues).
 
 You can use the “sample tags” filter in the
-[App’s sidebar](../fiftyone_concepts/app.html#app-fields-sidebar) to retrieve, review, and act on all
+[App’s sidebar](../fiftyone_concepts/app.md#app-fields-sidebar) to retrieve, review, and act on all
 samples that you’ve previously tagged.
 
 The review status indicator in the top-right corner of the panel indicates
@@ -173,5 +173,5 @@ Note
 
 Did you know? You can delete sample fields from the App using the
 `delete_sample_field` operator available via the
-[Operator browser](../plugins/using_plugins.html#using-operators).
+[Operator browser](../plugins/using_plugins.md#using-operators).
 

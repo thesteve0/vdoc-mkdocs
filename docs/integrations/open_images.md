@@ -7,7 +7,7 @@ natively in FiftyOne!
 
 Note
 
-Check out [this tutorial](../tutorials/open_images.html) to see how you can
+Check out [this tutorial](../tutorials/open_images.md) to see how you can
 use FiftyOne to download and evaluate models on Open Images.
 
 ![open-images-v6](../_images/open-images-v6.png)
@@ -15,8 +15,8 @@ use FiftyOne to download and evaluate models on Open Images.
 ## Loading Open Images [¶](\#loading-open-images "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading the
-[Open Images V6](../dataset_zoo/datasets.html#dataset-zoo-open-images-v6) and
-[Open Images V7](../dataset_zoo/datasets.html#dataset-zoo-open-images-v7) datasets.
+[Open Images V6](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6) and
+[Open Images V7](../dataset_zoo/datasets.md#dataset-zoo-open-images-v7) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -200,7 +200,7 @@ reference implementation available via the
 ### Overview [¶](\#overview "Permalink to this headline")
 
 Open Images-style evaluation provides additional features not found in
-[COCO-style evaluation](../fiftyone_concepts/evaluation.html#evaluating-detections-coco) that you may find
+[COCO-style evaluation](../fiftyone_concepts/evaluation.md#evaluating-detections-coco) that you may find
 useful when evaluating your custom datasets.
 
 The two primary differences are:
@@ -280,7 +280,7 @@ when running Open Images-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates Open Images-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the Dataset Zoo:
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
 
 ```python
 import fiftyone as fo
@@ -383,7 +383,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) for
 the results of Open Images-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -416,9 +416,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.md#interactive-plots)!
 
 ## Open Images Challenge [¶](\#open-images-challenge "Permalink to this headline")
 
@@ -429,18 +429,18 @@ used in the
 [Open Images detection challenges](https://storage.googleapis.com/openimages/web/evaluation.html).
 you can use it to compute the official mAP for your model while also enjoying
 the benefits of working in the FiftyOne ecosystem, including
-[using views](../fiftyone_concepts/using_views.html#using-views) to manipulate your dataset and visually
-exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app)!
+[using views](../fiftyone_concepts/using_views.md#using-views) to manipulate your dataset and visually
+exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app)!
 
 In order to compute the official Open Images mAP for a model, your dataset
 **must** include the appropriate positive and negative sample-level labels, and
 you must provide the class hierarchy. Fortunately, when you load the Open
 Images dataset
-[from the FiftyOne Dataset Zoo](../dataset_zoo/datasets.html#dataset-zoo-open-images-v6), all of the
+[from the FiftyOne Dataset Zoo](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6), all of the
 necessary information is automatically loaded for you!
 
 The example snippet below loads the
-[Open Images V6](../dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset and runs the
+[Open Images V6](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset and runs the
 official Open Images evaluation protocol on some mock model predictions:
 
 ```python
@@ -490,12 +490,12 @@ in the hierarchy for evaluation purposes.
 
 Note
 
-Check out [this recipe](../recipes/adding_detections.html) to learn how to
+Check out [this recipe](../recipes/adding_detections.md) to learn how to
 add your model’s predictions to a FiftyOne Dataset.
 
 ## mAP protocol [¶](\#map-protocol "Permalink to this headline")
 
-The Open Images mAP protocol is similar to [COCO-style mAP](coco.html#coco-map),
+The Open Images mAP protocol is similar to [COCO-style mAP](coco.md#coco-map),
 with the primary differences being support for image-level labels, class
 hierarchies, and differences in the way that objects are matched to crowds.
 

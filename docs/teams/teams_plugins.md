@@ -1,7 +1,7 @@
 # FiftyOne Teams Plugins [¶](\#fiftyone-teams-plugins "Permalink to this headline")
 
 FiftyOne Teams provides native support for installing and running
-[FiftyOne plugins](../plugins/index.html#fiftyone-plugins), which offers powerful opportunities
+[FiftyOne plugins](../plugins/index.md#fiftyone-plugins), which offers powerful opportunities
 to extend and customize the functionality of your Teams deployment to suit your
 needs.
 
@@ -268,7 +268,7 @@ fom.set_organization_settings(
 
 ## Delegated operations [¶](\#delegated-operations "Permalink to this headline")
 
-[Delegated operations](../plugins/using_plugins.html#delegated-operations) are a powerful feature of
+[Delegated operations](../plugins/using_plugins.md#delegated-operations) are a powerful feature of
 FiftyOne’s plugin framework that allows users to schedule tasks from within the
 App that are executed in the background on a connected compute cluster.
 
@@ -319,7 +319,7 @@ plugin makes it easy:
 ![../_images/evaluation.gif](../_images/evaluation.gif)
 
 Need to compute embedding for your dataset so you can visualize them in the
-[Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel)? Kick off the task with the
+[Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
@@ -366,7 +366,7 @@ execution, not operations that are executed immediately in the App.
 The Runs page is accessible to all users with Can view access to the dataset.
 
 You can access the Runs page by clicking on the “Runs” tab from the
-[Samples tab](teams_app.html#teams-using-datasets).
+[Samples tab](teams_app.md#teams-using-datasets).
 
 Once you are on the Runs page, you will see a table with the list of all
 operators scheduled by any user of your organization on the dataset. You can
@@ -465,7 +465,7 @@ execution of operation.
 #### Monitoring progress [¶](\#monitoring-progress "Permalink to this headline")
 
 Delegated operations can optionally
-[report their progress](../plugins/developing_plugins.html#operator-reporting-progress) during execution.
+[report their progress](../plugins/developing_plugins.md#operator-reporting-progress) during execution.
 
 If a progress is available for a run, it will be displayed in the Runs table
 as indicated by “2”. By default, the progress of running operations is

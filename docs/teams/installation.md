@@ -16,7 +16,7 @@ during the onboarding process.
 
 ## Python SDK [¶](\#python-sdk "Permalink to this headline")
 
-While the [FiftyOne Teams App](teams_app.html#teams-app) allows for countless new
+While the [FiftyOne Teams App](teams_app.md#teams-app) allows for countless new
 App-centric workflows, any existing Python-based workflows that you’ve fallen
 in love with in the open-source version of FiftyOne are still directly
 applicable!
@@ -54,8 +54,8 @@ built using open source will continue to run after you upgrade!
 After installing the Teams Python SDK in your virtual environment, you’ll need
 to configure two things:
 
-- Your team’s [API connection](api_connection.html#teams-api-connection) or
-[MongoDB connection](../fiftyone_concepts/config.html#configuring-mongodb-connection)
+- Your team’s [API connection](api_connection.md#teams-api-connection) or
+[MongoDB connection](../fiftyone_concepts/config.md#configuring-mongodb-connection)
 
 - The [cloud credentials](#teams-cloud-credentials) to access your
 cloud-backed media
@@ -158,8 +158,8 @@ credentials for use by all app users](#teams-cloud-storage-page).
 ### Cross-origin resource sharing (CORS) [¶](\#cross-origin-resource-sharing-cors "Permalink to this headline")
 
 If your datasets include cloud-backed
-[point clouds](../fiftyone_concepts/using_datasets.html#point-cloud-datasets) or
-[segmentation maps](../fiftyone_concepts/using_datasets.html#semantic-segmentation), you may need to configure
+[point clouds](../fiftyone_concepts/using_datasets.md#point-cloud-datasets) or
+[segmentation maps](../fiftyone_concepts/using_datasets.md#semantic-segmentation), you may need to configure
 cross-origin resource sharing (CORS) for your cloud buckets. Details are
 provided below for each cloud platform.
 
@@ -234,7 +234,7 @@ the `s3:ListBucket` permission, as `s3:GetBucketLocation` does not support
 this.
 
 3\. Permanently register AWS credentials on a particular machine by adding the
-following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
+following keys to your [media cache config](cloud_media.md#teams-media-cache-config):
 
 ```python
 {
@@ -290,7 +290,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcp-credentials.json"
 ```
 
 3\. Permanently register GCS credentials on a particular machine by adding the
-following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
+following keys to your [media cache config](cloud_media.md#teams-media-cache-config):
 
 ```python
 {
@@ -373,7 +373,7 @@ export AZURE_PROFILE=default  # optional
 ```
 
 4\. Permanently register Azure credentials on a particular machine by adding the
-following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
+following keys to your [media cache config](cloud_media.md#teams-media-cache-config):
 
 ```python
 {
@@ -476,7 +476,7 @@ export MINIO_PROFILE=default  # optional
 ```
 
 3\. Permanently register MinIO credentials on a particular machine by adding the
-following keys to your [media cache config](cloud_media.html#teams-media-cache-config):
+following keys to your [media cache config](cloud_media.md#teams-media-cache-config):
 
 ```python
 {
@@ -530,7 +530,7 @@ heuristics engine to determine how long to cache the object.
 Configuring credentials following the instructions above is almost always
 sufficient for FiftyOne Teams to properly utilize them. In rare cases where the
 cloud provider client needs non-default configuration, you can add extra client
-kwargs via the [media cache config](cloud_media.html#teams-media-cache-config):
+kwargs via the [media cache config](cloud_media.md#teams-media-cache-config):
 
 ```python
 {

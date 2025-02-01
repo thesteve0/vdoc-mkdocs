@@ -26,8 +26,8 @@ the App
 ## Local data [¶](\#local-data "Permalink to this headline")
 
 When working with data that is stored on disk on a machine with a display, you
-can directly [load a dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) and then
-[launch the App](../fiftyone_concepts/app.html#creating-an-app-session):
+can directly [load a dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) and then
+[launch the App](../fiftyone_concepts/app.md#creating-an-app-session):
 
 ```python
 # On local machine
@@ -53,13 +53,13 @@ multiple App instances simultaneously on your machine.
 FiftyOne supports working with data that is stored on a remote machine that you
 have `ssh` access to. The basic workflow is to load a dataset on the remote
 machine via the FiftyOne Python library, launch a
-[remote session](../fiftyone_concepts/app.html#remote-session), and connect to the session on your
+[remote session](../fiftyone_concepts/app.md#remote-session), and connect to the session on your
 local machine where you can then interact with the App.
 
 First, `ssh` into your remote machine and
 [install FiftyOne](../getting_started/basic/install.md#installing-fiftyone) if necessary.
 
-Then [load a dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) using Python on the remote
+Then [load a dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) using Python on the remote
 machine and launch a remote session:
 
 ```python
@@ -100,7 +100,7 @@ your remote machine (the default is 5151), and `5151` specifies the local port
 to use to connect to the App (and can be customized).
 
 Alternatively, if you have FiftyOne installed on your local machine, you can
-[use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
+[use the CLI](../cli/index.md#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
 ```python
@@ -125,7 +125,7 @@ Note
 
 If you use ssh keys to connect to your remote machine, you can use the
 optional `--ssh-key` argument of the
-[fiftyone app connect](../cli/index.html#cli-fiftyone-app-connect) command.
+[fiftyone app connect](../cli/index.md#cli-fiftyone-app-connect) command.
 
 However, if you are using this key regularly,
 [it is recommended](https://unix.stackexchange.com/a/494485) to add it
@@ -158,7 +158,7 @@ session = fo.launch_app(dataset, remote=True, address="0.0.0.0")
 ```
 
 If desired, you can permanently configure an App address by setting the
-`default_app_address` of your [FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
+`default_app_address` of your [FiftyOne config](../fiftyone_concepts/config.md#configuring-fiftyone).
 You can achieve this by adding the following entry to your
 `~/.fiftyone/config.json` file:
 
@@ -184,7 +184,7 @@ FiftyOne officially supports [Jupyter Notebooks](https://jupyter.org),
 App support is also available in
 [SageMaker Notebooks](https://aws.amazon.com/sagemaker/notebooks/) and any
 cloud notebook that has an accessible network proxy via configured
-[proxy\_url](../fiftyone_concepts/config.html#configuring-proxy-url).
+[proxy\_url](../fiftyone_concepts/config.md#configuring-proxy-url).
 
 To use FiftyOne in a notebook, simply install `fiftyone` via `pip`:
 
@@ -329,7 +329,7 @@ ssh -N -L XXXX:localhost:XXXX [<username>@]<hostname>
 
 Now open `localhost:XXXX` in your browser and you should find your notebook!
 
-If your notebook launches the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app), you will also
+If your notebook launches the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app), you will also
 need to forward the port used by the App to your local machine. By default,
 the App uses port `5151`, but you can [specify any port](#remote-data),
 say `YYYY`, not currently in use on your remote machine:
@@ -342,7 +342,7 @@ ssh -N -L 5151:localhost:YYYY [<username>@]<hostname>
 
 **In your Jupyter notebook:**
 
-When you launch the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app) in your notebook, you
+When you launch the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app) in your notebook, you
 should now see the App as expected!
 
 ```python
@@ -439,11 +439,11 @@ docker run -v ${SHARED_DIR}:/fiftyone -p 5151:5151 -it voxel51/fiftyone
 ```
 
 The `-p 5151:5151` option is required so that when you
-[launch the App](../fiftyone_concepts/app.html#creating-an-app-session) from within the container you
+[launch the App](../fiftyone_concepts/app.md#creating-an-app-session) from within the container you
 can connect to it at [http://localhost:5151](http://localhost:5151) in your browser.
 
 You can also include the `-e` or `--env-file` options if you need to further
-[configure FiftyOne](../fiftyone_concepts/config.html#configuring-fiftyone).
+[configure FiftyOne](../fiftyone_concepts/config.md#configuring-fiftyone).
 
 By default, running the image launches an IPython shell, which you can use as
 normal:
@@ -478,7 +478,7 @@ session = fo.launch_app(..., address="0.0.0.0")
 ### Connecting to a localhost database [¶](\#connecting-to-a-localhost-database "Permalink to this headline")
 
 If you are using a
-[self-managed database](../fiftyone_concepts/config.html#configuring-mongodb-connection) that you
+[self-managed database](../fiftyone_concepts/config.md#configuring-mongodb-connection) that you
 ordinarily connect to via a URI like `mongodb://localhost`, then you will need
 to tweak this slightly when working in Docker. See
 [this question](https://stackoverflow.com/q/24319662) for details.
@@ -503,7 +503,7 @@ Mounting cloud buckets using the techniques below is not performant and is
 not recommended or officially supported. It is useful only for prototyping.
 
 Our recommended, scalable approach to work with cloud-backed data is
-[FiftyOne Teams](../teams/index.html#fiftyone-teams), an enterprise deployment of
+[FiftyOne Teams](../teams/index.md#fiftyone-teams), an enterprise deployment of
 FiftyOne with multiuser collaboration features, native cloud dataset
 support, and much more!
 
@@ -554,7 +554,7 @@ s3fs <bucket-name> /path/to/mount/point \
 **Step 4**
 
 Now that you can access your data from the compute instance, start up Python
-and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) whose filepaths are in
+and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) whose filepaths are in
 the mount point you specified above. Then you can launch the App and work with
 it locally in your browser using [remote sessions](#remote-data).
 
@@ -602,7 +602,7 @@ gcsfuse --implicit-dirs my-bucket /path/to/mount
 **Step 4**
 
 Now that you can access your data from the compute instance, start up Python
-and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) whose filepaths are in
+and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) whose filepaths are in
 the mount point you specified above. Then you can launch the App and work with
 it locally in your browser using [remote sessions](#remote-data).
 
@@ -645,7 +645,7 @@ You can use [blobfuse](https://github.com/Azure/azure-storage-fuse) for this.
 **Step 4**
 
 Now that you can access your data from the compute instance, start up Python
-and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) whose filepaths are in
+and [create a FiftyOne dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) whose filepaths are in
 the mount point you specified above. Then you can launch the App and work with
 it locally in your browser using [remote sessions](#remote-data).
 

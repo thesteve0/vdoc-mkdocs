@@ -42,11 +42,11 @@ fiftyone requires Python '>=3.9' but the running Python is 3.4.10
 ```
 
 To resolve this, you will need to use Python 3.9 or newer, and pip 19.3 or
-newer. See the [installation guide](install.html#installing-fiftyone) for details. If
+newer. See the [installation guide](install.md#installing-fiftyone) for details. If
 you have installed a suitable version of Python in a virtual environment and
 still encounter this error, ensure that the virtual environment is activated.
 See the
-[virtual environment setup guide](virtualenv.html) for more details.
+[virtual environment setup guide](virtualenv.md) for more details.
 
 Note
 
@@ -56,7 +56,7 @@ FiftyOne does not support 32-bit platforms.
 
 This error occurs when attempting to install FiftyOne with an unsupported
 Python version (either too old or too new). See the
-[installation guide](install.html#install-prereqs) for details on which versions of
+[installation guide](install.md#install-prereqs) for details on which versions of
 Python are supported by FiftyOne.
 
 If you have multiple Python installations, you may be using `pip` from an
@@ -65,7 +65,7 @@ version `pip` is using. If you see an unsupported or unexpected Python version
 reported, there are several possible causes, including:
 
 - You may not have activated a virtual environment in your current shell. Refer
-to the [virtual environment setup guide](virtualenv.html) for details.
+to the [virtual environment setup guide](virtualenv.md) for details.
 
 - If you are intentionally using your system Python installation instead of a
 virtual environment, your system-wide `pip` may use an unsupported Python
@@ -74,14 +74,14 @@ uses Python 3. If this is the case, try installing FiftyOne with `pip3`
 instead of `pip`.
 
 - You may not have a compatible Python version installed. See the
-[installation guide](install.html#install-prereqs) for details.
+[installation guide](install.md#install-prereqs) for details.
 
 
 ### “No module named skbuild” [¶](\#no-module-named-skbuild "Permalink to this headline")
 
 On Linux, this error can occur when attempting to install OpenCV with an old
 pip version. To fix this, upgrade pip. See the
-[installation guide](install.html#installing-fiftyone) for instructions, or the
+[installation guide](install.md#installing-fiftyone) for instructions, or the
 [opencv-python FAQ](https://pypi.org/project/opencv-python-headless/) for
 more details.
 
@@ -98,7 +98,7 @@ positioned correctly.
 
 If you are using IPython and a virtual environment for FiftyOne, IPython must
 be installed in the virtual environment, per the
-[installation guide](install.html#installing-extras). If you attempt to use a
+[installation guide](install.md#installing-extras). If you attempt to use a
 system-wide IPython installation in a virtual environment with FiftyOne, you
 may encounter errors such as:
 
@@ -120,7 +120,7 @@ ServerSelectionTimeoutError: localhost:27017: [Errno 111] Connection refused
 ```
 
 To resolve this, install IPython in your active virtual environment (see the
-[virtual environment guide](virtualenv.html#virtualenv-guide) for more information):
+[virtual environment guide](virtualenv.md#virtualenv-guide) for more information):
 
 ```python
 pip install ipython
@@ -131,18 +131,18 @@ pip install ipython
 
 FiftyOne includes a `fiftyone-db` package wheel for your operating system and
 hardware. If you have not
-[configured your own database connection](../fiftyone_concepts/config.html#configuring-mongodb-connection),
+[configured your own database connection](../fiftyone_concepts/config.md#configuring-mongodb-connection),
 then FiftyOne’s database service will attempt to start up on import using the
 MongoDB distribution provided by `fiftyone-db`. If the database fails to start,
 importing `fiftyone` will result in exceptions being raised.
 
 ## Downgrading to old versions [¶](\#downgrading-to-old-versions "Permalink to this headline")
 
-The [fiftyone migrate](../cli/index.html#cli-fiftyone-migrate) command was introduced in
+The [fiftyone migrate](../cli/index.md#cli-fiftyone-migrate) command was introduced in
 FiftyOne v0.7.3. If you would like to downgrade from a FiftyOne version
 prior to v0.7.3 (to a yet older version), then you will first need to
-[upgrade](install.html#upgrading-fiftyone) to v0.7.3 or later and then
-[downgrade](install.html#downgrading-fiftyone):
+[upgrade](install.md#upgrading-fiftyone) to v0.7.3 or later and then
+[downgrade](install.md#downgrading-fiftyone):
 
 ```python
 # The version that you wish to downgrade to
@@ -197,7 +197,7 @@ sudo apt install libssl-dev
 ```
 
 If you still face issues with imports, you can follow
-[these instructions](../fiftyone_concepts/config.html#configuring-mongodb-connection) to configure
+[these instructions](../fiftyone_concepts/config.md#configuring-mongodb-connection) to configure
 FiftyOne to use a MongoDB instance that you have installed yourself.
 
 ### Troubleshooting Windows imports [¶](\#troubleshooting-windows-imports "Permalink to this headline")

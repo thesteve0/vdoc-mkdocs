@@ -3,8 +3,8 @@
 FiftyOne provides a powerful [`fiftyone.core.plots`](../api/fiftyone.core.plots.html#module-fiftyone.core.plots "fiftyone.core.plots") framework that contains
 a variety of interactive plotting methods that enable you to visualize your
 datasets and uncover patterns that are not apparent from inspecting either the
-[raw media files](app.html#fiftyone-app) or
-[aggregate statistics](using_aggregations.html#using-aggregations).
+[raw media files](app.md#fiftyone-app) or
+[aggregate statistics](using_aggregations.md#using-aggregations).
 
 With FiftyOne, you can visualize geolocated data on maps, generate interactive
 evaluation reports such as confusion matrices and PR curves, create dashboards
@@ -15,7 +15,7 @@ modes, annotation gaps, and more.
 What do we mean by **interactive plots**? First, FiftyOne plots are
 [powered by Plotly](https://plotly.com/python), which means they are
 responsive JavaScript-based plots that can be zoomed, panned, and lasso-ed.
-Second, FiftyOne plots can be linked to the [FiftyOne App](app.html#fiftyone-app),
+Second, FiftyOne plots can be linked to the [FiftyOne App](app.md#fiftyone-app),
 so that selecting points in a plot will automatically load the corresponding
 samples/labels in the App (and vice versa) for you to visualize! Linking plots
 to their source media is a paradigm that should play a critical part in any
@@ -123,7 +123,7 @@ to [this section](#matplotlib-in-notebooks) for setup instructions.
 
 ## Visualizing embeddings [¶](\#visualizing-embeddings "Permalink to this headline")
 
-The [FiftyOne Brain](../brain.html#fiftyone-brain) provides a powerful
+The [FiftyOne Brain](../brain.md#fiftyone-brain) provides a powerful
 `compute_visualization()` method
 that can be used to generate low-dimensional representations of the
 samples/object patches in a dataset that can be visualized using interactive
@@ -131,7 +131,7 @@ FiftyOne plots.
 
 To learn more about the available embedding methods, dimensionality reduction
 techniques, and their applications to dataset analysis, refer to
-[this page](../brain.html#brain-embeddings-visualization). In this section, we’ll just
+[this page](../brain.md#brain-embeddings-visualization). In this section, we’ll just
 cover the basic mechanics of creating scatterplots and interacting with them.
 
 Note
@@ -146,7 +146,7 @@ representations of your data.
 Let’s use
 `compute_visualization()` to
 generate a 2D visualization of the images in the test split of the
-[MNIST dataset](../dataset_zoo/datasets.html#dataset-zoo-mnist) and then visualize it using the
+[MNIST dataset](../dataset_zoo/datasets.md#dataset-zoo-mnist) and then visualize it using the
 `results.visualize()`
 method of the returned results object, where each point is colored by its
 ground truth label:
@@ -189,7 +189,7 @@ when you associate the scatterpoints with the samples or objects in a [`Dataset`
 and then attach it to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session").
 
 The example below demonstrates setting up an interactive scatterplot for the
-test split of the [MNIST dataset](../dataset_zoo/datasets.html#dataset-zoo-mnist) that is
+test split of the [MNIST dataset](../dataset_zoo/datasets.md#dataset-zoo-mnist) that is
 [attached to the App](#attaching-plots).
 
 In this setup, the scatterplot renders each sample using its corresponding 2D
@@ -266,7 +266,7 @@ to generate interactive plots of datasets with geolocation data.
 You can store arbitrary location data in
 [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) format on your datasets
 using the [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") and [`GeoLocations`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocations "fiftyone.core.labels.GeoLocations") label types. See
-[this section](using_datasets.html#geolocation) for more information.
+[this section](using_datasets.md#geolocation) for more information.
 
 The
 [`location_scatterplot()`](../api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.location_scatterplot "fiftyone.core.plots.base.location_scatterplot")
@@ -276,7 +276,7 @@ can be stored in the `point` attribute of a [`GeoLocation`](../api/fiftyone.core
 Note
 
 Did you know? You can create
-[location-based views](using_views.html#geolocation-views) that filter your data by
+[location-based views](using_views.md#geolocation-views) that filter your data by
 their location!
 
 ### Standalone plots [¶](\#id7 "Permalink to this headline")
@@ -287,7 +287,7 @@ optional `labels` and `sizes` parameters to control the color and sizes
 of each point, respectively.
 
 The example below demonstrates this usage using the
-[quickstart-geo](../dataset_zoo/datasets.html#dataset-zoo-quickstart-geo) dataset from the zoo, which
+[quickstart-geo](../dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset from the zoo, which
 contains [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in its `location` field:
 
 ```python
@@ -348,7 +348,7 @@ comes when you associate the location coordinates with the samples in a
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and then attach it to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session").
 
 The example below demonstrates setting up an interactive location scatterplot
-for the [quickstart-geo](../dataset_zoo/datasets.html#dataset-zoo-quickstart-geo) dataset that is
+for the [quickstart-geo](../dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset that is
 [attached to the App](#attaching-plots).
 
 In this setup, the location plot renders each sample using its corresponding
@@ -407,12 +407,12 @@ interactively explore specific cases of your model’s performance.
 
 Note
 
-See [this page](evaluation.html#evaluating-regressions) for an in-depth guide to using
+See [this page](evaluation.md#evaluating-regressions) for an in-depth guide to using
 FiftyOne to evaluate regression models.
 
 The example below demonstrates using an interactive regression plot to explore
 the results of some fake regression data on the
-[quickstart](../dataset_zoo/datasets.html#dataset-zoo-quickstart) dataset.
+[quickstart](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
 
 In this setup, you can lasso scatter points to select the corresponding samples
 in the App.
@@ -479,9 +479,9 @@ instances to interactively explore specific slices of your dataset based on
 their corresponding line data.
 
 The example below demonstrates using an interactive lines plot to view the
-frames of the [quickstart-video](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) dataset
+frames of the [quickstart-video](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) dataset
 that contain the most vehicles. In this setup, you can lasso scatter points to
-select the corresponding frames in a [frames view](using_views.html#frame-views) in the
+select the corresponding frames in a [frames view](using_views.md#frame-views) in the
 App.
 
 Each block in the example code below denotes a separate cell in a Jupyter
@@ -539,12 +539,12 @@ interactively explore specific cases of your model’s performance.
 
 Note
 
-See [this page](evaluation.html#evaluating-models) for an in-depth guide to using
+See [this page](evaluation.md#evaluating-models) for an in-depth guide to using
 FiftyOne to evaluate models.
 
 The example below demonstrates using an interactive confusion matrix to explore
 the results of an evaluation on the `predictions` field of the
-[quickstart](../dataset_zoo/datasets.html#dataset-zoo-quickstart) dataset.
+[quickstart](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
 
 In this setup, you can click on individual cells of the confusion matrix to
 select the corresponding ground truth and/or predicted [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") in the App.
@@ -593,7 +593,7 @@ When you pass an `eval_key` to
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections"),
 confusion matrices attached to App instances have a different default behavior:
 when you select cell(s), the corresponding
-[evaluation patches](evaluation.html#evaluation-patches) for the run are shown in the
+[evaluation patches](evaluation.md#evaluation-patches) for the run are shown in the
 App. This allows you to visualize each TP, FP, and FN example in a fine-grained
 manner:
 
@@ -975,7 +975,7 @@ When working with [scatterplots](#embeddings-plots) and
 [interactive heatmaps](#confusion-matrix-plots) that are linked to frames
 or labels, you may prefer to see different views loaded in the App when you
 make a selection in the plot. For example, you may want to see the
-corresponding objects in a [patches view](using_views.html#object-patches-views), or you
+corresponding objects in a [patches view](using_views.md#object-patches-views), or you
 may wish to see the samples containing the objects but with all other labels
 also visible.
 
@@ -1009,9 +1009,9 @@ options are:
 
 
 For example, by default, clicking on cells in a confusion matrix for a
-[detection evaluation](evaluation.html#evaluating-detections-coco) will show the
+[detection evaluation](evaluation.md#evaluating-detections-coco) will show the
 corresponding ground truth and predicted objects in an
-[evaluation patches view](evaluation.html#evaluation-patches) view in the App. Run the
+[evaluation patches view](evaluation.md#evaluation-patches) view in the App. Run the
 code blocks below in Jupyter notebook cells to see this:
 
 ```python
@@ -1058,9 +1058,9 @@ plot.selection_mode = "select"
 ```
 
 Similarly, selecting scatter points in an
-[object embeddings visualization](../brain.html#brain-embeddings-visualization) will
+[object embeddings visualization](../brain.md#brain-embeddings-visualization) will
 show the corresponding objects in the App as a
-[patches view](using_views.html#object-patches-views):
+[patches view](using_views.md#object-patches-views):
 
 ```python
 # Continuing from the code above

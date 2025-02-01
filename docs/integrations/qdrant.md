@@ -14,7 +14,7 @@ via point-and-click in the App.
 Note
 
 Did you know? You can
-[search by natural language](../brain.html#brain-similarity-text) using Qdrant
+[search by natural language](../brain.md#brain-similarity-text) using Qdrant
 similarity indexes!
 
 ![image-similarity](../_images/brain-image-similarity.gif)
@@ -26,7 +26,7 @@ datasets and use this to query your data is as follows:
 
 1. Start a Qdrant service locally
 
-2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
+2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) into FiftyOne
 
 3. Compute embedding vectors for samples or patches in your dataset, or select
 a model to use to generate embeddings
@@ -155,7 +155,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=qdrant
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {
@@ -187,7 +187,7 @@ The `API_KEY`, `GRPC_PORT`, and `PREFER_GRPC` environment variables are optional
 
 **FiftyOne Brain config**
 
-You can also store your credentials in your [brain config](../brain.html#brain-config)
+You can also store your credentials in your [brain config](../brain.md#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
 ```python
@@ -261,7 +261,7 @@ For detailed information on these parameters, see the
 [Qdrant documentation](https://qdrant.tech/documentation/configuration).
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.html#brain-config)
+previous section. Here’s an example of a [brain config](../brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -460,7 +460,7 @@ You can customize the Qdrant collection by passing any
 ### Create a patch similarity index [¶](\#create-a-patch-similarity-index "Permalink to this headline")
 
 You can also create a similarity index for
-[object patches](../brain.html#brain-object-similarity) within your dataset by
+[object patches](../brain.md#brain-object-similarity) within your dataset by
 including the `patches_field` argument to
 `compute_similarity()`:
 
@@ -606,7 +606,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
+- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
 
 
 ```python
@@ -651,7 +651,7 @@ in the index, they will never be included in the result.
 
 This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
-[constructing views](../fiftyone_concepts/using_views.html#using-views) that contain the images of
+[constructing views](../fiftyone_concepts/using_views.md#using-views) that contain the images of
 interest.
 
 ### Accessing the Qdrant client [¶](\#accessing-the-qdrant-client "Permalink to this headline")

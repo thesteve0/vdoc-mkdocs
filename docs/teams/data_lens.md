@@ -2,7 +2,7 @@
 
 **Available in FiftyOne Teams v2.2+**
 
-Data Lens is a feature built into the [FiftyOne Teams App](teams_app.html#teams-app)
+Data Lens is a feature built into the [FiftyOne Teams App](teams_app.md#teams-app)
 which allows you to use FiftyOne to explore and import samples from external
 data sources.
 
@@ -148,7 +148,7 @@ import, as this will result in more consistent and performant execution.
 Note
 
 Scheduled imports use the
-[delegated operations](teams_plugins.html#teams-delegated-operations) framework to
+[delegated operations](teams_plugins.md#teams-delegated-operations) framework to
 execute asynchronously on your connected compute cluster!
 
 After selecting your execution preference, you will be able to monitor the
@@ -161,7 +161,7 @@ open your destination dataset containing your imported samples.
 ![data-lens-immediate-import](../_images/data_lens_immediate_import.png)
 
 In the case of scheduled execution, you will be presented with an option to
-visit the [Runs page](teams_plugins.html#teams-runs-page).
+visit the [Runs page](teams_plugins.md#teams-runs-page).
 
 ![data-lens-scheduled-import](../_images/data_lens_scheduled_import.png)
 
@@ -178,9 +178,9 @@ to use Data Lens to augment your datasets.
 ## Integrating with Data Lens [¶](\#integrating-with-data-lens "Permalink to this headline")
 
 Data Lens makes use of FiftyOne’s powerful
-[plugins framework](../plugins/index.html#fiftyone-plugins) to allow you to tailor your
+[plugins framework](../plugins/index.md#fiftyone-plugins) to allow you to tailor your
 experience to meet the needs of your data. As part of the plugin framework,
-you are able to create custom [operators](../plugins/developing_plugins.html#plugins-design-operators),
+you are able to create custom [operators](../plugins/developing_plugins.md#plugins-design-operators),
 which are self-contained Python classes that provide custom functionality to
 FiftyOne.
 
@@ -266,7 +266,7 @@ def config(self) -> foo.OperatorConfig:
 ```
 
 The [`config`](../api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.config "fiftyone.operators.operator.Operator.config") property
-is part of the standard [operator interface](../plugins/developing_plugins.html#operator-interface) and
+is part of the standard [operator interface](../plugins/developing_plugins.md#operator-interface) and
 provides configuration options for your operator.
 
 ```python
@@ -308,9 +308,9 @@ to `request.max_results`. Any sample data beyond this limit will be
 discarded.
 
 The `ctx` argument provides access to a
-[range of useful capabilities](../plugins/developing_plugins.html#operator-execution-context) which you can
+[range of useful capabilities](../plugins/developing_plugins.md#operator-execution-context) which you can
 leverage in your operator, including things like
-[providing secrets to your operator](secrets.html#teams-secrets).
+[providing secrets to your operator](secrets.md#teams-secrets).
 
 Using these inputs, we are expected to return a generator which yields
 `DataLensSearchResponse`
@@ -448,7 +448,7 @@ def resolve_input(self):
 Note
 
 For more information on operator inputs, see
-[the plugin documentation](../plugins/developing_plugins.html#operator-inputs).
+[the plugin documentation](../plugins/developing_plugins.md#operator-inputs).
 
 With this method implemented, Data Lens will construct a form allowing users
 to define any or all of these inputs.
@@ -1006,7 +1006,7 @@ client = bigquery.Client()
 
 ```
 
-In practice, you’ll likely need to use [secrets](secrets.html#teams-secrets) to
+In practice, you’ll likely need to use [secrets](secrets.md#teams-secrets) to
 securely provide credentials to connect to your data source.
 
 ```python
@@ -1054,7 +1054,7 @@ samples.append(self.convert_to_sample(row))
 
 Here we are converting our sample data from its storage format to a FiftyOne
 [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"). This is where we’ll add features
-to our samples, such as [labels](../fiftyone_concepts/using_datasets.html#using-labels).
+to our samples, such as [labels](../fiftyone_concepts/using_datasets.md#using-labels).
 
 As we can see from this example, we can make our Data Lens search experience
 as powerful as it needs to be. We can leverage internal libraries and services,
@@ -1067,7 +1067,7 @@ the data that’s needed.
 As the volume and complexity of your data grows, you may want to expose many
 options to Data Lens users, but doing so all at once can be overwhelming for
 the user. In this example, we’ll look at how we can use
-[dynamic operators](../plugins/developing_plugins.html#operator-inputs) to conditionally expose
+[dynamic operators](../plugins/developing_plugins.md#operator-inputs) to conditionally expose
 configuration options to Data Lens users.
 
 ```python

@@ -2,7 +2,7 @@
 
 This page lists all of the natively available models in the FiftyOne Model Zoo.
 
-Check out the [API reference](api.html#model-zoo-api) for complete instructions
+Check out the [API reference](api.md#model-zoo-api) for complete instructions
 for using the Model Zoo.
 
 * * *

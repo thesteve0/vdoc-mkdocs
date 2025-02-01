@@ -21,7 +21,7 @@ your data!
 
 Note
 
-Check out the [tutorials page](../tutorials/index.html#tutorials) for in-depth walkthroughs
+Check out the [tutorials page](../tutorials/index.md#tutorials) for in-depth walkthroughs
 of evaluating various types of models with FiftyOne.
 
 ## Overview [¶](\#overview "Permalink to this headline")
@@ -31,7 +31,7 @@ FiftyOne’s evaluation methods are conveniently exposed as methods on all
 datasets or specific views into them via the same syntax.
 
 Let’s illustrate the basic workflow by loading the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) and analyzing the object
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) and analyzing the object
 detections in its `predictions` field using the
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
 method:
@@ -58,7 +58,7 @@ session = fo.launch_app(dataset)
 
 When you load a dataset in the App that contains one or more
 [evaluations](#evaluating-models), you can open the
-[Model Evaluation panel](app.html#app-model-evaluation-panel) to visualize and
+[Model Evaluation panel](app.md#app-model-evaluation-panel) to visualize and
 interactively explore the evaluation results in the App:
 
 ![model-evaluation-compare](../_images/model-evaluation-compare.gif)
@@ -113,8 +113,8 @@ parameter to the evaluation routine, FiftyOne will populate helpful
 task-specific information about your model’s predictions on each sample, such
 as false negative/positive counts and per-sample accuracies.
 
-Continuing with our example, let’s use [dataset views](using_views.html#using-views) and
-the [FiftyOne App](app.html#fiftyone-app) to leverage these sample metrics to
+Continuing with our example, let’s use [dataset views](using_views.md#using-views) and
+the [FiftyOne App](app.md#fiftyone-app) to leverage these sample metrics to
 investigate the samples with the most false positive predictions in the
 dataset:
 
@@ -154,7 +154,7 @@ real performance of a model.
 Note
 
 The easiest way to work with confusion matrices in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 When you use evaluation methods such as
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
@@ -248,7 +248,7 @@ evaluating your model.
 
 In addition, when you specify an `eval_key` parameter, helpful fields will be
 populated on each sample that you can leverage via the
-[FiftyOne App](app.html#fiftyone-app) to interactively explore the strengths and
+[FiftyOne App](app.md#fiftyone-app) to interactively explore the strengths and
 weaknesses of your model on individual samples.
 
 ### Simple evaluation (default) [¶](\#simple-evaluation-default "Permalink to this headline")
@@ -270,7 +270,7 @@ which can take any value supported by
 [`SimpleEvaluationConfig`](../api/fiftyone.utils.eval.regression.html#fiftyone.utils.eval.regression.SimpleEvaluationConfig "fiftyone.utils.eval.regression.SimpleEvaluationConfig").
 
 The example below demonstrates simple evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) with some fake regression
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) with some fake regression
 data added to it to demonstrate the workflow:
 
 ```python
@@ -339,7 +339,7 @@ support                   200
 Note
 
 Did you know? You can
-[attach regression plots to the App](plots.html#regression-plots) and
+[attach regression plots to the App](plots.md#regression-plots) and
 interactively explore them by selecting scatter points and/or modifying
 your view in the App.
 
@@ -361,7 +361,7 @@ for generating various aggregate evaluation reports about your model.
 
 In addition, when you specify an `eval_key` parameter, a number of helpful
 fields will be populated on each sample that you can leverage via the
-[FiftyOne App](app.html#fiftyone-app) to interactively explore the strengths and
+[FiftyOne App](app.md#fiftyone-app) to interactively explore the strengths and
 weaknesses of your model on individual samples.
 
 ### Simple evaluation (default) [¶](\#id4 "Permalink to this headline")
@@ -380,7 +380,7 @@ be populated on each sample that records whether that sample’s prediction is
 correct.
 
 The example below demonstrates simple evaluation on the
-[CIFAR-10 dataset](../dataset_zoo/datasets.html#dataset-zoo-cifar10) with some fake predictions added
+[CIFAR-10 dataset](../dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake predictions added
 to it to demonstrate the workflow:
 
 ```python
@@ -467,7 +467,7 @@ weighted avg       0.90      0.90      0.90      1000
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 ### Top-k evaluation [¶](\#top-k-evaluation "Permalink to this headline")
 
@@ -489,12 +489,12 @@ of your predictions, and you must provide the list of corresponding class
 labels via the `classes` parameter of
 [`evaluate_classifications()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_classifications "fiftyone.core.collections.SampleCollection.evaluate_classifications").
 
-Did you know? Many models from the [Model Zoo](../models/model_zoo/index.html#model-zoo)
+Did you know? Many models from the [Model Zoo](../models/model_zoo/index.md#model-zoo)
 provide support for storing logits for their predictions!
 
 The example below demonstrates top-k evaluation on a
-[small ImageNet sample](../dataset_zoo/datasets.html#dataset-zoo-imagenet-sample) with predictions
-from a pre-trained model from the [Model Zoo](../models/model_zoo/index.html#model-zoo):
+[small ImageNet sample](../dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) with predictions
+from a pre-trained model from the [Model Zoo](../models/model_zoo/index.md#model-zoo):
 
 ```python
 import fiftyone as fo
@@ -550,7 +550,7 @@ session.view = (
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 ### Binary evaluation [¶](\#binary-evaluation "Permalink to this headline")
 
@@ -570,7 +570,7 @@ In order to use binary evaluation, you must provide the
 [`evaluate_classifications()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_classifications "fiftyone.core.collections.SampleCollection.evaluate_classifications").
 
 The example below demonstrates binary evaluation on the
-[CIFAR-10 dataset](../dataset_zoo/datasets.html#dataset-zoo-cifar10) with some fake binary predictions
+[CIFAR-10 dataset](../dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake binary predictions
 added to it to demonstrate the workflow:
 
 ```python
@@ -648,7 +648,7 @@ weighted avg       0.83      0.48      0.59      1000
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 ## Detections [¶](\#detections "Permalink to this headline")
 
@@ -666,7 +666,7 @@ generating various aggregate evaluation reports about your model.
 
 In addition, when you specify an `eval_key` parameter, a number of helpful
 fields will be populated on each sample and its predicted/ground truth
-objects that you can leverage via the [FiftyOne App](app.html#fiftyone-app) to
+objects that you can leverage via the [FiftyOne App](app.md#fiftyone-app) to
 interactively explore the strengths and weaknesses of your model on individual
 samples.
 
@@ -682,17 +682,17 @@ also natively supported.
 The [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
 method supports all of the following task types:
 
-- [Object detection](using_datasets.html#object-detection)
+- [Object detection](using_datasets.md#object-detection)
 
-- [Instance segmentations](using_datasets.html#instance-segmentation)
+- [Instance segmentations](using_datasets.md#instance-segmentation)
 
-- [Polygon detection](using_datasets.html#polylines)
+- [Polygon detection](using_datasets.md#polylines)
 
-- [Keypoints](using_datasets.html#keypoints)
+- [Keypoints](using_datasets.md#keypoints)
 
-- [Temporal detections](using_datasets.html#temporal-detection)
+- [Temporal detections](using_datasets.md#temporal-detection)
 
-- [3D detections](using_datasets.html#d-detections)
+- [3D detections](using_datasets.md#d-detections)
 
 
 The only difference between each task type is in how the IoU between objects is
@@ -745,7 +745,7 @@ length and semantic ordering.
 Note
 
 If a particular point is missing or not visible for a [`Keypoint`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint") instance,
-use nan values for its coordinates. [See here](using_datasets.html#keypoints) for more
+use nan values for its coordinates. [See here](using_datasets.md#keypoints) for more
 information about structuring keypoints.
 
 For temporal detection tasks, the ground truth and predicted objects should be
@@ -788,7 +788,7 @@ to load the view and then convert to patches.
 
 The example below demonstrates loading an evaluation patches view for the
 results of an evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -837,18 +837,18 @@ View stages:
 Note
 
 Did you know? You can convert to evaluation patches view directly
-[from the App](app.html#app-evaluation-patches)!
+[from the App](app.md#app-evaluation-patches)!
 
 ![evaluation-patches](../_images/evaluation_patches.gif)
 
 Evaluation patches views are just like any other
-[dataset view](using_views.html#using-views) in the sense that:
+[dataset view](using_views.md#using-views) in the sense that:
 
-- You can append view stages via the [App view bar](app.html#app-create-view) or
-[views API](using_views.html#using-views)
+- You can append view stages via the [App view bar](app.md#app-create-view) or
+[views API](using_views.md#using-views)
 
 - Any modifications to ground truth or predicted label tags that you make via
-the App’s [tagging menu](app.html#app-tagging) or via API methods like
+the App’s [tagging menu](app.md#app-tagging) or via API methods like
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
 will be reflected on the source dataset
@@ -956,7 +956,7 @@ when running COCO-style evaluation.
 #### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates COCO-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -1024,7 +1024,7 @@ traffic light       0.22      0.54      0.31        24
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 #### mAP, mAR and PR curves [¶](\#map-mar-and-pr-curves "Permalink to this headline")
 
@@ -1193,7 +1193,7 @@ when running Open Images-style evaluation.
 #### Example evaluation [¶](\#id9 "Permalink to this headline")
 
 The example below demonstrates Open Images-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -1262,7 +1262,7 @@ traffic light       0.32      0.79      0.45        24
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 #### mAP and PR curves [¶](\#map-and-pr-curves "Permalink to this headline")
 
@@ -1362,7 +1362,7 @@ threshold (default = 0.50). This threshold can be customized via the
 Classwise matching can be disabled by passing `classwise=False`
 
 - mAP is computed by averaging over the same range of IoU values
-[used by COCO](../integrations/coco.html#coco-map)
+[used by COCO](../integrations/coco.md#coco-map)
 
 
 When you specify an `eval_key` parameter, a number of helpful fields will be
@@ -1408,7 +1408,7 @@ when running ActivityNet-style evaluation.
 #### Example evaluation [¶](\#id13 "Permalink to this headline")
 
 The example below demonstrates ActivityNet-style temporal detection evaluation
-on the [ActivityNet 200 dataset](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200):
+on the [ActivityNet 200 dataset](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
 
 ```python
 import fiftyone as fo
@@ -1487,7 +1487,7 @@ Walking the dog       0.50      0.60      0.55         5
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 #### mAP and PR curves [¶](\#id14 "Permalink to this headline")
 
@@ -1620,12 +1620,12 @@ generating various aggregate evaluation reports about your model.
 
 In addition, when you specify an `eval_key` parameter, a number of helpful
 fields will be populated on each sample that you can leverage via the
-[FiftyOne App](app.html#fiftyone-app) to interactively explore the strengths and
+[FiftyOne App](app.md#fiftyone-app) to interactively explore the strengths and
 weaknesses of your model on individual samples.
 
 Note
 
-You can [store mask targets](using_datasets.html#storing-mask-targets) for your
+You can [store mask targets](using_datasets.md#storing-mask-targets) for your
 [`Segmentation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Segmentation "fiftyone.core.labels.Segmentation") fields on your dataset so that you can view semantic labels
 in the App and avoid having to manually specify the set of mask targets
 each time you run
@@ -1670,8 +1670,8 @@ recall.
 
 The example below demonstrates segmentation evaluation by comparing the
 masks generated by two DeepLabv3 models (with
-[ResNet50](../models/model_zoo/models.html#model-zoo-deeplabv3-resnet50-coco-torch) and
-[ResNet101](../models/model_zoo/models.html#model-zoo-deeplabv3-resnet101-coco-torch) backbones):
+[ResNet50](../models/model_zoo/models.md#model-zoo-deeplabv3-resnet50-coco-torch) and
+[ResNet101](../models/model_zoo/models.md#model-zoo-deeplabv3-resnet101-coco-torch) backbones):
 
 ```python
 import fiftyone as fo
@@ -1731,7 +1731,7 @@ session = fo.launch_app(dataset)
 Note
 
 The easiest way to analyze models in FiftyOne is via the
-[Model Evaluation panel](app.html#app-model-evaluation-panel)!
+[Model Evaluation panel](app.md#app-model-evaluation-panel)!
 
 ## Advanced usage [¶](\#advanced-usage "Permalink to this headline")
 
@@ -1851,7 +1851,7 @@ both the sample- and frame-levels of your dataset. Refer to the
 documentation of the relevant evaluation method for more details.
 
 The example below demonstrates evaluating (mocked) frame-level detections on
-the [quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) from the
+the [quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the
 Dataset Zoo:
 
 ```python
@@ -1929,7 +1929,7 @@ weighted avg       0.94      0.94      0.94     11345
 
 You can also view frame-level evaluation results as
 [evaluation patches](#evaluation-patches) by first converting
-[to frames](using_views.html#frame-views) and then [to patches](using_views.html#eval-patches-views)!
+[to frames](using_views.md#frame-views) and then [to patches](using_views.md#eval-patches-views)!
 
 ```python
 # Convert to frame evaluation patches
