@@ -1,8 +1,8 @@
 # Annotating Datasets [¶](\#annotating-datasets "Permalink to this headline")
 
 FiftyOne provides a powerful annotation API that makes it easy to add or edit
-labels on your [datasets](using_datasets.html#using-datasets) or specific
-[views](using_views.html#using-views) into them.
+labels on your [datasets](using_datasets.md#using-datasets) or specific
+[views](using_views.md#using-views) into them.
 
 Note
 
@@ -13,7 +13,7 @@ plugin!
 
 Note
 
-Check out [this tutorial](../tutorials/cvat_annotation.html) to see an
+Check out [this tutorial](../tutorials/cvat_annotation.ipynb) to see an
 example workflow that uses the annotation API to create, delete, and fix
 annotations on a FiftyOne dataset.
 
@@ -22,10 +22,10 @@ annotations on a FiftyOne dataset.
 The basic workflow to use the annotation API to add or edit labels on your
 FiftyOne datasets is as follows:
 
-1. Load a [labeled or unlabeled dataset](dataset_creation/index.html#loading-datasets) into FiftyOne
+1. Load a [labeled or unlabeled dataset](dataset_creation/index.md#loading-datasets) into FiftyOne
 
-2. Explore the dataset using the [App](app.html#fiftyone-app) or
-[dataset views](using_views.html#using-views) to locate either unlabeled samples that
+2. Explore the dataset using the [App](app.md#fiftyone-app) or
+[dataset views](using_views.md#using-views) to locate either unlabeled samples that
 you wish to annotate or labeled samples whose annotations you want to edit
 
 3. Use the
@@ -44,7 +44,7 @@ from your FiftyOne dataset
 
 
 The example below demonstrates this workflow using the default
-[CVAT backend](../integrations/cvat.html#cvat-integration).
+[CVAT backend](../integrations/cvat.md#cvat-integration).
 
 Note
 
@@ -52,7 +52,7 @@ You must create an account at [app.cvat.ai](https://app.cvat.ai) in order to
 run this example.
 
 Note that you can store your credentials as described in
-[this section](../integrations/cvat.html#cvat-setup) to avoid entering them manually each time
+[this section](../integrations/cvat.md#cvat-setup) to avoid entering them manually each time
 you interact with CVAT.
 
 First, we create the annotation tasks:
@@ -135,7 +135,7 @@ dataset.delete_annotation_run(anno_key)
 
 Note
 
-Check out [this page](../integrations/cvat.html#cvat-examples) to see a variety of common
+Check out [this page](../integrations/cvat.md#cvat-examples) to see a variety of common
 annotation patterns using the CVAT backend to illustrate the full process.
 
 ## Setup [¶](\#setup "Permalink to this headline")
@@ -145,12 +145,12 @@ which simply requires that you create an account and then configure your
 username and password credentials.
 
 However, you can configure FiftyOne to use a
-[self-hosted CVAT server](../integrations/cvat.html#cvat-self-hosted-server), or you can even use a
+[self-hosted CVAT server](../integrations/cvat.md#cvat-self-hosted-server), or you can even use a
 completely [custom backend](#custom-annotation-backend).
 
 Note
 
-See [this page](../integrations/cvat.html#cvat-setup) for CVAT-specific setup instructions.
+See [this page](../integrations/cvat.md#cvat-setup) for CVAT-specific setup instructions.
 
 ### Changing your annotation backend [¶](\#changing-your-annotation-backend "Permalink to this headline")
 
@@ -195,7 +195,7 @@ which you can see by inspecting the parameters of a backend’s associated
 
 The relevant classes for the builtin annotation backends are:
 
-- `"cvat"`: [`fiftyone.utils.cvat.CVATBackendConfig`](../api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATBackendConfig "fiftyone.utils.cvat.CVATBackendConfig")
+- `"cvat"`: [`fiftyone.utils.cvat.CVATBackendConfig`](../api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.CVATBackendConfig "fiftyone.utils.cvat.CVATBackendConfig")
 
 - `"labelstudio"`: [`fiftyone.utils.labelstudio.LabelStudioBackendConfig`](../api/fiftyone.utils.labelstudio.html#fiftyone.utils.labelstudio.LabelStudioBackendConfig "fiftyone.utils.labelstudio.LabelStudioBackendConfig")
 
@@ -647,7 +647,7 @@ labels on your dataset will be used to construct a classes list
 ### Label attributes [¶](\#label-attributes "Permalink to this headline")
 
 The `attributes` parameter allows you to configure whether
-[custom attributes](using_datasets.html#using-labels) beyond the default `label` attribute
+[custom attributes](using_datasets.md#using-labels) beyond the default `label` attribute
 are included in the annotation tasks.
 
 When adding new label fields for which you want to include attributes, you must
@@ -868,7 +868,7 @@ the object track appears
 
 
 In addition, if you are using an annotation backend
-[like CVAT](../integrations/cvat.html#cvat-annotating-videos) that supports keyframes, then when
+[like CVAT](../integrations/cvat.md#cvat-annotating-videos) that supports keyframes, then when
 you [download annotation runs](#loading-annotations) that include track
 annotations, the downloaded label corresponding to each keyframe of an object
 track will have its `keyframe=True` attribute set to denote that it was a

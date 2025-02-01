@@ -12,7 +12,7 @@ environment variable.
 ## Working with remotely-sourced datasets [¶](\#working-with-remotely-sourced-datasets "Permalink to this headline")
 
 Working with remotely-sourced zoo datasets is just like
-[built-in zoo datasets](datasets.html#dataset-zoo-datasets), as both varieties support
+[built-in zoo datasets](datasets.md#dataset-zoo-datasets), as both varieties support
 the [full zoo API](api.html#dataset-zoo-api).
 
 When specifying remote sources, you can provide any of the following:
@@ -135,7 +135,7 @@ The `dataset_type` that `download_and_prepare()` returns defines how it the
 dataset is ultimately loaded into FiftyOne:
 
 - **Built-in importer**: in many cases, FiftyOne already contains a
-[built-in importer](../user_guide/dataset_creation/datasets.html#supported-import-formats) that can be leveraged
+[built-in importer](../user_guide/dataset_creation/datasets.md#supported-import-formats) that can be leveraged
 to load data on disk into FiftyOne. Remotely-sourced datasets can take
 advantage of this by simply returning the appropriate `dataset_type` from
 `download_and_prepare()`, which is then used to load the data into

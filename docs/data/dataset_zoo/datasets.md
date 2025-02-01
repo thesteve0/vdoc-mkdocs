@@ -66,7 +66,7 @@ version of the dataset.
 
 Note
 
-Check out [this guide](../integrations/activitynet.html#activitynet) for more details on using
+Check out [this guide](../../integrations/activitynet.md#activitynet) for more details on using
 FiftyOne to work with ActivityNet.
 
 **Notes**
@@ -157,7 +157,7 @@ Note
 
 See
 [`ActivityNet100Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet100Dataset "fiftyone.zoo.datasets.base.ActivityNet100Dataset") and
-[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.html#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
+[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.md#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
 pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
@@ -171,7 +171,7 @@ the ActivityNet maintainers in order to load a full split into FiftyOne.
 To download the source files, you must fill out
 [this form](https://docs.google.com/forms/d/e/1FAIpQLSeKaFq9ZfcmZ7W0B0PbEhfbTHY41GeEgwsa7WobJgGUhn4DTQ/viewform).
 
-Refer to [this page](../integrations/activitynet.html#activitynet-full-split-downloads) to see how to load
+Refer to [this page](../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
 full splits by passing the `source_dir` parameter to
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
@@ -180,7 +180,7 @@ full splits by passing the `source_dir` parameter to
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/troubleshooting.html#troubleshooting-video).
 
 ![activitynet-100-validation](../../_images/activitynet-100-validation.png)
 
@@ -195,7 +195,7 @@ version of the dataset.
 
 Note
 
-Check out [this guide](../integrations/activitynet.html#activitynet) for more details on using
+Check out [this guide](../../integrations/activitynet.md#activitynet) for more details on using
 FiftyOne to work with ActivityNet.
 
 **Notes**
@@ -288,7 +288,7 @@ Note
 
 See
 [`ActivityNet200Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet200Dataset "fiftyone.zoo.datasets.base.ActivityNet200Dataset") and
-[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.html#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
+[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.md#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
 pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
@@ -302,7 +302,7 @@ the ActivityNet maintainers in order to load a full split into FiftyOne.
 To download the source files, you must fill out
 [this form](https://docs.google.com/forms/d/e/1FAIpQLSeKaFq9ZfcmZ7W0B0PbEhfbTHY41GeEgwsa7WobJgGUhn4DTQ/viewform).
 
-Refer to [this page](../integrations/activitynet.html#activitynet-full-split-downloads) to see how to load
+Refer to [this page](../../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
 full splits by passing the `source_dir` parameter to
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
@@ -578,7 +578,7 @@ With support from the [COCO team](https://cocodataset.org/#download),
 FiftyOne is a recommended tool for downloading, visualizing, and evaluating
 on the COCO dataset!
 
-Check out [this guide](../integrations/coco.html#coco) for more details on using FiftyOne to
+Check out [this guide](../../integrations/coco.html#coco) for more details on using FiftyOne to
 work with COCO.
 
 **Notes**
@@ -707,7 +707,7 @@ With support from the [COCO team](https://cocodataset.org/#download),
 FiftyOne is a recommended tool for downloading, visualizing, and evaluating
 on the COCO dataset!
 
-Check out [this guide](../integrations/coco.html#coco) for more details on using FiftyOne to
+Check out [this guide](../../integrations/coco.html#coco) for more details on using FiftyOne to
 work with COCO.
 
 **Notes**
@@ -899,7 +899,7 @@ The relationships in FIW are:
 
 Within FiftyOne, each sample corresponds to a single face image and contains
 primitive labels of the Family ID, Member ID, etc. The relationship labels are
-stored as [multi-label classifications](../user_guide/using_datasets.html#multilabel-classification),
+stored as [multi-label classifications](../../fiftyone_concepts/using_datasets.md#multilabel-classification),
 where each classification represents one relationship that the member has with
 another member in the family. The number of relationships will differ from one
 person to the next, but all faces of one person will have the same relationship
@@ -1007,7 +1007,7 @@ clips distributed across 51 action classes.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
 
 ![hmdb51-test](../../_images/hmdb51-test.png)
 
@@ -1249,7 +1249,7 @@ downloaded from YouTube.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../getting_started/troubleshooting.md#troubleshooting-video).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1358,7 +1358,7 @@ matching samples are loaded
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1458,7 +1458,7 @@ matching samples are loaded
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1727,7 +1727,7 @@ We’ve collaborated with the
 to make FiftyOne a recommended tool for downloading, visualizing, and
 evaluating on the Open Images Dataset!
 
-Check out [this guide](../integrations/open_images.html#open-images) for more details on using
+Check out [this guide](../../integrations/open_images.md#open-images) for more details on using
 FiftyOne to work with Open Images.
 
 **Details**
@@ -1857,7 +1857,7 @@ We’ve collaborated with the
 to make FiftyOne a recommended tool for downloading, visualizing, and
 evaluating on the Open Images Dataset!
 
-Check out [this guide](../integrations/open_images.html#open-images) for more details on using
+Check out [this guide](../../integrations/open_images.md#open-images) for more details on using
 FiftyOne to work with Open Images.
 
 **Details**
@@ -2087,7 +2087,7 @@ generated by human annotators.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
 
 ![quickstart-video](../../_images/quickstart-video.png)
 
@@ -2309,7 +2309,7 @@ viewpoint, etc.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
 
 Also, if you don’t already have a utility to uncompress `.rar` archives,
 you may need to install one. For example, on macOS:

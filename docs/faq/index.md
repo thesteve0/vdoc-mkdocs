@@ -7,7 +7,7 @@ Yes! In fact, this is the default behavior. Unless you’re working
 web browser whenever you call
 [`launch_app()`](../api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app") .
 
-Check out the [environments guide](../environments/index.html#environments) to see how to use
+Check out the [environments guide](../fiftyone_concepts/running_environments.md#environments) to see how to use
 FiftyOne in all common local, remote, cloud, and notebook environments.
 
 ## Which web browsers does the FiftyOne App support? [¶](\#which-web-browsers-does-the-fiftyone-app-support "Permalink to this headline")
@@ -77,7 +77,7 @@ and [SageMaker Notebooks](https://aws.amazon.com/sagemaker/notebooks/).
 All the usual FiftyOne commands can be run in notebook environments, and the
 App will launch/update in the output of your notebook cells!
 
-Check out the [notebook environment guide](../environments/index.html#notebooks) for more
+Check out the [notebook environment guide](../environments/index.md#notebooks) for more
 information about running FiftyOne in notebooks.
 
 ## Why isn’t the App loading in my cloud notebook? [¶](\#why-isn-t-the-app-loading-in-my-cloud-notebook "Permalink to this headline")
@@ -93,7 +93,7 @@ built-in App configuration, when working in a cloud notebook a
 Yes! It is possible to work with a Jupyter notebook in your local browser that
 is served from a remote machine.
 
-Refer to [this section](../environments/index.html#remote-notebooks) of the environment guide for
+Refer to [this section](../environments/index.md#remote-notebooks) of the environment guide for
 instructions to achieve this.
 
 ## Can I restrict access to my remote App instance? [¶](\#can-i-restrict-access-to-my-remote-app-instance "Permalink to this headline")
@@ -101,13 +101,13 @@ instructions to achieve this.
 By default, [remote App sessions](../fiftyone_concepts/app.html#remote-session) will listen to any
 connection to their ports. However, if desired, you can restrict access to an
 App session to a particular IP address or hostname by
-[following these instructions](../environments/index.html#restricting-app-address).
+[following these instructions](../environments/index.md#restricting-app-address).
 
 ## Why aren’t plots appearing in my notebook? [¶](\#why-aren-t-plots-appearing-in-my-notebook "Permalink to this headline")
 
-If you are trying to [view plots](../fiftyone_concepts/plots.html#interactive-plots) in a Jupyter
+If you are trying to [view plots](../fiftyone_concepts/plots.md#interactive-plots) in a Jupyter
 notebook but nothing appears after you call `plot.show()`, then you likely need
-to [follow these instructions](../fiftyone_concepts/plots.html#working-in-notebooks) to install the
+to [follow these instructions](../fiftyone_concepts/plots.md#working-in-notebooks) to install the
 proper packages and/or Jupyter notebook extensions.
 
 If the proper packages are installed but plots are still not displaying, try
@@ -123,12 +123,12 @@ po.init_notebook_mode(connected=True)
 ## Can I access data stored on a remote server? [¶](\#can-i-access-data-stored-on-a-remote-server "Permalink to this headline")
 
 Yes! If you install FiftyOne on both your remote server and local machine, then
-you can [load a dataset remotely](../environments/index.html#remote-data) and then explore it via an
+you can [load a dataset remotely](../environments/index.md#remote-data) and then explore it via an
 [App session on your local machine](../fiftyone_concepts/app.html#creating-an-app-session).
 
 ## Can I access data stored in the cloud? [¶](\#can-i-access-data-stored-in-the-cloud "Permalink to this headline")
 
-Yes! Check out [FiftyOne Teams](../teams/index.html#fiftyone-teams).
+Yes! Check out [FiftyOne Teams](../teams/index.md#fiftyone-teams).
 
 ## What operating systems does FiftyOne support? [¶](\#what-operating-systems-does-fiftyone-support "Permalink to this headline")
 
@@ -172,7 +172,7 @@ to re-encode the source video so it is viewable in the App.
 Note
 
 You must install [FFmpeg](https://ffmpeg.org) in order to work with video
-datasets in FiftyOne. See [this page](../getting_started/troubleshooting.html#troubleshooting-video) for
+datasets in FiftyOne. See [this page](../getting_started/basic/troubleshooting.md#troubleshooting-video) for
 installation instructions.
 
 ## What label types are supported? [¶](\#what-label-types-are-supported "Permalink to this headline")
@@ -197,7 +197,7 @@ and video datasets:
 - [Geolocation data](../fiftyone_concepts/using_datasets.html#geolocation)
 
 
-Check out [this guide](../fiftyone_concepts/dataset_creation/index.html#loading-custom-datasets) for simple recipes to
+Check out [this guide](../fiftyone_concepts/dataset_creation/index.md#loading-custom-datasets) for simple recipes to
 load labels in these formats.
 
 ## What happened to my datasets from previous sessions? [¶](\#what-happened-to-my-datasets-from-previous-sessions "Permalink to this headline")
@@ -274,7 +274,7 @@ Yes! Here’s a couple options:
 
 **Option 1: Export and share**
 
-You can easily [export a dataset](../fiftyone_concepts/export_datasets.html#exporting-datasets) in one line of
+You can easily [export a dataset](../fiftyone_concepts/export_datasets.md#exporting-datasets) in one line of
 code, zip it, and share the zip with your collaborator, who can then
 [load it in a few lines of code](../fiftyone_concepts/dataset_creation/datasets.html#loading-datasets-from-disk).
 
@@ -383,7 +383,7 @@ In the above, `[<username#>@]<hostname#>` refers to a remote machine and
 `RRRR#` is the remote port that you used for the remote session.
 
 Alternatively, if you have FiftyOne installed on your local machine, you can
-[use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
+[use the CLI](../cli/index.md#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
 ```python
@@ -434,7 +434,7 @@ In the above, `[<username>@]<hostname>` refers to your remote machine, and
 `WWWW` and `ZZZZ` are any 4 digit ports on your local machine(s).
 
 Alternatively, if you have FiftyOne installed on your local machine, you can
-[use the CLI](../cli/index.html#cli-fiftyone-app-connect) to automatically configure port
+[use the CLI](../cli/index.md#cli-fiftyone-app-connect) to automatically configure port
 forwarding and open the App in your browser as follows:
 
 ```python

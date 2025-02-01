@@ -2,26 +2,26 @@
 
 The FiftyOne App is a powerful graphical user interface that enables you to
 visualize, browse, and interact directly with your
-[datasets](using_datasets.html#using-datasets).
+[datasets](using_datasets.md#using-datasets).
 
 ![app-filters](../_images/app-filters.gif)
 
 Note
 
 Did you know? You can use FiftyOne’s
-[plugin framework](../plugins/index.html#fiftyone-plugins) to customize and extend the
+[plugin framework](../plugins/index.md#fiftyone-plugins) to customize and extend the
 behavior of the App!
 
 ## App environments [¶](\#app-environments "Permalink to this headline")
 
 The FiftyOne App can be used in any environment that you’re working in, from
 a local IPython shell, to a remote machine or cloud instance, to a Jupyter or
-Colab notebook. Check out the [environments guide](../environments/index.html#environments) for best
+Colab notebook. Check out the [environments guide](../environments/index.md#environments) for best
 practices when working in each environment.
 
 ## Sessions [¶](\#sessions "Permalink to this headline")
 
-The basic FiftyOne workflow is to open a Python shell and load a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset").
+The basic FiftyOne workflow is to open a Python shell and load a [`Dataset`](../api/fiftyone.core.dataset.md#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset").
 From there you can launch the FiftyOne App and interact with it
 programmatically via a _session_.
 
@@ -42,12 +42,12 @@ session = fo.launch_app()
 ![app-empty](../_images/app-empty.png)
 
 App sessions are highly flexible. For example, you can launch
-[launch multiple App instances](../faq/index.html#faq-multiple-apps) and connect multiple
-App instances to the [same dataset](../faq/index.html#faq-multiple-sessions-same-dataset).
+[launch multiple App instances](../faq/index.md#faq-multiple-apps) and connect multiple
+App instances to the [same dataset](../faq/index.md#faq-multiple-sessions-same-dataset).
 
 By default, when you’re working in a non-notebook context, the App will be
 opened in a new tab of your web browser. See
-[this FAQ](../faq/index.html#faq-supported-browsers) for supported browsers.
+[this FAQ](../faq/index.md#faq-supported-browsers) for supported browsers.
 
 Note
 
@@ -78,14 +78,14 @@ Note
 When working inside a Docker container, FiftyOne should automatically
 detect and appropriately configure networking. However, if you are unable
 to load the App in your browser, you many need to manually
-[set the App address](../environments/index.html#restricting-app-address) to `0.0.0.0`:
+[set the App address](../environments/index.md#restricting-app-address) to `0.0.0.0`:
 
 ```python
 session = fo.launch_app(..., address="0.0.0.0")
 
 ```
 
-See [this page](../environments/index.html#docker) for more information about working with
+See [this page](../environments/index.md#docker) for more information about working with
 FiftyOne inside Docker.
 
 Note
@@ -127,7 +127,7 @@ session.dataset = dataset
 
 ### Updating a session’s view [¶](\#updating-a-session-s-view "Permalink to this headline")
 
-You can also show a specific [view](using_views.html#using-views) into the current dataset
+You can also show a specific [view](using_views.md#using-views) into the current dataset
 in the App by setting the
 [`Session.view`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.view "fiftyone.core.session.Session.view") property of the
 session.
@@ -175,7 +175,7 @@ Note
 Did you know? You can link directly to a sample by copy + pasting the App’s
 URL into your browser search bar!
 
-Similarly, for [group datasets](groups.html#groups), you can immediately load a
+Similarly, for [group datasets](groups.md#groups), you can immediately load a
 specific group in the modal when launching a new [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") by providing its ID
 via the `group_id` parameter:
 
@@ -212,7 +212,7 @@ If your data is stored on a remote machine, you can forward a session from
 the remote machine to your local machine and seamlessly browse your remote
 dataset from you web browser.
 
-Check out the [environments page](../environments/index.html#environments) for more information on
+Check out the [environments page](../environments/index.md#environments) for more information on
 possible configurations of local/remote/cloud data and App access.
 
 ### Remote machine [¶](\#remote-machine "Permalink to this headline")
@@ -228,9 +228,9 @@ session by either manually configuring port forwarding or via the FiftyOne CLI:
 Note
 
 Remote sessions are highly flexible. For example, you can connect to
-[multiple remote sessions](../faq/index.html#faq-connect-to-multiple-remote-sessions)
+[multiple remote sessions](../faq/index.md#faq-connect-to-multiple-remote-sessions)
 and run multiple remote sessions
-[from one machine](../faq/index.html#faq-serve-multiple-remote-sessions).
+[from one machine](../faq/index.md#faq-serve-multiple-remote-sessions).
 
 ## Using the sidebar [¶](\#using-the-sidebar "Permalink to this headline")
 
@@ -239,7 +239,7 @@ by toggling the corresponding display options in the App’s sidebar:
 
 ![app-fields](../_images/app-fields.gif)
 
-If you have [stored metadata](using_datasets.html#storing-field-metadata) on your fields,
+If you have [stored metadata](using_datasets.md#storing-field-metadata) on your fields,
 then you can view this information in the App by hovering over field or
 attribute names in the App’s sidebar:
 
@@ -257,7 +257,7 @@ only those samples and/or labels that match the filter.
 Note
 
 Did you know? When you
-[declare custom attributes](using_datasets.html#dynamic-attributes) on your dataset’s
+[declare custom attributes](using_datasets.md#dynamic-attributes) on your dataset’s
 schema, they will automatically become filterable in the App!
 
 Note
@@ -279,7 +279,7 @@ field/attribute names:
 ![app-query-performance](../_images/app-query-performance.gif)
 
 The above GIF shows query performance in action on the train split of the
-[BDD100K dataset](../dataset_zoo/datasets.html#dataset-zoo-bdd100k) with an index on the
+[BDD100K dataset](../dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
 `detections.detections.label` field:
 
 ```python
@@ -324,9 +324,9 @@ get information about the existing indexes
 
 Note
 
-Did you know? With [FiftyOne Teams](../teams/index.html#fiftyone-teams) you can manage
+Did you know? With [FiftyOne Teams](../teams/index.md#fiftyone-teams) you can manage
 indexes natively in the App via the
-[Query Performance panel](../teams/query_performance.html#query-performance).
+[Query Performance panel](../teams/query_performance.md#query-performance).
 
 In general, we recommend indexing _only_ the specific fields that you wish to
 perform initial filters on:
@@ -356,14 +356,14 @@ session = fo.launch_app(dataset)
 Note
 
 Filtering by frame fields of video datasets is not directly optimizable by
-creating indexes. Instead, use [summary fields](using_datasets.html#summary-fields) to
+creating indexes. Instead, use [summary fields](using_datasets.md#summary-fields) to
 efficiently query frame-level information on large video datasets.
 
 Frame filtering in the App’s grid view can be disabled by setting
 `disable_frame_filtering=True` in your
-[App config](config.html#configuring-fiftyone-app).
+[App config](config.md#configuring-fiftyone-app).
 
-For [grouped datasets](groups.html#groups), you should create two indexes for each
+For [grouped datasets](groups.md#groups), you should create two indexes for each
 field you wish to filter by: the field itself and a compound index that
 includes the group slice name:
 
@@ -432,7 +432,7 @@ You can disable Query Performance for a particular dataset for its lifetime
 
 You can also disable Query Performance by default for all datasets by setting
 `default_query_performance=False` in your
-[App config](config.html#configuring-fiftyone-app).
+[App config](config.md#configuring-fiftyone-app).
 
 ### Sidebar groups [¶](\#sidebar-groups "Permalink to this headline")
 
@@ -457,7 +457,7 @@ the dataset and will persist between sessions.
 
 You can also programmatically modify a dataset’s sidebar groups by editing the
 [`sidebar_groups`](../api/fiftyone.core.odm.dataset.html#fiftyone.core.odm.dataset.DatasetAppConfig "fiftyone.core.odm.dataset.DatasetAppConfig") property
-of the [dataset’s App config](using_datasets.html#dataset-app-config):
+of the [dataset’s App config](using_datasets.md#dataset-app-config):
 
 ```python
 # Get the default sidebar groups for the dataset
@@ -500,7 +500,7 @@ the App at runtime.
 ## Using the view bar [¶](\#using-the-view-bar "Permalink to this headline")
 
 The view bar makes all of the powerful searching, sorting, and filtering
-operations [provided by dataset views](using_views.html#using-views) available directly in
+operations [provided by dataset views](using_views.md#using-views) available directly in
 the App.
 
 Note
@@ -515,7 +515,7 @@ App’s session object.
 ## Grouping samples [¶](\#grouping-samples "Permalink to this headline")
 
 You can use the group action in the App’s menu to
-[dynamically group](using_views.html#view-groups) your samples by a field of your choice:
+[dynamically group](using_views.md#view-groups) your samples by a field of your choice:
 
 ![dynamic-groups](../_images/app-dynamic-groups.gif)
 
@@ -567,7 +567,7 @@ session = fo.launch_app(dataset)
 You can use the `Selection` tab to manually select which fields to display.
 By default, only top-level fields are available for selection, but if you want
 fine-grained control you can opt to include nested fields
-(eg [dynamic attributes](using_datasets.html#dynamic-attributes) of your label fields) in the
+(eg [dynamic attributes](using_datasets.md#dynamic-attributes) of your label fields) in the
 selection list as well.
 
 Note
@@ -593,7 +593,7 @@ subsets of them, you can persist/reload field selections by
 
 Alternatively, you can use the `Filter rule` tab to define a rule that is
 dynamically applied to the dataset’s
-[field metadata](using_datasets.html#storing-field-metadata) each time the App loads to
+[field metadata](using_datasets.md#storing-field-metadata) each time the App loads to
 determine which fields to include in the sidebar.
 
 Note
@@ -675,7 +675,7 @@ in detail:
 | Global settings | Default colorscale | The default colorscale to use when rendering heatmaps |
 | JSON editor |  | A JSON representation of the current color scheme that you<br>can directly edit or copy + paste |
 | All | `Reset` button | Reset the current color scheme to the dataset’s default<br>(if any) or else the global default scheme |
-| All | `Save as default` button | Save the current color scheme as the default for the<br>current dataset. Note that this scheme can be viewed and/or<br>modified [in Python](using_datasets.html#dataset-app-config-color-scheme) |
+| All | `Save as default` button | Save the current color scheme as the default for the<br>current dataset. Note that this scheme can be viewed and/or<br>modified [in Python](using_datasets.md#dataset-app-config-color-scheme) |
 | All | `Clear default` button | Deletes the current dataset’s default color scheme |
 | `FIELD` | Use custom colors for `FIELD` | Allows you to specify a custom color to use whenever<br>rendering any content from that field in the grid/modal<br>when the App is in color by `field` mode |
 | `FIELD` | Use custom colors for<br>specific field values | Allows you to specify custom colors to use to render<br>annotations in this field based on the individual values<br>that it takes. In the case of embedded document fields,you<br>must also specify an attribute of each object. For example,<br>color all<br>[`Classification`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification "fiftyone.core.labels.Classification")<br>instances whose `label` is `"car"` in `#FF0000`;<br>[`Segmentation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Segmentation "fiftyone.core.labels.Segmentation")<br>instances whose `mask target integer` is `12` in `#FF0000`;<br>[`Heatmap`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Heatmap "fiftyone.core.labels.Heatmap")<br>instances using `hsv` colorscale. |
@@ -780,7 +780,7 @@ session.refresh()
 Note
 
 Did you know? You can also configure default color schemes for
-[individual datasets](using_datasets.html#dataset-app-config-color-scheme) via Python!
+[individual datasets](using_datasets.md#dataset-app-config-color-scheme) via Python!
 
 ## Saving views [¶](\#saving-views "Permalink to this headline")
 
@@ -826,7 +826,7 @@ You can also edit or delete saved views by clicking on their pencil icon:
 Note
 
 Did you know? You can also programmatically create, modify, and delete
-saved views [via Python](using_views.html#saving-views)!
+saved views [via Python](using_views.md#saving-views)!
 
 ## Viewing a sample [¶](\#viewing-a-sample "Permalink to this headline")
 
@@ -836,7 +836,7 @@ the raw JSON description of the sample.
 
 ![app-expanded](../_images/app-expanded.gif)
 
-If your labels contain many [dynamic attributes](using_datasets.html#dynamic-attributes), you
+If your labels contain many [dynamic attributes](using_datasets.md#dynamic-attributes), you
 may find it helpful to configure which attributes are shown in the tooltip.
 To do so, press `ctrl` while hovering over a label to lock the tooltip
 in-place and then use the show/hide buttons to customize the display.
@@ -877,7 +877,7 @@ available actions and their associated hotkeys.
 
 Note
 
-When working in [Jupyter/Colab notebooks](../environments/index.html#notebooks), you can hold
+When working in [Jupyter/Colab notebooks](../environments/index.md#notebooks), you can hold
 down the `SHIFT` key when zoom-scrolling or using the arrow keys to
 navigate between samples/labels to restrict your inputs to the App and thus
 prevent them from also affecting your browser window.
@@ -917,7 +917,7 @@ types like segmentations are supported!
 
 Note
 
-When working in [Jupyter/Colab notebooks](../environments/index.html#notebooks), you can hold
+When working in [Jupyter/Colab notebooks](../environments/index.md#notebooks), you can hold
 down the `SHIFT` key when zoom-scrolling or using the arrow keys to
 navigate between samples/labels to restrict your inputs to the App and thus
 prevent them from also affecting your browser window.
@@ -925,10 +925,10 @@ prevent them from also affecting your browser window.
 ## Using the 3D visualizer [¶](\#using-the-3d-visualizer "Permalink to this headline")
 
 The 3D visualizer allows you to interactively visualize
-[3D samples](using_datasets.html#d-datasets) or
-[point cloud samples](using_datasets.html#point-cloud-datasets)
+[3D samples](using_datasets.md#d-datasets) or
+[point cloud samples](using_datasets.md#point-cloud-datasets)
 along with any associated
-[3D detections](using_datasets.html#d-detections) and [3D polylines](using_datasets.html#d-polylines):
+[3D detections](using_datasets.md#d-detections) and [3D polylines](using_datasets.md#d-polylines):
 
 ![3d-visualizer](../_images/app-new-3d-visualizer.gif)
 
@@ -973,12 +973,12 @@ the full colormap using the same strategy.
 ### Viewing 3D samples in the grid [¶](\#viewing-3d-samples-in-the-grid "Permalink to this headline")
 
 When you load 3D collections in the App, any
-[3D detections](using_datasets.html#d-detections) and [3D polylines](using_datasets.html#d-polylines)
+[3D detections](using_datasets.md#d-detections) and [3D polylines](using_datasets.md#d-polylines)
 fields will be visualized in the grid using an orthographic projection
 (onto the xy plane by default).
 
 In addition, if you have populated
-[orthographic projection images](using_datasets.html#orthographic-projection-images) on your
+[orthographic projection images](using_datasets.md#orthographic-projection-images) on your
 dataset, the projection images will be rendered for each sample in the grid:
 
 ```python
@@ -1006,7 +1006,7 @@ session = fo.launch_app(dataset)
 
 The 3D visualizer can be configured by including any subset of the settings
 shown below under the `plugins.3d` key of your
-[App config](config.html#configuring-fiftyone-app):
+[App config](config.md#configuring-fiftyone-app):
 
 ```python
 // The default values are shown below
@@ -1033,7 +1033,7 @@ shown below under the `plugins.3d` key of your
 ```
 
 You can also store dataset-specific plugin settings by storing any subset of
-the above values on a [dataset’s App config](using_datasets.html#dataset-app-config):
+the above values on a [dataset’s App config](using_datasets.md#dataset-app-config):
 
 ```python
 # Configure the 3D visualizer for a dataset's PCD/Label data
@@ -1047,7 +1047,7 @@ dataset.save()
 Note
 
 Dataset-specific plugin settings will override any settings from your
-[global App config](config.html#configuring-fiftyone-app).
+[global App config](config.md#configuring-fiftyone-app).
 
 ## Spaces [¶](\#spaces "Permalink to this headline")
 
@@ -1060,7 +1060,7 @@ FiftyOne natively includes the following Panels:
 default when you launch the App
 
 - [Embeddings panel](#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.html#brain-embeddings-visualization)
+[embeddings visualizations](../brain.md#brain-embeddings-visualization)
 
 - [Model Evaluation panel](#app-model-evaluation-panel): interactively
 analyze and visualize your model’s performance
@@ -1074,7 +1074,7 @@ for the fields of your dataset
 
 Note
 
-You can also configure custom Panels [via plugins](../plugins/index.html#fiftyone-plugins)!
+You can also configure custom Panels [via plugins](../plugins/index.md#fiftyone-plugins)!
 
 ![spaces-hero](../_images/app-spaces-hero.png)
 
@@ -1371,7 +1371,7 @@ samples_panel = fo.Panel(type="Samples")
 ## Embeddings panel [¶](\#embeddings-panel "Permalink to this headline")
 
 When you load a dataset in the App that contains an
-[embeddings visualization](../brain.html#brain-embeddings-visualization), you can open
+[embeddings visualization](../brain.md#brain-embeddings-visualization), you can open
 the Embeddings panel to visualize and interactively explore a scatterplot of
 the embeddings in the App:
 
@@ -1411,9 +1411,9 @@ samples/patches in the Samples panel:
 
 Note
 
-Did you know? With [FiftyOne Teams](../teams/index.html#fiftyone-teams) you can generate
+Did you know? With [FiftyOne Teams](../teams/index.md#fiftyone-teams) you can generate
 embeddings visualizations natively from the App
-[in the background](../plugins/using_plugins.html#delegated-operations) while you work.
+[in the background](../plugins/using_plugins.md#delegated-operations) while you work.
 
 The embeddings UI also provides a number of additional controls:
 
@@ -1464,7 +1464,7 @@ embeddings) to color the points by
 ## Model Evaluation panel **NEW** [¶](\#model-evaluation-panel-sub-new "Permalink to this headline")
 
 When you load a dataset in the App that contains one or more
-[evaluations](evaluation.html#evaluating-models), you can open the Model Evaluation panel
+[evaluations](evaluation.md#evaluating-models), you can open the Model Evaluation panel
 to visualize and interactively explore the evaluation results in the App:
 
 ```python
@@ -1494,9 +1494,9 @@ that dives into various aspects of the model’s performance:
 
 Note
 
-Did you know? With [FiftyOne Teams](../teams/index.html#fiftyone-teams) you can execute
+Did you know? With [FiftyOne Teams](../teams/index.md#fiftyone-teams) you can execute
 model evaluations natively from the App
-[in the background](../plugins/using_plugins.html#delegated-operations) while you work.
+[in the background](../plugins/using_plugins.md#delegated-operations) while you work.
 
 ### Review status [¶](\#review-status "Permalink to this headline")
 
@@ -1626,7 +1626,7 @@ map_panel = fo.Panel(type="Map")
 
 Additionally, the map UI can be configured by including any subset of the
 settings shown below under the `plugins.map` key of your
-[App config](config.html#configuring-fiftyone-app):
+[App config](config.md#configuring-fiftyone-app):
 
 ```python
 // The default values are shown below
@@ -1679,7 +1679,7 @@ export MAPBOX_TOKEN=XXXXXXXX
 ```
 
 You can also store dataset-specific plugin settings by storing any subset of
-the above values on a [dataset’s App config](using_datasets.html#dataset-app-config):
+the above values on a [dataset’s App config](using_datasets.md#dataset-app-config):
 
 ```python
 # Disable clustering for this dataset
@@ -1691,7 +1691,7 @@ dataset.save()
 Note
 
 Dataset-specific plugin settings will override any settings from your
-[global App config](config.html#configuring-fiftyone-app).
+[global App config](config.md#configuring-fiftyone-app).
 
 ## Histograms panel [¶](\#histograms-panel "Permalink to this headline")
 
@@ -1702,22 +1702,22 @@ the fields of your dataset.
 [tags](#app-tagging) that you’ve added to your dataset
 
 - The `Labels` mode shows the class distributions for each
-[labels field](using_datasets.html#using-labels) that you’ve added to your dataset. For
+[labels field](using_datasets.md#using-labels) that you’ve added to your dataset. For
 example, you may have histograms of ground truth labels and one more sets
 of model predictions
 
 - The `Other fields` mode shows distributions for numeric (integer or float)
 or categorical (e.g., string)
-[primitive fields](using_datasets.html#adding-sample-fields) that you’ve added to your
+[primitive fields](using_datasets.md#adding-sample-fields) that you’ve added to your
 dataset. For example, if you computed
-[uniqueness](../brain.html#brain-image-uniqueness) on your dataset, a histogram of
+[uniqueness](../brain.md#brain-image-uniqueness) on your dataset, a histogram of
 uniqueness values will be available under this mode.
 
 
 Note
 
 The statistics in the plots automatically update to reflect the current
-[view](using_views.html#using-views) that you have loaded in the App!
+[view](using_views.md#using-views) that you have loaded in the App!
 
 ![app-histograms-panel](../_images/app-histograms-panel.gif)
 
@@ -1944,12 +1944,12 @@ opposed to their labels) will not affect the sample tags of the underlying
 Note
 
 Did you know? You can construct object patches views programmatically
-via [dataset views](using_views.html#object-patches-views)!
+via [dataset views](using_views.md#object-patches-views)!
 
 ## Viewing evaluation patches [¶](\#viewing-evaluation-patches "Permalink to this headline")
 
 Whenever you load a dataset in the App that contains object detections on which
-you have [run evaluation](evaluation.html#evaluating-detections), you can use the patches
+you have [run evaluation](evaluation.md#evaluating-detections), you can use the patches
 menu to create a view into your data that contains one sample for each true
 positive, false positive, and false negative example.
 
@@ -1969,7 +1969,7 @@ expanded sample view.
 
 Note
 
-Refer to the [evaluation guide](evaluation.html#evaluating-detections) guide for more
+Refer to the [evaluation guide](evaluation.md#evaluating-detections) guide for more
 information about running evaluations and using evaluation patches views
 to analyze object detection models.
 
@@ -2033,7 +2033,7 @@ Switching to clips view will create clips for **only** the contents of
 your current view, so you can use the view bar and the filters sidebar to
 select only the content of interest prior to extracting clips.
 
-See [this section](using_views.html#clip-views) for more information about defining
+See [this section](using_views.md#clip-views) for more information about defining
 clip views.
 
 When you hover over a clip in the grid view, the clip and its labels will play
@@ -2059,18 +2059,18 @@ to their labels) will not affect the sample tags of the underlying [`Sample`](..
 Note
 
 Did you know? You can construct clip views programmatically via
-[dataset views](using_views.html#clip-views)!
+[dataset views](using_views.md#clip-views)!
 
 ## Sorting by similarity [¶](\#sorting-by-similarity "Permalink to this headline")
 
 Whenever you select samples, patches, or labels in the App in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") that
-has been [indexed by similarity](../brain.html#brain-similarity), you can use the
+has been [indexed by similarity](../brain.md#brain-similarity), you can use the
 similarity menu in the App to sort or filter your current view based on
 similarity to the chosen image or object.
 
 Note
 
-Refer to the [Brain guide](../brain.html#brain-similarity) for more information
+Refer to the [Brain guide](../brain.md#brain-similarity) for more information
 about indexing datasets by image/object similarity for use with this
 feature.
 
@@ -2078,7 +2078,7 @@ feature.
 
 Whenever one or more images are selected in the App, the similarity menu icon
 appears above the grid. If you have indexed the dataset by
-[image similarity](../brain.html#brain-image-similarity), then you will be able to sort
+[image similarity](../brain.md#brain-image-similarity), then you will be able to sort
 by similarity to your current selection.
 
 You can use the advanced settings menu to choose between multiple brain keys
@@ -2097,7 +2097,7 @@ cached results and will be faster!
 
 Whenever one or more labels or patches are selected in the App, the similarity
 menu icon appears above the sample grid. If you have indexed the dataset by
-[object similarity](../brain.html#brain-object-similarity), then you will be able to
+[object similarity](../brain.md#brain-object-similarity), then you will be able to
 sort by similarity to your current selection.
 
 The typical workflow for object similarity is to first switch to
@@ -2128,7 +2128,7 @@ cached results and will be faster!
 ### Text similarity [¶](\#text-similarity "Permalink to this headline")
 
 If you have indexed your dataset with a model that
-[supports text queries](../brain.html#brain-similarity-text), you can use the text
+[supports text queries](../brain.md#brain-similarity-text), you can use the text
 similarity menu in the App to search for images (or object patches) of interest
 via arbitrary text queries!
 
@@ -2141,7 +2141,7 @@ to query by greatest or least similarity (if supported).
 Note
 
 Did you know? You can also perform text queries
-[via the SDK](../brain.html#brain-similarity-text) by passing a prompt directly to
+[via the SDK](../brain.md#brain-similarity-text) by passing a prompt directly to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")!
 
 ## Multiple media fields [¶](\#multiple-media-fields "Permalink to this headline")
@@ -2201,7 +2201,7 @@ Sample fields:
 ```
 
 We can expose the thumbnail images to the App by modifying the
-[dataset’s App config](using_datasets.html#dataset-app-config):
+[dataset’s App config](using_datasets.md#dataset-app-config):
 
 ```python
 # Modify the dataset's App config
@@ -2244,7 +2244,7 @@ session
 2. Any settings stored in a dataset’s
 [`app_config`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.app_config "fiftyone.core.dataset.Dataset.app_config")
 
-3. Settings from your [global App config](config.html#configuring-fiftyone-app)
+3. Settings from your [global App config](config.md#configuring-fiftyone-app)
 
 
 Any settings or changes made at higher levels of precedence will override any
@@ -2252,7 +2252,7 @@ lower priority settings the next time you load/refresh the App.
 
 ### Global App config [¶](\#global-app-config "Permalink to this headline")
 
-FiftyOne provides a [global App config](config.html#configuring-fiftyone-app) that
+FiftyOne provides a [global App config](config.md#configuring-fiftyone-app) that
 you can use to customize the default App behavior for all sessions and datasets
 on your machine.
 
@@ -2298,7 +2298,7 @@ session.refresh()  # must refresh after edits
 
 ### Dataset App config [¶](\#dataset-app-config "Permalink to this headline")
 
-Datasets also provide an [app\_config property](using_datasets.html#dataset-app-config) that
+Datasets also provide an [app\_config property](using_datasets.md#dataset-app-config) that
 you can use to customize the behavior of the App for that particular dataset:
 
 ```python
@@ -2333,5 +2333,5 @@ Note
 Any settings stored in a dataset’s
 [`app_config`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.app_config "fiftyone.core.dataset.Dataset.app_config") will override
 the corresponding settings from your
-[global App config](config.html#configuring-fiftyone-app).
+[global App config](config.md#configuring-fiftyone-app).
 
