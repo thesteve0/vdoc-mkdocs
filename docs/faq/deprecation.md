@@ -7,7 +7,7 @@ _Support ended with FiftyOne 0.25.0_
 A compatible [fiftyone-desktop](https://pypi.org/project/fiftyone-desktop)
 package is no longer available as of `fiftyone==0.25.0`.
 
-Chromium-based browsers, Firefox, or a [notebook](environments/index.html#notebooks) environment
+Chromium-based browsers, Firefox, or a [notebook](environments/index.md#notebooks) environment
 are recommended for the best FiftyOne experience.
 
 ## Python 3.8 [¶](\#python-3-8 "Permalink to this headline")

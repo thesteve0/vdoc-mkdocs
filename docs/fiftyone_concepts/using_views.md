@@ -140,7 +140,7 @@ print(cats_view)
 Note
 
 Did you know? You can also save, load, and edit saved views directly
-[from the App](app.html#app-saving-views)!
+[from the App](app.md#app-saving-views)!
 
 Saved views have certain editable metadata such as a description that you can
 view via
@@ -239,7 +239,7 @@ range_view2 = dataset[2:5]
 ```
 
 Samples can be accessed from views in
-[all the same ways](using_datasets.html#accessing-samples-in-a-dataset) as for datasets.
+[all the same ways](using_datasets.md#accessing-samples-in-a-dataset) as for datasets.
 This includes using [`first()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.first "fiftyone.core.view.DatasetView.first") and
 [`last()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.last "fiftyone.core.view.DatasetView.last") to retrieve the first and
 last samples in a view, respectively, or accessing a sample directly from a
@@ -261,7 +261,7 @@ print(sample100.id == also_sample100.id)
 
 ```
 
-Note that, [unlike datasets](using_datasets.html#accessing-samples-in-a-dataset),
+Note that, [unlike datasets](using_datasets.md#accessing-samples-in-a-dataset),
 [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.sample.SampleView "fiftyone.core.sample.SampleView") objects are not singletons, since there are an infinite number of
 possible views into a particular [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample"):
 
@@ -726,7 +726,7 @@ print(flat_sorted_view.values("ground_truth.label"))
 Note
 
 Did you know? When you load dynamic group views
-[in the App](app.html#app-dynamic-groups), the grid view shows the first
+[in the App](app.md#app-dynamic-groups), the grid view shows the first
 example from each group, and you can click on any sample to open the modal
 and view all samples in the group.
 
@@ -866,12 +866,12 @@ print(len(selected_view))  # two samples have the same ID
 
 Warning
 
-The [FiftyOne App](app.html#fiftyone-app) is not designed to display views
+The [FiftyOne App](app.md#fiftyone-app) is not designed to display views
 with duplicate sample IDs.
 
 ## Date-based views [¶](\#date-based-views "Permalink to this headline")
 
-If your dataset contains [date fields](using_datasets.html#dates-and-datetimes), you can
+If your dataset contains [date fields](using_datasets.md#dates-and-datetimes), you can
 construct dataset views that query/filter based on this information by simply
 writing the appropriate [`ViewExpression`](../api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression "fiftyone.core.expressions.ViewExpression"), using `date`, `datetime` and
 `timedelta` objects to define the required logic.
@@ -1001,16 +1001,16 @@ session.view = person_patches
 Note
 
 Did you know? You can convert to object patches view directly
-[from the App](app.html#app-object-patches)!
+[from the App](app.md#app-object-patches)!
 
 Object patches views are just like any other [dataset view](#using-views)
 in the sense that:
 
-- You can append view stages via the [App view bar](app.html#app-create-view) or
+- You can append view stages via the [App view bar](app.md#app-create-view) or
 [views API](#using-views)
 
 - Any modifications to label tags that you make via the App’s
-[tagging menu](app.html#app-tagging) or via API methods like
+[tagging menu](app.md#app-tagging) or via API methods like
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
 will be reflected on the source dataset
@@ -1044,12 +1044,12 @@ reflected on the source dataset
 
 Note
 
-Did you know? You can [export object patches](export_datasets.html#export-label-coercion)
+Did you know? You can [export object patches](export_datasets.md#export-label-coercion)
 as classification datasets!
 
 ## Evaluation patches [¶](\#evaluation-patches "Permalink to this headline")
 
-If you have [run evaluation](evaluation.html#evaluating-detections) on predictions from
+If you have [run evaluation](evaluation.md#evaluating-detections) on predictions from
 an object detection model, then you can use
 [`to_evaluation_patches()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_evaluation_patches "fiftyone.core.collections.SampleCollection.to_evaluation_patches")
 to transform the dataset (or a view into it) into a new view that contains one
@@ -1114,23 +1114,23 @@ You can pass the optional `other_fields` parameter to
 to specify additional read-only sample-level fields that each patch should
 include from their parent samples.
 
-Refer to the [evaluation guide](evaluation.html#evaluating-detections) guide for more
+Refer to the [evaluation guide](evaluation.md#evaluating-detections) guide for more
 information about running evaluations and using evaluation patches views to
 analyze object detection models.
 
 Note
 
 Did you know? You can convert to evaluation patches view directly
-[from the App](app.html#app-evaluation-patches)!
+[from the App](app.md#app-evaluation-patches)!
 
 Evaluation patches views are just like any other
 [dataset view](#using-views) in the sense that:
 
-- You can append view stages via the [App view bar](app.html#app-create-view) or
+- You can append view stages via the [App view bar](app.md#app-create-view) or
 [views API](#using-views)
 
 - Any modifications to ground truth or predicted label tags that you make via
-the App’s [tagging menu](app.html#app-tagging) or via API methods like
+the App’s [tagging menu](app.md#app-tagging) or via API methods like
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
 will be reflected on the source dataset
@@ -1195,7 +1195,7 @@ You can use
 create views into your video datasets that contain one sample per clip defined
 by a specific field or expression in a video collection.
 
-For example, if you have [temporal detection](using_datasets.html#temporal-detection) labels
+For example, if you have [temporal detection](using_datasets.md#temporal-detection) labels
 on your dataset, then you can create a clips view that contains one sample per
 temporal segment by simply passing the name of the temporal detection field to
 [`to_clips()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_clips "fiftyone.core.collections.SampleCollection.to_clips"):
@@ -1434,11 +1434,11 @@ from frame-level fields or expressions.
 Clip views are just like any other [dataset view](#using-views) in the
 sense that:
 
-- You can append view stages via the [App view bar](app.html#app-create-view) or
+- You can append view stages via the [App view bar](app.md#app-create-view) or
 [views API](#using-views)
 
 - Any modifications to label tags that you make via the App’s
-[tagging menu](app.html#app-tagging) or via API methods like
+[tagging menu](app.md#app-tagging) or via API methods like
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
 will be reflected on the source dataset
@@ -1483,7 +1483,7 @@ each clip has been filtered to contain only the identifying object, rather than
 than all objects with the trajectory’s frame support.
 
 For example, if you have frame-level
-[object detections](using_datasets.html#object-detection) with their `index` attributes
+[object detections](using_datasets.md#object-detection) with their `index` attributes
 populated, then you can create a trajectories view that contains one clip for
 each object of a specific type using
 [`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels")
@@ -1554,8 +1554,8 @@ Note
 Did you know? Using
 [`to_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_frames "fiftyone.core.collections.SampleCollection.to_frames")
 enables you to execute workflows such as
-[model evaluation](evaluation.html#evaluating-models) and
-[Brain methods](../brain.html#fiftyone-brain) that only support image collections
+[model evaluation](evaluation.md#evaluating-models) and
+[Brain methods](../brain.md#fiftyone-brain) that only support image collections
 to the frames of your video datasets!
 
 In the simplest case, you can create a view that contains a sample for every
@@ -1673,11 +1673,11 @@ parent video sample are also included.
 
 Frame views are just like any other image collection view in the sense that:
 
-- You can append view stages via the [App view bar](app.html#app-create-view) or
+- You can append view stages via the [App view bar](app.md#app-create-view) or
 [views API](#using-views)
 
 - Any modifications to label tags that you make via the App’s
-[tagging menu](app.html#app-tagging) or via API methods like
+[tagging menu](app.md#app-tagging) or via API methods like
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
 will be reflected on the source dataset
@@ -1820,7 +1820,7 @@ excluded_view = dataset.exclude_frames(frame_ids)
 
 ## Similarity views [¶](\#similarity-views "Permalink to this headline")
 
-If your dataset is [indexed by similarity](../brain.html#brain-similarity), then you
+If your dataset is [indexed by similarity](../brain.md#brain-similarity), then you
 can use the
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 stage to programmatically query your data by similarity to image(s) or object
@@ -1859,9 +1859,9 @@ session.view = view
 
 Note
 
-Refer to the [Brain guide](../brain.html#brain-similarity) for more information
+Refer to the [Brain guide](../brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
-[App guide](app.html#app-image-similarity) to see how to sort images by
+[App guide](app.md#app-image-similarity) to see how to sort images by
 similarity via point-and-click in the App!
 
 ### Object similarity [¶](\#object-similarity "Permalink to this headline")
@@ -1903,15 +1903,15 @@ session.view = similar_objects
 
 Note
 
-Refer to the [Brain guide](../brain.html#brain-similarity) for more information
+Refer to the [Brain guide](../brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
-[App guide](app.html#app-object-similarity) to see how to sort objects by
+[App guide](app.md#app-object-similarity) to see how to sort objects by
 similarity via point-and-click in the App!
 
 ### Text similarity [¶](\#text-similarity "Permalink to this headline")
 
-When you create a [similarity index](../brain.html#brain-similarity) powered by the
-[CLIP model](../models/model_zoo/models.html#model-zoo-clip-vit-base32-torch), you can pass arbitrary
+When you create a [similarity index](../brain.md#brain-similarity) powered by the
+[CLIP model](../models/model_zoo/models.md#model-zoo-clip-vit-base32-torch), you can pass arbitrary
 natural language queries to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 along with the `brain_key` of a compatible similarity index:
@@ -1927,14 +1927,14 @@ print(info.config.supports_prompts)  # True
 
 Note
 
-Refer to the [Brain guide](../brain.html#brain-similarity) for more information
+Refer to the [Brain guide](../brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
-[App guide](app.html#app-text-similarity) to see how to sort objects by text
+[App guide](app.md#app-text-similarity) to see how to sort objects by text
 similarity via point-and-click in the App!
 
 ## Geolocation [¶](\#geolocation "Permalink to this headline")
 
-If your samples have [geolocation data](using_datasets.html#geolocation), then you can
+If your samples have [geolocation data](using_datasets.md#geolocation), then you can
 use the
 [`geo_near()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_near "fiftyone.core.collections.SampleCollection.geo_near") and
 [`geo_within()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_within "fiftyone.core.collections.SampleCollection.geo_within")
@@ -1989,7 +1989,7 @@ view = dataset.geo_within(MANHATTAN)
 You can use the
 [`tag_samples()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_samples "fiftyone.core.collections.SampleCollection.tag_samples")
 and [`untag_samples()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_samples "fiftyone.core.collections.SampleCollection.untag_samples")
-methods to add or remove [sample tags](using_datasets.html#using-tags) from the samples in a
+methods to add or remove [sample tags](using_datasets.md#using-tags) from the samples in a
 view:
 
 ```python
@@ -2012,7 +2012,7 @@ print(dataset.count_sample_tags())
 You can also use the
 [`tag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.tag_labels "fiftyone.core.collections.SampleCollection.tag_labels")
 and [`untag_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.untag_labels "fiftyone.core.collections.SampleCollection.untag_labels")
-methods to add or remove [label tags](using_datasets.html#label-tags) from the labels in one
+methods to add or remove [label tags](using_datasets.md#label-tags) from the labels in one
 or more fields of a view:
 
 ```python
@@ -2073,7 +2073,7 @@ As the above snippet shows, you should also optimize your iteration by
 [selecting only](#efficient-iteration-views) the required fields.
 
 You can configure the default batching strategy that is used via your
-[FiftyOne config](config.html#configuring-fiftyone), or you can configure the
+[FiftyOne config](config.md#configuring-fiftyone), or you can configure the
 batching strategy on a per-method call basis by passing the optional
 `batch_size` and `batching_strategy` arguments to
 [`iter_samples()`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.iter_samples "fiftyone.core.view.DatasetView.iter_samples").

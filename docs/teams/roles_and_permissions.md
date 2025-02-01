@@ -101,7 +101,7 @@ invited and accept the invitation before they can be added to a group.
 
 Admins and users with the **Can manage** permission on a dataset can configure
 a dataset’s permissions under the dataset’s
-[Manage tab](teams_app.html#teams-managing-datasets) in the FiftyOne Teams App.
+[Manage tab](teams_app.md#teams-managing-datasets) in the FiftyOne Teams App.
 
 In FiftyOne Teams, dataset permissions for a user are determined by both the
 access they receive from their groups’ permissions and individual permissions

@@ -2,7 +2,7 @@
 
 FiftyOne Teams provides a Secrets interface for storing sensitive information
 such as API tokens and login credentials in a secure manner for use by your
-[Team’s plugins](teams_plugins.html#teams-plugins).
+[Team’s plugins](teams_plugins.md#teams-plugins).
 
 Managing secrets through the Teams App is a straightforward and secure way to
 configure connections to and integrations with external services and APIs such
@@ -33,12 +33,12 @@ encryption key.
 Note
 
 Only Admins have access to the Secrets page. However, once added, any App
-component or [plugin](teams_plugins.html#teams-plugins) requiring secret values can
+component or [plugin](teams_plugins.md#teams-plugins) requiring secret values can
 access them via the [Secrets interface](#teams-using-secrets).
 
 ## Using secrets [¶](\#using-secrets "Permalink to this headline")
 
-In order to access secrets, [plugins](teams_plugins.html#teams-plugins) must declare the
+In order to access secrets, [plugins](teams_plugins.md#teams-plugins) must declare the
 secrets that they may use by adding them to the plugin’s `fiftyone.yml` file.
 
 For example, the

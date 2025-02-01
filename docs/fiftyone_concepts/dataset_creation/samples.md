@@ -11,8 +11,8 @@ allowing you to automate the dataset loading process.
 Warning
 
 Using the [`SampleParser`](../../api/fiftyone.utils.data.parsers.html#fiftyone.utils.data.parsers.SampleParser "fiftyone.utils.data.parsers.SampleParser") interface is not recommended. You’ll likely prefer
-[adding samples manually](index.html#loading-custom-datasets) or
-[using dataset importers](datasets.html#loading-datasets-from-disk) to load data
+[adding samples manually](index.md#loading-custom-datasets) or
+[using dataset importers](datasets.md#loading-datasets-from-disk) to load data
 into FiftyOne.
 
 ## Adding samples to datasets [¶](\#adding-samples-to-datasets "Permalink to this headline")

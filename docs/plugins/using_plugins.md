@@ -12,7 +12,7 @@ repository for a growing collection of plugins that you can easily
 [download](#plugins-download) and use locally.
 
 Then, after you get comfortable using prebuilt plugins, try your hand at
-[writing your own](developing_plugins.html#developing-plugins)!
+[writing your own](developing_plugins.md#developing-plugins)!
 
 ## Downloading plugins [¶](\#downloading-plugins "Permalink to this headline")
 
@@ -54,7 +54,7 @@ export FIFTYONE_PLUGINS_DIR=/path/to/your/plugins
 ```
 
 You can also permanently configure this directory by adding it to your
-[FiftyOne config](../fiftyone_concepts/config.html#configuring-fiftyone).
+[FiftyOne config](../fiftyone_concepts/config.md#configuring-fiftyone).
 
 ```python
 {
@@ -77,13 +77,13 @@ Your plugins directory must be readable by the FiftyOne server.
 
 ## Managing plugins [¶](\#managing-plugins "Permalink to this headline")
 
-You can use the [fiftyone plugins](../cli/index.html#cli-fiftyone-plugins) and
-[fiftyone operators](../cli/index.html#cli-fiftyone-operators) CLI methods to perform a
+You can use the [fiftyone plugins](../cli/index.md#cli-fiftyone-plugins) and
+[fiftyone operators](../cli/index.md#cli-fiftyone-operators) CLI methods to perform a
 variety of plugin-related actions.
 
 ### Listing plugins [¶](\#listing-plugins "Permalink to this headline")
 
-You can use the [fiftyone plugins list](../cli/index.html#cli-fiftyone-plugins-list)
+You can use the [fiftyone plugins list](../cli/index.md#cli-fiftyone-plugins-list)
 command to list the plugins that you’ve downloaded or created locally:
 
 ```python
@@ -120,7 +120,7 @@ plugin               version   enabled  directory
 
 ### Listing operators [¶](\#listing-operators "Permalink to this headline")
 
-You can use the [fiftyone operators list](../cli/index.html#cli-fiftyone-operators-list)
+You can use the [fiftyone operators list](../cli/index.md#cli-fiftyone-operators-list)
 command to list the individual operators and panels within the plugins that
 you’ve installed locally:
 
@@ -199,7 +199,7 @@ uri                                          enabled   builtin   panel   unliste
 ### Downloading plugins [¶](\#id2 "Permalink to this headline")
 
 You can use the
-[fiftyone plugins download](../cli/index.html#cli-fiftyone-plugins-download) command to
+[fiftyone plugins download](../cli/index.md#cli-fiftyone-plugins-download) command to
 list the plugins that you’ve downloaded or created locally:
 
 ```python
@@ -226,7 +226,7 @@ fiftyone plugins download \
 ### Getting plugin info [¶](\#getting-plugin-info "Permalink to this headline")
 
 You can use the
-[fiftyone plugins info](../cli/index.html#cli-fiftyone-plugins-info) command to view the
+[fiftyone plugins info](../cli/index.md#cli-fiftyone-plugins-info) command to view the
 available metadata about a plugin:
 
 ```python
@@ -271,7 +271,7 @@ directory               ~/fiftyone/__plugins__/fiftyone-plugins/plugins/annotati
 
 ### Getting operator info [¶](\#getting-operator-info "Permalink to this headline")
 
-You can use the [fiftyone operators info](../cli/index.html#cli-fiftyone-operators-info) to
+You can use the [fiftyone operators info](../cli/index.md#cli-fiftyone-operators-info) to
 view the available metadata about an individual operator or panel within a
 plugin:
 
@@ -306,7 +306,7 @@ resolve_execution_options_on_change  True
 ### Installing plugin requirements [¶](\#installing-plugin-requirements "Permalink to this headline")
 
 You can use the
-[fiftyone plugins requirements](../cli/index.html#cli-fiftyone-plugins-requirements)
+[fiftyone plugins requirements](../cli/index.md#cli-fiftyone-plugins-requirements)
 command to view, install, and ensure installation of a plugin’s requirements:
 
 ```python
@@ -330,8 +330,8 @@ fiftyone plugins requirements <name> --ensure
 ### Enabling and disabling plugins [¶](\#enabling-and-disabling-plugins "Permalink to this headline")
 
 You can use the
-[fiftyone plugins enable](../cli/index.html#cli-fiftyone-plugins-enable) and
-[fiftyone plugins disable](../cli/index.html#cli-fiftyone-plugins-disable) commands to
+[fiftyone plugins enable](../cli/index.md#cli-fiftyone-plugins-enable) and
+[fiftyone plugins disable](../cli/index.md#cli-fiftyone-plugins-disable) commands to
 enable and disable plugins that you’ve downloaded:
 
 ```python
@@ -388,7 +388,7 @@ fiftyone app config plugins
 ### Deleting plugins [¶](\#deleting-plugins "Permalink to this headline")
 
 You can use the
-[fiftyone plugins delete](../cli/index.html#cli-fiftyone-plugins-delete) command to delete
+[fiftyone plugins delete](../cli/index.md#cli-fiftyone-plugins-delete) command to delete
 plugins from your local machine.
 
 ```python
@@ -414,13 +414,13 @@ fiftyone plugins delete --all
 Certain plugins support configuration. For those plugins, you can store:
 
 - System-wide plugin settings under the `plugins` key of your
-[App config](../fiftyone_concepts/config.html#configuring-fiftyone-app)
+[App config](../fiftyone_concepts/config.md#configuring-fiftyone-app)
 
 - Dataset-specific plugin settings for any subset of the above values on a
-[dataset’s App config](../fiftyone_concepts/using_datasets.html#dataset-app-config).
+[dataset’s App config](../fiftyone_concepts/using_datasets.md#dataset-app-config).
 
 
-See the [configuring plugins](../fiftyone_concepts/config.html#configuring-plugins) page for more
+See the [configuring plugins](../fiftyone_concepts/config.md#configuring-plugins) page for more
 information.
 
 ## Plugin secrets [¶](\#plugin-secrets "Permalink to this headline")
@@ -448,7 +448,7 @@ secrets:
 
 Note
 
-You can use the [fiftyone plugins info](../cli/index.html#cli-fiftyone-plugins-info)
+You can use the [fiftyone plugins info](../cli/index.md#cli-fiftyone-plugins-info)
 CLI command to print information about a plugin, including its required
 secrets.
 
@@ -482,22 +482,22 @@ def execute(self, ctx):
 ## Using panels [¶](\#using-panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App Spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
+[App Spaces](../fiftyone_concepts/app.md#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 FiftyOne natively includes the following Panels:
 
-- [Samples panel](../fiftyone_concepts/app.html#app-samples-panel): the media grid that loads by
+- [Samples panel](../fiftyone_concepts/app.md#app-samples-panel): the media grid that loads by
 default when you launch the App
 
-- [Histograms panel](../fiftyone_concepts/app.html#app-histograms-panel): a dashboard of histograms
+- [Histograms panel](../fiftyone_concepts/app.md#app-histograms-panel): a dashboard of histograms
 for the fields of your dataset
 
-- [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.html#brain-embeddings-visualization)
+- [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel): a canvas for working with
+[embeddings visualizations](../brain.md#brain-embeddings-visualization)
 
-- [Map panel](../fiftyone_concepts/app.html#app-map-panel): visualizes the geolocation data of
+- [Map panel](../fiftyone_concepts/app.md#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
 
 
@@ -510,7 +510,7 @@ Click the `+` icon next to the “Samples” tab to open a new panel:
 Note
 
 Did you know? You can also programmatically configure spaces
-[in Python](../fiftyone_concepts/app.html#app-spaces-python).
+[in Python](../fiftyone_concepts/app.md#app-spaces-python).
 
 ## Using operators [¶](\#using-operators "Permalink to this headline")
 
@@ -730,7 +730,7 @@ print(result.result)  # {...}
 
 If an operation supports both immediate and
 [delegated execution](#delegated-operations) as specified by its
-[execution options](developing_plugins.html#operator-execution-options), you can request
+[execution options](developing_plugins.md#operator-execution-options), you can request
 delegated execution by passing the `request_delegation=True` flag to
 `execute_operator()`:
 
@@ -746,7 +746,7 @@ operator’s input modal when executing it from within the App:
 
 Note
 
-[FiftyOne Teams](../teams/index.html#fiftyone-teams) users can also specify an optional
+[FiftyOne Teams](../teams/index.md#fiftyone-teams) users can also specify an optional
 delegation target for their delegated operations:
 
 ```python
@@ -826,7 +826,7 @@ are executed in the background while you continue to work.
 
 Note
 
-[FiftyOne Teams](../teams/teams_plugins.html#teams-delegated-operations) deployments come out of
+[FiftyOne Teams](../teams/teams_plugins.md#teams-delegated-operations) deployments come out of
 the box with a connected compute cluster for executing delegated operations
 at scale.
 
@@ -840,7 +840,7 @@ plugin makes it easy:
 ![../../_images/evaluation.gif](../../_images/evaluation.gif)
 
 Need to compute embedding for your dataset so you can visualize them in the
-[Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel)? Kick off the task with the
+[Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
@@ -856,7 +856,7 @@ Note
 
 Want to run delegated operations at scale?
 [Contact us](https://voxel51.com/get-fiftyone-teams) about
-[FiftyOne Teams](../teams/index.html#fiftyone-teams), an open source-compatible
+[FiftyOne Teams](../teams/index.md#fiftyone-teams), an open source-compatible
 enterprise deployment of FiftyOne with multiuser collaboration features,
 native cloud dataset support, and much more!
 
@@ -868,7 +868,7 @@ co-develop your data and models together 📈
 ### FiftyOne Open Source [¶](\#fiftyone-open-source "Permalink to this headline")
 
 FiftyOne Open Source users can run delegated operations via the
-[fiftyone delegated launch](../cli/index.html#cli-fiftyone-delegated-launch) CLI command:
+[fiftyone delegated launch](../cli/index.md#cli-fiftyone-delegated-launch) CLI command:
 
 ```python
 fiftyone delegated launch
@@ -879,7 +879,7 @@ This command starts a service that will continuously check for any queued
 delegated operations and execute them serially in its process.
 
 You must also ensure that the
-[allow\_legacy\_orchestrators](../fiftyone_concepts/config.html#configuring-fiftyone) config flag is set
+[allow\_legacy\_orchestrators](../fiftyone_concepts/config.md#configuring-fiftyone) config flag is set
 in the environment where you run the App/SDK, e.g. by setting:
 
 ```python
@@ -889,7 +889,7 @@ export FIFTYONE_ALLOW_LEGACY_ORCHESTRATORS=true
 
 ### FiftyOne Teams [¶](\#fiftyone-teams "Permalink to this headline")
 
-[FiftyOne Teams](../teams/teams_plugins.html#teams-delegated-operations) deployments come out of the
+[FiftyOne Teams](../teams/teams_plugins.md#teams-delegated-operations) deployments come out of the
 box with a connected compute cluster for executing delegated operations at
 scale.
 
@@ -901,7 +901,7 @@ Note
 
 Want to take advantage of this functionality?
 [Contact us](https://voxel51.com/get-fiftyone-teams) about
-[FiftyOne Teams](../teams/index.html#fiftyone-teams), an open source-compatible
+[FiftyOne Teams](../teams/index.md#fiftyone-teams), an open source-compatible
 enterprise deployment of FiftyOne with multiuser collaboration features,
 native cloud dataset support, and much more!
 
@@ -910,12 +910,12 @@ co-develop your data and models together 📈
 
 ## Managing delegated operations [¶](\#managing-delegated-operations "Permalink to this headline")
 
-The [fiftyone delegated](../cli/index.html#cli-fiftyone-delegated) CLI command contains a
+The [fiftyone delegated](../cli/index.md#cli-fiftyone-delegated) CLI command contains a
 number of useful utilities for viewing the status of your delegated operations.
 
 ### Listing delegated operations [¶](\#listing-delegated-operations "Permalink to this headline")
 
-You can use the [fiftyone delegated list](../cli/index.html#cli-fiftyone-delegated-list)
+You can use the [fiftyone delegated list](../cli/index.md#cli-fiftyone-delegated-list)
 command to list the delegated operations that you’ve run:
 
 ```python
@@ -938,7 +938,7 @@ fiftyone delegated list \
 ### Getting delegated operation info [¶](\#getting-delegated-operation-info "Permalink to this headline")
 
 You can use the
-[fiftyone delegated info](../cli/index.html#cli-fiftyone-delegated-info) command to view
+[fiftyone delegated info](../cli/index.md#cli-fiftyone-delegated-info) command to view
 the available metadata about a delegated operation, including its inputs,
 execution status, and error stack trace, if applicable.
 
@@ -951,7 +951,7 @@ fiftyone delegated info <id>
 ### Cleaning up delegated operations [¶](\#cleaning-up-delegated-operations "Permalink to this headline")
 
 You can use the
-[fiftyone delegated cleanup](../cli/index.html#cli-fiftyone-delegated-cleanup) command to
+[fiftyone delegated cleanup](../cli/index.md#cli-fiftyone-delegated-cleanup) command to
 cleanup delegated operations:
 
 ```python

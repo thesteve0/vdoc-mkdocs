@@ -50,7 +50,7 @@ and an error will be raised if a requirement is not satisfied.
 You can customize this behavior via the `error_level` argument to
 [`load_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"), or you can
 permanently adjust this behavior by setting the `requirement_error_level`
-parameter of your [FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+parameter of your [FiftyOne config](../user_guide/config.md#configuring-fiftyone).
 
 An `error_level` of `0` will raise an error if a requirement is not
 satisfied, `1` will log a warning if the requirement is not satisfied,
@@ -70,7 +70,7 @@ By default, zoo models are downloaded into subdirectories of
 `fiftyone.config.model_zoo_dir` corresponding to their names.
 
 You can customize this backend by modifying the `model_zoo_dir` setting of
-your [FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+your [FiftyOne config](../user_guide/config.md#configuring-fiftyone).
 
 ## Deleting zoo models [¶](\#deleting-zoo-models "Permalink to this headline")
 
@@ -158,7 +158,7 @@ describe how to download and load the model.
 
 Finally, expose your new models(s) to FiftyOne by adding your manifest to the
 `model_zoo_manifest_paths` parameter of your
-[FiftyOne config](../user_guide/config.html#configuring-fiftyone). One way to do this is to set the
+[FiftyOne config](../user_guide/config.md#configuring-fiftyone). One way to do this is to set the
 `FIFTYONE_MODEL_ZOO_MANIFEST_PATHS` environment variable:
 
 ```python

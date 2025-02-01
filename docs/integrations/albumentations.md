@@ -9,7 +9,7 @@ Now, we’ve integrated Albumentations transformation pipelines directly with
 FiftyOne datasets, enabling you to visualize Albumentations augmentations
 and test their effects on your data directly within the FiftyOne App!
 
-This integration takes the form of a [FiftyOne plugin](../plugins/using_plugins.html#using-plugins),
+This integration takes the form of a [FiftyOne plugin](../plugins/using_plugins.md#using-plugins),
 which is easy to install and can be used entirely via a convenient graphical
 interface.
 
@@ -19,7 +19,7 @@ the images themselves.
 
 This integration guide will focus on the setup process and the functionality
 of the plugin. For a tutorial on how to curate your augmentations, check out
-the [Data Augmentation Tutorial](../tutorials/data_augmentation.html).
+the [Data Augmentation Tutorial](../tutorials/data_augmentation.md).
 
 ## Overview [¶](\#overview "Permalink to this headline")
 
@@ -95,7 +95,7 @@ operator, selecting the Albumentations plugin from the community dropdown menu.
 
 You will also need to load (and download if necessary) a dataset to apply the
 augmentations to. For this guide, we’ll use the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart):
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -116,8 +116,8 @@ Note
 The quickstart dataset only contains [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") labels. If you want to test
 Albumentations transformations on other label types, here are some quick
 examples to get you started, using FiftyOne’s
-[Hugging Face Transformers](huggingface.html#huggingface-integration) and
-[Ultralytics](ultralytics.html#ultralytics-integration) integrations:
+[Hugging Face Transformers](huggingface.md#huggingface-integration) and
+[Ultralytics](ultralytics.md#ultralytics-integration) integrations:
 
 ```python
 pip install -U transformers ultralytics
@@ -180,7 +180,7 @@ current view or to currently selected samples within the app.
 
 - **Execution mode**: If you set `delegated=False`, the operation will be
 executed immediately. If you set `delegated=True`, the operation will be
-[queued as a job](../plugins/using_plugins.html#delegated-operations), which you can then run in the
+[queued as a job](../plugins/using_plugins.md#delegated-operations), which you can then run in the
 background from your terminal with:
 
 
@@ -263,7 +263,7 @@ the `augmented` tag on the samples.
 
 When you apply a transformation pipeline to samples in your dataset using the
 FiftyOne Albumentations plugin, this information is captured and stored using
-FiftyOne’s [custom runs](../plugins/developing_plugins.html#managing-custom-runs). This means that you can
+FiftyOne’s [custom runs](../plugins/developing_plugins.md#managing-custom-runs). This means that you can
 easily access the information about the last applied transformation.
 
 In the FiftyOne App, you can use the

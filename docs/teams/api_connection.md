@@ -1,7 +1,7 @@
 # API Connection [¶](\#api-connection "Permalink to this headline")
 
 This page describes how to create API keys and configure your
-[SDK installation](installation.html#teams-python-sdk) to connect to your Teams
+[SDK installation](installation.md#teams-python-sdk) to connect to your Teams
 deployment’s API.
 
 All actions taken via API connections are authenticated based on the user
@@ -12,7 +12,7 @@ Note
 
 **API connections are currently in beta.** The recommended stable solution
 is to use your Teams deployment’s
-[MongoDB connection](../fiftyone_concepts/config.html#configuring-mongodb-connection).
+[MongoDB connection](../fiftyone_concepts/config.md#configuring-mongodb-connection).
 
 ## Configuring an API connection [¶](\#configuring-an-api-connection "Permalink to this headline")
 
@@ -33,13 +33,13 @@ export FIFTYONE_API_KEY==YYYYYYYY
 ```
 
 See
-[this page](../fiftyone_concepts/config.html#configuring-fiftyone) for more information about using your
+[this page](../fiftyone_concepts/config.md#configuring-fiftyone) for more information about using your
 FiftyOne config.
 
 ## Generating an API key [¶](\#generating-an-api-key "Permalink to this headline")
 
 Users can generate and manage API keys via the UI or the
-[Management SDK](management_sdk.html#teams-management-sdk).
+[Management SDK](management_sdk.md#teams-management-sdk).
 
 Note
 

@@ -8,8 +8,8 @@ With FiftyOne, you can easily download, visualize, and evaluate on the
 ## Loading the ActivityNet dataset [¶](\#loading-the-activitynet-dataset "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading both the
-[ActivityNet 100](../dataset_zoo/datasets.html#dataset-zoo-activitynet-100) and
-[ActivityNet 200](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200) datasets.
+[ActivityNet 100](../dataset_zoo/datasets.md#dataset-zoo-activitynet-100) and
+[ActivityNet 200](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -238,7 +238,7 @@ threshold (default = 0.50). This threshold can be customized via the
 matching can be disabled by passing `classwise=False`
 
 - mAP is computed by averaging over the same range of IoU values
-[used by COCO](coco.html#coco-map)
+[used by COCO](coco.md#coco-map)
 
 
 When you specify an `eval_key` parameter, a number of helpful fields will be
@@ -284,7 +284,7 @@ when running ActivityNet-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates ActivityNet-style temporal detection evaluation
-on the [ActivityNet 200 dataset](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200):
+on the [ActivityNet 200 dataset](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
 
 ```python
 import random
@@ -421,7 +421,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) for
 the results of ActivityNet-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -475,9 +475,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.md#interactive-plots)!
 
 ## ActivityNet Challenge [¶](\#activitynet-challenge "Permalink to this headline")
 
@@ -488,11 +488,11 @@ used in the
 [ActivityNet challenges](http://activity-net.org/challenges/2021/index.html).
 you can use it to compute the official mAP for your model while also enjoying
 the benefits of working in the FiftyOne ecosystem, including
-[using views](../fiftyone_concepts/using_views.html#using-views) to manipulate your dataset and visually
-exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.html#fiftyone-app)!
+[using views](../fiftyone_concepts/using_views.md#using-views) to manipulate your dataset and visually
+exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app)!
 
 The example snippet below loads the
-[ActivityNet 200](../dataset_zoo/datasets.html#dataset-zoo-activitynet-200) dataset and runs the
+[ActivityNet 200](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200) dataset and runs the
 official ActivityNet evaluation protocol on some mock model predictions:
 
 ```python
@@ -538,12 +538,12 @@ print(results.mAP())
 
 Note
 
-Check out [this recipe](../recipes/adding_detections.html) to learn how to
+Check out [this recipe](../recipes/adding_detections.md) to learn how to
 add your model’s predictions to a FiftyOne Dataset.
 
 ## mAP protocol [¶](\#map-protocol "Permalink to this headline")
 
-The ActivityNet mAP protocol is similar to [COCO-style mAP](coco.html#coco-map),
+The ActivityNet mAP protocol is similar to [COCO-style mAP](coco.md#coco-map),
 with the primary difference being a different IoU computation using temporal
 segments, a lack of crowds, and the way interpolation of precision values is
 handled.

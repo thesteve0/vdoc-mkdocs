@@ -7,20 +7,20 @@ With plugins, you can add new functionality to the FiftyOne App, create
 integrations with other tools and APIs, render custom panels, and add custom
 actions to menus.
 
-With [FiftyOne Teams](../teams/teams_plugins.html#teams-delegated-operations), you can even write
+With [FiftyOne Teams](../teams/teams_plugins.md#teams-delegated-operations), you can even write
 plugins that allow users to execute long-running tasks from within the App that
 run on a connected compute cluster.
 
 Get started with plugins by installing some
 [popular plugins](#plugins-getting-started), then try your hand at
-[writing your own](developing_plugins.html#developing-plugins)!
+[writing your own](developing_plugins.md#developing-plugins)!
 
 Note
 
 Check out the
 [FiftyOne plugins](https://github.com/voxel51/fiftyone-plugins)
 repository for a growing collection of plugins that you can easily
-[download](using_plugins.html#plugins-download) and use locally.
+[download](using_plugins.md#plugins-download) and use locally.
 
 ## Getting started [¶](\#getting-started "Permalink to this headline")
 
@@ -74,30 +74,30 @@ plugin and build away:
 
 Note
 
-When you choose [delegated execution](using_plugins.html#delegated-operations) in the
+When you choose [delegated execution](using_plugins.md#delegated-operations) in the
 App, these tasks are automatically scheduled for execution on your
-[connected orchestrator](using_plugins.html#delegated-orchestrator) and you can continue
+[connected orchestrator](using_plugins.md#delegated-orchestrator) and you can continue
 with other work!
 
 FiftyOne also includes a number of builtin features that are implemented as
-plugins. For example, [Panels](developing_plugins.html#plugins-design-panels) are miniature
+plugins. For example, [Panels](developing_plugins.md#plugins-design-panels) are miniature
 full-featured data applications that you can open in
-[App Spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
+[App Spaces](../fiftyone_concepts/app.md#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 Does your dataset have geolocation data? Use the
-[Map panel](../fiftyone_concepts/app.html#app-map-panel) to view it:
+[Map panel](../fiftyone_concepts/app.md#app-map-panel) to view it:
 
 ![../../_images/app-map-panel.gif](../../_images/app-map-panel.gif)
 
-Want to [visualize embeddings](../brain.html#brain-embeddings-visualization) in the
-App? Just open the [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel):
+Want to [visualize embeddings](../brain.md#brain-embeddings-visualization) in the
+App? Just open the [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel):
 
 ![../../_images/brain-object-visualization.gif](../../_images/brain-object-visualization.gif)
 
 Note
 
-Look interesting? Learn how to [develop your own](developing_plugins.html#developing-plugins)
+Look interesting? Learn how to [develop your own](developing_plugins.md#developing-plugins)
 plugins!
 

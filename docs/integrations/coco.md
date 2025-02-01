@@ -6,7 +6,7 @@ natively in FiftyOne!
 
 Note
 
-Check out [this tutorial](../tutorials/evaluate_detections.html) to see how
+Check out [this tutorial](../tutorials/evaluate_detections.md) to see how
 you can use FiftyOne to evaluate a model on COCO.
 
 ![coco-2017-validation](../_images/coco-2017-validation.png)
@@ -14,8 +14,8 @@ you can use FiftyOne to evaluate a model on COCO.
 ## Loading the COCO dataset [¶](\#loading-the-coco-dataset "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading both the
-[COCO-2014](../dataset_zoo/datasets.html#dataset-zoo-coco-2014) and
-[COCO-2017](../dataset_zoo/datasets.html#dataset-zoo-coco-2017) datasets.
+[COCO-2014](../dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](../dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -245,7 +245,7 @@ python -m json.tool /tmp/coco.json
 
 We can now use
 [`Dataset.from_dir()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.from_dir "fiftyone.core.dataset.Dataset.from_dir") to load the
-[COCO-formatted labels](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) into a new FiftyOne
+[COCO-formatted labels](../fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) into a new FiftyOne
 dataset:
 
 ```python
@@ -333,7 +333,7 @@ analyze predictions.
 You can also explicitly request that COCO-style evaluation be used by setting
 the `method` parameter to `"coco"`.
 
-See [this page](../fiftyone_concepts/evaluation.html#evaluating-detections) for more information about using
+See [this page](../fiftyone_concepts/evaluation.md#evaluating-detections) for more information about using
 FiftyOne to analyze object detection models.
 
 Note
@@ -405,7 +405,7 @@ when running COCO-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates COCO-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the Dataset Zoo:
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
 
 ```python
 import fiftyone as fo
@@ -513,7 +513,7 @@ plot.show()
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
-You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) for
+You can also easily generate [confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) for
 the results of COCO-style evaluations.
 
 In order for the confusion matrix to capture anything other than false
@@ -546,9 +546,9 @@ plot.show()
 
 Note
 
-Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.html#confusion-matrices) can be
+Did you know? [Confusion matrices](../fiftyone_concepts/evaluation.md#confusion-matrices) can be
 attached to your [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object and dynamically explored using FiftyOne’s
-[interactive plotting features](../fiftyone_concepts/plots.html#interactive-plots)!
+[interactive plotting features](../fiftyone_concepts/plots.md#interactive-plots)!
 
 ## mAP protocol [¶](\#map-protocol "Permalink to this headline")
 

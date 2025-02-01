@@ -3,7 +3,7 @@
 **Available in FiftyOne Teams v2.2+**
 
 Query Performance is a builtin feature of the
-[FiftyOne Teams App](teams_app.html#teams-app) that leverages database indexes to
+[FiftyOne Teams App](teams_app.md#teams-app) that leverages database indexes to
 optimize your queries on large-scale datasets.
 
 ## Optimizing Query Performance [¶](\#optimizing-query-performance "Permalink to this headline")
@@ -16,7 +16,7 @@ field/attribute names:
 ![app-query-performance](../_images/app-query-performance.gif)
 
 The above GIF shows Query Performance in action on the train split of the
-[BDD100K dataset](../dataset_zoo/datasets.html#dataset-zoo-bdd100k) with an index on the
+[BDD100K dataset](../dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
 `detections.detections.label` field.
 
 Note
@@ -82,12 +82,12 @@ initial filters on, and we recommend consulting with your deployment admin
 before creating multiple indexes simultaneously.
 
 You can also create and manage custom indexes
-[via the SDK](../fiftyone_concepts/app.html#app-optimizing-query-performance).
+[via the SDK](../fiftyone_concepts/app.md#app-optimizing-query-performance).
 
 ### Creating summary fields [¶](\#creating-summary-fields "Permalink to this headline")
 
 The Query Performance panel also allows you to create
-[summary fields](../fiftyone_concepts/using_datasets.html#summary-fields), which are sample-level fields that
+[summary fields](../fiftyone_concepts/using_datasets.md#summary-fields), which are sample-level fields that
 allow you to efficiently perform queries on large datasets where directly
 querying the underlying field is prohibitively slow due to the number of
 objects/frames in the field.
@@ -106,11 +106,11 @@ Warning
 For large datasets, creating summary fields can take a few minutes.
 
 You can also create and manage summary fields
-[via the SDK](../fiftyone_concepts/using_datasets.html#summary-fields).
+[via the SDK](../fiftyone_concepts/using_datasets.md#summary-fields).
 
 ### Updating summary fields [¶](\#updating-summary-fields "Permalink to this headline")
 
-Since a [summary field](../fiftyone_concepts/using_datasets.html#summary-fields) is derived from the contents of
+Since a [summary field](../fiftyone_concepts/using_datasets.md#summary-fields) is derived from the contents of
 another field, it must be updated whenever there have been modifications to its
 source field.
 

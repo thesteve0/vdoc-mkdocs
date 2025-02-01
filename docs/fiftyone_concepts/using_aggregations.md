@@ -1,6 +1,6 @@
 # Using Aggregations [¶](\#using-aggregations "Permalink to this headline")
 
-[Datasets](using_datasets.html#using-datasets) are the core data structure in FiftyOne,
+[Datasets](using_datasets.md#using-datasets) are the core data structure in FiftyOne,
 allowing you to represent your raw data, labels, and associated metadata. When
 you query and manipulate a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") object using
 [dataset views](using_views.html#using-views), a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") object is returned, which

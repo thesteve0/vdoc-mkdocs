@@ -16,7 +16,7 @@ the App.
 Note
 
 Did you know? You can
-[search by natural language](../brain.html#brain-similarity-text) using MongoDB
+[search by natural language](../brain.md#brain-similarity-text) using MongoDB
 similarity indexes!
 
 ![image-similarity](../_images/brain-image-similarity.gif)
@@ -28,7 +28,7 @@ FiftyOne datasets and use this to query your data is as follows:
 
 1. Configure a MongoDB Atlas cluster
 
-2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
+2. Load a [dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) into FiftyOne
 
 3. Compute embedding vectors for samples or patches in your dataset, or select
 a model to use to generate embeddings
@@ -50,7 +50,7 @@ Note
 
 You must [configure](#mongodb-setup) a MongoDB Atlas 7.0 or later
 cluster and provide its
-[connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection) to run this
+[connection string](../fiftyone_concepts/config.md#configuring-mongodb-connection) to run this
 example:
 
 ```python
@@ -128,7 +128,7 @@ to use MongoDB 7, you must upgrade to an M10 cluster, which starts at $0.08/hour
 ### Configuring your connection string [¶](\#configuring-your-connection-string "Permalink to this headline")
 
 You can connect FiftyOne to your MongoDB Atlas cluster by simply providing its
-[connection string](../fiftyone_concepts/config.html#configuring-mongodb-connection):
+[connection string](../fiftyone_concepts/config.md#configuring-mongodb-connection):
 
 ```python
 export FIFTYONE_DATABASE_NAME=fiftyone
@@ -163,7 +163,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=mongodb
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.html#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {
@@ -189,7 +189,7 @@ For detailed information on these parameters, see the
 [MongoDB documentation](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector).
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.html#brain-config)
+previous section. Here’s an example of a [brain config](../brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -373,7 +373,7 @@ The MongoDB backend does not yet support indexing object patches, so the
 code below will not yet run. Check back soon!
 
 You can also create a similarity index for
-[object patches](../brain.html#brain-object-similarity) within your dataset by
+[object patches](../brain.md#brain-object-similarity) within your dataset by
 including the `patches_field` argument to
 `compute_similarity()`:
 
@@ -522,7 +522,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.html#brain-similarity-text))
+- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
 
 
 ```python
@@ -571,7 +571,7 @@ in the index, they will never be included in the result.
 
 This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
-[constructing views](../fiftyone_concepts/using_views.html#using-views) that contain the images of
+[constructing views](../fiftyone_concepts/using_views.md#using-views) that contain the images of
 interest.
 
 Note
