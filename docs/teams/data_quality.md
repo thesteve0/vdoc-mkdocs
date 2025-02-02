@@ -24,7 +24,7 @@ current analysis/review status:
 - **Entropy**: scans for images that have unusually small or large entropy
 
 - **Near Duplicates**: leverages embeddings to scan for
-[near-duplicate samples](../brain.md#brain-near-duplicates) in your dataset
+[near-duplicate samples](../fiftyone_concepts/brain.md#brain-near-duplicates) in your dataset
 
 - **Exact Duplicates**: uses filehashes to scan your dataset for duplicate
 data with either the same or different filenames

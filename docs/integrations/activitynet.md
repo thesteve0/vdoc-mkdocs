@@ -8,8 +8,8 @@ With FiftyOne, you can easily download, visualize, and evaluate on the
 ## Loading the ActivityNet dataset [¶](\#loading-the-activitynet-dataset "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading both the
-[ActivityNet 100](../dataset_zoo/datasets.md#dataset-zoo-activitynet-100) and
-[ActivityNet 200](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200) datasets.
+[ActivityNet 100](../data/dataset_zoo/datasets.md#dataset-zoo-activitynet-100) and
+[ActivityNet 200](../data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -284,7 +284,7 @@ when running ActivityNet-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates ActivityNet-style temporal detection evaluation
-on the [ActivityNet 200 dataset](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
+on the [ActivityNet 200 dataset](../data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
 
 ```python
 import random
@@ -492,7 +492,7 @@ the benefits of working in the FiftyOne ecosystem, including
 exploring your model’s predictions in the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app)!
 
 The example snippet below loads the
-[ActivityNet 200](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200) dataset and runs the
+[ActivityNet 200](../data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200) dataset and runs the
 official ActivityNet evaluation protocol on some mock model predictions:
 
 ```python

@@ -91,7 +91,7 @@ Does your dataset have geolocation data? Use the
 
 ![../../_images/app-map-panel.gif](../../_images/app-map-panel.gif)
 
-Want to [visualize embeddings](../brain.md#brain-embeddings-visualization) in the
+Want to [visualize embeddings](../fiftyone_concepts/brain.md#brain-embeddings-visualization) in the
 App? Just open the [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel):
 
 ![../../_images/brain-object-visualization.gif](../../_images/brain-object-visualization.gif)

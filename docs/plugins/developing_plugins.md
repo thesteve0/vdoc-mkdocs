@@ -19,7 +19,7 @@ Whether you’re working with images, videos, or other data types, a plugin can
 help you streamline your machine learning workflows and co-develop your data
 and models.
 
-![../../_images/plugin-design.png](../../_images/plugin-design.png)
+![../_images/plugin-design.png](../_images/plugin-design.png)
 
 ### Plugin types [¶](\#plugin-types "Permalink to this headline")
 
@@ -55,7 +55,7 @@ for the fields of your dataset
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
 
 
-![../../_images/app-map-panel.gif](../../_images/app-map-panel.gif)
+![../_images/app-map-panel.gif](../_images/app-map-panel.gif)
 
 Note
 
@@ -76,7 +76,7 @@ FiftyOne comes with a number of builtin
 operators for common tasks that are intended for either user-facing or internal
 plugin use.
 
-![../../_images/operator-browser.gif](../../_images/operator-browser.gif)
+![../_images/operator-browser.gif](../_images/operator-browser.gif)
 
 Note
 
@@ -95,7 +95,7 @@ For example, FiftyOne comes with a wide variety of
 [`builtin types`](../api/fiftyone.operators.types.html#module-fiftyone.operators.types "fiftyone.operators.types") that you can leverage to build
 complex input and output forms for your operators.
 
-![../../_images/file-explorer.gif](../../_images/file-explorer.gif)
+![../_images/file-explorer.gif](../_images/file-explorer.gif)
 
 Note
 
@@ -299,7 +299,7 @@ Here’s the plugin in action! The `Hello world` panel is available under the `+
 icon next to the Samples tab and the `count_samples` operator is available in
 the operator browser:
 
-![../../_images/hello-world.gif](../../_images/hello-world.gif)
+![../_images/hello-world.gif](../_images/hello-world.gif)
 
 ### Example Python operator [¶](\#example-python-operator "Permalink to this headline")
 
@@ -403,7 +403,7 @@ panels:
 
 ```
 
-![../../_images/hello-world-panel-inline.gif](../../_images/hello-world-panel-inline.gif)
+![../_images/hello-world-panel-inline.gif](../_images/hello-world-panel-inline.gif)
 
 ### Example JS operator [¶](\#example-js-operator "Permalink to this headline")
 
@@ -966,7 +966,7 @@ button at the bottom of the modal will contextually show whether the operation
 will be executed immediately, scheduled for delegated execution, or allow the
 user to choose between the supported options if there are multiple:
 
-![../../_images/operator-execute-button.png](../../_images/operator-execute-button.png)
+![../_images/operator-execute-button.png](../_images/operator-execute-button.png)
 
 #### Dynamic execution options [¶](\#dynamic-execution-options "Permalink to this headline")
 
@@ -1375,17 +1375,17 @@ clicked in any location supported by the
 For example, you can use:
 
 - `types.Places.SAMPLES_GRID_ACTIONS`
-![../../_images/samples_grid_actions.png](../../_images/samples_grid_actions.png)
+![../_images/samples_grid_actions.png](../_images/samples_grid_actions.png)
 - `types.Places.SAMPLES_GRID_SECONDARY_ACTIONS`
-![../../_images/samples_grid_secondary_actions.png](../../_images/samples_grid_secondary_actions.png)
+![../_images/samples_grid_secondary_actions.png](../_images/samples_grid_secondary_actions.png)
 - `types.Places.SAMPLES_VIEWER_ACTIONS`
-![../../_images/samples_viewer_actions.png](../../_images/samples_viewer_actions.png)
+![../_images/samples_viewer_actions.png](../_images/samples_viewer_actions.png)
 - `types.Places.EMBEDDINGS_ACTIONS`
-![../../_images/embeddings_actions.png](../../_images/embeddings_actions.png)
+![../_images/embeddings_actions.png](../_images/embeddings_actions.png)
 - `types.Places.HISTOGRAM_ACTIONS`
-![../../_images/histograms_actions.png](../../_images/histograms_actions.png)
+![../_images/histograms_actions.png](../_images/histograms_actions.png)
 - `types.Places.MAP_ACTIONS`
-![../../_images/map_actions.png](../../_images/map_actions.png)
+![../_images/map_actions.png](../_images/map_actions.png)
 
 You can add a placement for an operator by implementing the
 [`resolve_placement()`](../api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.resolve_placement "fiftyone.operators.operator.Operator.resolve_placement")
@@ -1753,7 +1753,7 @@ def register(p):
 
 ```
 
-![../../_images/example-panel-inline.gif](../../_images/example-panel-inline.gif)
+![../_images/example-panel-inline.gif](../_images/example-panel-inline.gif)
 
 Note
 
@@ -1918,7 +1918,7 @@ class CounterPanel(foo.Panel):
 
 ```
 
-![../../_images/counter-panel-inline.gif](../../_images/counter-panel-inline.gif)
+![../_images/counter-panel-inline.gif](../_images/counter-panel-inline.gif)
 
 #### Panel state [¶](\#panel-state "Permalink to this headline")
 
@@ -2347,7 +2347,7 @@ class DropdownMenuExample(foo.Panel):
 
 ```
 
-![../../_images/dropdown-example-inline.gif](../../_images/dropdown-example-inline.gif)
+![../_images/dropdown-example-inline.gif](../_images/dropdown-example-inline.gif)
 
 #### Interactive plots [¶](\#interactive-plots "Permalink to this headline")
 
@@ -2460,7 +2460,7 @@ def _make_matching_view(dataset, field, value):
 
 ```
 
-![../../_images/interactive-plot-example-inline.gif](../../_images/interactive-plot-example-inline.gif)
+![../_images/interactive-plot-example-inline.gif](../_images/interactive-plot-example-inline.gif)
 
 #### Walkthroughs [¶](\#walkthroughs "Permalink to this headline")
 
@@ -2596,7 +2596,7 @@ class WalkthroughExample(foo.Panel):
 
 ```
 
-![../../_images/walkthrough-example-inline.gif](../../_images/walkthrough-example-inline.gif)
+![../_images/walkthrough-example-inline.gif](../_images/walkthrough-example-inline.gif)
 
 #### Displaying multimedia [¶](\#displaying-multimedia "Permalink to this headline")
 
@@ -2607,7 +2607,7 @@ in local directories.
 Here are some examples of panels that load, render, and manipulate various
 forms of image and video data.
 
-![../../_images/multimedia-example-inline.gif](../../_images/multimedia-example-inline.gif)
+![../_images/multimedia-example-inline.gif](../_images/multimedia-example-inline.gif)
 
 #### Type hints [¶](\#type-hints "Permalink to this headline")
 

@@ -99,7 +99,7 @@ predictions to take advantage of FiftyOne’s
 
 ## Need data? [¶](\#need-data "Permalink to this headline")
 
-The [FiftyOne Dataset Zoo](../../dataset_zoo/index.md#dataset-zoo) contains dozens of popular public
+The [FiftyOne Dataset Zoo](../../data/dataset_zoo/index.md#dataset-zoo) contains dozens of popular public
 datasets that you can load into FiftyOne in a single line of code:
 
 ```python
@@ -116,5 +116,5 @@ dataset = foz.load_zoo_dataset("cifar10", split="train")
 
 Note
 
-Check out the [available zoo datasets](../../dataset_zoo/datasets.md#dataset-zoo-datasets)!
+Check out the [available zoo datasets](../../data/dataset_zoo/datasets.md#dataset-zoo-datasets)!
 

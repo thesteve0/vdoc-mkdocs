@@ -3,7 +3,7 @@
 [Datasets](using_datasets.md#using-datasets) are the core data structure in FiftyOne,
 allowing you to represent your raw data, labels, and associated metadata. When
 you query and manipulate a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") object using
-[dataset views](using_views.html#using-views), a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") object is returned, which
+[dataset views](using_views.md#using-views), a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") object is returned, which
 represents a filtered view into a subset of the underlying dataset’s contents.
 
 Complementary to this data model, one is often interested in computing
@@ -223,7 +223,7 @@ aggregation to extract the names and types of the attributes of a specified
 embedded document field across all samples in a collection.
 
 Schema aggregations are useful for detecting the presence and types of
-[dynamic attributes](using_datasets.html#dynamic-attributes) of [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") fields across a
+[dynamic attributes](using_datasets.md#dynamic-attributes) of [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") fields across a
 collection.
 
 ```python

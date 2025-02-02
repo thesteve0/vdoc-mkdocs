@@ -6,7 +6,7 @@ can access from within the App.
 
 Note
 
-Check out the
+Check out the[index.md](index.md)
 [FiftyOne plugins](https://github.com/voxel51/fiftyone-plugins)
 repository for a growing collection of plugins that you can easily
 [download](#plugins-download) and use locally.
@@ -495,7 +495,7 @@ default when you launch the App
 for the fields of your dataset
 
 - [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.md#brain-embeddings-visualization)
+[embeddings visualizations](../fiftyone_concepts/brain.md#brain-embeddings-visualization)
 
 - [Map panel](../fiftyone_concepts/app.md#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
@@ -505,7 +505,7 @@ Any plugins that you’ve installed may expose additional panels too.
 
 Click the `+` icon next to the “Samples” tab to open a new panel:
 
-![../../_images/app-map-panel.gif](../../_images/app-map-panel.gif)
+![../_images/app-map-panel.gif](../_images/app-map-panel.gif)
 
 Note
 
@@ -524,7 +524,7 @@ through all available (enabled) operators.
 You can open the Operator Browser by clicking on the Operator Browser icon
 above the sample grid or by typing backtick ( `` ` ``):
 
-![../../_images/operator-browser.gif](../../_images/operator-browser.gif)
+![../_images/operator-browser.gif](../_images/operator-browser.gif)
 
 Operators provide dynamic input forms that collect the necessary user inputs.
 The actual operation is then performed by pressing the `Execute`/ `Schedule`
@@ -742,7 +742,7 @@ foo.execute_operator(operator_uri, ctx=ctx, request_delegation=True)
 This has the same effect as choosing `Schedule` from the dropdown in the
 operator’s input modal when executing it from within the App:
 
-![../../_images/operator-execute-button.png](../../_images/operator-execute-button.png)
+![../_images/operator-execute-button.png](../_images/operator-execute-button.png)
 
 Note
 
@@ -837,14 +837,14 @@ For example, have model predictions on your dataset that you want to evaluate?
 The [@voxel51/evaluation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/evaluation/README.md)
 plugin makes it easy:
 
-![../../_images/evaluation.gif](../../_images/evaluation.gif)
+![../_images/evaluation.gif](../_images/evaluation.gif)
 
 Need to compute embedding for your dataset so you can visualize them in the
 [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
-![../../_images/embeddings.gif](../../_images/embeddings.gif)
+![../_images/embeddings.gif](../_images/embeddings.gif)
 
 Why is this awesome? Your AI stack needs a flexible data-centric component that
 enables you to organize and compute on your data. With delegated operations,

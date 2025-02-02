@@ -146,7 +146,7 @@ representations of your data.
 Let’s use
 `compute_visualization()` to
 generate a 2D visualization of the images in the test split of the
-[MNIST dataset](../dataset_zoo/datasets.md#dataset-zoo-mnist) and then visualize it using the
+[MNIST dataset](../data/dataset_zoo/datasets.md#dataset-zoo-mnist) and then visualize it using the
 `results.visualize()`
 method of the returned results object, where each point is colored by its
 ground truth label:
@@ -189,7 +189,7 @@ when you associate the scatterpoints with the samples or objects in a [`Dataset`
 and then attach it to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session").
 
 The example below demonstrates setting up an interactive scatterplot for the
-test split of the [MNIST dataset](../dataset_zoo/datasets.md#dataset-zoo-mnist) that is
+test split of the [MNIST dataset](../data/dataset_zoo/datasets.md#dataset-zoo-mnist) that is
 [attached to the App](#attaching-plots).
 
 In this setup, the scatterplot renders each sample using its corresponding 2D
@@ -287,7 +287,7 @@ optional `labels` and `sizes` parameters to control the color and sizes
 of each point, respectively.
 
 The example below demonstrates this usage using the
-[quickstart-geo](../dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset from the zoo, which
+[quickstart-geo](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset from the zoo, which
 contains [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in its `location` field:
 
 ```python
@@ -348,7 +348,7 @@ comes when you associate the location coordinates with the samples in a
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and then attach it to a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session").
 
 The example below demonstrates setting up an interactive location scatterplot
-for the [quickstart-geo](../dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset that is
+for the [quickstart-geo](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset that is
 [attached to the App](#attaching-plots).
 
 In this setup, the location plot renders each sample using its corresponding
@@ -412,7 +412,7 @@ FiftyOne to evaluate regression models.
 
 The example below demonstrates using an interactive regression plot to explore
 the results of some fake regression data on the
-[quickstart](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
+[quickstart](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
 
 In this setup, you can lasso scatter points to select the corresponding samples
 in the App.
@@ -479,7 +479,7 @@ instances to interactively explore specific slices of your dataset based on
 their corresponding line data.
 
 The example below demonstrates using an interactive lines plot to view the
-frames of the [quickstart-video](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) dataset
+frames of the [quickstart-video](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-video) dataset
 that contain the most vehicles. In this setup, you can lasso scatter points to
 select the corresponding frames in a [frames view](using_views.md#frame-views) in the
 App.
@@ -544,7 +544,7 @@ FiftyOne to evaluate models.
 
 The example below demonstrates using an interactive confusion matrix to explore
 the results of an evaluation on the `predictions` field of the
-[quickstart](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
+[quickstart](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset.
 
 In this setup, you can click on individual cells of the confusion matrix to
 select the corresponding ground truth and/or predicted [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") in the App.

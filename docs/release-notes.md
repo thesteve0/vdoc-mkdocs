@@ -80,10 +80,10 @@ metrics that aren’t applicable to a given evaluation type
 [#5281](https://github.com/voxel51/fiftyone/pull/5281)
 
 - Fixed an issue where backtick can’t be typed when editing markdown notes in
-the [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) [#5233](https://github.com/voxel51/fiftyone/pull/5233)
+the [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) [#5233](https://github.com/voxel51/fiftyone/pull/5233)
 
 - Fixed a race condition that could cause errors when performing
-[text similarity searches](brain.html#brain-similarity-text) [#5273](https://github.com/voxel51/fiftyone/pull/5273)
+[text similarity searches](fiftyone_concepts/brain.md#brain-similarity-text) [#5273](https://github.com/voxel51/fiftyone/pull/5273)
 
 - Fixed a caching bug that prevented label overlay font sizes from dynamically
 resizing as expected in some cases
@@ -168,7 +168,7 @@ your datasets and detects potential duplicate samples
 App
 
 - Added zoom-to-crop and set-look-at for selected labels in the
-[3D visualizer](fiftyone_concepts/app.html#app-3d-visualizer) [#4931](https://github.com/voxel51/fiftyone/pull/4931)
+[3D visualizer](fiftyone_concepts/app.md#app-3d-visualizer) [#4931](https://github.com/voxel51/fiftyone/pull/4931)
 
 - Gracefully handle deleted + recreated datasets of the same name
 [#5183](https://github.com/voxel51/fiftyone/pull/5183)
@@ -447,7 +447,7 @@ fields
 [#4772](https://github.com/voxel51/fiftyone/pull/4772)
 
 - Improved UI, documentation, and robustness when working with
-[custom color schemes](fiftyone_concepts/app.html#app-color-schemes-app) [#4763](https://github.com/voxel51/fiftyone/pull/4763)
+[custom color schemes](fiftyone_concepts/app.md#app-color-schemes-app) [#4763](https://github.com/voxel51/fiftyone/pull/4763)
 
 - Fixed a bug where the active group slice was not being persisted when
 navigating between groups in the modal
@@ -1498,7 +1498,7 @@ Core
 Brain
 
 - Added support for registering
-[custom visualization methods](brain.html#brain-visualization-api) [#4038](https://github.com/voxel51/fiftyone/pull/4038)
+[custom visualization methods](brain.md#brain-visualization-api) [#4038](https://github.com/voxel51/fiftyone/pull/4038)
 
 
 ## FiftyOne Teams 1.5.4 [¶](\#fiftyone-teams-1-5-4 "Permalink to this headline")
@@ -1905,17 +1905,17 @@ App
 that provides an optimized filtering experience for large datasets
 [#3807](https://github.com/voxel51/fiftyone/pull/3807)
 
-- Added support for viewing image groups [as a video](fiftyone_concepts/app.html#app-dynamic-groups) [#3812](https://github.com/voxel51/fiftyone/pull/3812)
+- Added support for viewing image groups [as a video](fiftyone_concepts/app.md#app-dynamic-groups) [#3812](https://github.com/voxel51/fiftyone/pull/3812)
 
 - Added support for configuring custom color schemes for
 [semantic segmentation](fiftyone_concepts/using_datasets.md#semantic-segmentation) labels via the
-[color scheme editor](fiftyone_concepts/app.html#app-color-schemes) [#3727](https://github.com/voxel51/fiftyone/pull/3727)
+[color scheme editor](fiftyone_concepts/app.md#app-color-schemes) [#3727](https://github.com/voxel51/fiftyone/pull/3727)
 
 - Added support for configuring custom [Heatmap](fiftyone_concepts/using_datasets.md#heatmaps) colorscales
-via the [color scheme editor](fiftyone_concepts/app.html#app-color-schemes) [#3804](https://github.com/voxel51/fiftyone/pull/3804)
+via the [color scheme editor](fiftyone_concepts/app.md#app-color-schemes) [#3804](https://github.com/voxel51/fiftyone/pull/3804)
 
 - Improved rendering and customizability of label tags in the
-[color scheme](fiftyone_concepts/app.html#app-color-schemes) [#3622](https://github.com/voxel51/fiftyone/pull/3622)
+[color scheme](fiftyone_concepts/app.md#app-color-schemes) [#3622](https://github.com/voxel51/fiftyone/pull/3622)
 
 - Added an empty dataset landing page that allows for importing media and/or
 labels to the dataset from the App by running operators
@@ -2151,7 +2151,7 @@ App
 in the sample modal
 [#3720](https://github.com/voxel51/fiftyone/pull/3720)
 
-- Optimized the [Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel) [#3733](https://github.com/voxel51/fiftyone/pull/3733)
+- Optimized the [Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel) [#3733](https://github.com/voxel51/fiftyone/pull/3733)
 
 - Fixed [media field](fiftyone_concepts/app.md#app-multiple-media-fields) changes in the sample modal
 [#3735](https://github.com/voxel51/fiftyone/pull/3735)
@@ -2473,7 +2473,7 @@ grid media field that has been excluded from the current view
 [#3476](https://github.com/voxel51/fiftyone/pull/3476)
 
 - Prevented unnecessary page reloads when clearing selections in the
-[Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel) [#3507](https://github.com/voxel51/fiftyone/pull/3507)
+[Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel) [#3507](https://github.com/voxel51/fiftyone/pull/3507)
 
 - Removed unnecessary page reloads when resetting field visibility filters
 [#3441](https://github.com/voxel51/fiftyone/pull/3441)
@@ -2656,7 +2656,7 @@ the sample modal is open
 [#3383](https://github.com/voxel51/fiftyone/pull/3383)
 
 - Added support for viewing slices of grouped datasets in the
-[Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel) [#3351](https://github.com/voxel51/fiftyone/pull/3351)
+[Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel) [#3351](https://github.com/voxel51/fiftyone/pull/3351)
 
 - Added support for coloring embeddings plots by list fields
 [#3326](https://github.com/voxel51/fiftyone/pull/3326)
@@ -2924,7 +2924,7 @@ performance! [#3137](https://github.com/voxel51/fiftyone/pull/3137)
 large samples [#3137](https://github.com/voxel51/fiftyone/pull/3137)
 
 - Improved the usability of the
-[field visibility modal](fiftyone_concepts/app.html#app-field-visibility) [#3154](https://github.com/voxel51/fiftyone/pull/3154)
+[field visibility modal](fiftyone_concepts/app.md#app-field-visibility) [#3154](https://github.com/voxel51/fiftyone/pull/3154)
 
 - Added support for visualizing Label fields stored within dynamic embedded
 documents [#3141](https://github.com/voxel51/fiftyone/pull/3141)
@@ -3376,7 +3376,7 @@ the Panel is closed
 [#2677](https://github.com/voxel51/fiftyone/pull/2677)
 
 - Selected labels are not reset after applying a
-[similarity search](fiftyone_concepts/app.html#app-similarity) [#2820](https://github.com/voxel51/fiftyone/pull/2820)
+[similarity search](fiftyone_concepts/app.md#app-similarity) [#2820](https://github.com/voxel51/fiftyone/pull/2820)
 
 - Stack traces for unhandled errors are now presented directly in the App so
 that users can self-diagnose issues
@@ -3384,7 +3384,7 @@ that users can self-diagnose issues
 [#2797](https://github.com/voxel51/fiftyone/pull/2797)
 
 - Improved error handling when loading invalid/missing brain results in the
-[Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel) [#2651](https://github.com/voxel51/fiftyone/pull/2651),
+[Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel) [#2651](https://github.com/voxel51/fiftyone/pull/2651),
 [#2790](https://github.com/voxel51/fiftyone/pull/2790)
 
 - More intuitive behavior when combining Embedding panel selections and sidebar
@@ -3675,17 +3675,17 @@ available! [#2388](https://github.com/voxel51/fiftyone/pull/2388)
 
 App
 
-- Added the [Spaces framework](fiftyone_concepts/app.html#app-spaces) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
+- Added the [Spaces framework](fiftyone_concepts/app.md#app-spaces) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
 - Added native support for
-[visualizing embeddings](fiftyone_concepts/app.html#app-embeddings-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
+[visualizing embeddings](fiftyone_concepts/app.md#app-embeddings-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
-- Refactored the map tab into a dedicated [map panel](fiftyone_concepts/app.html#app-map-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
+- Refactored the map tab into a dedicated [map panel](fiftyone_concepts/app.md#app-map-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
 - Refactored the histograms tab into a dedicated
-[histograms panel](fiftyone_concepts/app.html#app-histograms-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
+[histograms panel](fiftyone_concepts/app.md#app-histograms-panel) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
-- Added support for [loading and saving views](fiftyone_concepts/app.html#app-saving-views) [#2461](https://github.com/voxel51/fiftyone/pull/2461)
+- Added support for [loading and saving views](fiftyone_concepts/app.md#app-saving-views) [#2461](https://github.com/voxel51/fiftyone/pull/2461)
 
 - Added support for visualizing [`Segmentation`](api/fiftyone.core.labels.html#fiftyone.core.labels.Segmentation "fiftyone.core.labels.Segmentation") and [`Heatmap`](api/fiftyone.core.labels.html#fiftyone.core.labels.Heatmap "fiftyone.core.labels.Heatmap") masks stored on
 disk [#2358](https://github.com/voxel51/fiftyone/pull/2358)
@@ -3720,7 +3720,7 @@ disk [#2358](https://github.com/voxel51/fiftyone/pull/2358)
 [#2366](https://github.com/voxel51/fiftyone/pull/2366)
 
 - Automatically clear sample selection after
-[sorting by similarity](fiftyone_concepts/app.html#app-similarity) [#2595](https://github.com/voxel51/fiftyone/pull/2595)
+[sorting by similarity](fiftyone_concepts/app.md#app-similarity) [#2595](https://github.com/voxel51/fiftyone/pull/2595)
 
 - Use consistent loading dots throughout the App
 [#2321](https://github.com/voxel51/fiftyone/pull/2321)
@@ -3748,7 +3748,7 @@ disk [#2358](https://github.com/voxel51/fiftyone/pull/2358)
 Core
 
 - Added support for programmatically
-[configuring space layouts](fiftyone_concepts/app.html#app-spaces-python) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
+[configuring space layouts](fiftyone_concepts/app.md#app-spaces-python) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
 - Added support for [loading and saving views](fiftyone_concepts/using_views.html#saving-views) [#2461](https://github.com/voxel51/fiftyone/pull/2461)
 
@@ -3951,7 +3951,7 @@ dynamically in the App and programmatically on a per-dataset basis
 per-dataset basis [#2190](https://github.com/voxel51/fiftyone/pull/2190)
 
 - Added support for viewing field-level descriptions via a new
-[field tooltip](fiftyone_concepts/app.html#app-fields-sidebar) [#2216](https://github.com/voxel51/fiftyone/pull/2216)
+[field tooltip](fiftyone_concepts/app.md#app-fields-sidebar) [#2216](https://github.com/voxel51/fiftyone/pull/2216)
 
 - Added support for filtering by and viewing stats for custom embedded document
 attributes [#1825](https://github.com/voxel51/fiftyone/pull/1825)
@@ -4093,12 +4093,12 @@ App [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 in the modal [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added support for visualizing and interacting with [`GeoLocation`](api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in a
-new [Map panel](fiftyone_concepts/app.html#app-map-panel) [#1976](https://github.com/voxel51/fiftyone/pull/1976)
+new [Map panel](fiftyone_concepts/app.md#app-map-panel) [#1976](https://github.com/voxel51/fiftyone/pull/1976)
 
 - Added initial support for [custom App plugins](plugins/index.html#fiftyone-plugins) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added support for configuring
-[multiple media fields](fiftyone_concepts/app.html#app-multiple-media-fields) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
+[multiple media fields](fiftyone_concepts/app.md#app-multiple-media-fields) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Fixed Google Colab screenshotting and cell updates
 [#2069](https://github.com/voxel51/fiftyone/pull/2069)

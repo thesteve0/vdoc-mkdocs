@@ -16,7 +16,7 @@ your datasets that you have identified by constructing a [`DatasetView`](../api/
 ### Drawing labels on images [¶](\#drawing-labels-on-images "Permalink to this headline")
 
 The following snippet renders the ground truth and predicted labels on a few
-samples from the [quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
+samples from the [quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -37,7 +37,7 @@ print(anno_image_paths)
 
 The following snippet renders both sample-level and frame-level labels on a
 few videos from the
-[quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video):
+[quickstart-video dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-video):
 
 ```python
 import fiftyone as fo

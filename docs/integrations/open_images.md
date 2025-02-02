@@ -15,8 +15,8 @@ use FiftyOne to download and evaluate models on Open Images.
 ## Loading Open Images [¶](\#loading-open-images "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading the
-[Open Images V6](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6) and
-[Open Images V7](../dataset_zoo/datasets.md#dataset-zoo-open-images-v7) datasets.
+[Open Images V6](../data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) and
+[Open Images V7](../data/dataset_zoo/datasets.md#dataset-zoo-open-images-v7) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -280,7 +280,7 @@ when running Open Images-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates Open Images-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
 
 ```python
 import fiftyone as fo
@@ -436,11 +436,11 @@ In order to compute the official Open Images mAP for a model, your dataset
 **must** include the appropriate positive and negative sample-level labels, and
 you must provide the class hierarchy. Fortunately, when you load the Open
 Images dataset
-[from the FiftyOne Dataset Zoo](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6), all of the
+[from the FiftyOne Dataset Zoo](../data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6), all of the
 necessary information is automatically loaded for you!
 
 The example snippet below loads the
-[Open Images V6](../dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset and runs the
+[Open Images V6](../data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset and runs the
 official Open Images evaluation protocol on some mock model predictions:
 
 ```python

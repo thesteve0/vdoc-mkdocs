@@ -95,7 +95,7 @@ operator, selecting the Albumentations plugin from the community dropdown menu.
 
 You will also need to load (and download if necessary) a dataset to apply the
 augmentations to. For this guide, we’ll use the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo

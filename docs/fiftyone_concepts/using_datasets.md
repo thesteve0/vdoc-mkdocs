@@ -4173,7 +4173,7 @@ print(sample)
 ### Example image dataset [¶](\#example-image-dataset "Permalink to this headline")
 
 To get started exploring image datasets, try loading the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the zoo:
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4413,7 +4413,7 @@ building labeled video samples.
 ### Example video dataset [¶](\#example-video-dataset "Permalink to this headline")
 
 To get started exploring video datasets, try loading the
-[quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the zoo:
+[quickstart-video dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4760,7 +4760,7 @@ documentation for available parameters to customize the projections.
 ### Example 3D datasets [¶](\#example-3d-datasets "Permalink to this headline")
 
 To get started exploring 3D datasets, try loading the
-[quickstart-3d dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo:
+[quickstart-3d dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4778,7 +4778,7 @@ session = fo.launch_app(dataset)
 ![quickstart-3d](../_images/quickstart-3d.gif)
 
 Also check out the
-[quickstart-groups dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-groups), which
+[quickstart-groups dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-groups), which
 contains a point cloud slice:
 
 ```python

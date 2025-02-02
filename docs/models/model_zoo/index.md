@@ -74,7 +74,7 @@ predictions with zoo models for your datasets.
 
 For example, the code sample below shows a self-contained example of loading a
 Faster R-CNN model from the model zoo and adding its predictions to the
-COCO-2017 dataset from the [Dataset Zoo](../dataset_zoo/index.md#dataset-zoo):
+COCO-2017 dataset from the [Dataset Zoo](../../data/dataset_zoo/index.md#dataset-zoo):
 
 ```python
 import fiftyone as fo
@@ -175,7 +175,7 @@ predictions.
 Note
 
 Storing logits for predictions enables you to run Brain methods such as
-[label mistakes](../brain.md#brain-label-mistakes) and
+[label mistakes](../../fiftyone_concepts/brain.md#brain-label-mistakes) and
 [sample hardness](../brain.md#brain-sample-hardness) on your datasets!
 
 You can check if a model exposes logits via

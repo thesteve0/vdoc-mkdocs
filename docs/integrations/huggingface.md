@@ -799,7 +799,7 @@ dataset.compute_patch_embeddings(
 ### Brain methods [¶](\#brain-methods "Permalink to this headline")
 
 Because `transformers` models can be used to compute embeddings, they can be
-passed to [Brain methods](../brain.md#fiftyone-brain) like
+passed to [Brain methods](../fiftyone-concepts/brain.md#fiftyone-brain) like
 `compute_similarity()` and
 `compute_visualization()`:
 
@@ -940,8 +940,8 @@ Hugging Face Hub, providing you with incredible flexibility in the process.
 
 The basic recipe for pushing a FiftyOne dataset to the Hub is just two lines of
 code. As a starting point, let’s use the example
-[Quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset from the
-[FiftyOne Dataset Zoo](../dataset_zoo/index.md#dataset-zoo):
+[Quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset from the
+[FiftyOne Dataset Zoo](../data/dataset_zoo/index.md#dataset-zoo):
 
 ```python
 import fiftyone as fo

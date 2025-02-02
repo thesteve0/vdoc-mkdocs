@@ -1555,7 +1555,7 @@ Did you know? Using
 [`to_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_frames "fiftyone.core.collections.SampleCollection.to_frames")
 enables you to execute workflows such as
 [model evaluation](evaluation.md#evaluating-models) and
-[Brain methods](../brain.md#fiftyone-brain) that only support image collections
+[Brain methods](brain.md#fiftyone-brain) that only support image collections
 to the frames of your video datasets!
 
 In the simplest case, you can create a view that contains a sample for every
@@ -1820,7 +1820,7 @@ excluded_view = dataset.exclude_frames(frame_ids)
 
 ## Similarity views [¶](\#similarity-views "Permalink to this headline")
 
-If your dataset is [indexed by similarity](../brain.md#brain-similarity), then you
+If your dataset is [indexed by similarity](brain.md#brain-similarity), then you
 can use the
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 stage to programmatically query your data by similarity to image(s) or object
@@ -1859,7 +1859,7 @@ session.view = view
 
 Note
 
-Refer to the [Brain guide](../brain.md#brain-similarity) for more information
+Refer to the [Brain guide](brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
 [App guide](app.md#app-image-similarity) to see how to sort images by
 similarity via point-and-click in the App!
@@ -1903,14 +1903,14 @@ session.view = similar_objects
 
 Note
 
-Refer to the [Brain guide](../brain.md#brain-similarity) for more information
+Refer to the [Brain guide](brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
 [App guide](app.md#app-object-similarity) to see how to sort objects by
 similarity via point-and-click in the App!
 
 ### Text similarity [¶](\#text-similarity "Permalink to this headline")
 
-When you create a [similarity index](../brain.md#brain-similarity) powered by the
+When you create a [similarity index](brain.md#brain-similarity) powered by the
 [CLIP model](../models/model_zoo/models.md#model-zoo-clip-vit-base32-torch), you can pass arbitrary
 natural language queries to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
@@ -1927,7 +1927,7 @@ print(info.config.supports_prompts)  # True
 
 Note
 
-Refer to the [Brain guide](../brain.md#brain-similarity) for more information
+Refer to the [Brain guide](brain.md#brain-similarity) for more information
 about generating similarity indexes, and check out the
 [App guide](app.md#app-text-similarity) to see how to sort objects by text
 similarity via point-and-click in the App!

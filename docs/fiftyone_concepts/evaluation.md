@@ -31,7 +31,7 @@ FiftyOne’s evaluation methods are conveniently exposed as methods on all
 datasets or specific views into them via the same syntax.
 
 Let’s illustrate the basic workflow by loading the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) and analyzing the object
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) and analyzing the object
 detections in its `predictions` field using the
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections")
 method:
@@ -270,7 +270,7 @@ which can take any value supported by
 [`SimpleEvaluationConfig`](../api/fiftyone.utils.eval.regression.html#fiftyone.utils.eval.regression.SimpleEvaluationConfig "fiftyone.utils.eval.regression.SimpleEvaluationConfig").
 
 The example below demonstrates simple evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) with some fake regression
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) with some fake regression
 data added to it to demonstrate the workflow:
 
 ```python
@@ -380,7 +380,7 @@ be populated on each sample that records whether that sample’s prediction is
 correct.
 
 The example below demonstrates simple evaluation on the
-[CIFAR-10 dataset](../dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake predictions added
+[CIFAR-10 dataset](../data/dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake predictions added
 to it to demonstrate the workflow:
 
 ```python
@@ -493,7 +493,7 @@ Did you know? Many models from the [Model Zoo](../models/model_zoo/index.md#mode
 provide support for storing logits for their predictions!
 
 The example below demonstrates top-k evaluation on a
-[small ImageNet sample](../dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) with predictions
+[small ImageNet sample](../data/dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) with predictions
 from a pre-trained model from the [Model Zoo](../models/model_zoo/index.md#model-zoo):
 
 ```python
@@ -570,7 +570,7 @@ In order to use binary evaluation, you must provide the
 [`evaluate_classifications()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_classifications "fiftyone.core.collections.SampleCollection.evaluate_classifications").
 
 The example below demonstrates binary evaluation on the
-[CIFAR-10 dataset](../dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake binary predictions
+[CIFAR-10 dataset](../data/dataset_zoo/datasets.md#dataset-zoo-cifar10) with some fake binary predictions
 added to it to demonstrate the workflow:
 
 ```python
@@ -788,7 +788,7 @@ to load the view and then convert to patches.
 
 The example below demonstrates loading an evaluation patches view for the
 results of an evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -956,7 +956,7 @@ when running COCO-style evaluation.
 #### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates COCO-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -1193,7 +1193,7 @@ when running Open Images-style evaluation.
 #### Example evaluation [¶](\#id9 "Permalink to this headline")
 
 The example below demonstrates Open Images-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart):
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart):
 
 ```python
 import fiftyone as fo
@@ -1408,7 +1408,7 @@ when running ActivityNet-style evaluation.
 #### Example evaluation [¶](\#id13 "Permalink to this headline")
 
 The example below demonstrates ActivityNet-style temporal detection evaluation
-on the [ActivityNet 200 dataset](../dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
+on the [ActivityNet 200 dataset](../data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200):
 
 ```python
 import fiftyone as fo
@@ -1851,7 +1851,7 @@ both the sample- and frame-levels of your dataset. Refer to the
 documentation of the relevant evaluation method for more details.
 
 The example below demonstrates evaluating (mocked) frame-level detections on
-the [quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the
+the [quickstart-video dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the
 Dataset Zoo:
 
 ```python

@@ -16,7 +16,7 @@ field/attribute names:
 ![app-query-performance](../_images/app-query-performance.gif)
 
 The above GIF shows Query Performance in action on the train split of the
-[BDD100K dataset](../dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
+[BDD100K dataset](../data/dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
 `detections.detections.label` field.
 
 Note

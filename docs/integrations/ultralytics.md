@@ -415,7 +415,7 @@ You can use FiftyOne’s builtin [YOLOv5 exporter](../fiftyone_concepts/export_d
 export your FiftyOne datasets for use with Ultralytics models.
 
 For example, the code below prepares a random subset of the
-[Open Images v7 dataset](../dataset_zoo/datasets.md#dataset-zoo-open-images-v7) for fine-tuning:
+[Open Images v7 dataset](../data/dataset_zoo/datasets.md#dataset-zoo-open-images-v7) for fine-tuning:
 
 ```python
 import fiftyone as fo

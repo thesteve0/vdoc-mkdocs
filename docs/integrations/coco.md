@@ -14,8 +14,8 @@ you can use FiftyOne to evaluate a model on COCO.
 ## Loading the COCO dataset [¶](\#loading-the-coco-dataset "Permalink to this headline")
 
 The FiftyOne Dataset Zoo provides support for loading both the
-[COCO-2014](../dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
-[COCO-2017](../dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets.
+[COCO-2014](../data/dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](../data/dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets.
 
 Like all other zoo datasets, you can use
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") to download
@@ -405,7 +405,7 @@ when running COCO-style evaluation.
 ### Example evaluation [¶](\#example-evaluation "Permalink to this headline")
 
 The example below demonstrates COCO-style detection evaluation on the
-[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
+[quickstart dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart) from the Dataset Zoo:
 
 ```python
 import fiftyone as fo

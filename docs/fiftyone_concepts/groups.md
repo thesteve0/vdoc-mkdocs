@@ -485,13 +485,13 @@ print(group)
 
 ## Example datasets [¶](\#example-datasets "Permalink to this headline")
 
-The [FiftyOne Dataset Zoo](../dataset_zoo/index.md#dataset-zoo) contains grouped datasets that
+The [FiftyOne Dataset Zoo](../data/dataset_zoo/index.md#dataset-zoo) contains grouped datasets that
 you can use out-of-the-box to test drive FiftyOne’s group-related features.
 
 ### Quickstart groups [¶](\#quickstart-groups "Permalink to this headline")
 
 The fastest way to get started is by loading the
-[quickstart-groups](../dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) dataset, which
+[quickstart-groups](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) dataset, which
 consists of 200 scenes from the train split of the KITTI dataset, each
 containing left camera, right camera, point cloud, and 2D/3D object annotation
 data:
@@ -530,7 +530,7 @@ Sample fields:
 
 ### KITTI multiview [¶](\#kitti-multiview "Permalink to this headline")
 
-You can also load the full [kitti-multiview](../dataset_zoo/datasets.md#dataset-zoo-kitti-multiview)
+You can also load the full [kitti-multiview](../data/dataset_zoo/datasets.md#dataset-zoo-kitti-multiview)
 dataset:
 
 ```python

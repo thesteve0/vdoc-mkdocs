@@ -1,7 +1,7 @@
 # Filtering Cheat Sheet [¶](\#filtering-cheat-sheet "Permalink to this headline")
 
 This cheat sheet shows how to perform common matching and filtering operations
-in FiftyOne using [dataset views](../fiftyone_concepts/using_views.md#using-views).
+in FiftyOne using [dataset views](../../fiftyone_concepts/using_views.md#using-views).
 
 ## Strings and pattern matching [¶](\#strings-and-pattern-matching "Permalink to this headline")
 
@@ -23,8 +23,8 @@ ds = foz.load_zoo_dataset("quickstart")
 | Filepath contains “088” and is JPEG | ```<br>ds.match(F("filepath").re_match("088*.jpg"))<br>``` |
 
 Reference:
-[`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") and
-[`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
+[`match()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") and
+[`filter_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
 
 ## Dates and times [¶](\#dates-and-times "Permalink to this headline")
 
@@ -70,7 +70,7 @@ query_delta = timedelta(minutes=30)
 | With minute not equal to 0 | ```<br>ds.match(F("date").minute() != 0)<br>``` |
 
 Reference:
-[`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match").
+[`match()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match").
 
 ## Geospatial [¶](\#geospatial "Permalink to this headline")
 
@@ -100,8 +100,8 @@ ds = foz.load_zoo_dataset("quickstart-geo")
 | Within Manhattan | ```<br>ds.geo_within(MANHATTAN)<br>``` |
 
 Reference:
-[`geo_near()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_near "fiftyone.core.collections.SampleCollection.geo_near") and
-[`geo_within()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_within "fiftyone.core.collections.SampleCollection.geo_within").
+[`geo_near()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_near "fiftyone.core.collections.SampleCollection.geo_near") and
+[`geo_within()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.geo_within "fiftyone.core.collections.SampleCollection.geo_within").
 
 ## Detections [¶](\#detections "Permalink to this headline")
 
@@ -128,8 +128,8 @@ ds = foz.load_zoo_dataset("quickstart")
 | Contains a cat or dog but not both | ```<br>field = "predictions.detections.label"<br>one_expr = F(field).contains(["cat", "dog"])<br>both_expr = F(field).contains(["cat", "dog"], all=True)<br>ds.match(one_expr & ~both_expr)<br>``` |
 
 Reference:
-[`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") and
-[`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
+[`match()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match") and
+[`filter_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
 
 ### Bounding boxes [¶](\#bounding-boxes "Permalink to this headline")
 
@@ -157,9 +157,9 @@ abs_area = rel_bbox_area * im_width * im_height
 | Aspect ratio > 2 | ```<br>aspect_ratio = (<br>    (box_width * im_width) / (box_height * im_height)<br>)<br>ds.select_fields("predictions").filter_labels(<br>    "predictions", aspect_ratio > 2<br>)<br>``` |
 
 Reference:
-[`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels")
+[`filter_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels")
 and
-[`select_fields()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_fields "fiftyone.core.collections.SampleCollection.select_fields").
+[`select_fields()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_fields "fiftyone.core.collections.SampleCollection.select_fields").
 
 ### Evaluating detections [¶](\#evaluating-detections "Permalink to this headline")
 
@@ -192,11 +192,11 @@ ep = ds.to_evaluation_patches("eval")
 | Predictions with IoU > 0.9 | ```<br>ep.match(F("iou") > 0.9)<br>``` |
 
 Reference:
-[`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match"),
-[`sort_by()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by "fiftyone.core.collections.SampleCollection.sort_by"),
-[`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels"),
+[`match()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match"),
+[`sort_by()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by "fiftyone.core.collections.SampleCollection.sort_by"),
+[`filter_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels"),
 and
-[`match_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_labels "fiftyone.core.collections.SampleCollection.match_labels").
+[`match_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_labels "fiftyone.core.collections.SampleCollection.match_labels").
 
 ## Classifications [¶](\#classifications "Permalink to this headline")
 
@@ -229,10 +229,10 @@ fob.compute_mistakenness(ds, "predictions", label_field="ground_truth")
 | 10 most likely annotation mistakes | ```<br>ds.match_tags("train").sort_by(<br>    "mistakenness", reverse=True<br>)[:10]<br>``` |
 
 Reference:
-[`match()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match"),
-[`sort_by()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by "fiftyone.core.collections.SampleCollection.sort_by"),
+[`match()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match "fiftyone.core.collections.SampleCollection.match"),
+[`sort_by()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by "fiftyone.core.collections.SampleCollection.sort_by"),
 and
-[`match_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags").
+[`match_tags()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags").
 
 ## Built-in filter and match functions [¶](\#built-in-filter-and-match-functions "Permalink to this headline")
 
@@ -275,7 +275,7 @@ id_filter = F("_id").is_in([ObjectId(_id) for _id in label_ids])
 | Brute force | ```<br>ds.set_field(<br>    "predictions.detections",<br>    F("detections").filter(F("confidence") > 0.9)),<br>)<br>``` |
 
 Reference:
-[`filter_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
+[`filter_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_labels "fiftyone.core.collections.SampleCollection.filter_labels").
 
 ### Matching labels [¶](\#matching-labels "Permalink to this headline")
 
@@ -295,7 +295,7 @@ Reference:
 | Brute force | ```<br>tag_expr = F("tags").contains("error")<br>pred_expr = F("predictions.detections").filter(tag_expr).length() > 0<br>gt_expr = F("ground_truth.detections").filter(tag_expr).length() > 0<br>ds.match(pred_expr | gt_expr)<br>``` |
 
 Reference:
-[`match_labels()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_labels "fiftyone.core.collections.SampleCollection.match_labels").
+[`match_labels()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_labels "fiftyone.core.collections.SampleCollection.match_labels").
 
 ### Matching tags [¶](\#matching-tags "Permalink to this headline")
 
@@ -305,7 +305,7 @@ Reference:
 | Brute force | ```<br>ds.match(F("tags").contains("validation"))<br>``` |
 
 Reference:
-[`match_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags").
+[`match_tags()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_tags "fiftyone.core.collections.SampleCollection.match_tags").
 
 ### Matching frames [¶](\#matching-frames "Permalink to this headline")
 
@@ -326,13 +326,13 @@ num_objects = F("detections.detections").length()
 | Brute force | ```<br>ds.match(F("frames").filter(num_objects > 10).length() > 0)<br>``` |
 
 Reference:
-[`match_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
+[`match_frames()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
 
 ### Filtering keypoints [¶](\#filtering-keypoints "Permalink to this headline")
 
 You can use
-[`filter_keypoints()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_keypoints "fiftyone.core.collections.SampleCollection.filter_keypoints")
-to retrieve individual keypoints within a [`Keypoint`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint") instance that match a
+[`filter_keypoints()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.filter_keypoints "fiftyone.core.collections.SampleCollection.filter_keypoints")
+to retrieve individual keypoints within a [`Keypoint`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint") instance that match a
 specified condition.
 
 The following table uses this example data:
@@ -373,5 +373,5 @@ ds.default_skeleton = fo.KeypointSkeleton(
 | Brute force | ```<br>tmp = ds.clone()<br>for sample in tmp.iter_samples(autosave=True):<br>    if sample.predictions is None:<br>        continue<br>    for keypoint in sample.predictions.keypoints:<br>        for i, confidence in enumerate(keypoint.confidence):<br>            if confidence <= 0.9:<br>                keypoint.points[i] = [None, None]<br>``` |
 
 Reference:
-[`match_frames()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
+[`match_frames()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.match_frames "fiftyone.core.collections.SampleCollection.match_frames").
 
