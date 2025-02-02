@@ -279,7 +279,7 @@ expose as embeddings (or prepend `<` to use the input tensor instead).
 Note
 
 Did you know? You can also
-[register your custom model](api.html#model-zoo-add) under a name of your
+[register your custom model](api.md#model-zoo-add) under a name of your
 choice so that it can be loaded and used as follows:
 
 ```python

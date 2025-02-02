@@ -105,7 +105,7 @@ session = fo.launch_app(dataset)
 Alternatively, you can use the
 `to_detections()` utility to
 manually convert Ultralytics predictions to
-[FiftyOne format](../fiftyone_concepts/using_datasets.html#object-detection):
+[FiftyOne format](../fiftyone_concepts/using_datasets.md#object-detection):
 
 ```python
 for sample in dataset.iter_samples(progress=True):
@@ -118,7 +118,7 @@ for sample in dataset.iter_samples(progress=True):
 ![ultralytics-boxes](../_images/ultralytics_boxes.jpg)
 
 You can also load any of these models directly from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo):
 
 ```python
 model_name = "yolov5l-coco-torch"
@@ -180,7 +180,7 @@ Alternatively, you can use the
 `to_instances()` and
 `to_polylines()` utilities to
 manually convert Ultralytics predictions into the desired
-[FiftyOne format](../fiftyone_concepts/using_datasets.html#instance-segmentation):
+[FiftyOne format](../fiftyone_concepts/using_datasets.md#instance-segmentation):
 
 ```python
 for sample in dataset.iter_samples(progress=True):
@@ -195,7 +195,7 @@ for sample in dataset.iter_samples(progress=True):
 ![ultralytics-instances](../_images/ultralytics_instances.jpg)
 
 You can also load YOLOv8, YOLOv9, and YOLO11 segmentation models from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo):
 
 ```python
 model_name = "yolov8n-seg-coco-torch"
@@ -255,7 +255,7 @@ session = fo.launch_app(dataset)
 
 Alternatively, you can use the
 `to_keypoints()` utility to
-manually convert Ultralytics predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#keypoints):
+manually convert Ultralytics predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.md#keypoints):
 
 ```python
 for sample in dataset.iter_samples(progress=True):
@@ -286,7 +286,7 @@ session = fo.launch_app(dataset)
 ```
 
 You can also load YOLOv8 oriented bounding box models from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo):
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo):
 
 ```python
 model_name = "yolov8n-obb-dotav1-torch"
@@ -356,7 +356,7 @@ session = fo.launch_app(patches)
 ![ultralytics-open-world-boxes](../_images/ultralytics_open_world_boxes.png)
 
 You can also load these open-vocabulary models from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo), optionally specifying the classes that
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo), optionally specifying the classes that
 the model should detect:
 
 ```python
@@ -406,16 +406,16 @@ dataset.set_values("predictions", predictions)
 
 Note
 
-See [this section](../fiftyone_concepts/using_datasets.html#batch-updates) for more information about
+See [this section](../fiftyone_concepts/using_datasets.md#batch-updates) for more information about
 performing batch updates to your FiftyOne datasets.
 
 ## Training [¶](\#training "Permalink to this headline")
 
-You can use FiftyOne’s builtin [YOLOv5 exporter](../fiftyone_concepts/export_datasets.html#yolov5dataset-export) to
+You can use FiftyOne’s builtin [YOLOv5 exporter](../fiftyone_concepts/export_datasets.md#yolov5dataset-export) to
 export your FiftyOne datasets for use with Ultralytics models.
 
 For example, the code below prepares a random subset of the
-[Open Images v7 dataset](../dataset_zoo/datasets.html#dataset-zoo-open-images-v7) for fine-tuning:
+[Open Images v7 dataset](../dataset_zoo/datasets.md#dataset-zoo-open-images-v7) for fine-tuning:
 
 ```python
 import fiftyone as fo

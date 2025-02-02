@@ -44,7 +44,7 @@ session = fo.launch_app(dataset)
 ## Model zoo [¶](\#model-zoo "Permalink to this headline")
 
 SuperGradients YOLO-NAS is also available directly from the
-[FiftyOne Model Zoo](../models/model_zoo/models.html#model-zoo-yolo-nas-torch)!
+[FiftyOne Model Zoo](../models/model_zoo/models.md#model-zoo-yolo-nas-torch)!
 
 ```python
 import fiftyone as fo

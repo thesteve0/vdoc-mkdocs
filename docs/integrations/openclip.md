@@ -21,7 +21,7 @@ pip install timm --upgrade
 ## Model zoo [¶](\#model-zoo "Permalink to this headline")
 
 You can load the original ViT-B-32 OpenAI pretrained model from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo) as follows:
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo) as follows:
 
 ```python
 import fiftyone.zoo as foz
@@ -104,7 +104,7 @@ session = fo.launch_app(dataset)
 ## Embeddings [¶](\#embeddings "Permalink to this headline")
 
 Another application of OpenCLIP is
-[embeddings visualization](../brain.html#brain-embeddings-visualization).
+[embeddings visualization](../brain.md#brain-embeddings-visualization).
 
 For example, let’s compare the embeddings of the original OpenAI CLIP model to
 MetaCLIP. We’ll also perform a quick zero shot classification to color the
@@ -150,7 +150,7 @@ Here is the final result!
 ## Text similarity search [¶](\#text-similarity-search "Permalink to this headline")
 
 OpenCLIP can also be used for
-[text similarity search](../brain.html#brain-similarity-text).
+[text similarity search](../brain.md#brain-similarity-text).
 
 To use a specific pretrained-checkpoint pair for text similarity search, pass
 these in as a dictionary via the `model_kwargs` argument to
@@ -194,5 +194,5 @@ view = dataset.sort_by_similarity(query, k=25, brain_key="sim_metaclip")
 Note
 
 Did you know? You can also perform text similarity queries directly
-[in the App](../fiftyone_concepts/app.html#app-text-similarity)!
+[in the App](../fiftyone_concepts/app.md#app-text-similarity)!
 

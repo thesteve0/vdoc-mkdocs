@@ -6,14 +6,14 @@ This page provides a brief overview of FiftyOne’s basic concepts.
 
 The [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") class is the core data structure in FiftyOne, allowing you to
 represent your data and manipulate it through the Python library and the
-[FiftyOne App](app.html#fiftyone-app).
+[FiftyOne App](app.md#fiftyone-app).
 
-FiftyOne Datasets allow you to easily [load](dataset_creation/index.html#loading-datasets),
-[modify](using_datasets.html#using-datasets), [visualize](app.html#fiftyone-app), and
-[evaluate](evaluation.html#evaluating-models) your data along with any related labels
+FiftyOne Datasets allow you to easily [load](dataset_creation/index.md#loading-datasets),
+[modify](using_datasets.md#using-datasets), [visualize](app.md#fiftyone-app), and
+[evaluate](evaluation.md#evaluating-models) your data along with any related labels
 (classifications, detections, etc). They provide a consistent interface for
 loading images, videos, annotations, and model predictions into a format that
-can be visualized in the [FiftyOne App](app.html#fiftyone-app), synced with your
+can be visualized in the [FiftyOne App](app.md#fiftyone-app), synced with your
 annotation source, and shared with others.
 
 If you have your own collection of data, loading it as a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") will allow
@@ -29,7 +29,7 @@ model found difficult into your training set.
 
 Note
 
-Check out [creating FiftyOne datasets](dataset_creation/index.html#loading-datasets) for more
+Check out [creating FiftyOne datasets](dataset_creation/index.md#loading-datasets) for more
 information about loading your data into FiftyOne.
 
 A [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") is composed of multiple [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") objects which contain [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyone.core.fields.Field")
@@ -43,11 +43,11 @@ Datasets are ordered collections of samples. When a [`Sample`](../api/fiftyone.c
 from the dataset.
 
 Slicing and other batch operations on datasets are done through the use of
-[dataset views](using_views.html#using-views). A [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") provides a view into the
+[dataset views](using_views.md#using-views). A [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") provides a view into the
 [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"), which can be filtered, sorted, sampled, etc. along various axes to
 obtain a desired subset of the samples.
 
-[Learn more about using datasets](using_datasets.html#using-datasets)
+[Learn more about using datasets](using_datasets.md#using-datasets)
 
 ```python
 import fiftyone as fo
@@ -84,7 +84,7 @@ All [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fif
 `filepath` field. Any number of fields can be dynamically added to samples to
 store additional custom information about the sample.
 
-[Learn more about using samples](using_datasets.html#using-samples)
+[Learn more about using samples](using_datasets.md#using-samples)
 
 ```python
 import fiftyone as fo
@@ -151,7 +151,7 @@ Custom fields can contain any Python primitive data type:
 
 The elements of list and dict fields may be homogeneous or heterogeneous, and
 may even contain nested lists and dicts. Fields can also contain more complex
-data types like [labels](using_datasets.html#using-labels).
+data types like [labels](using_datasets.md#using-labels).
 
 Fields can be dynamically created, modified, and deleted. When a new [`Field`](../api/fiftyone.core.fields.html#fiftyone.core.fields.Field "fiftyone.core.fields.Field") is
 assigned to a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"), or a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") with new fields is added
@@ -202,14 +202,14 @@ Sample fields:
 
 ```
 
-[Learn more about sample fields](using_datasets.html#using-fields)
+[Learn more about sample fields](using_datasets.md#using-fields)
 
 ## Media type [¶](\#media-type "Permalink to this headline")
 
 When a [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") is created, its media type is inferred from the `filepath` to
 the source media and exposed via the `media_type` attribute of the sample.
 
-[Learn more about media types](using_datasets.html#using-media-type)
+[Learn more about media types](using_datasets.md#using-media-type)
 
 ## Tags [¶](\#tags "Permalink to this headline")
 
@@ -220,7 +220,7 @@ A typical use case is to tag the dataset split ( `test`, `train`, `validation`)
 to which the [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") belongs. However, you are free to use tags however you
 like.
 
-[See more information about using tags](using_datasets.html#using-tags)
+[See more information about using tags](using_datasets.md#using-tags)
 
 ```python
 import fiftyone as fo
@@ -238,7 +238,7 @@ print(sample.tags)
 All [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") instances have a `metadata` attribute that stores type-specific
 metadata about the source media of the sample.
 
-[Learn more about adding metadata to your samples](using_datasets.html#using-metadata)
+[Learn more about adding metadata to your samples](using_datasets.md#using-metadata)
 
 ```python
 import fiftyone as fo
@@ -281,46 +281,46 @@ or model predictions.
 
 FiftyOne provides label classes for many common tasks:
 
-- [Regression](using_datasets.html#regression): a regression value
+- [Regression](using_datasets.md#regression): a regression value
 
-- [Classification](using_datasets.html#classification): a classification label
+- [Classification](using_datasets.md#classification): a classification label
 
-- [Classifications](using_datasets.html#multilabel-classification): a list of classifications
+- [Classifications](using_datasets.md#multilabel-classification): a list of classifications
 (typically for multilabel tasks)
 
-- [Detections](using_datasets.html#object-detection): a list of object detections (with
+- [Detections](using_datasets.md#object-detection): a list of object detections (with
 optional instance masks)
 
-- [Polylines](using_datasets.html#polylines): a list of polylines or polygons in an image
+- [Polylines](using_datasets.md#polylines): a list of polylines or polygons in an image
 
-- [Cuboids](using_datasets.html#cuboids): a list of 2D cuboids in an image
+- [Cuboids](using_datasets.md#cuboids): a list of 2D cuboids in an image
 
-- [Rotated bounding boxes](using_datasets.html#rotated-bounding-boxes): a list of rotated
+- [Rotated bounding boxes](using_datasets.md#rotated-bounding-boxes): a list of rotated
 boxes in an image
 
-- [Keypoints](using_datasets.html#keypoints): a list of keypoints in an image
+- [Keypoints](using_datasets.md#keypoints): a list of keypoints in an image
 
-- [Segmentation](using_datasets.html#semantic-segmentation): a semantic segmentation mask for
+- [Segmentation](using_datasets.md#semantic-segmentation): a semantic segmentation mask for
 an image
 
-- [Heatmap](using_datasets.html#heatmaps): an intensity heatmap for an image
+- [Heatmap](using_datasets.md#heatmaps): an intensity heatmap for an image
 
-- [Temporal detection](using_datasets.html#temporal-detection): events with a temporal frame
+- [Temporal detection](using_datasets.md#temporal-detection): events with a temporal frame
 support in a video
 
-- [3D detections](using_datasets.html#d-detections): a list of 3D detections in a scene
+- [3D detections](using_datasets.md#d-detections): a list of 3D detections in a scene
 
-- [3D polylines](using_datasets.html#d-polylines): a list of 3D polylines or polygons in a
+- [3D polylines](using_datasets.md#d-polylines): a list of 3D polylines or polygons in a
 scene
 
-- [GeoLocation](using_datasets.html#geolocation): geolocation point(s), line(s), or
+- [GeoLocation](using_datasets.md#geolocation): geolocation point(s), line(s), or
 polygon(s)
 
 
 Using FiftyOne’s [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types enables you to visualize your labels in the
-[the App](app.html#fiftyone-app).
+[the App](app.md#fiftyone-app).
 
-[Learn more about storing labels in your samples](using_datasets.html#using-labels)
+[Learn more about storing labels in your samples](using_datasets.md#using-labels)
 
 ```python
 import fiftyone as fo
@@ -375,7 +375,7 @@ Dataset views are a powerful tool for exploring your datasets. You can use
 [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") instances to search, filter, sort, and manipulate subsets of your
 datasets to perform the analysis that you need.
 
-[Get a full walkthrough of dataset views](using_views.html)
+[Get a full walkthrough of dataset views](using_views.md)
 
 ```python
 import fiftyone as fo
@@ -403,11 +403,11 @@ their contents. Complementary to this, one is often interested in computing
 aggregate statistics about a dataset or view, such as label counts,
 distributions, and ranges.
 
-FiftyOne provides a powerful [aggregations framework](using_aggregations.html#using-aggregations)
+FiftyOne provides a powerful [aggregations framework](using_aggregations.md#using-aggregations)
 that provides a highly-efficient approach to computing statistics about your
 data.
 
-[Learn more about using aggregations](using_aggregations.html)
+[Learn more about using aggregations](using_aggregations.md)
 
 ```python
 import fiftyone as fo

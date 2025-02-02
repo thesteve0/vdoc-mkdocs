@@ -3,7 +3,7 @@
 This page lists all of the natively available datasets in the FiftyOne Dataset
 Zoo.
 
-Check out the [API reference](api.html#dataset-zoo-api) for complete instructions
+Check out the [API reference](api.md#dataset-zoo-api) for complete instructions
 for using the Dataset Zoo.
 
 Note
@@ -13,7 +13,7 @@ Some datasets are loaded via the
 or [TensorFlow Datasets](https://www.tensorflow.org/datasets) packages
 under the hood.
 
-If you do not have a [suitable package](api.html#dataset-zoo-ml-backend)
+If you do not have a [suitable package](api.md#dataset-zoo-ml-backend)
 installed when attempting to download a zoo dataset, you’ll see an error
 message that will help you install one.
 
@@ -171,7 +171,7 @@ the ActivityNet maintainers in order to load a full split into FiftyOne.
 To download the source files, you must fill out
 [this form](https://docs.google.com/forms/d/e/1FAIpQLSeKaFq9ZfcmZ7W0B0PbEhfbTHY41GeEgwsa7WobJgGUhn4DTQ/viewform).
 
-Refer to [this page](../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
+Refer to [this page](../../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
 full splits by passing the `source_dir` parameter to
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
@@ -180,7 +180,7 @@ full splits by passing the `source_dir` parameter to
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app)).
 
 ![activitynet-100-validation](../../_images/activitynet-100-validation.png)
 
@@ -311,7 +311,7 @@ full splits by passing the `source_dir` parameter to
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app)).
 
 ![activitynet-200-validation](../../_images/activitynet-200-validation.png)
 
@@ -467,7 +467,7 @@ images per class. There are 50,000 training images and 10,000 test images.
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -503,7 +503,7 @@ images.
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -578,7 +578,7 @@ With support from the [COCO team](https://cocodataset.org/#download),
 FiftyOne is a recommended tool for downloading, visualizing, and evaluating
 on the COCO dataset!
 
-Check out [this guide](../../integrations/coco.html#coco) for more details on using FiftyOne to
+Check out [this guide](../../integrations/coco.md#coco) for more details on using FiftyOne to
 work with COCO.
 
 **Notes**
@@ -707,7 +707,7 @@ With support from the [COCO team](https://cocodataset.org/#download),
 FiftyOne is a recommended tool for downloading, visualizing, and evaluating
 on the COCO dataset!
 
-Check out [this guide](../../integrations/coco.html#coco) for more details on using FiftyOne to
+Check out [this guide](../../integrations/coco.md#coco) for more details on using FiftyOne to
 work with COCO.
 
 **Notes**
@@ -850,7 +850,7 @@ There are 60,000 training images and 10,000 test images.
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -1007,7 +1007,7 @@ clips distributed across 51 action classes.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![hmdb51-test](../../_images/hmdb51-test.png)
 
@@ -1065,7 +1065,7 @@ get links to download the data.
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -1249,7 +1249,7 @@ downloaded from YouTube.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1358,7 +1358,7 @@ matching samples are loaded
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1458,7 +1458,7 @@ matching samples are loaded
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1568,7 +1568,7 @@ matching samples are loaded
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../getting_started/troubleshooting.html#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![kinetics](../../_images/kinetics.png)
 
@@ -1705,7 +1705,7 @@ There are 60,000 training images and 10,000 test images.
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -2087,7 +2087,7 @@ generated by human annotators.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 ![quickstart-video](../../_images/quickstart-video.png)
 
@@ -2309,7 +2309,7 @@ viewpoint, etc.
 Note
 
 In order to work with video datasets, you’ll need to have
-[ffmpeg installed](../../getting_started/basic/troubleshooting.md#troubleshooting-video).
+[ffmpeg installed](../../../getting_started/basic/troubleshooting/#videos-do-not-load-in-the-app).
 
 Also, if you don’t already have a utility to uncompress `.rar` archives,
 you may need to install one. For example, on macOS:
@@ -2354,12 +2354,12 @@ contain annotations.
 Note
 
 The `test` split is only available via the
-[TensorFlow backend](api.html#dataset-zoo-ml-backend).
+[TensorFlow backend](api.md#dataset-zoo-ml-backend).
 
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**
@@ -2399,12 +2399,12 @@ contain annotations.
 Note
 
 The `test` split is only available via the
-[TensorFlow backend](api.html#dataset-zoo-ml-backend).
+[TensorFlow backend](api.md#dataset-zoo-ml-backend).
 
 Note
 
 You must have the
-[Torch or TensorFlow backend(s)](api.html#dataset-zoo-ml-backend) installed to
+[Torch or TensorFlow backend(s)](api.md#dataset-zoo-ml-backend) installed to
 load this dataset.
 
 **Example usage**

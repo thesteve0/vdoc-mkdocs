@@ -12,8 +12,8 @@ environment variable.
 ## Working with remotely-sourced models [¶](\#working-with-remotely-sourced-models "Permalink to this headline")
 
 Working with remotely-sourced zoo models is just like
-[built-in zoo models](models.html#model-zoo-models), as both varieties support
-the [full zoo API](api.html#model-zoo-api).
+[built-in zoo models](models.md#model-zoo-models), as both varieties support
+the [full zoo API](api.md#model-zoo-api).
 
 When specifying remote sources, you can provide any of the following:
 
@@ -193,7 +193,7 @@ associated weights are stored at the provided path.
 
 Note
 
-Refer to [this page](design.html#model-zoo-design-overview) for more information
+Refer to [this page](design.md#model-zoo-design-overview) for more information
 about wrapping models in the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface.
 
 Remotely-sourced models can optionally support customized loading by accepting

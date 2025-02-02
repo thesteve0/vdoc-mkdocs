@@ -26,7 +26,7 @@ with the appropriate keyword arguments (which are passed to the underlying
 [`ZooDataset`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.ZooDataset "fiftyone.zoo.datasets.ZooDataset") constructor) to wrangle
 the raw download into FiftyOne format, and then calling
 [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") or using
-[fiftyone zoo datasets load](../cli/index.html#cli-fiftyone-zoo-datasets-load) to load the
+[fiftyone zoo datasets load](../cli/index.md#cli-fiftyone-zoo-datasets-load) to load the
 dataset into FiftyOne.
 
 For example, the following snippet shows how to load the BDD100K dataset from
@@ -51,7 +51,7 @@ By default, zoo datasets are downloaded into subdirectories of
 `fiftyone.config.dataset_zoo_dir` corresponding to their names.
 
 You can customize this backend by modifying the `dataset_zoo_dir` setting
-of your [FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+of your [FiftyOne config](../user_guide/config.md#configuring-fiftyone).
 
 ## Deleting zoo datasets [¶](\#deleting-zoo-datasets "Permalink to this headline")
 
@@ -86,7 +86,7 @@ alias `quickstart-copy`:
 
 In the above, `custom` specifies the source of the dataset, which can be an
 arbitrary string and simply controls the column of the
-[fiftyone zoo datasets list](../cli/index.html#cli-fiftyone-zoo-datasets-list) listing in
+[fiftyone zoo datasets list](../cli/index.md#cli-fiftyone-zoo-datasets-list) listing in
 which the dataset is annotated; `quickstart-copy` is the name of the new
 dataset; and `fiftyone.zoo.datasets.base.QuickstartDataset` is the
 fully-qualified class name of the
@@ -96,7 +96,7 @@ can be defined anywhere that is importable at runtime in your environment.
 
 Finally, expose your new dataset(s) to FiftyOne by adding your manifest to the
 `dataset_zoo_manifest_paths` parameter of your
-[FiftyOne config](../user_guide/config.html#configuring-fiftyone). One way to do this is to set the
+[FiftyOne config](../user_guide/config.md#configuring-fiftyone). One way to do this is to set the
 `FIFTYONE_DATASET_ZOO_MANIFEST_PATHS` environment variable:
 
 ```python
@@ -136,5 +136,5 @@ through both backends, it will use the backend specified by the
 `fo.config.default_ml_backend` setting in your FiftyOne config.
 
 You can customize this backend by modifying the `default_ml_backend` setting
-of your [FiftyOne config](../user_guide/config.html#configuring-fiftyone).
+of your [FiftyOne config](../user_guide/config.md#configuring-fiftyone).
 

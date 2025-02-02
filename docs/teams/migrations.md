@@ -28,7 +28,7 @@ pip install --index-url https://${TOKEN}@pypi.fiftyone.ai fiftyone==${VERSION}
 Note
 
 You can find your `TOKEN` by logging into the FiftyOne Teams App and
-clicking on the [account icon](installation.html#teams-python-sdk) in the upper right.
+clicking on the [account icon](installation.md#teams-python-sdk) in the upper right.
 
 ## Upgrading your deployment [¶](\#upgrading-your-deployment "Permalink to this headline")
 
@@ -129,7 +129,7 @@ downgrade to.
 
 Any datasets that you have created via open source FiftyOne can be migrated to
 your Teams deployment by exporting them in
-[FiftyOneDataset](../fiftyone_concepts/export_datasets.html#fiftyonedataset-export) format:
+[FiftyOneDataset](../fiftyone_concepts/export_datasets.md#fiftyonedataset-export) format:
 
 ```python
 # Open source SDK
@@ -182,9 +182,9 @@ Note
 
 By default, the above method only uploads the media in the `filepath`
 field of your samples. If your dataset contains other media fields (e.g.
-[thumbnails](../fiftyone_concepts/using_datasets.html#dataset-app-config-media-fields),
-[segmentations](../fiftyone_concepts/using_datasets.html#semantic-segmentation), or
-[heatmaps](../fiftyone_concepts/using_datasets.html#heatmaps)) simply run the above command multiple times,
+[thumbnails](../fiftyone_concepts/using_datasets.md#dataset-app-config-media-fields),
+[segmentations](../fiftyone_concepts/using_datasets.md#semantic-segmentation), or
+[heatmaps](../fiftyone_concepts/using_datasets.md#heatmaps)) simply run the above command multiple times,
 using the `media_field` argument to specify the appropriate fields to
 upload.
 

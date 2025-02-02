@@ -29,26 +29,26 @@ schemas, and download annotations using CVAT, all programmatically in Python.
 All of the following label types are supported, for both image and video
 datasets:
 
-- [Classifications](../fiftyone_concepts/using_datasets.html#classification)
+- [Classifications](../fiftyone_concepts/using_datasets.md#classification)
 
-- [Detections](../fiftyone_concepts/using_datasets.html#object-detection)
+- [Detections](../fiftyone_concepts/using_datasets.md#object-detection)
 
-- [Instance segmentations](../fiftyone_concepts/using_datasets.html#instance-segmentation)
+- [Instance segmentations](../fiftyone_concepts/using_datasets.md#instance-segmentation)
 
-- [Polygons and polylines](../fiftyone_concepts/using_datasets.html#polylines)
+- [Polygons and polylines](../fiftyone_concepts/using_datasets.md#polylines)
 
-- [Keypoints](../fiftyone_concepts/using_datasets.html#keypoints)
+- [Keypoints](../fiftyone_concepts/using_datasets.md#keypoints)
 
-- [Scalar fields](../fiftyone_concepts/using_datasets.html#adding-sample-fields)
+- [Scalar fields](../fiftyone_concepts/using_datasets.md#adding-sample-fields)
 
-- [Semantic segmentation](../fiftyone_concepts/using_datasets.html#semantic-segmentation)
+- [Semantic segmentation](../fiftyone_concepts/using_datasets.md#semantic-segmentation)
 
 
 ![cvat-example](../_images/cvat_example.png)
 
 Note
 
-Check out [this tutorial](../tutorials/cvat_annotation.html) to see how
+Check out [this tutorial](../tutorials/cvat_annotation.md) to see how
 you can use FiftyOne to upload your data to CVAT to create, delete, and fix
 annotations.
 
@@ -57,10 +57,10 @@ annotations.
 The basic workflow to use CVAT to add or edit labels on your FiftyOne datasets
 is as follows:
 
-1. Load a [labeled or unlabeled dataset](../fiftyone_concepts/dataset_creation/index.html#loading-datasets) into FiftyOne
+1. Load a [labeled or unlabeled dataset](../fiftyone_concepts/dataset_creation/index.md#loading-datasets) into FiftyOne
 
-2. Explore the dataset using the [App](../fiftyone_concepts/app.html#fiftyone-app) or
-[dataset views](../fiftyone_concepts/using_views.html#using-views) to locate either unlabeled samples that
+2. Explore the dataset using the [App](../fiftyone_concepts/app.md#fiftyone-app) or
+[dataset views](../fiftyone_concepts/using_views.md#using-views) to locate either unlabeled samples that
 you wish to annotate or labeled samples whose annotations you want to edit
 
 3. Use the
@@ -193,7 +193,7 @@ view.annotate(anno_key, backend="cvat", ...)
 
 ```
 
-Refer to [these instructions](../fiftyone_concepts/annotation.html#annotation-setup) to see how to
+Refer to [these instructions](../fiftyone_concepts/annotation.md#annotation-setup) to see how to
 permanently change your default backend.
 
 ### Authentication [¶](\#authentication "Permalink to this headline")
@@ -218,7 +218,7 @@ export FIFTYONE_CVAT_EMAIL=...  # if applicable
 **FiftyOne annotation config**
 
 You can also store your credentials in your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) located at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) located at
 `~/.fiftyone/annotation_config.json`:
 
 ```python
@@ -289,7 +289,7 @@ export FIFTYONE_CVAT_URL=http://localhost:8080
 ```
 
 - Store the `url` of your server in your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) at
 `~/.fiftyone/annotation_config.json`:
 
 
@@ -318,7 +318,7 @@ If your self-hosted server requires additional headers in order to make HTTP
 requests, you can provide them in either of the following ways:
 
 - Store your custom headers in a `headers` key of your
-[annotation config](../fiftyone_concepts/annotation.html#annotation-config) at
+[annotation config](../fiftyone_concepts/annotation.md#annotation-config) at
 `~/.fiftyone/annotation_config.json`:
 
 
@@ -732,7 +732,7 @@ labels on your dataset will be used to construct a classes list
 ### Label attributes [¶](\#label-attributes "Permalink to this headline")
 
 The `attributes` parameter allows you to configure whether
-[custom attributes](../fiftyone_concepts/using_datasets.html#using-labels) beyond the default `label` attribute
+[custom attributes](../fiftyone_concepts/using_datasets.md#using-labels) beyond the default `label` attribute
 are included in the annotation tasks.
 
 When adding new label fields for which you want to include attributes, you must
@@ -2445,8 +2445,8 @@ Note
 
 Another strategy for importing existing CVAT annotations into FiftyOne is
 to simply export the annotations from the CVAT UI and then import them via
-the [CVATImageDataset](../fiftyone_concepts/dataset_creation/datasets.html#cvatimagedataset-import) or
-[CVATVideoDataset](../fiftyone_concepts/dataset_creation/datasets.html#cvatvideodataset-import) types.
+the [CVATImageDataset](../fiftyone_concepts/dataset_creation/datasets.md#cvatimagedataset-import) or
+[CVATVideoDataset](../fiftyone_concepts/dataset_creation/datasets.md#cvatvideodataset-import) types.
 
 ## Additional utilities [¶](\#additional-utilities "Permalink to this headline")
 

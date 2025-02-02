@@ -5,13 +5,13 @@ object storage paths and/or publicly available URLs.
 
 Note
 
-[Click here](installation.html#teams-cloud-credentials) to see how to configure FiftyOne
+[Click here](installation.md#teams-cloud-credentials) to see how to configure FiftyOne
 Teams to load your cloud credentials!
 
 ## Cloud media caching [¶](\#cloud-media-caching "Permalink to this headline")
 
 When you work with cloud-backed datasets using the
-[Teams SDK](installation.html#teams-python-sdk), media files will automatically be
+[Teams SDK](installation.md#teams-python-sdk), media files will automatically be
 downloaded and cached on the machine you’re working from when you execute
 workflows such as model inference or Brain methods that require access to the
 pixels of the media files. This design minimizes bandwidth usage and can
@@ -728,7 +728,7 @@ fos.upload_media(
 ## Annotating cloud-backed datasets with CVAT [¶](\#annotating-cloud-backed-datasets-with-cvat "Permalink to this headline")
 
 When using FiftyOne to
-[annotate data with CVAT](../integrations/cvat.html#cvat-integration),
+[annotate data with CVAT](../integrations/cvat.md#cvat-integration),
 you can optionally follow the instructions below to instruct CVAT to load media
 directly from S3, GCS, or
 [MinIO](https://github.com/openvinotoolkit/cvat/pull/4353) buckets rather
@@ -772,7 +772,7 @@ collection being annotated.
 
 ## Annotating cloud-backed datasets with V7 Darwin [¶](\#annotating-cloud-backed-datasets-with-v7-darwin "Permalink to this headline")
 
-When using FiftyOne to [annotate data with V7 Darwin](../integrations/v7.html#v7-integration),
+When using FiftyOne to [annotate data with V7 Darwin](../integrations/v7.md#v7-integration),
 you can optionally follow the instructions below to instruct V7 to load media
 directly from S3, GCS, or Azure buckets rather than the default behavior of
 uploading copies of the media from your local machine.
@@ -799,7 +799,7 @@ results = dataset.annotate(
 ## Annotating cloud-backed datasets with Labelbox [¶](\#annotating-cloud-backed-datasets-with-labelbox "Permalink to this headline")
 
 When using FiftyOne to
-[annotate data with Labelbox](../integrations/labelbox.html#labelbox-integration), you can optionally
+[annotate data with Labelbox](../integrations/labelbox.md#labelbox-integration), you can optionally
 follow the instructions below to instruct Labelbox to load media directly from
 S3 rather than the default behavior of uploading copies of the media.
 

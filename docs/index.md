@@ -56,7 +56,7 @@ learn how:
 
 [![Open Images](https://voxel51.com/images/integrations/open-images-128.png)](integrations/open_images.md "Open Images")
 
-[![Jupyter](https://voxel51.com/images/integrations/jupyter-128.png)](fityone_concepts/running_environments.md#notebooks "Jupyter")
+[![Jupyter](https://voxel51.com/images/integrations/jupyter-128.png)](fiftyone_concepts/running_environments/#notebooks "Jupyter")
 
 [![Google Colab](https://voxel51.com/images/integrations/colab-128.png)](fiftyone_concepts/running_environments.md#notebooks "Google Colab")
 

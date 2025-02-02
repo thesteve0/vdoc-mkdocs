@@ -6,30 +6,30 @@ _Released December 20, 2024_
 
 Includes all updates from [FiftyOne 1.2.0](#release-notes-v1-2-0), plus:
 
-- Added an example [Databricks connector](teams/data_lens.html#data-lens-databricks) showing
+- Added an example [Databricks connector](teams/data_lens.md#data-lens-databricks) showing
 how to connect FiftyOne Teams to your lakehouse via
-[Data Lens](teams/data_lens.html#data-lens)
+[Data Lens](teams/data_lens.md#data-lens)
 
-- Added a [Data Lens connector](teams/data_lens.html#data-lens-snippet-remap-fields)
+- Added a [Data Lens connector](teams/data_lens.md#data-lens-snippet-remap-fields)
 that demonstrates how to allow users to dynamically configure the field(s)
 that are imported
 
-- [Data Lens](teams/data_lens.html#data-lens) now supports previewing 3D data imports
+- [Data Lens](teams/data_lens.md#data-lens) now supports previewing 3D data imports
 
-- Guest users can now open [Data Lens](teams/data_lens.html#data-lens)
+- Guest users can now open [Data Lens](teams/data_lens.md#data-lens)
 
-- When scanning for issues with the [Data Quality Panel](teams/data_quality.html#data-quality),
+- When scanning for issues with the [Data Quality Panel](teams/data_quality.md#data-quality),
 any fields created are now added to a `DATA QUALITY` sidebar group
 
 - Prevented unnecessary scrollbars from appearing when using the
-[Data Quality Panel](teams/data_quality.html#data-quality)
+[Data Quality Panel](teams/data_quality.md#data-quality)
 
 - AWS session tokens are now supported when configuring
-[cloud credentials](teams/installation.html#teams-cloud-credentials)
+[cloud credentials](teams/installation.md#teams-cloud-credentials)
 
 - Fixed a bug that could cause `StopIteration` errors when performing
 long-running operations like computing embeddings when using
-[API connections](teams/api_connection.html#teams-api-connection)
+[API connections](teams/api_connection.md#teams-api-connection)
 
 
 ## FiftyOne 1.2.0 [¶](\#fiftyone-1-2-0 "Permalink to this headline")
@@ -38,7 +38,7 @@ _Released December 20, 2024_
 
 App
 
-- Added support for [instance segmentations](fiftyone_concepts/using_datasets.html#instance-segmentation) whose
+- Added support for [instance segmentations](fiftyone_concepts/using_datasets.md#instance-segmentation) whose
 masks are stored on-disk
 [#5120](https://github.com/voxel51/fiftyone/pull/5120),
 [#5256](https://github.com/voxel51/fiftyone/pull/5256)
@@ -57,25 +57,25 @@ heatmaps
 default
 [#5280](https://github.com/voxel51/fiftyone/pull/5280)
 
-- The [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) now filters
+- The [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) now filters
 both ground truth and prediction fields when you perform interactive filters
 via the TP/FP/FN icons, per-class histograms, and confusion matrices
 [#5268](https://github.com/voxel51/fiftyone/pull/5268)
 
 - When comparing two models in the
-[Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel), interactive
+[Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel), interactive
 filters now apply to both evaluation runs
 [#5268](https://github.com/voxel51/fiftyone/pull/5268)
 
-- The [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) now supports
+- The [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) now supports
 evaluations that were performed on subsets (views) of the full dataset
 [#5267](https://github.com/voxel51/fiftyone/pull/5267)
 
-- The [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) now shows mask
+- The [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) now shows mask
 targets for segmentation evaluations when they are available
 [#5281](https://github.com/voxel51/fiftyone/pull/5281)
 
-- The [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) now hides
+- The [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) now hides
 metrics that aren’t applicable to a given evaluation type
 [#5281](https://github.com/voxel51/fiftyone/pull/5281)
 
@@ -102,7 +102,7 @@ SDK
 
 Brain
 
-- Upgraded the [MongoDB vector search integration](integrations/mongodb.html#mongodb-integration)
+- Upgraded the [MongoDB vector search integration](integrations/mongodb.md#mongodb-integration)
 to use the `vectorSearch` type
 [#218](https://github.com/voxel51/fiftyone-brain/pull/218)
 
@@ -110,8 +110,8 @@ to use the `vectorSearch` type
 Zoo
 
 - Fixed a bug with loading the
-[rtdetr-l-coco-torch](models/model_zoo/models.html#model-zoo-rtdetr-l-coco-torch) and
-[rtdetr-x-coco-torch](models/model_zoo/models.html#model-zoo-rtdetr-x-coco-torch) zoo models
+[rtdetr-l-coco-torch](models/model_zoo/models.md#model-zoo-rtdetr-l-coco-torch) and
+[rtdetr-x-coco-torch](models/model_zoo/models.md#model-zoo-rtdetr-x-coco-torch) zoo models
 [#5220](https://github.com/voxel51/fiftyone/pull/5220)
 
 
@@ -122,27 +122,27 @@ _Released December 6, 2024_
 Includes all updates from [FiftyOne 1.1.0](#release-notes-v1-1-0), plus:
 
 - All Teams deployments now have builtin compute capacity for
-executing [delegated operations](teams/teams_plugins.html#teams-delegated-operations) in the
+executing [delegated operations](teams/teams_plugins.md#teams-delegated-operations) in the
 background while you work in the App
 
-- Introduced [Data Lens](teams/data_lens.html#data-lens), which allows you to explore and
+- Introduced [Data Lens](teams/data_lens.md#data-lens), which allows you to explore and
 import samples from external data sources into FiftyOne
 
-- Added a [Data Quality Panel](teams/data_quality.html#data-quality) that automatically scans
+- Added a [Data Quality Panel](teams/data_quality.md#data-quality) that automatically scans
 your data for quality issues and helps you take action to resolve them
 
-- Added a [Query Performance Panel](teams/query_performance.html#query-performance) that helps you
+- Added a [Query Performance Panel](teams/query_performance.md#query-performance) that helps you
 create the necessary indexes to optimize queries on large datasets
 
 - Added support for creating embeddings visualizations natively from the
-[Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel)
+[Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel)
 
 - Added support for evaluating models natively from the
-[Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel)
+[Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel)
 
-- Added support for [configuring an SMTP server](teams/pluggable_auth.html#identity-providers) for
+- Added support for [configuring an SMTP server](teams/pluggable_auth.md#identity-providers) for
 sending user invitiations via email when running in
-[Internal Mode](teams/pluggable_auth.html#internal-mode)
+[Internal Mode](teams/pluggable_auth.md#internal-mode)
 
 
 ## FiftyOne 1.1.0 [¶](\#fiftyone-1-1-0 "Permalink to this headline")
@@ -151,17 +151,17 @@ _Released December 6, 2024_
 
 What’s New
 
-- Added a [Model Evaluation panel](fiftyone_concepts/app.html#app-model-evaluation-panel) for
+- Added a [Model Evaluation panel](fiftyone_concepts/app.md#app-model-evaluation-panel) for
 visually and interactively evaluating models in the FiftyOne App
 
-- Introduced [Query Performance](fiftyone_concepts/app.html#app-optimizing-query-performance) in the
+- Introduced [Query Performance](fiftyone_concepts/app.md#app-optimizing-query-performance) in the
 App, which automatically nudges you to create the necessary indexes to
 greatly optimize queries on large datasets
 
-- Added a [leaky splits method](brain.html#brain-leaky-splits) for automatically
+- Added a [leaky splits method](brain.md#brain-leaky-splits) for automatically
 detecting near-duplicate samples in different splits of your datasets
 
-- Added a [near duplicates method](brain.html#brain-near-duplicates) that scans
+- Added a [near duplicates method](brain.md#brain-near-duplicates) that scans
 your datasets and detects potential duplicate samples
 
 
@@ -207,7 +207,7 @@ operators now support clearing fields of views, in addition to full datasets
 [#5122](https://github.com/voxel51/fiftyone/pull/5122)
 
 - Fixed a bug that prevented users with `pydantic` installed from loading the
-[quickstart-3d dataset](dataset_zoo/datasets.html#dataset-zoo-quickstart-3d) from the zoo
+[quickstart-3d dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo
 [#4994](https://github.com/voxel51/fiftyone/pull/4994)
 
 - Added optional `email` parameter to the
@@ -217,19 +217,19 @@ operators now support clearing fields of views, in addition to full datasets
 Brain
 
 - Added support for passing existing
-[similarity indexes](brain.html#brain-similarity) to
+[similarity indexes](brain.md#brain-similarity) to
 `compute_visualization()`,
 `compute_uniqueness()`, and
 `compute_representativeness()` [#201](https://github.com/voxel51/fiftyone-brain/pull/201),
 [#204](https://github.com/voxel51/fiftyone-brain/pull/204)
 
-- Upgraded the [Pinecone integration](integrations/pinecone.html#pinecone-integration) to support
+- Upgraded the [Pinecone integration](integrations/pinecone.md#pinecone-integration) to support
 `pinecone-client>=3.2` [#202](https://github.com/voxel51/fiftyone-brain/pull/202)
 
 
 Plugins
 
-- Added an [Execution Store](plugins/developing_plugins.html#panel-execution-store) that provides a
+- Added an [Execution Store](plugins/developing_plugins.md#panel-execution-store) that provides a
 key-value interface for persisting data beyond the lifetime of a panel
 [#4827](https://github.com/voxel51/fiftyone/pull/4827),
 [#5144](https://github.com/voxel51/fiftyone/pull/5144)
@@ -264,7 +264,7 @@ for rendering buttons with status indicators
 targets
 [#4996](https://github.com/voxel51/fiftyone/pull/4996)
 
-- Added an [allow\_legacy\_orchestrators](fiftyone_concepts/config.html#configuring-fiftyone) config flag
+- Added an [allow\_legacy\_orchestrators](fiftyone_concepts/config.md#configuring-fiftyone) config flag
 to enable running delegated operations
 [locally](plugins/using_plugins.html#delegated-orchestrator-open-source) [#5176](https://github.com/voxel51/fiftyone/pull/5176)
 
@@ -288,14 +288,14 @@ _Released November 8, 2024_
 
 Zoo
 
-- Added [SAM 2.1](models/model_zoo/models.html#model-zoo-segment-anything-2-1-hiera-base-plus-image-torch)
+- Added [SAM 2.1](models/model_zoo/models.md#model-zoo-segment-anything-2-1-hiera-base-plus-image-torch)
 to the [Model Zoo](models/model_zoo/index.html#model-zoo) [#4979](https://github.com/voxel51/fiftyone/pull/4979)
 
-- Added [YOLO11](integrations/ultralytics.html#ultralytics-instance-segmentation) to the
+- Added [YOLO11](integrations/ultralytics.md#ultralytics-instance-segmentation) to the
 [Model Zoo](models/model_zoo/index.html#model-zoo) [#4899](https://github.com/voxel51/fiftyone/pull/4899)
 
 - Added generic model architecture and backbone tags to all relevant models
-[in the zoo](models/model_zoo/models.html#model-zoo-models) for easier navigation
+[in the zoo](models/model_zoo/models.md#model-zoo-models) for easier navigation
 [#4899](https://github.com/voxel51/fiftyone/pull/4899)
 
 
@@ -386,13 +386,13 @@ _Released October 1, 2024_
 Includes all updates from [FiftyOne 1.0.0](#release-notes-v1-0-0), plus:
 
 - Super admins can now migrate their deployments to
-[Internal Mode](teams/pluggable_auth.html#internal-mode) via the
-[Super Admin UI](teams/pluggable_auth.html#super-admin-ui)
+[Internal Mode](teams/pluggable_auth.md#internal-mode) via the
+[Super Admin UI](teams/pluggable_auth.md#super-admin-ui)
 
 - Added support for sending user invitations in
-[Internal Mode](teams/pluggable_auth.html#internal-mode)
+[Internal Mode](teams/pluggable_auth.md#internal-mode)
 
-- Optimized performance of the [dataset page](teams/teams_app.html#teams-homepage)
+- Optimized performance of the [dataset page](teams/teams_app.md#teams-homepage)
 
 - Fixed a BSON serialization bug that could cause errors when cloning or
 exporting certain dataset views from the Teams UI
@@ -407,32 +407,32 @@ What’s New
 - The [FiftyOne Brain](https://github.com/voxel51/fiftyone-brain) is now
 fully open source. Contributions are welcome!
 
-- Added [Modal Panels](plugins/developing_plugins.html#panel-config), bringing the ability to develop and
+- Added [Modal Panels](plugins/developing_plugins.md#panel-config), bringing the ability to develop and
 use panels in the App’s sample modal
 [#4625](https://github.com/voxel51/fiftyone/pull/4625)
 
-- All datasets now have [automatically populated](fiftyone_concepts/using_datasets.html#default-sample-fields) `created_at` and `last_modified_at` fields on their samples and frames
+- All datasets now have [automatically populated](fiftyone_concepts/using_datasets.md#default-sample-fields) `created_at` and `last_modified_at` fields on their samples and frames
 [#4597](https://github.com/voxel51/fiftyone/pull/4597)
 
 - Added support for loading
-[remotely-sourced zoo datasets](dataset_zoo/remote.html#dataset-zoo-remote) whose
+[remotely-sourced zoo datasets](dataset_zoo/remote.md#dataset-zoo-remote) whose
 download/preparation instructions are stored in GitHub or public URLs
 [#4752](https://github.com/voxel51/fiftyone/pull/4752)
 
 - Added support for loading
-[remotely-sourced zoo models](models/model_zoo/remote.html#model-zoo-remote) whose definitions are
+[remotely-sourced zoo models](models/model_zoo/remote.md#model-zoo-remote) whose definitions are
 stored in GitHub or public URLs
 [#4786](https://github.com/voxel51/fiftyone/pull/4786)
 
 - Added [Med-SAM2](https://arxiv.org/abs/2408.00874) to the
-[model zoo](models/model_zoo/models.html#model-zoo-med-sam-2-video-torch)!
+[model zoo](models/model_zoo/models.md#model-zoo-med-sam-2-video-torch)!
 [#4733](https://github.com/voxel51/fiftyone/pull/4733),
 [#4828](https://github.com/voxel51/fiftyone/pull/4828)
 
 
 App
 
-- Added dozens of [builtin operators](plugins/using_plugins.html#using-operators) for performing
+- Added dozens of [builtin operators](plugins/using_plugins.md#using-operators) for performing
 common operations directly from the App
 [#4830](https://github.com/voxel51/fiftyone/pull/4830)
 
@@ -456,13 +456,13 @@ navigating between groups in the modal
 - Fixed a bug when selecting samples in grouped datasets in the modal
 [#4789](https://github.com/voxel51/fiftyone/pull/4789)
 
-- Fixed [heatmaps](fiftyone_concepts/using_datasets.html#heatmaps) rendering for values outside of the `range`
+- Fixed [heatmaps](fiftyone_concepts/using_datasets.md#heatmaps) rendering for values outside of the `range`
 attribute [#4865](https://github.com/voxel51/fiftyone/pull/4865)
 
 
 Core
 
-- Added support for creating [summary fields](fiftyone_concepts/using_datasets.html#summary-fields) to optimize
+- Added support for creating [summary fields](fiftyone_concepts/using_datasets.md#summary-fields) to optimize
 queries on large datasets with many objects
 [#4765](https://github.com/voxel51/fiftyone/pull/4765)
 
@@ -490,7 +490,7 @@ instance segmentations
 the [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") class
 [#4832](https://github.com/voxel51/fiftyone/pull/4832)
 
-- Deprecated [Python 3.8 support](deprecation.html#deprecation-python-3-8)
+- Deprecated [Python 3.8 support](deprecation.md#deprecation-python-3-8)
 
 
 Plugins
@@ -510,7 +510,7 @@ components
 [#4764](https://github.com/voxel51/fiftyone/pull/4764)
 
 - A loading error is now displayed in the actions row when operators with
-[placements](plugins/developing_plugins.html#operator-placement) fail to load
+[placements](plugins/developing_plugins.md#operator-placement) fail to load
 [#4714](https://github.com/voxel51/fiftyone/pull/4714)
 
 - Ensure the App loads when plugins fail to load
@@ -523,7 +523,7 @@ _Released September 19, 2024_
 
 - Require `pymongo<4.9` to fix database connections
 
-- Require `pydicom<3` for [DICOM datasets](fiftyone_concepts/dataset_creation/datasets.html#dicomdataset-import)
+- Require `pydicom<3` for [DICOM datasets](fiftyone_concepts/dataset_creation/datasets.md#dicomdataset-import)
 
 
 ## FiftyOne Teams 2.0.1 [¶](\#fiftyone-teams-2-0-1 "Permalink to this headline")
@@ -538,7 +538,7 @@ Includes all updates from [FiftyOne 0.25.1](#release-notes-v0-25-1), plus:
 plugins
 
 - Fixed a bug where dataset permissions assigned to
-[groups](teams/roles_and_permissions.html#teams-groups) were not correctly applied to users that do not
+[groups](teams/roles_and_permissions.md#teams-groups) were not correctly applied to users that do not
 otherwise have access to the dataset
 
 - Fixed a bug where a deployment’s default user role as configured on the
@@ -560,7 +560,7 @@ App
 sample modal
 [#4745](https://github.com/voxel51/fiftyone/pull/4745)
 
-- Fixed a bug with sample selection in the [Map panel](fiftyone_concepts/app.html#app-map-panel)
+- Fixed a bug with sample selection in the [Map panel](fiftyone_concepts/app.md#app-map-panel)
 when the grid is reset
 [#4739](https://github.com/voxel51/fiftyone/pull/4739)
 
@@ -583,7 +583,7 @@ SDK
 [`group_by()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.group_by "fiftyone.core.collections.SampleCollection.group_by") [#4754](https://github.com/voxel51/fiftyone/pull/4754)
 
 - Fixed a regression when running inference with
-[Ultralytics models](integrations/ultralytics.html#ultralytics-integration) that don’t support track
+[Ultralytics models](integrations/ultralytics.md#ultralytics-integration) that don’t support track
 IDs
 [#4720](https://github.com/voxel51/fiftyone/pull/4720)
 
@@ -613,13 +613,13 @@ Includes all updates from [FiftyOne 0.25.0](#release-notes-v0-25-0), plus:
 
 What’s New
 
-- Added a [Can tag](teams/roles_and_permissions.html#teams-can-tag) permission to allow users to tag
+- Added a [Can tag](teams/roles_and_permissions.md#teams-can-tag) permission to allow users to tag
 samples/labels but not otherwise perform edits
 
 - Added support for authorized user credentials and external account
-credentials when configuring [GCP credentials](teams/installation.html#teams-google-cloud)
+credentials when configuring [GCP credentials](teams/installation.md#teams-google-cloud)
 
-- All [plugin execution](teams/teams_plugins.html#teams-plugins) is now user-aware and will
+- All [plugin execution](teams/teams_plugins.md#teams-plugins) is now user-aware and will
 respect the executing user’s role and dataset permissions
 
 - All deployments now include a LICENSE file that enforces user quotas
@@ -646,7 +646,7 @@ loaded views as intended
 
 CAS
 
-- Added an `Audit` page to the [Super Admin UI](teams/pluggable_auth.html#super-admin-ui) that
+- Added an `Audit` page to the [Super Admin UI](teams/pluggable_auth.md#super-admin-ui) that
 shows current license utilization and RBAC settings
 
 - Super admins can now disable manual group management in the App. This is
@@ -663,7 +663,7 @@ Management SDK for programmatically managing user groups
 
 - The `fiftyone delegated` CLI command is now available to Teams users
 
-- Upgraded the [upload\_media()](teams/cloud_media.html#teams-cloud-media-python) function to
+- Upgraded the [upload\_media()](teams/cloud_media.md#teams-cloud-media-python) function to
 gracefully support fields with missing media paths
 
 - Added an `overwrite` parameter to
@@ -678,7 +678,7 @@ _Released August 20, 2024_
 
 What’s New
 
-- Introducing [Python panels](plugins/developing_plugins.html#developing-panels), a powerful framework for
+- Introducing [Python panels](plugins/developing_plugins.md#developing-panels), a powerful framework for
 building custom App panels via a simple Python interface that includes a
 wealth of builtin components to convey information, create tutorials, show
 interactive graphs, trigger operations, and more
@@ -689,13 +689,13 @@ that allows users to build custom no-code dashboards that display statistics
 of interest about the current dataset (and beyond)
 
 - Added [Segment Anything 2](https://ai.meta.com/sam2) to the
-[model zoo](models/model_zoo/models.html#model-zoo-segment-anything-2-hiera-small-video-torch)!
+[model zoo](models/model_zoo/models.md#model-zoo-segment-anything-2-hiera-small-video-torch)!
 [#4671](https://github.com/voxel51/fiftyone/pull/4671)
 
-- Added an [Elasticsearch integration](integrations/elasticsearch.html#elasticsearch-integration) for
+- Added an [Elasticsearch integration](integrations/elasticsearch.md#elasticsearch-integration) for
 native text and image searches on FiftyOne datasets!
 
-- Added an [image representativeness](brain.html#brain-image-representativeness)
+- Added an [image representativeness](brain.md#brain-image-representativeness)
 method to the Brain that can be used to find the most common/uncommon types
 of images in your datasets
 
@@ -703,12 +703,12 @@ of images in your datasets
 App
 
 - You can now
-[link directly to a sample or group](fiftyone_concepts/app.html#loading-a-sample-or-group)
+[link directly to a sample or group](fiftyone_concepts/app.md#loading-a-sample-or-group)
 in the App by copy + pasting URLs into your browser bar or programmatically
 via your App `session` [#4281](https://github.com/voxel51/fiftyone/pull/4281)
 
 - Added a config option to
-[disable frame filtering](fiftyone_concepts/using_datasets.html#dataset-app-config-disable-frame-filtering)
+[disable frame filtering](fiftyone_concepts/using_datasets.md#dataset-app-config-disable-frame-filtering)
 in the App globally or on specific datasets
 [#4604](https://github.com/voxel51/fiftyone/pull/4604)
 
@@ -718,7 +718,7 @@ in the App globally or on specific datasets
 - Added a status bar when loading large 3D assets in the modal
 [#4546](https://github.com/voxel51/fiftyone/pull/4546)
 
-- Added support for visualizing [heatmaps](fiftyone_concepts/using_datasets.html#heatmaps) in `.jpg` format
+- Added support for visualizing [heatmaps](fiftyone_concepts/using_datasets.md#heatmaps) in `.jpg` format
 [#4531](https://github.com/voxel51/fiftyone/pull/4531)
 
 - Exposed camera position as a recoil atom
@@ -727,7 +727,7 @@ in the App globally or on specific datasets
 - Added anonymous analytics collection on an opt-in basis
 [#4559](https://github.com/voxel51/fiftyone/pull/4559)
 
-- Fixed a bug when viewing [dynamic groups](fiftyone_concepts/app.html#app-dynamic-groups) of 3D
+- Fixed a bug when viewing [dynamic groups](fiftyone_concepts/app.md#app-dynamic-groups) of 3D
 scenes in the modal
 [#4527](https://github.com/voxel51/fiftyone/pull/4527)
 
@@ -750,7 +750,7 @@ Annotation
 
 Core
 
-- Added support for [save contexts](fiftyone_concepts/using_datasets.html#efficient-batch-edits) to generated
+- Added support for [save contexts](fiftyone_concepts/using_datasets.md#efficient-batch-edits) to generated
 views (patches, frames, and clips)
 [#4636](https://github.com/voxel51/fiftyone/pull/4636)
 
@@ -810,20 +810,20 @@ operator for logging plugin events in the App
 
 Zoo
 
-- Added [YOLOv10 and RT-DETR models](integrations/ultralytics.html#ultralytics-object-detection)
+- Added [YOLOv10 and RT-DETR models](integrations/ultralytics.md#ultralytics-object-detection)
 to the zoo
 [#4544](https://github.com/voxel51/fiftyone/pull/4544)
 
-- Added [YOLOv8 classification models](integrations/ultralytics.html#ultralytics-image-classification)
+- Added [YOLOv8 classification models](integrations/ultralytics.md#ultralytics-image-classification)
 to the zoo
 [#4549](https://github.com/voxel51/fiftyone/pull/4549)
 
 - Added support for storing object track IDs if present when running
-[Ultralytics models](integrations/ultralytics.html#ultralytics-integration) from the zoo
+[Ultralytics models](integrations/ultralytics.md#ultralytics-integration) from the zoo
 [#4569](https://github.com/voxel51/fiftyone/pull/4569)
 
 - Added support for GPU inference when running
-[Hugging Face Transformers](integrations/huggingface.html#huggingface-transformers) models from the
+[Hugging Face Transformers](integrations/huggingface.md#huggingface-transformers) models from the
 zoo
 [#4587](https://github.com/voxel51/fiftyone/pull/4587)
 
@@ -857,7 +857,7 @@ _Released June 11, 2024_
 
 What’s New
 
-- Added [Ultralytics YOLOv8 models](integrations/ultralytics.html#ultralytics-integration) trained on
+- Added [Ultralytics YOLOv8 models](integrations/ultralytics.md#ultralytics-integration) trained on
 Open Images v7 to the model zoo!
 [#4398](https://github.com/voxel51/fiftyone/pull/4398)
 
@@ -900,7 +900,7 @@ _Released May 29, 2024_
 
 Includes all updates from [FiftyOne 0.24.0](#release-notes-v0-24-0), plus:
 
-- Added a [Roles page](teams/roles_and_permissions.html#teams-roles-page) that summarizes the actions and
+- Added a [Roles page](teams/roles_and_permissions.md#teams-roles-page) that summarizes the actions and
 permissions available to each user role
 
 - Added support for customizing the role that a user will have when sending an
@@ -919,24 +919,24 @@ _Released May 29, 2024_
 
 What’s New
 
-- Added support for [3D meshes and 3D geometries](fiftyone_concepts/using_datasets.html#d-datasets)!
+- Added support for [3D meshes and 3D geometries](fiftyone_concepts/using_datasets.md#d-datasets)!
 [#3985](https://github.com/voxel51/fiftyone/pull/3985)
 
-- Added a [quickstart-3d dataset](dataset_zoo/datasets.html#dataset-zoo-quickstart-3d) to the zoo!
+- Added a [quickstart-3d dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) to the zoo!
 [#4406](https://github.com/voxel51/fiftyone/pull/4406)
 
-- Added support for [saving custom workspaces](fiftyone_concepts/app.html#app-workspaces)!
+- Added support for [saving custom workspaces](fiftyone_concepts/app.md#app-workspaces)!
 [#4205](https://github.com/voxel51/fiftyone/pull/4205),
 [#4211](https://github.com/voxel51/fiftyone/pull/4211)
 
 - You can now scroll/customize the content displayed in the
-[App tooltip](fiftyone_concepts/app.html#app-sample-view)!
+[App tooltip](fiftyone_concepts/app.md#app-sample-view)!
 [#4254](https://github.com/voxel51/fiftyone/pull/4254)
 
 - FiftyOne now lazily connects to the database only when needed
 [#4236](https://github.com/voxel51/fiftyone/pull/4236)
 
-- Added [Grounding DINO](integrations/huggingface.html#huggingface-transformers-zero-shot-detection)
+- Added [Grounding DINO](integrations/huggingface.md#huggingface-transformers-zero-shot-detection)
 as an option for zero shot object detection
 [#4292](https://github.com/voxel51/fiftyone/pull/4292)
 
@@ -974,7 +974,7 @@ Core
 [#4351](https://github.com/voxel51/fiftyone/pull/4351)
 
 - More robust path normalization when importing
-[FiftyOneDataset](fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) exports from other operating
+[FiftyOneDataset](fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) exports from other operating
 systems
 [#4353](https://github.com/voxel51/fiftyone/pull/4353)
 
@@ -1045,19 +1045,19 @@ _Released April 30, 2024_
 
 What’s New
 
-- Added [Groups](teams/roles_and_permissions.html#teams-groups) for managing and dataset access for groups
+- Added [Groups](teams/roles_and_permissions.md#teams-groups) for managing and dataset access for groups
 of users
 
-- Introduced a new [Pluggable Authentication](teams/pluggable_auth.html#pluggable-auth) system for
+- Introduced a new [Pluggable Authentication](teams/pluggable_auth.md#pluggable-auth) system for
 customizing FiftyOne Teams authentication
 
 - Removed Auth0 as a hard dependency for Teams deployments with the
-introduction of [Internal Mode](teams/pluggable_auth.html#internal-mode)
+introduction of [Internal Mode](teams/pluggable_auth.md#internal-mode)
 
 - Added support for directly authenticating with
-[Identity Providers](teams/pluggable_auth.html#identity-providers)
+[Identity Providers](teams/pluggable_auth.md#identity-providers)
 
-- Added a [Super Admin UI](teams/pluggable_auth.html#super-admin-ui) for administering FiftyOne
+- Added a [Super Admin UI](teams/pluggable_auth.md#super-admin-ui) for administering FiftyOne
 Teams deployments
 
 - Added the ability to search for users on the Users page
@@ -1076,11 +1076,11 @@ _Released April 15, 2024_
 
 Includes all updates from [FiftyOne 0.23.8](#release-notes-v0-23-8), plus:
 
-- [Download contexts](teams/cloud_media.html#teams-cloud-media-python) now support batching
+- [Download contexts](teams/cloud_media.md#teams-cloud-media-python) now support batching
 based on content size
 
 - All builtin methods that require access to cloud media now use
-[download contexts](teams/cloud_media.html#teams-cloud-media-python) to download media in
+[download contexts](teams/cloud_media.md#teams-cloud-media-python) to download media in
 batches during execution rather than downloading media in a single batch
 up-front
 
@@ -1088,10 +1088,10 @@ up-front
 method no longer caches all cloud media involved in the export
 
 - Optimized the localhost App experience when using
-[API connections](teams/api_connection.html#teams-api-connection)
+[API connections](teams/api_connection.md#teams-api-connection)
 
 - Optimized performance of data-intensive API calls when using
-[API connections](teams/api_connection.html#teams-api-connection)
+[API connections](teams/api_connection.md#teams-api-connection)
 
 
 ## FiftyOne 0.23.8 [¶](\#fiftyone-0-23-8 "Permalink to this headline")
@@ -1100,14 +1100,14 @@ _Released April 15, 2024_
 
 News
 
-- Released a [Hugging Face Hub integration](integrations/huggingface.html#huggingface-hub) for
+- Released a [Hugging Face Hub integration](integrations/huggingface.md#huggingface-hub) for
 programmatically publishing and downloading datasets to/from Hugging Face Hub!
 [#4193](https://github.com/voxel51/fiftyone/pull/4193)
 
 
 App
 
-- [Space sizes](fiftyone_concepts/app.html#app-spaces) are now persisted when the App is refreshed
+- [Space sizes](fiftyone_concepts/app.md#app-spaces) are now persisted when the App is refreshed
 [#4171](https://github.com/voxel51/fiftyone/pull/4171)
 
 - Added support for rendering detections with empty instance masks in the App
@@ -1145,12 +1145,12 @@ currently selected samples
 
 Core
 
-- All [autosave contexts](fiftyone_concepts/using_datasets.html#efficient-batch-edits) now respect the
-[default batching strategy](fiftyone_concepts/config.html#configuring-fiftyone) and can be configured
+- All [autosave contexts](fiftyone_concepts/using_datasets.md#efficient-batch-edits) now respect the
+[default batching strategy](fiftyone_concepts/config.md#configuring-fiftyone) and can be configured
 to use content size-based batching
 [#4243](https://github.com/voxel51/fiftyone/pull/4243)
 
-- All SDK methods now use [autosave contexts](fiftyone_concepts/using_datasets.html#efficient-batch-edits)
+- All SDK methods now use [autosave contexts](fiftyone_concepts/using_datasets.md#efficient-batch-edits)
 rather than calling [`sample.save()`](api/fiftyone.core.sample.html#fiftyone.core.sample.Sample.save "fiftyone.core.sample.Sample.save")
 in a loop
 [#4243](https://github.com/voxel51/fiftyone/pull/4243)
@@ -1182,14 +1182,14 @@ Docs
 
 Annotation
 
-- Upgraded the [Labelbox integration](integrations/labelbox.html#labelbox-integration) to support
+- Upgraded the [Labelbox integration](integrations/labelbox.md#labelbox-integration) to support
 the Export V2 API
 [#4260](https://github.com/voxel51/fiftyone/pull/4260)
 
 
 Plugins
 
-- [Secrets](plugins/developing_plugins.html#operator-secrets) are now available to operators in
+- [Secrets](plugins/developing_plugins.md#operator-secrets) are now available to operators in
 their
 [`resolve_input()`](api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.resolve_input "fiftyone.operators.operator.Operator.resolve_input"),
 [`resolve_output()`](api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.resolve_output "fiftyone.operators.operator.Operator.resolve_output"), and
@@ -1213,18 +1213,18 @@ method in operators
 Zoo
 
 - Added support for loading
-[YOLOv8 and YOLOv9 segmentation models](integrations/ultralytics.html#ultralytics-instance-segmentation)
+[YOLOv8 and YOLOv9 segmentation models](integrations/ultralytics.md#ultralytics-instance-segmentation)
 from the Model Zoo
 [#4220](https://github.com/voxel51/fiftyone/pull/4220)
 
 - Added support for applying
-[YOLO oriented bounding box models](integrations/ultralytics.html#ultralytics-oriented-bounding-boxes)
+[YOLO oriented bounding box models](integrations/ultralytics.md#ultralytics-oriented-bounding-boxes)
 to FiftyOne datasets
 [#4230](https://github.com/voxel51/fiftyone/pull/4230),
 [#4238](https://github.com/voxel51/fiftyone/pull/4238)
 
 - Added support for applying
-[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models to the
+[Segment Anything](models/model_zoo/models.md#model-zoo-segment-anything-vitb-torch) models to the
 frames of video datasets
 [#4229](https://github.com/voxel51/fiftyone/pull/4229)
 
@@ -1253,21 +1253,21 @@ App
 
 Docs
 
-- Added an [Albumentations integration](integrations/albumentations.html#albumentations-integration) for
+- Added an [Albumentations integration](integrations/albumentations.md#albumentations-integration) for
 performing data augmentation on FiftyOne datasets
 [#4155](https://github.com/voxel51/fiftyone/pull/4155)
 
-- Added [Places2 dataset](dataset_zoo/datasets.html#dataset-zoo-places) to the zoo
+- Added [Places2 dataset](dataset_zoo/datasets.md#dataset-zoo-places) to the zoo
 [#4130](https://github.com/voxel51/fiftyone/pull/4130)
 
 - Added a
 [zero-shot image classification tutorial](tutorials/zero_shot_classification.html) [#4133](https://github.com/voxel51/fiftyone/pull/4133)
 
-- [Improved documentation](teams/installation.html#teams-cloud-credentials) for configuring AWS
+- [Improved documentation](teams/installation.md#teams-cloud-credentials) for configuring AWS
 and GCP cloud credentials
 [#4151](https://github.com/voxel51/fiftyone/pull/4151)
 
-- Added [YOLOv8, YOLOv9, and YOLO-World](integrations/ultralytics.html#ultralytics-integration) to the
+- Added [YOLOv8, YOLOv9, and YOLO-World](integrations/ultralytics.md#ultralytics-integration) to the
 FiftyOne Model Zoo
 [#4153](https://github.com/voxel51/fiftyone/pull/4153)
 
@@ -1283,14 +1283,14 @@ wildcard indexes should not generally be used by default
 Plugins and Operators
 
 - Added support for
-[executing operators programmatically](plugins/using_plugins.html#executing-operators-sdk) in
+[executing operators programmatically](plugins/using_plugins.md#executing-operators-sdk) in
 notebook contexts
 [#4134](https://github.com/voxel51/fiftyone/pull/4134)
 
 - Improved execution of operators during loading of the App
 [#4136](https://github.com/voxel51/fiftyone/pull/4136)
 
-- Added a new [on\_dataset\_open](plugins/developing_plugins.html#operator-config) hook to auto-execute
+- Added a new [on\_dataset\_open](plugins/developing_plugins.md#operator-config) hook to auto-execute
 operators when datasets are opened in the App
 [#4137](https://github.com/voxel51/fiftyone/pull/4137)
 
@@ -1305,7 +1305,7 @@ operator
 [#4159](https://github.com/voxel51/fiftyone/pull/4159) and
 [#4178](https://github.com/voxel51/fiftyone/pull/4178)
 
-- Added ability to [trigger builtin operators](plugins/developing_plugins.html#operator-execution) during
+- Added ability to [trigger builtin operators](plugins/developing_plugins.md#operator-execution) during
 operator execution via
 `ctx.ops` [#4164](https://github.com/voxel51/fiftyone/pull/4164)
 
@@ -1321,11 +1321,11 @@ operator execution via
 
 Core
 
-- Improved [SuperGradients](integrations/super_gradients.html#super-gradients-integration) inference
+- Improved [SuperGradients](integrations/super_gradients.md#super-gradients-integration) inference
 performance
 [#4149](https://github.com/voxel51/fiftyone/pull/4149)
 
-- Passing a [grouped collection](fiftyone_concepts/groups.html#groups) to a method that was not
+- Passing a [grouped collection](fiftyone_concepts/groups.md#groups) to a method that was not
 specifically designed to handle them now raises better validation errors
 [#4150](https://github.com/voxel51/fiftyone/pull/4150)
 
@@ -1364,13 +1364,13 @@ Includes all updates from [FiftyOne 0.23.6](#release-notes-v0-23-6), plus:
 
 - Improved performance of
 [`values()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.values "fiftyone.core.collections.SampleCollection.values") when
-using [API connections](teams/api_connection.html#teams-api-connection)
+using [API connections](teams/api_connection.md#teams-api-connection)
 
 - Improved stability of long-running operations when using
-[API connections](teams/api_connection.html#teams-api-connection)
+[API connections](teams/api_connection.md#teams-api-connection)
 
 - Added support for including prefixes when providing
-[bucket-specific credentials](teams/installation.html#teams-cloud-storage-page)
+[bucket-specific credentials](teams/installation.md#teams-cloud-storage-page)
 
 
 ## FiftyOne 0.23.6 [¶](\#fiftyone-0-23-6 "Permalink to this headline")
@@ -1524,14 +1524,14 @@ display the API URI to users in the Teams App
 Bugs
 
 - Fixed a regression when exporting cloud-backed media to
-[CVAT](integrations/cvat.html#cvat-integration) for annotation
+[CVAT](integrations/cvat.md#cvat-integration) for annotation
 
 - Fixed an issue where API requests were not being prefixed with the correct
 proxy URL
 
 - Fixed running
 `compute_similarity()` over API
-connections with the [MongoDB backend](integrations/mongodb.html#mongodb-integration)
+connections with the [MongoDB backend](integrations/mongodb.md#mongodb-integration)
 
 
 ## FiftyOne 0.23.3 [¶](\#fiftyone-0-23-3 "Permalink to this headline")
@@ -1540,10 +1540,10 @@ _Released January 19, 2024_
 
 News
 
-- Released a [Hugging Face integration](integrations/huggingface.html#huggingface-integration) for
+- Released a [Hugging Face integration](integrations/huggingface.md#huggingface-integration) for
 running inference with `transformers` models on your FiftyOne datasets!
 
-- Released a [SuperGradients integration](integrations/super_gradients.html#super-gradients-integration)
+- Released a [SuperGradients integration](integrations/super_gradients.md#super-gradients-integration)
 for running inference with YOLO-NAS architectures!
 
 
@@ -1579,9 +1579,9 @@ added to video slices in mixed datasets
 Brain
 
 - Added support for passing
-[Hugging Face](integrations/huggingface.html#huggingface-integration),
-[Ultralytics](integrations/ultralytics.html#ultralytics-integration), and
-[SuperGradients](integrations/super_gradients.html#super-gradients-integration) models directly brain
+[Hugging Face](integrations/huggingface.md#huggingface-integration),
+[Ultralytics](integrations/ultralytics.md#ultralytics-integration), and
+[SuperGradients](integrations/super_gradients.md#super-gradients-integration) models directly brain
 methods
 [#4004](https://github.com/voxel51/fiftyone/pull/4004)
 
@@ -1594,7 +1594,7 @@ for configuring whether run cleanup happens
 `compute_visualization()`
 
 - Fixed issues with similarity searches on views and with pre-computed embeddings
-using the [MongoDB backend](integrations/mongodb.html#mongodb-integration)
+using the [MongoDB backend](integrations/mongodb.md#mongodb-integration)
 
 
 Core
@@ -1615,14 +1615,14 @@ Core
 Models
 
 - Added support for directly passing
-[Ultralytics models](integrations/ultralytics.html#ultralytics-integration) models to
+[Ultralytics models](integrations/ultralytics.md#ultralytics-integration) models to
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 
-- Added GPU support for [OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) models
+- Added GPU support for [OpenCLIP](models/model_zoo/models.md#model-zoo-open-clip-torch) models
 [#3986](https://github.com/voxel51/fiftyone/pull/3986)
 
 - Added prompt embedding capabilities to
-[OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) models
+[OpenCLIP](models/model_zoo/models.md#model-zoo-open-clip-torch) models
 [#3960](https://github.com/voxel51/fiftyone/pull/3960)
 
 
@@ -1640,7 +1640,7 @@ format to be consistent with other SDK methods
 Tutorials
 
 - Added a
-[monocular depth estimation](tutorials/monocular_depth_estimation.html)
+[monocular depth estimation](tutorials/monocular_depth_estimation.md)
 tutorial
 [#3991](https://github.com/voxel51/fiftyone/pull/3991)
 
@@ -1658,7 +1658,7 @@ General
 [`set_values()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values"),
 [`compute_metadata()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_metadata "fiftyone.core.collections.SampleCollection.compute_metadata"),
 and other large batched computations when using
-[API connections](teams/api_connection.html#teams-api-connection)
+[API connections](teams/api_connection.md#teams-api-connection)
 
 - Added `label` as a searchable field for delegated operations
 
@@ -1675,7 +1675,7 @@ _Released December 21, 2023_
 
 News
 
-- Added [OpenCLIP](models/model_zoo/models.html#model-zoo-open-clip-torch) to the FiftyOne Model Zoo!
+- Added [OpenCLIP](models/model_zoo/models.md#model-zoo-open-clip-torch) to the FiftyOne Model Zoo!
 [#3925](https://github.com/voxel51/fiftyone/pull/3925)
 
 
@@ -1738,7 +1738,7 @@ backend
 Plugins
 
 - Added support for
-[delegating function calls](plugins/using_plugins.html#delegating-function-calls) via the new
+[delegating function calls](plugins/using_plugins.md#delegating-function-calls) via the new
 [@voxel51/utils/delegate](https://github.com/voxel51/fiftyone-plugins/pull/98)
 operator
 [#3939](https://github.com/voxel51/fiftyone/pull/3939)
@@ -1816,17 +1816,17 @@ Includes all updates from [FiftyOne 0.23.0](#release-notes-v0-23-0), plus:
 Features
 
 - Added support for archiving older
-[dataset snapshots](teams/dataset_versioning.html#dataset-versioning-snapshot-archival) to cold
+[dataset snapshots](teams/dataset_versioning.md#dataset-versioning-snapshot-archival) to cold
 storage
 
 - Added support for executing operators on
-[dataset snapshots](teams/dataset_versioning.html#dataset-versioning)
+[dataset snapshots](teams/dataset_versioning.md#dataset-versioning)
 
 - Added support for uploading
-[multiple sets of cloud credentials](teams/installation.html#teams-cloud-storage-page), some of
+[multiple sets of cloud credentials](teams/installation.md#teams-cloud-storage-page), some of
 which may only apply to data in certain bucket(s)
 
-- Added support for uploading media [to Labelbox](integrations/labelbox.html#labelbox-integration)
+- Added support for uploading media [to Labelbox](integrations/labelbox.md#labelbox-integration)
 directly from S3 buckets
 
 - Added support for executing the builtin `open_dataset` operator in the
@@ -1835,14 +1835,14 @@ Teams UI
 - Added support for executing operators when viewing datasets with no samples,
 for example to add media/labels to the dataset from within the App
 
-- Added support for [editing the label](teams/teams_plugins.html#teams-runs-renaming) of a
+- Added support for [editing the label](teams/teams_plugins.md#teams-runs-renaming) of a
 delegated operation
 
 - Added support for manually marking delegated operations
-[as failed](teams/teams_plugins.html#teams-runs-mark-as-failed)
+[as failed](teams/teams_plugins.md#teams-runs-mark-as-failed)
 
 - Added support for
-[monitoring the progress](teams/teams_plugins.html#teams-runs-monitoring-progress)
+[monitoring the progress](teams/teams_plugins.md#teams-runs-monitoring-progress)
 of delegated operations
 
 - Improved handling of plugin secrets
@@ -1863,13 +1863,13 @@ query parameters
 
 Bugs
 
-- Fixed an issue with the [Runs page](teams/teams_plugins.html#teams-runs-page) when viewing
+- Fixed an issue with the [Runs page](teams/teams_plugins.md#teams-runs-page) when viewing
 delegated operations that were scheduled via the SDK
 
 - Users with special access to a dataset are now displayed properly
 
 - Fixed an issue when loading certain datasets with saved
-[color schemes](fiftyone_concepts/app.html#app-color-schemes) in the Teams UI
+[color schemes](fiftyone_concepts/app.md#app-color-schemes) in the Teams UI
 
 - Fixed an issue on the dataset listing page where the page size menu would
 sometimes stay open after making a selection
@@ -1889,13 +1889,13 @@ _Released December 6, 2023_
 
 News
 
-- Released a [Redis integration](integrations/redis.html#redis-integration) for native text and
+- Released a [Redis integration](integrations/redis.md#redis-integration) for native text and
 image searches on FiftyOne datasets!
 
-- Released a [MongoDB integration](integrations/mongodb.html#mongodb-integration) for native text
+- Released a [MongoDB integration](integrations/mongodb.md#mongodb-integration) for native text
 and image searches on FiftyOne datasets!
 
-- Released a [V7 integration](integrations/v7.html#v7-integration) for annotating FiftyOne
+- Released a [V7 integration](integrations/v7.md#v7-integration) for annotating FiftyOne
 datasets!
 
 
@@ -1908,10 +1908,10 @@ that provides an optimized filtering experience for large datasets
 - Added support for viewing image groups [as a video](fiftyone_concepts/app.html#app-dynamic-groups) [#3812](https://github.com/voxel51/fiftyone/pull/3812)
 
 - Added support for configuring custom color schemes for
-[semantic segmentation](fiftyone_concepts/using_datasets.html#semantic-segmentation) labels via the
+[semantic segmentation](fiftyone_concepts/using_datasets.md#semantic-segmentation) labels via the
 [color scheme editor](fiftyone_concepts/app.html#app-color-schemes) [#3727](https://github.com/voxel51/fiftyone/pull/3727)
 
-- Added support for configuring custom [Heatmap](fiftyone_concepts/using_datasets.html#heatmaps) colorscales
+- Added support for configuring custom [Heatmap](fiftyone_concepts/using_datasets.md#heatmaps) colorscales
 via the [color scheme editor](fiftyone_concepts/app.html#app-color-schemes) [#3804](https://github.com/voxel51/fiftyone/pull/3804)
 
 - Improved rendering and customizability of label tags in the
@@ -1974,11 +1974,11 @@ support applying operators to the current sample open in the App modal
 [#3792](https://github.com/voxel51/fiftyone/pull/3792)
 
 - Added support for configuring an operator’s available
-[execution options](plugins/developing_plugins.html#operator-execution-options) in cases where
+[execution options](plugins/developing_plugins.md#operator-execution-options) in cases where
 immediate and/or delegated execution should be available
 [#3839](https://github.com/voxel51/fiftyone/pull/3839)
 
-- Added support for [programmatically executing](plugins/using_plugins.html#executing-operators-sdk)
+- Added support for [programmatically executing](plugins/using_plugins.md#executing-operators-sdk)
 generator operators via the SDK
 [#3803](https://github.com/voxel51/fiftyone/pull/3803)
 
@@ -2002,12 +2002,12 @@ constructor signature for enhanced forward/backward compatibility
 
 Annotation
 
-- Updated the [Labelbox integration](integrations/labelbox.html#labelbox-integration) to support the
+- Updated the [Labelbox integration](integrations/labelbox.md#labelbox-integration) to support the
 latest version of the Labelbox API
 [#3781](https://github.com/voxel51/fiftyone/pull/3781)
 
 - Removed the need for prepending sequence numbers to filenames when uploading
-images to the [CVAT integration](integrations/cvat.html#cvat-integration) with sufficiently
+images to the [CVAT integration](integrations/cvat.md#cvat-integration) with sufficiently
 new versions of the CVAT SDK
 [#3823](https://github.com/voxel51/fiftyone/pull/3823)
 
@@ -2091,7 +2091,7 @@ option is selected
 into grouped datasets
 [#3816](https://github.com/voxel51/fiftyone/pull/3816)
 
-- Resolved possible malformed [FiftyOneDataset](fiftyone_concepts/export_datasets.html#fiftyonedataset-export)
+- Resolved possible malformed [FiftyOneDataset](fiftyone_concepts/export_datasets.md#fiftyonedataset-export)
 format exports due to concurrent edits
 [#3726](https://github.com/voxel51/fiftyone/pull/3726)
 
@@ -2153,16 +2153,16 @@ in the sample modal
 
 - Optimized the [Embeddings panel](fiftyone_concepts/app.html#app-embeddings-panel) [#3733](https://github.com/voxel51/fiftyone/pull/3733)
 
-- Fixed [media field](fiftyone_concepts/app.html#app-multiple-media-fields) changes in the sample modal
+- Fixed [media field](fiftyone_concepts/app.md#app-multiple-media-fields) changes in the sample modal
 [#3735](https://github.com/voxel51/fiftyone/pull/3735)
 
 - Fixed sidebar reordering edge case
 [#3753](https://github.com/voxel51/fiftyone/pull/3753)
 
-- Fixed the [Operator browser](plugins/using_plugins.html#using-operators) in the sample modal
+- Fixed the [Operator browser](plugins/using_plugins.md#using-operators) in the sample modal
 [#3764](https://github.com/voxel51/fiftyone/pull/3764)
 
-- Fixed [3D detections](fiftyone_concepts/app.html#app-3d-orthographic-projections) in the grid
+- Fixed [3D detections](fiftyone_concepts/app.md#app-3d-orthographic-projections) in the grid
 [#3761](https://github.com/voxel51/fiftyone/pull/3761)
 
 
@@ -2172,7 +2172,7 @@ Brain
 entire indexes
 
 - Fixed performing similarity queries on filtered views in the
-[LanceDB integration](integrations/lancedb.html#lancedb-integration)
+[LanceDB integration](integrations/lancedb.md#lancedb-integration)
 
 - Fixed calling
 `remove_from_index()`
@@ -2200,8 +2200,8 @@ Plugins
 
 CLI
 
-- Added [fiftyone delegated fail](cli/index.html#cli-fiftyone-delegated-fail) and
-[fiftyone delegated delete](cli/index.html#cli-fiftyone-delegated-delete) commands
+- Added [fiftyone delegated fail](cli/index.md#cli-fiftyone-delegated-fail) and
+[fiftyone delegated delete](cli/index.md#cli-fiftyone-delegated-delete) commands
 [#3721](https://github.com/voxel51/fiftyone/pull/3721)
 
 
@@ -2239,7 +2239,7 @@ Core
 
 - Added support for directly calling
 [`export()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export") on
-[patches views](fiftyone_concepts/using_views.html#object-patches-views) to export image patches
+[patches views](fiftyone_concepts/using_views.md#object-patches-views) to export image patches
 [#3651](https://github.com/voxel51/fiftyone/pull/3651)
 
 - Fixed an [issue](https://github.com/voxel51/fiftyone/issues/3688) where
@@ -2255,7 +2255,7 @@ App
 property in Colab
 [#3645](https://github.com/voxel51/fiftyone/pull/3645)
 
-- Fixed converting to patches in [grouped datasets](fiftyone_concepts/groups.html#groups) when sidebar
+- Fixed converting to patches in [grouped datasets](fiftyone_concepts/groups.md#groups) when sidebar
 filters are present
 [#3666](https://github.com/voxel51/fiftyone/pull/3666)
 
@@ -2305,7 +2305,7 @@ default
 
 Zoo
 
-- Fixed issue preventing [DINOv2](integrations/pytorch_hub.html#dinov2-example) models from being
+- Fixed issue preventing [DINOv2](integrations/pytorch_hub.md#dinov2-example) models from being
 loaded
 [#3660](https://github.com/voxel51/fiftyone/pull/3690)
 
@@ -2426,15 +2426,15 @@ Includes all updates from [FiftyOne 0.22.0](#release-notes-v0-22-0), plus:
 
 News
 
-- Added support for [dataset versioning](teams/dataset_versioning.html#dataset-versioning)!
+- Added support for [dataset versioning](teams/dataset_versioning.md#dataset-versioning)!
 
 - Added support for scheduling
-[delegated operations](teams/teams_plugins.html#teams-delegated-operations) via the App
+[delegated operations](teams/teams_plugins.md#teams-delegated-operations) via the App
 
 
 App
 
-- Admins can now [upload secrets](teams/secrets.html#teams-secrets) via the UI which are
+- Admins can now [upload secrets](teams/secrets.md#teams-secrets) via the UI which are
 made available to all plugins and delegated operations at runtime
 
 - Optimized page load times when accessing the Team Settings page
@@ -2450,17 +2450,17 @@ _Released September 20, 2023_
 News
 
 - Added a native
-[Ultralytics integration](integrations/ultralytics.html#ultralytics-integration)!
+[Ultralytics integration](integrations/ultralytics.md#ultralytics-integration)!
 [#3451](https://github.com/voxel51/fiftyone/pull/3451)
 
-- Added support for scheduling [delegated operations](plugins/index.html#fiftyone-plugins)
+- Added support for scheduling [delegated operations](plugins/index.md#fiftyone-plugins)
 from within the App!
 [#3312](https://github.com/voxel51/fiftyone/pull/3312)
 
 
 App
 
-- Updated the [Histograms panel](fiftyone_concepts/app.html#app-histograms-panel) to only render one
+- Updated the [Histograms panel](fiftyone_concepts/app.md#app-histograms-panel) to only render one
 field at a time to improve performance
 [#3419](https://github.com/voxel51/fiftyone/pull/3419)
 
@@ -2541,7 +2541,7 @@ MongoDB v4.4 and later
 crash
 [#3427](https://github.com/voxel51/fiftyone/pull/3427)
 
-- Fixed a bug with the [OpenLABEL importer](fiftyone_concepts/dataset_creation/datasets.html#openlabelimagedataset-import)
+- Fixed a bug with the [OpenLABEL importer](fiftyone_concepts/dataset_creation/datasets.md#openlabelimagedataset-import)
 when given incomplete keypoint skeletons
 [#3429](https://github.com/voxel51/fiftyone/pull/3429)
 
@@ -2569,11 +2569,11 @@ that allows for browsing file systems and selecting files or directories
 Zoo
 
 - Graceful handling of empty prompts when using
-[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) models
+[Segment Anything](models/model_zoo/models.md#model-zoo-segment-anything-vitb-torch) models
 [#3505](https://github.com/voxel51/fiftyone/pull/3505)
 
 - Fixed bugs where
-[Segment Anything](models/model_zoo/models.html#model-zoo-segment-anything-vitb-torch) model weights
+[Segment Anything](models/model_zoo/models.md#model-zoo-segment-anything-vitb-torch) model weights
 were not loaded and auto-inference would only return one set of masks
 [#3465](https://github.com/voxel51/fiftyone/pull/3465)
 
@@ -2605,10 +2605,10 @@ Includes all updates from [FiftyOne 0.21.5](#release-notes-v0-21-5), plus:
 
 App
 
-- Fixed a bug with [dataset search](teams/teams_app.html#teams-homepage) where suggestions may
+- Fixed a bug with [dataset search](teams/teams_app.md#teams-homepage) where suggestions may
 not appear when matches across multiple types collide
 
-- Upgraded the [Plugin configuration UI](teams/teams_plugins.html#teams-plugins) to better explain
+- Upgraded the [Plugin configuration UI](teams/teams_plugins.md#teams-plugins) to better explain
 the available Operator permission configuration options
 
 
@@ -2625,15 +2625,15 @@ _Released August 7, 2023_
 News
 
 - Added [Segment Anything](https://segment-anything.com) to the
-[Model Zoo](models/model_zoo/index.html#model-zoo)!
+[Model Zoo](models/model_zoo/index.md#model-zoo)!
 [#3330](https://github.com/voxel51/fiftyone/pull/3330)
 
 - Added [DINOv2](https://github.com/facebookresearch/dinov2) to the
-[Model Zoo](models/model_zoo/index.html#model-zoo)!
+[Model Zoo](models/model_zoo/index.md#model-zoo)!
 [#2951](https://github.com/voxel51/fiftyone/pull/2951)
 
 - Added support for loading models from
-[PyTorch Hub](integrations/pytorch_hub.html#pytorch-hub-integration)!
+[PyTorch Hub](integrations/pytorch_hub.md#pytorch-hub-integration)!
 [#2949](https://github.com/voxel51/fiftyone/pull/2949)
 
 
@@ -2645,10 +2645,10 @@ filtering [#3248](https://github.com/voxel51/fiftyone/pull/3248)
 - Added support for filtering by label tags in individual label fields
 [#3287](https://github.com/voxel51/fiftyone/pull/3287)
 
-- Added support for specifying [custom colors](fiftyone_concepts/app.html#app-color-schemes-app) for
+- Added support for specifying [custom colors](fiftyone_concepts/app.md#app-color-schemes-app) for
 list fields [#3319](https://github.com/voxel51/fiftyone/pull/3319)
 
-- Added support for opening the [color panel](fiftyone_concepts/app.html#app-color-schemes-app) when
+- Added support for opening the [color panel](fiftyone_concepts/app.md#app-color-schemes-app) when
 the sample modal is open
 [#3355](https://github.com/voxel51/fiftyone/pull/3355)
 
@@ -2715,7 +2715,7 @@ stage
 - Added support for exporting keypoints with nan-valued coordinates in
 [COCO format](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) [#3316](https://github.com/voxel51/fiftyone/pull/3316)
 
-- Updated [YOLOv5 exports](fiftyone_concepts/export_datasets.html#yolov5dataset-export) to use dict-style class
+- Updated [YOLOv5 exports](fiftyone_concepts/export_datasets.md#yolov5dataset-export) to use dict-style class
 names
 [#3393](https://github.com/voxel51/fiftyone/pull/3393)
 
@@ -2743,13 +2743,13 @@ torchvision models
 [#2843](https://github.com/voxel51/fiftyone/pull/2843)
 
 - Fixed YouTube video downloading for zoo datasets like
-[ActivityNet](dataset_zoo/datasets.html#dataset-zoo-activitynet-200) and
+[ActivityNet](dataset_zoo/datasets.md#dataset-zoo-activitynet-200) and
 [Kinetics](dataset_zoo/datasets.html#dataset-zoo-kinetics-700-2020) [#3382](https://github.com/voxel51/fiftyone/pull/3382)
 
 
 Annotation
 
-- Upgraded the [Labelbox integration](integrations/labelbox.html#labelbox-integration) to support
+- Upgraded the [Labelbox integration](integrations/labelbox.md#labelbox-integration) to support
 the latest Labelbox API version
 [#3323](https://github.com/voxel51/fiftyone/pull/3323)
 
@@ -2759,12 +2759,12 @@ the latest Labelbox API version
 
 Brain
 
-- Added support for [gRPC connections](integrations/qdrant.html#qdrant-setup) when using the
+- Added support for [gRPC connections](integrations/qdrant.md#qdrant-setup) when using the
 Qdrant similarity backend
 [#3296](https://github.com/voxel51/fiftyone/pull/3296)
 
 - Improved support for
-[creating similarity indexes](brain.html#brain-similarity-api) with embeddings
+[creating similarity indexes](brain.md#brain-similarity-api) with embeddings
 stored in dataset fields
 
 - Resolved bugs with similarity queries using the sklearn backend
@@ -2797,7 +2797,7 @@ Includes all updates from [FiftyOne 0.21.3](#release-notes-v0-21-3), plus:
 SDK
 
 - Added a `cache=True` option to the
-[upload\_media()](teams/cloud_media.html#teams-cloud-api-reference) utility that allows for
+[upload\_media()](teams/cloud_media.md#teams-cloud-api-reference) utility that allows for
 automatically adding any uploaded files to your local cache
 
 - Fixed a bug when launching the App locally via API connections
@@ -2809,10 +2809,10 @@ _Released July 12, 2023_
 
 News
 
-- Released a [Milvus integration](integrations/milvus.html#milvus-integration) for native text and
+- Released a [Milvus integration](integrations/milvus.md#milvus-integration) for native text and
 image searches on FiftyOne datasets!
 
-- Released a [LanceDB integration](integrations/lancedb.html#lancedb-integration) for native text
+- Released a [LanceDB integration](integrations/lancedb.md#lancedb-integration) for native text
 and image searches on FiftyOne datasets!
 
 
@@ -2888,8 +2888,8 @@ declared minimum version requirement of `pymongo==3.12`
 SDK
 
 - Updated the order of precedence for SDK connections so that
-[API connections](teams/api_connection.html#teams-api-connection) take precedence over
-[direct database connections](fiftyone_concepts/config.html#configuring-mongodb-connection)
+[API connections](teams/api_connection.md#teams-api-connection) take precedence over
+[direct database connections](fiftyone_concepts/config.md#configuring-mongodb-connection)
 
 - Fixed a bug when connecting to Teams deployments with non-standard database
 names via API connections
@@ -2902,11 +2902,11 @@ names via API connections
 Management SDK
 
 - Added support for
-[deleting user invitations](teams/management_sdk.html#teams-sdk-user-management) by email in
+[deleting user invitations](teams/management_sdk.md#teams-sdk-user-management) by email in
 addition to invitation ID
 
 - Added support for
-[configuring permissions](teams/management_sdk.html#teams-sdk-dataset-permissions) for invited
+[configuring permissions](teams/management_sdk.md#teams-sdk-dataset-permissions) for invited
 users that have not yet logged in
 
 
@@ -2917,7 +2917,7 @@ _Released June 30, 2023_
 App
 
 - Sidebar filters can now
-[leverage indexes](fiftyone_concepts/app.html#app-optimizing-query-performance) for improved
+[leverage indexes](fiftyone_concepts/app.md#app-optimizing-query-performance) for improved
 performance! [#3137](https://github.com/voxel51/fiftyone/pull/3137)
 
 - Optimized the App grid’s loading performance, especially for datasets with
@@ -2933,17 +2933,17 @@ documents [#3141](https://github.com/voxel51/fiftyone/pull/3141)
 [#3230](https://github.com/voxel51/fiftyone/pull/3230)
 
 - Added a `proxy_url` setting to the
-[App config](fiftyone_concepts/config.html#configuring-fiftyone-app) that allows for overriding the
+[App config](fiftyone_concepts/config.md#configuring-fiftyone-app) that allows for overriding the
 server URL [#3222](https://github.com/voxel51/fiftyone/pull/3222)
 
-- Added support for configuring [custom colors](fiftyone_concepts/app.html#app-color-schemes) for
+- Added support for configuring [custom colors](fiftyone_concepts/app.md#app-color-schemes) for
 sample tags [#3171](https://github.com/voxel51/fiftyone/pull/3171)
 
 - Fixed a bug that caused the point cloud selector from disappearing
 [#3200](https://github.com/voxel51/fiftyone/pull/3200)
 
 - Fixed various minor bugs when viewing
-[dynamic groups](fiftyone_concepts/app.html#app-dynamic-groups) in the App
+[dynamic groups](fiftyone_concepts/app.md#app-dynamic-groups) in the App
 [#3172](https://github.com/voxel51/fiftyone/pull/3172)
 
 
@@ -3009,11 +3009,11 @@ plus:
 
 General
 
-- Added a [Management SDK](teams/management_sdk.html#teams-management-sdk) subpackage for
+- Added a [Management SDK](teams/management_sdk.md#teams-management-sdk) subpackage for
 programmatically configuring user roles, dataset permissions, plugins, and
 more
 
-- Added support for authenticated [API connections](teams/api_connection.html#teams-api-connection)
+- Added support for authenticated [API connections](teams/api_connection.md#teams-api-connection)
 when using the Python SDK that respect user roles, dataset permissions, etc
 
 - Logins now automatically redirect back to the page you were trying to access
@@ -3028,7 +3028,7 @@ large files while they are downloading
 
 Admin
 
-- Added support for [uploading and managing plugins](teams/teams_plugins.html#teams-plugins) via
+- Added support for [uploading and managing plugins](teams/teams_plugins.md#teams-plugins) via
 the Teams UI
 
 - Added support for cross account IAM roles when configuring cloud storage
@@ -3047,17 +3047,17 @@ App
 - Added support for viewing and executing operators in the App!
 [#2679](https://github.com/voxel51/fiftyone/pull/2679)
 
-- Added support for creating [dynamic groups](fiftyone_concepts/app.html#app-dynamic-groups) in the
+- Added support for creating [dynamic groups](fiftyone_concepts/app.md#app-dynamic-groups) in the
 App [#2934](https://github.com/voxel51/fiftyone/pull/2934)
 
 - Added support for overlaying multiple point cloud slices in Looker3D
 [#2912](https://github.com/voxel51/fiftyone/pull/2912)
 
-- Added support for customizing the App [color scheme](fiftyone_concepts/app.html#app-color-schemes)
+- Added support for customizing the App [color scheme](fiftyone_concepts/app.md#app-color-schemes)
 via a new color scheme modal
 [#2824](https://github.com/voxel51/fiftyone/pull/2824)
 
-- Added support for configuring [field visibility](fiftyone_concepts/app.html#app-field-visibility)
+- Added support for configuring [field visibility](fiftyone_concepts/app.md#app-field-visibility)
 in the App’s sidebar
 [#2924](https://github.com/voxel51/fiftyone/pull/2924),
 [#3024](https://github.com/voxel51/fiftyone/pull/3024)
@@ -3087,7 +3087,7 @@ Core
 - Added support for creating [dynamic grouped views](fiftyone_concepts/using_views.html#view-groups) [#2475](https://github.com/voxel51/fiftyone/pull/2475)
 
 - Added support for storing
-[default color schemes](fiftyone_concepts/using_datasets.html#dataset-app-config-color-scheme) for datasets
+[default color schemes](fiftyone_concepts/using_datasets.md#dataset-app-config-color-scheme) for datasets
 [#2824](https://github.com/voxel51/fiftyone/pull/2824)
 
 - Added support for selecting/excluding fields via dynamically defined filters
@@ -3132,10 +3132,10 @@ and runs [#2970](https://github.com/voxel51/fiftyone/pull/2970),
 
 Plugins
 
-- Added [Operators](plugins/using_plugins.html#using-operators) to the plugin framework
+- Added [Operators](plugins/using_plugins.md#using-operators) to the plugin framework
 [#2679](https://github.com/voxel51/fiftyone/pull/2679)
 
-- Added CLI methods for [plugins](cli/index.html#cli-fiftyone-plugins) and
+- Added CLI methods for [plugins](cli/index.md#cli-fiftyone-plugins) and
 [operators](cli/index.html#cli-fiftyone-operators) [#3025](https://github.com/voxel51/fiftyone/pull/3025),
 [#3038](https://github.com/voxel51/fiftyone/pull/3038)
 
@@ -3161,7 +3161,7 @@ closed shapes [#3123](https://github.com/voxel51/fiftyone/pull/3123)
 
 Zoo
 
-- Added the [Sama-COCO dataset](dataset_zoo/datasets.html#dataset-zoo-sama-coco) to the zoo!
+- Added the [Sama-COCO dataset](dataset_zoo/datasets.md#dataset-zoo-sama-coco) to the zoo!
 [#2904](https://github.com/voxel51/fiftyone/pull/2904)
 
 
@@ -3196,7 +3196,7 @@ the `Settings > Cloud storage` page
 SDK
 
 - Added support for working with media in Azure cloud storage. Refer to
-[this section](teams/installation.html#teams-azure) to see how to provide your storage
+[this section](teams/installation.md#teams-azure) to see how to provide your storage
 credentials
 
 
@@ -3254,7 +3254,7 @@ cleaning up after a failed merge
 [#2864](https://github.com/voxel51/fiftyone/pull/2864)
 
 - Fixed a bug that prevented
-[text similarity searches](brain.html#brain-similarity-text) from succeeding when
+[text similarity searches](brain.md#brain-similarity-text) from succeeding when
 GPU is available
 [#2853](https://github.com/voxel51/fiftyone/pull/2853)
 
@@ -3277,11 +3277,11 @@ a string [#2848](https://github.com/voxel51/fiftyone/pull/2848)
 
 Documentation
 
-- Updated the source URLs for the [Caltech-101](dataset_zoo/datasets.html#dataset-zoo-caltech101)
-and [Caltech-256](dataset_zoo/datasets.html#dataset-zoo-caltech256) datasets
+- Updated the source URLs for the [Caltech-101](dataset_zoo/datasets.md#dataset-zoo-caltech101)
+and [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) datasets
 [#2841](https://github.com/voxel51/fiftyone/pull/2841)
 
-- Fixed a typo in the [Caltech-256](dataset_zoo/datasets.html#dataset-zoo-caltech256) dataset
+- Fixed a typo in the [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) dataset
 documentation [#2842](https://github.com/voxel51/fiftyone/pull/2842)
 
 
@@ -3295,18 +3295,18 @@ plus:
 Admin settings
 
 - Admins who use SSO to authorize new users to auto-join their FiftyOne Teams
-deployment can now configure the [default role](teams/roles_and_permissions.html#teams-roles) for those
+deployment can now configure the [default role](teams/roles_and_permissions.md#teams-roles) for those
 users
 
 - Admins can now configure the
-[default access level](teams/roles_and_permissions.html#teams-default-access) that Members receive on
+[default access level](teams/roles_and_permissions.md#teams-default-access) that Members receive on
 newly created datasets Dataset page
 
 
 Dataset page
 
-- Added support for viewing [Segmentation](fiftyone_concepts/using_datasets.html#semantic-segmentation) and
-[Heatmap](fiftyone_concepts/using_datasets.html#heatmaps) data stored as images in the cloud in the App
+- Added support for viewing [Segmentation](fiftyone_concepts/using_datasets.md#semantic-segmentation) and
+[Heatmap](fiftyone_concepts/using_datasets.md#heatmaps) data stored as images in the cloud in the App
 
 - Added support for exporting one or more fields of a dataset in CSV format
 through the Teams UI
@@ -3327,13 +3327,13 @@ _Released March 22, 2023_
 News
 
 - Added support for querying by
-[arbitrary text prompts](brain.html#brain-similarity-text) in the App!
+[arbitrary text prompts](brain.md#brain-similarity-text) in the App!
 [#2633](https://github.com/voxel51/fiftyone/pull/2633)
 
-- Released a [Qdrant integration](integrations/qdrant.html#qdrant-integration) for native text and
+- Released a [Qdrant integration](integrations/qdrant.md#qdrant-integration) for native text and
 image searches on FiftyOne datasets!
 
-- Released a [Pinecone integration](integrations/pinecone.html#pinecone-integration) for native text
+- Released a [Pinecone integration](integrations/pinecone.md#pinecone-integration) for native text
 and image searches on FiftyOne datasets!
 
 
@@ -3345,7 +3345,7 @@ App
 any other list field [#2557](https://github.com/voxel51/fiftyone/pull/2557)
 
 - Added support for visualizing
-[orthographic projection images](fiftyone_concepts/using_datasets.html#orthographic-projection-images) for
+[orthographic projection images](fiftyone_concepts/using_datasets.md#orthographic-projection-images) for
 point cloud datasets/slices
 [#2660](https://github.com/voxel51/fiftyone/pull/2660)
 
@@ -3480,15 +3480,15 @@ Core
 - Added support for querying by vectors and text prompts
 [#2569](https://github.com/voxel51/fiftyone/pull/2569)
 
-- Upgraded the [similarity index interface](brain.html#brain-similarity), including
-[Qdrant](integrations/qdrant.html#qdrant-integration) and [Pinecone](integrations/pinecone.html#pinecone-integration)
+- Upgraded the [similarity index interface](brain.md#brain-similarity), including
+[Qdrant](integrations/qdrant.md#qdrant-integration) and [Pinecone](integrations/pinecone.md#pinecone-integration)
 support, and the ability to add/remove embeddings to an existing index
 [#2792](https://github.com/voxel51/fiftyone/pull/2792)
 
 - Added support for storing and visualizing cuboids and rotated bounding boxes
 in the App [#2296](https://github.com/voxel51/fiftyone/pull/2296)
 
-- Added support for [evaluating](fiftyone_concepts/evaluation.html#evaluating-detections) 3D object
+- Added support for [evaluating](fiftyone_concepts/evaluation.md#evaluating-detections) 3D object
 detections [#2486](https://github.com/voxel51/fiftyone/pull/2486)
 
 - Added a
@@ -3496,7 +3496,7 @@ detections [#2486](https://github.com/voxel51/fiftyone/pull/2486)
 view stage [#1300](https://github.com/voxel51/fiftyone/pull/1300)
 
 - Added support for generating
-[orthographic projection images](fiftyone_concepts/using_datasets.html#orthographic-projection-images) for
+[orthographic projection images](fiftyone_concepts/using_datasets.md#orthographic-projection-images) for
 point cloud datasets/slices
 [#2656](https://github.com/voxel51/fiftyone/pull/2656)
 
@@ -3562,11 +3562,11 @@ Annotation
 
 Docs
 
-- Added [documentation](fiftyone_concepts/using_datasets.html#point-cloud-datasets) for working with point
+- Added [documentation](fiftyone_concepts/using_datasets.md#point-cloud-datasets) for working with point
 cloud-only datasets
 [#2724](https://github.com/voxel51/fiftyone/pull/2724)
 
-- Added [documentation](fiftyone_concepts/using_datasets.html#custom-embedded-documents) for on-the-fly custom
+- Added [documentation](fiftyone_concepts/using_datasets.md#custom-embedded-documents) for on-the-fly custom
 embedded document creation
 [#2687](https://github.com/voxel51/fiftyone/pull/2687)
 
@@ -3582,7 +3582,7 @@ Zoo
 
 Tutorials
 
-- Added a [Point-E tutorial](tutorials/pointe.html) showcasing the 3D
+- Added a [Point-E tutorial](tutorials/pointe.md) showcasing the 3D
 Visualizer’s capabilities in the context of building a 3D self-driving
 dataset [#2818](https://github.com/voxel51/fiftyone/pull/2818)
 
@@ -3669,7 +3669,7 @@ _Released February 9, 2023_
 
 News
 
-- [FiftyOne Teams](teams/index.html#fiftyone-teams) documentation is now publicly
+- [FiftyOne Teams](teams/index.md#fiftyone-teams) documentation is now publicly
 available! [#2388](https://github.com/voxel51/fiftyone/pull/2388)
 
 
@@ -3765,13 +3765,13 @@ utility [#2483](https://github.com/voxel51/fiftyone/pull/2483)
 - Added support for declaring dynamic fields on generated views via
 [`set_values()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values") [#2513](https://github.com/voxel51/fiftyone/pull/2513)
 
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#csvdataset-import) and
-[exporting](fiftyone_concepts/export_datasets.html#csvdataset-export) datasets in CSV format
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#csvdataset-import) and
+[exporting](fiftyone_concepts/export_datasets.md#csvdataset-export) datasets in CSV format
 [#2616](https://github.com/voxel51/fiftyone/pull/2616),
 [#2450](https://github.com/voxel51/fiftyone/pull/2450)
 
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#mediadirectory-import) and
-[exporting](fiftyone_concepts/export_datasets.html#mediadirectory-export) directories of arbitrary media files
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#mediadirectory-import) and
+[exporting](fiftyone_concepts/export_datasets.md#mediadirectory-export) directories of arbitrary media files
 [#2605](https://github.com/voxel51/fiftyone/pull/2605)
 
 - Added a dedicated
@@ -3814,7 +3814,7 @@ utility for setting attributes on [`Label`](api/fiftyone.core.labels.html#fiftyo
 utility for computing exact video frame counts
 [#2373](https://github.com/voxel51/fiftyone/pull/2373)
 
-- Updated the [3D visualizer](fiftyone_concepts/using_datasets.html#d-detections) to use true centroid (not
+- Updated the [3D visualizer](fiftyone_concepts/using_datasets.md#d-detections) to use true centroid (not
 bottom-center) coordinates for 3D detections
 [#2474](https://github.com/voxel51/fiftyone/pull/2474)
 
@@ -3880,11 +3880,11 @@ Annotation
 
 Zoo
 
-- Added [Open Images V7](dataset_zoo/datasets.html#dataset-zoo-open-images-v7) to the zoo
+- Added [Open Images V7](dataset_zoo/datasets.md#dataset-zoo-open-images-v7) to the zoo
 [#2446](https://github.com/voxel51/fiftyone/pull/2446)
 
-- Updated the [KITTI multiview](dataset_zoo/datasets.html#dataset-zoo-kitti-multiview) and
-[quickstart-groups](dataset_zoo/datasets.html#dataset-zoo-quickstart-groups) datasets to not use
+- Updated the [KITTI multiview](dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) and
+[quickstart-groups](dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) datasets to not use
 legacy 3D visualizer settings
 [#2474](https://github.com/voxel51/fiftyone/pull/2474)
 
@@ -3896,22 +3896,22 @@ Docs
 
 - Added detailed [plugin documentation](plugins/index.html#fiftyone-plugins) [#2442](https://github.com/voxel51/fiftyone/pull/2442)
 
-- Added [documentation](fiftyone_concepts/using_datasets.html#label-conversions) for converting between common
+- Added [documentation](fiftyone_concepts/using_datasets.md#label-conversions) for converting between common
 label formats [#2498](https://github.com/voxel51/fiftyone/pull/2498)
 
-- Added a [pandas vs FiftyOne](tutorials/pandas_comparison.html) tutorial
+- Added a [pandas vs FiftyOne](tutorials/pandas_comparison.md) tutorial
 [#2310](https://github.com/voxel51/fiftyone/pull/2310)
 
-- Added a [pandas vs FiftyOne](how_do_i/cheat_sheets/pandas_vs_fiftyone.html#pandas-cheat-sheet) cheat sheet
+- Added a [pandas vs FiftyOne](how_do_i/cheat_sheets/pandas_vs_fiftyone.md#pandas-cheat-sheet) cheat sheet
 [#2329](https://github.com/voxel51/fiftyone/pull/2329)
 
-- Added a [FiftyOne terminology](how_do_i/cheat_sheets/fiftyone_terminology.html#terminology-cheat-sheet) cheat sheet
+- Added a [FiftyOne terminology](how_do_i/cheat_sheets/fiftyone_terminology.md#terminology-cheat-sheet) cheat sheet
 [#2484](https://github.com/voxel51/fiftyone/pull/2484)
 
-- Added a [view stage](how_do_i/cheat_sheets/views_cheat_sheet.html#views-cheat-sheet) cheat sheet
+- Added a [view stage](how_do_i/cheat_sheets/views_cheat_sheet.md#views-cheat-sheet) cheat sheet
 [#2452](https://github.com/voxel51/fiftyone/pull/2452)
 
-- Added a [filtering](how_do_i/cheat_sheets/filtering_cheat_sheet.html#filtering-cheat-sheet) cheat sheet
+- Added a [filtering](how_do_i/cheat_sheets/filtering_cheat_sheet.md#filtering-cheat-sheet) cheat sheet
 [#2447](https://github.com/voxel51/fiftyone/pull/2447)
 
 
@@ -3925,7 +3925,7 @@ plus:
 News
 
 - FiftyOne Teams is now generally available,
-[read more here](teams/index.html#fiftyone-teams)!
+[read more here](teams/index.md#fiftyone-teams)!
 
 
 ## FiftyOne 0.18.0 [¶](\#fiftyone-0-18-0 "Permalink to this headline")
@@ -3947,7 +3947,7 @@ dynamically in the App and programmatically on a per-dataset basis
 [#2191](https://github.com/voxel51/fiftyone/pull/2191)
 
 - Added support for programmatically configuring
-[sidebar groups](fiftyone_concepts/app.html#app-sidebar-groups) and default expansion states on a
+[sidebar groups](fiftyone_concepts/app.md#app-sidebar-groups) and default expansion states on a
 per-dataset basis [#2190](https://github.com/voxel51/fiftyone/pull/2190)
 
 - Added support for viewing field-level descriptions via a new
@@ -3988,11 +3988,11 @@ alternate media fields
 Core
 
 - Added support for declaring
-[custom dynamic attributes](fiftyone_concepts/using_datasets.html#dynamic-attributes) on datasets!
+[custom dynamic attributes](fiftyone_concepts/using_datasets.md#dynamic-attributes) on datasets!
 [#1825](https://github.com/voxel51/fiftyone/pull/1825)
 
 - Added support for storing
-[field-level metadata](fiftyone_concepts/using_datasets.html#storing-field-metadata) on datasets
+[field-level metadata](fiftyone_concepts/using_datasets.md#storing-field-metadata) on datasets
 [#2216](https://github.com/voxel51/fiftyone/pull/2216)
 
 - Added native support for installing on Apple Silicon with MongoDB 6
@@ -4056,7 +4056,7 @@ crash when using the Label Studio backend
 Zoo
 
 - Added support for using CUDA devices when running the
-[CLIP model](models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) from the zoo
+[CLIP model](models/model_zoo/models.md#model-zoo-clip-vit-base32-torch) from the zoo
 [#2201](https://github.com/voxel51/fiftyone/pull/2201)
 
 
@@ -4086,10 +4086,10 @@ _Released September 19, 2022_
 
 App
 
-- Added support for [visualizing grouped datasets](fiftyone_concepts/groups.html#groups-app) in the
+- Added support for [visualizing grouped datasets](fiftyone_concepts/groups.md#groups-app) in the
 App [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
-- Added support for [visualizing point cloud samples](fiftyone_concepts/app.html#app-3d-visualizer)
+- Added support for [visualizing point cloud samples](fiftyone_concepts/app.md#app-3d-visualizer)
 in the modal [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added support for visualizing and interacting with [`GeoLocation`](api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in a
@@ -4106,14 +4106,14 @@ new [Map panel](fiftyone_concepts/app.html#app-map-panel) [#1976](https://github
 
 Core
 
-- Added support for [grouped datasets](fiftyone_concepts/groups.html#groups), e.g., multiple camera
+- Added support for [grouped datasets](fiftyone_concepts/groups.md#groups), e.g., multiple camera
 view scenes [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added support for point cloud samples in grouped datasets
 [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added an [`app_config`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.app_config "fiftyone.core.dataset.Dataset.app_config")
-property to datasets for [configuring App behavior](fiftyone_concepts/using_datasets.html#dataset-app-config)
+property to datasets for [configuring App behavior](fiftyone_concepts/using_datasets.md#dataset-app-config)
 on a per-dataset basis
 [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
@@ -4130,7 +4130,7 @@ and
 that causes metadata to be exported in per-sample/frame JSON files
 [#2028](https://github.com/voxel51/fiftyone/pull/2028)
 
-- Updated the [COCO importer](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) to load all
+- Updated the [COCO importer](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) to load all
 available label types by default
 [#1869](https://github.com/voxel51/fiftyone/pull/1869)
 
@@ -4138,7 +4138,7 @@ available label types by default
 [`select_by()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_by "fiftyone.core.collections.SampleCollection.select_by") [#2059](https://github.com/voxel51/fiftyone/pull/2059)
 
 - Fixed an error that would occur when storing
-[custom embedded documents](fiftyone_concepts/using_datasets.html#custom-embedded-documents) on dynamic
+[custom embedded documents](fiftyone_concepts/using_datasets.md#custom-embedded-documents) on dynamic
 label attributes [#2051](https://github.com/voxel51/fiftyone/pull/2051)
 
 - Fixed a
@@ -4149,7 +4149,7 @@ frames [#2029](https://github.com/voxel51/fiftyone/pull/2029)
 
 Docs
 
-- Added a [tutorial](tutorials/detectron2.html) showing how to integrate
+- Added a [tutorial](tutorials/detectron2.md) showing how to integrate
 FiftyOne into a Detectron2 model training pipeline
 [#2054](https://github.com/voxel51/fiftyone/pull/2054)
 
@@ -4165,13 +4165,13 @@ results [#2074](https://github.com/voxel51/fiftyone/pull/2074)
 
 Zoo
 
-- Added [clip-vit-base32-torch](models/model_zoo/models.html#model-zoo-clip-vit-base32-torch) to the
+- Added [clip-vit-base32-torch](models/model_zoo/models.md#model-zoo-clip-vit-base32-torch) to the
 model zoo! [#2072](https://github.com/voxel51/fiftyone/pull/2072)
 
-- Added the [Quickstart Groups dataset](dataset_zoo/datasets.html#dataset-zoo-quickstart-groups)
+- Added the [Quickstart Groups dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-groups)
 to the dataset zoo! [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
-- Added the [KITTI Multiview dataset](dataset_zoo/datasets.html#dataset-zoo-kitti-multiview) to the
+- Added the [KITTI Multiview dataset](dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) to the
 dataset zoo! [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 
@@ -4199,7 +4199,7 @@ App
 Core
 
 - Added a save context that enables
-[efficient batch edits](fiftyone_concepts/using_datasets.html#efficient-batch-edits) of datasets and views
+[efficient batch edits](fiftyone_concepts/using_datasets.md#efficient-batch-edits) of datasets and views
 [#1727](https://github.com/voxel51/fiftyone/pull/1727)
 
 - Added Plotly v5 support
@@ -4367,8 +4367,8 @@ values [#1817](https://github.com/voxel51/fiftyone/pull/1817)
 Core
 
 - Added `skeleton` and `skeleton_key` to the OpenLABEL
-[image](fiftyone_concepts/dataset_creation/datasets.html#openlabelimagedataset-import) and
-[video](fiftyone_concepts/dataset_creation/datasets.html#openlabelvideodataset-import) importers
+[image](fiftyone_concepts/dataset_creation/datasets.md#openlabelimagedataset-import) and
+[video](fiftyone_concepts/dataset_creation/datasets.md#openlabelvideodataset-import) importers
 [#1812](https://github.com/voxel51/fiftyone/pull/1812)
 
 - Fixed a database field issue in
@@ -4530,7 +4530,7 @@ and
 - Fixed a bug that would cause non-persistent datasets to be prematurely
 deleted [#1747](https://github.com/voxel51/fiftyone/pull/1747)
 
-- Fixed loading relative paths in [YOLOv5](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) format
+- Fixed loading relative paths in [YOLOv5](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) format
 [#1721](https://github.com/voxel51/fiftyone/pull/1721)
 
 - Fixed image lists for the `image_path` parameter when importing
@@ -4561,7 +4561,7 @@ attributes on [`Keypoint`](api/fiftyone.core.labels.html#fiftyone.core.labels.Ke
 Core
 
 - Added support for
-[storing keypoint skeletons](fiftyone_concepts/using_datasets.html#storing-keypoint-skeletons) on datasets
+[storing keypoint skeletons](fiftyone_concepts/using_datasets.md#storing-keypoint-skeletons) on datasets
 [#1601](https://github.com/voxel51/fiftyone/pull/1601)
 
 - Added a
@@ -4584,7 +4584,7 @@ view stage that allows for concatenating one collection onto another
 `database_uri` [#1697](https://github.com/voxel51/fiftyone/pull/1697)
 
 - Added a `database_admin` config setting that can control whether database
-migrations are allowed. See [this page](fiftyone_concepts/config.html#database-migrations) for
+migrations are allowed. See [this page](fiftyone_concepts/config.md#database-migrations) for
 details [#1692](https://github.com/voxel51/fiftyone/pull/1692)
 
 - Added a `database_name` config setting that allows for customizing the
@@ -4615,14 +4615,14 @@ Annotation
 
 Integrations
 
-- Updated the [Lightning Flash integration](integrations/lightning_flash.html#lightning-flash) to support
+- Updated the [Lightning Flash integration](integrations/lightning_flash.md#lightning-flash) to support
 Flash versions 0.7.0 or later
 [#1671](https://github.com/voxel51/fiftyone/pull/1671)
 
 
 Zoo
 
-- Added the [Families in the Wild dataset](dataset_zoo/datasets.html#dataset-zoo-fiw) to the
+- Added the [Families in the Wild dataset](dataset_zoo/datasets.md#dataset-zoo-fiw) to the
 FiftyOne Dataset Zoo!
 [#1663](https://github.com/voxel51/fiftyone/pull/1663)
 
@@ -4671,8 +4671,8 @@ when aggregating expressions that involve both [`Sample`](api/fiftyone.core.samp
 [`Frame`](api/fiftyone.core.frame.html#fiftyone.core.frame.Frame "fiftyone.core.frame.Frame")-level fields
 [#1644](https://github.com/voxel51/fiftyone/pull/1644)
 
-- Added support for importing [image](fiftyone_concepts/dataset_creation/datasets.html#openlabelimagedataset-import) and
-[video](fiftyone_concepts/dataset_creation/datasets.html#openlabelvideodataset-import) datasets in
+- Added support for importing [image](fiftyone_concepts/dataset_creation/datasets.md#openlabelimagedataset-import) and
+[video](fiftyone_concepts/dataset_creation/datasets.md#openlabelvideodataset-import) datasets in
 [OpenLABEL format](https://www.asam.net/index.php?eID=dumpFile&t=f&f=3876&token=413e8c85031ae64cc35cf42d0768627514868b2f#_introduction) [#1609](https://github.com/voxel51/fiftyone/pull/1609)
 
 
@@ -4702,14 +4702,14 @@ labels not being uploaded to the annotation backend
 
 Docs
 
-- Added [documentation](fiftyone_concepts/using_datasets.html#custom-embedded-documents) for defining custom
+- Added [documentation](fiftyone_concepts/using_datasets.md#custom-embedded-documents) for defining custom
 [`EmbeddedDocument`](api/fiftyone.core.odm.embedded_document.html#fiftyone.core.odm.embedded_document.EmbeddedDocument "fiftyone.core.odm.embedded_document.EmbeddedDocument") and [`DynamicEmbeddedDocument`](api/fiftyone.core.odm.embedded_document.html#fiftyone.core.odm.embedded_document.DynamicEmbeddedDocument "fiftyone.core.odm.embedded_document.DynamicEmbeddedDocument") classes
 [#1617](https://github.com/voxel51/fiftyone/pull/1617)
 
-- Added [documentation](fiftyone_concepts/using_views.html#view-slicing) about boolean view indexing to the
+- Added [documentation](fiftyone_concepts/using_views.md#view-slicing) about boolean view indexing to the
 user guide [#1617](https://github.com/voxel51/fiftyone/pull/1617)
 
-- Added a [recipe](recipes/creating_views.html) for creating views and view
+- Added a [recipe](recipes/creating_views.md) for creating views and view
 expressions [#1641](https://github.com/voxel51/fiftyone/pull/1641)
 
 
@@ -4722,7 +4722,7 @@ News
 - With support from the [ActivityNet team](http://activity-net.org/download.html),
 FiftyOne is now a recommended tool for downloading, visualizing, and
 evaluating on the Activitynet dataset! Check out
-[this guide](integrations/activitynet.html#activitynet) for more details
+[this guide](integrations/activitynet.md#activitynet) for more details
 
 
 App
@@ -4742,7 +4742,7 @@ Core
 [`to_frames()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_frames "fiftyone.core.collections.SampleCollection.to_frames") to
 assume that the user has already sampled the frames offline and stored their
 locations in a `filepath` field of each [`Frame`](api/fiftyone.core.frame.html#fiftyone.core.frame.Frame "fiftyone.core.frame.Frame") in their video dataset. See
-[this section](fiftyone_concepts/using_views.html#frame-views) for more details
+[this section](fiftyone_concepts/using_views.md#frame-views) for more details
 
 - Updated [`DatasetView.save()`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView.save "fiftyone.core.view.DatasetView.save") to
 save changes to (only) the samples in the view to the underlying dataset
@@ -4799,8 +4799,8 @@ on video datasets that involve applying expressions directly to `"frames"`
 
 Annotation
 
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#cvatimagedataset-import) and
-[exporting](fiftyone_concepts/export_datasets.html#cvatimagedataset-export) sample-level tags in CVAT format
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#cvatimagedataset-import) and
+[exporting](fiftyone_concepts/export_datasets.md#cvatimagedataset-export) sample-level tags in CVAT format
 
 - Fixed a bug that prevented existing label fields such as [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") that
 can contain multiple annotation types (boxes or instances) from being
@@ -4812,19 +4812,19 @@ specified in calls to
 
 Zoo
 
-- Added [ActivityNet 100](dataset_zoo/datasets.html#dataset-zoo-activitynet-100) to the dataset
+- Added [ActivityNet 100](dataset_zoo/datasets.md#dataset-zoo-activitynet-100) to the dataset
 zoo!
 
-- Added [ActivityNet 200](dataset_zoo/datasets.html#dataset-zoo-activitynet-200) to the dataset
+- Added [ActivityNet 200](dataset_zoo/datasets.md#dataset-zoo-activitynet-200) to the dataset
 zoo!
 
-- Added [Kinetics 400](dataset_zoo/datasets.html#dataset-zoo-kinetics-400) to the dataset zoo!
+- Added [Kinetics 400](dataset_zoo/datasets.md#dataset-zoo-kinetics-400) to the dataset zoo!
 
-- Added [Kinetics 600](dataset_zoo/datasets.html#dataset-zoo-kinetics-600) to the dataset zoo!
+- Added [Kinetics 600](dataset_zoo/datasets.md#dataset-zoo-kinetics-600) to the dataset zoo!
 
-- Added [Kinetics 700](dataset_zoo/datasets.html#dataset-zoo-kinetics-700) to the dataset zoo!
+- Added [Kinetics 700](dataset_zoo/datasets.md#dataset-zoo-kinetics-700) to the dataset zoo!
 
-- Added [Kinetics 700-2020](dataset_zoo/datasets.html#dataset-zoo-kinetics-700-2020) to the dataset
+- Added [Kinetics 700-2020](dataset_zoo/datasets.md#dataset-zoo-kinetics-700-2020) to the dataset
 zoo!
 
 
@@ -4835,7 +4835,7 @@ _Released January 13, 2022_
 Core
 
 - Added hollow support for 32-bit systems (a
-[database\_uri](fiftyone_concepts/config.html#configuring-mongodb-connection) must be used in such
+[database\_uri](fiftyone_concepts/config.md#configuring-mongodb-connection) must be used in such
 cases)
 
 - Added support for indexing into datasets using boolean arrays or view
@@ -4848,7 +4848,7 @@ used to populate fields and embedded fields of datasets
 
 - Added support for directly passing a `filename -> filepath` mapping dict to
 the `data_path` parameter to
-[dataset importers](fiftyone_concepts/dataset_creation/datasets.html#loading-datasets-from-disk)
+[dataset importers](fiftyone_concepts/dataset_creation/datasets.md#loading-datasets-from-disk)
 
 - Added graceful casting of `int`-like and `float`-like values like
 `np.float(1.0)` to their respective Python primitives for storage in the
@@ -4875,7 +4875,7 @@ JSON that contains objects with `[]` segmentation data
 from working as expected when `key_field="id"` argument is used
 
 - Fixed a bug that occurred when computing patch embeddings defined by
-[polylines](fiftyone_concepts/using_datasets.html#polylines)
+[polylines](fiftyone_concepts/using_datasets.md#polylines)
 
 - Added decision thresholds to the tooltips of PR/ROC curves plotted via the following methods:
 
@@ -4902,12 +4902,12 @@ patch embeddings for a collection containing samples with no patches
 
 Annotation
 
-- Added a new [Labelbox integration](integrations/labelbox.html#labelbox-integration)!
+- Added a new [Labelbox integration](integrations/labelbox.md#labelbox-integration)!
 
 - Added an [`import_annotations()`](api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations")
 method for importing existing CVAT projects or task(s) into FiftyOne
 
-- Added support for [configuring the size of CVAT tasks](integrations/cvat.html#cvat-large-runs)
+- Added support for [configuring the size of CVAT tasks](integrations/cvat.md#cvat-large-runs)
 via a new `task_size` parameter
 
 - Added graceful handling of deleted tasks when importing annotations from CVAT
@@ -4915,7 +4915,7 @@ via
 [`load_annotations()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.load_annotations "fiftyone.core.dataset.Dataset.load_annotations")
 
 - Added an `unexpected` parameter that provides
-[a variety of options](integrations/cvat.html#cvat-unexpected-annotations) for handling
+[a variety of options](integrations/cvat.md#cvat-unexpected-annotations) for handling
 unexpected annotations returned by the CVAT API
 
 - Added support for passing request headers to the CVAT API
@@ -4926,38 +4926,38 @@ unexpected annotations returned by the CVAT API
 Zoo
 
 - Fixed a regression in `fiftyone==0.14.1` that prevented
-[zoo datasets](dataset_zoo/index.html#dataset-zoo) that use the Torch backend from being
+[zoo datasets](dataset_zoo/index.md#dataset-zoo) that use the Torch backend from being
 downloaded
 
 - Added the following TF2 models to the Model Zoo!
 
-- [centernet-hg104-1024-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-hg104-1024-coco-tf2)
+- [centernet-hg104-1024-coco-tf2](models/model_zoo/models.md#model-zoo-centernet-hg104-1024-coco-tf2)
 
-- [centernet-resnet101-v1-fpn-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-resnet101-v1-fpn-512-coco-tf2)
+- [centernet-resnet101-v1-fpn-512-coco-tf2](models/model_zoo/models.md#model-zoo-centernet-resnet101-v1-fpn-512-coco-tf2)
 
-- [centernet-resnet50-v2-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-resnet50-v2-512-coco-tf2)
+- [centernet-resnet50-v2-512-coco-tf2](models/model_zoo/models.md#model-zoo-centernet-resnet50-v2-512-coco-tf2)
 
-- [centernet-mobilenet-v2-fpn-512-coco-tf2](models/model_zoo/models.html#model-zoo-centernet-mobilenet-v2-fpn-512-coco-tf2)
+- [centernet-mobilenet-v2-fpn-512-coco-tf2](models/model_zoo/models.md#model-zoo-centernet-mobilenet-v2-fpn-512-coco-tf2)
 
-- [efficientdet-d0-512-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d0-512-coco-tf2)
+- [efficientdet-d0-512-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d0-512-coco-tf2)
 
-- [efficientdet-d1-640-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d1-640-coco-tf2)
+- [efficientdet-d1-640-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d1-640-coco-tf2)
 
-- [efficientdet-d2-768-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d2-768-coco-tf2)
+- [efficientdet-d2-768-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d2-768-coco-tf2)
 
-- [efficientdet-d3-896-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d3-896-coco-tf2)
+- [efficientdet-d3-896-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d3-896-coco-tf2)
 
-- [efficientdet-d4-1024-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d4-1024-coco-tf2)
+- [efficientdet-d4-1024-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d4-1024-coco-tf2)
 
-- [efficientdet-d5-1280-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d5-1280-coco-tf2)
+- [efficientdet-d5-1280-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d5-1280-coco-tf2)
 
-- [efficientdet-d6-1280-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d6-1280-coco-tf2)
+- [efficientdet-d6-1280-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d6-1280-coco-tf2)
 
-- [efficientdet-d7-1536-coco-tf2](models/model_zoo/models.html#model-zoo-efficientdet-d7-1536-coco-tf2)
+- [efficientdet-d7-1536-coco-tf2](models/model_zoo/models.md#model-zoo-efficientdet-d7-1536-coco-tf2)
 
-- [ssd-mobilenet-v2-320-coco17](models/model_zoo/models.html#model-zoo-ssd-mobilenet-v2-320-coco17)
+- [ssd-mobilenet-v2-320-coco17](models/model_zoo/models.md#model-zoo-ssd-mobilenet-v2-320-coco17)
 
-- [ssd-mobilenet-v1-fpn-640-coco17](models/model_zoo/models.html#model-zoo-ssd-mobilenet-v1-fpn-640-coco17)
+- [ssd-mobilenet-v1-fpn-640-coco17](models/model_zoo/models.md#model-zoo-ssd-mobilenet-v1-fpn-640-coco17)
 
 
 ## FiftyOne 0.14.2 [¶](\#fiftyone-0-14-2 "Permalink to this headline")
@@ -5017,8 +5017,8 @@ label fields when requesting spatial annotations on video datasets
 Zoo
 
 - Patched an issue that prevented downloading the
-[VOC-2007](dataset_zoo/datasets.html#dataset-zoo-voc-2007) and
-[VOC-2012](dataset_zoo/datasets.html#dataset-zoo-voc-2012) datasets from the zoo
+[VOC-2007](dataset_zoo/datasets.md#dataset-zoo-voc-2007) and
+[VOC-2012](dataset_zoo/datasets.md#dataset-zoo-voc-2012) datasets from the zoo
 
 
 ## FiftyOne 0.14.1 [¶](\#fiftyone-0-14-1 "Permalink to this headline")
@@ -5082,7 +5082,7 @@ utility that provides support for adding YOLO-formatted model predictions to
 an existing dataset
 
 - Added support for importing/exporting multilabel classifications when using
-[FiftyOneImageClassificationDataset format](fiftyone_concepts/dataset_creation/datasets.html#fiftyoneimageclassificationdataset-import)
+[FiftyOneImageClassificationDataset format](fiftyone_concepts/dataset_creation/datasets.md#fiftyoneimageclassificationdataset-import)
 
 - Fixed the `force_reencode` flag for
 [`reencode_videos()`](api/fiftyone.utils.video.html#fiftyone.utils.video.reencode_videos "fiftyone.utils.video.reencode_videos")
@@ -5119,12 +5119,12 @@ of a video
 
 Docs
 
-- Added a section on [adding model predictions](fiftyone_concepts/dataset_creation/index.html#model-predictions) to
+- Added a section on [adding model predictions](fiftyone_concepts/dataset_creation/index.md#model-predictions) to
 existing datasets to the user guide
 
 - Added explicit examples of labels-only
-[imports](fiftyone_concepts/dataset_creation/datasets.html#loading-datasets-from-disk) and
-[exports](fiftyone_concepts/export_datasets.html#exporting-datasets) for all relevant datasets to the docs
+[imports](fiftyone_concepts/dataset_creation/datasets.md#loading-datasets-from-disk) and
+[exports](fiftyone_concepts/export_datasets.md#exporting-datasets) for all relevant datasets to the docs
 
 - Documented how class lists are computed when exporting in formats like YOLO
 and COCO that require explicit class lists
@@ -5138,13 +5138,13 @@ _Released October 15, 2021_
 
 App
 
-- Added support for visualizing [heatmaps](fiftyone_concepts/using_datasets.html#heatmaps) using either
+- Added support for visualizing [heatmaps](fiftyone_concepts/using_datasets.md#heatmaps) using either
 transparency or a customizable colorscale
 
 - Added a label opacity slider in both the sample grid and the expanded sample
 view
 
-- Added support for visualizing [clips views](fiftyone_concepts/app.html#app-video-clips)
+- Added support for visualizing [clips views](fiftyone_concepts/app.md#app-video-clips)
 
 - Added support for rendering and filtering [`DateField`](api/fiftyone.core.fields.html#fiftyone.core.fields.DateField "fiftyone.core.fields.DateField") and [`DateTimeField`](api/fiftyone.core.fields.html#fiftyone.core.fields.DateTimeField "fiftyone.core.fields.DateTimeField")
 data
@@ -5155,25 +5155,25 @@ data
 in the video visualizer
 
 - Added a `default_app_address` setting to the FiftyOne config for restricting
-sessions to a hostname. See [this page](environments/index.html#restricting-app-address) for
+sessions to a hostname. See [this page](environments/index.md#restricting-app-address) for
 more details
 
 
 Core
 
-- Added a [Heatmap label type](fiftyone_concepts/using_datasets.html#heatmaps)
+- Added a [Heatmap label type](fiftyone_concepts/using_datasets.md#heatmaps)
 
 - Added support for adding
-[date and datetime fields](fiftyone_concepts/using_datasets.html#dates-and-datetimes) to FiftyOne datasets
+[date and datetime fields](fiftyone_concepts/using_datasets.md#dates-and-datetimes) to FiftyOne datasets
 
 - Added the
 [`to_clips()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_clips "fiftyone.core.collections.SampleCollection.to_clips")
 method for creating clips views into video datasets
 
-- Added clip views sections to the [App user guide page](fiftyone_concepts/app.html#app-video-clips)
-and [dataset views user guide page](fiftyone_concepts/using_views.html#clip-views)
+- Added clip views sections to the [App user guide page](fiftyone_concepts/app.md#app-video-clips)
+and [dataset views user guide page](fiftyone_concepts/using_views.md#clip-views)
 
-- Added support for [exporting video clips](fiftyone_concepts/export_datasets.html#export-label-coercion) in
+- Added support for [exporting video clips](fiftyone_concepts/export_datasets.md#export-label-coercion) in
 labeled video formats
 
 - Added a `trajectories=True` flag to
@@ -5205,34 +5205,34 @@ to the view expression API
 to the view expression API
 
 - Missing ground truth/predictions are now included by default when viewing
-[confusion matrices](fiftyone_concepts/plots.html#confusion-matrix-plots) for detection tasks
+[confusion matrices](fiftyone_concepts/plots.md#confusion-matrix-plots) for detection tasks
 
 
 Annotation
 
 - Added support for specifying per-class attributes when
-[defining a label schema](fiftyone_concepts/annotation.html#annotation-label-schema) for an annotation
+[defining a label schema](fiftyone_concepts/annotation.md#annotation-label-schema) for an annotation
 task
 
 - Added support for specifying whether labels can be added, deleted or moved
 and whether certain label attributes are read-only when
-[configuring an annotation task](fiftyone_concepts/annotation.html#annotation-restricting-edits)
+[configuring an annotation task](fiftyone_concepts/annotation.md#annotation-restricting-edits)
 
 - Added support for respecting keyframe information when adding or editing
-[video annotations](fiftyone_concepts/annotation.html#annotation-labeling-videos)
+[video annotations](fiftyone_concepts/annotation.md#annotation-labeling-videos)
 
 - Fixed a 0-based versus 1-based frame numbering bug when
-[importing](fiftyone_concepts/dataset_creation/datasets.html#cvatvideodataset-import) and
-[exporting](fiftyone_concepts/export_datasets.html#cvatvideodataset-export) labels in CVAT video format
+[importing](fiftyone_concepts/dataset_creation/datasets.md#cvatvideodataset-import) and
+[exporting](fiftyone_concepts/export_datasets.md#cvatvideodataset-export) labels in CVAT video format
 
 - Added support for adding/editing bounding box shapes (not tracks) if desired
-when annotating video frames using the [CVAT backend](integrations/cvat.html#cvat-integration)
+when annotating video frames using the [CVAT backend](integrations/cvat.md#cvat-integration)
 
 - Fixed a bug that prevented importing of video annotations from the CVAT
 backend that involved the splitting or merging of object tracks
 
 - Added a `project_name` parameter that allows for
-[creating annotation tasks](integrations/cvat.html#cvat-requesting-annotations) within a new
+[creating annotation tasks](integrations/cvat.md#cvat-requesting-annotations) within a new
 project when using the CVAT backend
 
 - Added support for specifying a list of task assignees when creating video
@@ -5243,7 +5243,7 @@ using the CVAT backend
 
 - Added a new `occluded` attribute type option that links an attribute to the
 builtin occlusion icon when
-[annotating label attributes](integrations/cvat.html#cvat-label-attributes) using the CVAT
+[annotating label attributes](integrations/cvat.md#cvat-label-attributes) using the CVAT
 backend
 
 
@@ -5265,10 +5265,10 @@ Core
 
 - Added support for importing/exporting segmentation masks with greater than
 256 classes when working with the
-[ImageSegmentationDirectory](fiftyone_concepts/export_datasets.html#imagesegmentationdirectory-export) format
+[ImageSegmentationDirectory](fiftyone_concepts/export_datasets.md#imagesegmentationdirectory-export) format
 
 - Added support for importing GeoTIFF images via a new
-[GeoTIFFDataset](fiftyone_concepts/dataset_creation/datasets.html#geotiffdataset-import) format
+[GeoTIFFDataset](fiftyone_concepts/dataset_creation/datasets.md#geotiffdataset-import) format
 
 - Added new
 [`split_labels()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.split_labels "fiftyone.core.collections.SampleCollection.split_labels")
@@ -5282,19 +5282,19 @@ methods that can be used to conveniently initialize and clear the frames of
 video datasets, respectively
 
 - Added support for using a MongoDB dataset whose version is
-[not explicitly supported](fiftyone_concepts/config.html#configuring-mongodb-connection)
+[not explicitly supported](fiftyone_concepts/config.md#configuring-mongodb-connection)
 
 - Removed the `opencv-python-headless` maximum version requirement
 
 - Fixed a race condition that could prevent callbacks on
-[interactive plots](fiftyone_concepts/plots.html#interactive-plots) from working properly on
+[interactive plots](fiftyone_concepts/plots.md#interactive-plots) from working properly on
 sufficiently large datasets
 
 
 Annotation
 
 - Added support for annotating semantic segmentations and instance
-segmentations using the [CVAT backend](integrations/cvat.html#cvat-requesting-annotations)
+segmentations using the [CVAT backend](integrations/cvat.md#cvat-requesting-annotations)
 
 - Added support for annotating polylines using the CVAT backend
 
@@ -5423,11 +5423,11 @@ method that can identify exactly duplicate media in a dataset
 Core
 
 - Added support for pip-installing FiftyOne on Apple Silicon Macs. Note that
-MongoDB must be [self-installed](fiftyone_concepts/config.html#configuring-mongodb-connection) in
+MongoDB must be [self-installed](fiftyone_concepts/config.md#configuring-mongodb-connection) in
 this case
 
 - Added support for using a
-[self-installed MongoDB database](fiftyone_concepts/config.html#configuring-mongodb-connection)
+[self-installed MongoDB database](fiftyone_concepts/config.md#configuring-mongodb-connection)
 
 - Added a [`group_by()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.group_by "fiftyone.core.collections.SampleCollection.group_by")
 view stage that allows for reorganizing the samples in a collection so that
@@ -5437,40 +5437,40 @@ they are grouped by a specified field or expression
 [`selection_mode`](api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.InteractivePlot.selection_mode "fiftyone.core.plots.base.InteractivePlot.selection_mode")
 property that enables users to change the behavior of App updates when
 selections are made in an interactive plot linked to labels. See
-[this page](fiftyone_concepts/plots.html#plot-selection-modes) for details
+[this page](fiftyone_concepts/plots.md#plot-selection-modes) for details
 
-- Added support for [YOLOv5 YAML files](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) with
+- Added support for [YOLOv5 YAML files](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) with
 multiple directories per dataset split
 
 - Added support for importing/exporting confidences via the `score` field when
-working with [BDD format](fiftyone_concepts/dataset_creation/datasets.html#bdddataset-import)
+working with [BDD format](fiftyone_concepts/dataset_creation/datasets.md#bdddataset-import)
 
 - Fixed some Windows-style path bugs
 
 
 Annotation
 
-- Added a powerful [annotation API](fiftyone_concepts/annotation.html#fiftyone-annotation) that makes it
+- Added a powerful [annotation API](fiftyone_concepts/annotation.md#fiftyone-annotation) that makes it
 easy to add or edit labels on your FiftyOne datasets or specific views into
 them
 
-- Added a native [CVAT integration](integrations/cvat.html#cvat-integration) that enables you
+- Added a native [CVAT integration](integrations/cvat.md#cvat-integration) that enables you
 to use the annotation API with
 [CVAT](https://github.com/opencv/cvat)
 
 
 Docs
 
-- Added a [CVAT annotation tutorial](tutorials/cvat_annotation.html)
+- Added a [CVAT annotation tutorial](tutorials/cvat_annotation.md)
 
-- Added a [new example](brain.html#brain-near-duplicates) to the brain user guide
+- Added a [new example](brain.md#brain-near-duplicates) to the brain user guide
 that demonstrates unique and near-duplicate image workflows
 
 - Added an object embeddings example to the
-[embeddings visualization section](brain.html#brain-embeddings-visualization) of
+[embeddings visualization section](brain.md#brain-embeddings-visualization) of
 the brain user guide
 
-- Added a [new section](fiftyone_concepts/plots.html#plot-selection-modes) to the plots user guide
+- Added a [new section](fiftyone_concepts/plots.md#plot-selection-modes) to the plots user guide
 page explaining how to control the selection mode of interactive plots linked
 to labels
 
@@ -5510,7 +5510,7 @@ to `True`
 
 Core
 
-- Added support for importing [DICOM datasets](fiftyone_concepts/dataset_creation/datasets.html#dicomdataset-import)
+- Added support for importing [DICOM datasets](fiftyone_concepts/dataset_creation/datasets.md#dicomdataset-import)
 
 - Added better default behavior for the `label_field` parameter when importing
 datasets using methods like
@@ -5524,12 +5524,12 @@ gracefully ignored when expanding dataset schemas
 
 Docs
 
-- Added [Using the image visualizer](fiftyone_concepts/app.html#app-image-visualizer) and
-[Using the video visualizer](fiftyone_concepts/app.html#app-video-visualizer) sections to the
+- Added [Using the image visualizer](fiftyone_concepts/app.md#app-image-visualizer) and
+[Using the video visualizer](fiftyone_concepts/app.md#app-video-visualizer) sections to the
 App user guide
 
-- Added sections covering [merging datasets](fiftyone_concepts/using_datasets.html#merging-datasets) and
-[batch updates](fiftyone_concepts/using_datasets.html#batch-updates) to the dataset user guide page
+- Added sections covering [merging datasets](fiftyone_concepts/using_datasets.md#merging-datasets) and
+[batch updates](fiftyone_concepts/using_datasets.md#batch-updates) to the dataset user guide page
 
 
 Zoo
@@ -5562,7 +5562,7 @@ App
 
 - Added support for calling
 [`Session.open_tab()`](api/fiftyone.core.session.html#fiftyone.core.session.Session.open_tab "fiftyone.core.session.Session.open_tab") from
-[remote Jupyter notebooks](environments/index.html#remote-notebooks)
+[remote Jupyter notebooks](environments/index.md#remote-notebooks)
 
 - Fixed a bug that could cause
 [`Session.wait()`](api/fiftyone.core.session.html#fiftyone.core.session.Session.wait "fiftyone.core.session.Session.wait") to exit when the
@@ -5573,32 +5573,32 @@ Core
 
 - Added a `plotly<5` requirement, which prevents an issue that may cause
 callbacks for selection events in
-[interactive plots](fiftyone_concepts/plots.html#interactive-plots) to not trigger as expected when
+[interactive plots](fiftyone_concepts/plots.md#interactive-plots) to not trigger as expected when
 using Plotly V5
 
 - Added support for evaluating polygons and instance segmentations to
 [`evaluate_detections()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections").
-See [this page](fiftyone_concepts/evaluation.html#evaluation-detection-types) for usage details
+See [this page](fiftyone_concepts/evaluation.md#evaluation-detection-types) for usage details
 
-- Added support for creating [patch views](fiftyone_concepts/using_views.html#frame-patches-views) and
-[evaluation patch views](fiftyone_concepts/evaluation.html#evaluating-videos) into the frames of video
+- Added support for creating [patch views](fiftyone_concepts/using_views.md#frame-patches-views) and
+[evaluation patch views](fiftyone_concepts/evaluation.md#evaluating-videos) into the frames of video
 datasets
 
 - Greatly improved the efficiency of creating
-[evaluation patch views](fiftyone_concepts/evaluation.html#evaluation-patches)
+[evaluation patch views](fiftyone_concepts/evaluation.md#evaluation-patches)
 
 - Added support for recursively listing data directories when loading datasets
-[from disk](fiftyone_concepts/dataset_creation/datasets.html#loading-datasets-from-disk)
+[from disk](fiftyone_concepts/dataset_creation/datasets.md#loading-datasets-from-disk)
 
 - Added support for controlling whether/which object attributes are
-imported/exported in formats like [COCO](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import)
+imported/exported in formats like [COCO](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import)
 that support arbitrary object attributes
 
 - Updated all dataset import/export routines to support/prefer custom object
 attributes stored directly on [`Label`](api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances as dynamic fields rather
 than in the `attributes` dict
 
-- The [ImageSegmentationDirectory](fiftyone_concepts/export_datasets.html#imagesegmentationdirectory-export)
+- The [ImageSegmentationDirectory](fiftyone_concepts/export_datasets.md#imagesegmentationdirectory-export)
 format now supports exporting segmentations defined by [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") with
 instance masks and [`Polylines`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines")
 
@@ -5608,7 +5608,7 @@ utility for converting [`Detections`](api/fiftyone.core.labels.html#fiftyone.cor
 [`Segmentation`](api/fiftyone.core.labels.html#fiftyone.core.labels.Segmentation "fiftyone.core.labels.Segmentation") format
 
 - Added graceful handling of edges cases like empty views and missing labels to
-all [evaluation routines](fiftyone_concepts/evaluation.html#evaluating-models)
+all [evaluation routines](fiftyone_concepts/evaluation.md#evaluating-models)
 
 - Added improved support for
 [`creating`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.create_index "fiftyone.core.collections.SampleCollection.create_index"),
@@ -5637,26 +5637,26 @@ from a future version of FiftyOne without following the
 filesystems
 
 - Fixed a bug that prevented the proper loading of the
-[Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset after partial
+[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset after partial
 downloads involving only a subset of the available label types
 
 
 Zoo
 
 - Added support for importing license data when loading the
-[COCO-2014](dataset_zoo/datasets.html#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.html#dataset-zoo-coco-2017) datasets from the zoo
+[COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets from the zoo
 
 - The inapplicable `classes` flag will now be ignored when loading the
-unlabeled test split of [COCO-2014](dataset_zoo/datasets.html#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.html#dataset-zoo-coco-2017)
+unlabeled test split of [COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017)
 
 - Improved the partial download behavior of the
-[Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset when the optional
+[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset when the optional
 `classes` and `attrs` parameters are provided
 
 - Fixed a bug that prevented Windows users from downloading the
-[Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset
+[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
 
 
 ## FiftyOne 0.11.1 [¶](\#fiftyone-0-11-1 "Permalink to this headline")
@@ -5677,7 +5677,7 @@ News
 
 - With support from the [COCO team](https://cocodataset.org/#download),
 FiftyOne is now a recommended tool for downloading, visualizing, and
-evaluating on the COCO dataset! Check out [this guide](integrations/coco.html#coco) for more
+evaluating on the COCO dataset! Check out [this guide](integrations/coco.md#coco) for more
 details
 
 
@@ -5701,8 +5701,8 @@ perform labels-only imports and exports
 [`Dataset.merge_importer()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.merge_importer "fiftyone.core.dataset.Dataset.merge_importer")
 methods for merging datasets from disk into existing FiftyOne datasets
 
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) and
-[exporting](fiftyone_concepts/export_datasets.html#yolov5dataset-export) datasets in
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) and
+[exporting](fiftyone_concepts/export_datasets.md#yolov5dataset-export) datasets in
 [YOLOv5 format](https://github.com/ultralytics/yolov5)
 
 - Updated the [`GeoJSONDataset`](api/fiftyone.types.html#fiftyone.types.GeoJSONDataset "fiftyone.types.GeoJSONDataset") dataset
@@ -5716,21 +5716,21 @@ attributes in COCO format via a new `extra_attrs` parameter
 Zoo
 
 - Added support for partial downloads and loading segmentations to the
-[COCO-2014](dataset_zoo/datasets.html#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.html#dataset-zoo-coco-2017) datasets
+[COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets
 
 - When performing partial downloads on the
-[Open Images v6 Dataset](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) involving a subset
+[Open Images v6 Dataset](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) involving a subset
 of the available classes, all labels for matching samples will now be loaded
 by default
 
 
 Docs
 
-- Added a [new page](integrations/coco.html#coco) demonstrating how to use FiftyOne to download,
+- Added a [new page](integrations/coco.md#coco) demonstrating how to use FiftyOne to download,
 visualize, and evaluate on the COCO dataset
 
-- Added a [new page](integrations/open_images.html#open-images) demonstrating how to use FiftyOne to
+- Added a [new page](integrations/open_images.md#open-images) demonstrating how to use FiftyOne to
 download, visualize, and evaluate on the Open Images dataset
 
 
@@ -5745,7 +5745,7 @@ News
 team to make it easy to train
 [Lightning Flash](https://github.com/PyTorchLightning/lightning-flash)
 tasks on your FiftyOne datasets. Check out
-[this guide](integrations/lightning_flash.html#lightning-flash) for more details
+[this guide](integrations/lightning_flash.md#lightning-flash) for more details
 
 
 Core
@@ -5760,7 +5760,7 @@ models to FiftyOne datasets!
 
 Docs
 
-- Added a [new page](integrations/lightning_flash.html#lightning-flash) demonstrating how to use the
+- Added a [new page](integrations/lightning_flash.md#lightning-flash) demonstrating how to use the
 Lightning Flash integration
 
 
@@ -5861,9 +5861,9 @@ from accepting [`ViewExpression`](api/fiftyone.core.expressions.html#fiftyone.co
 Zoo
 
 - Fixed a string encoding issue that prevented some Windows users from loading
-the [Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) dataset
+the [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
 
-- Updated the [vgg16-imagenet-tf1](models/model_zoo/models.html#model-zoo-vgg16-imagenet-tf1) model
+- Updated the [vgg16-imagenet-tf1](models/model_zoo/models.md#model-zoo-vgg16-imagenet-tf1) model
 (formerly named `vgg16-imagenet-tf`) to reflect the fact that it only
 supports TensorFlow 1.X
 
@@ -5872,7 +5872,7 @@ Docs
 
 - Added example usages of
 [`to_frames()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_frames "fiftyone.core.collections.SampleCollection.to_frames")
-to the [user guide](fiftyone_concepts/using_views.html#frame-views)
+to the [user guide](fiftyone_concepts/using_views.md#frame-views)
 
 
 ## FiftyOne 0.9.3 [¶](\#fiftyone-0-9-3 "Permalink to this headline")
@@ -5895,7 +5895,7 @@ _Released May 16, 2021_
 Zoo
 
 - Fixed a multiprocessing bug that prevented Mac users running Python 3.8 or
-later from loading the [Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6)
+later from loading the [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6)
 dataset
 
 
@@ -5918,16 +5918,16 @@ News
 [Open Images Team at Google](https://storage.googleapis.com/openimages/web/download.html)
 to make FiftyOne a recommended tool for downloading, visualizing, and
 evaluating on the Open Images Dataset! Check out
-[this guide](integrations/open_images.html#open-images) for more details
+[this guide](integrations/open_images.md#open-images) for more details
 
 
 App
 
 - Added a `Patches` action for easy switching to object/evaluation patches
-views. See [this page](fiftyone_concepts/app.html#app-object-patches) for usage details
+views. See [this page](fiftyone_concepts/app.md#app-object-patches) for usage details
 
 - Added a `Sort by similarity` action that enables sorting by similarity to the
-selected samples/patches. See [this page](fiftyone_concepts/app.html#app-similarity) for usage
+selected samples/patches. See [this page](fiftyone_concepts/app.md#app-similarity) for usage
 details
 
 - Added a zoom slider in the top right of the sample grid that adjusts the tile
@@ -5951,14 +5951,14 @@ Brain
 
 - Added a `compute_similarity()`
 method for indexing samples and object patches by similarity. See
-[this page](brain.html#brain-similarity) for usage details
+[this page](brain.md#brain-similarity) for usage details
 
 
 Core
 
 - Added support for Open Images-style detection evaluation when using
 [`evaluate_detections()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections").
-See [this page](fiftyone_concepts/evaluation.html#evaluating-detections-open-images) for usage details
+See [this page](fiftyone_concepts/evaluation.md#evaluating-detections-open-images) for usage details
 
 - Added the
 [`to_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_patches "fiftyone.core.collections.SampleCollection.to_patches")
@@ -5966,7 +5966,7 @@ and
 [`to_evaluation_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_evaluation_patches "fiftyone.core.collections.SampleCollection.to_evaluation_patches")
 view stages for transforming collections into flattened views with respect to
 labels and evaluations, respectively.
-See [this page](fiftyone_concepts/using_views.html#object-patches-views) for usage details
+See [this page](fiftyone_concepts/using_views.md#object-patches-views) for usage details
 
 - Added support for applying image models to the frames of video datasets
 when using
@@ -5979,7 +5979,7 @@ when using
 [`set_values()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values")
 
 - Added support for passing expressions directly to
-[aggregations](fiftyone_concepts/using_aggregations.html#using-aggregations)
+[aggregations](fiftyone_concepts/using_aggregations.md#using-aggregations)
 
 - Added an optional `omit_empty` flag to
 [`select_labels()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_labels "fiftyone.core.collections.SampleCollection.select_labels")
@@ -6007,41 +6007,41 @@ retrievals of the results in the same session will be instant
 
 Zoo
 
-- Added [Open Images V6](dataset_zoo/datasets.html#dataset-zoo-open-images-v6) to the dataset zoo!
+- Added [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) to the dataset zoo!
 
 
 Docs
 
-- Added a new [Open Images tutorial](tutorials/open_images.html)
+- Added a new [Open Images tutorial](tutorials/open_images.md)
 
-- Added [object patches](fiftyone_concepts/app.html#app-object-patches) and
-[evaluation patches](fiftyone_concepts/app.html#app-evaluation-patches) sections to the
-[App guide](fiftyone_concepts/app.html#fiftyone-app)
+- Added [object patches](fiftyone_concepts/app.md#app-object-patches) and
+[evaluation patches](fiftyone_concepts/app.md#app-evaluation-patches) sections to the
+[App guide](fiftyone_concepts/app.md#fiftyone-app)
 
-- Added a [similarity](brain.html#brain-similarity) section to the
-[Brain guide](brain.html#fiftyone-brain)
+- Added a [similarity](brain.md#brain-similarity) section to the
+[Brain guide](brain.md#fiftyone-brain)
 
-- Added [Open Images evaluation](fiftyone_concepts/evaluation.html#evaluating-detections-open-images) and
-[evaluation patches](fiftyone_concepts/evaluation.html#evaluation-patches) sections to the
-[evaluation guide](fiftyone_concepts/evaluation.html#evaluating-models)
+- Added [Open Images evaluation](fiftyone_concepts/evaluation.md#evaluating-detections-open-images) and
+[evaluation patches](fiftyone_concepts/evaluation.md#evaluation-patches) sections to the
+[evaluation guide](fiftyone_concepts/evaluation.md#evaluating-models)
 
-- Added [object patches](fiftyone_concepts/using_views.html#object-patches-views) and
-[evaluation patches](fiftyone_concepts/using_views.html#eval-patches-views) sections to the
-[views guide](fiftyone_concepts/using_views.html#using-views)
+- Added [object patches](fiftyone_concepts/using_views.md#object-patches-views) and
+[evaluation patches](fiftyone_concepts/using_views.md#eval-patches-views) sections to the
+[views guide](fiftyone_concepts/using_views.md#using-views)
 
 - Added example uses of
 [`to_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_patches "fiftyone.core.collections.SampleCollection.to_patches")
 and
 [`to_evaluation_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_evaluation_patches "fiftyone.core.collections.SampleCollection.to_evaluation_patches")
-to the [object detection tutorial](tutorials/evaluate_detections.html)
+to the [object detection tutorial](tutorials/evaluate_detections.md)
 
 - Added example use of
 [`to_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_patches "fiftyone.core.collections.SampleCollection.to_patches")
-to the [detection mistakes tutorial](tutorials/detection_mistakes.html)
+to the [detection mistakes tutorial](tutorials/detection_mistakes.md)
 
 - Added example use of
 [`to_patches()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.to_patches "fiftyone.core.collections.SampleCollection.to_patches")
-to the [adding detections recipe](recipes/adding_detections.html)
+to the [adding detections recipe](recipes/adding_detections.md)
 
 
 ## FiftyOne 0.8.0 [¶](\#fiftyone-0-8-0 "Permalink to this headline")
@@ -6075,10 +6075,10 @@ fields
 
 Brain
 
-- Added a `compute_visualization()` method that uses embeddings and dimensionality reduction methods to generate interactive visualizations of the samples and/or labels in a dataset. Check out [this page](brain.html#brain-embeddings-visualization) for details. Features include:
+- Added a `compute_visualization()` method that uses embeddings and dimensionality reduction methods to generate interactive visualizations of the samples and/or labels in a dataset. Check out [this page](brain.md#brain-embeddings-visualization) for details. Features include:
 
 - Provide your own embeddings, or choose a model from the
-[Model Zoo](models/model_zoo/index.html#model-zoo), or use the provided default model
+[Model Zoo](models/model_zoo/index.md#model-zoo), or use the provided default model
 
 - Supported dimensionality reduction methods include
 [UMAP](https://github.com/lmcinnes/umap),
@@ -6094,7 +6094,7 @@ results can now be loaded at any time via
 [`Dataset.load_brain_results()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.load_brain_results "fiftyone.core.dataset.Dataset.load_brain_results")
 
 - Added support for providing a custom [`Model`](api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") or model from the
-[Model Zoo](models/model_zoo/index.html#model-zoo) to
+[Model Zoo](models/model_zoo/index.md#model-zoo) to
 `compute_uniqueness()`
 
 
@@ -6127,7 +6127,7 @@ view stages for querying datasets with location data
 
 
 - Upgraded the implementation of the
-[FiftyOneDataset](fiftyone_concepts/export_datasets.html#fiftyonedataset-export) format, which is now 10-100x
+[FiftyOneDataset](fiftyone_concepts/export_datasets.md#fiftyonedataset-export) format, which is now 10-100x
 faster at importing/exporting datasets
 
 - Added support for generating zip/tar/etc archives to
@@ -6239,27 +6239,27 @@ excluded fields
 
 Zoo
 
-- Added the [quickstart-geo](dataset_zoo/datasets.html#dataset-zoo-quickstart-geo) dataset to
+- Added the [quickstart-geo](dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset to
 enable quick exploration of location-based datasets
 
 
 CLI
 
 - Removed the `--desktop` flag from the
-[fiftyone app connect](cli/index.html#cli-fiftyone-app-connect) command
+[fiftyone app connect](cli/index.md#cli-fiftyone-app-connect) command
 
 
 Docs
 
-- Added [a tutorial](tutorials/image_embeddings.html) demonstrating how to
+- Added [a tutorial](tutorials/image_embeddings.md) demonstrating how to
 use `compute_visualization()`
 on image datasets
 
-- Added an [interactive plots](fiftyone_concepts/plots.html#interactive-plots) page to the user guide
+- Added an [interactive plots](fiftyone_concepts/plots.md#interactive-plots) page to the user guide
 
-- Added a [Tags and tagging](fiftyone_concepts/app.html#app-tagging) section to the App user guide
+- Added a [Tags and tagging](fiftyone_concepts/app.md#app-tagging) section to the App user guide
 
-- Added a [visualizing embedding](brain.html#brain-embeddings-visualization) section
+- Added a [visualizing embedding](brain.md#brain-embeddings-visualization) section
 to the Brain user guide
 
 
@@ -6308,7 +6308,7 @@ managing a corrupted database
 
 CLI
 
-- Added a [dataset stats](cli/index.html#cli-fiftyone-datasets-stats) command
+- Added a [dataset stats](cli/index.md#cli-fiftyone-datasets-stats) command
 
 
 ## FiftyOne 0.7.3 [¶](\#fiftyone-0-7-3 "Permalink to this headline")
@@ -6356,7 +6356,7 @@ Core
 [`evaluate_detections()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections"), and
 [`evaluate_segmentations()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_segmentations "fiftyone.core.collections.SampleCollection.evaluate_segmentations")
 methods that provide support for evaluating various types of labels. See the
-new [evaluation page](fiftyone_concepts/evaluation.html#evaluating-models) of the user guide for more
+new [evaluation page](fiftyone_concepts/evaluation.md#evaluating-models) of the user guide for more
 details
 
 - Added [`one()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection "fiftyone.core.collections.SampleCollection") for retrieving
@@ -6401,11 +6401,11 @@ listing helpful info about the size of various entities of a dataset
 
 Zoo
 
-- Added support for storing logits for many [zoo models](models/model_zoo/index.html#model-zoo) when
+- Added support for storing logits for many [zoo models](models/model_zoo/index.md#model-zoo) when
 using
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 
-- Default confidence thresholds for [zoo models](models/model_zoo/index.html#model-zoo) are now
+- Default confidence thresholds for [zoo models](models/model_zoo/index.md#model-zoo) are now
 stored on a per-model basis rather than as a global default value in
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model").
 All detection models still have a default confidence threshold of 0.3, and
@@ -6420,11 +6420,11 @@ for downgrading the version of your `fiftyone` package
 
 Docs
 
-- Added a new [evaluation page](fiftyone_concepts/evaluation.html#evaluating-models) to the user guide that
+- Added a new [evaluation page](fiftyone_concepts/evaluation.md#evaluating-models) to the user guide that
 explains how to evaluate various types of models with FiftyOne
 
 - Removed legacy `--index` flags from the install instructions from the
-[troubleshooting page](getting_started/troubleshooting.html#troubleshooting) which prevented a valid
+[troubleshooting page](getting_started/troubleshooting.md#troubleshooting) which prevented a valid
 installation
 
 
@@ -6504,41 +6504,41 @@ directly as builtin types\
 - Added the optional `config` keyword argument to\
 [`launch_app()`](api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app") and\
 [`Session`](api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") for overriding the default\
-[AppConfig](fiftyone_concepts/config.html#configuring-fiftyone-app).\
+[AppConfig](fiftyone_concepts/config.md#configuring-fiftyone-app).\
 \
 \
 Zoo\
 \
 - Added a default confidence threshold of `0.3` when applying models from the\
-[Model Zoo](models/model_zoo/index.html#model-zoo) via\
+[Model Zoo](models/model_zoo/index.md#model-zoo) via\
 [`apply_model()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),\
 which omits spurious low quality predictions from many models\
 \
 \
 CLI\
 \
-- Added a [fiftyone app config](cli/index.html#cli-fiftyone-app-config) command for\
-inspecting the default [App config](fiftyone_concepts/config.html#configuring-fiftyone-app)\
+- Added a [fiftyone app config](cli/index.md#cli-fiftyone-app-config) command for\
+inspecting the default [App config](fiftyone_concepts/config.md#configuring-fiftyone-app)\
 \
 - Improved `ctrl + c` exit handling for CLI commands\
 \
 \
 Docs\
 \
-- Added a [new section](fiftyone_concepts/config.html#configuring-fiftyone-app) to the\
-[Configuring FiftyOne guide](fiftyone_concepts/config.html#configuring-fiftyone) explaining how to\
+- Added a [new section](fiftyone_concepts/config.md#configuring-fiftyone-app) to the\
+[Configuring FiftyOne guide](fiftyone_concepts/config.md#configuring-fiftyone) explaining how to\
 programmatically configure the App’s behavior\
 \
-- Updated the [Dataset views guide](fiftyone_concepts/using_views.html#using-views) to provide a thorough\
+- Updated the [Dataset views guide](fiftyone_concepts/using_views.md#using-views) to provide a thorough\
 overview of new functionality provided by stages like\
 [`SetField`](api/fiftyone.core.stages.html#fiftyone.core.stages.SetField "fiftyone.core.stages.SetField")\
 \
-- Updated the [Aggregations guide](fiftyone_concepts/using_aggregations.html#using-aggregations) to provide a\
+- Updated the [Aggregations guide](fiftyone_concepts/using_aggregations.md#using-aggregations) to provide a\
 thorough overview and examples of various aggregation functionality,\
 including advanced usage tips\
 \
 - Added an FAQ section providing instructions for working with\
-[remote Jupyter notebooks](faq/index.html#faq-remote-notebook-support)\
+[remote Jupyter notebooks](faq/index.md#faq-remote-notebook-support)\
 \
 - Added code examples to all [`ViewStage`](api/fiftyone.core.stages.html#fiftyone.core.stages.ViewStage "fiftyone.core.stages.ViewStage") class docstrings and their\
 corresponding sample collection methods, e.g.,\
@@ -6555,7 +6555,7 @@ _Released January 8, 2021_\
 \
 App\
 \
-- Added automatic screenshotting for [notebook environments](environments/index.html#notebooks)\
+- Added automatic screenshotting for [notebook environments](environments/index.md#notebooks)\
 \
 - Fixed a bug where the Filters Sidebar statistics would not load for empty\
 views\
@@ -6599,46 +6599,46 @@ via efficient DB-only operations\
 [`Dataset()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") constructor\
 \
 - Added a `database_dir` option to the\
-[FiftyOne Config](fiftyone_concepts/config.html#configuring-fiftyone)\
+[FiftyOne Config](fiftyone_concepts/config.md#configuring-fiftyone)\
 \
 - Added a `default_app_port` option to the\
-[FiftyOne Config](fiftyone_concepts/config.html#configuring-fiftyone)\
+[FiftyOne Config](fiftyone_concepts/config.md#configuring-fiftyone)\
 \
 \
 Zoo\
 \
-- Added a [CenterNet model](models/model_zoo/models.html#model-zoo-centernet-hg104-512-coco-tf2) to\
+- Added a [CenterNet model](models/model_zoo/models.md#model-zoo-centernet-hg104-512-coco-tf2) to\
 the model zoo\
 \
-- Upgraded the [Model Zoo](models/model_zoo/index.html#model-zoo) so that many detection models that\
+- Upgraded the [Model Zoo](models/model_zoo/index.md#model-zoo) so that many detection models that\
 previously required TensorFlow 1.X can now be used with TensorFlow 2.X\
 \
-- Added [Caltech-256](dataset_zoo/datasets.html#dataset-zoo-caltech256) to the dataset zoo\
+- Added [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) to the dataset zoo\
 \
-- Added [ImageNet Sample](dataset_zoo/datasets.html#dataset-zoo-imagenet-sample) to the dataset zoo\
+- Added [ImageNet Sample](dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) to the dataset zoo\
 \
-- [Caltech-101](dataset_zoo/datasets.html#dataset-zoo-caltech101) is now available natively in the\
+- [Caltech-101](dataset_zoo/datasets.md#dataset-zoo-caltech101) is now available natively in the\
 dataset zoo without the TF backend\
 \
-- [KITTI](dataset_zoo/datasets.html#dataset-zoo-kitti) is now available natively in the dataset zoo\
+- [KITTI](dataset_zoo/datasets.md#dataset-zoo-kitti) is now available natively in the dataset zoo\
 without the TF backend\
 \
-- Fixed a bug that prevented [ImageNet 2012](dataset_zoo/datasets.html#dataset-zoo-imagenet-2012)\
+- Fixed a bug that prevented [ImageNet 2012](dataset_zoo/datasets.md#dataset-zoo-imagenet-2012)\
 from loading properly when using the TF backend\
 \
 \
 CLI\
 \
 - Added support for controlling the error level when\
-[applying zoo models](cli/index.html#cli-fiftyone-zoo-models-apply)\
+[applying zoo models](cli/index.md#cli-fiftyone-zoo-models-apply)\
 \
 \
 Docs\
 \
-- Added a [Dataset Zoo listing](dataset_zoo/datasets.html#dataset-zoo-datasets) that describes all\
+- Added a [Dataset Zoo listing](dataset_zoo/datasets.md#dataset-zoo-datasets) that describes all\
 datasets in the zoo\
 \
-- Added a [Model Zoo listing](models/model_zoo/models.html#model-zoo-models) that describes all models\
+- Added a [Model Zoo listing](models/model_zoo/models.md#model-zoo-models) that describes all models\
 in the zoo\
 \
 \
@@ -6650,7 +6650,7 @@ App\
 \
 - Added web browser support, which is now the default setting\
 \
-- Added [IPython notebook support](environments/index.html#notebooks), e.g. Jupyter and Google\
+- Added [IPython notebook support](environments/index.md#notebooks), e.g. Jupyter and Google\
 Colab\
 \
 - The desktop App can now be installed as an\
@@ -6662,7 +6662,7 @@ Filters Sidebar\
 \
 Core\
 \
-- Added a [Model Zoo](models/model_zoo/index.html#model-zoo) containing over 70 pretrained detection,\
+- Added a [Model Zoo](models/model_zoo/index.md#model-zoo) containing over 70 pretrained detection,\
 classification, and segmentation models that you can use to generate\
 predictions and embeddings\
 \
@@ -6680,11 +6680,11 @@ for displaying the App in IPython notebook cells\
 \
 CLI\
 \
-- Added a [fiftyone zoo models](cli/index.html#cli-fiftyone-zoo-models) command that\
+- Added a [fiftyone zoo models](cli/index.md#cli-fiftyone-zoo-models) command that\
 provides access to the model zoo\
 \
 - Moved the dataset zoo commands to\
-[fiftyone zoo datasets](cli/index.html#cli-fiftyone-zoo-datasets) (previously they\
+[fiftyone zoo datasets](cli/index.md#cli-fiftyone-zoo-datasets) (previously they\
 were at `fiftyone zoo`)\
 \
 - Added a `--desktop` flag to commands that launch the App that enables\
@@ -6718,7 +6718,7 @@ Brain\
 Core\
 \
 - Fixed a bug that prevented COCO datasets from being loaded from the\
-[Dataset Zoo](dataset_zoo/index.html#dataset-zoo)\
+[Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
 \
 \
 CLI\
@@ -6731,19 +6731,19 @@ the CLI\
 \
 Docs\
 \
-- Added [a tutorial](tutorials/detection_mistakes.html) demonstrating how to\
+- Added [a tutorial](tutorials/detection_mistakes.md) demonstrating how to\
 use `compute_mistakenness()` to\
 detect label mistakes for detection datasets\
 \
-- Added questions to the [FAQ page](faq/index.html#faq):\
+- Added questions to the [FAQ page](faq/index.md#faq):\
 \
-- [Can I launch multiple App instances on a machine?](faq/index.html#faq-multiple-apps)\
+- [Can I launch multiple App instances on a machine?](faq/index.md#faq-multiple-apps)\
 \
-- [Can I connect multiple App instances to the same dataset?](faq/index.html#faq-multiple-sessions-same-dataset)\
+- [Can I connect multiple App instances to the same dataset?](faq/index.md#faq-multiple-sessions-same-dataset)\
 \
-- [Can I connect to multiple remote sessions?](faq/index.html#faq-connect-to-multiple-remote-sessions)\
+- [Can I connect to multiple remote sessions?](faq/index.md#faq-connect-to-multiple-remote-sessions)\
 \
-- [Can I serve multiple remote sessions from a machine?](faq/index.html#faq-serve-multiple-remote-sessions)\
+- [Can I serve multiple remote sessions from a machine?](faq/index.md#faq-serve-multiple-remote-sessions)\
 \
 \
 ## FiftyOne 0.6.5 [¶](\#fiftyone-0-6-5 "Permalink to this headline")\
@@ -6781,7 +6781,7 @@ Core\
 \
 - Added [Cityscapes](https://www.cityscapes-dataset.com/) and\
 [LFW](http://vis-www.cs.umass.edu/lfw) to the\
-[Dataset Zoo](dataset_zoo/index.html#dataset-zoo)\
+[Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
 \
 - Added support for renaming and deleting embedded document fields of samples\
 via [`Dataset.rename_sample_field()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.rename_sample_field "fiftyone.core.dataset.Dataset.rename_sample_field") and\
@@ -6823,11 +6823,11 @@ video datasets\
 \
 Docs\
 \
-- Added an [Environments page](environments/index.html#environments) that outlines how\
+- Added an [Environments page](environments/index.md#environments) that outlines how\
 to work with local, remote, and cloud data. Includes instructions for AWS,\
 Google Cloud, and Azure\
 \
-- Add an [FAQ page](faq/index.html#faq)\
+- Add an [FAQ page](faq/index.md#faq)\
 \
 \
 ## FiftyOne 0.6.4 [¶](\#fiftyone-0-6-4 "Permalink to this headline")\
@@ -6899,17 +6899,17 @@ datasets\
 \
 Core\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#videoclassificationdirectorytree-import)\
-and [exporting](fiftyone_concepts/export_datasets.html#videoclassificationdirectorytree-export) video\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#videoclassificationdirectorytree-import)\
+and [exporting](fiftyone_concepts/export_datasets.md#videoclassificationdirectorytree-export) video\
 classification datasets organized as directory trees on disk\
 \
 - Added [BDD100K](https://bdd-data.berkeley.edu),\
 [HMDB51](https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database),\
 and [UCF101](https://www.crcv.ucf.edu/research/data-sets/ucf101) to\
-the [Dataset Zoo](dataset_zoo/index.html#dataset-zoo)\
+the [Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
 \
 - Added new versions of [COCO](https://cocodataset.org/#home) that contain\
-instance segmentations to the [Dataset Zoo](dataset_zoo/index.html#dataset-zoo)\
+instance segmentations to the [Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
 \
 - Added utilities for selecting labels from datasets via the Python library\
 \
@@ -6956,23 +6956,23 @@ Core\
 \
 - [`Polyline`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instances can now represent labels composed of multiple shapes\
 \
-- Segmentations can now be [imported](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) and\
-[exported](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) when using\
+- Segmentations can now be [imported](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) and\
+[exported](fiftyone_concepts/export_datasets.md#cocodetectiondataset-export) when using\
 [COCO Object Detection Format](https://cocodataset.org/#format-data).\
 \
-- Polylines and keypoints can now be [imported](fiftyone_concepts/dataset_creation/datasets.html#cvatimagedataset-import) and\
-[exported](fiftyone_concepts/export_datasets.html#cvatimagedataset-export) when using\
+- Polylines and keypoints can now be [imported](fiftyone_concepts/dataset_creation/datasets.md#cvatimagedataset-import) and\
+[exported](fiftyone_concepts/export_datasets.md#cvatimagedataset-export) when using\
 [CVAT image format](https://github.com/openvinotoolkit/cvat/blob/develop/cvat/apps/documentation/xml_format.md)\
 \
-- Polylines and keypoints can now be [imported](fiftyone_concepts/dataset_creation/datasets.html#cvatvideodataset-import) and\
-[exported](fiftyone_concepts/export_datasets.html#cvatvideodataset-export) when using\
+- Polylines and keypoints can now be [imported](fiftyone_concepts/dataset_creation/datasets.md#cvatvideodataset-import) and\
+[exported](fiftyone_concepts/export_datasets.md#cvatvideodataset-export) when using\
 [CVAT video format](https://github.com/openvinotoolkit/cvat/blob/develop/cvat/apps/documentation/xml_format.md)\
 \
 - Added support for rendering annotated versions of video samples with their\
 frame labels overlaid via\
 [`draw_labels()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.draw_labels "fiftyone.core.collections.SampleCollection.draw_labels")\
 \
-- Added support for [launching quickstarts](cli/index.html#cli-fiftyone-quickstart) as\
+- Added support for [launching quickstarts](cli/index.md#cli-fiftyone-quickstart) as\
 remote sessions\
 \
 - Added [`Frames.update()`](api/fiftyone.core.frame.html#fiftyone.core.frame.Frames.update "fiftyone.core.frame.Frames.update") and\
@@ -7014,16 +7014,16 @@ Core\
 - Added support for setting an `index` attribute on [`Detection`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection") instances that\
 defines a unique identifier for an object (e.g., across frames of a video)\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#yolov4dataset-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#yolov4dataset-export) datasets in\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#yolov4dataset-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#yolov4dataset-export) datasets in\
 [YOLOv4 format](https://github.com/AlexeyAB/darknet)\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#cvatvideodataset-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#cvatvideodataset-export) datasets in\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#cvatvideodataset-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#cvatvideodataset-export) datasets in\
 [CVAT video format](https://github.com/openvinotoolkit/cvat/blob/develop/cvat/apps/documentation/xml_format.md)\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#fiftyonedataset-export) video datasets in\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#fiftyonedataset-export) video datasets in\
 [`FiftyOneDataset`](api/fiftyone.types.html#fiftyone.types.FiftyOneDataset "fiftyone.types.FiftyOneDataset") format\
 \
 - Added frame field schemas to string representations for video datasets/views\
@@ -7032,13 +7032,13 @@ defines a unique identifier for an object (e.g., across frames of a video)\
 CLI\
 \
 - Added options to\
-[fiftyone datasets delete](cli/index.html#cli-fiftyone-datasets-delete) to delete all\
+[fiftyone datasets delete](cli/index.md#cli-fiftyone-datasets-delete) to delete all\
 datasets matching a pattern and all non-persistent datasets\
 \
 \
 Docs\
 \
-- Added a recipe for [merging datasets](recipes/merge_datasets.html)\
+- Added a recipe for [merging datasets](recipes/merge_datasets.md)\
 \
 - Fixed some table widths and other display issues\
 \
@@ -7054,19 +7054,19 @@ App\
 \
 Core\
 \
-- Added support for [storing frame labels](fiftyone_concepts/using_datasets.html#video-datasets) on video\
+- Added support for [storing frame labels](fiftyone_concepts/using_datasets.md#video-datasets) on video\
 samples\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#videodirectory-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#videodirectory-export) datasets of unlabeled videos\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#videodirectory-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#videodirectory-export) datasets of unlabeled videos\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#fiftyonevideolabelsdataset-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#fiftyonevideolabelsdataset-export) labeled video\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#fiftyonevideolabelsdataset-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#fiftyonevideolabelsdataset-export) labeled video\
 datasets in\
 [ETA VideoLabels format](https://github.com/voxel51/eta/blob/develop/docs/video_labels_guide.md).\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#writing-a-custom-dataset-importer) and\
-[exporting](fiftyone_concepts/export_datasets.html#writing-a-custom-dataset-exporter) video datasets in\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#writing-a-custom-dataset-importer) and\
+[exporting](fiftyone_concepts/export_datasets.md#writing-a-custom-dataset-exporter) video datasets in\
 custom formats\
 \
 - Improved the performance of\
@@ -7184,7 +7184,7 @@ Core\
 expect [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") labels\
 \
 - Added support for importing/exporting supercategories for datasets in\
-[COCO format](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import)\
+[COCO format](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import)\
 \
 \
 ## FiftyOne 0.5.3 [¶](\#fiftyone-0-5-3 "Permalink to this headline")\
@@ -7246,7 +7246,7 @@ wrong\
 \
 Core\
 \
-- Added a [fiftyone quickstart](cli/index.html#cli-fiftyone-quickstart) command that\
+- Added a [fiftyone quickstart](cli/index.md#cli-fiftyone-quickstart) command that\
 downloads a small dataset, launches the App, and prints some suggestions for\
 exploring the dataset\
 \
@@ -7255,13 +7255,13 @@ operate multiple App instances (using different ports), Python shells, and/or\
 CLI processes.\
 \
 - Added support for automatically expanding labels from multitask formats such\
-as [BDDDataset](fiftyone_concepts/dataset_creation/datasets.html#bdddataset-import) and\
-[FiftyOneImageLabelsDataset](fiftyone_concepts/dataset_creation/datasets.html#fiftyoneimagelabelsdataset-import) into\
+as [BDDDataset](fiftyone_concepts/dataset_creation/datasets.md#bdddataset-import) and\
+[FiftyOneImageLabelsDataset](fiftyone_concepts/dataset_creation/datasets.md#fiftyoneimagelabelsdataset-import) into\
 separate label fields when importing datasets\
 \
 - Added support for exporting multiple label fields in supported formats such\
-as [BDDDataset](fiftyone_concepts/export_datasets.html#bdddataset-export) and\
-[FiftyOneImageLabelsDataset](fiftyone_concepts/export_datasets.html#fiftyoneimagelabelsdataset-export)\
+as [BDDDataset](fiftyone_concepts/export_datasets.md#bdddataset-export) and\
+[FiftyOneImageLabelsDataset](fiftyone_concepts/export_datasets.md#fiftyoneimagelabelsdataset-export)\
 via the [`export()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export")\
 method\
 \
@@ -7270,7 +7270,7 @@ method\
 method\
 \
 - Provided a more helpful error message when using the\
-[Dataset Zoo](dataset_zoo/index.html#dataset-zoo) with no backend ML framework installed\
+[Dataset Zoo](dataset_zoo/index.md#dataset-zoo) with no backend ML framework installed\
 \
 - Made `pycocotools` an optional dependency to make installation on Windows\
 easier\
@@ -7278,7 +7278,7 @@ easier\
 \
 Docs\
 \
-- Updated the [evaluate object detections](tutorials/evaluate_detections.html)\
+- Updated the [evaluate object detections](tutorials/evaluate_detections.md)\
 tutorial to make it more friendly for execution on CPU-only machines\
 \
 - Refreshed all App-related media in the docs to reflect the new App design\
@@ -7292,7 +7292,7 @@ _Released August 18, 2020_\
 App\
 \
 - Statistics in the display options sidebar now reflect the current\
-[view](fiftyone_concepts/using_views.html#using-views), not the entire [dataset](fiftyone_concepts/using_datasets.html#using-datasets)\
+[view](fiftyone_concepts/using_views.md#using-views), not the entire [dataset](fiftyone_concepts/using_datasets.md#using-datasets)\
 \
 - Improved image tiling algorithm that prevents single images from filling an\
 entire grid row\
@@ -7325,7 +7325,7 @@ Core\
 [`cloning`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.clone "fiftyone.core.dataset.Dataset.clone") datasets\
 \
 - Added more string matching operations when\
-[querying samples](fiftyone_concepts/using_views.html#querying-samples), including\
+[querying samples](fiftyone_concepts/using_views.md#querying-samples), including\
 [`starts_with()`](api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression.starts_with "fiftyone.core.expressions.ViewExpression.starts_with"),\
 [`ends_with()`](api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression.ends_with "fiftyone.core.expressions.ViewExpression.ends_with"),\
 [`contains_str()`](api/fiftyone.core.expressions.html#fiftyone.core.expressions.ViewExpression.contains_str "fiftyone.core.expressions.ViewExpression.contains_str") and\
@@ -7369,8 +7369,8 @@ App\
 \
 Core\
 \
-- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) and\
-[exporting](fiftyone_concepts/export_datasets.html#fiftyonedataset-export) FiftyOne datasets via the\
+- Added support for [importing](fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) and\
+[exporting](fiftyone_concepts/export_datasets.md#fiftyonedataset-export) FiftyOne datasets via the\
 [`FiftyOneDataset`](api/fiftyone.types.html#fiftyone.types.FiftyOneDataset "fiftyone.types.FiftyOneDataset") type\
 \
 - Added a [`Dataset.info`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.info "fiftyone.core.dataset.Dataset.info") field that\
@@ -7407,21 +7407,21 @@ method\
 \
 Docs\
 \
-- Added [a tutorial](tutorials/evaluate_detections.html) demonstrating\
+- Added [a tutorial](tutorials/evaluate_detections.md) demonstrating\
 object detection evaluation workflows powered by FiftyOne\
 \
-- Added [full documentation](fiftyone_concepts/using_views.html) for constructing\
+- Added [full documentation](fiftyone_concepts/using_views.md) for constructing\
 DatasetViews with powerful matching, filtering, and sorting operations\
 \
-- Added [a recipe](recipes/draw_labels.html) showing how to render annotated\
+- Added [a recipe](recipes/draw_labels.md) showing how to render annotated\
 versions of samples with label field(s) overlaid\
 \
-- Upgraded [dataset creation docs](fiftyone_concepts/dataset_creation/index.html)\
+- Upgraded [dataset creation docs](fiftyone_concepts/dataset_creation/index.md)\
 that simplify the material and make it easier to find the creation strategy\
 of interest\
 \
-- Improved layout of [tutorials](tutorials/index.html),\
-[recipes](recipes/index.html), and [user guide](fiftyone_concepts/index.html)\
+- Improved layout of [tutorials](tutorials/index.md),\
+[recipes](recipes/index.md), and [user guide](fiftyone_concepts/index.md)\
 landing pages\
 \
 \
@@ -7459,15 +7459,15 @@ would not permanently delete fields if they were modified after deletion\
 Docs\
 \
 - Added a recipe demonstrating how to\
-[convert datasets](recipes/convert_datasets.html) on disk between common\
+[convert datasets](recipes/convert_datasets.md) on disk between common\
 formats\
 \
 - Added recipes demonstratings how to write your own\
-[custom dataset importers](recipes/custom_importer.html),\
-[custom dataset exporters](recipes/custom_exporter.html), and\
-[custom sample parsers](recipes/custom_parser.html)\
+[custom dataset importers](recipes/custom_importer.md),\
+[custom dataset exporters](recipes/custom_exporter.md), and\
+[custom sample parsers](recipes/custom_parser.md)\
 \
-- Added a [Configuring FiftyOne](fiftyone_concepts/config.html) page to the User\
+- Added a [Configuring FiftyOne](fiftyone_concepts/config.md) page to the User\
 Guide that explains how to customize your FiftyOne Config\
 \
 \

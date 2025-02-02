@@ -9,7 +9,7 @@ more.
 
 Note
 
-You must use an [API connection](api_connection.html#teams-api-connection) (not a direct
+You must use an [API connection](api_connection.md#teams-api-connection) (not a direct
 MongoDB connection) in order to use Management SDK methods.
 
 ## API reference [¶](\#api-reference "Permalink to this headline")

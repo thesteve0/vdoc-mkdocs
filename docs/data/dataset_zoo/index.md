@@ -34,5 +34,5 @@ Methods for working with the Dataset Zoo are conveniently exposed via the
 Python library and the CLI. The basic recipe for loading a zoo dataset and
 visualizing it in the App is shown below.
 
-![Dataset Zoo](_images/dataset_zoo_coco_2017.png)
+![Dataset Zoo](../../_images/dataset_zoo_coco_2017.png)
 

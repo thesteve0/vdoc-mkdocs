@@ -2,8 +2,8 @@
 
 FiftyOne supports the creation of **grouped datasets**, which contain multiple
 slices of samples of possibly different modalities (e.g.,
-[image](using_datasets.html#dataset-media-type), [video](using_datasets.html#video-datasets), or
-[3D scenes](using_datasets.html#d-datasets)) that are organized into groups.
+[image](using_datasets.md#dataset-media-type), [video](using_datasets.md#video-datasets), or
+[3D scenes](using_datasets.md#d-datasets)) that are organized into groups.
 
 Grouped datasets can be used to represent multiview scenes, where data for
 multiple perspectives of the same scene can be stored, visualized, and queried
@@ -13,7 +13,7 @@ in ways that respect the relationships between the slices of data.
 
 Note
 
-Did you know? You can also create [dynamic group views](using_views.html#view-groups)
+Did you know? You can also create [dynamic group views](using_views.md#view-groups)
 into your datasets based on a field or expression of interest.
 
 ## Overview [¶](\#overview "Permalink to this headline")
@@ -485,13 +485,13 @@ print(group)
 
 ## Example datasets [¶](\#example-datasets "Permalink to this headline")
 
-The [FiftyOne Dataset Zoo](../dataset_zoo/index.html#dataset-zoo) contains grouped datasets that
+The [FiftyOne Dataset Zoo](../dataset_zoo/index.md#dataset-zoo) contains grouped datasets that
 you can use out-of-the-box to test drive FiftyOne’s group-related features.
 
 ### Quickstart groups [¶](\#quickstart-groups "Permalink to this headline")
 
 The fastest way to get started is by loading the
-[quickstart-groups](../dataset_zoo/datasets.html#dataset-zoo-quickstart-groups) dataset, which
+[quickstart-groups](../dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) dataset, which
 consists of 200 scenes from the train split of the KITTI dataset, each
 containing left camera, right camera, point cloud, and 2D/3D object annotation
 data:
@@ -530,7 +530,7 @@ Sample fields:
 
 ### KITTI multiview [¶](\#kitti-multiview "Permalink to this headline")
 
-You can also load the full [kitti-multiview](../dataset_zoo/datasets.html#dataset-zoo-kitti-multiview)
+You can also load the full [kitti-multiview](../dataset_zoo/datasets.md#dataset-zoo-kitti-multiview)
 dataset:
 
 ```python
@@ -547,7 +547,7 @@ dataset = foz.load_zoo_dataset("kitti-multiview", split="train")
 
 The snippet below generates a toy dataset containing 3D cuboids filled with
 points that demonstrates how
-[3D detections are represented](using_datasets.html#d-detections):
+[3D detections are represented](using_datasets.md#d-detections):
 
 ```python
 import fiftyone as fo
@@ -611,7 +611,7 @@ session = fo.launch_app(dataset)
 
 ## Grouped views [¶](\#grouped-views "Permalink to this headline")
 
-You have the entire [dataset view language](using_views.html#using-views) at your disposal
+You have the entire [dataset view language](using_views.md#using-views) at your disposal
 to sort, slice, and search your grouped datasets!
 
 ### Basics [¶](\#basics "Permalink to this headline")
@@ -679,7 +679,7 @@ print(group)
 
 ### Filtering [¶](\#filtering "Permalink to this headline")
 
-You can write views that [match and filter](using_views.html#view-filtering) the contents
+You can write views that [match and filter](using_views.md#view-filtering) the contents
 of grouped datasets:
 
 ```python
@@ -862,7 +862,7 @@ match_images_view = images_view.filter_labels(...).match(...)
 
 ## Grouped aggregations [¶](\#grouped-aggregations "Permalink to this headline")
 
-You can use the entire [aggregations framework](using_aggregations.html#using-aggregations) to
+You can use the entire [aggregations framework](using_aggregations.md#using-aggregations) to
 efficiently compute statistics on grouped datasets.
 
 Remember that, just as when [iterating over](#groups-iteration) or
@@ -940,7 +940,7 @@ print(view3.count("ground_truth.detections"))  # 2876
 
 ## Groups in the App [¶](\#groups-in-the-app "Permalink to this headline")
 
-When you load a grouped dataset or view in [the App](app.html#fiftyone-app),
+When you load a grouped dataset or view in [the App](app.md#fiftyone-app),
 you’ll see the samples from the collection’s
 [default group slice](#groups-dataset-properties) in the grid view by
 default.
@@ -962,7 +962,7 @@ You can use the selector shown below to change which slice you are viewing:
 Note
 
 In order to view 3D scenes in the grid view, you must populate
-[orthographic projection images](using_datasets.html#orthographic-projection-images).
+[orthographic projection images](using_datasets.md#orthographic-projection-images).
 
 When you open the expanded modal with a grouped dataset or view loaded in the
 App, you’ll have access to all samples in the current group.
@@ -972,7 +972,7 @@ contain a scrollable carousel that you can use to choose which sample to load
 in the maximized image/video visualizer below.
 
 If the group contains 3D slices, the righthand side of the modal will contain a
-[3D visualizer](app.html#app-3d-visualizer):
+[3D visualizer](app.md#app-3d-visualizer):
 
 ![groups-modal](../_images/groups-modal.gif)
 
@@ -986,7 +986,7 @@ by selecting `group` mode under the App’s settings menu:
 
 ![groups-stats](../_images/groups-stats.gif)
 
-You can also use the App’s [dynamic groups](app.html#app-dynamic-groups) feature
+You can also use the App’s [dynamic groups](app.md#app-dynamic-groups) feature
 to view _groups of groups_ organized by a field of your choice.
 
 For example, if you have a grouped dataset whose group slices contain different
@@ -997,7 +997,7 @@ you can use the dynamic grouping action to playback scenes in sequential order:
 
 Note
 
-Did you know? You can also create [dynamic group views](using_views.html#view-groups)
+Did you know? You can also create [dynamic group views](using_views.md#view-groups)
 into your grouped datasets via Python.
 
 ## Importing groups [¶](\#importing-groups "Permalink to this headline")
@@ -1025,7 +1025,7 @@ in a group is denoted by its slice `name` using
 objects can then simply be added to the dataset as usual.
 
 Alternatively, you can
-[write your own importer](dataset_creation/datasets.html#writing-a-custom-dataset-importer) and then
+[write your own importer](dataset_creation/datasets.md#writing-a-custom-dataset-importer) and then
 import grouped datasets in your custom format using the syntax below:
 
 ```python
@@ -1039,7 +1039,7 @@ dataset = fo.Dataset.from_importer(importer)
 ## Exporting groups [¶](\#exporting-groups "Permalink to this headline")
 
 If you need to export an entire grouped dataset (or a view into it), you can
-use [FiftyOneDataset format](export_datasets.html#fiftyonedataset-export):
+use [FiftyOneDataset format](export_datasets.md#fiftyonedataset-export):
 
 ```python
 view = dataset.shuffle().limit(10)
@@ -1058,7 +1058,7 @@ dataset2 = fo.Dataset.from_dir(
 
 You can also [select specific slice(s)](#groups-selecting-slices) and then
 export the resulting ungrouped collection in
-[all the usual ways](export_datasets.html#exporting-datasets):
+[all the usual ways](export_datasets.md#exporting-datasets):
 
 ```python
 left_view = dataset.shuffle().limit(10).select_group_slices("left")
@@ -1071,7 +1071,7 @@ left_view.export(
 ```
 
 Alternatively, you can
-[write your own exporter](export_datasets.html#writing-a-custom-dataset-exporter) and then
+[write your own exporter](export_datasets.md#writing-a-custom-dataset-exporter) and then
 export grouped datasets in your custom format using the syntax below:
 
 ```python

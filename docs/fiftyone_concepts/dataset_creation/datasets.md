@@ -1,7 +1,7 @@
 # Loading Datasets From Disk [¶](\#loading-datasets-from-disk "Permalink to this headline")
 
 FiftyOne provides native support for importing datasets from disk in a
-variety of [common formats](#supported-import-formats), and it can be
+variety of [common formats](#supported-formats), and it can be
 easily extended to import datasets in
 [custom formats](#custom-dataset-importer).
 
@@ -15,7 +15,7 @@ plugin!
 Note
 
 If your data is in a custom format,
-[writing a simple loop](index.html#loading-custom-datasets) is the easiest way
+[writing a simple loop](index.md#loading-custom-datasets) is the easiest way
 to load your data into FiftyOne.
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
@@ -2639,14 +2639,14 @@ customize the import of datasets of this type.\
 You can create a FiftyOne dataset from a directory in the above format as\
 follows:\
 \
-If you performed a [FiftyOneDataset export](../export_datasets.html#fiftyonedataset-export)\
+If you performed a [FiftyOneDataset export](../export_datasets.md#fiftyonedataset-export)\
 using the `rel_dir` parameter to strip a common prefix from the media filepaths\
 in the dataset, then simply include the `rel_dir` parameter when importing back\
 into FiftyOne to prepend the appropriate prefix to each media path:\
 \
 Note\
 \
-Exporting in [FiftyOneDataset format](../export_datasets.html#fiftyonedataset-export) using\
+Exporting in [FiftyOneDataset format](../export_datasets.md#fiftyonedataset-export) using\
 the `export_media=False` and `rel_dir` parameters is a convenient way to\
 transfer datasets between work environments, since this enables you to\
 store the media files wherever you wish in each environment and then simply\
@@ -2744,7 +2744,7 @@ The primary function of the [`Dataset`](../../api/fiftyone.types.html#fiftyone.t
 disk and the [`DatasetExporter`](../../api/fiftyone.utils.data.exporters.html#fiftyone.utils.data.exporters.DatasetExporter "fiftyone.utils.data.exporters.DatasetExporter") that should be used to write instances of the\
 dataset to disk.\
 \
-See [this page](../export_datasets.html#writing-a-custom-dataset-exporter) for more information\
+See [this page](../export_datasets.md#writing-a-custom-dataset-exporter) for more information\
 about defining custom [`DatasetExporter`](../../api/fiftyone.utils.data.exporters.html#fiftyone.utils.data.exporters.DatasetExporter "fiftyone.utils.data.exporters.DatasetExporter") classes.\
 \
 Custom dataset types can be declared by implementing the [`Dataset`](../../api/fiftyone.types.html#fiftyone.types.Dataset "fiftyone.types.Dataset") subclass\

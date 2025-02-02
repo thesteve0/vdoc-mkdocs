@@ -11,7 +11,7 @@ Note
 
 Zoo models may require additional packages such as PyTorch or TensorFlow
 (or specific versions of them) in order to be used. See
-[this section](api.html#model-zoo-requirements) for more information on
+[this section](api.md#model-zoo-requirements) for more information on
 viewing/installing package requirements for models.
 
 If you try to load a zoo model without the proper packages installed, you
@@ -19,7 +19,7 @@ will receive an error message that will explain what you need to install.
 
 Depending on your compute environment, some package requirement failures
 may be erroneous. In such cases, you can
-[suppress error messages](api.html#model-zoo-load).
+[suppress error messages](api.md#model-zoo-load).
 
 ## Built-in models [¶](\#built-in-models "Permalink to this headline")
 
@@ -31,7 +31,7 @@ you can apply to your datasets with a few simple commands.
 Note
 
 Did you know? You can also pass
-[custom models](design.html#model-zoo-custom-models) to methods like
+[custom models](design.md#model-zoo-custom-models) to methods like
 [`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 and [`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings")!
 
@@ -74,7 +74,7 @@ predictions with zoo models for your datasets.
 
 For example, the code sample below shows a self-contained example of loading a
 Faster R-CNN model from the model zoo and adding its predictions to the
-COCO-2017 dataset from the [Dataset Zoo](../dataset_zoo/index.html#dataset-zoo):
+COCO-2017 dataset from the [Dataset Zoo](../dataset_zoo/index.md#dataset-zoo):
 
 ```python
 import fiftyone as fo
@@ -175,8 +175,8 @@ predictions.
 Note
 
 Storing logits for predictions enables you to run Brain methods such as
-[label mistakes](../brain.html#brain-label-mistakes) and
-[sample hardness](../brain.html#brain-sample-hardness) on your datasets!
+[label mistakes](../brain.md#brain-label-mistakes) and
+[sample hardness](../brain.md#brain-sample-hardness) on your datasets!
 
 You can check if a model exposes logits via
 [`has_logits()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.has_logits "fiftyone.core.models.Model.has_logits"):

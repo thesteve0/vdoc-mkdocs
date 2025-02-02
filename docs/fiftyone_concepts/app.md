@@ -16,7 +16,7 @@ behavior of the App!
 
 The FiftyOne App can be used in any environment that you’re working in, from
 a local IPython shell, to a remote machine or cloud instance, to a Jupyter or
-Colab notebook. Check out the [environments guide](../environments/index.md#environments) for best
+Colab notebook. Check out the [environments guide](running_environments.md#environments) for best
 practices when working in each environment.
 
 ## Sessions [¶](\#sessions "Permalink to this headline")
@@ -78,14 +78,14 @@ Note
 When working inside a Docker container, FiftyOne should automatically
 detect and appropriately configure networking. However, if you are unable
 to load the App in your browser, you many need to manually
-[set the App address](../environments/index.md#restricting-app-address) to `0.0.0.0`:
+[set the App address](running_environments.md#restricting-app-address) to `0.0.0.0`:
 
 ```python
 session = fo.launch_app(..., address="0.0.0.0")
 
 ```
 
-See [this page](../environments/index.md#docker) for more information about working with
+See [this page](running_environments.md#docker) for more information about working with
 FiftyOne inside Docker.
 
 Note
@@ -212,7 +212,7 @@ If your data is stored on a remote machine, you can forward a session from
 the remote machine to your local machine and seamlessly browse your remote
 dataset from you web browser.
 
-Check out the [environments page](../environments/index.md#environments) for more information on
+Check out the [environments page](running_environments.md#environments) for more information on
 possible configurations of local/remote/cloud data and App access.
 
 ### Remote machine [¶](\#remote-machine "Permalink to this headline")
@@ -279,7 +279,7 @@ field/attribute names:
 ![app-query-performance](../_images/app-query-performance.gif)
 
 The above GIF shows query performance in action on the train split of the
-[BDD100K dataset](../dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
+[BDD100K dataset](../data/dataset_zoo/datasets.md#bdd100k) with an index on the
 `detections.detections.label` field:
 
 ```python
@@ -877,7 +877,7 @@ available actions and their associated hotkeys.
 
 Note
 
-When working in [Jupyter/Colab notebooks](../environments/index.md#notebooks), you can hold
+When working in [Jupyter/Colab notebooks](running_environments.md/#notebooks), you can hold
 down the `SHIFT` key when zoom-scrolling or using the arrow keys to
 navigate between samples/labels to restrict your inputs to the App and thus
 prevent them from also affecting your browser window.
@@ -917,7 +917,7 @@ types like segmentations are supported!
 
 Note
 
-When working in [Jupyter/Colab notebooks](../environments/index.md#notebooks), you can hold
+When working in [Jupyter/Colab notebooks](running_environments.md/#notebooks), you can hold
 down the `SHIFT` key when zoom-scrolling or using the arrow keys to
 navigate between samples/labels to restrict your inputs to the App and thus
 prevent them from also affecting your browser window.
@@ -1060,7 +1060,7 @@ FiftyOne natively includes the following Panels:
 default when you launch the App
 
 - [Embeddings panel](#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.md#brain-embeddings-visualization)
+[embeddings visualizations](brain.md#visualizing-embeddings)
 
 - [Model Evaluation panel](#app-model-evaluation-panel): interactively
 analyze and visualize your model’s performance
@@ -1371,7 +1371,7 @@ samples_panel = fo.Panel(type="Samples")
 ## Embeddings panel [¶](\#embeddings-panel "Permalink to this headline")
 
 When you load a dataset in the App that contains an
-[embeddings visualization](../brain.md#brain-embeddings-visualization), you can open
+[embeddings visualization](brain.md#visualizing-embeddings), you can open
 the Embeddings panel to visualize and interactively explore a scatterplot of
 the embeddings in the App:
 
@@ -1710,7 +1710,7 @@ of model predictions
 or categorical (e.g., string)
 [primitive fields](using_datasets.md#adding-sample-fields) that you’ve added to your
 dataset. For example, if you computed
-[uniqueness](../brain.md#brain-image-uniqueness) on your dataset, a histogram of
+[uniqueness](brain.md#brain-image-uniqueness) on your dataset, a histogram of
 uniqueness values will be available under this mode.
 
 
@@ -2064,13 +2064,13 @@ Did you know? You can construct clip views programmatically via
 ## Sorting by similarity [¶](\#sorting-by-similarity "Permalink to this headline")
 
 Whenever you select samples, patches, or labels in the App in a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") that
-has been [indexed by similarity](../brain.md#brain-similarity), you can use the
+has been [indexed by similarity](brain.md#brain-similarity), you can use the
 similarity menu in the App to sort or filter your current view based on
 similarity to the chosen image or object.
 
 Note
 
-Refer to the [Brain guide](../brain.md#brain-similarity) for more information
+Refer to the [Brain guide](brain.md#brain-similarity) for more information
 about indexing datasets by image/object similarity for use with this
 feature.
 
@@ -2078,7 +2078,7 @@ feature.
 
 Whenever one or more images are selected in the App, the similarity menu icon
 appears above the grid. If you have indexed the dataset by
-[image similarity](../brain.md#brain-image-similarity), then you will be able to sort
+[image similarity](brain.md#brain-image-similarity), then you will be able to sort
 by similarity to your current selection.
 
 You can use the advanced settings menu to choose between multiple brain keys
@@ -2097,7 +2097,7 @@ cached results and will be faster!
 
 Whenever one or more labels or patches are selected in the App, the similarity
 menu icon appears above the sample grid. If you have indexed the dataset by
-[object similarity](../brain.md#brain-object-similarity), then you will be able to
+[object similarity](brain.md#brain-object-similarity), then you will be able to
 sort by similarity to your current selection.
 
 The typical workflow for object similarity is to first switch to
@@ -2128,7 +2128,7 @@ cached results and will be faster!
 ### Text similarity [¶](\#text-similarity "Permalink to this headline")
 
 If you have indexed your dataset with a model that
-[supports text queries](../brain.md#brain-similarity-text), you can use the text
+[supports text queries](brain.md#brain-similarity-text), you can use the text
 similarity menu in the App to search for images (or object patches) of interest
 via arbitrary text queries!
 
@@ -2141,7 +2141,7 @@ to query by greatest or least similarity (if supported).
 Note
 
 Did you know? You can also perform text queries
-[via the SDK](../brain.md#brain-similarity-text) by passing a prompt directly to
+[via the SDK](brain.md#brain-similarity-text) by passing a prompt directly to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")!
 
 ## Multiple media fields [¶](\#multiple-media-fields "Permalink to this headline")

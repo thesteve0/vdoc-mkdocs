@@ -77,7 +77,7 @@ print(dataset.media_type)
 ```
 
 Note that datasets are homogeneous; they must contain samples of the same media
-type (except for [grouped datasets](groups.html#groups)):
+type (except for [grouped datasets](groups.md#groups)):
 
 ```python
 sample = fo.Sample(filepath="/path/to/video.mp4")
@@ -94,7 +94,7 @@ The following media types are available:
 | `video` | Datasets that contain<br>[videos](#video-datasets) |
 | `3d` | Datasets that contain<br>[3D scenes](#d-datasets) |
 | `point-cloud` | Datasets that contain<br>[point clouds](#point-cloud-datasets) |
-| `group` | Datasets that contain<br>[grouped data slices](groups.html#groups) |
+| `group` | Datasets that contain<br>[grouped data slices](groups.md#groups) |
 
 ### Dataset persistence [¶](\#dataset-persistence "Permalink to this headline")
 
@@ -212,7 +212,7 @@ fo.pprint(dataset.stats(include_media=True))
 
 You can also invoke
 [`stats()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.stats "fiftyone.core.collections.SampleCollection.stats") on a
-[dataset view](using_views.html#using-views) to retrieve stats for a specific subset of
+[dataset view](using_views.md#using-views) to retrieve stats for a specific subset of
 the dataset:
 
 ```python
@@ -276,7 +276,7 @@ All [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset 
 [`app_config`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.app_config "fiftyone.core.dataset.Dataset.app_config") property that
 contains a [`DatasetAppConfig`](../api/fiftyone.core.odm.dataset.html#fiftyone.core.odm.dataset.DatasetAppConfig "fiftyone.core.odm.dataset.DatasetAppConfig") that you can use to store dataset-specific
 settings that customize how the dataset is visualized in the
-[FiftyOne App](app.html#fiftyone-app).
+[FiftyOne App](app.md#fiftyone-app).
 
 ```python
 import fiftyone as fo
@@ -292,7 +292,7 @@ print(dataset.app_config)
 
 #### Multiple media fields [¶](\#multiple-media-fields "Permalink to this headline")
 
-You can declare [multiple media fields](app.html#app-multiple-media-fields) on a
+You can declare [multiple media fields](app.md#app-multiple-media-fields) on a
 dataset and configure which field is used by various components of the App by
 default:
 
@@ -329,7 +329,7 @@ dataset.save()
 
 #### Custom color scheme [¶](\#custom-color-scheme "Permalink to this headline")
 
-You can store a [custom color scheme](app.html#app-color-schemes) on a dataset
+You can store a [custom color scheme](app.md#app-color-schemes) on a dataset
 that should be used by default whenever the dataset is loaded in the App:
 
 ```python
@@ -376,12 +376,12 @@ customization options.
 Note
 
 Did you know? You can also configure color schemes
-[directly in the App](app.html#app-color-schemes)!
+[directly in the App](app.md#app-color-schemes)!
 
 #### Sidebar groups [¶](\#sidebar-groups "Permalink to this headline")
 
 You can configure the organization and default expansion state of the
-[sidebar’s field groups](app.html#app-sidebar-groups):
+[sidebar’s field groups](app.md#app-sidebar-groups):
 
 ```python
 # Get the default sidebar groups for the dataset
@@ -422,7 +422,7 @@ session = fo.launch_app(dataset)
 Note
 
 Did you know? You can also globally disable frame filtering for all video
-datasets via your [App config](config.html#configuring-fiftyone-app).
+datasets via your [App config](config.md#configuring-fiftyone-app).
 
 #### Resetting a dataset’s App config [¶](\#resetting-a-dataset-s-app-config "Permalink to this headline")
 
@@ -455,7 +455,7 @@ session = fo.launch_app(dataset)
 
 Note
 
-Check out [this section](app.html#app-config) for more information about
+Check out [this section](app.md#app-config) for more information about
 customizing the behavior of the App.
 
 ### Storing class lists [¶](\#storing-class-lists "Permalink to this headline")
@@ -820,7 +820,7 @@ print(also_same_sample is sample)
 
 ```
 
-You can use [dataset views](using_views.html#using-views) to perform more sophisticated
+You can use [dataset views](using_views.md#using-views) to perform more sophisticated
 operations on samples like searching, filtering, sorting, and slicing.
 
 Note
@@ -1232,7 +1232,7 @@ print(field.field.document_type)  # DynamicEmbeddedDocument
 Note
 
 Declaring the value type of list fields is required if you want to filter
-by the list’s values [in the App](app.html#app-filtering).
+by the list’s values [in the App](app.md#app-filtering).
 
 ### Editing sample fields [¶](\#editing-sample-fields "Permalink to this headline")
 
@@ -1271,7 +1271,7 @@ order to persist changes to the database when editing samples that are in
 datasets.
 
 A common workflow is to iterate over a dataset
-[or view](using_views.html#editing-view-fields) and edit each sample:
+[or view](using_views.md#editing-view-fields) and edit each sample:
 
 ```python
 for sample in dataset:
@@ -1398,7 +1398,7 @@ save the changes to the database.
 Note
 
 Did you know? You can view field metadata directly in the App by hovering
-over fields or attributes [in the sidebar](app.html#app-fields-sidebar)!
+over fields or attributes [in the sidebar](app.md#app-fields-sidebar)!
 
 ### Read-only fields [¶](\#read-only-fields "Permalink to this headline")
 
@@ -1523,7 +1523,7 @@ session = fo.launch_app(dataset)
 One approach is to directly query the frame-level field ( `frames.detections`
 in this case) in the App’s sidebar. However, when the dataset is large, such
 queries are inefficient, as they cannot unlock
-[query performance](app.html#app-optimizing-query-performance) and thus require
+[query performance](app.md#app-optimizing-query-performance) and thus require
 full collection scans over all frames to retrieve the relevant samples.
 
 A more efficient approach is to first use
@@ -1550,7 +1550,7 @@ As the above examples illustrate, summary fields allow you to encode various
 types of information at the sample-level that you can directly query to find
 samples that contain specific values.
 
-Moreover, summary fields are [indexed](app.html#app-optimizing-query-performance)
+Moreover, summary fields are [indexed](app.md#app-optimizing-query-performance)
 by default and the App can natively leverage these indexes to provide
 performant filtering:
 
@@ -1668,7 +1668,7 @@ print(dataset.distinct("tags"))
 Note
 
 Did you know? You can add, edit, and filter by sample tags
-[directly in the App](app.html#app-tagging).
+[directly in the App](app.md#app-tagging).
 
 The `tags` field can be used like a standard Python list:
 
@@ -1716,8 +1716,8 @@ print(len(validation_view))  # 100
 
 All [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") instances have a `metadata` field, which can optionally be
 populated with a [`Metadata`](../api/fiftyone.core.metadata.html#fiftyone.core.metadata.Metadata "fiftyone.core.metadata.Metadata") instance that stores data type-specific metadata
-about the raw data in the sample. The [FiftyOne App](app.html#fiftyone-app) and
-the [FiftyOne Brain](../brain.html#fiftyone-brain) will use this provided metadata in
+about the raw data in the sample. The [FiftyOne App](app.md#fiftyone-app) and
+the [FiftyOne Brain](../brain.md#fiftyone-brain) will use this provided metadata in
 some workflows when it is available.
 
 ## Dates and datetimes [¶](\#dates-and-datetimes "Permalink to this headline")
@@ -1752,7 +1752,7 @@ print(dataset.head())
 
 Note
 
-Did you know? You can [create dataset views](using_views.html#date-views) with
+Did you know? You can [create dataset views](using_views.md#date-views) with
 date-based queries!
 
 Internally, FiftyOne stores all dates as UTC timestamps, but you can provide
@@ -1781,7 +1781,7 @@ By default, when you access a datetime field of a sample in a dataset, it is
 retrieved as a naive `datetime` instance expressed in UTC format.
 
 However, if you prefer, you can
-[configure FiftyOne](config.html#configuring-timezone) to load datetime fields as
+[configure FiftyOne](config.md#configuring-timezone) to load datetime fields as
 timezone-aware `datetime` instances in a timezone of your choice.
 
 Warning
@@ -1799,8 +1799,8 @@ truth or predicted labels in a sample.
 
 Although such information can be stored in custom sample fields
 (e.g, in a [`DictField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.DictField "fiftyone.core.fields.DictField")), it is recommended that you store label information in
-[`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances so that the [FiftyOne App](app.html#fiftyone-app) and the
-[FiftyOne Brain](../brain.html#fiftyone-brain) can visualize and compute on your
+[`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances so that the [FiftyOne App](app.md#fiftyone-app) and the
+[FiftyOne Brain](../brain.md#fiftyone-brain) can visualize and compute on your
 labels.
 
 Note
@@ -1823,7 +1823,7 @@ label["dict"] = {"key": ["list", "of", "values"]}
 
 You can also [declare dynamic attributes](#dynamic-attributes) on your
 dataset’s schema, which allows you to enforce type constraints, filter by
-these custom attributes [in the App](app.html#app-filtering), and more.
+these custom attributes [in the App](app.md#app-filtering), and more.
 
 FiftyOne provides a dedicated [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") subclass for many common tasks. The
 subsections below describe them.
@@ -1839,7 +1839,7 @@ The optional
 [`confidence`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Regression.confidence "fiftyone.core.labels.Regression.confidence") attribute can
 be used to store a score associated with the model prediction and can be
 visualized in the App or used, for example, when
-[evaluating regressions](evaluation.html#evaluating-regressions).
+[evaluating regressions](evaluation.md#evaluating-regressions).
 
 ```python
 import fiftyone as fo
@@ -1893,7 +1893,7 @@ The optional
 [`logits`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification.logits "fiftyone.core.labels.Classification.logits") attributes may be
 used to store metadata about the model prediction. These additional fields can
 be visualized in the App or used by Brain methods, e.g., when
-[computing label mistakes](../brain.html#brain-label-mistakes).
+[computing label mistakes](../brain.md#brain-label-mistakes).
 
 ```python
 import fiftyone as fo
@@ -2174,7 +2174,7 @@ print(detection)
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Instance segmentations [¶](\#instance-segmentations "Permalink to this headline")
 
@@ -2296,7 +2296,7 @@ print(detection)
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Polylines and polygons [¶](\#polylines-and-polygons "Permalink to this headline")
 
@@ -2427,7 +2427,7 @@ print(polyline)
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Cuboids [¶](\#cuboids "Permalink to this headline")
 
@@ -2508,7 +2508,7 @@ polyline = fo.Polyline.from_cuboid(
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Rotated bounding boxes [¶](\#rotated-bounding-boxes "Permalink to this headline")
 
@@ -2571,7 +2571,7 @@ polyline = fo.Polyline.from_rotated_box(
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Keypoints [¶](\#keypoints "Permalink to this headline")
 
@@ -2886,7 +2886,7 @@ print(sample)
 
 ```
 
-When visualizing heatmaps [in the App](app.html#fiftyone-app), when the App is
+When visualizing heatmaps [in the App](app.md#fiftyone-app), when the App is
 in color-by-field mode, heatmaps are rendered in their field’s color with
 opacity proportional to the magnitude of the heatmap’s values. For example, for
 a heatmap whose [`range`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Heatmap.range "fiftyone.core.labels.Heatmap.range") is
@@ -2895,7 +2895,7 @@ pixels with the value -3 will be rendered with 30% opacity.
 
 When the App is in color-by-value mode, heatmaps are rendered using the
 colormap defined by the `colorscale` of your
-[App config](config.html#configuring-fiftyone-app), which can be:
+[App config](config.md#configuring-fiftyone-app), which can be:
 
 - The string name of any colorscale
 [recognized by Plotly](https://plotly.com/python/colorscales)
@@ -2991,7 +2991,7 @@ Note
 
 Did you know? You customize your App config in various ways, from
 environment variables to directly editing a [`Session`](../api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session") object’s config.
-See [this page](config.html#configuring-fiftyone-app) for more details.
+See [this page](config.md#configuring-fiftyone-app) for more details.
 
 ### Temporal detection [¶](\#temporal-detection "Permalink to this headline")
 
@@ -3152,7 +3152,7 @@ models on your datasets.
 
 ### 3D detections [¶](\#d-detections "Permalink to this headline")
 
-The App’s [3D visualizer](app.html#app-3d-visualizer) supports rendering 3D object
+The App’s [3D visualizer](app.md#app-3d-visualizer) supports rendering 3D object
 detections represented as [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection") instances with their `label`, `location`,
 `dimensions`, and `rotation` attributes populated as shown below:
 
@@ -3184,11 +3184,11 @@ detection = fo.Detection(
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### 3D polylines [¶](\#d-polylines "Permalink to this headline")
 
-The App’s [3D visualizer](app.html#app-3d-visualizer) supports rendering 3D
+The App’s [3D visualizer](app.md#app-3d-visualizer) supports rendering 3D
 polylines represented as [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instances with their `label` and `points3d`
 attributes populated as shown below:
 
@@ -3210,7 +3210,7 @@ polyline = fo.Polyline(label=label, points3d=points3d)
 Note
 
 Did you know? You can view custom attributes in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Geolocation [¶](\#geolocation "Permalink to this headline")
 
@@ -3313,13 +3313,13 @@ print(sample)
 Note
 
 Did you know? You can create
-[location-based views](using_views.html#geolocation-views) that filter your data by
+[location-based views](using_views.md#geolocation-views) that filter your data by
 their location!
 
 All location data is stored in
 [GeoJSON format](https://en.wikipedia.org/wiki/GeoJSON) in the database. You
 can easily retrieve the raw GeoJSON data for a slice of your dataset using the
-[values()](using_aggregations.html#aggregations-values) aggregation:
+[values()](using_aggregations.md#aggregations-values) aggregation:
 
 ```python
 import fiftyone as fo
@@ -3360,7 +3360,7 @@ print(detection.tags)
 Note
 
 Did you know? You can add, edit, and filter by label tags
-[directly in the App](app.html#app-tagging).
+[directly in the App](app.md#app-tagging).
 
 Datasets and views provide helpful methods such as
 [`count_label_tags()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.count_label_tags "fiftyone.core.collections.SampleCollection.count_label_tags"),
@@ -3533,7 +3533,7 @@ print(sample)
 Note
 
 Did you know? You can view attribute values in the
-[App tooltip](app.html#app-sample-view) by hovering over the objects.
+[App tooltip](app.md#app-sample-view) by hovering over the objects.
 
 ### Converting label types [¶](\#converting-label-types "Permalink to this headline")
 
@@ -3654,7 +3654,7 @@ Sample fields:
 ```
 
 Note that, if your goal is to export the labels to disk, FiftyOne can
-[automatically coerce](export_datasets.html#export-label-coercion) the labels into the correct
+[automatically coerce](export_datasets.md#export-label-coercion) the labels into the correct
 format based on the type of the `label_field` and the `dataset_type` that you
 specify for the export without explicitly storing the transformed labels as a
 new field on your dataset:
@@ -3699,7 +3699,7 @@ contain arbitrary heterogeneous values across the dataset’s samples.
 
 However, FiftyOne provides methods that you can use to formally declare custom
 dynamic attributes, which allows you to enforce type constraints, filter by
-these custom attributes [in the App](app.html#app-filtering), and more.
+these custom attributes [in the App](app.md#app-filtering), and more.
 
 You can use
 [`get_dynamic_field_schema()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.get_dynamic_field_schema "fiftyone.core.dataset.Dataset.get_dynamic_field_schema")
@@ -3897,7 +3897,7 @@ You can use
 [`select_fields()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.select_fields "fiftyone.core.collections.SampleCollection.select_fields")
 and
 [`exclude_fields()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude_fields "fiftyone.core.collections.SampleCollection.exclude_fields")
-to create [views](using_views.html#using-views) that select/exclude specific dynamic
+to create [views](using_views.md#using-views) that select/exclude specific dynamic
 attributes from your dataset and its schema:
 
 ```python
@@ -4056,7 +4056,7 @@ class LabelMetadata(fo.DynamicEmbeddedDocument):
 ```
 
 and then `foo.bar` to FiftyOne’s `module_path` config setting (see
-[this page](config.html#configuring-fiftyone) for more ways to register this):
+[this page](config.md#configuring-fiftyone) for more ways to register this):
 
 ```python
 export FIFTYONE_MODULE_PATH=foo.bar
@@ -4173,7 +4173,7 @@ print(sample)
 ### Example image dataset [¶](\#example-image-dataset "Permalink to this headline")
 
 To get started exploring image datasets, try loading the
-[quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) from the zoo:
+[quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4407,13 +4407,13 @@ You must call [`sample.save()`](../api/fiftyone.core.sample.html#fiftyone.core.s
 order to persist changes to the database when editing video samples and/or
 their frames that are in datasets.
 
-[See this page](dataset_creation/index.html#loading-custom-datasets) for more information about
+[See this page](dataset_creation/index.md#loading-custom-datasets) for more information about
 building labeled video samples.
 
 ### Example video dataset [¶](\#example-video-dataset "Permalink to this headline")
 
 To get started exploring video datasets, try loading the
-[quickstart-video dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-video) from the zoo:
+[quickstart-video dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-video) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4610,7 +4610,7 @@ When working with modalities such as LIDAR, intensity data is assumed to be
 encoded in the `r` channel of the `rgb` field of the
 [PCD files](https://pointclouds.org/documentation/tutorials/pcd_file_format.html).
 
-When coloring by intensity [in the App](app.html#app-3d-visualizer), the
+When coloring by intensity [in the App](app.md#app-3d-visualizer), the
 intensity values are automatically scaled to use the full dynamic range of
 the colorscale.
 
@@ -4663,11 +4663,11 @@ scene.write("/path/to/scene.fo3d")
 3D samples may contain any type and number of custom fields, including
 [3D detections](#d-detections) and [3D polylines](#d-polylines),
 which are natively visualizable by the App’s
-[3D visualizer](app.html#app-3d-visualizer).
+[3D visualizer](app.md#app-3d-visualizer).
 
 Because 3D annotations are stored in dedicated fields of datasets rather than
 being embedded in FO3D files, they can be queried and filtered via
-[dataset views](using_views.html#view-filtering) and [in the App](app.html#app-filtering)
+[dataset views](using_views.md#view-filtering) and [in the App](app.md#app-filtering)
 just like other primitive/label fields.
 
 ```python
@@ -4720,7 +4720,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-Note that the method also supports [grouped datasets](groups.html#groups) that
+Note that the method also supports [grouped datasets](groups.md#groups) that
 contain 3D slice(s):
 
 ```python
@@ -4751,7 +4751,7 @@ control which point cloud to project by initializing it with
 The above method populates an [`OrthographicProjectionMetadata`](../api/fiftyone.utils.utils3d.html#fiftyone.utils.utils3d.OrthographicProjectionMetadata "fiftyone.utils.utils3d.OrthographicProjectionMetadata") field on each
 sample that contains the path to its projection image and other necessary
 information to properly
-[visualize it in the App](app.html#app-3d-orthographic-projections).
+[visualize it in the App](app.md#app-3d-orthographic-projections).
 
 Refer to the
 [`compute_orthographic_projection_images()`](../api/fiftyone.utils.utils3d.html#fiftyone.utils.utils3d.compute_orthographic_projection_images "fiftyone.utils.utils3d.compute_orthographic_projection_images")
@@ -4760,7 +4760,7 @@ documentation for available parameters to customize the projections.
 ### Example 3D datasets [¶](\#example-3d-datasets "Permalink to this headline")
 
 To get started exploring 3D datasets, try loading the
-[quickstart-3d dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-3d) from the zoo:
+[quickstart-3d dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo:
 
 ```python
 import fiftyone as fo
@@ -4778,7 +4778,7 @@ session = fo.launch_app(dataset)
 ![quickstart-3d](../_images/quickstart-3d.gif)
 
 Also check out the
-[quickstart-groups dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart-groups), which
+[quickstart-groups dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart-groups), which
 contains a point cloud slice:
 
 ```python
@@ -4846,7 +4846,7 @@ print(sample)
 Point cloud samples may contain any type and number of custom fields, including
 [3D detections](#d-detections) and [3D polylines](#d-polylines),
 which are natively visualizable by the App’s
-[3D visualizer](app.html#app-3d-visualizer).
+[3D visualizer](app.md#app-3d-visualizer).
 
 ## DatasetViews [¶](\#datasetviews "Permalink to this headline")
 
@@ -4869,7 +4869,7 @@ In turn, each [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.samp
 [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in the dataset. For example, a [`SampleView`](../api/fiftyone.core.sample.html#fiftyone.core.sample.SampleView "fiftyone.core.sample.SampleView") may represent the contents
 of a sample with [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") below a specified threshold filtered out.
 
-[Learn more about DatasetViews](using_views.html)
+[Learn more about DatasetViews](using_views.md)
 
 ```python
 import fiftyone as fo
@@ -4960,7 +4960,7 @@ print(dataset2.count("predictions.detections"))  # 5620
 Note that the argument to
 [`merge_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.merge_samples "fiftyone.core.dataset.Dataset.merge_samples") can be a
 [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"), which means that you can perform possibly-complex
-[transformations](using_views.html#using-views) to the source dataset to select the
+[transformations](using_views.md#using-views) to the source dataset to select the
 desired content to merge.
 
 Consider the following variation of the above snippet, which demonstrates a
@@ -5019,7 +5019,7 @@ Did you know? You can use
 [`merge_dir()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.merge_dir "fiftyone.core.dataset.Dataset.merge_dir") to directly
 merge the contents of a dataset on disk into an existing FiftyOne
 dataset without first
-[loading it](dataset_creation/datasets.html#loading-datasets-from-disk) into a temporary dataset and
+[loading it](dataset_creation/datasets.md#loading-datasets-from-disk) into a temporary dataset and
 then using
 [`merge_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.merge_samples "fiftyone.core.dataset.Dataset.merge_samples") to
 perform the merge.
@@ -5049,7 +5049,7 @@ in the source dataset. The source _media files_, however, are not copied.
 Note
 
 Did you know? You can also
-[clone specific subsets](using_views.html#saving-and-cloning-views) of your datasets.
+[clone specific subsets](using_views.md#saving-and-cloning-views) of your datasets.
 
 ## Batch updates [¶](\#batch-updates "Permalink to this headline")
 
@@ -5168,10 +5168,10 @@ for sample in dataset.select_fields().iter_samples(autosave=True):
 Note
 
 As the above snippet shows, you should also optimize your iteration by
-[selecting only](using_views.html#efficient-iteration-views) the required fields.
+[selecting only](using_views.md#efficient-iteration-views) the required fields.
 
 You can configure the default batching strategy that is used via your
-[FiftyOne config](config.html#configuring-fiftyone), or you can configure the
+[FiftyOne config](config.md#configuring-fiftyone), or you can configure the
 batching strategy on a per-method call basis by passing the optional
 `batch_size` and `batching_strategy` arguments to
 [`iter_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.iter_samples "fiftyone.core.dataset.Dataset.iter_samples").

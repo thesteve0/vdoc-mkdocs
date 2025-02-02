@@ -36,22 +36,22 @@ components.
 ### Panels [¶](\#panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
+[App spaces](../fiftyone_concepts/app.md#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
 FiftyOne natively includes the following Panels:
 
-- [Samples panel](../fiftyone_concepts/app.html#app-samples-panel): the media grid that loads by
+- [Samples panel](../fiftyone_concepts/app.md#app-samples-panel): the media grid that loads by
 default when you launch the App
 
-- [Histograms panel](../fiftyone_concepts/app.html#app-histograms-panel): a dashboard of histograms
+- [Histograms panel](../fiftyone_concepts/app.md#app-histograms-panel): a dashboard of histograms
 for the fields of your dataset
 
-- [Embeddings panel](../fiftyone_concepts/app.html#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.html#brain-embeddings-visualization)
+- [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel): a canvas for working with
+[embeddings visualizations](../brain.md#brain-embeddings-visualization)
 
-- [Map panel](../fiftyone_concepts/app.html#app-map-panel): visualizes the geolocation data of
+- [Map panel](../fiftyone_concepts/app.md#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
 
 
@@ -126,7 +126,7 @@ repository and following the conventions there to build your JS plugin.
 ## Anatomy of a plugin [¶](\#anatomy-of-a-plugin "Permalink to this headline")
 
 FiftyOne recognizes plugins by searching for `fiftyone.yml` or `fiftyone.yaml`
-files within your [plugins directory](using_plugins.html#plugins-directory).
+files within your [plugins directory](using_plugins.md#plugins-directory).
 
 Below is an example of a plugin directory with a typical Python plugin and JS
 plugin:
@@ -150,7 +150,7 @@ Note
 If the source code for a plugin already exists on disk, you can make it
 into a plugin using
 [`create_plugin()`](../api/fiftyone.plugins.core.html#fiftyone.plugins.core.create_plugin "fiftyone.plugins.core.create_plugin") or the
-[fiftyone plugins create](../cli/index.html#cli-fiftyone-plugins-create) CLI command.
+[fiftyone plugins create](../cli/index.md#cli-fiftyone-plugins-create) CLI command.
 
 This will copy the source code to the plugins directory and create a
 `fiftyone.yml` file for you if one does not already exist. Alternatively,
@@ -163,7 +163,7 @@ and refresh your browser to see new plugins.
 
 All plugins must contain a `fiftyone.yml` or `fiftyone.yaml` file, which is
 used to define the plugin’s metadata, declare any operators and panels that it
-exposes, and declare any [secrets](using_plugins.html#plugins-secrets) that it may require.
+exposes, and declare any [secrets](using_plugins.md#plugins-secrets) that it may require.
 The following fields are available:
 
 | Field | Required? | Description |
@@ -253,8 +253,8 @@ repository to add it to the
 [Community Plugins list](https://github.com/voxel51/fiftyone-plugins#community-plugins)!
 
 Any users with access to the plugin’s hosted location can easily
-[download it](using_plugins.html#plugins-download) via the
-[fiftyone plugins download](../cli/index.html#cli-fiftyone-plugins-download) CLI command:
+[download it](using_plugins.md#plugins-download) via the
+[fiftyone plugins download](../cli/index.md#cli-fiftyone-plugins-download) CLI command:
 
 ```python
 # Download plugin(s) from a GitHub repository
@@ -444,14 +444,14 @@ will be available to the operator’s `execute()` method via `ctx.hooks`.
 Note
 
 Marking the operator as `unlisted` omits it from the
-[operator browser](using_plugins.html#using-operators), which is useful when the
+[operator browser](using_plugins.md#using-operators), which is useful when the
 operator is intended only for internal use by other plugin components.
 
 ## Developing operators [¶](\#developing-operators "Permalink to this headline")
 
 Operators allow you to define custom operations that accept parameters via
 input properties, execute some actions based on them, and optionally return
-outputs. They can be [executed](using_plugins.html#using-operators) by users in the App or
+outputs. They can be [executed](using_plugins.md#using-operators) by users in the App or
 triggered internally by other operators.
 
 Operators can be defined in either Python or JS, and FiftyOne comes with a
@@ -750,7 +750,7 @@ values
 
 - `ctx.view` \- the current [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") instance
 
-- `ctx.spaces` \- the current [Spaces layout](../fiftyone_concepts/app.html#app-spaces) in the App
+- `ctx.spaces` \- the current [Spaces layout](../fiftyone_concepts/app.md#app-spaces) in the App
 
 - `ctx.current_sample` \- the ID of the active sample in the App modal, if any
 
@@ -915,18 +915,18 @@ However, many interesting operations like model inference, embeddings
 computation, evaluation, and exports are computationally intensive and/or not
 suitable for immediate execution.
 
-In such cases, [delegated operations](using_plugins.html#delegated-operations) come to the
+In such cases, [delegated operations](using_plugins.md#delegated-operations) come to the
 rescue by allowing users to schedule potentially long-running tasks that are
 executed in the background while you continue to use the App.
 
 Note
 
-[FiftyOne Teams](../teams/teams_plugins.html#teams-delegated-operations) deployments come out of
+[FiftyOne Teams](../teams/teams_plugins.md#teams-delegated-operations) deployments come out of
 the box with a connected compute cluster for executing delegated operations
 at scale.
 
 In FiftyOne Open Source, you can use delegated operations at small scale
-by [running them locally](using_plugins.html#delegated-orchestrator-open-source).
+by [running them locally](using_plugins.md#delegated-orchestrator-open-source).
 
 There are a variety of options available for configuring whether a given
 operation should be delegated or executed immediately.
@@ -1051,9 +1051,9 @@ def execute(self, ctx):
 
 Note
 
-[FiftyOne Teams](../teams/index.html#fiftyone-teams) users can view the current progress
+[FiftyOne Teams](../teams/index.md#fiftyone-teams) users can view the current progress
 of their delegated operations from the
-[Runs page](../teams/teams_plugins.html#teams-managing-delegated-operations) of the Teams App!
+[Runs page](../teams/teams_plugins.md#teams-managing-delegated-operations) of the Teams App!
 
 For your convenience, all builtin methods of the FiftyOne SDK that support
 rendering progress bars provide an optional `progress` method that you can use
@@ -1367,7 +1367,7 @@ All properties in output forms are implicitly rendered as read-only.
 ### Operator placement [¶](\#operator-placement "Permalink to this headline")
 
 By default, operators are only accessible from the
-[operator browser](using_plugins.html#using-operators). However, you can place a custom
+[operator browser](using_plugins.md#using-operators). However, you can place a custom
 button, icon, menu item, etc. in the App that will trigger the operator when
 clicked in any location supported by the
 [`types.Places`](../api/fiftyone.operators.types.html#fiftyone.operators.types.Places "fiftyone.operators.types.Places") enum.
@@ -1394,7 +1394,7 @@ method as demonstrated below:
 ## Developing panels [¶](\#developing-panels "Permalink to this headline")
 
 Panels are miniature full-featured data applications that you can open in
-[App spaces](../fiftyone_concepts/app.html#app-spaces) and interactively manipulate to explore your
+[App spaces](../fiftyone_concepts/app.md#app-spaces) and interactively manipulate to explore your
 dataset and update/respond to updates from other spaces that are currently open
 in the App.
 
@@ -1808,11 +1808,11 @@ def config(self):
 The `surfaces` key defines the panel’s scope:
 
 - Grid panels can be accessed from the `+` button in the App’s
-[grid view](../fiftyone_concepts/app.html#app-fields-sidebar), which allows you to build macro
+[grid view](../fiftyone_concepts/app.md#app-fields-sidebar), which allows you to build macro
 experiences that work with entire datasets or views
 
 - Modal panels can be accessed from the `+` button in the App’s
-[modal view](../fiftyone_concepts/app.html#app-sample-view), which allows you to build interactions
+[modal view](../fiftyone_concepts/app.md#app-sample-view), which allows you to build interactions
 that focus on individual samples and scenarios
 
 
@@ -2117,7 +2117,7 @@ creating and using global stores whose keys do not utilize TTLs.
 
 ### Saved workspaces [¶](\#saved-workspaces "Permalink to this headline")
 
-[Saved workspaces](../fiftyone_concepts/app.html#app-workspaces) may contain any number of Python
+[Saved workspaces](../fiftyone_concepts/app.md#app-workspaces) may contain any number of Python
 panels!
 
 When a workspace is saved, the current [panel state](#panel-state) of any
@@ -2769,7 +2769,7 @@ function CustomOperatorView(props) {
 
     return (
         <div>
-            <label htmlFor={id}>{view.label}</label>
+            <label.mdFor={id}>{view.label}</label>
             <input
                 value={value}
                 id={id}
@@ -2930,15 +2930,15 @@ function MyPanel() {
 Plugins may support two styles of configuration settings:
 
 - System-wide plugin settings under the `plugins` key of your
-[App config](../fiftyone_concepts/config.html#configuring-fiftyone-app)
+[App config](../fiftyone_concepts/config.md#configuring-fiftyone-app)
 
 - Dataset-specific plugin settings for any subset of the above values on a
-[dataset’s App config](../fiftyone_concepts/using_datasets.html#dataset-app-config).
+[dataset’s App config](../fiftyone_concepts/using_datasets.md#dataset-app-config).
 
 
 Plugin settings are used, for example, to allow the user to configure the
 default camera position of FiftyOne’s builtin
-[3D visualizer](../fiftyone_concepts/app.html#app-3d-visualizer-config).
+[3D visualizer](../fiftyone_concepts/app.md#app-3d-visualizer-config).
 
 Here’s an example of a system-wide plugin setting:
 
@@ -2975,7 +2975,7 @@ const { mysetting } = fop.useSettings("my-plugin");
 
 Note
 
-See the [this page](../fiftyone_concepts/config.html#configuring-plugins) page for more information
+See the [this page](../fiftyone_concepts/config.md#configuring-plugins) page for more information
 about configuring plugins.
 
 ### Querying FiftyOne [¶](\#querying-fiftyone "Permalink to this headline")
@@ -3064,7 +3064,7 @@ fop.registerComponent({
 ### JS runtime [¶](\#js-runtime "Permalink to this headline")
 
 In JS, plugins are loaded from your
-[plugins directory](using_plugins.html#plugins-directory) into the browser. The FiftyOne App
+[plugins directory](using_plugins.md#plugins-directory) into the browser. The FiftyOne App
 server finds these plugins by looking for `package.json` files that include
 `fiftyone` as a property. This `fiftyone` property describes where the plugin
 executable (dist) is.
@@ -3096,7 +3096,7 @@ When an operation is delegated, the following happens:
 1. The operation’s [execution context](#operator-execution-context) is
 serialized and stored in the database
 
-2. The [connected orchestrator](using_plugins.html#delegated-orchestrator) picks up the
+2. The [connected orchestrator](using_plugins.md#delegated-orchestrator) picks up the
 task and executes it when resources are available
 
 
@@ -3105,11 +3105,11 @@ task and executes it when resources are available
 ### Storing custom runs [¶](\#storing-custom-runs "Permalink to this headline")
 
 When users execute builtin methods like
-[annotation](../fiftyone_concepts/annotation.html#fiftyone-annotation),
-[evaluation](../fiftyone_concepts/evaluation.html#evaluating-models), and
-[brain methods](../brain.html#fiftyone-brain) on their datasets, certain configuration
+[annotation](../fiftyone_concepts/annotation.md#fiftyone-annotation),
+[evaluation](../fiftyone_concepts/evaluation.md#evaluating-models), and
+[brain methods](../brain.md#fiftyone-brain) on their datasets, certain configuration
 and results information is stored on the dataset that can be accessed later;
-for example, see [managing brain runs](../brain.html#brain-managing-runs).
+for example, see [managing brain runs](../brain.md#brain-managing-runs).
 
 FiftyOne also provides the ability to store _custom runs_ on datasets, which
 can be used by plugin developers to persist arbitrary application-specific

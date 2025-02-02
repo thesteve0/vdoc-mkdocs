@@ -111,7 +111,7 @@ session = fo.launch_app(dataset)
 Alternatively, you can manually run inference with the `transformers` model and
 then use the
 [`to_classification()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_classification "fiftyone.utils.transformers.to_classification")
-utility to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#classification):
+utility to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.md#classification):
 
 ```python
 from PIL import Image
@@ -137,7 +137,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` classification model from the zoo, specify
 `"classification-transformer-torch"` as the first argument, and pass in the
@@ -213,7 +213,7 @@ session = fo.launch_app(dataset)
 Alternatively, you can manually run inference with the `transformers` model and
 then use the
 [`to_detections()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_detections "fiftyone.utils.transformers.to_detections") utility to
-convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#object-detection):
+convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.md#object-detection):
 
 ```python
 from PIL import Image
@@ -248,7 +248,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` detection model from the zoo, specify
 `"detection-transformer-torch"` as the first argument, and pass in the model’s
@@ -313,7 +313,7 @@ session = fo.launch_app(dataset)
 Alternatively, you can manually run inference with the `transformers` model and
 then use the
 [`to_segmentation()`](../api/fiftyone.utils.transformers.html#fiftyone.utils.transformers.to_segmentation "fiftyone.utils.transformers.to_segmentation") utility
-to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.html#semantic-segmentation):
+to convert the predictions to [FiftyOne format](../fiftyone_concepts/using_datasets.md#semantic-segmentation):
 
 ```python
 from PIL import Image
@@ -341,7 +341,7 @@ for sample in dataset.iter_samples(progress=True):
 ```
 
 Finally, you can load `transformers` models directly from the
-[FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+[FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` semantic segmentation model from the zoo, specify
 `"segmentation-transformer-torch"` as the first argument, and pass in the
@@ -394,7 +394,7 @@ session = fo.launch_app(dataset)
 ```
 
 Alternatively, you can load `transformers` depth estimation models directly from
-the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+the [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` depth estimation model from the zoo, specify
 `"depth-estimation-transformer-torch"` as the first argument, and pass in the
@@ -417,7 +417,7 @@ session = fo.launch_app(dataset)
 #### Zero-shot classification [¶](\#zero-shot-classification "Permalink to this headline")
 
 Zero-shot image classification models from `transformers` can be loaded
-directly from the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+directly from the [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` zero-shot classification model from the zoo, specify
 `"zero-shot-classification-transformer-torch"` as the first argument, and pass
@@ -502,7 +502,7 @@ recommended that you specify the task type when converting the model.
 #### Zero-shot object detection [¶](\#zero-shot-object-detection "Permalink to this headline")
 
 Zero-shot object detection models from `transformers` can be loaded directly
-from the [FiftyOne Model Zoo](../models/model_zoo/index.html#model-zoo)!
+from the [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo)!
 
 To load a `transformers` zero-shot object detection model from the zoo, specify
 `"zero-shot-detection-transformer-torch"` as the first argument, and pass
@@ -619,7 +619,7 @@ dataset.set_values("det_predictions", predictions)
 
 Note
 
-See [this section](../fiftyone_concepts/using_datasets.html#batch-updates) for more information about
+See [this section](../fiftyone_concepts/using_datasets.md#batch-updates) for more information about
 performing batch updates to your FiftyOne datasets.
 
 ### Embeddings [¶](\#embeddings "Permalink to this headline")
@@ -799,7 +799,7 @@ dataset.compute_patch_embeddings(
 ### Brain methods [¶](\#brain-methods "Permalink to this headline")
 
 Because `transformers` models can be used to compute embeddings, they can be
-passed to [Brain methods](../brain.html#fiftyone-brain) like
+passed to [Brain methods](../brain.md#fiftyone-brain) like
 `compute_similarity()` and
 `compute_visualization()`:
 
@@ -940,8 +940,8 @@ Hugging Face Hub, providing you with incredible flexibility in the process.
 
 The basic recipe for pushing a FiftyOne dataset to the Hub is just two lines of
 code. As a starting point, let’s use the example
-[Quickstart dataset](../dataset_zoo/datasets.html#dataset-zoo-quickstart) dataset from the
-[FiftyOne Dataset Zoo](../dataset_zoo/index.html#dataset-zoo):
+[Quickstart dataset](../dataset_zoo/datasets.md#dataset-zoo-quickstart) dataset from the
+[FiftyOne Dataset Zoo](../dataset_zoo/index.md#dataset-zoo):
 
 ```python
 import fiftyone as fo
@@ -1057,7 +1057,7 @@ push_to_hub(dataset, "my-large-dataset", chunk_size=100)
 Note
 
 The `chunk_size` argument is currently only supported when exporting in
-[FiftyOneDataset format](../fiftyone_concepts/export_datasets.html#fiftyonedataset-export) (the default).
+[FiftyOneDataset format](../fiftyone_concepts/export_datasets.md#fiftyonedataset-export) (the default).
 
 #### Advanced usage [¶](\#advanced-usage "Permalink to this headline")
 
@@ -1131,10 +1131,10 @@ is loaded from the Hub, this description will be accessible via the dataset’s
 [`description`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.description "fiftyone.core.dataset.Dataset.description") property.
 
 Additionally, you can specify the “format” of the uploaded dataset. By default,
-the format is the standard [FiftyOneDataset](../fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) format,
+the format is the standard [FiftyOneDataset](../fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) format,
 but you can also specify the data is uploaded in any of these
-[common formats](../fiftyone_concepts/dataset_creation/datasets.html#supported-import-formats). For example, to push the
-quickstart dataset in [COCO](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) format, with a
+[common formats](../fiftyone_concepts/dataset_creation/datasets.md#supported-import-formats). For example, to push the
+quickstart dataset in [COCO](../fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) format, with a
 Creative Commons Attribution 4.0 license, you can do the following:
 
 ```python
@@ -1189,7 +1189,7 @@ push_to_hub(
 To load a dataset from the Hugging Face Hub, you can use the
 [`load_from_hub()`](../api/fiftyone.utils.huggingface.html#fiftyone.utils.huggingface.load_from_hub "fiftyone.utils.huggingface.load_from_hub") function.
 This function supports loading datasets in any of the
-[common formats](../fiftyone_concepts/dataset_creation/datasets.html#supported-import-formats) supported by FiftyOne, as well
+[common formats](../fiftyone_concepts/dataset_creation/datasets.md#supported-import-formats) supported by FiftyOne, as well
 as image-based datasets stored via [Parquet](https://parquet.apache.org/) files,
 as is common with datasets from the
 [datasets](https://huggingface.co/docs/datasets/en/index) library which have
@@ -1315,9 +1315,9 @@ Let’s look at these categories in more detail:
 **Format specification**:
 
 - **format** _(str)_: The format of the dataset. This can be any of the
-[common formats](../fiftyone_concepts/dataset_creation/datasets.html#supported-import-formats) supported by FiftyOne — just
+[common formats](../fiftyone_concepts/dataset_creation/datasets.md#supported-import-formats) supported by FiftyOne — just
 pass the name of the format as a string. For example, to load a dataset in the
-[COCO](../fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) format, you can pass
+[COCO](../fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) format, you can pass
 `format="COCODetectionDataset"`. To specify that the dataset is stored in
 Parquet files, you can pass `format="ParquetFilesDataset"` (or simply
 `format="parquet"` for short). This is the only required field.
@@ -1384,14 +1384,14 @@ for each sample in the dataset, if such a field exists. If a `thumbnail_path`
 is specified, this media file will be shown in the sample grid in the FiftyOne
 App. This can be useful for quickly visualizing the dataset when the primary
 media field contains large (e.g., high-resolution) images. For more information
-on thumbnail images, see [this section](../fiftyone_concepts/app.html#app-multiple-media-fields).
+on thumbnail images, see [this section](../fiftyone_concepts/app.md#app-multiple-media-fields).
 
 - **additional\_media\_fields** _(dict)_: If each sample has multiple associated media
 files that you may want to visualize in the FiftyOne App, you can specify
 these non-default media fields in the `additional_media_fields` dictionary,
 where the keys are the column names in the Hugging Face dataset and the values
 are the names of the fields in the FiftyOne [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") that will store the
-paths. Note that this is _not_ the same as [grouped datasets](../fiftyone_concepts/groups.html#groups).
+paths. Note that this is _not_ the same as [grouped datasets](../fiftyone_concepts/groups.md#groups).
 
 
 **Label field specification**:
@@ -1455,7 +1455,7 @@ Datasets Server.
 
 - **num\_workers** _(int)_: The number of worker to use when downloading
 media files. If not specified, the number of workers will be resolved by
-looking at your [FiftyOne Config](../fiftyone_concepts/config.html#configuring-fiftyone).
+looking at your [FiftyOne Config](../fiftyone_concepts/config.md#configuring-fiftyone).
 
 - **splits** _(str or list)_: The split or splits of the Hugging Face dataset
 that you want to download. This overrides the `splits` field in the config.
@@ -1730,7 +1730,7 @@ session = fo.launch_app(dataset)
 Note
 
 Once you have the dataset loaded into FiftyOne, you may want to set the
-dataset’s [mask targets](storing-mask-targets) to specify the names of
+dataset’s mask targets to specify the names of
 the classes represented in the segmentation masks.
 
 **Unlabelled Image Datasets**

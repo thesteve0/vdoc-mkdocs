@@ -8,8 +8,8 @@ The focused getting starteds are intended to for those with basic familiarty wit
 
 For the bare bones getting started:
 
-1. [Install](install.md)
-2. [Set up](virtualenv.md) a virtual environment
+1. [Install](basic/install.md)
+2. [Set up](basic/virtualenv.md) a virtual environment
 3. load data
 4. get a datasummary
 5. look at a sample
