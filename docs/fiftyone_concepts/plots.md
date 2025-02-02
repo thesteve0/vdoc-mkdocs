@@ -123,7 +123,7 @@ to [this section](#matplotlib-in-notebooks) for setup instructions.
 
 ## Visualizing embeddings [¶](\#visualizing-embeddings "Permalink to this headline")
 
-The [FiftyOne Brain](../brain.md#fiftyone-brain) provides a powerful
+The [FiftyOne Brain](brain.md#fiftyone-brain) provides a powerful
 `compute_visualization()` method
 that can be used to generate low-dimensional representations of the
 samples/object patches in a dataset that can be visualized using interactive

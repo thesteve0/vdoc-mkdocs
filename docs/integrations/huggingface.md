@@ -799,7 +799,7 @@ dataset.compute_patch_embeddings(
 ### Brain methods [¶](\#brain-methods "Permalink to this headline")
 
 Because `transformers` models can be used to compute embeddings, they can be
-passed to [Brain methods](../fiftyone-concepts/brain.md#fiftyone-brain) like
+passed to [Brain methods](../fiftyone_concepts/brain.md#fiftyone-brain) like
 `compute_similarity()` and
 `compute_visualization()`:
 

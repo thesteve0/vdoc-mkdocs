@@ -158,10 +158,10 @@ visually and interactively evaluating models in the FiftyOne App
 App, which automatically nudges you to create the necessary indexes to
 greatly optimize queries on large datasets
 
-- Added a [leaky splits method](brain.md#brain-leaky-splits) for automatically
+- Added a [leaky splits method](fiftyone_concepts/brain.md#brain-leaky-splits) for automatically
 detecting near-duplicate samples in different splits of your datasets
 
-- Added a [near duplicates method](brain.md#brain-near-duplicates) that scans
+- Added a [near duplicates method](fiftyone_concepts/brain.md#brain-near-duplicates) that scans
 your datasets and detects potential duplicate samples
 
 
@@ -207,17 +207,17 @@ operators now support clearing fields of views, in addition to full datasets
 [#5122](https://github.com/voxel51/fiftyone/pull/5122)
 
 - Fixed a bug that prevented users with `pydantic` installed from loading the
-[quickstart-3d dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo
+[quickstart-3d dataset](data/dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) from the zoo
 [#4994](https://github.com/voxel51/fiftyone/pull/4994)
 
 - Added optional `email` parameter to the
-[CVAT integration](integrations/cvat.html#cvat-integration) [#5218](https://github.com/voxel51/fiftyone/pull/5218)
+[CVAT integration](integrations/cvat.md#cvat-integration) [#5218](https://github.com/voxel51/fiftyone/pull/5218)
 
 
 Brain
 
 - Added support for passing existing
-[similarity indexes](brain.md#brain-similarity) to
+[similarity indexes](fiftyone_concepts/brain.md#brain-similarity) to
 `compute_visualization()`,
 `compute_uniqueness()`, and
 `compute_representativeness()` [#201](https://github.com/voxel51/fiftyone-brain/pull/201),
@@ -266,10 +266,10 @@ targets
 
 - Added an [allow\_legacy\_orchestrators](fiftyone_concepts/config.md#configuring-fiftyone) config flag
 to enable running delegated operations
-[locally](plugins/using_plugins.html#delegated-orchestrator-open-source) [#5176](https://github.com/voxel51/fiftyone/pull/5176)
+[locally](plugins/using_plugins.md#delegated-orchestrator-open-source) [#5176](https://github.com/voxel51/fiftyone/pull/5176)
 
 - Fixed a bug when running delegated operations
-[programmatically](plugins/using_plugins.html#direct-operator-execution) [#5180](https://github.com/voxel51/fiftyone/pull/5180)
+[programmatically](plugins/using_plugins.md#direct-operator-execution) [#5180](https://github.com/voxel51/fiftyone/pull/5180)
 
 - Fixed a bug when running delegated operations with output schemas on
 MongoDB <v5
@@ -289,10 +289,10 @@ _Released November 8, 2024_
 Zoo
 
 - Added [SAM 2.1](models/model_zoo/models.md#model-zoo-segment-anything-2-1-hiera-base-plus-image-torch)
-to the [Model Zoo](models/model_zoo/index.html#model-zoo) [#4979](https://github.com/voxel51/fiftyone/pull/4979)
+to the [Model Zoo](models/model_zoo/index.md#model-zoo) [#4979](https://github.com/voxel51/fiftyone/pull/4979)
 
 - Added [YOLO11](integrations/ultralytics.md#ultralytics-instance-segmentation) to the
-[Model Zoo](models/model_zoo/index.html#model-zoo) [#4899](https://github.com/voxel51/fiftyone/pull/4899)
+[Model Zoo](models/model_zoo/index.md#model-zoo) [#4899](https://github.com/voxel51/fiftyone/pull/4899)
 
 - Added generic model architecture and backbone tags to all relevant models
 [in the zoo](models/model_zoo/models.md#model-zoo-models) for easier navigation
@@ -376,7 +376,7 @@ Core
 [#4884](https://github.com/voxel51/fiftyone/pull/4884)
 
 - Fixed a bug when passing the `classes` argument to load specific classes in
-[COCO format](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) [#4884](https://github.com/voxel51/fiftyone/pull/4884)
+[COCO format](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) [#4884](https://github.com/voxel51/fiftyone/pull/4884)
 
 
 ## FiftyOne Teams 2.1.0 [¶](\#fiftyone-teams-2-1-0 "Permalink to this headline")
@@ -415,7 +415,7 @@ use panels in the App’s sample modal
 [#4597](https://github.com/voxel51/fiftyone/pull/4597)
 
 - Added support for loading
-[remotely-sourced zoo datasets](dataset_zoo/remote.md#dataset-zoo-remote) whose
+[remotely-sourced zoo datasets](data/dataset_zoo/remote.md#dataset-zoo-remote) whose
 download/preparation instructions are stored in GitHub or public URLs
 [#4752](https://github.com/voxel51/fiftyone/pull/4752)
 
@@ -490,7 +490,7 @@ instance segmentations
 the [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") class
 [#4832](https://github.com/voxel51/fiftyone/pull/4832)
 
-- Deprecated [Python 3.8 support](deprecation.md#deprecation-python-3-8)
+- Deprecated [Python 3.8 support](faq/deprecation.md#deprecation-python-3-8)
 
 
 Plugins
@@ -577,7 +577,7 @@ when the grid is reset
 SDK
 
 - Added support for loading lists of TXT files in
-[YOLOv5 format](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) [#4742](https://github.com/voxel51/fiftyone/pull/4742)
+[YOLOv5 format](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) [#4742](https://github.com/voxel51/fiftyone/pull/4742)
 
 - Fixed a bug with the `match_expr` argument of
 [`group_by()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.group_by "fiftyone.core.collections.SampleCollection.group_by") [#4754](https://github.com/voxel51/fiftyone/pull/4754)
@@ -695,7 +695,7 @@ of interest about the current dataset (and beyond)
 - Added an [Elasticsearch integration](integrations/elasticsearch.md#elasticsearch-integration) for
 native text and image searches on FiftyOne datasets!
 
-- Added an [image representativeness](brain.md#brain-image-representativeness)
+- Added an [image representativeness](fiftyone_concepts/brain.md#brain-image-representativeness)
 method to the Brain that can be used to find the most common/uncommon types
 of images in your datasets
 
@@ -740,12 +740,12 @@ scenes in the modal
 
 Annotation
 
-- Added support for annotating [frame views](fiftyone_concepts/using_views.html#frame-views) [#4477](https://github.com/voxel51/fiftyone/pull/4477)
+- Added support for annotating [frame views](fiftyone_concepts/using_views.md#frame-views) [#4477](https://github.com/voxel51/fiftyone/pull/4477)
 
-- Added support for annotating [clip views](fiftyone_concepts/using_views.html#clip-views) [#4511](https://github.com/voxel51/fiftyone/pull/4511)
+- Added support for annotating [clip views](fiftyone_concepts/using_views.md#clip-views) [#4511](https://github.com/voxel51/fiftyone/pull/4511)
 
 - Added support for preserving existing COCO IDs when exporting in
-[COCO format](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) [#4530](https://github.com/voxel51/fiftyone/pull/4530)
+[COCO format](fiftyone_concepts/export_datasets.md#cocodetectiondataset-export) [#4530](https://github.com/voxel51/fiftyone/pull/4530)
 
 
 Core
@@ -766,14 +766,14 @@ views (patches, frames, and clips)
 [#4533](https://github.com/voxel51/fiftyone/pull/4533)
 
 - Removed Python 3.7 support and marked Python 3.8 as
-[deprecated](deprecation.html#deprecation-notices) [#4538](https://github.com/voxel51/fiftyone/pull/4538)
+[deprecated](faq/deprecation.md#deprecation-notices) [#4538](https://github.com/voxel51/fiftyone/pull/4538)
 
 - Fixed a bug that could cause side effects when creating clip views defined
 by expressions
 [#4492](https://github.com/voxel51/fiftyone/pull/4492)
 
 - Fixed a concatenation bug when downloading videos from
-[CVAT](integrations/cvat.html#cvat-integration) [#4674](https://github.com/voxel51/fiftyone/pull/4674)
+[CVAT](integrations/cvat.md#cvat-integration) [#4674](https://github.com/voxel51/fiftyone/pull/4674)
 
 
 Plugins
@@ -828,7 +828,7 @@ zoo
 [#4587](https://github.com/voxel51/fiftyone/pull/4587)
 
 - Extended support for group datasets, masks, heatmaps, and thumbnails when
-uploading FiftyOne datasets to [Hugging Face Hub](integrations/huggingface.html#huggingface-hub) [#4566](https://github.com/voxel51/fiftyone/pull/4566)
+uploading FiftyOne datasets to [Hugging Face Hub](integrations/huggingface.md#huggingface-hub) [#4566](https://github.com/voxel51/fiftyone/pull/4566)
 
 - Allow `ragged_batches` to be configured when using Torch models with custom
 transforms
@@ -922,7 +922,7 @@ What’s New
 - Added support for [3D meshes and 3D geometries](fiftyone_concepts/using_datasets.md#d-datasets)!
 [#3985](https://github.com/voxel51/fiftyone/pull/3985)
 
-- Added a [quickstart-3d dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) to the zoo!
+- Added a [quickstart-3d dataset](data/dataset_zoo/datasets.md#dataset-zoo-quickstart-3d) to the zoo!
 [#4406](https://github.com/voxel51/fiftyone/pull/4406)
 
 - Added support for [saving custom workspaces](fiftyone_concepts/app.md#app-workspaces)!
@@ -946,7 +946,7 @@ as an option for zero shot object detection
 App
 
 - Added a `media_fallback` option to the
-[dataset App config](fiftyone_concepts/using_datasets.html#dataset-app-config-media-fields) [#4280](https://github.com/voxel51/fiftyone/pull/4280)
+[dataset App config](fiftyone_concepts/using_datasets.md#dataset-app-config-media-fields) [#4280](https://github.com/voxel51/fiftyone/pull/4280)
 
 - [`launch_app()`](api/fiftyone.core.session.html#fiftyone.core.session.launch_app "fiftyone.core.session.launch_app") now respects the
 current [`group_slice`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.group_slice "fiftyone.core.dataset.Dataset.group_slice")
@@ -1016,7 +1016,7 @@ method for setting the current spaces layout from operators
 [#4324](https://github.com/voxel51/fiftyone/pull/4324)
 
 - Fixed a bug where recently used operators may not appear first in the
-[Operator browser](plugins/using_plugins.html#using-operators) [#4287](https://github.com/voxel51/fiftyone/pull/4287)
+[Operator browser](plugins/using_plugins.md#using-operators) [#4287](https://github.com/voxel51/fiftyone/pull/4287)
 
 - Fixed logging syntax in the builtin
 [`set_progress()`](api/fiftyone.operators.operations.html#fiftyone.operators.operations.Operations.set_progress "fiftyone.operators.operations.Operations.set_progress")
@@ -1026,7 +1026,7 @@ operation
 
 Zoo
 
-- Fixed a bug with [YOLO-NAS inference](integrations/super_gradients.html#super-gradients-integration) [#4429](https://github.com/voxel51/fiftyone/pull/4429)
+- Fixed a bug with [YOLO-NAS inference](integrations/super_gradients.md#super-gradients-integration) [#4429](https://github.com/voxel51/fiftyone/pull/4429)
 
 
 ## FiftyOne Teams 1.6.1 [¶](\#fiftyone-teams-1-6-1 "Permalink to this headline")
@@ -1257,7 +1257,7 @@ Docs
 performing data augmentation on FiftyOne datasets
 [#4155](https://github.com/voxel51/fiftyone/pull/4155)
 
-- Added [Places2 dataset](dataset_zoo/datasets.md#dataset-zoo-places) to the zoo
+- Added [Places2 dataset](data/dataset_zoo/datasets.md#dataset-zoo-places) to the zoo
 [#4130](https://github.com/voxel51/fiftyone/pull/4130)
 
 - Added a
@@ -1384,19 +1384,19 @@ What’s New
 
 - Added a [data augmentation tutorial](tutorials/data_augmentation.html) [#4109](https://github.com/voxel51/fiftyone/pull/4109)
 
-- Added a formal [Open CLIP integration page](integrations/openclip.html#openclip-integration) [#4049](https://github.com/voxel51/fiftyone/pull/4049)
+- Added a formal [Open CLIP integration page](integrations/openclip.md#openclip-integration) [#4049](https://github.com/voxel51/fiftyone/pull/4049)
 
 - Documented support for open-world object detection with
-[YOLO World](integrations/ultralytics.html#ultralytics-open-vocabulary-object-detection) [#4112](https://github.com/voxel51/fiftyone/pull/4112)
+[YOLO World](integrations/ultralytics.md#ultralytics-open-vocabulary-object-detection) [#4112](https://github.com/voxel51/fiftyone/pull/4112)
 
 - Added support for importing/exporting contours in
-[YOLO format](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) [#4094](https://github.com/voxel51/fiftyone/pull/4094)
+[YOLO format](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) [#4094](https://github.com/voxel51/fiftyone/pull/4094)
 
 - Added cosine metric as an option for
-[Milvus similarity indexes](integrations/milvus.html#milvus-integration) [#4081](https://github.com/voxel51/fiftyone/pull/4081)
+[Milvus similarity indexes](integrations/milvus.md#milvus-integration) [#4081](https://github.com/voxel51/fiftyone/pull/4081)
 
 - Added support for local files when using the
-[Label Studio integration](integrations/labelstudio.html#label-studio-local-storage) [#3969](https://github.com/voxel51/fiftyone/pull/3969)
+[Label Studio integration](integrations/labelstudio.md#label-studio-local-storage) [#3969](https://github.com/voxel51/fiftyone/pull/3969)
 
 - Removed App dependency on `_cls` for embedded documents
 [#4090](https://github.com/voxel51/fiftyone/pull/4090)
@@ -1498,7 +1498,7 @@ Core
 Brain
 
 - Added support for registering
-[custom visualization methods](brain.md#brain-visualization-api) [#4038](https://github.com/voxel51/fiftyone/pull/4038)
+[custom visualization methods](fiftyone_concepts/brain.md#brain-visualization-api) [#4038](https://github.com/voxel51/fiftyone/pull/4038)
 
 
 ## FiftyOne Teams 1.5.4 [¶](\#fiftyone-teams-1-5-4 "Permalink to this headline")
@@ -1952,7 +1952,7 @@ compatibility
 Core
 
 - Adding support for registering
-[custom evaluation methods](fiftyone_concepts/evaluation.html#custom-evaluation-backends) [#3695](https://github.com/voxel51/fiftyone/pull/3695)
+[custom evaluation methods](fiftyone_concepts/evaluation.md#custom-evaluation-backends) [#3695](https://github.com/voxel51/fiftyone/pull/3695)
 
 - Optimized the
 [`compute_metadata()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_metadata "fiftyone.core.collections.SampleCollection.compute_metadata")
@@ -2185,14 +2185,14 @@ when `skip_existing=True` is provided
 
 Plugins
 
-- Fixed `on_startup` [Operator execution](plugins/using_plugins.html#using-operators) [#3731](https://github.com/voxel51/fiftyone/pull/3731)
+- Fixed `on_startup` [Operator execution](plugins/using_plugins.md#using-operators) [#3731](https://github.com/voxel51/fiftyone/pull/3731)
 
-- Fixed `selected_labels` in [Operator contexts](plugins/using_plugins.html#using-operators) [#3740](https://github.com/voxel51/fiftyone/pull/3740)
+- Fixed `selected_labels` in [Operator contexts](plugins/using_plugins.md#using-operators) [#3740](https://github.com/voxel51/fiftyone/pull/3740)
 
-- Improved [Operator placements](plugins/using_plugins.html#using-operators) [#3742](https://github.com/voxel51/fiftyone/pull/3742)
+- Improved [Operator placements](plugins/using_plugins.md#using-operators) [#3742](https://github.com/voxel51/fiftyone/pull/3742)
 
 - Fixed `async` generator results in
-[delegated operations](plugins/index.html#fiftyone-plugins) [#3754](https://github.com/voxel51/fiftyone/pull/3754)
+[delegated operations](plugins/index.md#fiftyone-plugins) [#3754](https://github.com/voxel51/fiftyone/pull/3754)
 
 - Fixed `ctx.secrets` in
 [`resolve_input()`](api/fiftyone.operators.operator.html#fiftyone.operators.operator.Operator.resolve_input "fiftyone.operators.operator.Operator.resolve_input") [#3759](https://github.com/voxel51/fiftyone/pull/3759)
@@ -2232,10 +2232,10 @@ _Released October 20, 2023_
 Core
 
 - Added a `fiftyone_max_thread_pool_workers` option to the
-[FiftyOne config](fiftyone_concepts/config.html#configuring-fiftyone) [#3654](https://github.com/voxel51/fiftyone/pull/3654)
+[FiftyOne config](fiftyone_concepts/config.md#configuring-fiftyone) [#3654](https://github.com/voxel51/fiftyone/pull/3654)
 
 - Added a `fiftyone_max_process_pool_workers` option to the
-[FiftyOne config](fiftyone_concepts/config.html#configuring-fiftyone) [#3654](https://github.com/voxel51/fiftyone/pull/3654)
+[FiftyOne config](fiftyone_concepts/config.md#configuring-fiftyone) [#3654](https://github.com/voxel51/fiftyone/pull/3654)
 
 - Added support for directly calling
 [`export()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.export "fiftyone.core.collections.SampleCollection.export") on
@@ -2516,7 +2516,7 @@ for filesystem I/O
 [#3406](https://github.com/voxel51/fiftyone/pull/3406)
 
 - Added dataset tag and label filters when exporting datasets
-[via the CLI](cli/index.html#cli-fiftyone-datasets-export) [#3412](https://github.com/voxel51/fiftyone/pull/3412)
+[via the CLI](cli/index.md#cli-fiftyone-datasets-export) [#3412](https://github.com/voxel51/fiftyone/pull/3412)
 
 - Added support for running FiftyOne in podman containers
 [#3483](https://github.com/voxel51/fiftyone/pull/3483)
@@ -2527,7 +2527,7 @@ implementation
 [#3528](https://github.com/voxel51/fiftyone/pull/3528)
 
 - Added support for providing frame sizes when constructing
-[rotated boxes](fiftyone_concepts/using_datasets.html#rotated-bounding-boxes) and [cuboids](fiftyone_concepts/using_datasets.html#cuboids) [#3409](https://github.com/voxel51/fiftyone/pull/3409)
+[rotated boxes](fiftyone_concepts/using_datasets.md#rotated-bounding-boxes) and [cuboids](fiftyone_concepts/using_datasets.md#cuboids) [#3409](https://github.com/voxel51/fiftyone/pull/3409)
 
 - Fixed a bug with automatic non-persistent dataset cleanup when running
 MongoDB v4.4 and later
@@ -2692,7 +2692,7 @@ plugin execution contexts
 [#3295](https://github.com/voxel51/fiftyone/pull/3295)
 
 - Added support for configuring custom
-[Operator icons](plugins/using_plugins.html#using-operators) [#3299](https://github.com/voxel51/fiftyone/pull/3299)
+[Operator icons](plugins/using_plugins.md#using-operators) [#3299](https://github.com/voxel51/fiftyone/pull/3299)
 
 - Improved Operator form validation debounce behavior
 [#3291](https://github.com/voxel51/fiftyone/pull/3291)
@@ -2743,8 +2743,8 @@ torchvision models
 [#2843](https://github.com/voxel51/fiftyone/pull/2843)
 
 - Fixed YouTube video downloading for zoo datasets like
-[ActivityNet](dataset_zoo/datasets.md#dataset-zoo-activitynet-200) and
-[Kinetics](dataset_zoo/datasets.html#dataset-zoo-kinetics-700-2020) [#3382](https://github.com/voxel51/fiftyone/pull/3382)
+[ActivityNet](data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200) and
+[Kinetics](data/dataset_zoo/datasets.md#dataset-zoo-kinetics-700-2020) [#3382](https://github.com/voxel51/fiftyone/pull/3382)
 
 
 Annotation
@@ -2764,7 +2764,7 @@ Qdrant similarity backend
 [#3296](https://github.com/voxel51/fiftyone/pull/3296)
 
 - Improved support for
-[creating similarity indexes](brain.md#brain-similarity-api) with embeddings
+[creating similarity indexes](fiftyone_concepts/brain.md#brain-similarity-api) with embeddings
 stored in dataset fields
 
 - Resolved bugs with similarity queries using the sklearn backend
@@ -3161,7 +3161,7 @@ closed shapes [#3123](https://github.com/voxel51/fiftyone/pull/3123)
 
 Zoo
 
-- Added the [Sama-COCO dataset](dataset_zoo/datasets.md#dataset-zoo-sama-coco) to the zoo!
+- Added the [Sama-COCO dataset](data/dataset_zoo/datasets.md#dataset-zoo-sama-coco) to the zoo!
 [#2904](https://github.com/voxel51/fiftyone/pull/2904)
 
 
@@ -3254,7 +3254,7 @@ cleaning up after a failed merge
 [#2864](https://github.com/voxel51/fiftyone/pull/2864)
 
 - Fixed a bug that prevented
-[text similarity searches](brain.md#brain-similarity-text) from succeeding when
+[text similarity searches](fiftyone_concepts/brain.md#brain-similarity-text) from succeeding when
 GPU is available
 [#2853](https://github.com/voxel51/fiftyone/pull/2853)
 
@@ -3277,11 +3277,11 @@ a string [#2848](https://github.com/voxel51/fiftyone/pull/2848)
 
 Documentation
 
-- Updated the source URLs for the [Caltech-101](dataset_zoo/datasets.md#dataset-zoo-caltech101)
-and [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) datasets
+- Updated the source URLs for the [Caltech-101](data/dataset_zoo/datasets.md#dataset-zoo-caltech101)
+and [Caltech-256](data/dataset_zoo/datasets.md#dataset-zoo-caltech256) datasets
 [#2841](https://github.com/voxel51/fiftyone/pull/2841)
 
-- Fixed a typo in the [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) dataset
+- Fixed a typo in the [Caltech-256](data/dataset_zoo/datasets.md#dataset-zoo-caltech256) dataset
 documentation [#2842](https://github.com/voxel51/fiftyone/pull/2842)
 
 
@@ -3327,7 +3327,7 @@ _Released March 22, 2023_
 News
 
 - Added support for querying by
-[arbitrary text prompts](brain.md#brain-similarity-text) in the App!
+[arbitrary text prompts](fiftyone_concepts/brain.md#brain-similarity-text) in the App!
 [#2633](https://github.com/voxel51/fiftyone/pull/2633)
 
 - Released a [Qdrant integration](integrations/qdrant.md#qdrant-integration) for native text and
@@ -3480,7 +3480,7 @@ Core
 - Added support for querying by vectors and text prompts
 [#2569](https://github.com/voxel51/fiftyone/pull/2569)
 
-- Upgraded the [similarity index interface](brain.md#brain-similarity), including
+- Upgraded the [similarity index interface](fiftyone_concepts/brain.md#brain-similarity), including
 [Qdrant](integrations/qdrant.md#qdrant-integration) and [Pinecone](integrations/pinecone.md#pinecone-integration)
 support, and the ability to add/remove embeddings to an existing index
 [#2792](https://github.com/voxel51/fiftyone/pull/2792)
@@ -3880,11 +3880,11 @@ Annotation
 
 Zoo
 
-- Added [Open Images V7](dataset_zoo/datasets.md#dataset-zoo-open-images-v7) to the zoo
+- Added [Open Images V7](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v7) to the zoo
 [#2446](https://github.com/voxel51/fiftyone/pull/2446)
 
-- Updated the [KITTI multiview](dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) and
-[quickstart-groups](dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) datasets to not use
+- Updated the [KITTI multiview](data/dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) and
+[quickstart-groups](data/dataset_zoo/datasets.md#dataset-zoo-quickstart-groups) datasets to not use
 legacy 3D visualizer settings
 [#2474](https://github.com/voxel51/fiftyone/pull/2474)
 
@@ -4041,7 +4041,7 @@ with `ObjectId` fields
 [COCO format](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) [#2122](https://github.com/voxel51/fiftyone/pull/2122)
 
 - Added support for including the export directory in the `dataset.yaml` file
-generated by [YOLOv5 exports](fiftyone_concepts/export_datasets.html#yolov5dataset-export) [#2114](https://github.com/voxel51/fiftyone/pull/2114)
+generated by [YOLOv5 exports](fiftyone_concepts/export_datasets.md#yolov5dataset-export) [#2114](https://github.com/voxel51/fiftyone/pull/2114)
 
 
 Annotation
@@ -4168,10 +4168,10 @@ Zoo
 - Added [clip-vit-base32-torch](models/model_zoo/models.md#model-zoo-clip-vit-base32-torch) to the
 model zoo! [#2072](https://github.com/voxel51/fiftyone/pull/2072)
 
-- Added the [Quickstart Groups dataset](dataset_zoo/datasets.md#dataset-zoo-quickstart-groups)
+- Added the [Quickstart Groups dataset](data/dataset_zoo/datasets.md#dataset-zoo-quickstart-groups)
 to the dataset zoo! [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
-- Added the [KITTI Multiview dataset](dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) to the
+- Added the [KITTI Multiview dataset](data/dataset_zoo/datasets.md#dataset-zoo-kitti-multiview) to the
 dataset zoo! [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 
@@ -4205,7 +4205,7 @@ Core
 - Added Plotly v5 support
 [#1981](https://github.com/voxel51/fiftyone/pull/1981)
 
-- Added a [quantiles aggregation](fiftyone_concepts/using_aggregations.html#aggregations-quantiles) [#1937](https://github.com/voxel51/fiftyone/pull/1937)
+- Added a [quantiles aggregation](fiftyone_concepts/using_aggregations.md#aggregations-quantiles) [#1937](https://github.com/voxel51/fiftyone/pull/1937)
 
 - Added support for writing transformed images/videos to new locations in the
 [`transform_images()`](api/fiftyone.utils.image.html#fiftyone.utils.image.transform_images "fiftyone.utils.image.transform_images") and
@@ -4240,7 +4240,7 @@ that generates new sample/frame IDs when adding the samples
 [#1927](https://github.com/voxel51/fiftyone/pull/1927)
 
 - Added support for the `path` variable in `dataset.yaml` of
-[YOLOv5 datasets](fiftyone_concepts/dataset_creation/datasets.html#yolov5dataset-import) [#1903](https://github.com/voxel51/fiftyone/issues/1903)
+[YOLOv5 datasets](fiftyone_concepts/dataset_creation/datasets.md#yolov5dataset-import) [#1903](https://github.com/voxel51/fiftyone/issues/1903)
 
 - Fixed a bug that prevented using
 [`set_values()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.set_values "fiftyone.core.collections.SampleCollection.set_values")
@@ -4278,7 +4278,7 @@ Annotation
 - Added a new [Label Studio integration!](integrations/labelstudio.html#label-studio-integration) [#1848](https://github.com/voxel51/fiftyone/pull/1848)
 
 - Optimized loading CVAT annotations and performing operations on
-[`CVATAnnotationResults`](api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATAnnotationResults "fiftyone.utils.cvat.CVATAnnotationResults") [#1944](https://github.com/voxel51/fiftyone/pull/1944)
+[`CVATAnnotationResults`](api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.CVATAnnotationResults "fiftyone.utils.cvat.CVATAnnotationResults") [#1944](https://github.com/voxel51/fiftyone/pull/1944)
 
 - Upgraded the [`AnnotationAPI`](api/fiftyone.utils.annotations.html#fiftyone.utils.annotations.AnnotationAPI "fiftyone.utils.annotations.AnnotationAPI")
 interface [#1997](https://github.com/voxel51/fiftyone/pull/1997)
@@ -4615,14 +4615,14 @@ Annotation
 
 Integrations
 
-- Updated the [Lightning Flash integration](integrations/lightning_flash.md#lightning-flash) to support
+- Updated the Lightning Flash integration to support
 Flash versions 0.7.0 or later
 [#1671](https://github.com/voxel51/fiftyone/pull/1671)
 
 
 Zoo
 
-- Added the [Families in the Wild dataset](dataset_zoo/datasets.md#dataset-zoo-fiw) to the
+- Added the [Families in the Wild dataset](data/dataset_zoo/datasets.md#dataset-zoo-fiw) to the
 FiftyOne Dataset Zoo!
 [#1663](https://github.com/voxel51/fiftyone/pull/1663)
 
@@ -4812,19 +4812,19 @@ specified in calls to
 
 Zoo
 
-- Added [ActivityNet 100](dataset_zoo/datasets.md#dataset-zoo-activitynet-100) to the dataset
+- Added [ActivityNet 100](data/dataset_zoo/datasets.md#dataset-zoo-activitynet-100) to the dataset
 zoo!
 
-- Added [ActivityNet 200](dataset_zoo/datasets.md#dataset-zoo-activitynet-200) to the dataset
+- Added [ActivityNet 200](data/dataset_zoo/datasets.md#dataset-zoo-activitynet-200) to the dataset
 zoo!
 
-- Added [Kinetics 400](dataset_zoo/datasets.md#dataset-zoo-kinetics-400) to the dataset zoo!
+- Added [Kinetics 400](data/dataset_zoo/datasets.md#dataset-zoo-kinetics-400) to the dataset zoo!
 
-- Added [Kinetics 600](dataset_zoo/datasets.md#dataset-zoo-kinetics-600) to the dataset zoo!
+- Added [Kinetics 600](data/dataset_zoo/datasets.md#dataset-zoo-kinetics-600) to the dataset zoo!
 
-- Added [Kinetics 700](dataset_zoo/datasets.md#dataset-zoo-kinetics-700) to the dataset zoo!
+- Added [Kinetics 700](data/dataset_zoo/datasets.md#dataset-zoo-kinetics-700) to the dataset zoo!
 
-- Added [Kinetics 700-2020](dataset_zoo/datasets.md#dataset-zoo-kinetics-700-2020) to the dataset
+- Added [Kinetics 700-2020](data/dataset_zoo/datasets.md#dataset-zoo-kinetics-700-2020) to the dataset
 zoo!
 
 
@@ -4904,7 +4904,7 @@ Annotation
 
 - Added a new [Labelbox integration](integrations/labelbox.md#labelbox-integration)!
 
-- Added an [`import_annotations()`](api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations")
+- Added an [`import_annotations()`](api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations")
 method for importing existing CVAT projects or task(s) into FiftyOne
 
 - Added support for [configuring the size of CVAT tasks](integrations/cvat.md#cvat-large-runs)
@@ -4926,7 +4926,7 @@ unexpected annotations returned by the CVAT API
 Zoo
 
 - Fixed a regression in `fiftyone==0.14.1` that prevented
-[zoo datasets](dataset_zoo/index.md#dataset-zoo) that use the Torch backend from being
+[zoo datasets](data/dataset_zoo/index.md#dataset-zoo) that use the Torch backend from being
 downloaded
 
 - Added the following TF2 models to the Model Zoo!
@@ -5017,8 +5017,8 @@ label fields when requesting spatial annotations on video datasets
 Zoo
 
 - Patched an issue that prevented downloading the
-[VOC-2007](dataset_zoo/datasets.md#dataset-zoo-voc-2007) and
-[VOC-2012](dataset_zoo/datasets.md#dataset-zoo-voc-2012) datasets from the zoo
+[VOC-2007](data/dataset_zoo/datasets.md#dataset-zoo-voc-2007) and
+[VOC-2012](data/dataset_zoo/datasets.md#dataset-zoo-voc-2012) datasets from the zoo
 
 
 ## FiftyOne 0.14.1 [¶](\#fiftyone-0-14-1 "Permalink to this headline")
@@ -5155,7 +5155,7 @@ data
 in the video visualizer
 
 - Added a `default_app_address` setting to the FiftyOne config for restricting
-sessions to a hostname. See [this page](environments/index.md#restricting-app-address) for
+sessions to a hostname. See [this page](fiftyone_concepts/running_environments.md#restricting-app-address) for
 more details
 
 
@@ -5463,11 +5463,11 @@ Docs
 
 - Added a [CVAT annotation tutorial](tutorials/cvat_annotation.md)
 
-- Added a [new example](brain.md#brain-near-duplicates) to the brain user guide
+- Added a [new example](fiftyone_concepts/brain.md#brain-near-duplicates) to the brain user guide
 that demonstrates unique and near-duplicate image workflows
 
 - Added an object embeddings example to the
-[embeddings visualization section](brain.md#brain-embeddings-visualization) of
+[embeddings visualization section](fiftyone_concepts/brain.md#brain-embeddings-visualization) of
 the brain user guide
 
 - Added a [new section](fiftyone_concepts/plots.md#plot-selection-modes) to the plots user guide
@@ -5637,26 +5637,26 @@ from a future version of FiftyOne without following the
 filesystems
 
 - Fixed a bug that prevented the proper loading of the
-[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset after partial
+[Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset after partial
 downloads involving only a subset of the available label types
 
 
 Zoo
 
 - Added support for importing license data when loading the
-[COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets from the zoo
+[COCO-2014](data/dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](data/dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets from the zoo
 
 - The inapplicable `classes` flag will now be ignored when loading the
-unlabeled test split of [COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017)
+unlabeled test split of [COCO-2014](data/dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](data/dataset_zoo/datasets.md#dataset-zoo-coco-2017)
 
 - Improved the partial download behavior of the
-[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset when the optional
+[Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset when the optional
 `classes` and `attrs` parameters are provided
 
 - Fixed a bug that prevented Windows users from downloading the
-[Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
+[Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
 
 
 ## FiftyOne 0.11.1 [¶](\#fiftyone-0-11-1 "Permalink to this headline")
@@ -5716,11 +5716,11 @@ attributes in COCO format via a new `extra_attrs` parameter
 Zoo
 
 - Added support for partial downloads and loading segmentations to the
-[COCO-2014](dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
-[COCO-2017](dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets
+[COCO-2014](data/dataset_zoo/datasets.md#dataset-zoo-coco-2014) and
+[COCO-2017](data/dataset_zoo/datasets.md#dataset-zoo-coco-2017) datasets
 
 - When performing partial downloads on the
-[Open Images v6 Dataset](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) involving a subset
+[Open Images v6 Dataset](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) involving a subset
 of the available classes, all labels for matching samples will now be loaded
 by default
 
@@ -5745,7 +5745,7 @@ News
 team to make it easy to train
 [Lightning Flash](https://github.com/PyTorchLightning/lightning-flash)
 tasks on your FiftyOne datasets. Check out
-[this guide](integrations/lightning_flash.md#lightning-flash) for more details
+[this guide]() for more details
 
 
 Core
@@ -5760,7 +5760,7 @@ models to FiftyOne datasets!
 
 Docs
 
-- Added a [new page](integrations/lightning_flash.md#lightning-flash) demonstrating how to use the
+- Added a [new page]() demonstrating how to use the
 Lightning Flash integration
 
 
@@ -5861,7 +5861,7 @@ from accepting [`ViewExpression`](api/fiftyone.core.expressions.html#fiftyone.co
 Zoo
 
 - Fixed a string encoding issue that prevented some Windows users from loading
-the [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
+the [Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) dataset
 
 - Updated the [vgg16-imagenet-tf1](models/model_zoo/models.md#model-zoo-vgg16-imagenet-tf1) model
 (formerly named `vgg16-imagenet-tf`) to reflect the fact that it only
@@ -5895,7 +5895,7 @@ _Released May 16, 2021_
 Zoo
 
 - Fixed a multiprocessing bug that prevented Mac users running Python 3.8 or
-later from loading the [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6)
+later from loading the [Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6)
 dataset
 
 
@@ -5951,7 +5951,7 @@ Brain
 
 - Added a `compute_similarity()`
 method for indexing samples and object patches by similarity. See
-[this page](brain.md#brain-similarity) for usage details
+[this page](fiftyone_concepts/brain.md#brain-similarity) for usage details
 
 
 Core
@@ -6007,7 +6007,7 @@ retrievals of the results in the same session will be instant
 
 Zoo
 
-- Added [Open Images V6](dataset_zoo/datasets.md#dataset-zoo-open-images-v6) to the dataset zoo!
+- Added [Open Images V6](data/dataset_zoo/datasets.md#dataset-zoo-open-images-v6) to the dataset zoo!
 
 
 Docs
@@ -6018,8 +6018,8 @@ Docs
 [evaluation patches](fiftyone_concepts/app.md#app-evaluation-patches) sections to the
 [App guide](fiftyone_concepts/app.md#fiftyone-app)
 
-- Added a [similarity](brain.md#brain-similarity) section to the
-[Brain guide](brain.md#fiftyone-brain)
+- Added a [similarity](fiftyone_concepts/brain.md#brain-similarity) section to the
+[Brain guide](fiftyone_concepts/brain.md#fiftyone-brain)
 
 - Added [Open Images evaluation](fiftyone_concepts/evaluation.md#evaluating-detections-open-images) and
 [evaluation patches](fiftyone_concepts/evaluation.md#evaluation-patches) sections to the
@@ -6075,7 +6075,7 @@ fields
 
 Brain
 
-- Added a `compute_visualization()` method that uses embeddings and dimensionality reduction methods to generate interactive visualizations of the samples and/or labels in a dataset. Check out [this page](brain.md#brain-embeddings-visualization) for details. Features include:
+- Added a `compute_visualization()` method that uses embeddings and dimensionality reduction methods to generate interactive visualizations of the samples and/or labels in a dataset. Check out [this page](fiftyone_concepts/brain.md#brain-embeddings-visualization) for details. Features include:
 
 - Provide your own embeddings, or choose a model from the
 [Model Zoo](models/model_zoo/index.md#model-zoo), or use the provided default model
@@ -6100,7 +6100,7 @@ results can now be loaded at any time via
 
 Core
 
-- Added a [`fiftyone.core.plots`](api/fiftyone.core.plots.html#module-fiftyone.core.plots "fiftyone.core.plots") module that provides a powerful API for visualizing datasets, including interactive plots when used in Jupyter notebooks. See [this page](fiftyone_concepts/plots.html#interactive-plots) for more information. Highlights include:
+- Added a [`fiftyone.core.plots`](api/fiftyone.core.plots.html#module-fiftyone.core.plots "fiftyone.core.plots") module that provides a powerful API for visualizing datasets, including interactive plots when used in Jupyter notebooks. See [this page](fiftyone_concepts/plots.md#interactive-plots) for more information. Highlights include:
 
 - [`plot_confusion_matrix()`](api/fiftyone.core.plots.base.html#fiftyone.core.plots.base.plot_confusion_matrix "fiftyone.core.plots.base.plot_confusion_matrix"):
 an interactive confusion matrix that can be attached to a [`Session`](api/fiftyone.core.session.html#fiftyone.core.session.Session "fiftyone.core.session.Session")
@@ -6239,7 +6239,7 @@ excluded fields
 
 Zoo
 
-- Added the [quickstart-geo](dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset to
+- Added the [quickstart-geo](data/dataset_zoo/datasets.md#dataset-zoo-quickstart-geo) dataset to
 enable quick exploration of location-based datasets
 
 
@@ -6259,7 +6259,7 @@ on image datasets
 
 - Added a [Tags and tagging](fiftyone_concepts/app.md#app-tagging) section to the App user guide
 
-- Added a [visualizing embedding](brain.md#brain-embeddings-visualization) section
+- Added a [visualizing embedding](fiftyone_concepts/brain.md#brain-embeddings-visualization) section
 to the Brain user guide
 
 
@@ -6424,7 +6424,7 @@ Docs
 explains how to evaluate various types of models with FiftyOne
 
 - Removed legacy `--index` flags from the install instructions from the
-[troubleshooting page](getting_started/troubleshooting.md#troubleshooting) which prevented a valid
+[troubleshooting page](getting_started/basic/troubleshooting.md#troubleshooting) which prevented a valid
 installation
 
 
@@ -6613,17 +6613,17 @@ the model zoo\
 - Upgraded the [Model Zoo](models/model_zoo/index.md#model-zoo) so that many detection models that\
 previously required TensorFlow 1.X can now be used with TensorFlow 2.X\
 \
-- Added [Caltech-256](dataset_zoo/datasets.md#dataset-zoo-caltech256) to the dataset zoo\
+- Added [Caltech-256](data/dataset_zoo/datasets.md#dataset-zoo-caltech256) to the dataset zoo\
 \
-- Added [ImageNet Sample](dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) to the dataset zoo\
+- Added [ImageNet Sample](data/dataset_zoo/datasets.md#dataset-zoo-imagenet-sample) to the dataset zoo\
 \
-- [Caltech-101](dataset_zoo/datasets.md#dataset-zoo-caltech101) is now available natively in the\
+- [Caltech-101](data/dataset_zoo/datasets.md#dataset-zoo-caltech101) is now available natively in the\
 dataset zoo without the TF backend\
 \
-- [KITTI](dataset_zoo/datasets.md#dataset-zoo-kitti) is now available natively in the dataset zoo\
+- [KITTI](data/dataset_zoo/datasets.md#dataset-zoo-kitti) is now available natively in the dataset zoo\
 without the TF backend\
 \
-- Fixed a bug that prevented [ImageNet 2012](dataset_zoo/datasets.md#dataset-zoo-imagenet-2012)\
+- Fixed a bug that prevented [ImageNet 2012](data/dataset_zoo/datasets.md#dataset-zoo-imagenet-2012)\
 from loading properly when using the TF backend\
 \
 \
@@ -6635,7 +6635,7 @@ CLI\
 \
 Docs\
 \
-- Added a [Dataset Zoo listing](dataset_zoo/datasets.md#dataset-zoo-datasets) that describes all\
+- Added a [Dataset Zoo listing](data/dataset_zoo/datasets.md#dataset-zoo-datasets) that describes all\
 datasets in the zoo\
 \
 - Added a [Model Zoo listing](models/model_zoo/models.md#model-zoo-models) that describes all models\
@@ -6718,7 +6718,7 @@ Brain\
 Core\
 \
 - Fixed a bug that prevented COCO datasets from being loaded from the\
-[Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
+[Dataset Zoo](data/dataset_zoo/index.md#dataset-zoo)\
 \
 \
 CLI\
@@ -6781,7 +6781,7 @@ Core\
 \
 - Added [Cityscapes](https://www.cityscapes-dataset.com/) and\
 [LFW](http://vis-www.cs.umass.edu/lfw) to the\
-[Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
+[Dataset Zoo](data/dataset_zoo/index.md#dataset-zoo)\
 \
 - Added support for renaming and deleting embedded document fields of samples\
 via [`Dataset.rename_sample_field()`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.rename_sample_field "fiftyone.core.dataset.Dataset.rename_sample_field") and\
@@ -6906,10 +6906,10 @@ classification datasets organized as directory trees on disk\
 - Added [BDD100K](https://bdd-data.berkeley.edu),\
 [HMDB51](https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database),\
 and [UCF101](https://www.crcv.ucf.edu/research/data-sets/ucf101) to\
-the [Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
+the [Dataset Zoo](data/dataset_zoo/index.md#dataset-zoo)\
 \
 - Added new versions of [COCO](https://cocodataset.org/#home) that contain\
-instance segmentations to the [Dataset Zoo](dataset_zoo/index.md#dataset-zoo)\
+instance segmentations to the [Dataset Zoo](data/dataset_zoo/index.md#dataset-zoo)\
 \
 - Added utilities for selecting labels from datasets via the Python library\
 \
@@ -7270,7 +7270,7 @@ method\
 method\
 \
 - Provided a more helpful error message when using the\
-[Dataset Zoo](dataset_zoo/index.md#dataset-zoo) with no backend ML framework installed\
+[Dataset Zoo](data/dataset_zoo/index.md#dataset-zoo) with no backend ML framework installed\
 \
 - Made `pycocotools` an optional dependency to make installation on Windows\
 easier\

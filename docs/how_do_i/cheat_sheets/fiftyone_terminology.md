@@ -12,14 +12,14 @@ This cheat sheet introduces the key terminology in the world of FiftyOne.
 
 ## Other components [¶](\#other-components "Permalink to this headline")
 
-|     |                                                                                                                                                                                                               |
-| --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Brain | Library of [ML-powered capabilities](../../fiftyon_concepts/brain.md#fiftyone-brain) for<br>computation and visualization.                                                                                    |
-| Dataset Zoo | [Collection of common datasets](../../data/dataset_zoo/index.md#dataset-zoo) available for<br>download and loading into FiftyOne.                                                                             |
-| Model Zoo | [Collection of pre-trained models](../../models/model_zoo/index.md#model-zoo) available for<br>download and inference.                                                                                       |
-| Plugin | A module you can use to [customize and extend](../../plugins/index.md#fiftyone-plugins)<br>the behavior of FiftyOne.                                                                                          |
+|     |                                                                                                                                                                                                                       |
+| --- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Brain | Library of [ML-powered capabilities](../../fiftyone_concepts/brain.md#fiftyone-brain) for<br>computation and visualization.                                                                                           |
+| Dataset Zoo | [Collection of common datasets](../../data/dataset_zoo/index.md#dataset-zoo) available for<br>download and loading into FiftyOne.                                                                                     |
+| Model Zoo | [Collection of pre-trained models](../../models/model_zoo/index.md#model-zoo) available for<br>download and inference.                                                                                                |
+| Plugin | A module you can use to [customize and extend](../../plugins/index.md#fiftyone-plugins)<br>the behavior of FiftyOne.                                                                                                  |
 | Operator | A [plugin subcomponent](../../plugins/using_plugins.md#using-operators) that defines an<br>operation that can be executed either directly by users in the App<br>and/or internally invoked by other plugin components |
-| Integration | A dataset, ML framework, annotation service, or other tool FiftyOne is<br>[directly compatible with](../../integrations/index.md#integrations).                                                               |
+| Integration | A dataset, ML framework, annotation service, or other tool FiftyOne is<br>[directly compatible with](../../integrations/index.md#integrations).                                                                       |
 
 ## Data model [¶](\#data-model "Permalink to this headline")
 

@@ -1717,7 +1717,7 @@ print(len(validation_view))  # 100
 All [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") instances have a `metadata` field, which can optionally be
 populated with a [`Metadata`](../api/fiftyone.core.metadata.html#fiftyone.core.metadata.Metadata "fiftyone.core.metadata.Metadata") instance that stores data type-specific metadata
 about the raw data in the sample. The [FiftyOne App](app.md#fiftyone-app) and
-the [FiftyOne Brain](../brain.md#fiftyone-brain) will use this provided metadata in
+the [FiftyOne Brain](brain.md#fiftyone-brain) will use this provided metadata in
 some workflows when it is available.
 
 ## Dates and datetimes [¶](\#dates-and-datetimes "Permalink to this headline")

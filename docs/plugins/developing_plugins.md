@@ -49,7 +49,7 @@ default when you launch the App
 for the fields of your dataset
 
 - [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel): a canvas for working with
-[embeddings visualizations](../brain.md#brain-embeddings-visualization)
+[embeddings visualizations](../fiftyone_concepts/brain.md#brain-embeddings-visualization)
 
 - [Map panel](../fiftyone_concepts/app.md#app-map-panel): visualizes the geolocation data of
 datasets that have a [`GeoLocation`](../api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") field
@@ -3107,7 +3107,7 @@ task and executes it when resources are available
 When users execute builtin methods like
 [annotation](../fiftyone_concepts/annotation.md#fiftyone-annotation),
 [evaluation](../fiftyone_concepts/evaluation.md#evaluating-models), and
-[brain methods](../brain.md#fiftyone-brain) on their datasets, certain configuration
+[brain methods](../fiftyone_concepts/brain.md#fiftyone-brain) on their datasets, certain configuration
 and results information is stored on the dataset that can be accessed later;
 for example, see [managing brain runs](../brain.md#brain-managing-runs).
 

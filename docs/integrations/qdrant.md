@@ -14,7 +14,7 @@ via point-and-click in the App.
 Note
 
 Did you know? You can
-[search by natural language](../brain.md#brain-similarity-text) using Qdrant
+[search by natural language](../fiftyone_concepts/brain.md#brain-similarity-text) using Qdrant
 similarity indexes!
 
 ![image-similarity](../_images/brain-image-similarity.gif)
@@ -155,7 +155,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=qdrant
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../fiftyone_concepts/brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {

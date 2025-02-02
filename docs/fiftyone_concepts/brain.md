@@ -248,7 +248,7 @@ session = fo.launch_app(dataset)
 
 Note
 
-Did you know? You can [programmatically configure](fiftyone_concepts/app.md#app-spaces-python)
+Did you know? You can [programmatically configure](app.md#app-spaces-python)
 your Spaces layout!
 
 ![image-visualization](../_images/brain-image-visualization.gif)
@@ -279,7 +279,7 @@ default embeddings model and dimensionality method.
 In this setup, we generate a visualization for all ground truth objects, but
 then we create a [view](using_views.md#view-filtering) that restricts the visualization
 to only objects in a subset of the classes. The scatterpoints in the
-[Embeddings panel](fiftyone_concepts/app.md#app-embeddings-panel) correspond to objects, colored
+[Embeddings panel](app.md#app-embeddings-panel) correspond to objects, colored
 by their `label`. When points are lasso-ed in the plot, the corresponding
 object patches are automatically selected in the
 [Samples panel](app.md#app-samples-panel):

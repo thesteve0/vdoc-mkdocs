@@ -176,7 +176,7 @@ Note
 
 Storing logits for predictions enables you to run Brain methods such as
 [label mistakes](../../fiftyone_concepts/brain.md#brain-label-mistakes) and
-[sample hardness](../brain.md#brain-sample-hardness) on your datasets!
+[sample hardness](../../fiftyone_concepts/brain.md#brain-sample-hardness) on your datasets!
 
 You can check if a model exposes logits via
 [`has_logits()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.has_logits "fiftyone.core.models.Model.has_logits"):
@@ -185,7 +185,7 @@ You can check if a model exposes logits via
 import fiftyone.zoo as foz
 
 # Load zoo model
-model = foz.load_zoo_model("inception-v3-imagenet-torch")
+model = foz.load_zoo_mod[index.md](index.md)el("inception-v3-imagenet-torch")
 
 # Check if model has logits
 print(model.has_logits)  # True
