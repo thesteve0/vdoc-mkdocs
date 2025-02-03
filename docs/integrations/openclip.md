@@ -104,7 +104,7 @@ session = fo.launch_app(dataset)
 ## Embeddings [¶](\#embeddings "Permalink to this headline")
 
 Another application of OpenCLIP is
-[embeddings visualization](../brain.md#brain-embeddings-visualization).
+[embeddings visualization](../fiftyone_concepts/brain.md#brain-embeddings-visualization).
 
 For example, let’s compare the embeddings of the original OpenAI CLIP model to
 MetaCLIP. We’ll also perform a quick zero shot classification to color the
@@ -150,7 +150,7 @@ Here is the final result!
 ## Text similarity search [¶](\#text-similarity-search "Permalink to this headline")
 
 OpenCLIP can also be used for
-[text similarity search](../brain.md#brain-similarity-text).
+[text similarity search](../fiftyone_concepts/brain.md#brain-similarity-text).
 
 To use a specific pretrained-checkpoint pair for text similarity search, pass
 these in as a dictionary via the `model_kwargs` argument to

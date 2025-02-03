@@ -14,7 +14,7 @@ via point-and-click in the App.
 Note
 
 Did you know? You can
-[search by natural language](../brain.md#brain-similarity-text) using Milvus
+[search by natural language](../fiftyone_concepts/brain.md#brain-similarity-text) using Milvus
 similarity indexes!
 
 ![object-similarity](../_images/brain-object-similarity.gif)
@@ -156,7 +156,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=milvus
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../fiftyone_concepts/brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {
@@ -195,7 +195,7 @@ export FIFTYONE_BRAIN_SIMILARITY_MILVUS_SERVER_NAME=XXXXXX
 
 **FiftyOne Brain config**
 
-You can also store your credentials in your [brain config](../brain.md#brain-config)
+You can also store your credentials in your [brain config](../fiftyone_concepts/brain.md#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
 ```python
@@ -299,7 +299,7 @@ For detailed information on these parameters, see the
 and [Milvus consistency levels documentation](https://milvus.io/docs/consistency.md#Consistency-levels).
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.md#brain-config)
+previous section. Here’s an example of a [brain config](../fiftyone_concepts/brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -474,7 +474,7 @@ You can customize the Milvus similarity index by passing any
 ### Create a patch similarity index [¶](\#create-a-patch-similarity-index "Permalink to this headline")
 
 You can also create a similarity index for
-[object patches](../brain.md#brain-object-similarity) within your dataset by
+[object patches](../fiftyone_concepts/brain.md#brain-object-similarity) within your dataset by
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
@@ -620,7 +620,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
+- A text prompt (if [supported by the model](../fiftyone_concepts/brain.md#brain-similarity-text))
 
 
 ```python

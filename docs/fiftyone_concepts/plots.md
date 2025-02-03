@@ -131,7 +131,7 @@ FiftyOne plots.
 
 To learn more about the available embedding methods, dimensionality reduction
 techniques, and their applications to dataset analysis, refer to
-[this page](../brain.md#brain-embeddings-visualization). In this section, we’ll just
+[this page](brain.md#brain-embeddings-visualization). In this section, we’ll just
 cover the basic mechanics of creating scatterplots and interacting with them.
 
 Note
@@ -1058,7 +1058,7 @@ plot.selection_mode = "select"
 ```
 
 Similarly, selecting scatter points in an
-[object embeddings visualization](../brain.md#brain-embeddings-visualization) will
+[object embeddings visualization](brain.md#brain-embeddings-visualization) will
 show the corresponding objects in the App as a
 [patches view](using_views.md#object-patches-views):
 

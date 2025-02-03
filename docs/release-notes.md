@@ -940,7 +940,7 @@ What’s New
 as an option for zero shot object detection
 [#4292](https://github.com/voxel51/fiftyone/pull/4292)
 
-- Added a new [anomaly detection tutorial](tutorials/anomaly_detection.html) [#4312](https://github.com/voxel51/fiftyone/pull/4312)
+- Added a new [anomaly detection tutorial](tutorials/anomaly_detection.md) [#4312](https://github.com/voxel51/fiftyone/pull/4312)
 
 
 App
@@ -991,7 +991,7 @@ slices [#4350](https://github.com/voxel51/fiftyone/pull/4350)
 Utils
 
 - Added support for non-sequential category IDs when importing/exporting data
-in [COCO format](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) [#4354](https://github.com/voxel51/fiftyone/pull/4354),
+in [COCO format](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) [#4354](https://github.com/voxel51/fiftyone/pull/4354),
 [#4309](https://github.com/voxel51/fiftyone/pull/4309)
 
 - Added a [`DeepSort`](api/fiftyone.utils.tracking.deepsort.html#fiftyone.utils.tracking.deepsort.DeepSort "fiftyone.utils.tracking.deepsort.DeepSort")
@@ -1172,12 +1172,12 @@ efficiently read from multiple files in a threadpool
 
 Docs
 
-- Added a [clustering tutorial](tutorials/clustering.html) [#4245](https://github.com/voxel51/fiftyone/pull/4245)
+- Added a [clustering tutorial](tutorials/clustering.md) [#4245](https://github.com/voxel51/fiftyone/pull/4245)
 
 - Added a
-[small object detection tutorial](tutorials/small_object_detection.html) [#4263](https://github.com/voxel51/fiftyone/pull/4263)
+[small object detection tutorial](tutorials/small_object_detection.md) [#4263](https://github.com/voxel51/fiftyone/pull/4263)
 
-- Refreshed many popular [tutorials](tutorials/index.html#tutorials) [#4207](https://github.com/voxel51/fiftyone/pull/4207)
+- Refreshed many popular [tutorials](tutorials/index.md#tutorials) [#4207](https://github.com/voxel51/fiftyone/pull/4207)
 
 
 Annotation
@@ -1261,7 +1261,7 @@ performing data augmentation on FiftyOne datasets
 [#4130](https://github.com/voxel51/fiftyone/pull/4130)
 
 - Added a
-[zero-shot image classification tutorial](tutorials/zero_shot_classification.html) [#4133](https://github.com/voxel51/fiftyone/pull/4133)
+[zero-shot image classification tutorial](tutorials/zero_shot_classification.md) [#4133](https://github.com/voxel51/fiftyone/pull/4133)
 
 - [Improved documentation](teams/installation.md#teams-cloud-credentials) for configuring AWS
 and GCP cloud credentials
@@ -1380,9 +1380,9 @@ _Released March 6, 2024_
 What’s New
 
 - Added a
-[dimensionality reduction tutorial](tutorials/dimension_reduction.html) [#4033](https://github.com/voxel51/fiftyone/pull/4033)
+[dimensionality reduction tutorial](tutorials/dimension_reduction.md) [#4033](https://github.com/voxel51/fiftyone/pull/4033)
 
-- Added a [data augmentation tutorial](tutorials/data_augmentation.html) [#4109](https://github.com/voxel51/fiftyone/pull/4109)
+- Added a [data augmentation tutorial](tutorials/data_augmentation.md) [#4109](https://github.com/voxel51/fiftyone/pull/4109)
 
 - Added a formal [Open CLIP integration page](integrations/openclip.md#openclip-integration) [#4049](https://github.com/voxel51/fiftyone/pull/4049)
 
@@ -1804,7 +1804,7 @@ when `Pillow<7` is installed
 [#3897](https://github.com/voxel51/fiftyone/pull/3897)
 
 - Fixed default group indexes creation when importing a
-[FiftyOneDataset](fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) [#3894](https://github.com/voxel51/fiftyone/pull/3894)
+[FiftyOneDataset](fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) [#3894](https://github.com/voxel51/fiftyone/pull/3894)
 
 
 ## FiftyOne Teams 1.5.0 [¶](\#fiftyone-teams-1-5-0 "Permalink to this headline")
@@ -1963,7 +1963,7 @@ implementation
 [#3824](https://github.com/voxel51/fiftyone/pull/3824)
 
 - Added support for parsing and exporting visibility attribute for keypoints in
-[COCO format](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) [#3808](https://github.com/voxel51/fiftyone/pull/3808)
+[COCO format](fiftyone_concepts/export_datasets.md#cocodetectiondataset-export) [#3808](https://github.com/voxel51/fiftyone/pull/3808)
 
 
 Plugins
@@ -2713,7 +2713,7 @@ stage
 [#3336](https://github.com/voxel51/fiftyone/pull/3336)
 
 - Added support for exporting keypoints with nan-valued coordinates in
-[COCO format](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) [#3316](https://github.com/voxel51/fiftyone/pull/3316)
+[COCO format](fiftyone_concepts/export_datasets.md#cocodetectiondataset-export) [#3316](https://github.com/voxel51/fiftyone/pull/3316)
 
 - Updated [YOLOv5 exports](fiftyone_concepts/export_datasets.md#yolov5dataset-export) to use dict-style class
 names
@@ -3084,7 +3084,7 @@ time with a new FiftyOne version
 
 Core
 
-- Added support for creating [dynamic grouped views](fiftyone_concepts/using_views.html#view-groups) [#2475](https://github.com/voxel51/fiftyone/pull/2475)
+- Added support for creating [dynamic grouped views](fiftyone_concepts/using_views.md#view-groups) [#2475](https://github.com/voxel51/fiftyone/pull/2475)
 
 - Added support for storing
 [default color schemes](fiftyone_concepts/using_datasets.md#dataset-app-config-color-scheme) for datasets
@@ -3096,7 +3096,7 @@ via
 and
 [`exclude_fields()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.exclude_fields "fiftyone.core.collections.SampleCollection.exclude_fields") [#2898](https://github.com/voxel51/fiftyone/pull/2898)
 
-- Added support for [evaluating keypoints](fiftyone_concepts/evaluation.html#evaluating-detections) [#2776](https://github.com/voxel51/fiftyone/pull/2776),
+- Added support for [evaluating keypoints](fiftyone_concepts/evaluation.md#evaluating-detections) [#2776](https://github.com/voxel51/fiftyone/pull/2776),
 [#2928](https://github.com/voxel51/fiftyone/pull/2928)
 
 - Added support for computing DICE score when evaluating segmentations
@@ -3136,7 +3136,7 @@ Plugins
 [#2679](https://github.com/voxel51/fiftyone/pull/2679)
 
 - Added CLI methods for [plugins](cli/index.md#cli-fiftyone-plugins) and
-[operators](cli/index.html#cli-fiftyone-operators) [#3025](https://github.com/voxel51/fiftyone/pull/3025),
+[operators](cli/index.md#cli-fiftyone-operators) [#3025](https://github.com/voxel51/fiftyone/pull/3025),
 [#3038](https://github.com/voxel51/fiftyone/pull/3038)
 
 
@@ -3534,7 +3534,7 @@ method to declare new slices on grouped datasets
 [#2727](https://github.com/voxel51/fiftyone/pull/2727)
 
 - Added support for controlling whether saved views and runs are
-imported/exported in [FiftyOneDataset format](fiftyone_concepts/dataset_creation/datasets.html#fiftyonedataset-import) [#2806](https://github.com/voxel51/fiftyone/pull/2806)
+imported/exported in [FiftyOneDataset format](fiftyone_concepts/dataset_creation/datasets.md#fiftyonedataset-import) [#2806](https://github.com/voxel51/fiftyone/pull/2806)
 
 - Added support for negative integer mask targets
 [#2686](https://github.com/voxel51/fiftyone/pull/2686)
@@ -3577,7 +3577,7 @@ embedded document creation
 Zoo
 
 - Added a `tensorflow-macos` option when loading TF models from the
-[Model Zoo](models/model_zoo/index.html#model-zoo) [#2685](https://github.com/voxel51/fiftyone/pull/2685)
+[Model Zoo](models/model_zoo/index.md#model-zoo) [#2685](https://github.com/voxel51/fiftyone/pull/2685)
 
 
 Tutorials
@@ -3586,9 +3586,9 @@ Tutorials
 Visualizer’s capabilities in the context of building a 3D self-driving
 dataset [#2818](https://github.com/voxel51/fiftyone/pull/2818)
 
-- Added a [YOLOv8 tutorial](tutorials/yolov8.html) [#2755](https://github.com/voxel51/fiftyone/pull/2755)
+- Added a [YOLOv8 tutorial](tutorials/yolov8.md) [#2755](https://github.com/voxel51/fiftyone/pull/2755)
 
-- Updated the media in the [Open Images tutorial](tutorials/open_images.html) [#2665](https://github.com/voxel51/fiftyone/pull/2665)
+- Updated the media in the [Open Images tutorial](tutorials/open_images.md) [#2665](https://github.com/voxel51/fiftyone/pull/2665)
 
 
 ## FiftyOne Teams 1.1.1 [¶](\#fiftyone-teams-1-1-1 "Permalink to this headline")
@@ -3750,7 +3750,7 @@ Core
 - Added support for programmatically
 [configuring space layouts](fiftyone_concepts/app.md#app-spaces-python) [#2524](https://github.com/voxel51/fiftyone/pull/2524)
 
-- Added support for [loading and saving views](fiftyone_concepts/using_views.html#saving-views) [#2461](https://github.com/voxel51/fiftyone/pull/2461)
+- Added support for [loading and saving views](fiftyone_concepts/using_views.md#saving-views) [#2461](https://github.com/voxel51/fiftyone/pull/2461)
 
 - Added support for storing [`Segmentation`](api/fiftyone.core.labels.html#fiftyone.core.labels.Segmentation "fiftyone.core.labels.Segmentation") and [`Heatmap`](api/fiftyone.core.labels.html#fiftyone.core.labels.Heatmap "fiftyone.core.labels.Heatmap") masks on disk
 [#2301](https://github.com/voxel51/fiftyone/pull/2301)
@@ -3857,7 +3857,7 @@ and type to
 [#2608](https://github.com/voxel51/fiftyone/pull/2608)
 
 - Fixed a bug when loading datasets with CVAT attributes stored in
-[VOC format](fiftyone_concepts/dataset_creation/datasets.html#vocdetectiondataset-import) [#2359](https://github.com/voxel51/fiftyone/pull/2359)
+[VOC format](fiftyone_concepts/dataset_creation/datasets.md#vocdetectiondataset-import) [#2359](https://github.com/voxel51/fiftyone/pull/2359)
 
 - Fixed a bug in default sidebar group expansion
 [#2441](https://github.com/voxel51/fiftyone/pull/2441)
@@ -3889,12 +3889,12 @@ legacy 3D visualizer settings
 [#2474](https://github.com/voxel51/fiftyone/pull/2474)
 
 - Added support for filtering datasets when using
-[`list_zoo_datasets()`](api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") [#2448](https://github.com/voxel51/fiftyone/pull/2448)
+[`list_zoo_datasets()`](api/fiftyone.zoo.datasets.md#fiftyone.zoo.datasets.list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") [#2448](https://github.com/voxel51/fiftyone/pull/2448)
 
 
 Docs
 
-- Added detailed [plugin documentation](plugins/index.html#fiftyone-plugins) [#2442](https://github.com/voxel51/fiftyone/pull/2442)
+- Added detailed [plugin documentation](plugins/index.md#fiftyone-plugins) [#2442](https://github.com/voxel51/fiftyone/pull/2442)
 
 - Added [documentation](fiftyone_concepts/using_datasets.md#label-conversions) for converting between common
 label formats [#2498](https://github.com/voxel51/fiftyone/pull/2498)
@@ -4038,7 +4038,7 @@ with `ObjectId` fields
 [#2140](https://github.com/voxel51/fiftyone/pull/2140)
 
 - Added an option to import annotation IDs when loading data stored in
-[COCO format](fiftyone_concepts/dataset_creation/datasets.html#cocodetectiondataset-import) [#2122](https://github.com/voxel51/fiftyone/pull/2122)
+[COCO format](fiftyone_concepts/dataset_creation/datasets.md#cocodetectiondataset-import) [#2122](https://github.com/voxel51/fiftyone/pull/2122)
 
 - Added support for including the export directory in the `dataset.yaml` file
 generated by [YOLOv5 exports](fiftyone_concepts/export_datasets.md#yolov5dataset-export) [#2114](https://github.com/voxel51/fiftyone/pull/2114)
@@ -4095,7 +4095,7 @@ in the modal [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 - Added support for visualizing and interacting with [`GeoLocation`](api/fiftyone.core.labels.html#fiftyone.core.labels.GeoLocation "fiftyone.core.labels.GeoLocation") data in a
 new [Map panel](fiftyone_concepts/app.md#app-map-panel) [#1976](https://github.com/voxel51/fiftyone/pull/1976)
 
-- Added initial support for [custom App plugins](plugins/index.html#fiftyone-plugins) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
+- Added initial support for [custom App plugins](plugins/index.md#fiftyone-plugins) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
 
 - Added support for configuring
 [multiple media fields](fiftyone_concepts/app.md#app-multiple-media-fields) [#1765](https://github.com/voxel51/fiftyone/pull/1765)
@@ -4213,7 +4213,7 @@ Core
 [#2007](https://github.com/voxel51/fiftyone/pull/2007)
 
 - Added support for configuring the
-[package-wide logging level](fiftyone_concepts/config.html#configuring-fiftyone) [#2009](https://github.com/voxel51/fiftyone/pull/2009)
+[package-wide logging level](fiftyone_concepts/config.md#configuring-fiftyone) [#2009](https://github.com/voxel51/fiftyone/pull/2009)
 
 - Added more full-featured support for serializing and deserializing datasets,
 views, and samples via `to_dict()` and `from_dict()` [#1922](https://github.com/voxel51/fiftyone/pull/1922)
@@ -4275,7 +4275,7 @@ to labels [#1922](https://github.com/voxel51/fiftyone/pull/1922)
 
 Annotation
 
-- Added a new [Label Studio integration!](integrations/labelstudio.html#label-studio-integration) [#1848](https://github.com/voxel51/fiftyone/pull/1848)
+- Added a new [Label Studio integration!](integrations/labelstudio.md#label-studio-integration) [#1848](https://github.com/voxel51/fiftyone/pull/1848)
 
 - Optimized loading CVAT annotations and performing operations on
 [`CVATAnnotationResults`](api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.CVATAnnotationResults "fiftyone.utils.cvat.CVATAnnotationResults") [#1944](https://github.com/voxel51/fiftyone/pull/1944)
@@ -4534,7 +4534,7 @@ deleted [#1747](https://github.com/voxel51/fiftyone/pull/1747)
 [#1721](https://github.com/voxel51/fiftyone/pull/1721)
 
 - Fixed image lists for the `image_path` parameter when importing
-[GeoTIFF datasets](fiftyone_concepts/dataset_creation/datasets.html#geotiffdataset-import) [#1728](https://github.com/voxel51/fiftyone/pull/1728)
+[GeoTIFF datasets](fiftyone_concepts/dataset_creation/datasets.md#geotiffdataset-import) [#1728](https://github.com/voxel51/fiftyone/pull/1728)
 
 - Added a [`find_duplicates()`](api/fiftyone.utils.iou.html#fiftyone.utils.iou.find_duplicates "fiftyone.utils.iou.find_duplicates")
 utility to automatically find duplicate objects based on IoU
@@ -4573,7 +4573,7 @@ stage that applies per- `point` filters to [`Keypoint`](api/fiftyone.core.labels
 [`draw_labels()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.draw_labels "fiftyone.core.collections.SampleCollection.draw_labels") [#1601](https://github.com/voxel51/fiftyone/pull/1601)
 
 - Added support for per-point confidences and other custom per-point attributes
-on [`Keypoint`](api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint") objects. See [this section](fiftyone_concepts/using_datasets.html#keypoints) for details
+on [`Keypoint`](api/fiftyone.core.labels.html#fiftyone.core.labels.Keypoint "fiftyone.core.labels.Keypoint") objects. See [this section](fiftyone_concepts/using_datasets.md#keypoints) for details
 [#1601](https://github.com/voxel51/fiftyone/pull/1601)
 
 - Added a [`concat()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.concat "fiftyone.core.collections.SampleCollection.concat")
@@ -4591,10 +4591,10 @@ details [#1692](https://github.com/voxel51/fiftyone/pull/1692)
 MongoDB database name [#1692](https://github.com/voxel51/fiftyone/pull/1692)
 
 - [`Classification`](api/fiftyone.core.labels.html#fiftyone.core.labels.Classification "fiftyone.core.labels.Classification") attributes are now exported as tag attributes when exporting
-in [CVATImageDataset format](fiftyone_concepts/export_datasets.html#cvatimagedataset-export) [#1686](https://github.com/voxel51/fiftyone/pull/1686)
+in [CVATImageDataset format](fiftyone_concepts/export_datasets.md#cvatimagedataset-export) [#1686](https://github.com/voxel51/fiftyone/pull/1686)
 
 - The `iscrowd` attribute is now always populated when exporting in
-[COCO format](fiftyone_concepts/export_datasets.html#cocodetectiondataset-export) [#1664](https://github.com/voxel51/fiftyone/pull/1664)
+[COCO format](fiftyone_concepts/export_datasets.md#cocodetectiondataset-export) [#1664](https://github.com/voxel51/fiftyone/pull/1664)
 
 - Fixed a `KeyError` bug when loading dataset with relative paths on Windows
 [#1675](https://github.com/voxel51/fiftyone/pull/1675)
@@ -5562,7 +5562,7 @@ App
 
 - Added support for calling
 [`Session.open_tab()`](api/fiftyone.core.session.html#fiftyone.core.session.Session.open_tab "fiftyone.core.session.Session.open_tab") from
-[remote Jupyter notebooks](environments/index.md#remote-notebooks)
+[remote Jupyter notebooks](fiftyone_concepts/running_environments.md#remote-notebooks)
 
 - Fixed a bug that could cause
 [`Session.wait()`](api/fiftyone.core.session.html#fiftyone.core.session.Session.wait "fiftyone.core.session.Session.wait") to exit when the
@@ -6453,7 +6453,7 @@ from being properly respected by the Filters Sidebar\
 your view or choosing an option from the select samples dropdown\
 \
 - Added an [`AppConfig`](api/fiftyone.core.config.html#fiftyone.core.config.AppConfig "fiftyone.core.config.AppConfig") for configuring options like the color pool to use when\
-drawing [`Label`](api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") fields. See [this page](fiftyone_concepts/config.html#configuring-fiftyone-app) for\
+drawing [`Label`](api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") fields. See [this page](fiftyone_concepts/config.md#configuring-fiftyone-app) for\
 more info\
 \
 \
@@ -6555,7 +6555,7 @@ _Released January 8, 2021_\
 \
 App\
 \
-- Added automatic screenshotting for [notebook environments](environments/index.md#notebooks)\
+- Added automatic screenshotting for [notebook environments](fiftyone_concepts/running_environments.md#notebooks)\
 \
 - Fixed a bug where the Filters Sidebar statistics would not load for empty\
 views\
@@ -6650,7 +6650,7 @@ App\
 \
 - Added web browser support, which is now the default setting\
 \
-- Added [IPython notebook support](environments/index.md#notebooks), e.g. Jupyter and Google\
+- Added [IPython notebook support](fiftyone_concepts/running_environments.md#notebooks), e.g. Jupyter and Google\
 Colab\
 \
 - The desktop App can now be installed as an\
@@ -6823,7 +6823,7 @@ video datasets\
 \
 Docs\
 \
-- Added an [Environments page](environments/index.md#environments) that outlines how\
+- Added an [Environments page](fiftyone_concepts/running_environments.md#environments) that outlines how\
 to work with local, remote, and cloud data. Includes instructions for AWS,\
 Google Cloud, and Azure\
 \

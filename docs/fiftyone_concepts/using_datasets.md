@@ -1800,7 +1800,7 @@ truth or predicted labels in a sample.
 Although such information can be stored in custom sample fields
 (e.g, in a [`DictField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.DictField "fiftyone.core.fields.DictField")), it is recommended that you store label information in
 [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances so that the [FiftyOne App](app.md#fiftyone-app) and the
-[FiftyOne Brain](../brain.md#fiftyone-brain) can visualize and compute on your
+[FiftyOne Brain](brain.md#fiftyone-brain) can visualize and compute on your
 labels.
 
 Note
@@ -1893,7 +1893,7 @@ The optional
 [`logits`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Classification.logits "fiftyone.core.labels.Classification.logits") attributes may be
 used to store metadata about the model prediction. These additional fields can
 be visualized in the App or used by Brain methods, e.g., when
-[computing label mistakes](../brain.md#brain-label-mistakes).
+[computing label mistakes](brain.md#brain-label-mistakes).
 
 ```python
 import fiftyone as fo

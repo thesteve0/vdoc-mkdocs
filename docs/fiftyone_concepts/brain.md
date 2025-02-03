@@ -308,7 +308,7 @@ session = fo.launch_app(view)
 
 Note
 
-Did you know? You can [programmatically configure](fiftyone_concepts/app.md#app-spaces-python)
+Did you know? You can [programmatically configure](app.md#app-spaces-python)
 your Spaces layout!
 
 ![object-visualization](../_images/brain-object-visualization.gif)
@@ -401,7 +401,7 @@ Once you’ve indexed a dataset by similarity, you can use the
 [`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically sort your dataset by similarity to any image(s)
 or object patch(es) of your choice in your dataset. In addition, the App
-provides a convenient [point-and-click interface](fiftyone_concepts/app.md#app-similarity) for
+provides a convenient [point-and-click interface](app.md#app-similarity) for
 sorting by similarity with respect to an index on a dataset.
 
 Note
@@ -479,7 +479,7 @@ This section demonstrates the basic workflow of:
 
 - Indexing an image dataset by similarity
 
-- Using the App’s [image similarity](fiftyone_concepts/app.md#app-image-similarity) UI to query
+- Using the App’s [image similarity](app.md#app-image-similarity) UI to query
 by visual similarity
 
 - Using the SDK’s
@@ -492,7 +492,7 @@ interest to `compute_similarity()`
 along with a name for the index via the `brain_key` argument.
 
 Next load the dataset in the App and select some image(s). Whenever there is
-an active selection in the App, a [similarity icon](fiftyone_concepts/app.md#app-image-similarity)
+an active selection in the App, a [similarity icon](app.md#app-image-similarity)
 will appear above the grid, enabling you to sort by similarity to your current
 selection.
 
@@ -565,7 +565,7 @@ This section demonstrates the basic workflow of:
 
 - Indexing a dataset of objects by similarity
 
-- Using the App’s [object similarity](fiftyone_concepts/app.md#app-object-similarity) UI to
+- Using the App’s [object similarity](app.md#app-object-similarity) UI to
 query by visual similarity
 
 - Using the SDK’s
@@ -583,11 +583,11 @@ along with the name of the patches field and a name for the index via the
 `brain_key` argument.
 
 Next load the dataset in the App and switch to
-[object patches view](fiftyone_concepts/app.md#app-object-patches) by clicking the patches icon
+[object patches view](app.md#app-object-patches) by clicking the patches icon
 above the grid and choosing the label field of interest from the dropdown.
 
 Now whenever you have selected one or more patches in the App, a
-[similarity icon](fiftyone_concepts/app.md#app-object-similarity) will appear above the grid,
+[similarity icon](app.md#app-object-similarity) will appear above the grid,
 enabling you to sort by similarity to your current selection.
 
 You can use the advanced settings menu to choose between multiple brain keys
@@ -662,7 +662,7 @@ cached results and will be faster!
 When you create a similarity index powered by the
 [CLIP model](../models/model_zoo/models.md#model-zoo-clip-vit-base32-torch), you can also search by
 arbitrary natural language queries
-[natively in the App](fiftyone_concepts/app.md#app-text-similarity)!
+[natively in the App](app.md#app-text-similarity)!
 
 ![text-similarity](../_images/brain-text-similarity.gif)
 

@@ -187,7 +187,7 @@ The `API_KEY`, `GRPC_PORT`, and `PREFER_GRPC` environment variables are optional
 
 **FiftyOne Brain config**
 
-You can also store your credentials in your [brain config](../brain.md#brain-config)
+You can also store your credentials in your [brain config](../fiftyone_concepts/brain.md#brain-config)
 located at `~/.fiftyone/brain_config.json`:
 
 ```python
@@ -261,7 +261,7 @@ For detailed information on these parameters, see the
 [Qdrant documentation](https://qdrant.tech/documentation/configuration).
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.md#brain-config)
+previous section. Here’s an example of a [brain config](../fiftyone_concepts/brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -460,7 +460,7 @@ You can customize the Qdrant collection by passing any
 ### Create a patch similarity index [¶](\#create-a-patch-similarity-index "Permalink to this headline")
 
 You can also create a similarity index for
-[object patches](../brain.md#brain-object-similarity) within your dataset by
+[object patches](../fiftyone_concepts/brain.md#brain-object-similarity) within your dataset by
 including the `patches_field` argument to
 `compute_similarity()`:
 
@@ -606,7 +606,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
+- A text prompt (if [supported by the model](../fiftyone_concepts/brain.md#brain-similarity-text))
 
 
 ```python

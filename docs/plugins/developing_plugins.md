@@ -3109,7 +3109,7 @@ When users execute builtin methods like
 [evaluation](../fiftyone_concepts/evaluation.md#evaluating-models), and
 [brain methods](../fiftyone_concepts/brain.md#fiftyone-brain) on their datasets, certain configuration
 and results information is stored on the dataset that can be accessed later;
-for example, see [managing brain runs](../brain.md#brain-managing-runs).
+for example, see [managing brain runs](../fiftyone_concepts/brain.md#brain-managing-runs).
 
 FiftyOne also provides the ability to store _custom runs_ on datasets, which
 can be used by plugin developers to persist arbitrary application-specific

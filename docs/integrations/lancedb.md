@@ -123,7 +123,7 @@ export FIFTYONE_BRAIN_DEFAULT_SIMILARITY_BACKEND=lancedb
 ```
 
 or by setting the `default_similarity_backend` parameter of your
-[brain config](../brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
+[brain config](../fiftyone_concepts/brain.md#brain-config) located at `~/.fiftyone/brain_config.json`:
 
 ```python
 {
@@ -147,7 +147,7 @@ a new table. The supported values are `("cosine", "euclidean")`
 
 
 You can specify these parameters via any of the strategies described in the
-previous section. Here’s an example of a [brain config](../brain.md#brain-config)
+previous section. Here’s an example of a [brain config](../fiftyone_concepts/brain.md#brain-config)
 that includes all of the available parameters:
 
 ```python
@@ -317,7 +317,7 @@ You can customize the LanceDB index by passing any
 ### Create a patch similarity index [¶](\#create-a-patch-similarity-index "Permalink to this headline")
 
 You can also create a similarity index for
-[object patches](../brain.md#brain-object-similarity) within your dataset by
+[object patches](../fiftyone_concepts/brain.md#brain-object-similarity) within your dataset by
 specifying a `patches_field` argument to
 `compute_similarity()`:
 
@@ -463,7 +463,7 @@ stage to any dataset or view. The query can be any of the following:
 
 - A list of IDs (samples or patches)
 
-- A text prompt (if [supported by the model](../brain.md#brain-similarity-text))
+- A text prompt (if [supported by the model](../fiftyone_concepts/brain.md#brain-similarity-text))
 
 
 ```python
