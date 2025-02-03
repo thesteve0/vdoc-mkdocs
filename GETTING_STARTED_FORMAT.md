@@ -7,7 +7,8 @@ folder_name
     images
         index_img1.jpg
         index_img2.jgp
-        step1_img1.png
+        step1_img1.webp
+        step1_movie1.mp4
         ...
     index.md
     step1.md
@@ -15,6 +16,14 @@ folder_name
     ...
     summary.md
 ```
+
+## Media Formats
+All statics images need to be in either JPEG or WEBP format. PNG can be used if there is a limitied color pallete for the 
+image and this will create a signfigicantly smaller size on disk.
+
+All animations must be in WEBP or MP4 format
+https://cloudinary.com/guides/image-formats/gif-vs-webp
+
 
 ## index.md
 The index section begins with a paragraph that describes what they are going to learn. It should only be a couple of sentences describing the highlights
