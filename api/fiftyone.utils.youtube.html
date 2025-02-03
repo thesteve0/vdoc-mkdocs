@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.youtube</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.youtube.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.youtube.html" class="internal-link" title="This module">youtube</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_youtube_videos" class="internal-link" title="fiftyone.utils.youtube.download_youtube_videos">download<wbr></wbr>_youtube<wbr></wbr>_videos</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_build_tasks_list" class="internal-link" title="fiftyone.utils.youtube._build_tasks_list">_build<wbr></wbr>_tasks<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_download" class="internal-link" title="fiftyone.utils.youtube._do_download">_do<wbr></wbr>_download</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download" class="internal-link" title="fiftyone.utils.youtube._download">_download</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_clip" class="internal-link" title="fiftyone.utils.youtube._download_clip">_download<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_multi" class="internal-link" title="fiftyone.utils.youtube._download_multi">_download<wbr></wbr>_multi</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_video" class="internal-link" title="fiftyone.utils.youtube._download_video">_download<wbr></wbr>_video</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ensure_pytube" class="internal-link" title="fiftyone.utils.youtube._ensure_pytube">_ensure<wbr></wbr>_pytube</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_find_nearest" class="internal-link" title="fiftyone.utils.youtube._find_nearest">_find<wbr></wbr>_nearest</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_stream" class="internal-link" title="fiftyone.utils.youtube._get_stream">_get<wbr></wbr>_stream</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_num_workers" class="internal-link" title="fiftyone.utils.youtube._parse_num_workers">_parse<wbr></wbr>_num<wbr></wbr>_workers</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate_video" class="internal-link" title="fiftyone.utils.youtube._validate_video">_validate<wbr></wbr>_video</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.youtube.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#pytube" class="internal-link" title="fiftyone.utils.youtube.pytube">pytube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Utilities for working with <code>YouTube</code>.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2421">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_youtube_videos" class="internal-link" title="fiftyone.utils.youtube.download_youtube_videos">download<wbr></wbr>_youtube<wbr></wbr>_videos</a></code></td>
+    <td>Downloads a list of YouTube videos.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.youtube.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#pytube" class="internal-link" title="fiftyone.utils.youtube.pytube">pytube</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_build_tasks_list" class="internal-link" title="fiftyone.utils.youtube._build_tasks_list">_build<wbr></wbr>_tasks<wbr></wbr>_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_download" class="internal-link" title="fiftyone.utils.youtube._do_download">_do<wbr></wbr>_download</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download" class="internal-link" title="fiftyone.utils.youtube._download">_download</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_clip" class="internal-link" title="fiftyone.utils.youtube._download_clip">_download<wbr></wbr>_clip</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_multi" class="internal-link" title="fiftyone.utils.youtube._download_multi">_download<wbr></wbr>_multi</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_video" class="internal-link" title="fiftyone.utils.youtube._download_video">_download<wbr></wbr>_video</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ensure_pytube" class="internal-link" title="fiftyone.utils.youtube._ensure_pytube">_ensure<wbr></wbr>_pytube</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_nearest" class="internal-link" title="fiftyone.utils.youtube._find_nearest">_find<wbr></wbr>_nearest</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_stream" class="internal-link" title="fiftyone.utils.youtube._get_stream">_get<wbr></wbr>_stream</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_num_workers" class="internal-link" title="fiftyone.utils.youtube._parse_num_workers">_parse<wbr></wbr>_num<wbr></wbr>_workers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_validate_video" class="internal-link" title="fiftyone.utils.youtube._validate_video">_validate<wbr></wbr>_video</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.youtube.download_youtube_videos">
+    
+  </a>
+  <a name="download_youtube_videos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_youtube_videos</span><span class="function-signature">(urls, download_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, video_paths=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, clip_segments=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, ext=<span class="rst-variable-quote">'</span><span class="rst-variable-string">.mp4</span><span class="rst-variable-quote">'</span>, only_progressive=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, resolution=<span class="rst-variable-quote">'</span><span class="rst-variable-string">highest</span><span class="rst-variable-quote">'</span>, max_videos=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, skip_failures=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, quiet=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L33">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_youtube_videos" title="fiftyone.utils.youtube.download_youtube_videos">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Downloads a list of YouTube videos.</p>
+<p>The <tt class="rst-docutils rst-literal">urls</tt> argument accepts a list of YouTube "watch" URLs:</p>
+<pre class="rst-literal-block">
+urls = [
+    "https://www.youtube.com/watch?v=-0URMJE8_PB",
+    ...,
+]
+</pre>
+<p>Use either the <tt class="rst-docutils rst-literal">download_dir</tt> or <tt class="rst-docutils rst-literal">video_paths</tt> argument to specify
+where to download each video.</p>
+<p>You can use the optional <tt class="rst-docutils rst-literal">clip_segments</tt> argument to specify a specific
+segment, in seconds, of each video to download:</p>
+<pre class="rst-literal-block">
+clip_segments = [
+    (10, 25),
+    (11.1, 20.2),
+    None,               # entire video
+    (None, 8.0),        # through beginning of video
+    (8.0, None),        # through end of video
+    ...
+]
+</pre>
+<p>You can also use the optional <tt class="rst-docutils rst-literal">ext</tt> and <tt class="rst-docutils rst-literal">resolution</tt> arguments to
+specify a deisred video codec and resolution to download, if possible.</p>
+<p>YouTube videos are regularly taken down. Therefore, this method provides an
+optional <tt class="rst-docutils rst-literal">max_videos</tt> argument that you can use in conjunction with
+<tt class="rst-docutils rst-literal">skip_failures=True</tt> and a large list of possibly non-existent videos in
+<tt class="rst-docutils rst-literal">urls</tt> in cases where you need a certain number of videos to be
+successfully downloaded but are willing to tolerate failures.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">urls</span></td><td class="fieldArgDesc">a list of YouTube URLs to download</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">download<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a directory in which to store the downloaded
+videos</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">video<wbr></wbr>_paths:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a list of paths to which to download the videos.
+When downloading entire videos, a stream matching the video format
+implied by each file's extension is downloaded, if available, or
+else the extension of the video path is <strong>changed</strong> to match the
+available stream's format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">clip<wbr></wbr>_segments:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a list of <tt class="rst-docutils rst-literal">(first, last)</tt> tuples defining a
+specific segment of each video to download</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ext:</span><span class="literal">".mp4"</span></td><td class="fieldArgDesc">a video format to download for each video, if possible.
+Only applicable when a <tt class="rst-docutils rst-literal">download_dir</tt> is used. This format will
+be respected if such a stream exists, otherwise the format of the
+best available stream is used. Set this value to <tt class="rst-docutils rst-literal">None</tt> if you
+want to download the stream with the best match for <tt class="rst-docutils rst-literal">resolution</tt>
+and <tt class="rst-docutils rst-literal">progressive</tt> regardless of format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">only<wbr></wbr>_progressive:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to only download progressive streams,
+if possible. Progressive streams contain both audio and video
+tracks and are typically only available at &lt;= 720p resolution</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">resolution:</span><span class="literal">"highest"</span></td><td class="fieldArgDesc"><p>a desired stream resolution to download. This
+filter is applied after respecting the desired video format and
+<tt class="rst-docutils rst-literal">only_progressive</tt> restriction, if applicable. The supported
+values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">"highest"</tt> (default): download the highest resolution stream</li>
+<li><tt class="rst-docutils rst-literal">"lowest"</tt>:  download the lowest resolution stream</li>
+<li>A target resolution like <tt class="rst-docutils rst-literal">"1080p"</tt>. In this case, the stream
+whose resolution is closest to this target value is downloaded</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max<wbr></wbr>_videos:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the maximum number of videos to successfully
+download. By default, all videos are downloaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num<wbr></wbr>_workers:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a suggested number of threads/processes to use when
+downloading videos</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if a video cannot be downloaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">quiet:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to suppress logging, except for a progress bar</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">a tuple of</td><td class="fieldArgDesc"><ul class="rst-simple">
+<li><strong>downloaded</strong>: a dict mapping integer indexes into <tt class="rst-docutils rst-literal">urls</tt> to
+paths of successfully downloaded videos</li>
+<li><strong>errors</strong>: a dict mapping integer indexes into <tt class="rst-docutils rst-literal">urls</tt> to error
+messages for videos that were attempted to be downloaded, but
+failed</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.youtube.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L30">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.youtube.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.youtube.pytube">
+    
+  </a>
+  <a name="pytube">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pytube</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L27">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#pytube" title="fiftyone.utils.youtube.pytube">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._build_tasks_list">
+    
+  </a>
+  <a name="_build_tasks_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_build_tasks_list</span><span class="function-signature">(urls, download_dir, video_paths, clip_segments, tmp_dir, ext, only_progressive, resolution)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L167">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_build_tasks_list" title="fiftyone.utils.youtube._build_tasks_list">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._do_download">
+    
+  </a>
+  <a name="_do_download">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_download</span><span class="function-signature">(task)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L303">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_download" title="fiftyone.utils.youtube._do_download">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._download">
+    
+  </a>
+  <a name="_download">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download</span><span class="function-signature">(tasks, max_videos, skip_failures, quiet)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L233">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download" title="fiftyone.utils.youtube._download">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._download_clip">
+    
+  </a>
+  <a name="_download_clip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_clip</span><span class="function-signature">(stream, clip_segment, video_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L457">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_clip" title="fiftyone.utils.youtube._download_clip">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._download_multi">
+    
+  </a>
+  <a name="_download_multi">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_multi</span><span class="function-signature">(tasks, max_videos, skip_failures, quiet, num_workers, use_threads)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L264">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_multi" title="fiftyone.utils.youtube._download_multi">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._download_video">
+    
+  </a>
+  <a name="_download_video">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_video</span><span class="function-signature">(stream, video_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L447">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_video" title="fiftyone.utils.youtube._download_video">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._ensure_pytube">
+    
+  </a>
+  <a name="_ensure_pytube">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ensure_pytube</span><span class="function-signature">()</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L23">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ensure_pytube" title="fiftyone.utils.youtube._ensure_pytube">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._find_nearest">
+    
+  </a>
+  <a name="_find_nearest">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_nearest</span><span class="function-signature">(array, target)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L443">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_find_nearest" title="fiftyone.utils.youtube._find_nearest">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._get_stream">
+    
+  </a>
+  <a name="_get_stream">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_stream</span><span class="function-signature">(pytube_video, ext, only_progressive, resolution)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L407">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_stream" title="fiftyone.utils.youtube._get_stream">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._parse_num_workers">
+    
+  </a>
+  <a name="_parse_num_workers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_num_workers</span><span class="function-signature">(num_workers, use_threads=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L160">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_num_workers" title="fiftyone.utils.youtube._parse_num_workers">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.youtube._validate_video">
+    
+  </a>
+  <a name="_validate_video">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate_video</span><span class="function-signature">(pytube_video)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/youtube.py#L389">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate_video" title="fiftyone.utils.youtube._validate_video">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,2943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.plots.matplotlib.InteractiveCollection</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.plots.matplotlib.InteractiveCollection.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.plots.matplotlib.InteractiveCollection.html" class="internal-link" title="This class"><wbr></wbr>Interactive<wbr></wbr>Collection</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_close_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._close_hud">_close<wbr></wbr>_hud</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_connect" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._connect">_connect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_disconnect" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect">_disconnect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_draw" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._draw">_draw</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_freeze" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._freeze">_freeze</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_init_canvas" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_canvas">_init<wbr></wbr>_canvas</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_init_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_hud">_init<wbr></wbr>_hud</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_enter" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_enter">_on<wbr></wbr>_enter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_exit" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_exit">_on<wbr></wbr>_exit</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_keypress" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keypress">_on<wbr></wbr>_keypress</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_keyrelease" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keyrelease">_on<wbr></wbr>_keyrelease</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_select" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_select">_on<wbr></wbr>_select</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_prep_collection" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._prep_collection">_prep<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_disconnect_callback">_register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_register_sync_callback" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_sync_callback">_register<wbr></wbr>_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reinit_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reinit_hud">_reinit<wbr></wbr>_hud</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reopen" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reopen">_reopen</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_select_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_ids">_select<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_select_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_inds">_select<wbr></wbr>_inds</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_hud">_update<wbr></wbr>_hud</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_plot" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_plot">_update<wbr></wbr>_plot</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#recommend_link_type" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.recommend_link_type">recommend<wbr></wbr>_link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_disconnect_callback">register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_selection_callback">register<wbr></wbr>_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_sync_callback">register<wbr></wbr>_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.reset">reset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.select_ids">select<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode.setter" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode.setter">selection<wbr></wbr>_mode<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#save" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#show" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.show">show</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_selection_callback">_register<wbr></wbr>_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_show" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._show">_show</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#alpha_other" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.alpha_other">alpha<wbr></wbr>_other</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ax" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.ax">ax</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#click_tolerance" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.click_tolerance">click<wbr></wbr>_tolerance</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#collection" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.collection">collection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#expand_selected" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.expand_selected">expand<wbr></wbr>_selected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_buttons" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._buttons">_buttons</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_canvas" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._canvas">_canvas</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_disconnect_button_def" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect_button_def">_disconnect<wbr></wbr>_button<wbr></wbr>_def</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_fc" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._fc">_fc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_figure_events" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._figure_events">_figure<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids">_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ids_to_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids_to_inds">_ids<wbr></wbr>_to<wbr></wbr>_inds</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._inds">_inds</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_keypress_events" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._keypress_events">_keypress<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_lasso" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._lasso">_lasso</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ms" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ms">_ms</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_num_pts" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._num_pts">_num<wbr></wbr>_pts</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_shift" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._shift">_shift</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_sync_button_def" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._sync_button_def">_sync<wbr></wbr>_button<wbr></wbr>_def</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_title" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._title">_title</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_user_button_defs" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._user_button_defs">_user<wbr></wbr>_button<wbr></wbr>_defs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_xy" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._xy">_xy</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_selected_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._selected_ids">_selected<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#label_fields" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.label_fields">label<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.init_view">init<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selected_ids">selected<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode">selection<wbr></wbr>_mode</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._disconnect_callback">_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn">_init<wbr></wbr>_fcn</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn_view">_init<wbr></wbr>_fcn<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_view">_init<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_callback">_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_mode">_selection<wbr></wbr>_mode</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._sync_callback">_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_figure" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._figure">_figure</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_in_notebook_context" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._in_notebook_context">_in<wbr></wbr>_notebook<wbr></wbr>_context</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.plots.matplotlib.html" class="internal-link" title="The parent of this class">matplotlib</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveCollection.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection"><wbr></wbr>Interactive<wbr></wbr>Collection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot"><wbr></wbr>Interactive<wbr></wbr>Matplotlib<wbr></wbr>Plot</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#lines" class="internal-link" title="fiftyone.core.plots.matplotlib.lines">lines</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#location_scatterplot" class="internal-link" title="fiftyone.core.plots.matplotlib.location_scatterplot">location<wbr></wbr>_scatterplot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#plot_confusion_matrix" class="internal-link" title="fiftyone.core.plots.matplotlib.plot_confusion_matrix">plot<wbr></wbr>_confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#plot_pr_curve" class="internal-link" title="fiftyone.core.plots.matplotlib.plot_pr_curve">plot<wbr></wbr>_pr<wbr></wbr>_curve</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#plot_pr_curves" class="internal-link" title="fiftyone.core.plots.matplotlib.plot_pr_curves">plot<wbr></wbr>_pr<wbr></wbr>_curves</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#plot_regressions" class="internal-link" title="fiftyone.core.plots.matplotlib.plot_regressions">plot<wbr></wbr>_regressions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#plot_roc_curve" class="internal-link" title="fiftyone.core.plots.matplotlib.plot_roc_curve">plot<wbr></wbr>_roc<wbr></wbr>_curve</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#scatterplot" class="internal-link" title="fiftyone.core.plots.matplotlib.scatterplot">scatterplot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_ensure_salem" class="internal-link" title="fiftyone.core.plots.matplotlib._ensure_salem">_ensure<wbr></wbr>_salem</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_get_qualitative_colors" class="internal-link" title="fiftyone.core.plots.matplotlib._get_qualitative_colors">_get<wbr></wbr>_qualitative<wbr></wbr>_colors</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_plot_lines" class="internal-link" title="fiftyone.core.plots.matplotlib._plot_lines">_plot<wbr></wbr>_lines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_plot_map_background" class="internal-link" title="fiftyone.core.plots.matplotlib._plot_map_background">_plot<wbr></wbr>_map<wbr></wbr>_background</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_plot_scatter" class="internal-link" title="fiftyone.core.plots.matplotlib._plot_scatter">_plot<wbr></wbr>_scatter</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#logger" class="internal-link" title="fiftyone.core.plots.matplotlib.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#salem" class="internal-link" title="fiftyone.core.plots.matplotlib.salem">salem</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_DEFAULT_CONTINUOUS_COLORSCALE" class="internal-link" title="fiftyone.core.plots.matplotlib._DEFAULT_CONTINUOUS_COLORSCALE">_DEFAULT<wbr></wbr>_CONTINUOUS<wbr></wbr>_COLORSCALE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_DEFAULT_LINE_COLOR" class="internal-link" title="fiftyone.core.plots.matplotlib._DEFAULT_LINE_COLOR">_DEFAULT<wbr></wbr>_LINE<wbr></wbr>_COLOR</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.matplotlib.html#_DEFAULT_STYLE" class="internal-link" title="fiftyone.core.plots.matplotlib._DEFAULT_STYLE">_DEFAULT<wbr></wbr>_STYLE</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.matplotlib.html" class="internal-link" title="fiftyone.core.plots.matplotlib">matplotlib</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.matplotlib.InteractiveCollection.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection">InteractiveCollection</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">InteractiveCollection</span>(<a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot">InteractiveMatplotlibPlot</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L965" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.__init__">InteractiveCollection(collection, ids, buttons, alpha_other, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.plots.matplotlib.InteractiveCollection">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Interactive wrapper for a matplotlib collection.</p>
+<p>This class enables collection points to be lasso-ed and click selected.</p>
+<p>The currently selected points are given a visually distinctive style, and
+you can modify your selection by either clicking on individual points or
+drawing a lasso around new points.</p>
+<p>When the shift key is pressed, new selections are added to the selected
+set, or subtracted if the new selection is a subset of the current
+selection.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">collection</span></td><td class="fieldArgDesc">a <tt class="rst-docutils rst-literal">matplotlib.collections.Collection</tt> to select points
+from</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ids</span></td><td class="fieldArgDesc">an array-like of IDs corresponding to the points in
+<tt class="rst-docutils rst-literal">collection</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">buttons</span></td><td class="fieldArgDesc">a list of <tt class="rst-docutils rst-literal">(label, icon_image, callback)</tt> tuples
+defining buttons to add to the plot</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alpha<wbr></wbr>_other</span></td><td class="fieldArgDesc">a transparency value for unselected points</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">expand<wbr></wbr>_selected</span></td><td class="fieldArgDesc">expand the size of selected points by this
+multiple</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">click<wbr></wbr>_tolerance</span></td><td class="fieldArgDesc">a click distance tolerance in <tt class="rst-docutils rst-literal">[0, 1]</tt> when
+clicking individual points</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">keyword arguments for the
+<code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link">fiftyone.core.plots.base.InteractivePlot</a></code> constructor</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id515">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#alpha_other" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.alpha_other">alpha<wbr></wbr>_other</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ax" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.ax">ax</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#click_tolerance" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.click_tolerance">click<wbr></wbr>_tolerance</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#collection" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.collection">collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#expand_selected" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection.expand_selected">expand<wbr></wbr>_selected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_close_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._close_hud">_close<wbr></wbr>_hud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_connect" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_disconnect" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect">_disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_draw" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._draw">_draw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_freeze" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._freeze">_freeze</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_canvas" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_canvas">_init<wbr></wbr>_canvas</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_init_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_hud">_init<wbr></wbr>_hud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_enter" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_enter">_on<wbr></wbr>_enter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_exit" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_exit">_on<wbr></wbr>_exit</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_keypress" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keypress">_on<wbr></wbr>_keypress</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_keyrelease" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keyrelease">_on<wbr></wbr>_keyrelease</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_select" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_select">_on<wbr></wbr>_select</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_prep_collection" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._prep_collection">_prep<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_disconnect_callback">_register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_register_sync_callback" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_sync_callback">_register<wbr></wbr>_sync<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reinit_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reinit_hud">_reinit<wbr></wbr>_hud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reopen" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reopen">_reopen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_select_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_ids">_select<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_select_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_inds">_select<wbr></wbr>_inds</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_hud" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_hud">_update<wbr></wbr>_hud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_plot" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_plot">_update<wbr></wbr>_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_buttons" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._buttons">_buttons</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_canvas" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._canvas">_canvas</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_disconnect_button_def" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect_button_def">_disconnect<wbr></wbr>_button<wbr></wbr>_def</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_fc" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._fc">_fc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_figure_events" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._figure_events">_figure<wbr></wbr>_events</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids">_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ids_to_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids_to_inds">_ids<wbr></wbr>_to<wbr></wbr>_inds</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_inds" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._inds">_inds</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_keypress_events" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._keypress_events">_keypress<wbr></wbr>_events</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_lasso" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._lasso">_lasso</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_ms" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ms">_ms</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_num_pts" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._num_pts">_num<wbr></wbr>_pts</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_shift" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._shift">_shift</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_sync_button_def" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._sync_button_def">_sync<wbr></wbr>_button<wbr></wbr>_def</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_title" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._title">_title</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_user_button_defs" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._user_button_defs">_user<wbr></wbr>_button<wbr></wbr>_defs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_xy" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._xy">_xy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_selected_ids" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveCollection._selected_ids">_selected<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot">InteractiveMatplotlibPlot</a></code>:
+            </p>
+            <table class="children sortable" id="id516">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#save" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.save">save</a></code></td>
+    <td>Saves the plot as an image.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#show" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.show">show</a></code></td>
+    <td>Shows this plot.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code></td>
+    <td>Whether this plot supports automatic updates in response to session changes.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_show" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._show">_show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_figure" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._figure">_figure</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_in_notebook_context" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._in_notebook_context">_in<wbr></wbr>_notebook<wbr></wbr>_context</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code> (via <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot">InteractiveMatplotlibPlot</a></code>):
+            </p>
+            <table class="children sortable" id="id517">
+  
+  
+  <tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#recommend_link_type" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.recommend_link_type">recommend<wbr></wbr>_link<wbr></wbr>_type</a></code></td>
+    <td>Recommends a link type for the given info.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_disconnect_callback">register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code></td>
+    <td>Registers a callback that can disconnect this plot from a <code>SessionPlot</code> connected to it.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_selection_callback">register<wbr></wbr>_selection<wbr></wbr>_callback</a></code></td>
+    <td>Registers a selection callback for this plot.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_sync_callback">register<wbr></wbr>_sync<wbr></wbr>_callback</a></code></td>
+    <td>Registers a callback that can sync this plot with a <code>SessionPlot</code> connected to it.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.reset">reset</a></code></td>
+    <td>Resets the plot to its default state.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.select_ids">select<wbr></wbr>_ids</a></code></td>
+    <td>Selects the points with the given IDs in this plot.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode.setter" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode.setter">selection<wbr></wbr>_mode<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#label_fields" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.label_fields">label<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.init_view">init<wbr></wbr>_view</a></code></td>
+    <td>A <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> defining the initial view from which to derive selection views when points are selected in the plot.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selected_ids">selected<wbr></wbr>_ids</a></code></td>
+    <td>A list of IDs of the currently selected points.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode">selection<wbr></wbr>_mode</a></code></td>
+    <td>The current selection mode of the plot.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_selection_callback">_register<wbr></wbr>_selection<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._disconnect_callback">_disconnect<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn">_init<wbr></wbr>_fcn</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn_view">_init<wbr></wbr>_fcn<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_view">_init<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_callback">_selection<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_mode">_selection<wbr></wbr>_mode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._sync_callback">_sync<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code> (via <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot">InteractiveMatplotlibPlot</a></code>, <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code>):
+            </p>
+            <table class="children sortable" id="id518">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code></td>
+    <td>Connects this plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code></td>
+    <td>Disconnects the plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code></td>
+    <td>Freezes the plot, replacing it with a static image.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code></td>
+    <td>Whether this plot is currently connected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code></td>
+    <td>Whether this plot is currently disconnected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code></td>
+    <td>Whether this plot is currently frozen.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.Plot.html" class="internal-link" title="fiftyone.core.plots.base.Plot">Plot</a></code> (via <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html" class="internal-link" title="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot">InteractiveMatplotlibPlot</a></code>, <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code>, <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code>):
+            </p>
+            <table class="children sortable" id="id519">
+  
+  
+  <tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, collection, ids=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, buttons=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, alpha_other=0.25, expand_selected=3.0, click_tolerance=0.02, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L994">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.plots.matplotlib.InteractiveCollection.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#__init__" class="internal-link">fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.alpha_other">
+    
+  </a>
+  <a name="alpha_other">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">alpha_other</span>: <span class="literal">0.25</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1006">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#alpha_other" title="fiftyone.core.plots.matplotlib.InteractiveCollection.alpha_other">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.ax">
+    
+  </a>
+  <a name="ax">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ax</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1005">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ax" title="fiftyone.core.plots.matplotlib.InteractiveCollection.ax">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.click_tolerance">
+    
+  </a>
+  <a name="click_tolerance">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">click_tolerance</span>: <span class="literal">0.02</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1008">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#click_tolerance" title="fiftyone.core.plots.matplotlib.InteractiveCollection.click_tolerance">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.collection">
+    
+  </a>
+  <a name="collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">collection</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1004">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#collection" title="fiftyone.core.plots.matplotlib.InteractiveCollection.collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection.expand_selected">
+    
+  </a>
+  <a name="expand_selected">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">expand_selected</span>: <span class="literal">3.0</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1007">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#expand_selected" title="fiftyone.core.plots.matplotlib.InteractiveCollection.expand_selected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._close_hud">
+    
+  </a>
+  <a name="_close_hud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_close_hud</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1178">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_close_hud" title="fiftyone.core.plots.matplotlib.InteractiveCollection._close_hud">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._connect">
+    
+  </a>
+  <a name="_connect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_connect</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1082">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_connect" title="fiftyone.core.plots.matplotlib.InteractiveCollection._connect">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connect" class="internal-link">fiftyone.core.plots.base.ResponsivePlot._connect</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect">
+    
+  </a>
+  <a name="_disconnect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_disconnect</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1112">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_disconnect" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnect" class="internal-link">fiftyone.core.plots.base.ResponsivePlot._disconnect</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._draw">
+    
+  </a>
+  <a name="_draw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_draw</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1131">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_draw" title="fiftyone.core.plots.matplotlib.InteractiveCollection._draw">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._freeze">
+    
+  </a>
+  <a name="_freeze">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_freeze</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1134">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_freeze" title="fiftyone.core.plots.matplotlib.InteractiveCollection._freeze">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_freeze" class="internal-link">fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._freeze</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._init_canvas">
+    
+  </a>
+  <a name="_init_canvas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_canvas</span><span class="function-signature">(self, figure)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1072">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_init_canvas" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_canvas">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._init_hud">
+    
+  </a>
+  <a name="_init_hud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_hud</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1140">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_init_hud" title="fiftyone.core.plots.matplotlib.InteractiveCollection._init_hud">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._on_enter">
+    
+  </a>
+  <a name="_on_enter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_enter</span><span class="function-signature">(self, event)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1191">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_enter" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_enter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._on_exit">
+    
+  </a>
+  <a name="_on_exit">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_exit</span><span class="function-signature">(self, event)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1195">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_exit" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_exit">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keypress">
+    
+  </a>
+  <a name="_on_keypress">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_keypress</span><span class="function-signature">(self, event)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1199">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_keypress" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keypress">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keyrelease">
+    
+  </a>
+  <a name="_on_keyrelease">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_keyrelease</span><span class="function-signature">(self, event)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1205">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_keyrelease" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_keyrelease">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._on_select">
+    
+  </a>
+  <a name="_on_select">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_select</span><span class="function-signature">(self, vertices)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1211">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_select" title="fiftyone.core.plots.matplotlib.InteractiveCollection._on_select">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._prep_collection">
+    
+  </a>
+  <a name="_prep_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_prep_collection</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1301">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_prep_collection" title="fiftyone.core.plots.matplotlib.InteractiveCollection._prep_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._register_disconnect_callback">
+    
+  </a>
+  <a name="_register_disconnect_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_register_disconnect_callback</span><span class="function-signature">(self, callback)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1058">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_register_disconnect_callback" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_disconnect_callback">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_disconnect_callback" class="internal-link">fiftyone.core.plots.base.InteractivePlot._register_disconnect_callback</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._register_sync_callback">
+    
+  </a>
+  <a name="_register_sync_callback">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_register_sync_callback</span><span class="function-signature">(self, callback)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1045">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_register_sync_callback" title="fiftyone.core.plots.matplotlib.InteractiveCollection._register_sync_callback">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_sync_callback" class="internal-link">fiftyone.core.plots.base.InteractivePlot._register_sync_callback</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._reinit_hud">
+    
+  </a>
+  <a name="_reinit_hud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reinit_hud</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1174">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reinit_hud" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reinit_hud">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._reopen">
+    
+  </a>
+  <a name="_reopen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reopen</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1078">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reopen" title="fiftyone.core.plots.matplotlib.InteractiveCollection._reopen">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot.html#_reopen" class="internal-link">fiftyone.core.plots.matplotlib.InteractiveMatplotlibPlot._reopen</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._select_ids">
+    
+  </a>
+  <a name="_select_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_select_ids</span><span class="function-signature">(self, ids, view=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1260">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_select_ids" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.InteractivePlot.html#_select_ids" class="internal-link">fiftyone.core.plots.base.InteractivePlot._select_ids</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._select_inds">
+    
+  </a>
+  <a name="_select_inds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_select_inds</span><span class="function-signature">(self, inds)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1268">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_select_inds" title="fiftyone.core.plots.matplotlib.InteractiveCollection._select_inds">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._update_hud">
+    
+  </a>
+  <a name="_update_hud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_hud</span><span class="function-signature">(self, visible)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1186">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_hud" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_hud">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._update_plot">
+    
+  </a>
+  <a name="_update_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_plot</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1278">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_plot" title="fiftyone.core.plots.matplotlib.InteractiveCollection._update_plot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._buttons">
+    
+  </a>
+  <a name="_buttons">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_buttons</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1029">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_buttons" title="fiftyone.core.plots.matplotlib.InteractiveCollection._buttons">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._canvas">
+    
+  </a>
+  <a name="_canvas">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_canvas</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1022">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_canvas" title="fiftyone.core.plots.matplotlib.InteractiveCollection._canvas">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect_button_def">
+    
+  </a>
+  <a name="_disconnect_button_def">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_disconnect_button_def</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1028">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_disconnect_button_def" title="fiftyone.core.plots.matplotlib.InteractiveCollection._disconnect_button_def">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._fc">
+    
+  </a>
+  <a name="_fc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_fc</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1012">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_fc" title="fiftyone.core.plots.matplotlib.InteractiveCollection._fc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._figure_events">
+    
+  </a>
+  <a name="_figure_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_figure_events</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1030">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_figure_events" title="fiftyone.core.plots.matplotlib.InteractiveCollection._figure_events">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._ids">
+    
+  </a>
+  <a name="_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ids</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1018">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ids" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._ids_to_inds">
+    
+  </a>
+  <a name="_ids_to_inds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ids_to_inds</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1019">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ids_to_inds" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ids_to_inds">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._inds">
+    
+  </a>
+  <a name="_inds">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_inds</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1020">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_inds" title="fiftyone.core.plots.matplotlib.InteractiveCollection._inds">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._keypress_events">
+    
+  </a>
+  <a name="_keypress_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keypress_events</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1031">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_keypress_events" title="fiftyone.core.plots.matplotlib.InteractiveCollection._keypress_events">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._lasso">
+    
+  </a>
+  <a name="_lasso">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_lasso</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1023">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_lasso" title="fiftyone.core.plots.matplotlib.InteractiveCollection._lasso">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._ms">
+    
+  </a>
+  <a name="_ms">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ms</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1013">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ms" title="fiftyone.core.plots.matplotlib.InteractiveCollection._ms">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._num_pts">
+    
+  </a>
+  <a name="_num_pts">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_num_pts</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1011">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_num_pts" title="fiftyone.core.plots.matplotlib.InteractiveCollection._num_pts">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._shift">
+    
+  </a>
+  <a name="_shift">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_shift</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1024">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_shift" title="fiftyone.core.plots.matplotlib.InteractiveCollection._shift">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._sync_button_def">
+    
+  </a>
+  <a name="_sync_button_def">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_sync_button_def</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1027">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_sync_button_def" title="fiftyone.core.plots.matplotlib.InteractiveCollection._sync_button_def">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._title">
+    
+  </a>
+  <a name="_title">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_title</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1025">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_title" title="fiftyone.core.plots.matplotlib.InteractiveCollection._title">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._user_button_defs">
+    
+  </a>
+  <a name="_user_button_defs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_user_button_defs</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1026">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_user_button_defs" title="fiftyone.core.plots.matplotlib.InteractiveCollection._user_button_defs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._xy">
+    
+  </a>
+  <a name="_xy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_xy</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1010">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_xy" title="fiftyone.core.plots.matplotlib.InteractiveCollection._xy">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty private">
+  
+  
+  <a name="fiftyone.core.plots.matplotlib.InteractiveCollection._selected_ids">
+    
+  </a>
+  <a name="_selected_ids">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">_selected_ids</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/matplotlib.py#L1038">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_selected_ids" title="fiftyone.core.plots.matplotlib.InteractiveCollection._selected_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selected_ids" class="internal-link">fiftyone.core.plots.base.InteractivePlot._selected_ids</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

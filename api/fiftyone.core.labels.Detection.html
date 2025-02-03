@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.labels.Detection</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.labels.Detection.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="This class"><wbr></wbr>Detection</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_mask" class="internal-link" title="fiftyone.core.labels.Detection.from_mask">from<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_mask" class="internal-link" title="fiftyone.core.labels.Detection.export_mask">export<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_mask" class="internal-link" title="fiftyone.core.labels.Detection.get_mask">get<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#import_mask" class="internal-link" title="fiftyone.core.labels.Detection.import_mask">import<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_polyline" class="internal-link" title="fiftyone.core.labels.Detection.to_polyline">to<wbr></wbr>_polyline</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_segmentation" class="internal-link" title="fiftyone.core.labels.Detection.to_segmentation">to<wbr></wbr>_segmentation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_shapely" class="internal-link" title="fiftyone.core.labels.Detection.to_shapely">to<wbr></wbr>_shapely</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html#delete_attribute" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.delete_attribute">delete<wbr></wbr>_attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html#get_attribute_value" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.get_attribute_value">get<wbr></wbr>_attribute<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html#has_attribute" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.has_attribute">has<wbr></wbr>_attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html#iter_attributes" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.iter_attributes">iter<wbr></wbr>_attributes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html#set_attribute_value" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.set_attribute_value">set<wbr></wbr>_attribute<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasID.html#_id.setter" class="internal-link" title="fiftyone.core.labels._HasID._id.setter">_id<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#bounding_box" class="internal-link" title="fiftyone.core.labels.Detection.bounding_box">bounding<wbr></wbr>_box</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#confidence" class="internal-link" title="fiftyone.core.labels.Detection.confidence">confidence</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#index" class="internal-link" title="fiftyone.core.labels.Detection.index">index</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#label" class="internal-link" title="fiftyone.core.labels.Detection.label">label</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mask_path" class="internal-link" title="fiftyone.core.labels.Detection.mask_path">mask<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_mask" class="internal-link" title="fiftyone.core.labels.Detection.has_mask">has<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_MEDIA_FIELD" class="internal-link" title="fiftyone.core.labels.Detection._MEDIA_FIELD">_MEDIA<wbr></wbr>_FIELD</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasID.html#tags" class="internal-link" title="fiftyone.core.labels._HasID.tags">tags</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasID.html#id" class="internal-link" title="fiftyone.core.labels._HasID.id">id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasID.html#_id" class="internal-link" title="fiftyone.core.labels._HasID._id">_id</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.labels.html" class="internal-link" title="The parent of this class">labels</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Attribute.html" class="internal-link" title="fiftyone.core.labels.Attribute"><wbr></wbr>Attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.BooleanAttribute.html" class="internal-link" title="fiftyone.core.labels.BooleanAttribute"><wbr></wbr>Boolean<wbr></wbr>Attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.CategoricalAttribute.html" class="internal-link" title="fiftyone.core.labels.CategoricalAttribute"><wbr></wbr>Categorical<wbr></wbr>Attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Classification.html" class="internal-link" title="fiftyone.core.labels.Classification"><wbr></wbr>Classification</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Classifications.html" class="internal-link" title="fiftyone.core.labels.Classifications"><wbr></wbr>Classifications</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection"><wbr></wbr>Detection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Detections.html" class="internal-link" title="fiftyone.core.labels.Detections"><wbr></wbr>Detections</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link" title="fiftyone.core.labels.GeoLocation"><wbr></wbr>Geo<wbr></wbr>Location</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.GeoLocations.html" class="internal-link" title="fiftyone.core.labels.GeoLocations"><wbr></wbr>Geo<wbr></wbr>Locations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Heatmap.html" class="internal-link" title="fiftyone.core.labels.Heatmap"><wbr></wbr>Heatmap</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Keypoint.html" class="internal-link" title="fiftyone.core.labels.Keypoint"><wbr></wbr>Keypoint</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link" title="fiftyone.core.labels.Keypoints"><wbr></wbr>Keypoints</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Label.html" class="internal-link" title="fiftyone.core.labels.Label"><wbr></wbr>Label</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.ListAttribute.html" class="internal-link" title="fiftyone.core.labels.ListAttribute"><wbr></wbr>List<wbr></wbr>Attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.NumericAttribute.html" class="internal-link" title="fiftyone.core.labels.NumericAttribute"><wbr></wbr>Numeric<wbr></wbr>Attribute</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Polyline.html" class="internal-link" title="fiftyone.core.labels.Polyline"><wbr></wbr>Polyline</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Polylines.html" class="internal-link" title="fiftyone.core.labels.Polylines"><wbr></wbr>Polylines</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Regression.html" class="internal-link" title="fiftyone.core.labels.Regression"><wbr></wbr>Regression</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.Segmentation.html" class="internal-link" title="fiftyone.core.labels.Segmentation"><wbr></wbr>Segmentation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.TemporalDetection.html" class="internal-link" title="fiftyone.core.labels.TemporalDetection"><wbr></wbr>Temporal<wbr></wbr>Detection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.TemporalDetections.html" class="internal-link" title="fiftyone.core.labels.TemporalDetections"><wbr></wbr>Temporal<wbr></wbr>Detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasAttributesDict.html" class="internal-link" title="fiftyone.core.labels._HasAttributesDict">_<wbr></wbr>Has<wbr></wbr>Attributes<wbr></wbr>Dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasID.html" class="internal-link" title="fiftyone.core.labels._HasID">_<wbr></wbr>Has<wbr></wbr>ID</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasLabelList.html" class="internal-link" title="fiftyone.core.labels._HasLabelList">_<wbr></wbr>Has<wbr></wbr>Label<wbr></wbr>List</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._HasMedia.html" class="internal-link" title="fiftyone.core.labels._HasMedia">_<wbr></wbr>Has<wbr></wbr>Media</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels._NoDefault.html" class="internal-link" title="fiftyone.core.labels._NoDefault">_<wbr></wbr>No<wbr></wbr>Default</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_convert_segmentation" class="internal-link" title="fiftyone.core.labels._convert_segmentation">_convert<wbr></wbr>_segmentation</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_find_slices" class="internal-link" title="fiftyone.core.labels._find_slices">_find<wbr></wbr>_slices</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_from_geo_json" class="internal-link" title="fiftyone.core.labels._from_geo_json">_from<wbr></wbr>_geo<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_from_geo_json_single" class="internal-link" title="fiftyone.core.labels._from_geo_json_single">_from<wbr></wbr>_geo<wbr></wbr>_json<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_get_polygons" class="internal-link" title="fiftyone.core.labels._get_polygons">_get<wbr></wbr>_polygons</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_heatmap_to_image" class="internal-link" title="fiftyone.core.labels._heatmap_to_image">_heatmap<wbr></wbr>_to<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_hex_to_int" class="internal-link" title="fiftyone.core.labels._hex_to_int">_hex<wbr></wbr>_to<wbr></wbr>_int</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_hex_to_rgb" class="internal-link" title="fiftyone.core.labels._hex_to_rgb">_hex<wbr></wbr>_to<wbr></wbr>_rgb</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_int_array_to_rgb" class="internal-link" title="fiftyone.core.labels._int_array_to_rgb">_int<wbr></wbr>_array<wbr></wbr>_to<wbr></wbr>_rgb</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_int_to_hex" class="internal-link" title="fiftyone.core.labels._int_to_hex">_int<wbr></wbr>_to<wbr></wbr>_hex</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_mask_to_detections" class="internal-link" title="fiftyone.core.labels._mask_to_detections">_mask<wbr></wbr>_to<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_mask_to_image" class="internal-link" title="fiftyone.core.labels._mask_to_image">_mask<wbr></wbr>_to<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_mask_to_polylines" class="internal-link" title="fiftyone.core.labels._mask_to_polylines">_mask<wbr></wbr>_to<wbr></wbr>_polylines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_parse_segmentation_mask_targets" class="internal-link" title="fiftyone.core.labels._parse_segmentation_mask_targets">_parse<wbr></wbr>_segmentation<wbr></wbr>_mask<wbr></wbr>_targets</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_parse_segmentation_target" class="internal-link" title="fiftyone.core.labels._parse_segmentation_target">_parse<wbr></wbr>_segmentation<wbr></wbr>_target</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_parse_stuff_instance" class="internal-link" title="fiftyone.core.labels._parse_stuff_instance">_parse<wbr></wbr>_stuff<wbr></wbr>_instance</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_parse_thing_instances" class="internal-link" title="fiftyone.core.labels._parse_thing_instances">_parse<wbr></wbr>_thing<wbr></wbr>_instances</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_parse_video_metadata" class="internal-link" title="fiftyone.core.labels._parse_video_metadata">_parse<wbr></wbr>_video<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_read_heatmap" class="internal-link" title="fiftyone.core.labels._read_heatmap">_read<wbr></wbr>_heatmap</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_read_mask" class="internal-link" title="fiftyone.core.labels._read_mask">_read<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_render_instance" class="internal-link" title="fiftyone.core.labels._render_instance">_render<wbr></wbr>_instance</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_render_polyline" class="internal-link" title="fiftyone.core.labels._render_polyline">_render<wbr></wbr>_polyline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_rgb_array_to_int" class="internal-link" title="fiftyone.core.labels._rgb_array_to_int">_rgb<wbr></wbr>_array<wbr></wbr>_to<wbr></wbr>_int</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_rgb_to_hex" class="internal-link" title="fiftyone.core.labels._rgb_to_hex">_rgb<wbr></wbr>_to<wbr></wbr>_hex</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_rotation_matrix" class="internal-link" title="fiftyone.core.labels._rotation_matrix">_rotation<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_segmentation_to_detections" class="internal-link" title="fiftyone.core.labels._segmentation_to_detections">_segmentation<wbr></wbr>_to<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_segmentation_to_polylines" class="internal-link" title="fiftyone.core.labels._segmentation_to_polylines">_segmentation<wbr></wbr>_to<wbr></wbr>_polylines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_transform_mask" class="internal-link" title="fiftyone.core.labels._transform_mask">_transform<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_write_heatmap" class="internal-link" title="fiftyone.core.labels._write_heatmap">_write<wbr></wbr>_heatmap</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_write_mask" class="internal-link" title="fiftyone.core.labels._write_mask">_write<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#foue" class="internal-link" title="fiftyone.core.labels.foue">foue</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#foug" class="internal-link" title="fiftyone.core.labels.foug">foug</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#foui" class="internal-link" title="fiftyone.core.labels.foui">foui</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#no_default" class="internal-link" title="fiftyone.core.labels.no_default">no<wbr></wbr>_default</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#sg" class="internal-link" title="fiftyone.core.labels.sg">sg</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_INDEX_FIEDS" class="internal-link" title="fiftyone.core.labels._INDEX_FIEDS">_INDEX<wbr></wbr>_FIEDS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_LABEL_LIST_FIELDS" class="internal-link" title="fiftyone.core.labels._LABEL_LIST_FIELDS">_LABEL<wbr></wbr>_LIST<wbr></wbr>_FIELDS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_LABEL_LIST_TO_SINGLE_MAP" class="internal-link" title="fiftyone.core.labels._LABEL_LIST_TO_SINGLE_MAP">_LABEL<wbr></wbr>_LIST<wbr></wbr>_TO<wbr></wbr>_SINGLE<wbr></wbr>_MAP</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_PATCHES_FIELDS" class="internal-link" title="fiftyone.core.labels._PATCHES_FIELDS">_PATCHES<wbr></wbr>_FIELDS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html#_SINGLE_LABEL_TO_LIST_MAP" class="internal-link" title="fiftyone.core.labels._SINGLE_LABEL_TO_LIST_MAP">_SINGLE<wbr></wbr>_LABEL<wbr></wbr>_TO<wbr></wbr>_LIST<wbr></wbr>_MAP</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.labels.html" class="internal-link" title="fiftyone.core.labels">labels</a></code><wbr></wbr>.<code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection">Detection</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Detection</span>(<a href="fiftyone.core.labels._HasAttributesDict.html" class="internal-link" title="fiftyone.core.labels._HasAttributesDict">_HasAttributesDict</a>, <a href="fiftyone.core.labels._HasID.html" class="internal-link" title="fiftyone.core.labels._HasID">_HasID</a>, <a href="fiftyone.core.labels._HasMedia.html" class="internal-link" title="fiftyone.core.labels._HasMedia">_HasMedia</a>, <a href="fiftyone.core.labels.Label.html" class="internal-link" title="fiftyone.core.labels.Label">Label</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L398" class="sourceLink">(source)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.labels.Detection">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>An object detection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">the label string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bounding<wbr></wbr>_box</span></td><td class="fieldArgDesc"><p>a list of relative bounding box coordinates in
+<tt class="rst-docutils rst-literal">[0, 1]</tt> in the following format:</p>
+<pre class="rst-literal-block">
+[&lt;top-left-x&gt;, &lt;top-left-y&gt;, &lt;width&gt;, &lt;height&gt;]
+</pre>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mask</span></td><td class="fieldArgDesc">an instance segmentation mask for the detection within
+its bounding box, which should be a 2D binary or 0/1 integer numpy
+array</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mask<wbr></wbr>_path</span></td><td class="fieldArgDesc">the absolute path to the instance segmentation image
+on disk, which should be a single-channel PNG image where any
+non-zero values represent the instance's extent</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">confidence</span></td><td class="fieldArgDesc">a confidence in <tt class="rst-docutils rst-literal">[0, 1]</tt> for the detection</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">index</span></td><td class="fieldArgDesc">an index for the object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">attributes</span></td><td class="fieldArgDesc">a dict mapping attribute names to <code><a href="fiftyone.core.labels.Attribute.html" class="internal-link" title="fiftyone.core.labels.Attribute">Attribute</a></code>
+instances</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id307">
+  
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_mask" class="internal-link" title="fiftyone.core.labels.Detection.from_mask">from<wbr></wbr>_mask</a></code></td>
+    <td>Creates a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection">Detection</a></code> instance with its <tt class="rst-docutils rst-literal">mask</tt> attribute populated from the given full image mask.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#export_mask" class="internal-link" title="fiftyone.core.labels.Detection.export_mask">export<wbr></wbr>_mask</a></code></td>
+    <td>Exports this instance's mask to the given path.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_mask" class="internal-link" title="fiftyone.core.labels.Detection.get_mask">get<wbr></wbr>_mask</a></code></td>
+    <td>Returns the detection mask for this instance.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#import_mask" class="internal-link" title="fiftyone.core.labels.Detection.import_mask">import<wbr></wbr>_mask</a></code></td>
+    <td>Imports this instance's mask from disk to its <code><a href="fiftyone.core.labels.Detection.html#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code> attribute.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_polyline" class="internal-link" title="fiftyone.core.labels.Detection.to_polyline">to<wbr></wbr>_polyline</a></code></td>
+    <td>Returns a <code><a href="fiftyone.core.labels.Polyline.html" class="internal-link" title="fiftyone.core.labels.Polyline">Polyline</a></code> representation of this instance.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_segmentation" class="internal-link" title="fiftyone.core.labels.Detection.to_segmentation">to<wbr></wbr>_segmentation</a></code></td>
+    <td>Returns a <code><a href="fiftyone.core.labels.Segmentation.html" class="internal-link" title="fiftyone.core.labels.Segmentation">Segmentation</a></code> representation of this instance.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_shapely" class="internal-link" title="fiftyone.core.labels.Detection.to_shapely">to<wbr></wbr>_shapely</a></code></td>
+    <td>Returns a Shapely representation of this instance.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#bounding_box" class="internal-link" title="fiftyone.core.labels.Detection.bounding_box">bounding<wbr></wbr>_box</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#confidence" class="internal-link" title="fiftyone.core.labels.Detection.confidence">confidence</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#index" class="internal-link" title="fiftyone.core.labels.Detection.index">index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#label" class="internal-link" title="fiftyone.core.labels.Detection.label">label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#mask_path" class="internal-link" title="fiftyone.core.labels.Detection.mask_path">mask<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_mask" class="internal-link" title="fiftyone.core.labels.Detection.has_mask">has<wbr></wbr>_mask</a></code></td>
+    <td>Whether this instance has a mask.</td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_MEDIA_FIELD" class="internal-link" title="fiftyone.core.labels.Detection._MEDIA_FIELD">_MEDIA<wbr></wbr>_FIELD</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.labels._HasAttributesDict.html" class="internal-link" title="fiftyone.core.labels._HasAttributesDict">_HasAttributesDict</a></code>:
+            </p>
+            <table class="children sortable" id="id308">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasAttributesDict.html#delete_attribute" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.delete_attribute">delete<wbr></wbr>_attribute</a></code></td>
+    <td>Deletes the attribute with the given name.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasAttributesDict.html#get_attribute_value" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.get_attribute_value">get<wbr></wbr>_attribute<wbr></wbr>_value</a></code></td>
+    <td>Gets the value of the attribute with the given name.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasAttributesDict.html#has_attribute" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.has_attribute">has<wbr></wbr>_attribute</a></code></td>
+    <td>Determines whether the label has an attribute with the given name.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasAttributesDict.html#iter_attributes" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.iter_attributes">iter<wbr></wbr>_attributes</a></code></td>
+    <td>Returns an iterator over the custom attributes of the label.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasAttributesDict.html#set_attribute_value" class="internal-link" title="fiftyone.core.labels._HasAttributesDict.set_attribute_value">set<wbr></wbr>_attribute<wbr></wbr>_value</a></code></td>
+    <td>Sets the value of the attribute with the given name.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.labels._HasID.html" class="internal-link" title="fiftyone.core.labels._HasID">_HasID</a></code> (via <code><a href="fiftyone.core.labels._HasAttributesDict.html" class="internal-link" title="fiftyone.core.labels._HasAttributesDict">_HasAttributesDict</a></code>):
+            </p>
+            <table class="children sortable" id="id309">
+  
+  
+  <tr class="baseclassvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="fiftyone.core.labels._HasID.html#tags" class="internal-link" title="fiftyone.core.labels._HasID.tags">tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.labels._HasID.html#id" class="internal-link" title="fiftyone.core.labels._HasID.id">id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.labels._HasID.html#_id.setter" class="internal-link" title="fiftyone.core.labels._HasID._id.setter">_id<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.labels._HasID.html#_id" class="internal-link" title="fiftyone.core.labels._HasID._id">_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.from_mask">
+    
+  </a>
+  <a name="from_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_mask</span><span class="function-signature">(cls, mask, label=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, **attributes)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L566">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_mask" title="fiftyone.core.labels.Detection.from_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Creates a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection">Detection</a></code> instance with its <tt class="rst-docutils rst-literal">mask</tt> attribute
+populated from the given full image mask.</p>
+<p>The instance mask for the object is extracted by computing the bounding
+rectangle of the non-zero values in the image mask.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mask</span></td><td class="fieldArgDesc">a boolean or 0/1 numpy array</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the label string</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**attributes</span></td><td class="fieldArgDesc">additional attributes for the <code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection">Detection</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link" title="fiftyone.core.labels.Detection">Detection</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.export_mask">
+    
+  </a>
+  <a name="export_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_mask</span><span class="function-signature">(self, outpath, update=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L462">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_mask" title="fiftyone.core.labels.Detection.export_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Exports this instance's mask to the given path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpath</span></td><td class="fieldArgDesc">the path to write the mask</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">update:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to clear this instance's <code><a href="#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code>
+attribute and set its <code><a href="#mask_path" class="internal-link" title="fiftyone.core.labels.Detection.mask_path">mask_path</a></code> attribute when
+exporting in-database segmentations</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.get_mask">
+    
+  </a>
+  <a name="get_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_mask</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L434">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_mask" title="fiftyone.core.labels.Detection.get_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the detection mask for this instance.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a numpy array, or <tt class="rst-docutils rst-literal">None</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.import_mask">
+    
+  </a>
+  <a name="import_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">import_mask</span><span class="function-signature">(self, update=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L448">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#import_mask" title="fiftyone.core.labels.Detection.import_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Imports this instance's mask from disk to its <code><a href="#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code>
+attribute.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">update:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to clear this instance's <code><a href="#mask_path" class="internal-link" title="fiftyone.core.labels.Detection.mask_path">mask_path</a></code>
+attribute after importing</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.to_polyline">
+    
+  </a>
+  <a name="to_polyline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_polyline</span><span class="function-signature">(self, tolerance=2, filled=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L480">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_polyline" title="fiftyone.core.labels.Detection.to_polyline">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a <code><a href="fiftyone.core.labels.Polyline.html" class="internal-link" title="fiftyone.core.labels.Polyline">Polyline</a></code> representation of this instance.</p>
+<p>If the detection has a mask, the returned polyline will trace the
+boundary of the mask; otherwise, the polyline will trace the bounding
+box itself.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tolerance:</span><span class="literal">2</span></td><td class="fieldArgDesc">a tolerance, in pixels, when generating an
+approximate polyline for the instance mask. Typical values are
+1-3 pixels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filled:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether the polyline should be filled</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Polyline.html" class="internal-link" title="fiftyone.core.labels.Polyline">Polyline</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.to_segmentation">
+    
+  </a>
+  <a name="to_segmentation">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_segmentation</span><span class="function-signature">(self, mask=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, frame_size=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, target=255)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L514">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_segmentation" title="fiftyone.core.labels.Detection.to_segmentation">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a <code><a href="fiftyone.core.labels.Segmentation.html" class="internal-link" title="fiftyone.core.labels.Segmentation">Segmentation</a></code> representation of this instance.</p>
+<p>The detection must have an instance mask, i.e., its <code><a href="#mask" class="internal-link" title="fiftyone.core.labels.Detection.mask">mask</a></code>
+attribute must be populated.</p>
+<p>You must provide either <tt class="rst-docutils rst-literal">mask</tt> or <tt class="rst-docutils rst-literal">frame_size</tt> to use this method.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mask:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional numpy array to use as an initial mask to
+which to add this object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_size:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the <tt class="rst-docutils rst-literal">(width, height)</tt> of the segmentation
+mask to render. This parameter has no effect if a <tt class="rst-docutils rst-literal">mask</tt> is
+provided</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target:</span><span class="literal">255</span></td><td class="fieldArgDesc">the pixel value or RGB hex string to use to render
+the object</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Segmentation.html" class="internal-link" title="fiftyone.core.labels.Segmentation">Segmentation</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.labels.Detection.to_shapely">
+    
+  </a>
+  <a name="to_shapely">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_shapely</span><span class="function-signature">(self, frame_size=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L544">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_shapely" title="fiftyone.core.labels.Detection.to_shapely">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a Shapely representation of this instance.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_size:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the <tt class="rst-docutils rst-literal">(width, height)</tt> of the image. If
+provided, the returned geometry will use absolute coordinates</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils rst-literal">shapely.geometry.polygon.Polygon</tt></td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.bounding_box">
+    
+  </a>
+  <a name="bounding_box">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bounding_box</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L423">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#bounding_box" title="fiftyone.core.labels.Detection.bounding_box">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.confidence">
+    
+  </a>
+  <a name="confidence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">confidence</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L426">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#confidence" title="fiftyone.core.labels.Detection.confidence">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.index">
+    
+  </a>
+  <a name="index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">index</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L427">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#index" title="fiftyone.core.labels.Detection.index">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.label">
+    
+  </a>
+  <a name="label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">label</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L422">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#label" title="fiftyone.core.labels.Detection.label">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.mask">
+    
+  </a>
+  <a name="mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mask</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L424">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#mask" title="fiftyone.core.labels.Detection.mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.labels.Detection.mask_path">
+    
+  </a>
+  <a name="mask_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mask_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L425">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#mask_path" title="fiftyone.core.labels.Detection.mask_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.labels.Detection.has_mask">
+    
+  </a>
+  <a name="has_mask">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_mask</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L429">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_mask" title="fiftyone.core.labels.Detection.has_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this instance has a mask.</p></div>
+    
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.core.labels.Detection._MEDIA_FIELD">
+    
+  </a>
+  <a name="_MEDIA_FIELD">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MEDIA_FIELD</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/labels.py#L420">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_MEDIA_FIELD" title="fiftyone.core.labels.Detection._MEDIA_FIELD">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.labels._HasMedia.html#_MEDIA_FIELD" class="internal-link">fiftyone.core.labels._HasMedia._MEDIA_FIELD</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">mask_path</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

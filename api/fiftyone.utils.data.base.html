@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.data.base</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.data.base.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.data.base.html" class="internal-link" title="This module">base</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_image_classification_dataset" class="internal-link" title="fiftyone.utils.data.base.download_image_classification_dataset">download<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_images" class="internal-link" title="fiftyone.utils.data.base.download_images">download<wbr></wbr>_images</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_image_classification_dir_tree" class="internal-link" title="fiftyone.utils.data.base.parse_image_classification_dir_tree">parse<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dir<wbr></wbr>_tree</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_images_dir" class="internal-link" title="fiftyone.utils.data.base.parse_images_dir">parse<wbr></wbr>_images<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_videos_dir" class="internal-link" title="fiftyone.utils.data.base.parse_videos_dir">parse<wbr></wbr>_videos<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_image" class="internal-link" title="fiftyone.utils.data.base._download_image">_download<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_images" class="internal-link" title="fiftyone.utils.data.base._download_images">_download<wbr></wbr>_images</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_images_multi" class="internal-link" title="fiftyone.utils.data.base._download_images_multi">_download<wbr></wbr>_images<wbr></wbr>_multi</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.data.base.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.data.html" class="internal-link" title="The parent of this module">data</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.base.html" class="internal-link" title="fiftyone.utils.data.base">base</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.converters.html" class="internal-link" title="fiftyone.utils.data.converters">converters</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html" class="internal-link" title="fiftyone.utils.data.exporters">exporters</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html" class="internal-link" title="fiftyone.utils.data.importers">importers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.html" class="internal-link" title="fiftyone.utils.data.ingestors">ingestors</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.html" class="internal-link" title="fiftyone.utils.data.parsers">parsers</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.base.html" class="internal-link" title="fiftyone.utils.data.base">base</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Data utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1617">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_image_classification_dataset" class="internal-link" title="fiftyone.utils.data.base.download_image_classification_dataset">download<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dataset</a></code></td>
+    <td>Downloads the classification dataset specified by the given CSV file, which should have the following format:</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_images" class="internal-link" title="fiftyone.utils.data.base.download_images">download<wbr></wbr>_images</a></code></td>
+    <td>Downloads the images from the given URLs.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_image_classification_dir_tree" class="internal-link" title="fiftyone.utils.data.base.parse_image_classification_dir_tree">parse<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dir<wbr></wbr>_tree</a></code></td>
+    <td>Parses the contents of the given image classification dataset directory tree, which should have the following format:</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_images_dir" class="internal-link" title="fiftyone.utils.data.base.parse_images_dir">parse<wbr></wbr>_images<wbr></wbr>_dir</a></code></td>
+    <td>Parses the contents of the given directory of images.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_videos_dir" class="internal-link" title="fiftyone.utils.data.base.parse_videos_dir">parse<wbr></wbr>_videos<wbr></wbr>_dir</a></code></td>
+    <td>Parses the contents of the given directory of videos.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.data.base.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_image" class="internal-link" title="fiftyone.utils.data.base._download_image">_download<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_images" class="internal-link" title="fiftyone.utils.data.base._download_images">_download<wbr></wbr>_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_images_multi" class="internal-link" title="fiftyone.utils.data.base._download_images_multi">_download<wbr></wbr>_images<wbr></wbr>_multi</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.data.base.download_image_classification_dataset">
+    
+  </a>
+  <a name="download_image_classification_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_image_classification_dataset</span><span class="function-signature">(csv_path, dataset_dir, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L100">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_image_classification_dataset" title="fiftyone.utils.data.base.download_image_classification_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Downloads the classification dataset specified by the given CSV file,
+which should have the following format:</p>
+<pre class="rst-literal-block">
+&lt;label1&gt;,&lt;image_url1&gt;
+&lt;label2&gt;,&lt;image_url2&gt;
+...
+</pre>
+<p>The image filenames are the basenames of the URLs, which are assumed to be
+unique.</p>
+<p>The dataset is written to disk in
+<code><a href="fiftyone.types.dataset_types.FiftyOneImageClassificationDataset.html" class="internal-link" title="fiftyone.types.dataset_types.FiftyOneImageClassificationDataset">fiftyone.types.FiftyOneImageClassificationDataset</a></code> format.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">csv<wbr></wbr>_path</span></td><td class="fieldArgDesc">a CSV file containing the labels and image URLs</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the dataset</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes. By default, this will be
+inferred from the contents of <tt class="rst-docutils rst-literal">csv_path</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num<wbr></wbr>_workers:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a suggested number of threads to use to download
+images</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.data.base.download_images">
+    
+  </a>
+  <a name="download_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_images</span><span class="function-signature">(image_urls, output_dir, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L155">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_images" title="fiftyone.utils.data.base.download_images">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Downloads the images from the given URLs.</p>
+<p>The filenames in <tt class="rst-docutils rst-literal">output_dir</tt> are the basenames of the URLs, which are
+assumed to be unique.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_urls</span></td><td class="fieldArgDesc">a list of image URLs to download</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">output<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the images</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num<wbr></wbr>_workers:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a suggested number of threads to use</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the list of downloaded image paths</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.data.base.parse_image_classification_dir_tree">
+    
+  </a>
+  <a name="parse_image_classification_dir_tree">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_image_classification_dir_tree</span><span class="function-signature">(dataset_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L60">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_image_classification_dir_tree" title="fiftyone.utils.data.base.parse_image_classification_dir_tree">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the contents of the given image classification dataset directory
+tree, which should have the following format:</p>
+<pre class="rst-literal-block">
+&lt;dataset_dir&gt;/
+    &lt;classA&gt;/
+        &lt;image1&gt;.&lt;ext&gt;
+        &lt;image2&gt;.&lt;ext&gt;
+        ...
+    &lt;classB&gt;/
+        &lt;image1&gt;.&lt;ext&gt;
+        &lt;image2&gt;.&lt;ext&gt;
+        ...
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the dataset directory</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="fiftyone.server.samples.html" class="internal-link" title="fiftyone.server.samples">samples</a></code></td><td class="fieldArgDesc">a list of <tt class="rst-docutils rst-literal">(image_path, target)</tt> pairs
+classes: a list of class label strings</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.data.base.parse_images_dir">
+    
+  </a>
+  <a name="parse_images_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_images_dir</span><span class="function-signature">(dataset_dir, recursive=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L28">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_images_dir" title="fiftyone.utils.data.base.parse_images_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the contents of the given directory of images.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the dataset directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">recursive:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to recursively traverse subdirectories</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of image paths</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.data.base.parse_videos_dir">
+    
+  </a>
+  <a name="parse_videos_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_videos_dir</span><span class="function-signature">(dataset_dir, recursive=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L44">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_videos_dir" title="fiftyone.utils.data.base.parse_videos_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the contents of the given directory of videos.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the dataset directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">recursive:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to recursively traverse subdirectories</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of video paths</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.data.base.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L25">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.data.base.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.data.base._download_image">
+    
+  </a>
+  <a name="_download_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_image</span><span class="function-signature">(args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L198">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_image" title="fiftyone.utils.data.base._download_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.data.base._download_images">
+    
+  </a>
+  <a name="_download_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_images</span><span class="function-signature">(inputs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L185">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_images" title="fiftyone.utils.data.base._download_images">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.data.base._download_images_multi">
+    
+  </a>
+  <a name="_download_images_multi">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_images_multi</span><span class="function-signature">(inputs, num_workers)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/base.py#L191">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_images_multi" title="fiftyone.utils.data.base._download_images_multi">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

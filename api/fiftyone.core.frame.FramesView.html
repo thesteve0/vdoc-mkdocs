@@ -1,0 +1,1656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.frame.FramesView</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.frame.FramesView.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.frame.FramesView.html" class="internal-link" title="This class"><wbr></wbr>Frames<wbr></wbr>View</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.frame.FramesView.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#add_frame" class="internal-link" title="fiftyone.core.frame.FramesView.add_frame">add<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reload" class="internal-link" title="fiftyone.core.frame.FramesView.reload">reload</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#save" class="internal-link" title="fiftyone.core.frame.FramesView.save">save</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_db" class="internal-link" title="fiftyone.core.frame.FramesView._get_frame_db">_get<wbr></wbr>_frame<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_numbers_db" class="internal-link" title="fiftyone.core.frame.FramesView._get_frame_numbers_db">_get<wbr></wbr>_frame<wbr></wbr>_numbers<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_iter_frames_db" class="internal-link" title="fiftyone.core.frame.FramesView._iter_frames_db">_iter<wbr></wbr>_frames<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_frame" class="internal-link" title="fiftyone.core.frame.FramesView._make_frame">_make<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reload_parents" class="internal-link" title="fiftyone.core.frame.FramesView._reload_parents">_reload<wbr></wbr>_parents</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_save_replacements" class="internal-link" title="fiftyone.core.frame.FramesView._save_replacements">_save<wbr></wbr>_replacements</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__bool__" class="internal-link" title="fiftyone.core.frame.Frames.__bool__">__bool__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__contains__" class="internal-link" title="fiftyone.core.frame.Frames.__contains__">__contains__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__delitem__" class="internal-link" title="fiftyone.core.frame.Frames.__delitem__">__delitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__getitem__" class="internal-link" title="fiftyone.core.frame.Frames.__getitem__">__getitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__iter__" class="internal-link" title="fiftyone.core.frame.Frames.__iter__">__iter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__len__" class="internal-link" title="fiftyone.core.frame.Frames.__len__">__len__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__next__" class="internal-link" title="fiftyone.core.frame.Frames.__next__">__next__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__repr__" class="internal-link" title="fiftyone.core.frame.Frames.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__setitem__" class="internal-link" title="fiftyone.core.frame.Frames.__setitem__">__setitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#__str__" class="internal-link" title="fiftyone.core.frame.Frames.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#clear" class="internal-link" title="fiftyone.core.frame.Frames.clear">clear</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#delete_frame" class="internal-link" title="fiftyone.core.frame.Frames.delete_frame">delete<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#first" class="internal-link" title="fiftyone.core.frame.Frames.first">first</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#head" class="internal-link" title="fiftyone.core.frame.Frames.head">head</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#items" class="internal-link" title="fiftyone.core.frame.Frames.items">items</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#keys" class="internal-link" title="fiftyone.core.frame.Frames.keys">keys</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#last" class="internal-link" title="fiftyone.core.frame.Frames.last">last</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#merge" class="internal-link" title="fiftyone.core.frame.Frames.merge">merge</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#tail" class="internal-link" title="fiftyone.core.frame.Frames.tail">tail</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#update" class="internal-link" title="fiftyone.core.frame.Frames.update">update</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#values" class="internal-link" title="fiftyone.core.frame.Frames.values">values</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_get_frame_numbers" class="internal-link" title="fiftyone.core.frame.Frames._get_frame_numbers">_get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_get_frames_match_stage" class="internal-link" title="fiftyone.core.frame.Frames._get_frames_match_stage">_get<wbr></wbr>_frames<wbr></wbr>_match<wbr></wbr>_stage</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_get_ids_map" class="internal-link" title="fiftyone.core.frame.Frames._get_ids_map">_get<wbr></wbr>_ids<wbr></wbr>_map</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_iter_frames" class="internal-link" title="fiftyone.core.frame.Frames._iter_frames">_iter<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_make_dict" class="internal-link" title="fiftyone.core.frame.Frames._make_dict">_make<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_save" class="internal-link" title="fiftyone.core.frame.Frames._save">_save</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_save_deletions" class="internal-link" title="fiftyone.core.frame.Frames._save_deletions">_save<wbr></wbr>_deletions</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_set_replacement" class="internal-link" title="fiftyone.core.frame.Frames._set_replacement">_set<wbr></wbr>_replacement</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_to_frames_dict" class="internal-link" title="fiftyone.core.frame.Frames._to_frames_dict">_to<wbr></wbr>_frames<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_validate_frame" class="internal-link" title="fiftyone.core.frame.Frames._validate_frame">_validate<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#field_names" class="internal-link" title="fiftyone.core.frame.FramesView.field_names">field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_delete_all" class="internal-link" title="fiftyone.core.frame.FramesView._delete_all">_delete<wbr></wbr>_all</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_filtered_fields" class="internal-link" title="fiftyone.core.frame.FramesView._filtered_fields">_filtered<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_frames_pipeline" class="internal-link" title="fiftyone.core.frame.FramesView._frames_pipeline">_frames<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_needs_frames" class="internal-link" title="fiftyone.core.frame.FramesView._needs_frames">_needs<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_view" class="internal-link" title="fiftyone.core.frame.FramesView._view">_view</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_delete_frames" class="internal-link" title="fiftyone.core.frame.Frames._delete_frames">_delete<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_iter" class="internal-link" title="fiftyone.core.frame.Frames._iter">_iter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_replacements" class="internal-link" title="fiftyone.core.frame.Frames._replacements">_replacements</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_sample" class="internal-link" title="fiftyone.core.frame.Frames._sample">_sample</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_dataset" class="internal-link" title="fiftyone.core.frame.Frames._dataset">_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_frame_collection" class="internal-link" title="fiftyone.core.frame.Frames._frame_collection">_frame<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_frame_collection_name" class="internal-link" title="fiftyone.core.frame.Frames._frame_collection_name">_frame<wbr></wbr>_collection<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_in_db" class="internal-link" title="fiftyone.core.frame.Frames._in_db">_in<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_sample_collection" class="internal-link" title="fiftyone.core.frame.Frames._sample_collection">_sample<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html#_sample_id" class="internal-link" title="fiftyone.core.frame.Frames._sample_id">_sample<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.frame.html" class="internal-link" title="The parent of this class">frame</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame"><wbr></wbr>Frame</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.Frames.html" class="internal-link" title="fiftyone.core.frame.Frames"><wbr></wbr>Frames</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.FramesView.html" class="internal-link" title="fiftyone.core.frame.FramesView"><wbr></wbr>Frames<wbr></wbr>View</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView"><wbr></wbr>Frame<wbr></wbr>View</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.html#get_default_frame_fields" class="internal-link" title="fiftyone.core.frame.get_default_frame_fields">get<wbr></wbr>_default<wbr></wbr>_frame<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.html#fov" class="internal-link" title="fiftyone.core.frame.fov">fov</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.frame.html" class="internal-link" title="fiftyone.core.frame">frame</a></code><wbr></wbr>.<code><a href="fiftyone.core.frame.FramesView.html" class="internal-link" title="fiftyone.core.frame.FramesView">FramesView</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">FramesView</span>(<a href="fiftyone.core.frame.Frames.html" class="internal-link" title="fiftyone.core.frame.Frames">Frames</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L827" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.frame.FramesView.__init__">FramesView(sample_view)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.frame.FramesView">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>An ordered dictionary of <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> instances keyed by frame
+number representing the frames of a video
+<code><a href="fiftyone.core.sample.SampleView.html" class="internal-link">fiftyone.core.sample.SampleView</a></code>.</p>
+<p><code><a href="fiftyone.core.frame.FramesView.html" class="internal-link" title="fiftyone.core.frame.FramesView">FramesView</a></code> instances behave like <tt class="rst-docutils rst-literal">defaultdict(FrameView)</tt>
+instances; an empty <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> instance is returned when accessing
+a new frame number.</p>
+<p><code><a href="fiftyone.core.frame.FramesView.html" class="internal-link" title="fiftyone.core.frame.FramesView">FramesView</a></code> instances should never be created manually; they are
+instantiated automatically when video
+<code><a href="fiftyone.core.sample.SampleView.html" class="internal-link">fiftyone.core.sample.SampleView</a></code> instances are created.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_view</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.sample.SampleView.html" class="internal-link">fiftyone.core.sample.SampleView</a></code> to which the
+frames are attached</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id272">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.frame.FramesView.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#add_frame" class="internal-link" title="fiftyone.core.frame.FramesView.add_frame">add<wbr></wbr>_frame</a></code></td>
+    <td>Adds the frame to this instance.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reload" class="internal-link" title="fiftyone.core.frame.FramesView.reload">reload</a></code></td>
+    <td>Reloads the view into the frames of the attached sample.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save" class="internal-link" title="fiftyone.core.frame.FramesView.save">save</a></code></td>
+    <td>Saves all frames for the sample to the database.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#field_names" class="internal-link" title="fiftyone.core.frame.FramesView.field_names">field<wbr></wbr>_names</a></code></td>
+    <td>An ordered tuple of the names of the fields on the frames.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_frame_db" class="internal-link" title="fiftyone.core.frame.FramesView._get_frame_db">_get<wbr></wbr>_frame<wbr></wbr>_db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_frame_numbers_db" class="internal-link" title="fiftyone.core.frame.FramesView._get_frame_numbers_db">_get<wbr></wbr>_frame<wbr></wbr>_numbers<wbr></wbr>_db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_iter_frames_db" class="internal-link" title="fiftyone.core.frame.FramesView._iter_frames_db">_iter<wbr></wbr>_frames<wbr></wbr>_db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_frame" class="internal-link" title="fiftyone.core.frame.FramesView._make_frame">_make<wbr></wbr>_frame</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reload_parents" class="internal-link" title="fiftyone.core.frame.FramesView._reload_parents">_reload<wbr></wbr>_parents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_save_replacements" class="internal-link" title="fiftyone.core.frame.FramesView._save_replacements">_save<wbr></wbr>_replacements</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_delete_all" class="internal-link" title="fiftyone.core.frame.FramesView._delete_all">_delete<wbr></wbr>_all</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_filtered_fields" class="internal-link" title="fiftyone.core.frame.FramesView._filtered_fields">_filtered<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_frames_pipeline" class="internal-link" title="fiftyone.core.frame.FramesView._frames_pipeline">_frames<wbr></wbr>_pipeline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_needs_frames" class="internal-link" title="fiftyone.core.frame.FramesView._needs_frames">_needs<wbr></wbr>_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_view" class="internal-link" title="fiftyone.core.frame.FramesView._view">_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.frame.Frames.html" class="internal-link" title="fiftyone.core.frame.Frames">Frames</a></code>:
+            </p>
+            <table class="children sortable" id="id273">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__bool__" class="internal-link" title="fiftyone.core.frame.Frames.__bool__">__bool__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__contains__" class="internal-link" title="fiftyone.core.frame.Frames.__contains__">__contains__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__delitem__" class="internal-link" title="fiftyone.core.frame.Frames.__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__getitem__" class="internal-link" title="fiftyone.core.frame.Frames.__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__iter__" class="internal-link" title="fiftyone.core.frame.Frames.__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__len__" class="internal-link" title="fiftyone.core.frame.Frames.__len__">__len__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__next__" class="internal-link" title="fiftyone.core.frame.Frames.__next__">__next__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__repr__" class="internal-link" title="fiftyone.core.frame.Frames.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__setitem__" class="internal-link" title="fiftyone.core.frame.Frames.__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#__str__" class="internal-link" title="fiftyone.core.frame.Frames.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#clear" class="internal-link" title="fiftyone.core.frame.Frames.clear">clear</a></code></td>
+    <td>Removes all frames from this sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#delete_frame" class="internal-link" title="fiftyone.core.frame.Frames.delete_frame">delete<wbr></wbr>_frame</a></code></td>
+    <td>Deletes the given frame number from this instance.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#first" class="internal-link" title="fiftyone.core.frame.Frames.first">first</a></code></td>
+    <td>Returns the first <code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame">Frame</a></code> for the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#head" class="internal-link" title="fiftyone.core.frame.Frames.head">head</a></code></td>
+    <td>Returns a list of the first few frames for the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#items" class="internal-link" title="fiftyone.core.frame.Frames.items">items</a></code></td>
+    <td>Returns an iterator over the frame numberes and <code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame">Frame</a></code> instances for the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#keys" class="internal-link" title="fiftyone.core.frame.Frames.keys">keys</a></code></td>
+    <td>Returns an iterator over the frame numbers with labels in the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#last" class="internal-link" title="fiftyone.core.frame.Frames.last">last</a></code></td>
+    <td>Returns the last <code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame">Frame</a></code> for the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#merge" class="internal-link" title="fiftyone.core.frame.Frames.merge">merge</a></code></td>
+    <td>Merges the given frames into this instance.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#tail" class="internal-link" title="fiftyone.core.frame.Frames.tail">tail</a></code></td>
+    <td>Returns a list of the last few frames for the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#update" class="internal-link" title="fiftyone.core.frame.Frames.update">update</a></code></td>
+    <td>Adds the frame labels to this instance.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#values" class="internal-link" title="fiftyone.core.frame.Frames.values">values</a></code></td>
+    <td>Returns an iterator over the <code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame">Frame</a></code> instances for the sample.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_get_frame_numbers" class="internal-link" title="fiftyone.core.frame.Frames._get_frame_numbers">_get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_get_frames_match_stage" class="internal-link" title="fiftyone.core.frame.Frames._get_frames_match_stage">_get<wbr></wbr>_frames<wbr></wbr>_match<wbr></wbr>_stage</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_get_ids_map" class="internal-link" title="fiftyone.core.frame.Frames._get_ids_map">_get<wbr></wbr>_ids<wbr></wbr>_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_iter_frames" class="internal-link" title="fiftyone.core.frame.Frames._iter_frames">_iter<wbr></wbr>_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_make_dict" class="internal-link" title="fiftyone.core.frame.Frames._make_dict">_make<wbr></wbr>_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_save" class="internal-link" title="fiftyone.core.frame.Frames._save">_save</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_save_deletions" class="internal-link" title="fiftyone.core.frame.Frames._save_deletions">_save<wbr></wbr>_deletions</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_set_replacement" class="internal-link" title="fiftyone.core.frame.Frames._set_replacement">_set<wbr></wbr>_replacement</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_to_frames_dict" class="internal-link" title="fiftyone.core.frame.Frames._to_frames_dict">_to<wbr></wbr>_frames<wbr></wbr>_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_validate_frame" class="internal-link" title="fiftyone.core.frame.Frames._validate_frame">_validate<wbr></wbr>_frame</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_delete_frames" class="internal-link" title="fiftyone.core.frame.Frames._delete_frames">_delete<wbr></wbr>_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_iter" class="internal-link" title="fiftyone.core.frame.Frames._iter">_iter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_replacements" class="internal-link" title="fiftyone.core.frame.Frames._replacements">_replacements</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_sample" class="internal-link" title="fiftyone.core.frame.Frames._sample">_sample</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_dataset" class="internal-link" title="fiftyone.core.frame.Frames._dataset">_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_frame_collection" class="internal-link" title="fiftyone.core.frame.Frames._frame_collection">_frame<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_frame_collection_name" class="internal-link" title="fiftyone.core.frame.Frames._frame_collection_name">_frame<wbr></wbr>_collection<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_in_db" class="internal-link" title="fiftyone.core.frame.Frames._in_db">_in<wbr></wbr>_db</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_sample_collection" class="internal-link" title="fiftyone.core.frame.Frames._sample_collection">_sample<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.frame.Frames.html#_sample_id" class="internal-link" title="fiftyone.core.frame.Frames._sample_id">_sample<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.frame.FramesView.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, sample_view)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L845">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.frame.FramesView.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#__init__" class="internal-link">fiftyone.core.frame.Frames.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.frame.FramesView.add_frame">
+    
+  </a>
+  <a name="add_frame">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">add_frame</span><span class="function-signature">(self, frame_number, frame, expand_schema=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, validate=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, dynamic=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L865">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#add_frame" title="fiftyone.core.frame.FramesView.add_frame">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#add_frame" class="internal-link">fiftyone.core.frame.Frames.add_frame</a></code></div>
+    <div><p>Adds the frame to this instance.</p>
+<p>If an existing frame with the same frame number exists, it is
+overwritten.</p>
+<p>Unlike <code><a href="fiftyone.core.frame.Frames.html#add_frame" class="internal-link" title="fiftyone.core.frame.Frames.add_frame">Frames.add_frame</a></code>, the provided frame is never modified
+in-place. Instead, a new <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> is constructed internally
+with the contents of the provided frame.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_number</span></td><td class="fieldArgDesc">the frame number</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.frame.Frame.html" class="internal-link" title="fiftyone.core.frame.Frame">Frame</a></code> or <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">expand<wbr></wbr>_schema:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to dynamically add new frame fields
+encountered to the dataset schema. If False, an error is raised
+if the frame's schema is not a subset of the dataset schema</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">validate:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to validate values for existing fields</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dynamic:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to declare dynamic embedded document
+fields</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.frame.FramesView.reload">
+    
+  </a>
+  <a name="reload">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reload</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L918">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#reload" title="fiftyone.core.frame.FramesView.reload">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#reload" class="internal-link">fiftyone.core.frame.Frames.reload</a></code></div>
+    <div><p>Reloads the view into the frames of the attached sample.</p>
+<p>Calling this method has the following effects:</p>
+<ul class="rst-simple">
+<li>Clears the in-memory cache of <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> instances that you
+have loaded via this object. Any frames that you subsequently
+access will be loaded directly from the database</li>
+<li>Any additions, modifications, or deletions to frame views that you
+have loaded from this instance but not committed to the database by
+calling <code><a href="#save" class="internal-link" title="fiftyone.core.frame.FramesView.save">save</a></code> will be discarded</li>
+</ul>
+<div class="rst-admonition rst-note">
+<p class="rst-admonition-title rst-first">Note</p>
+<p class="rst-last"><code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> objects are not singletons, so calling this
+method will not have any effect on <code><a href="fiftyone.core.frame.FrameView.html" class="internal-link" title="fiftyone.core.frame.FrameView">FrameView</a></code> instances
+that you have <strong>previously</strong> loaded via this object</p>
+</div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hard:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to reload the frame schema in addition to the
+field values for the frames. This is necessary if new fields
+may have been added to the dataset's frame schema</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.frame.FramesView.save">
+    
+  </a>
+  <a name="save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L1002">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#save" title="fiftyone.core.frame.FramesView.save">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#save" class="internal-link">fiftyone.core.frame.Frames.save</a></code></div>
+    <div><p>Saves all frames for the sample to the database.</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.frame.FramesView.field_names">
+    
+  </a>
+  <a name="field_names">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">field_names</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L861">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#field_names" title="fiftyone.core.frame.FramesView.field_names">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#field_names" class="internal-link">fiftyone.core.frame.Frames.field_names</a></code></div>
+    <div><p>An ordered tuple of the names of the fields on the frames.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._get_frame_db">
+    
+  </a>
+  <a name="_get_frame_db">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_db</span><span class="function-signature">(self, frame_number)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L965">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_db" title="fiftyone.core.frame.FramesView._get_frame_db">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_get_frame_db" class="internal-link">fiftyone.core.frame.Frames._get_frame_db</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._get_frame_numbers_db">
+    
+  </a>
+  <a name="_get_frame_numbers_db">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_numbers_db</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L946">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_numbers_db" title="fiftyone.core.frame.FramesView._get_frame_numbers_db">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_get_frame_numbers_db" class="internal-link">fiftyone.core.frame.Frames._get_frame_numbers_db</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._iter_frames_db">
+    
+  </a>
+  <a name="_iter_frames_db">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_iter_frames_db</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L985">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_iter_frames_db" title="fiftyone.core.frame.FramesView._iter_frames_db">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_iter_frames_db" class="internal-link">fiftyone.core.frame.Frames._iter_frames_db</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._make_frame">
+    
+  </a>
+  <a name="_make_frame">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_frame</span><span class="function-signature">(self, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L991">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_frame" title="fiftyone.core.frame.FramesView._make_frame">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_make_frame" class="internal-link">fiftyone.core.frame.Frames._make_frame</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._reload_parents">
+    
+  </a>
+  <a name="_reload_parents">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reload_parents</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L1006">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reload_parents" title="fiftyone.core.frame.FramesView._reload_parents">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._save_replacements">
+    
+  </a>
+  <a name="_save_replacements">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_save_replacements</span><span class="function-signature">(self, validate=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, deferred=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L994">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_save_replacements" title="fiftyone.core.frame.FramesView._save_replacements">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_save_replacements" class="internal-link">fiftyone.core.frame.Frames._save_replacements</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._delete_all">
+    
+  </a>
+  <a name="_delete_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_delete_all</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L942">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_delete_all" title="fiftyone.core.frame.FramesView._delete_all">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.frame.Frames.html#_delete_all" class="internal-link">fiftyone.core.frame.Frames._delete_all</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._filtered_fields">
+    
+  </a>
+  <a name="_filtered_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_filtered_fields</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L857">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_filtered_fields" title="fiftyone.core.frame.FramesView._filtered_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._frames_pipeline">
+    
+  </a>
+  <a name="_frames_pipeline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_frames_pipeline</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L859">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_frames_pipeline" title="fiftyone.core.frame.FramesView._frames_pipeline">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._needs_frames">
+    
+  </a>
+  <a name="_needs_frames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_needs_frames</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L858">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_needs_frames" title="fiftyone.core.frame.FramesView._needs_frames">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.frame.FramesView._view">
+    
+  </a>
+  <a name="_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_view</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/frame.py#L856">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_view" title="fiftyone.core.frame.FramesView._view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

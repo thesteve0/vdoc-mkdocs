@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.sample.SampleView</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.sample.SampleView.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.sample.SampleView.html" class="internal-link" title="This class"><wbr></wbr>Sample<wbr></wbr>View</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.sample.SampleView.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__repr__" class="internal-link" title="fiftyone.core.sample.SampleView.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#save" class="internal-link" title="fiftyone.core.sample.SampleView.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_dict" class="internal-link" title="fiftyone.core.sample.SampleView.to_dict">to<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_save" class="internal-link" title="fiftyone.core.sample.SampleView._save">_save</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__contains__" class="internal-link" title="fiftyone.core.document._Document.__contains__">__contains__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__copy__" class="internal-link" title="fiftyone.core.document._Document.__copy__">__copy__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__delattr__" class="internal-link" title="fiftyone.core.document._Document.__delattr__">__delattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__delitem__" class="internal-link" title="fiftyone.core.document._Document.__delitem__">__delitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__dir__" class="internal-link" title="fiftyone.core.document._Document.__dir__">__dir__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__eq__" class="internal-link" title="fiftyone.core.document._Document.__eq__">__eq__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__str__" class="internal-link" title="fiftyone.core.document._Document.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#iter_fields" class="internal-link" title="fiftyone.core.document._Document.iter_fields">iter<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#to_json" class="internal-link" title="fiftyone.core.document._Document.to_json">to<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#update_fields" class="internal-link" title="fiftyone.core.document._Document.update_fields">update<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#has_field" class="internal-link" title="fiftyone.core.document.DocumentView.has_field">has<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#to_mongo_dict" class="internal-link" title="fiftyone.core.document.DocumentView.to_mongo_dict">to<wbr></wbr>_mongo<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#__getattr__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__getattr__">__getattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#__getitem__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__getitem__">__getitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#__iter__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__iter__">__iter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#__setattr__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__setattr__">__setattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#__setitem__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__setitem__">__setitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#add_labels" class="internal-link" title="fiftyone.core.sample._SampleMixin.add_labels">add<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#clear_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.clear_field">clear<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#compute_metadata" class="internal-link" title="fiftyone.core.sample._SampleMixin.compute_metadata">compute<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#copy" class="internal-link" title="fiftyone.core.sample._SampleMixin.copy">copy</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#get_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.get_field">get<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#merge" class="internal-link" title="fiftyone.core.sample._SampleMixin.merge">merge</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#set_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.set_field">set<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_iter_label_fields" class="internal-link" title="fiftyone.core.document._Document._iter_label_fields">_iter<wbr></wbr>_label<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_parse_fields" class="internal-link" title="fiftyone.core.document._Document._parse_fields">_parse<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_get_field_names" class="internal-link" title="fiftyone.core.document.DocumentView._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_reload_parents" class="internal-link" title="fiftyone.core.document.DocumentView._reload_parents">_reload<wbr></wbr>_parents</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_to_db_fields" class="internal-link" title="fiftyone.core.document.DocumentView._to_db_fields">_to<wbr></wbr>_db<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#_parse_fields_video" class="internal-link" title="fiftyone.core.sample._SampleMixin._parse_fields_video">_parse<wbr></wbr>_fields<wbr></wbr>_video</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#_secure_media" class="internal-link" title="fiftyone.core.sample._SampleMixin._secure_media">_secure<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_frames" class="internal-link" title="fiftyone.core.sample.SampleView._frames">_frames</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#dataset" class="internal-link" title="fiftyone.core.document._Document.dataset">dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#in_dataset" class="internal-link" title="fiftyone.core.document._Document.in_dataset">in<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#excluded_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.excluded_field_names">excluded<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#field_names" class="internal-link" title="fiftyone.core.document.DocumentView.field_names">field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#filtered_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.filtered_field_names">filtered<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#selected_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.selected_field_names">selected<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#dataset_id" class="internal-link" title="fiftyone.core.sample._SampleMixin.dataset_id">dataset<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#filename" class="internal-link" title="fiftyone.core.sample._SampleMixin.filename">filename</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#media_type" class="internal-link" title="fiftyone.core.sample._SampleMixin.media_type">media<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_dataset" class="internal-link" title="fiftyone.core.document._Document._dataset">_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_doc" class="internal-link" title="fiftyone.core.document._Document._doc">_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_excluded_fields" class="internal-link" title="fiftyone.core.document.DocumentView._excluded_fields">_excluded<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_filtered_fields" class="internal-link" title="fiftyone.core.document.DocumentView._filtered_fields">_filtered<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_selected_fields" class="internal-link" title="fiftyone.core.document.DocumentView._selected_fields">_selected<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_view" class="internal-link" title="fiftyone.core.document.DocumentView._view">_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_id" class="internal-link" title="fiftyone.core.document._Document._id">_id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_in_db" class="internal-link" title="fiftyone.core.document._Document._in_db">_in<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html#_collection" class="internal-link" title="fiftyone.core.document.DocumentView._collection">_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html#_dataset_id" class="internal-link" title="fiftyone.core.sample._SampleMixin._dataset_id">_dataset<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.sample.html" class="internal-link" title="The parent of this class">sample</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.Sample.html" class="internal-link" title="fiftyone.core.sample.Sample"><wbr></wbr>Sample</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.SampleView.html" class="internal-link" title="fiftyone.core.sample.SampleView"><wbr></wbr>Sample<wbr></wbr>View</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample._SampleMixin.html" class="internal-link" title="fiftyone.core.sample._SampleMixin">_<wbr></wbr>Sample<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.html#get_default_sample_fields" class="internal-link" title="fiftyone.core.sample.get_default_sample_fields">get<wbr></wbr>_default<wbr></wbr>_sample<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.html#_apply_confidence_thresh" class="internal-link" title="fiftyone.core.sample._apply_confidence_thresh">_apply<wbr></wbr>_confidence<wbr></wbr>_thresh</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.html#_is_frames_dict" class="internal-link" title="fiftyone.core.sample._is_frames_dict">_is<wbr></wbr>_frames<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.sample.html" class="internal-link" title="fiftyone.core.sample">sample</a></code><wbr></wbr>.<code><a href="fiftyone.core.sample.SampleView.html" class="internal-link" title="fiftyone.core.sample.SampleView">SampleView</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">SampleView</span>(<a href="fiftyone.core.sample._SampleMixin.html" class="internal-link" title="fiftyone.core.sample._SampleMixin">_SampleMixin</a>, <a href="fiftyone.core.document.DocumentView.html" class="internal-link" title="fiftyone.core.document.DocumentView">DocumentView</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L626" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.core.clips.ClipView.html" class="internal-link">fiftyone.core.clips.ClipView</a></code>, <code><a href="fiftyone.core.video.FrameView.html" class="internal-link">fiftyone.core.video.FrameView</a></code>, <code><a href="fiftyone.core.patches._PatchView.html" class="internal-link">fiftyone.core.patches._PatchView</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.sample.SampleView.__init__">SampleView(doc, view, selected_fields, excluded_fields, filtered_fields)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.sample.SampleView">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>A view into a <code><a href="fiftyone.core.sample.Sample.html" class="internal-link" title="fiftyone.core.sample.Sample">Sample</a></code> in a dataset.</p>
+<p>Like <code><a href="fiftyone.core.sample.Sample.html" class="internal-link" title="fiftyone.core.sample.Sample">Sample</a></code> instances, the fields of a <code><a href="fiftyone.core.sample.SampleView.html" class="internal-link" title="fiftyone.core.sample.SampleView">SampleView</a></code>
+instance can be modified, new fields can be created, and any changes can be
+saved to the database.</p>
+<p><code><a href="fiftyone.core.sample.SampleView.html" class="internal-link" title="fiftyone.core.sample.SampleView">SampleView</a></code> instances differ from <code><a href="fiftyone.core.sample.Sample.html" class="internal-link" title="fiftyone.core.sample.Sample">Sample</a></code> instances in the
+following ways:</p>
+<ul class="rst-simple">
+<li>A sample view may contain only a subset of the fields of its source
+sample, either by selecting and/or excluding specific fields</li>
+<li>A sample view may contain array fields or embedded array fields that
+have been filtered, thus containing only a subset of the array elements
+from the source sample</li>
+<li>Excluded fields of a sample view may not be accessed or modified</li>
+</ul>
+<div class="rst-admonition rst-note">
+<p class="rst-admonition-title rst-first">Note</p>
+<p class="rst-last">Sample views should never be created manually; they are generated when
+accessing the samples in a <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code>.</p>
+</div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc</span></td><td class="fieldArgDesc">a <code>fiftyone.core.odm.mixins.DatasetSampleDocument</code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">view</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> that the sample
+belongs to</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">selected<wbr></wbr>_fields</span></td><td class="fieldArgDesc">a set of field names that this sample view is
+restricted to, if any</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">excluded<wbr></wbr>_fields</span></td><td class="fieldArgDesc">a set of field names that are excluded from
+this sample view, if any</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filtered<wbr></wbr>_fields</span></td><td class="fieldArgDesc">a set of field names of list fields that are
+filtered in this sample view, if any</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id592">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.sample.SampleView.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__" class="internal-link" title="fiftyone.core.sample.SampleView.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#save" class="internal-link" title="fiftyone.core.sample.SampleView.save">save</a></code></td>
+    <td>Saves the sample view to the database.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_dict" class="internal-link" title="fiftyone.core.sample.SampleView.to_dict">to<wbr></wbr>_dict</a></code></td>
+    <td>Serializes the sample view to a JSON dictionary.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_save" class="internal-link" title="fiftyone.core.sample.SampleView._save">_save</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_frames" class="internal-link" title="fiftyone.core.sample.SampleView._frames">_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.sample._SampleMixin.html" class="internal-link" title="fiftyone.core.sample._SampleMixin">_SampleMixin</a></code>:
+            </p>
+            <table class="children sortable" id="id593">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#__getattr__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__getattr__">__getattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#__getitem__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#__iter__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#__setattr__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__setattr__">__setattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#__setitem__" class="internal-link" title="fiftyone.core.sample._SampleMixin.__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#add_labels" class="internal-link" title="fiftyone.core.sample._SampleMixin.add_labels">add<wbr></wbr>_labels</a></code></td>
+    <td>Adds the given labels to the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#clear_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.clear_field">clear<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#compute_metadata" class="internal-link" title="fiftyone.core.sample._SampleMixin.compute_metadata">compute<wbr></wbr>_metadata</a></code></td>
+    <td>Populates the <tt class="rst-docutils rst-literal">metadata</tt> field of the sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#copy" class="internal-link" title="fiftyone.core.sample._SampleMixin.copy">copy</a></code></td>
+    <td>Returns a deep copy of the sample that has not been added to the database.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#get_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.get_field">get<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#merge" class="internal-link" title="fiftyone.core.sample._SampleMixin.merge">merge</a></code></td>
+    <td>Merges the fields of the given sample into this sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#set_field" class="internal-link" title="fiftyone.core.sample._SampleMixin.set_field">set<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#dataset_id" class="internal-link" title="fiftyone.core.sample._SampleMixin.dataset_id">dataset<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#filename" class="internal-link" title="fiftyone.core.sample._SampleMixin.filename">filename</a></code></td>
+    <td>The basename of the media's filepath.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#media_type" class="internal-link" title="fiftyone.core.sample._SampleMixin.media_type">media<wbr></wbr>_type</a></code></td>
+    <td>The media type of the sample.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#_parse_fields_video" class="internal-link" title="fiftyone.core.sample._SampleMixin._parse_fields_video">_parse<wbr></wbr>_fields<wbr></wbr>_video</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#_secure_media" class="internal-link" title="fiftyone.core.sample._SampleMixin._secure_media">_secure<wbr></wbr>_media</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.sample._SampleMixin.html#_dataset_id" class="internal-link" title="fiftyone.core.sample._SampleMixin._dataset_id">_dataset<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.document.DocumentView.html" class="internal-link" title="fiftyone.core.document.DocumentView">DocumentView</a></code> (via <code><a href="fiftyone.core.sample._SampleMixin.html" class="internal-link" title="fiftyone.core.sample._SampleMixin">_SampleMixin</a></code>):
+            </p>
+            <table class="children sortable" id="id594">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#has_field" class="internal-link" title="fiftyone.core.document.DocumentView.has_field">has<wbr></wbr>_field</a></code></td>
+    <td>Determines whether the document has the given field.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#to_mongo_dict" class="internal-link" title="fiftyone.core.document.DocumentView.to_mongo_dict">to<wbr></wbr>_mongo<wbr></wbr>_dict</a></code></td>
+    <td>Serializes the document to a BSON dictionary equivalent to the representation that would be stored in the database.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#excluded_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.excluded_field_names">excluded<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>The set of field names that are excluded on this document view, or <tt class="rst-docutils rst-literal">None</tt> if no fields are explicitly excluded.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#field_names" class="internal-link" title="fiftyone.core.document.DocumentView.field_names">field<wbr></wbr>_names</a></code></td>
+    <td>An ordered tuple of field names of this document view.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#filtered_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.filtered_field_names">filtered<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>The set of field names or <tt class="rst-docutils rst-literal">embedded.field.names</tt> that have been filtered on this document view, or <tt class="rst-docutils rst-literal">None</tt> if no fields are filtered.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#selected_field_names" class="internal-link" title="fiftyone.core.document.DocumentView.selected_field_names">selected<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>The set of field names that are selected on this document view, or <tt class="rst-docutils rst-literal">None</tt> if no fields are explicitly selected.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_get_field_names" class="internal-link" title="fiftyone.core.document.DocumentView._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>Returns an ordered tuple of field names of this document.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_reload_parents" class="internal-link" title="fiftyone.core.document.DocumentView._reload_parents">_reload<wbr></wbr>_parents</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_to_db_fields" class="internal-link" title="fiftyone.core.document.DocumentView._to_db_fields">_to<wbr></wbr>_db<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_excluded_fields" class="internal-link" title="fiftyone.core.document.DocumentView._excluded_fields">_excluded<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_filtered_fields" class="internal-link" title="fiftyone.core.document.DocumentView._filtered_fields">_filtered<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_selected_fields" class="internal-link" title="fiftyone.core.document.DocumentView._selected_fields">_selected<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_view" class="internal-link" title="fiftyone.core.document.DocumentView._view">_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document.DocumentView.html#_collection" class="internal-link" title="fiftyone.core.document.DocumentView._collection">_collection</a></code></td>
+    <td>The <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> from which this document was taken, or <tt class="rst-docutils rst-literal">None</tt> if it is not in a dataset.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.document._Document.html" class="internal-link" title="fiftyone.core.document._Document">_Document</a></code> (via <code><a href="fiftyone.core.sample._SampleMixin.html" class="internal-link" title="fiftyone.core.sample._SampleMixin">_SampleMixin</a></code>, <code><a href="fiftyone.core.document.DocumentView.html" class="internal-link" title="fiftyone.core.document.DocumentView">DocumentView</a></code>):
+            </p>
+            <table class="children sortable" id="id595">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__contains__" class="internal-link" title="fiftyone.core.document._Document.__contains__">__contains__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__copy__" class="internal-link" title="fiftyone.core.document._Document.__copy__">__copy__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__delattr__" class="internal-link" title="fiftyone.core.document._Document.__delattr__">__delattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__delitem__" class="internal-link" title="fiftyone.core.document._Document.__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__dir__" class="internal-link" title="fiftyone.core.document._Document.__dir__">__dir__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__eq__" class="internal-link" title="fiftyone.core.document._Document.__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__str__" class="internal-link" title="fiftyone.core.document._Document.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#iter_fields" class="internal-link" title="fiftyone.core.document._Document.iter_fields">iter<wbr></wbr>_fields</a></code></td>
+    <td>Returns an iterator over the <tt class="rst-docutils rst-literal">(name, value)</tt> pairs of the public fields of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#to_json" class="internal-link" title="fiftyone.core.document._Document.to_json">to<wbr></wbr>_json</a></code></td>
+    <td>Serializes the document to a JSON string.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#update_fields" class="internal-link" title="fiftyone.core.document._Document.update_fields">update<wbr></wbr>_fields</a></code></td>
+    <td>Sets the dictionary of fields on the document.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#dataset" class="internal-link" title="fiftyone.core.document._Document.dataset">dataset</a></code></td>
+    <td>The dataset to which this document belongs, or <tt class="rst-docutils rst-literal">None</tt> if it has not been added to a dataset.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#in_dataset" class="internal-link" title="fiftyone.core.document._Document.in_dataset">in<wbr></wbr>_dataset</a></code></td>
+    <td>Whether the document has been added to a dataset.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_iter_label_fields" class="internal-link" title="fiftyone.core.document._Document._iter_label_fields">_iter<wbr></wbr>_label<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_parse_fields" class="internal-link" title="fiftyone.core.document._Document._parse_fields">_parse<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_dataset" class="internal-link" title="fiftyone.core.document._Document._dataset">_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_doc" class="internal-link" title="fiftyone.core.document._Document._doc">_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_id" class="internal-link" title="fiftyone.core.document._Document._id">_id</a></code></td>
+    <td>The ObjectId of the document, or <tt class="rst-docutils rst-literal">None</tt> if it has not been added to the database.</td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_in_db" class="internal-link" title="fiftyone.core.document._Document._in_db">_in<wbr></wbr>_db</a></code></td>
+    <td>Whether the document has been inserted into the database.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.sample.SampleView.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, doc, view, selected_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, excluded_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, filtered_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L662">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.sample.SampleView.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document.DocumentView.html#__init__" class="internal-link">fiftyone.core.document.DocumentView.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.sample.SampleView.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L683">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__repr__" title="fiftyone.core.sample.SampleView.__repr__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document.DocumentView.html#__repr__" class="internal-link">fiftyone.core.document.DocumentView.__repr__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.sample.SampleView.save">
+    
+  </a>
+  <a name="save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L730">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#save" title="fiftyone.core.sample.SampleView.save">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document.DocumentView.html#save" class="internal-link">fiftyone.core.document.DocumentView.save</a></code></div>
+    <div><p>Saves the sample view to the database.</p>
+<div class="rst-admonition rst-warning">
+<p class="rst-admonition-title rst-first">Warning</p>
+<p class="rst-last">This will permanently delete any omitted or filtered contents from
+the source dataset.</p>
+</div>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.sample.SampleView.to_dict">
+    
+  </a>
+  <a name="to_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_dict</span><span class="function-signature">(self, include_frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, include_private=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L700">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_dict" title="fiftyone.core.sample.SampleView.to_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.sample._SampleMixin.html#to_dict" class="internal-link">fiftyone.core.sample._SampleMixin.to_dict</a></code></div>
+    <div><p>Serializes the sample view to a JSON dictionary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_frames:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to include the frame labels for
+video samples</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_private:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to include private fields</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a JSON dict</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.sample.SampleView._save">
+    
+  </a>
+  <a name="_save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_save</span><span class="function-signature">(self, deferred=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L740">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_save" title="fiftyone.core.sample.SampleView._save">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document.DocumentView.html#_save" class="internal-link">fiftyone.core.document.DocumentView._save</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.core.clips.ClipView.html" class="internal-link">fiftyone.core.clips.ClipView</a></code>, <code><a href="fiftyone.core.video.FrameView.html" class="internal-link">fiftyone.core.video.FrameView</a></code>, <code><a href="fiftyone.core.patches._PatchView.html" class="internal-link">fiftyone.core.patches._PatchView</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.sample.SampleView._frames">
+    
+  </a>
+  <a name="_frames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_frames</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/sample.py#L679">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_frames" title="fiftyone.core.sample.SampleView._frames">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

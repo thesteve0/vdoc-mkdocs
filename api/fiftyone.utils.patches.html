@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.patches</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.patches.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.patches.html" class="internal-link" title="This module">patches</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.ImagePatchesExtractor.html" class="internal-link" title="fiftyone.utils.patches.ImagePatchesExtractor"><wbr></wbr>Image<wbr></wbr>Patches<wbr></wbr>Extractor</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#extract_patch" class="internal-link" title="fiftyone.utils.patches.extract_patch">extract<wbr></wbr>_patch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_patches" class="internal-link" title="fiftyone.utils.patches.parse_patches">parse<wbr></wbr>_patches</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_image" class="internal-link" title="fiftyone.utils.patches._load_image">_load<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_classification" class="internal-link" title="fiftyone.utils.patches._to_classification">_to<wbr></wbr>_classification</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/patches.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Image patch utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2145">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.utils.patches.ImagePatchesExtractor.html" class="internal-link" title="fiftyone.utils.patches.ImagePatchesExtractor"><wbr></wbr>Image<wbr></wbr>Patches<wbr></wbr>Extractor</a></code></td>
+    <td>Class for iterating over the labeled/unlabeled image patches in a collection.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#extract_patch" class="internal-link" title="fiftyone.utils.patches.extract_patch">extract<wbr></wbr>_patch</a></code></td>
+    <td>Extracts the patch from the image.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_patches" class="internal-link" title="fiftyone.utils.patches.parse_patches">parse<wbr></wbr>_patches</a></code></td>
+    <td>Parses the patches from the given document.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_image" class="internal-link" title="fiftyone.utils.patches._load_image">_load<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_classification" class="internal-link" title="fiftyone.utils.patches._to_classification">_to<wbr></wbr>_classification</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.patches.extract_patch">
+    
+  </a>
+  <a name="extract_patch">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extract_patch</span><span class="function-signature">(img, detection, force_square=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, alpha=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/patches.py#L149">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#extract_patch" title="fiftyone.utils.patches.extract_patch">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Extracts the patch from the image.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">img</span></td><td class="fieldArgDesc">a numpy image array</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">detection</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code> defining the
+patch</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">force<wbr></wbr>_square:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to minimally manipulate the patch
+bounding box into a square prior to extraction</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">alpha:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional expansion/contraction to apply to the patch
+before extracting it, in <tt class="rst-docutils rst-literal"><span class="pre">[-1,</span> inf)</tt>. If provided, the length and
+width of the box are expanded (or contracted, when <tt class="rst-docutils rst-literal">alpha &lt; 0</tt>)
+by <tt class="rst-docutils rst-literal">(100 * alpha)%</tt>. For example, set <tt class="rst-docutils rst-literal">alpha = 0.1</tt> to expand
+the box by 10%, and set <tt class="rst-docutils rst-literal">alpha = <span class="pre">-0.1</span></tt> to contract the box by 10%</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the image patch</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.patches.parse_patches">
+    
+  </a>
+  <a name="parse_patches">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_patches</span><span class="function-signature">(doc, patches_field, handle_missing=<span class="rst-variable-quote">'</span><span class="rst-variable-string">skip</span><span class="rst-variable-quote">'</span>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/patches.py#L98">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_patches" title="fiftyone.utils.patches.parse_patches">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the patches from the given document.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">patches<wbr></wbr>_field</span></td><td class="fieldArgDesc">the name of the field defining the image patches. Must
+be of type <code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code>,
+<code><a href="fiftyone.core.labels.Detections.html" class="internal-link">fiftyone.core.labels.Detections</a></code>,
+<code><a href="fiftyone.core.labels.Polyline.html" class="internal-link">fiftyone.core.labels.Polyline</a></code>, or
+<code><a href="fiftyone.core.labels.Polylines.html" class="internal-link">fiftyone.core.labels.Polylines</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">handle<wbr></wbr>_missing:</span><span class="literal">"skip"</span></td><td class="fieldArgDesc"><p>how to handle documents with no patches.
+Supported values are:</p>
+<blockquote>
+<ul class="rst-simple">
+<li>"skip": skip the document and return <tt class="rst-docutils rst-literal">None</tt></li>
+<li>"image": use the whole image as a single patch</li>
+<li>"error": raise an error</li>
+</ul>
+</blockquote>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Detections.html" class="internal-link">fiftyone.core.labels.Detections</a></code> instance, or <tt class="rst-docutils rst-literal">None</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.patches._load_image">
+    
+  </a>
+  <a name="_load_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_image</span><span class="function-signature">(image_path, force_rgb=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/patches.py#L176">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_image" title="fiftyone.utils.patches._load_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.patches._to_classification">
+    
+  </a>
+  <a name="_to_classification">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_classification</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/patches.py#L182">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_classification" title="fiftyone.utils.patches._to_classification">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

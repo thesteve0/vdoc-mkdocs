@@ -1,0 +1,1439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.eval.base.BaseClassificationResults</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.eval.base.BaseClassificationResults.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.eval.base.BaseClassificationResults.html" class="internal-link" title="This class"><wbr></wbr>Base<wbr></wbr>Classification<wbr></wbr>Results</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.confusion_matrix">confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.metrics">metrics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#plot_confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.plot_confusion_matrix">plot<wbr></wbr>_confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#print_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.print_metrics">print<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#print_report" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.print_report">print<wbr></wbr>_report</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#report" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.report">report</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_from_dict" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._from_dict">_from<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._confusion_matrix">_confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_classes" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._parse_classes">_parse<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#from_dict" class="internal-link" title="fiftyone.core.runs.BaseRunResults.from_dict">from<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#base_results_cls" class="internal-link" title="fiftyone.core.runs.BaseRunResults.base_results_cls">base<wbr></wbr>_results<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#attributes" class="internal-link" title="fiftyone.core.runs.BaseRunResults.attributes">attributes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#save" class="internal-link" title="fiftyone.core.runs.BaseRunResults.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#save_config" class="internal-link" title="fiftyone.core.runs.BaseRunResults.save_config">save<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#_get_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults._get_custom_metrics">_get<wbr></wbr>_custom<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#_print_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults._print_metrics">_print<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#classes" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.classes">classes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#confs" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.confs">confs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#missing" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.missing">missing</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#weights" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.weights">weights</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ypred" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred">ypred</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ypred_ids" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred_ids">ypred<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ytrue" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue">ytrue</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ytrue_ids" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue_ids">ytrue<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#cls" class="internal-link" title="fiftyone.core.runs.BaseRunResults.cls">cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#config" class="internal-link" title="fiftyone.core.runs.BaseRunResults.config">config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#key" class="internal-link" title="fiftyone.core.runs.BaseRunResults.key">key</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#samples" class="internal-link" title="fiftyone.core.runs.BaseRunResults.samples">samples</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#_backend" class="internal-link" title="fiftyone.core.runs.BaseRunResults._backend">_backend</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#_config" class="internal-link" title="fiftyone.core.runs.BaseRunResults._config">_config</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#_key" class="internal-link" title="fiftyone.core.runs.BaseRunResults._key">_key</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html#_samples" class="internal-link" title="fiftyone.core.runs.BaseRunResults._samples">_samples</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.eval.base.html" class="internal-link" title="The parent of this class">base</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseClassificationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults"><wbr></wbr>Base<wbr></wbr>Classification<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod"><wbr></wbr>Base<wbr></wbr>Evaluation<wbr></wbr>Method</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethodConfig.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethodConfig"><wbr></wbr>Base<wbr></wbr>Evaluation<wbr></wbr>Method<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults"><wbr></wbr>Base<wbr></wbr>Evaluation<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#_compute_accuracy" class="internal-link" title="fiftyone.utils.eval.base._compute_accuracy">_compute<wbr></wbr>_accuracy</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#_compute_confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base._compute_confusion_matrix">_compute<wbr></wbr>_confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#_compute_support" class="internal-link" title="fiftyone.utils.eval.base._compute_support">_compute<wbr></wbr>_support</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#_parse_labels" class="internal-link" title="fiftyone.utils.eval.base._parse_labels">_parse<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#_print_dict_as_table" class="internal-link" title="fiftyone.utils.eval.base._print_dict_as_table">_print<wbr></wbr>_dict<wbr></wbr>_as<wbr></wbr>_table</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#foo" class="internal-link" title="fiftyone.utils.eval.base.foo">foo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.html#logger" class="internal-link" title="fiftyone.utils.eval.base.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.base.html" class="internal-link" title="fiftyone.utils.eval.base">base</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.base.BaseClassificationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults">BaseClassificationResults</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">BaseClassificationResults</span>(<a href="fiftyone.utils.eval.base.BaseEvaluationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults">BaseEvaluationResults</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L190" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionResults.html" class="internal-link">fiftyone.utils.eval.detection.DetectionResults</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationResults.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationResults</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.__init__">BaseClassificationResults(samples, config, eval_key, ytrue, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.eval.base.BaseClassificationResults">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Base class for evaluation results that expose classification metrics
+like P/R/F1 and confusion matrices.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.evaluation.EvaluationMethodConfig.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethodConfig</a></code>
+used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">eval<wbr></wbr>_key</span></td><td class="fieldArgDesc">the evaluation key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ytrue</span></td><td class="fieldArgDesc">a list of ground truth labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ypred</span></td><td class="fieldArgDesc">a list of predicted labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">confs</span></td><td class="fieldArgDesc">an optional list of confidences for the predictions</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">weights</span></td><td class="fieldArgDesc">an optional list of sample weights</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ytrue<wbr></wbr>_ids</span></td><td class="fieldArgDesc">a list of IDs for the ground truth labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ypred<wbr></wbr>_ids</span></td><td class="fieldArgDesc">a list of IDs for the predicted labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes</span></td><td class="fieldArgDesc">the list of possible classes. If not provided, the
+observed ground truth/predicted labels are used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">missing</span></td><td class="fieldArgDesc">a missing label string. Any None-valued labels are
+given this label for evaluation purposes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">custom<wbr></wbr>_metrics</span></td><td class="fieldArgDesc">an optional dict of custom metrics</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backend</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>
+backend</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1850">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.confusion_matrix">confusion<wbr></wbr>_matrix</a></code></td>
+    <td>Generates a confusion matrix for the results via <code>sklearn:sklearn.metrics.confusion_matrix</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.metrics">metrics</a></code></td>
+    <td>Computes classification metrics for the results, including accuracy, precision, recall, and F-beta score.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plot_confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.plot_confusion_matrix">plot<wbr></wbr>_confusion<wbr></wbr>_matrix</a></code></td>
+    <td>Plots a confusion matrix for the evaluation results.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.print_metrics">print<wbr></wbr>_metrics</a></code></td>
+    <td>Prints the metrics computed via <code><a href="fiftyone.utils.eval.base.BaseClassificationResults.html#metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.metrics">metrics</a></code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#print_report" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.print_report">print<wbr></wbr>_report</a></code></td>
+    <td>Prints a classification report for the results via <code>sklearn:sklearn.metrics.classification_report</code>.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#report" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.report">report</a></code></td>
+    <td>Generates a classification report for the results via <code>sklearn:sklearn.metrics.classification_report</code>.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#classes" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.classes">classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#confs" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.confs">confs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#missing" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.missing">missing</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#weights" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.weights">weights</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ypred" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred">ypred</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ypred_ids" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred_ids">ypred<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ytrue" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue">ytrue</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#ytrue_ids" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue_ids">ytrue<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_from_dict" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._from_dict">_from<wbr></wbr>_dict</a></code></td>
+    <td>Subclass implementation of <code><a href="fiftyone.core.runs.BaseRunResults.html#from_dict" class="internal-link" title="fiftyone.core.runs.BaseRunResults.from_dict">from_dict</a></code>.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_confusion_matrix" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._confusion_matrix">_confusion<wbr></wbr>_matrix</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_classes" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults._parse_classes">_parse<wbr></wbr>_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults">BaseEvaluationResults</a></code>:
+            </p>
+            <table class="children sortable" id="id1851">
+  
+  
+  <tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#_get_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults._get_custom_metrics">_get<wbr></wbr>_custom<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#_print_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults._print_metrics">_print<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> (via <code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationResults">BaseEvaluationResults</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationResults.html" class="internal-link" title="fiftyone.core.evaluation.EvaluationResults">EvaluationResults</a></code>):
+            </p>
+            <table class="children sortable" id="id1852">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#from_dict" class="internal-link" title="fiftyone.core.runs.BaseRunResults.from_dict">from<wbr></wbr>_dict</a></code></td>
+    <td>Builds a <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> from a JSON dict representation of it.</td>
+  </tr><tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#base_results_cls" class="internal-link" title="fiftyone.core.runs.BaseRunResults.base_results_cls">base<wbr></wbr>_results<wbr></wbr>_cls</a></code></td>
+    <td>Returns the results class for the given run type.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#attributes" class="internal-link" title="fiftyone.core.runs.BaseRunResults.attributes">attributes</a></code></td>
+    <td>Returns the list of class attributes that will be serialized by <code>serialize</code>.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#save" class="internal-link" title="fiftyone.core.runs.BaseRunResults.save">save</a></code></td>
+    <td>Saves the results to the database.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#save_config" class="internal-link" title="fiftyone.core.runs.BaseRunResults.save_config">save<wbr></wbr>_config</a></code></td>
+    <td>Saves these results config to the database.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#cls" class="internal-link" title="fiftyone.core.runs.BaseRunResults.cls">cls</a></code></td>
+    <td>The fully-qualified name of this <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> class.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#config" class="internal-link" title="fiftyone.core.runs.BaseRunResults.config">config</a></code></td>
+    <td>The <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for these results.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#key" class="internal-link" title="fiftyone.core.runs.BaseRunResults.key">key</a></code></td>
+    <td>The run key for these results.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#samples" class="internal-link" title="fiftyone.core.runs.BaseRunResults.samples">samples</a></code></td>
+    <td>The <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> associated with these results.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#_backend" class="internal-link" title="fiftyone.core.runs.BaseRunResults._backend">_backend</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#_config" class="internal-link" title="fiftyone.core.runs.BaseRunResults._config">_config</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#_key" class="internal-link" title="fiftyone.core.runs.BaseRunResults._key">_key</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.runs.BaseRunResults.html#_samples" class="internal-link" title="fiftyone.core.runs.BaseRunResults._samples">_samples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, samples, config, eval_key, ytrue, ypred, confs=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, weights=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, ytrue_ids=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, ypred_ids=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, missing=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, custom_metrics=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, backend=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L214">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.eval.base.BaseClassificationResults.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#__init__" class="internal-link">fiftyone.utils.eval.base.BaseEvaluationResults.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.BinaryClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.BinaryClassificationResults</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionResults.html" class="internal-link">fiftyone.utils.eval.detection.DetectionResults</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationResults.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.confusion_matrix">
+    
+  </a>
+  <a name="confusion_matrix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">confusion_matrix</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_other=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, include_missing=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L384">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#confusion_matrix" title="fiftyone.utils.eval.base.BaseClassificationResults.confusion_matrix">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Generates a confusion matrix for the results via
+<code>sklearn:sklearn.metrics.confusion_matrix</code>.</p>
+<p>The rows of the confusion matrix represent ground truth and the columns
+represent predictions.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+confusion matrix</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_other:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to include an extra row/column at
+the end of the matrix for labels that do not appear in
+<tt class="rst-docutils rst-literal">classes</tt>. Only applicable if <tt class="rst-docutils rst-literal">classes</tt> are provided</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_missing:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to include a row/column at the end
+of the matrix for unmatched labels. Only applicable if
+<tt class="rst-docutils rst-literal">self.missing</tt> does not already appear in <tt class="rst-docutils rst-literal">classes</tt>. If
+both "other" and "missing" rows/columns are requested, this one
+is last</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils rst-literal">num_classes x num_classes</tt> confusion matrix</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.metrics">
+    
+  </a>
+  <a name="metrics">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">metrics</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, average=<span class="rst-variable-quote">'</span><span class="rst-variable-string">micro</span><span class="rst-variable-quote">'</span>, beta=1.0)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L321">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#metrics" title="fiftyone.utils.eval.base.BaseClassificationResults.metrics">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#metrics" class="internal-link">fiftyone.utils.eval.base.BaseEvaluationResults.metrics</a></code></div>
+    <div><p>Computes classification metrics for the results, including accuracy,
+precision, recall, and F-beta score.</p>
+<p>See <code>sklearn:sklearn.metrics.precision_recall_fscore_support</code> for
+details.</p>
+<p>Also includes any custom metrics from <code><a href="#custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.custom_metrics">custom_metrics</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+calculations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">average:</span><span class="literal">"micro"</span></td><td class="fieldArgDesc">the averaging strategy to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span><span class="literal">1.0</span></td><td class="fieldArgDesc">the F-beta value to use</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.plot_confusion_matrix">
+    
+  </a>
+  <a name="plot_confusion_matrix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">plot_confusion_matrix</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_other=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_missing=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, other_label=<span class="rst-variable-quote">'</span><span class="rst-variable-string">(other)</span><span class="rst-variable-quote">'</span>, backend=<span class="rst-variable-quote">'</span><span class="rst-variable-string">plotly</span><span class="rst-variable-quote">'</span>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L418">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#plot_confusion_matrix" title="fiftyone.utils.eval.base.BaseClassificationResults.plot_confusion_matrix">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Plots a confusion matrix for the evaluation results.</p>
+<p>If you are working in a notebook environment with the default plotly
+backend, this method returns an interactive
+<code><a href="fiftyone.core.plots.plotly.InteractiveHeatmap.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveHeatmap</a></code> that you can
+attach to an App session via its
+<code><a href="fiftyone.core.session.session.Session.html#plots" class="internal-link" title="fiftyone.core.session.session.Session.plots">fiftyone.core.session.Session.plots</a></code> attribute, which will
+automatically sync the session's view with the currently selected cells
+in the confusion matrix.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+confusion matrix</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_other:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>whether to include a row/column for examples
+whose label is in <tt class="rst-docutils rst-literal">classes</tt> but are matched to labels that
+do not appear in <tt class="rst-docutils rst-literal">classes</tt>. Only applicable if <tt class="rst-docutils rst-literal">classes</tt>
+are provided. The supported values are:</p>
+<ul class="rst-simple">
+<li>None (default): only include a row/column for other labels
+if there are any</li>
+<li>True: do include a row/column for other labels</li>
+<li>False: do not include a row/column for other labels</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_missing:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>whether to include a row/column for missing
+ground truth/predictions in the confusion matrix. The supported
+values are:</p>
+<ul class="rst-simple">
+<li>None (default): only include a row/column for missing
+labels if there are any</li>
+<li>True: do include a row/column for missing labels</li>
+<li>False: do not include a row/column for missing labels</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other<wbr></wbr>_label:</span><span class="literal">"(other)"</span></td><td class="fieldArgDesc">the label to use for "other" predictions</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">backend:</span><span class="literal">"plotly"</span></td><td class="fieldArgDesc">the plotting backend to use. Supported values
+are <tt class="rst-docutils rst-literal">("plotly", "matplotlib")</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc"><p>keyword arguments for the backend plotting method:</p>
+<ul class="rst-simple">
+<li>"plotly" backend: <code><a href="fiftyone.core.plots.plotly.html#plot_confusion_matrix" class="internal-link">fiftyone.core.plots.plotly.plot_confusion_matrix</a></code></li>
+<li>"matplotlib" backend: <code><a href="fiftyone.core.plots.matplotlib.html#plot_confusion_matrix" class="internal-link">fiftyone.core.plots.matplotlib.plot_confusion_matrix</a></code></li>
+</ul>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>one</code> of the following</td><td class="fieldArgDesc"><ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.plots.plotly.InteractiveHeatmap.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveHeatmap</a></code>, if
+the plotly backend is used</li>
+<li>a matplotlib figure, otherwise</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.print_metrics">
+    
+  </a>
+  <a name="print_metrics">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_metrics</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, average=<span class="rst-variable-quote">'</span><span class="rst-variable-string">micro</span><span class="rst-variable-quote">'</span>, beta=1.0, digits=2)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L371">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#print_metrics" title="fiftyone.utils.eval.base.BaseClassificationResults.print_metrics">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.eval.base.BaseEvaluationResults.html#print_metrics" class="internal-link">fiftyone.utils.eval.base.BaseEvaluationResults.print_metrics</a></code></div>
+    <div><p>Prints the metrics computed via <code><a href="#metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseClassificationResults.metrics">metrics</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+calculations</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">average:</span><span class="literal">"micro"</span></td><td class="fieldArgDesc">the averaging strategy to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">beta:</span><span class="literal">1.0</span></td><td class="fieldArgDesc">the F-beta value to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">digits:</span><span class="literal">2</span></td><td class="fieldArgDesc">the number of digits of precision to print</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.print_report">
+    
+  </a>
+  <a name="print_report">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">print_report</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, digits=2)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L296">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#print_report" title="fiftyone.utils.eval.base.BaseClassificationResults.print_report">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Prints a classification report for the results via
+<code>sklearn:sklearn.metrics.classification_report</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+report</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">digits:</span><span class="literal">2</span></td><td class="fieldArgDesc">the number of digits of precision to print</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.report">
+    
+  </a>
+  <a name="report">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">report</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L256">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#report" title="fiftyone.utils.eval.base.BaseClassificationResults.report">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Generates a classification report for the results via
+<code>sklearn:sklearn.metrics.classification_report</code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional list of classes to include in the
+report</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.classes">
+    
+  </a>
+  <a name="classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">classes</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L253">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#classes" title="fiftyone.utils.eval.base.BaseClassificationResults.classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionResults.html" class="internal-link">fiftyone.utils.eval.detection.DetectionResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.confs">
+    
+  </a>
+  <a name="confs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">confs</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L245">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#confs" title="fiftyone.utils.eval.base.BaseClassificationResults.confs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.missing">
+    
+  </a>
+  <a name="missing">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">missing</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L254">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#missing" title="fiftyone.utils.eval.base.BaseClassificationResults.missing">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionResults.html" class="internal-link">fiftyone.utils.eval.detection.DetectionResults</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationResults.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.weights">
+    
+  </a>
+  <a name="weights">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">weights</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L246">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#weights" title="fiftyone.utils.eval.base.BaseClassificationResults.weights">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.ypred">
+    
+  </a>
+  <a name="ypred">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ypred</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L244">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ypred" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.ypred_ids">
+    
+  </a>
+  <a name="ypred_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ypred_ids</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L250">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ypred_ids" title="fiftyone.utils.eval.base.BaseClassificationResults.ypred_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.ytrue">
+    
+  </a>
+  <a name="ytrue">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ytrue</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L243">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ytrue" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults.ytrue_ids">
+    
+  </a>
+  <a name="ytrue_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">ytrue_ids</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L247">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ytrue_ids" title="fiftyone.utils.eval.base.BaseClassificationResults.ytrue_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults._from_dict">
+    
+  </a>
+  <a name="_from_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_from_dict</span><span class="function-signature">(cls, d, samples, config, eval_key, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L580">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_from_dict" title="fiftyone.utils.eval.base.BaseClassificationResults._from_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.runs.BaseRunResults.html#_from_dict" class="internal-link">fiftyone.core.runs.BaseRunResults._from_dict</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.BinaryClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.BinaryClassificationResults</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionResults.html" class="internal-link">fiftyone.utils.eval.detection.DetectionResults</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationResults.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationResults</a></code></div>
+    <div><p>Subclass implementation of <code><a href="#from_dict" class="internal-link" title="fiftyone.core.runs.BaseRunResults.from_dict">from_dict</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc">a JSON dict</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code>
+for the run</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for the run</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">eval<wbr></wbr>_key</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">the run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults._confusion_matrix">
+    
+  </a>
+  <a name="_confusion_matrix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_confusion_matrix</span><span class="function-signature">(self, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_other=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_missing=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, other_label=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tabulate_ids=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L498">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_confusion_matrix" title="fiftyone.utils.eval.base.BaseClassificationResults._confusion_matrix">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.eval.base.BaseClassificationResults._parse_classes">
+    
+  </a>
+  <a name="_parse_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_classes</span><span class="function-signature">(self, classes)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/base.py#L492">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_classes" title="fiftyone.utils.eval.base.BaseClassificationResults._parse_classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.BinaryClassificationResults.html" class="internal-link">fiftyone.utils.eval.classification.BinaryClassificationResults</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

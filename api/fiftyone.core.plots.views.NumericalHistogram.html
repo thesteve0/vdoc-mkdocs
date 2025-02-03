@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.plots.views.NumericalHistogram</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.plots.views.NumericalHistogram.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.plots.views.NumericalHistogram.html" class="internal-link" title="This class"><wbr></wbr>Numerical<wbr></wbr>Histogram</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_aggregations" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._get_aggregations">_get<wbr></wbr>_aggregations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_trace_updates" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._get_trace_updates">_get<wbr></wbr>_trace<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_histogram" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._make_histogram">_make<wbr></wbr>_histogram</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_widget" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._make_widget">_make<wbr></wbr>_widget</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reopen" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._reopen">_reopen</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ViewPlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.reset">reset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ViewPlot.html#update_view" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.update_view">update<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#save" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#show" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot.show">show</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connect">_connect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnect">_disconnect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_freeze" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._freeze">_freeze</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_screenshot" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._screenshot">_screenshot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._show">_show</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._update_layout">_update<wbr></wbr>_layout</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#_update_view" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot._update_view">_update<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#bins" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.bins">bins</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#color" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.color">color</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#expr" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.expr">expr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#field_or_expr" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.field_or_expr">field<wbr></wbr>_or<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#layout" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.layout">layout</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#log" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.log">log</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#opacity" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.opacity">opacity</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#range" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.range">range</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#xlabel" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.xlabel">xlabel</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_aggregations" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._aggregations">_aggregations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_figure" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._figure">_figure</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_traces" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._traces">_traces</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_widget" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._widget">_widget</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.link_type">link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ViewPlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_handle" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._handle">_handle</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.plots.views.html" class="internal-link" title="The parent of this class">views</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.CategoricalHistogram.html" class="internal-link" title="fiftyone.core.plots.views.CategoricalHistogram"><wbr></wbr>Categorical<wbr></wbr>Histogram</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.NumericalHistogram.html" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram"><wbr></wbr>Numerical<wbr></wbr>Histogram</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot"><wbr></wbr>Plotly<wbr></wbr>View<wbr></wbr>Plot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.ViewGrid.html" class="internal-link" title="fiftyone.core.plots.views.ViewGrid"><wbr></wbr>View<wbr></wbr>Grid</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.html#_make_composite_widget" class="internal-link" title="fiftyone.core.plots.views._make_composite_widget">_make<wbr></wbr>_composite<wbr></wbr>_widget</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.html#_DEFAULT_LAYOUT" class="internal-link" title="fiftyone.core.plots.views._DEFAULT_LAYOUT">_DEFAULT<wbr></wbr>_LAYOUT</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.views.html#_DEFAULT_MARKER_COLOR" class="internal-link" title="fiftyone.core.plots.views._DEFAULT_MARKER_COLOR">_DEFAULT<wbr></wbr>_MARKER<wbr></wbr>_COLOR</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.views.html" class="internal-link" title="fiftyone.core.plots.views">views</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.views.NumericalHistogram.html" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram">NumericalHistogram</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">NumericalHistogram</span>(<a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L325" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.__init__">NumericalHistogram(field_or_expr, expr, bins, range, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.plots.views.NumericalHistogram">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>A histogram of a numerical field.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">field<wbr></wbr>_or<wbr></wbr>_expr</span></td><td class="fieldArgDesc">a field name, <tt class="rst-docutils rst-literal">embedded.field.name</tt>,
+<code><a href="fiftyone.core.expressions.ViewExpression.html" class="internal-link">fiftyone.core.expressions.ViewExpression</a></code>, or
+<a class="rst-external rst-reference" href="https://docs.mongodb.com/manual/meta/aggregation-quick-reference/#aggregation-expressions" target="_top">MongoDB expression</a>
+defining the field or expression to plot</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">expr</span></td><td class="fieldArgDesc">an optional
+<code><a href="fiftyone.core.expressions.ViewExpression.html" class="internal-link">fiftyone.core.expressions.ViewExpression</a></code> or
+<a class="rst-external rst-reference" href="https://docs.mongodb.com/manual/meta/aggregation-quick-reference/#aggregation-expressions" target="_top">MongoDB expression</a>
+to apply to <tt class="rst-docutils rst-literal">field_or_expr</tt> (which must be a field) before
+plotting</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">bins</span></td><td class="fieldArgDesc">can be either an integer number of bins to generate or a
+monotonically increasing sequence specifying the bin edges to use.
+By default, 10 bins are created. If <tt class="rst-docutils rst-literal">bins</tt> is an integer and no
+<tt class="rst-docutils rst-literal">range</tt> is specified, bin edges are automatically computed from
+the bounds of the field</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">range</span></td><td class="fieldArgDesc">a <tt class="rst-docutils rst-literal">(lower, upper)</tt> tuple specifying a range in which to
+generate equal-width bins. Only applicable when <tt class="rst-docutils rst-literal">bins</tt> is an
+integer or <tt class="rst-docutils rst-literal">None</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">xlabel</span></td><td class="fieldArgDesc">an optional x-label for the plot</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">log</span></td><td class="fieldArgDesc">whether to use a log scale y-axis</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">color</span></td><td class="fieldArgDesc">a color for the bars. Can be any color supported by
+<code>plotly:plotly.graph_objects.bar.Marker.color</code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">opacity</span></td><td class="fieldArgDesc">an optional opacity for the bars in <tt class="rst-docutils rst-literal">[0, 1]</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">init<wbr></wbr>_view</span></td><td class="fieldArgDesc">an optional initial
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> to load</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional parameters for
+<code>plotly:plotly.graph_objects.Figure.update_layout</code></td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id561">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#bins" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.bins">bins</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#color" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.color">color</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#expr" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.expr">expr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#field_or_expr" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.field_or_expr">field<wbr></wbr>_or<wbr></wbr>_expr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#layout" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.layout">layout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#log" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.log">log</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#opacity" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.opacity">opacity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#range" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.range">range</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#xlabel" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram.xlabel">xlabel</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_aggregations" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._get_aggregations">_get<wbr></wbr>_aggregations</a></code></td>
+    <td>Gets the <code><a href="fiftyone.core.aggregations.Aggregation.html" class="internal-link">fiftyone.core.aggregations.Aggregation</a></code> instances that can compute the necessary data to serve this plot.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_trace_updates" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._get_trace_updates">_get<wbr></wbr>_trace<wbr></wbr>_updates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_histogram" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._make_histogram">_make<wbr></wbr>_histogram</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_make_widget" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._make_widget">_make<wbr></wbr>_widget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reopen" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._reopen">_reopen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_aggregations" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._aggregations">_aggregations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_figure" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._figure">_figure</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_traces" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._traces">_traces</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_widget" class="internal-link" title="fiftyone.core.plots.views.NumericalHistogram._widget">_widget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a></code>:
+            </p>
+            <table class="children sortable" id="id562">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#show" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot.show">show</a></code></td>
+    <td>Shows this plot.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#_update_view" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot._update_view">_update<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code> (via <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a></code>):
+            </p>
+            <table class="children sortable" id="id563">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#save" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin.save">save</a></code></td>
+    <td>Saves the plot as an image or HTML.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_freeze" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._freeze">_freeze</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_screenshot" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._screenshot">_screenshot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._show">_show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._update_layout">_update<wbr></wbr>_layout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_handle" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._handle">_handle</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.ViewPlot.html" class="internal-link" title="fiftyone.core.plots.base.ViewPlot">ViewPlot</a></code> (via <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a></code>, <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>):
+            </p>
+            <table class="children sortable" id="id564">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ViewPlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.reset">reset</a></code></td>
+    <td>Resets the plot to its default state.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ViewPlot.html#update_view" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.update_view">update<wbr></wbr>_view</a></code></td>
+    <td>Updates the plot based on the provided view.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ViewPlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.base.ViewPlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code></td>
+    <td>Whether this plot supports automatic updates in response to session changes.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code> (via <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a></code>, <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>, <code><a href="fiftyone.core.plots.base.ViewPlot.html" class="internal-link" title="fiftyone.core.plots.base.ViewPlot">ViewPlot</a></code>):
+            </p>
+            <table class="children sortable" id="id565">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code></td>
+    <td>Connects this plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code></td>
+    <td>Disconnects the plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code></td>
+    <td>Freezes the plot, replacing it with a static image.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code></td>
+    <td>Whether this plot is currently connected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code></td>
+    <td>Whether this plot is currently disconnected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code></td>
+    <td>Whether this plot is currently frozen.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.link_type">link<wbr></wbr>_type</a></code></td>
+    <td>The link type between this plot and a connected session.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnect">_disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.Plot.html" class="internal-link" title="fiftyone.core.plots.base.Plot">Plot</a></code> (via <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html" class="internal-link" title="fiftyone.core.plots.views.PlotlyViewPlot">PlotlyViewPlot</a></code>, <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>, <code><a href="fiftyone.core.plots.base.ViewPlot.html" class="internal-link" title="fiftyone.core.plots.base.ViewPlot">ViewPlot</a></code>, <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code>):
+            </p>
+            <table class="children sortable" id="id566">
+  
+  
+  <tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, field_or_expr, expr=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, bins=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, range=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, xlabel=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, log=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, color=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, opacity=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, init_view=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L357">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.plots.views.NumericalHistogram.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#__init__" class="internal-link">fiftyone.core.plots.views.PlotlyViewPlot.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.bins">
+    
+  </a>
+  <a name="bins">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bins</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L372">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#bins" title="fiftyone.core.plots.views.NumericalHistogram.bins">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.color">
+    
+  </a>
+  <a name="color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">color</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L376">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#color" title="fiftyone.core.plots.views.NumericalHistogram.color">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.expr">
+    
+  </a>
+  <a name="expr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">expr</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L371">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#expr" title="fiftyone.core.plots.views.NumericalHistogram.expr">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.field_or_expr">
+    
+  </a>
+  <a name="field_or_expr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">field_or_expr</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L370">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#field_or_expr" title="fiftyone.core.plots.views.NumericalHistogram.field_or_expr">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.layout">
+    
+  </a>
+  <a name="layout">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">layout</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L378">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#layout" title="fiftyone.core.plots.views.NumericalHistogram.layout">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.log">
+    
+  </a>
+  <a name="log">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">log</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L375">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#log" title="fiftyone.core.plots.views.NumericalHistogram.log">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.opacity">
+    
+  </a>
+  <a name="opacity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">opacity</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L377">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#opacity" title="fiftyone.core.plots.views.NumericalHistogram.opacity">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.range">
+    
+  </a>
+  <a name="range">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">range</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L373">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#range" title="fiftyone.core.plots.views.NumericalHistogram.range">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram.xlabel">
+    
+  </a>
+  <a name="xlabel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">xlabel</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L374">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#xlabel" title="fiftyone.core.plots.views.NumericalHistogram.xlabel">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._get_aggregations">
+    
+  </a>
+  <a name="_get_aggregations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_aggregations</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L440">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_aggregations" title="fiftyone.core.plots.views.NumericalHistogram._get_aggregations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.ViewPlot.html#_get_aggregations" class="internal-link">fiftyone.core.plots.base.ViewPlot._get_aggregations</a></code></div>
+    <div><p>Gets the <code><a href="fiftyone.core.aggregations.Aggregation.html" class="internal-link">fiftyone.core.aggregations.Aggregation</a></code> instances
+that can compute the necessary data to serve this plot.</p>
+<p>Subclasses are not required to implement this method if they do not
+leverage aggregations.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list <code><a href="fiftyone.core.aggregations.Aggregation.html" class="internal-link">fiftyone.core.aggregations.Aggregation</a></code> instances,
+or None</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._get_trace_updates">
+    
+  </a>
+  <a name="_get_trace_updates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_trace_updates</span><span class="function-signature">(self, view, agg_results=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L443">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_trace_updates" title="fiftyone.core.plots.views.NumericalHistogram._get_trace_updates">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#_get_trace_updates" class="internal-link">fiftyone.core.plots.views.PlotlyViewPlot._get_trace_updates</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._make_histogram">
+    
+  </a>
+  <a name="_make_histogram">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_histogram</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L395">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_histogram" title="fiftyone.core.plots.views.NumericalHistogram._make_histogram">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._make_widget">
+    
+  </a>
+  <a name="_make_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_widget</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L392">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_widget" title="fiftyone.core.plots.views.NumericalHistogram._make_widget">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._reopen">
+    
+  </a>
+  <a name="_reopen">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reopen</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L462">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reopen" title="fiftyone.core.plots.views.NumericalHistogram._reopen">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_reopen" class="internal-link">fiftyone.core.plots.base.ResponsivePlot._reopen</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._aggregations">
+    
+  </a>
+  <a name="_aggregations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_aggregations</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L382">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_aggregations" title="fiftyone.core.plots.views.NumericalHistogram._aggregations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._figure">
+    
+  </a>
+  <a name="_figure">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_figure</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L380">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_figure" title="fiftyone.core.plots.views.NumericalHistogram._figure">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._traces">
+    
+  </a>
+  <a name="_traces">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_traces</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L464">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_traces" title="fiftyone.core.plots.views.NumericalHistogram._traces">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.views.PlotlyViewPlot.html#_traces" class="internal-link">fiftyone.core.plots.views.PlotlyViewPlot._traces</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.views.NumericalHistogram._widget">
+    
+  </a>
+  <a name="_widget">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_widget</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/views.py#L463">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_widget" title="fiftyone.core.plots.views.NumericalHistogram._widget">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_widget" class="internal-link">fiftyone.core.plots.plotly.PlotlyWidgetMixin._widget</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

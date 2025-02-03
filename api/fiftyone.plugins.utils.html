@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.plugins.utils</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.plugins.utils.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.plugins.utils.html" class="internal-link" title="This module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#find_plugins" class="internal-link" title="fiftyone.plugins.utils.find_plugins">find<wbr></wbr>_plugins</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_plugin_info" class="internal-link" title="fiftyone.plugins.utils.get_plugin_info">get<wbr></wbr>_plugin<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_zoo_plugins" class="internal-link" title="fiftyone.plugins.utils.list_zoo_plugins">list<wbr></wbr>_zoo<wbr></wbr>_plugins</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_get_plugin_info" class="internal-link" title="fiftyone.plugins.utils._do_get_plugin_info">_do<wbr></wbr>_get<wbr></wbr>_plugin<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_all_plugin_info" class="internal-link" title="fiftyone.plugins.utils._get_all_plugin_info">_get<wbr></wbr>_all<wbr></wbr>_plugin<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.plugins.utils.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.plugins.html" class="internal-link" title="The parent of this module">plugins</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.constants.html" class="internal-link" title="fiftyone.plugins.constants">constants</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.context.html" class="internal-link" title="fiftyone.plugins.context">context</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.core.html" class="internal-link" title="fiftyone.plugins.core">core</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.definitions.html" class="internal-link" title="fiftyone.plugins.definitions">definitions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.secrets.html" class="internal-link" title="fiftyone.plugins.secrets">secrets</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.utils.html" class="internal-link" title="fiftyone.plugins.utils">utils</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.plugins.html" class="internal-link" title="fiftyone.plugins">plugins</a></code><wbr></wbr>.<code><a href="fiftyone.plugins.utils.html" class="internal-link" title="fiftyone.plugins.utils">utils</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>FiftyOne plugin utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1191">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#find_plugins" class="internal-link" title="fiftyone.plugins.utils.find_plugins">find<wbr></wbr>_plugins</a></code></td>
+    <td>Returns the paths to the fiftyone YAML files for all plugins found in the given GitHub repository.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_plugin_info" class="internal-link" title="fiftyone.plugins.utils.get_plugin_info">get<wbr></wbr>_plugin<wbr></wbr>_info</a></code></td>
+    <td>Returns a dict of plugin info for a FiftyOne plugin hosted in GitHub.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_zoo_plugins" class="internal-link" title="fiftyone.plugins.utils.list_zoo_plugins">list<wbr></wbr>_zoo<wbr></wbr>_plugins</a></code></td>
+    <td>Returns a list of available plugins registered in the <a class="rst-external rst-reference" href="https://github.com/voxel51/fiftyone-plugins" target="_top">FiftyOne Plugins repository</a> README.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.plugins.utils.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_get_plugin_info" class="internal-link" title="fiftyone.plugins.utils._do_get_plugin_info">_do<wbr></wbr>_get<wbr></wbr>_plugin<wbr></wbr>_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_all_plugin_info" class="internal-link" title="fiftyone.plugins.utils._get_all_plugin_info">_get<wbr></wbr>_all<wbr></wbr>_plugin<wbr></wbr>_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.plugins.utils.find_plugins">
+    
+  </a>
+  <a name="find_plugins">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_plugins</span><span class="function-signature">(gh_repo, path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, info=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L70">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#find_plugins" title="fiftyone.plugins.utils.find_plugins">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the paths to the fiftyone YAML files for all plugins found in
+the given GitHub repository.</p>
+<p>Example usage:</p>
+<pre class="rst-literal-block">
+import fiftyone.plugins.utils as fopu
+
+# Search the entire repository
+plugins = fopu.find_plugins("https://github.com/voxel51/fiftyone-plugins")
+print(plugins)
+
+# Search a specific tree root
+plugins = fopu.find_plugins(
+    "https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/annotation"
+)
+print(plugins)
+
+# Search a specific branch + subdirectory
+plugins = fopu.find_plugins(
+    "https://github.com/voxel51/fiftyone-plugins/tree/main",
+    path="plugins/annotation",
+)
+print(plugins)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gh<wbr></wbr>_repo</span></td><td class="fieldArgDesc"><p>the GitHub repository, identifier, or tree path, which can be:</p>
+<ul class="rst-simple">
+<li>a GitHub repo URL like <tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;</span></tt></li>
+<li>a GitHub ref like
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/tree/&lt;branch&gt;</span></tt> or
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/commit/&lt;commit&gt;</span></tt></li>
+<li>a GitHub ref string like <tt class="rst-docutils rst-literal"><span class="pre">&lt;user&gt;/&lt;repo&gt;[/&lt;ref&gt;]</span></tt></li>
+<li>a GitHub tree path like
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/tree/&lt;branch&gt;/&lt;path&gt;</span></tt></li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional subdirectory of the repository to which to
+restrict the search. If <tt class="rst-docutils rst-literal">gh_repo</tt> also contains a <tt class="rst-docutils rst-literal">&lt;path&gt;</tt>, it
+is prepended to this value</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to retrieve full plugin info for each plugin
+(True) or just return paths to the fiftyone YAML files (False)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of paths to fiftyone YAML files or plugin info dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.plugins.utils.get_plugin_info">
+    
+  </a>
+  <a name="get_plugin_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_plugin_info</span><span class="function-signature">(gh_repo, path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L140">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_plugin_info" title="fiftyone.plugins.utils.get_plugin_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a dict of plugin info for a FiftyOne plugin hosted in GitHub.</p>
+<p>Example usage:</p>
+<pre class="rst-literal-block">
+import fiftyone.plugins.utils as fopu
+
+# A repository with a top-level fiftyone YAML file
+info = fopu.get_plugin_info("https://github.com/voxel51/voxelgpt")
+print(info)
+
+# A plugin that lives in a subdirectory
+# Manually specify the branch to use
+info = fopu.get_plugin_info(
+    "https://github.com/voxel51/fiftyone-plugins/tree/main/plugins/annotation"
+)
+print(info)
+
+# Directly link to a fiftyone YAML file
+info = fopu.get_plugin_info(
+    "https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/fiftyone.yml"
+)
+print(info)
+
+# Provide subdirectory separately
+info = fopu.get_plugin_info(
+    "voxel51/fiftyone-plugins",
+    path="plugins/annotation",
+)
+print(info)
+
+# Provide fiftyone YAML file path separately
+info = fopu.get_plugin_info(
+    "voxel51/fiftyone-plugins",
+    path="plugins/annotation/fiftyone.yml",
+)
+print(info)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gh<wbr></wbr>_repo</span></td><td class="fieldArgDesc"><p>the GitHub repository, identifier, tree path, or blob path,
+which can be:</p>
+<ul class="rst-simple">
+<li>a GitHub repo URL like <tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;</span></tt></li>
+<li>a GitHub ref like
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/tree/&lt;branch&gt;</span></tt> or
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/commit/&lt;commit&gt;</span></tt></li>
+<li>a GitHub ref string like <tt class="rst-docutils rst-literal"><span class="pre">&lt;user&gt;/&lt;repo&gt;[/&lt;ref&gt;]</span></tt></li>
+<li>a GitHub tree path like
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/tree/&lt;branch&gt;/&lt;path&gt;</span></tt></li>
+<li>a GitHub blob path like
+<tt class="rst-docutils rst-literal"><span class="pre">https://github.com/&lt;user&gt;/&lt;repo&gt;/blob/&lt;branch&gt;/&lt;path&gt;</span></tt></li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the path to a fiftyone YAML file or the directory that
+contains it. This is only necessary if the fiftyone YAML file is
+not at the root of the repository and you have not implicitly
+included this path in <tt class="rst-docutils rst-literal">gh_repo</tt> by providing a tree or blob path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict or list of dicts of plugin info</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.plugins.utils.list_zoo_plugins">
+    
+  </a>
+  <a name="list_zoo_plugins">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_zoo_plugins</span><span class="function-signature">(info=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L23">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_zoo_plugins" title="fiftyone.plugins.utils.list_zoo_plugins">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a list of available plugins registered in the
+<a class="rst-external rst-reference" href="https://github.com/voxel51/fiftyone-plugins" target="_top">FiftyOne Plugins repository</a>
+README.</p>
+<p>Example usage:</p>
+<pre class="rst-literal-block">
+import fiftyone.plugins.utils as fopu
+
+plugins = fopu.list_zoo_plugins()
+print(plugins)
+
+plugins = fopu.list_zoo_plugins(info=True)
+print(plugins)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to retrieve full plugin info for each plugin
+(True) or just return the available info from the README (False)</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of dicts describing the plugins</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.plugins.utils.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L20">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.plugins.utils.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.plugins.utils._do_get_plugin_info">
+    
+  </a>
+  <a name="_do_get_plugin_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_get_plugin_info</span><span class="function-signature">(task)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L251">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_get_plugin_info" title="fiftyone.plugins.utils._do_get_plugin_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.plugins.utils._get_all_plugin_info">
+    
+  </a>
+  <a name="_get_all_plugin_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_all_plugin_info</span><span class="function-signature">(tasks)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/utils.py#L232">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_all_plugin_info" title="fiftyone.plugins.utils._get_all_plugin_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

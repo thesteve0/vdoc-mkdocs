@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.clip.tokenizer.SimpleTokenizer</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.clip.tokenizer.SimpleTokenizer.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.clip.tokenizer.SimpleTokenizer.html" class="internal-link" title="This class"><wbr></wbr>Simple<wbr></wbr>Tokenizer</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#bpe" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe">bpe</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#decode" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decode">decode</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#encode" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encode">encode</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#bpe_ranks" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe_ranks">bpe<wbr></wbr>_ranks</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#byte_decoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_decoder">byte<wbr></wbr>_decoder</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#byte_encoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_encoder">byte<wbr></wbr>_encoder</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#cache" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.cache">cache</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#decoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decoder">decoder</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#encoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encoder">encoder</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#pat" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.pat">pat</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.clip.tokenizer.html" class="internal-link" title="The parent of this class">tokenizer</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.SimpleTokenizer.html" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer"><wbr></wbr>Simple<wbr></wbr>Tokenizer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.html#basic_clean" class="internal-link" title="fiftyone.utils.clip.tokenizer.basic_clean">basic<wbr></wbr>_clean</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.html#bytes_to_unicode" class="internal-link" title="fiftyone.utils.clip.tokenizer.bytes_to_unicode">bytes<wbr></wbr>_to<wbr></wbr>_unicode</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.html#default_bpe" class="internal-link" title="fiftyone.utils.clip.tokenizer.default_bpe">default<wbr></wbr>_bpe</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.html#get_pairs" class="internal-link" title="fiftyone.utils.clip.tokenizer.get_pairs">get<wbr></wbr>_pairs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.tokenizer.html#whitespace_clean" class="internal-link" title="fiftyone.utils.clip.tokenizer.whitespace_clean">whitespace<wbr></wbr>_clean</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code><wbr></wbr>.<code><a href="fiftyone.utils.clip.tokenizer.html" class="internal-link" title="fiftyone.utils.clip.tokenizer">tokenizer</a></code><wbr></wbr>.<code><a href="fiftyone.utils.clip.tokenizer.SimpleTokenizer.html" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer">SimpleTokenizer</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">SimpleTokenizer</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L85" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.__init__">SimpleTokenizer(bpe_path)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.clip.tokenizer.SimpleTokenizer">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p class="undocumented">Undocumented</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1522">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#bpe" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe">bpe</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#decode" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decode">decode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#encode" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encode">encode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#bpe_ranks" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe_ranks">bpe<wbr></wbr>_ranks</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#byte_decoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_decoder">byte<wbr></wbr>_decoder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#byte_encoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_encoder">byte<wbr></wbr>_encoder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#cache" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.cache">cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#decoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decoder">decoder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#encoder" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encoder">encoder</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pat" class="internal-link" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.pat">pat</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, bpe_path: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="fiftyone.utils.clip.tokenizer.html#default_bpe" class="internal-link" title="fiftyone.utils.clip.tokenizer.default_bpe">default_bpe</a>())</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L86">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe">
+    
+  </a>
+  <a name="bpe">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">bpe</span><span class="function-signature">(self, token)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L111">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#bpe" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decode">
+    
+  </a>
+  <a name="decode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">decode</span><span class="function-signature">(self, tokens)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L176">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#decode" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decode">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encode">
+    
+  </a>
+  <a name="encode">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">encode</span><span class="function-signature">(self, text)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L162">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#encode" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encode">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe_ranks">
+    
+  </a>
+  <a name="bpe_ranks">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">bpe_ranks</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L100">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#bpe_ranks" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.bpe_ranks">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_decoder">
+    
+  </a>
+  <a name="byte_decoder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">byte_decoder</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L88">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#byte_decoder" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_decoder">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_encoder">
+    
+  </a>
+  <a name="byte_encoder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">byte_encoder</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L87">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#byte_encoder" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.byte_encoder">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.cache">
+    
+  </a>
+  <a name="cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">cache</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L101">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#cache" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.cache">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decoder">
+    
+  </a>
+  <a name="decoder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">decoder</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L99">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#decoder" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.decoder">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encoder">
+    
+  </a>
+  <a name="encoder">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">encoder</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L98">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#encoder" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.encoder">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.clip.tokenizer.SimpleTokenizer.pat">
+    
+  </a>
+  <a name="pat">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pat</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/clip/tokenizer.py#L105">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#pat" title="fiftyone.utils.clip.tokenizer.SimpleTokenizer.pat">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

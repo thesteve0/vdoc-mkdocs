@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.document.Document</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.document.Document.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.document.Document.html" class="internal-link" title="This class"><wbr></wbr>Document</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_dict" class="internal-link" title="fiftyone.core.document.Document.from_dict">from<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_doc" class="internal-link" title="fiftyone.core.document.Document.from_doc">from<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_json" class="internal-link" title="fiftyone.core.document.Document.from_json">from<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.document.Document.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#copy" class="internal-link" title="fiftyone.core.document.Document.copy">copy</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#reload" class="internal-link" title="fiftyone.core.document.Document.reload">reload</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reload_backing_doc" class="internal-link" title="fiftyone.core.document.Document._reload_backing_doc">_reload<wbr></wbr>_backing<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_reset_backing_doc" class="internal-link" title="fiftyone.core.document.Document._reset_backing_doc">_reset<wbr></wbr>_backing<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_set_backing_doc" class="internal-link" title="fiftyone.core.document.Document._set_backing_doc">_set<wbr></wbr>_backing<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__contains__" class="internal-link" title="fiftyone.core.document._Document.__contains__">__contains__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__copy__" class="internal-link" title="fiftyone.core.document._Document.__copy__">__copy__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__delattr__" class="internal-link" title="fiftyone.core.document._Document.__delattr__">__delattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__delitem__" class="internal-link" title="fiftyone.core.document._Document.__delitem__">__delitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__dir__" class="internal-link" title="fiftyone.core.document._Document.__dir__">__dir__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__eq__" class="internal-link" title="fiftyone.core.document._Document.__eq__">__eq__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__getattr__" class="internal-link" title="fiftyone.core.document._Document.__getattr__">__getattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__getitem__" class="internal-link" title="fiftyone.core.document._Document.__getitem__">__getitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__repr__" class="internal-link" title="fiftyone.core.document._Document.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__setattr__" class="internal-link" title="fiftyone.core.document._Document.__setattr__">__setattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__setitem__" class="internal-link" title="fiftyone.core.document._Document.__setitem__">__setitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#__str__" class="internal-link" title="fiftyone.core.document._Document.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#clear_field" class="internal-link" title="fiftyone.core.document._Document.clear_field">clear<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#get_field" class="internal-link" title="fiftyone.core.document._Document.get_field">get<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#has_field" class="internal-link" title="fiftyone.core.document._Document.has_field">has<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#iter_fields" class="internal-link" title="fiftyone.core.document._Document.iter_fields">iter<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#merge" class="internal-link" title="fiftyone.core.document._Document.merge">merge</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#save" class="internal-link" title="fiftyone.core.document._Document.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#set_field" class="internal-link" title="fiftyone.core.document._Document.set_field">set<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#to_dict" class="internal-link" title="fiftyone.core.document._Document.to_dict">to<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#to_json" class="internal-link" title="fiftyone.core.document._Document.to_json">to<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#to_mongo_dict" class="internal-link" title="fiftyone.core.document._Document.to_mongo_dict">to<wbr></wbr>_mongo<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#update_fields" class="internal-link" title="fiftyone.core.document._Document.update_fields">update<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_get_field_names" class="internal-link" title="fiftyone.core.document._Document._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_iter_label_fields" class="internal-link" title="fiftyone.core.document._Document._iter_label_fields">_iter<wbr></wbr>_label<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_parse_fields" class="internal-link" title="fiftyone.core.document._Document._parse_fields">_parse<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_save" class="internal-link" title="fiftyone.core.document._Document._save">_save</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_NO_DATASET_DOC_CLS" class="internal-link" title="fiftyone.core.document.Document._NO_DATASET_DOC_CLS">_NO<wbr></wbr>_DATASET<wbr></wbr>_DOC<wbr></wbr>_CLS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_dataset" class="internal-link" title="fiftyone.core.document.Document._dataset">_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_doc" class="internal-link" title="fiftyone.core.document.Document._doc">_doc</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#dataset" class="internal-link" title="fiftyone.core.document._Document.dataset">dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#field_names" class="internal-link" title="fiftyone.core.document._Document.field_names">field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#in_dataset" class="internal-link" title="fiftyone.core.document._Document.in_dataset">in<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_collection" class="internal-link" title="fiftyone.core.document._Document._collection">_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_id" class="internal-link" title="fiftyone.core.document._Document._id">_id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html#_in_db" class="internal-link" title="fiftyone.core.document._Document._in_db">_in<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.document.html" class="internal-link" title="The parent of this class">document</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document"><wbr></wbr>Document</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.DocumentView.html" class="internal-link" title="fiftyone.core.document.DocumentView"><wbr></wbr>Document<wbr></wbr>View</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document._Document.html" class="internal-link" title="fiftyone.core.document._Document">_<wbr></wbr>Document</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.html#_merge_labels" class="internal-link" title="fiftyone.core.document._merge_labels">_merge<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.html#_merge_lists" class="internal-link" title="fiftyone.core.document._merge_lists">_merge<wbr></wbr>_lists</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.document.html" class="internal-link" title="fiftyone.core.document">document</a></code><wbr></wbr>.<code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document">Document</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Document</span>(<a href="fiftyone.core.document._Document.html" class="internal-link" title="fiftyone.core.document._Document">_Document</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L483" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.core.frame.Frame.html" class="internal-link">fiftyone.core.frame.Frame</a></code>, <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.document.Document.__init__">Document(**kwargs)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.document.Document">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Abstract base class for objects that are associated with
+<code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> instances and are backed by
+documents in database collections.</p>
+<p>Document subclasses whose in-dataset instances should be singletons can
+inherit this behavior by deriving from the
+<code><a href="fiftyone.core.singletons.DocumentSingleton.html" class="internal-link">fiftyone.core.singletons.DocumentSingleton</a></code> metaclass.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">field names and values</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id174">
+  
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_dict" class="internal-link" title="fiftyone.core.document.Document.from_dict">from<wbr></wbr>_dict</a></code></td>
+    <td>Loads the document from a JSON dictionary.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_doc" class="internal-link" title="fiftyone.core.document.Document.from_doc">from<wbr></wbr>_doc</a></code></td>
+    <td>Creates a document backed by the given database document.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_json" class="internal-link" title="fiftyone.core.document.Document.from_json">from<wbr></wbr>_json</a></code></td>
+    <td>Loads the document from a JSON string.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.document.Document.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#copy" class="internal-link" title="fiftyone.core.document.Document.copy">copy</a></code></td>
+    <td>Returns a deep copy of the document that has not been added to the database.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#reload" class="internal-link" title="fiftyone.core.document.Document.reload">reload</a></code></td>
+    <td>Reloads the document from the database.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reload_backing_doc" class="internal-link" title="fiftyone.core.document.Document._reload_backing_doc">_reload<wbr></wbr>_backing<wbr></wbr>_doc</a></code></td>
+    <td>Reloads the backing doc from the database.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_reset_backing_doc" class="internal-link" title="fiftyone.core.document.Document._reset_backing_doc">_reset<wbr></wbr>_backing<wbr></wbr>_doc</a></code></td>
+    <td>Resets the backing doc for the document.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_backing_doc" class="internal-link" title="fiftyone.core.document.Document._set_backing_doc">_set<wbr></wbr>_backing<wbr></wbr>_doc</a></code></td>
+    <td>Sets the backing doc for the document.</td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_NO_DATASET_DOC_CLS" class="internal-link" title="fiftyone.core.document.Document._NO_DATASET_DOC_CLS">_NO<wbr></wbr>_DATASET<wbr></wbr>_DOC<wbr></wbr>_CLS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_dataset" class="internal-link" title="fiftyone.core.document.Document._dataset">_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_doc" class="internal-link" title="fiftyone.core.document.Document._doc">_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.document._Document.html" class="internal-link" title="fiftyone.core.document._Document">_Document</a></code>:
+            </p>
+            <table class="children sortable" id="id175">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__contains__" class="internal-link" title="fiftyone.core.document._Document.__contains__">__contains__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__copy__" class="internal-link" title="fiftyone.core.document._Document.__copy__">__copy__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__delattr__" class="internal-link" title="fiftyone.core.document._Document.__delattr__">__delattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__delitem__" class="internal-link" title="fiftyone.core.document._Document.__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__dir__" class="internal-link" title="fiftyone.core.document._Document.__dir__">__dir__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__eq__" class="internal-link" title="fiftyone.core.document._Document.__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__getattr__" class="internal-link" title="fiftyone.core.document._Document.__getattr__">__getattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__getitem__" class="internal-link" title="fiftyone.core.document._Document.__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__repr__" class="internal-link" title="fiftyone.core.document._Document.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__setattr__" class="internal-link" title="fiftyone.core.document._Document.__setattr__">__setattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__setitem__" class="internal-link" title="fiftyone.core.document._Document.__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#__str__" class="internal-link" title="fiftyone.core.document._Document.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#clear_field" class="internal-link" title="fiftyone.core.document._Document.clear_field">clear<wbr></wbr>_field</a></code></td>
+    <td>Clears the value of a field of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#get_field" class="internal-link" title="fiftyone.core.document._Document.get_field">get<wbr></wbr>_field</a></code></td>
+    <td>Gets the value of a field of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#has_field" class="internal-link" title="fiftyone.core.document._Document.has_field">has<wbr></wbr>_field</a></code></td>
+    <td>Determines whether the document has the given field.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#iter_fields" class="internal-link" title="fiftyone.core.document._Document.iter_fields">iter<wbr></wbr>_fields</a></code></td>
+    <td>Returns an iterator over the <tt class="rst-docutils rst-literal">(name, value)</tt> pairs of the public fields of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#merge" class="internal-link" title="fiftyone.core.document._Document.merge">merge</a></code></td>
+    <td>Merges the fields of the document into this document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#save" class="internal-link" title="fiftyone.core.document._Document.save">save</a></code></td>
+    <td>Saves the document to the database.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#set_field" class="internal-link" title="fiftyone.core.document._Document.set_field">set<wbr></wbr>_field</a></code></td>
+    <td>Sets the value of a field of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#to_dict" class="internal-link" title="fiftyone.core.document._Document.to_dict">to<wbr></wbr>_dict</a></code></td>
+    <td>Serializes the document to a JSON dictionary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#to_json" class="internal-link" title="fiftyone.core.document._Document.to_json">to<wbr></wbr>_json</a></code></td>
+    <td>Serializes the document to a JSON string.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#to_mongo_dict" class="internal-link" title="fiftyone.core.document._Document.to_mongo_dict">to<wbr></wbr>_mongo<wbr></wbr>_dict</a></code></td>
+    <td>Serializes the document to a BSON dictionary equivalent to the representation that would be stored in the database.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#update_fields" class="internal-link" title="fiftyone.core.document._Document.update_fields">update<wbr></wbr>_fields</a></code></td>
+    <td>Sets the dictionary of fields on the document.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#dataset" class="internal-link" title="fiftyone.core.document._Document.dataset">dataset</a></code></td>
+    <td>The dataset to which this document belongs, or <tt class="rst-docutils rst-literal">None</tt> if it has not been added to a dataset.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#field_names" class="internal-link" title="fiftyone.core.document._Document.field_names">field<wbr></wbr>_names</a></code></td>
+    <td>An ordered tuple of the public field names of this document.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#in_dataset" class="internal-link" title="fiftyone.core.document._Document.in_dataset">in<wbr></wbr>_dataset</a></code></td>
+    <td>Whether the document has been added to a dataset.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_get_field_names" class="internal-link" title="fiftyone.core.document._Document._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>Returns an ordered tuple of field names of this document.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_iter_label_fields" class="internal-link" title="fiftyone.core.document._Document._iter_label_fields">_iter<wbr></wbr>_label<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_parse_fields" class="internal-link" title="fiftyone.core.document._Document._parse_fields">_parse<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_save" class="internal-link" title="fiftyone.core.document._Document._save">_save</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_collection" class="internal-link" title="fiftyone.core.document._Document._collection">_collection</a></code></td>
+    <td>The <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> from which this document was taken, or <tt class="rst-docutils rst-literal">None</tt> if it is not in a dataset.</td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_id" class="internal-link" title="fiftyone.core.document._Document._id">_id</a></code></td>
+    <td>The ObjectId of the document, or <tt class="rst-docutils rst-literal">None</tt> if it has not been added to the database.</td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.document._Document.html#_in_db" class="internal-link" title="fiftyone.core.document._Document._in_db">_in<wbr></wbr>_db</a></code></td>
+    <td>Whether the document has been inserted into the database.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.document.Document.from_dict">
+    
+  </a>
+  <a name="from_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_dict</span><span class="function-signature">(cls, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L560">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_dict" title="fiftyone.core.document.Document.from_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p>Loads the document from a JSON dictionary.</p>
+<p>The returned document will not belong to a dataset.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document">Document</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.document.Document.from_doc">
+    
+  </a>
+  <a name="from_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_doc</span><span class="function-signature">(cls, doc, dataset=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L525">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_doc" title="fiftyone.core.document.Document.from_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p>Creates a document backed by the given database document.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link">fiftyone.core.odm.document.Document</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> that
+the document belongs to, if any</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document">Document</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.document.Document.from_json">
+    
+  </a>
+  <a name="from_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_json</span><span class="function-signature">(cls, s)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L572">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_json" title="fiftyone.core.document.Document.from_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads the document from a JSON string.</p>
+<p>The returned document will not belong to a dataset.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s</span></td><td class="fieldArgDesc">the JSON string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document">Document</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.document.Document.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L500">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.document.Document.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document._Document.html#__init__" class="internal-link">fiftyone.core.document._Document.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.document.Document.copy">
+    
+  </a>
+  <a name="copy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copy</span><span class="function-signature">(self, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L505">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#copy" title="fiftyone.core.document.Document.copy">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document._Document.html#copy" class="internal-link">fiftyone.core.document._Document.copy</a></code></div>
+    <div><p>Returns a deep copy of the document that has not been added to the
+database.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fields:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional field or iterable of fields to which to
+restrict the copy. This can also be a dict mapping existing
+field names to new field names</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">omit<wbr></wbr>_fields:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional field or iterable of fields to
+exclude from the copy</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.document.Document.html" class="internal-link" title="fiftyone.core.document.Document">Document</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.document.Document.reload">
+    
+  </a>
+  <a name="reload">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">reload</span><span class="function-signature">(self, hard=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L511">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#reload" title="fiftyone.core.document.Document.reload">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p>Reloads the document from the database.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">hard:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to reload the document's schema in addition
+to its field values. This is necessary if new fields may have
+been added to the document schema</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.document.Document._reload_backing_doc">
+    
+  </a>
+  <a name="_reload_backing_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reload_backing_doc</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L587">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reload_backing_doc" title="fiftyone.core.document.Document._reload_backing_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.frame.Frame.html" class="internal-link">fiftyone.core.frame.Frame</a></code>, <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p>Reloads the backing doc from the database.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.document.Document._reset_backing_doc">
+    
+  </a>
+  <a name="_reset_backing_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_reset_backing_doc</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L608">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_reset_backing_doc" title="fiftyone.core.document.Document._reset_backing_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Resets the backing doc for the document.</p>
+<p>The document will no longer belong to a dataset.</p>
+</div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.document.Document._set_backing_doc">
+    
+  </a>
+  <a name="_set_backing_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_backing_doc</span><span class="function-signature">(self, doc, dataset=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L593">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_set_backing_doc" title="fiftyone.core.document.Document._set_backing_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Sets the backing doc for the document.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">doc</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link">fiftyone.core.odm.document.Document</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> to which
+the document belongs, if any</td></tr></table></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.core.document.Document._NO_DATASET_DOC_CLS">
+    
+  </a>
+  <a name="_NO_DATASET_DOC_CLS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_NO_DATASET_DOC_CLS</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L498">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_NO_DATASET_DOC_CLS" title="fiftyone.core.document.Document._NO_DATASET_DOC_CLS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.document.Document._dataset">
+    
+  </a>
+  <a name="_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_dataset</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L602">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_dataset" title="fiftyone.core.document.Document._dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document._Document.html#_dataset" class="internal-link">fiftyone.core.document._Document._dataset</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.document.Document._doc">
+    
+  </a>
+  <a name="_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_doc</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/document.py#L601">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_doc" title="fiftyone.core.document.Document._doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.document._Document.html#_doc" class="internal-link">fiftyone.core.document._Document._doc</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.core.frame.Frame.html" class="internal-link">fiftyone.core.frame.Frame</a></code>, <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

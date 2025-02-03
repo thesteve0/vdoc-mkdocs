@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.operators.store.store.ExecutionStore</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.operators.store.store.ExecutionStore.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.operators.store.store.ExecutionStore.html" class="internal-link" title="This class"><wbr></wbr>Execution<wbr></wbr>Store</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#create" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.create">create</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.clear">clear</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.delete">delete</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.get">get</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_metadata" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.get_metadata">get<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.has">has</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_keys" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.list_keys">list<wbr></wbr>_keys</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_stores" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.list_stores">list<wbr></wbr>_stores</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.set">set</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#update_ttl" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.update_ttl">update<wbr></wbr>_ttl</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#store_name" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.store_name">store<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_store_service" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore._store_service">_store<wbr></wbr>_service</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.operators.store.store.html" class="internal-link" title="The parent of this class">store</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.operators.store.store.ExecutionStore.html" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore"><wbr></wbr>Execution<wbr></wbr>Store</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.operators.html" class="internal-link" title="fiftyone.operators">operators</a></code><wbr></wbr>.<code><a href="fiftyone.operators.store.html" class="internal-link" title="fiftyone.operators.store">store</a></code><wbr></wbr>.<code><a href="fiftyone.operators.store.store.html" class="internal-link" title="fiftyone.operators.store.store">store</a></code><wbr></wbr>.<code><a href="fiftyone.operators.store.store.ExecutionStore.html" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore">ExecutionStore</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">ExecutionStore</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L17" class="sourceLink">(source)</a></code></p><p>Constructors: <code><a href="#create" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.create">ExecutionStore.create(store_name, dataset_id)</a></code>, <code><a href="#__init__" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.__init__">ExecutionStore(store_name, store_service)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.operators.store.store.ExecutionStore">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Execution store.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">store<wbr></wbr>_name</span></td><td class="fieldArgDesc">the name of the store</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">store<wbr></wbr>_service</span></td><td class="fieldArgDesc">an
+<code><a href="fiftyone.operators.store.service.ExecutionStoreService.html" class="internal-link">fiftyone.operators.store.service.ExecutionStoreService</a></code></td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id983">
+  
+  
+  <tr class="staticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="#create" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.create">create</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.clear">clear</a></code></td>
+    <td>Clears all the data in the store.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#delete" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.delete">delete</a></code></td>
+    <td>Deletes a key from the store.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.get">get</a></code></td>
+    <td>Retrieves a value from the store by its key.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_metadata" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.get_metadata">get<wbr></wbr>_metadata</a></code></td>
+    <td>Retrieves the metadata for the given key.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#has" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.has">has</a></code></td>
+    <td>Checks if the store has a specific key.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#list_keys" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.list_keys">list<wbr></wbr>_keys</a></code></td>
+    <td>Lists all keys in the store.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#list_stores" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.list_stores">list<wbr></wbr>_stores</a></code></td>
+    <td>Lists all stores in the execution store.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#set" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.set">set</a></code></td>
+    <td>Sets a value in the store with an optional TTL.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_ttl" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.update_ttl">update<wbr></wbr>_ttl</a></code></td>
+    <td>Updates the TTL for a specific key.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#store_name" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore.store_name">store<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_store_service" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore._store_service">_store<wbr></wbr>_service</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basestaticmethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.create">
+    
+  </a>
+  <a name="create">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#staticmethod" class="intersphinx-link">staticmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">create</span><span class="function-signature">(store_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, dataset_id: <code>ObjectId | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>) -&gt; <code><a href="fiftyone.operators.store.store.ExecutionStore.html" class="internal-link" title="fiftyone.operators.store.store.ExecutionStore">ExecutionStore</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L30">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#create" title="fiftyone.operators.store.store.ExecutionStore.create">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, store_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, store_service: <code><a href="fiftyone.operators.store.service.ExecutionStoreService.html" class="internal-link" title="fiftyone.operators.store.service.ExecutionStoreService">ExecutionStoreService</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L26">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.operators.store.store.ExecutionStore.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.clear">
+    
+  </a>
+  <a name="clear">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L92">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear" title="fiftyone.operators.store.store.ExecutionStore.clear">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clears all the data in the store.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.delete">
+    
+  </a>
+  <a name="delete">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L70">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete" title="fiftyone.operators.store.store.ExecutionStore.delete">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes a key from the store.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to delete.</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc">True/False whether the key was deleted</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.get">
+    
+  </a>
+  <a name="get">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>) -&gt; <code><a href="https://docs.python.org/3/library/typing.html#typing.Any" class="intersphinx-link">Any</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L46">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get" title="fiftyone.operators.store.store.ExecutionStore.get">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Retrieves a value from the store by its key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to retrieve the value for</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/typing.html#typing.Any" class="intersphinx-link">Any</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the value stored under the given key, or None if not found</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.get_metadata">
+    
+  </a>
+  <a name="get_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_metadata</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L105">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_metadata" title="fiftyone.operators.store.store.ExecutionStore.get_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Retrieves the metadata for the given key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to check</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a dict of metadata about the key</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.has">
+    
+  </a>
+  <a name="has">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">has</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L81">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has" title="fiftyone.operators.store.store.ExecutionStore.has">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Checks if the store has a specific key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to check</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc">True/False whether the key exists</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.list_keys">
+    
+  </a>
+  <a name="list_keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_keys</span><span class="function-signature">(self) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L124">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_keys" title="fiftyone.operators.store.store.ExecutionStore.list_keys">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists all keys in the store.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></td><td class="fieldArgDesc">a list of keys in the store</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.list_stores">
+    
+  </a>
+  <a name="list_stores">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_stores</span><span class="function-signature">(self) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L38">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_stores" title="fiftyone.operators.store.store.ExecutionStore.list_stores">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists all stores in the execution store.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></td><td class="fieldArgDesc">a list of store names</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.set">
+    
+  </a>
+  <a name="set">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, value: <code><a href="https://docs.python.org/3/library/typing.html#typing.Any" class="intersphinx-link">Any</a></code>, ttl: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L60">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#set" title="fiftyone.operators.store.store.ExecutionStore.set">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Sets a value in the store with an optional TTL.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to store the value under</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">value:</span><code><a href="https://docs.python.org/3/library/typing.html#typing.Any" class="intersphinx-link">Any</a></code></td><td class="fieldArgDesc">the value to store</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ttl:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the time-to-live in seconds</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.update_ttl">
+    
+  </a>
+  <a name="update_ttl">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_ttl</span><span class="function-signature">(self, key: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, new_ttl: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L96">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#update_ttl" title="fiftyone.operators.store.store.ExecutionStore.update_ttl">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Updates the TTL for a specific key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the key to update the TTL for</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new<wbr></wbr>_ttl:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">the new TTL in seconds</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore.store_name">
+    
+  </a>
+  <a name="store_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">store_name</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L27">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#store_name" title="fiftyone.operators.store.store.ExecutionStore.store_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.operators.store.store.ExecutionStore._store_service">
+    
+  </a>
+  <a name="_store_service">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_store_service</span>: <code><a href="fiftyone.operators.store.service.ExecutionStoreService.html" class="internal-link" title="fiftyone.operators.store.service.ExecutionStoreService">ExecutionStoreService</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/operators/store/store.py#L28">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_store_service" title="fiftyone.operators.store.store.ExecutionStore._store_service">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

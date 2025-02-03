@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.voc.VOCDetectionDatasetExporter</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.voc.VOCDetectionDatasetExporter.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.voc.VOCDetectionDatasetExporter.html" class="internal-link" title="This class"><wbr></wbr>VOCDetection<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#close" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.setup">setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.log_collection">log<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#data_path" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.data_path">data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_media" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_media">export<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#extra_attrs" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.extra_attrs">extra<wbr></wbr>_attrs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#image_format" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.image_format">image<wbr></wbr>_format</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#include_paths" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.include_paths">include<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.labels_path">labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.label_cls">label<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.requires_image_metadata">requires<wbr></wbr>_image<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_writer" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._writer">_writer</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.voc.html" class="internal-link" title="The parent of this class">voc</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCAnnotation.html" class="internal-link" title="fiftyone.utils.voc.VOCAnnotation"><wbr></wbr>VOCAnnotation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCAnnotationWriter.html" class="internal-link" title="fiftyone.utils.voc.VOCAnnotationWriter"><wbr></wbr>VOCAnnotation<wbr></wbr>Writer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCBoundingBox.html" class="internal-link" title="fiftyone.utils.voc.VOCBoundingBox"><wbr></wbr>VOCBounding<wbr></wbr>Box</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCDetectionDatasetExporter.html" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter"><wbr></wbr>VOCDetection<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCDetectionDatasetImporter.html" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetImporter"><wbr></wbr>VOCDetection<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.VOCObject.html" class="internal-link" title="fiftyone.utils.voc.VOCObject"><wbr></wbr>VOCObject</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#load_voc_detection_annotations" class="internal-link" title="fiftyone.utils.voc.load_voc_detection_annotations">load<wbr></wbr>_voc<wbr></wbr>_detection<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#_ensure_list" class="internal-link" title="fiftyone.utils.voc._ensure_list">_ensure<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#_get_attributes" class="internal-link" title="fiftyone.utils.voc._get_attributes">_get<wbr></wbr>_attributes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#_parse_attribute" class="internal-link" title="fiftyone.utils.voc._parse_attribute">_parse<wbr></wbr>_attribute</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#VOC_DETECTION_CLASSES" class="internal-link" title="fiftyone.utils.voc.VOC_DETECTION_CLASSES">VOC<wbr></wbr>_DETECTION<wbr></wbr>_CLASSES</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html#logger" class="internal-link" title="fiftyone.utils.voc.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code><wbr></wbr>.<code><a href="fiftyone.utils.voc.VOCDetectionDatasetExporter.html" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter">VOCDetectionDatasetExporter</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">VOCDetectionDatasetExporter</span>(<a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">foud.LabeledImageDatasetExporter</a>, <a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">foud.ExportPathsMixin</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L212" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.__init__">VOCDetectionDatasetExporter(export_dir, data_path, labels_path, export_media, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.voc.VOCDetectionDatasetExporter">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Exporter that writes VOC detection datasets to disk.</p>
+<p>See :ref:`this page &lt;VOCDetectionDataset-export&gt;` for format details.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the export. This has no
+effect if <tt class="rst-docutils rst-literal">data_path</tt> and <tt class="rst-docutils rst-literal">labels_path</tt> are absolute paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the exported media. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a folder name like <tt class="rst-docutils rst-literal">"data"</tt> or <tt class="rst-docutils rst-literal">"data/"</tt> specifying a
+subfolder of <tt class="rst-docutils rst-literal">export_dir</tt> in which to export the media</li>
+<li>an absolute directory path in which to export the media. In
+this case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of
+the data</li>
+<li>a JSON filename like <tt class="rst-docutils rst-literal">"data.json"</tt> specifying the filename of
+the manifest file in <tt class="rst-docutils rst-literal">export_dir</tt> generated when
+<tt class="rst-docutils rst-literal">export_media</tt> is <tt class="rst-docutils rst-literal">"manifest"</tt></li>
+<li>an absolute filepath specifying the location to write the JSON
+manifest file when <tt class="rst-docutils rst-literal">export_media</tt> is <tt class="rst-docutils rst-literal">"manifest"</tt>. In this
+case, <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of the data</li>
+</ul>
+<p>If None, the default value of this parameter will be chosen based
+on the value of the <tt class="rst-docutils rst-literal">export_media</tt> parameter</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the exported labels. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a folder name like <tt class="rst-docutils rst-literal">"labels"</tt> or <tt class="rst-docutils rst-literal">"labels/"</tt> specifying the
+location in <tt class="rst-docutils rst-literal">export_dir</tt> in which to export the labels</li>
+<li>an absolute folder path to which to export the labels. In this
+case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of the
+labels</li>
+</ul>
+<p>If None, the labels will be exported into <tt class="rst-docutils rst-literal">export_dir</tt> using the
+default folder name</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_media</span></td><td class="fieldArgDesc"><p>controls how to export the raw media. The
+supported values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">True</tt>: copy all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">False</tt>: don't export media</li>
+<li><tt class="rst-docutils rst-literal">"move"</tt>: move all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">"symlink"</tt>: create symlinks to the media files in the output
+directory</li>
+<li><tt class="rst-docutils rst-literal">"manifest"</tt>: create a <tt class="rst-docutils rst-literal">data.json</tt> in the output directory
+that maps UUIDs used in the labels files to the filepaths of
+the source media, rather than exporting the actual media</li>
+</ul>
+<p>If None, the default value of this parameter will be chosen based
+on the value of the <tt class="rst-docutils rst-literal">data_path</tt> parameter</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel<wbr></wbr>_dir</span></td><td class="fieldArgDesc">an optional relative directory to strip from each input
+filepath to generate a unique identifier for each image. When
+exporting media, this identifier is joined with <tt class="rst-docutils rst-literal">data_path</tt> and
+<tt class="rst-docutils rst-literal">labels_path</tt> to generate output paths for each exported image
+and labels file. This argument allows for populating nested
+subdirectories that match the shape of the input paths. The path is
+converted to an absolute path (if necessary) via
+<code><a href="fiftyone.core.storage.html#normalize_path" class="internal-link">fiftyone.core.storage.normalize_path</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_paths</span></td><td class="fieldArgDesc">whether to include the absolute paths to the
+images in the <tt class="rst-docutils rst-literal">&lt;path&gt;</tt> elements of the exported XML</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_format</span></td><td class="fieldArgDesc">the image format to use when writing in-memory
+images to disk. By default, <tt class="rst-docutils rst-literal">fiftyone.config.default_image_ext</tt>
+is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">extra<wbr></wbr>_attrs</span></td><td class="fieldArgDesc"><p>whether to include extra object attributes in the
+exported labels. Supported values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">True</tt>: export all extra attributes found</li>
+<li><tt class="rst-docutils rst-literal">False</tt>: do not export extra attributes</li>
+<li>a name or list of names of specific attributes to export</li>
+</ul>
+</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2400">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code></td>
+    <td>Exports the given sample to the dataset.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.setup">setup</a></code></td>
+    <td>Performs any necessary setup before exporting the first sample in the dataset.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#data_path" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.data_path">data<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#export_media" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_media">export<wbr></wbr>_media</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#extra_attrs" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.extra_attrs">extra<wbr></wbr>_attrs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#image_format" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.image_format">image<wbr></wbr>_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#include_paths" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.include_paths">include<wbr></wbr>_paths</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.labels_path">labels<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.label_cls">label<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) exported by this exporter.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.requires_image_metadata">requires<wbr></wbr>_image<wbr></wbr>_metadata</a></code></td>
+    <td>Whether this exporter requires <code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code> instances for each sample being exported.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_writer" class="internal-link" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._writer">_writer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code> (via <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">LabeledImageDatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2401">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.log_collection">log<wbr></wbr>_collection</a></code></td>
+    <td>Logs any relevant information about the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will be exported.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">ExportPathsMixin</a></code> (via <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">LabeledImageDatasetExporter</a></code>, <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2402">
+  
+  
+  <tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">data_path</tt> and <tt class="rst-docutils rst-literal">export_media</tt> parameters supported by many exporters.</td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">labels_path</tt> parameter supported by many exporters.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, export_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, data_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, labels_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, export_media=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, rel_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_paths=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, image_format=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, extra_attrs=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L287">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__init__" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span><span class="function-signature">(self, *args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L371">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#close" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.close">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#close" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.close</a></code></div>
+    <div><p>Performs any necessary actions after the last sample has been
+exported.</p>
+<p>This method is called when the exporter's context manager interface is
+exited, <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">the arguments to <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_sample">
+    
+  </a>
+  <a name="export_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_sample</span><span class="function-signature">(self, image_or_path, detections, metadata=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L344">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_sample" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#export_sample" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.export_sample</a></code></div>
+    <div><p>Exports the given sample to the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_or<wbr></wbr>_path</span></td><td class="fieldArgDesc">an image or the path to the image on disk</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">detections</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">metadata:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code>
+instance for the sample. Only required when
+<code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.requires_image_metadata">requires_image_metadata</a></code> is <tt class="rst-docutils rst-literal">True</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">an instance of <code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.label_cls">label_cls</a></code>, or a dictionary mapping
+field names to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances,
+or <tt class="rst-docutils rst-literal">None</tt> if the sample is unlabeled</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L332">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#setup" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.setup</a></code></div>
+    <div><p>Performs any necessary setup before exporting the first sample in
+the dataset.</p>
+<p>This method is called when the exporter's context manager interface is
+entered, <code><a href="#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">DatasetExporter.__enter__</a></code>.</p>
+</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.data_path">
+    
+  </a>
+  <a name="data_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">data_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L313">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#data_path" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.data_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_media">
+    
+  </a>
+  <a name="export_media">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">export_media</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L315">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_media" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.export_media">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.extra_attrs">
+    
+  </a>
+  <a name="extra_attrs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">extra_attrs</span>: <code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L319">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#extra_attrs" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.extra_attrs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.image_format">
+    
+  </a>
+  <a name="image_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">image_format</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L318">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#image_format" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.image_format">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.include_paths">
+    
+  </a>
+  <a name="include_paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">include_paths</span>: <code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L317">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#include_paths" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.include_paths">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.labels_path">
+    
+  </a>
+  <a name="labels_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">labels_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L314">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#labels_path" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.labels_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.rel_dir">
+    
+  </a>
+  <a name="rel_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rel_dir</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L316">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#rel_dir" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.rel_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.label_cls">
+    
+  </a>
+  <a name="label_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">label_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L328">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#label_cls" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.label_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#label_cls" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.label_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) exported by this
+exporter.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+exporter directly exports labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the exporter can export a single label field of any of
+these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the exporter can handle label dictionaries with
+value-types specified by this dictionary. Not all keys need be
+present in the exported label dicts</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the exporter makes no guarantees about the
+labels that it can export</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter.requires_image_metadata">
+    
+  </a>
+  <a name="requires_image_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">requires_image_metadata</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L324">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#requires_image_metadata" title="fiftyone.utils.voc.VOCDetectionDatasetExporter.requires_image_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#requires_image_metadata" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.requires_image_metadata</a></code></div>
+    <div><p>Whether this exporter requires
+<code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code> instances for each sample
+being exported.</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter._media_exporter">
+    
+  </a>
+  <a name="_media_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_media_exporter</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L322">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_media_exporter" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._media_exporter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.voc.VOCDetectionDatasetExporter._writer">
+    
+  </a>
+  <a name="_writer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_writer</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/voc.py#L321">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_writer" title="fiftyone.utils.voc.VOCDetectionDatasetExporter._writer">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

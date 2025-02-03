@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.torch.TorchEmbeddingsMixin</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.torch.TorchEmbeddingsMixin.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.torch.TorchEmbeddingsMixin.html" class="internal-link" title="This class"><wbr></wbr>Torch<wbr></wbr>Embeddings<wbr></wbr>Mixin</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#embed" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed">embed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#embed_all" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed_all">embed<wbr></wbr>_all</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_embeddings" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.get_embeddings">get<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_predict_all" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._predict_all">_predict<wbr></wbr>_all</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_embeddings" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.has_embeddings">has<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_as_feature_extractor" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._as_feature_extractor">_as<wbr></wbr>_feature<wbr></wbr>_extractor</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_embeddings_layer" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._embeddings_layer">_embeddings<wbr></wbr>_layer</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_model" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._model">_model</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.torch.html" class="internal-link" title="The parent of this class">torch</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.ClassifierOutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.ClassifierOutputProcessor"><wbr></wbr>Classifier<wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.DetectorOutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.DetectorOutputProcessor"><wbr></wbr>Detector<wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.InstanceSegmenterOutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.InstanceSegmenterOutputProcessor"><wbr></wbr>Instance<wbr></wbr>Segmenter<wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.KeypointDetectorOutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.KeypointDetectorOutputProcessor"><wbr></wbr>Keypoint<wbr></wbr>Detector<wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.MaxResize.html" class="internal-link" title="fiftyone.utils.torch.MaxResize"><wbr></wbr>Max<wbr></wbr>Resize</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.MinResize.html" class="internal-link" title="fiftyone.utils.torch.MinResize"><wbr></wbr>Min<wbr></wbr>Resize</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.OutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.OutputProcessor"><wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.PatchSize.html" class="internal-link" title="fiftyone.utils.torch.PatchSize"><wbr></wbr>Patch<wbr></wbr>Size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.SaveLayerTensor.html" class="internal-link" title="fiftyone.utils.torch.SaveLayerTensor"><wbr></wbr>Save<wbr></wbr>Layer<wbr></wbr>Tensor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.SemanticSegmenterOutputProcessor.html" class="internal-link" title="fiftyone.utils.torch.SemanticSegmenterOutputProcessor"><wbr></wbr>Semantic<wbr></wbr>Segmenter<wbr></wbr>Output<wbr></wbr>Processor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.ToPILImage.html" class="internal-link" title="fiftyone.utils.torch.ToPILImage"><wbr></wbr>To<wbr></wbr>PILImage</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchEmbeddingsMixin.html" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin"><wbr></wbr>Torch<wbr></wbr>Embeddings<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchImageClassificationDataset.html" class="internal-link" title="fiftyone.utils.torch.TorchImageClassificationDataset"><wbr></wbr>Torch<wbr></wbr>Image<wbr></wbr>Classification<wbr></wbr>Dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchImageDataset.html" class="internal-link" title="fiftyone.utils.torch.TorchImageDataset"><wbr></wbr>Torch<wbr></wbr>Image<wbr></wbr>Dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link" title="fiftyone.utils.torch.TorchImageModel"><wbr></wbr>Torch<wbr></wbr>Image<wbr></wbr>Model</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchImageModelConfig.html" class="internal-link" title="fiftyone.utils.torch.TorchImageModelConfig"><wbr></wbr>Torch<wbr></wbr>Image<wbr></wbr>Model<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchImagePatchesDataset.html" class="internal-link" title="fiftyone.utils.torch.TorchImagePatchesDataset"><wbr></wbr>Torch<wbr></wbr>Image<wbr></wbr>Patches<wbr></wbr>Dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.TorchSamplesMixin.html" class="internal-link" title="fiftyone.utils.torch.TorchSamplesMixin"><wbr></wbr>Torch<wbr></wbr>Samples<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#ensure_torch_hub_requirements" class="internal-link" title="fiftyone.utils.torch.ensure_torch_hub_requirements">ensure<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#find_torch_hub_requirements" class="internal-link" title="fiftyone.utils.torch.find_torch_hub_requirements">find<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#from_image_classification_dir_tree" class="internal-link" title="fiftyone.utils.torch.from_image_classification_dir_tree">from<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dir<wbr></wbr>_tree</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#install_torch_hub_requirements" class="internal-link" title="fiftyone.utils.torch.install_torch_hub_requirements">install<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#load_torch_hub_image_model" class="internal-link" title="fiftyone.utils.torch.load_torch_hub_image_model">load<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_image<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#load_torch_hub_raw_model" class="internal-link" title="fiftyone.utils.torch.load_torch_hub_raw_model">load<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_raw<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#load_torch_hub_requirements" class="internal-link" title="fiftyone.utils.torch.load_torch_hub_requirements">load<wbr></wbr>_torch<wbr></wbr>_hub<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#recommend_num_workers" class="internal-link" title="fiftyone.utils.torch.recommend_num_workers">recommend<wbr></wbr>_num<wbr></wbr>_workers</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_is_string_array" class="internal-link" title="fiftyone.utils.torch._is_string_array">_is<wbr></wbr>_string<wbr></wbr>_array</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_load_image" class="internal-link" title="fiftyone.utils.torch._load_image">_load<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_polyline_to_bbox" class="internal-link" title="fiftyone.utils.torch._polyline_to_bbox">_polyline<wbr></wbr>_to<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_polylines_to_bboxes" class="internal-link" title="fiftyone.utils.torch._polylines_to_bboxes">_polylines<wbr></wbr>_to<wbr></wbr>_bboxes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_strip_comments" class="internal-link" title="fiftyone.utils.torch._strip_comments">_strip<wbr></wbr>_comments</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_to_bytes_array" class="internal-link" title="fiftyone.utils.torch._to_bytes_array">_to<wbr></wbr>_bytes<wbr></wbr>_array</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#_to_eta_bbox" class="internal-link" title="fiftyone.utils.torch._to_eta_bbox">_to<wbr></wbr>_eta<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html#logger" class="internal-link" title="fiftyone.utils.torch.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code><wbr></wbr>.<code><a href="fiftyone.utils.torch.TorchEmbeddingsMixin.html" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin">TorchEmbeddingsMixin</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">TorchEmbeddingsMixin</span>(<a href="fiftyone.core.models.EmbeddingsMixin.html" class="internal-link" title="fiftyone.core.models.EmbeddingsMixin">fom.EmbeddingsMixin</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L247" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.__init__">TorchEmbeddingsMixin(model, layer_name, as_feature_extractor)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.torch.TorchEmbeddingsMixin">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Mixin for Torch models that can generate embeddings.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">model</span></td><td class="fieldArgDesc">the Torch model, a <code>torch:torch.nn.Module</code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">layer<wbr></wbr>_name</span></td><td class="fieldArgDesc">the name of the embeddings layer whose output to
+save, or <tt class="rst-docutils rst-literal">None</tt> if this model instance should not expose
+embeddings. Prepend <tt class="rst-docutils rst-literal">"&lt;"</tt> to save the input tensor instead</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">as<wbr></wbr>_feature<wbr></wbr>_extractor</span></td><td class="fieldArgDesc">whether to operate the model as a feature
+extractor. If <tt class="rst-docutils rst-literal">layer_name</tt> is provided, this layer is passed to
+torchvision's <tt class="rst-docutils rst-literal">create_feature_extractor()</tt> function. If no
+<tt class="rst-docutils rst-literal">layer_name</tt> is provided, the model's output is used as-is for
+feature extraction</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2241">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#embed" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed">embed</a></code></td>
+    <td>Generates an embedding for the given data.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#embed_all" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed_all">embed<wbr></wbr>_all</a></code></td>
+    <td>Generates embeddings for the given iterable of data.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_embeddings" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.get_embeddings">get<wbr></wbr>_embeddings</a></code></td>
+    <td>Returns the embeddings generated by the last forward pass of the model.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_embeddings" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin.has_embeddings">has<wbr></wbr>_embeddings</a></code></td>
+    <td>Whether this instance has embeddings.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_predict_all" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._predict_all">_predict<wbr></wbr>_all</a></code></td>
+    <td>Applies a forward pass to the given iterable of data and returns the raw model output with no processing applied.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_as_feature_extractor" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._as_feature_extractor">_as<wbr></wbr>_feature<wbr></wbr>_extractor</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_embeddings_layer" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._embeddings_layer">_embeddings<wbr></wbr>_layer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_model" class="internal-link" title="fiftyone.utils.torch.TorchEmbeddingsMixin._model">_model</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, model, layer_name=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, as_feature_extractor=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L262">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.torch.TorchEmbeddingsMixin.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin.embed">
+    
+  </a>
+  <a name="embed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">embed</span><span class="function-signature">(self, arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L282">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#embed" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.models.EmbeddingsMixin.html#embed" class="internal-link">fiftyone.core.models.EmbeddingsMixin.embed</a></code></div>
+    <div><p>Generates an embedding for the given data.</p>
+<p>Subclasses can override this method to increase efficiency, but, by
+default, this method simply calls <code>predict</code> and then returns
+<code><a href="#get_embeddings" class="internal-link" title="fiftyone.core.models.EmbeddingsMixin.get_embeddings">get_embeddings</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arg</span></td><td class="fieldArgDesc">the data. See <code>predict</code> for details</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a numpy array containing the embedding</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin.embed_all">
+    
+  </a>
+  <a name="embed_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">embed_all</span><span class="function-signature">(self, args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L294">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#embed_all" title="fiftyone.utils.torch.TorchEmbeddingsMixin.embed_all">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.models.EmbeddingsMixin.html#embed_all" class="internal-link">fiftyone.core.models.EmbeddingsMixin.embed_all</a></code></div>
+    <div><p>Generates embeddings for the given iterable of data.</p>
+<p>Subclasses can override this method to increase efficiency, but, by
+default, this method simply iterates over the data and applies
+<code><a href="#embed" class="internal-link" title="fiftyone.core.models.EmbeddingsMixin.embed">embed</a></code> to each.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">an iterable of data. See <code>predict_all</code> for details</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a numpy array containing the embeddings stacked along axis 0</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin.get_embeddings">
+    
+  </a>
+  <a name="get_embeddings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_embeddings</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L301">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_embeddings" title="fiftyone.utils.torch.TorchEmbeddingsMixin.get_embeddings">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.models.EmbeddingsMixin.html#get_embeddings" class="internal-link">fiftyone.core.models.EmbeddingsMixin.get_embeddings</a></code></div>
+    <div><p>Returns the embeddings generated by the last forward pass of the
+model.</p>
+<p>By convention, this method should always return an array whose first
+axis represents batch size (which will always be 1 when <code>predict</code>
+was last used).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a numpy array containing the embedding(s)</td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin.has_embeddings">
+    
+  </a>
+  <a name="has_embeddings">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_embeddings</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L278">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_embeddings" title="fiftyone.utils.torch.TorchEmbeddingsMixin.has_embeddings">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.models.EmbeddingsMixin.html#has_embeddings" class="internal-link">fiftyone.core.models.EmbeddingsMixin.has_embeddings</a></code></div>
+    <div><p>Whether this instance has embeddings.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin._predict_all">
+    
+  </a>
+  <a name="_predict_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_predict_all</span><span class="function-signature">(self, args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L308">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_predict_all" title="fiftyone.utils.torch.TorchEmbeddingsMixin._predict_all">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p>Applies a forward pass to the given iterable of data and returns
+the raw model output with no processing applied.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">an iterable of data. See <code><a href="fiftyone.utils.torch.TorchImageModel.html#predict_all" class="internal-link" title="fiftyone.utils.torch.TorchImageModel.predict_all">predict_all</a></code> for details</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the raw output of the model</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin._as_feature_extractor">
+    
+  </a>
+  <a name="_as_feature_extractor">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_as_feature_extractor</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L276">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_as_feature_extractor" title="fiftyone.utils.torch.TorchEmbeddingsMixin._as_feature_extractor">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin._embeddings_layer">
+    
+  </a>
+  <a name="_embeddings_layer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_embeddings_layer</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L275">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_embeddings_layer" title="fiftyone.utils.torch.TorchEmbeddingsMixin._embeddings_layer">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.torch.TorchEmbeddingsMixin._model">
+    
+  </a>
+  <a name="_model">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_model</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/torch.py#L265">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_model" title="fiftyone.utils.torch.TorchEmbeddingsMixin._model">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

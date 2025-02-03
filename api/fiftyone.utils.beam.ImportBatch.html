@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.beam.ImportBatch</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.beam.ImportBatch.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.beam.ImportBatch.html" class="internal-link" title="This class"><wbr></wbr>Import<wbr></wbr>Batch</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.beam.ImportBatch.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#finish_bundle" class="internal-link" title="fiftyone.utils.beam.ImportBatch.finish_bundle">finish<wbr></wbr>_bundle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#process" class="internal-link" title="fiftyone.utils.beam.ImportBatch.process">process</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.beam.ImportBatch.setup">setup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#start_bundle" class="internal-link" title="fiftyone.utils.beam.ImportBatch.start_bundle">start<wbr></wbr>_bundle</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dataset_name" class="internal-link" title="fiftyone.utils.beam.ImportBatch.dataset_name">dataset<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dynamic" class="internal-link" title="fiftyone.utils.beam.ImportBatch.dynamic">dynamic</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#expand_schema" class="internal-link" title="fiftyone.utils.beam.ImportBatch.expand_schema">expand<wbr></wbr>_schema</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_fcn" class="internal-link" title="fiftyone.utils.beam.ImportBatch.parse_fcn">parse<wbr></wbr>_fcn</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#validate" class="internal-link" title="fiftyone.utils.beam.ImportBatch.validate">validate</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_dataset" class="internal-link" title="fiftyone.utils.beam.ImportBatch._dataset">_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_samples" class="internal-link" title="fiftyone.utils.beam.ImportBatch._samples">_samples</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.beam.html" class="internal-link" title="The parent of this class">beam</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.ExportBatch.html" class="internal-link" title="fiftyone.utils.beam.ExportBatch"><wbr></wbr>Export<wbr></wbr>Batch</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.ImportBatch.html" class="internal-link" title="fiftyone.utils.beam.ImportBatch"><wbr></wbr>Import<wbr></wbr>Batch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.MergeBatch.html" class="internal-link" title="fiftyone.utils.beam.MergeBatch"><wbr></wbr>Merge<wbr></wbr>Batch</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html#beam_export" class="internal-link" title="fiftyone.utils.beam.beam_export">beam<wbr></wbr>_export</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html#beam_import" class="internal-link" title="fiftyone.utils.beam.beam_import">beam<wbr></wbr>_import</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html#beam_merge" class="internal-link" title="fiftyone.utils.beam.beam_merge">beam<wbr></wbr>_merge</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html#_pop_first" class="internal-link" title="fiftyone.utils.beam._pop_first">_pop<wbr></wbr>_first</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code><wbr></wbr>.<code><a href="fiftyone.utils.beam.ImportBatch.html" class="internal-link" title="fiftyone.utils.beam.ImportBatch">ImportBatch</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">ImportBatch</span>(beam.DoFn): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L341" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.beam.ImportBatch.__init__">ImportBatch(dataset_name, parse_fcn, expand_schema, dynamic, validate)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.beam.ImportBatch">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p class="undocumented">Undocumented</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1506">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.beam.ImportBatch.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#finish_bundle" class="internal-link" title="fiftyone.utils.beam.ImportBatch.finish_bundle">finish<wbr></wbr>_bundle</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#process" class="internal-link" title="fiftyone.utils.beam.ImportBatch.process">process</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.beam.ImportBatch.setup">setup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#start_bundle" class="internal-link" title="fiftyone.utils.beam.ImportBatch.start_bundle">start<wbr></wbr>_bundle</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dataset_name" class="internal-link" title="fiftyone.utils.beam.ImportBatch.dataset_name">dataset<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dynamic" class="internal-link" title="fiftyone.utils.beam.ImportBatch.dynamic">dynamic</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#expand_schema" class="internal-link" title="fiftyone.utils.beam.ImportBatch.expand_schema">expand<wbr></wbr>_schema</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#parse_fcn" class="internal-link" title="fiftyone.utils.beam.ImportBatch.parse_fcn">parse<wbr></wbr>_fcn</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#validate" class="internal-link" title="fiftyone.utils.beam.ImportBatch.validate">validate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_dataset" class="internal-link" title="fiftyone.utils.beam.ImportBatch._dataset">_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_samples" class="internal-link" title="fiftyone.utils.beam.ImportBatch._samples">_samples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, dataset_name, parse_fcn=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, expand_schema=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, dynamic=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, validate=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L342">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.beam.ImportBatch.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.finish_bundle">
+    
+  </a>
+  <a name="finish_bundle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">finish_bundle</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L377">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#finish_bundle" title="fiftyone.utils.beam.ImportBatch.finish_bundle">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.process">
+    
+  </a>
+  <a name="process">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">process</span><span class="function-signature">(self, sample)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L367">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#process" title="fiftyone.utils.beam.ImportBatch.process">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L359">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.beam.ImportBatch.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.start_bundle">
+    
+  </a>
+  <a name="start_bundle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">start_bundle</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L364">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#start_bundle" title="fiftyone.utils.beam.ImportBatch.start_bundle">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.dataset_name">
+    
+  </a>
+  <a name="dataset_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dataset_name</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L350">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dataset_name" title="fiftyone.utils.beam.ImportBatch.dataset_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.dynamic">
+    
+  </a>
+  <a name="dynamic">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dynamic</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L353">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dynamic" title="fiftyone.utils.beam.ImportBatch.dynamic">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.expand_schema">
+    
+  </a>
+  <a name="expand_schema">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">expand_schema</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L352">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#expand_schema" title="fiftyone.utils.beam.ImportBatch.expand_schema">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.parse_fcn">
+    
+  </a>
+  <a name="parse_fcn">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">parse_fcn</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L351">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_fcn" title="fiftyone.utils.beam.ImportBatch.parse_fcn">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch.validate">
+    
+  </a>
+  <a name="validate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">validate</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L354">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#validate" title="fiftyone.utils.beam.ImportBatch.validate">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch._dataset">
+    
+  </a>
+  <a name="_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_dataset</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L356">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_dataset" title="fiftyone.utils.beam.ImportBatch._dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.beam.ImportBatch._samples">
+    
+  </a>
+  <a name="_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_samples</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/beam.py#L357">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_samples" title="fiftyone.utils.beam.ImportBatch._samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

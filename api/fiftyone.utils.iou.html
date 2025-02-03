@@ -1,0 +1,1981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.iou</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.iou.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.iou.html" class="internal-link" title="This module">iou</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#compute_bbox_iou" class="internal-link" title="fiftyone.utils.iou.compute_bbox_iou">compute<wbr></wbr>_bbox<wbr></wbr>_iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#compute_ious" class="internal-link" title="fiftyone.utils.iou.compute_ious">compute<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#compute_max_ious" class="internal-link" title="fiftyone.utils.iou.compute_max_ious">compute<wbr></wbr>_max<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#compute_segment_ious" class="internal-link" title="fiftyone.utils.iou.compute_segment_ious">compute<wbr></wbr>_segment<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#find_duplicates" class="internal-link" title="fiftyone.utils.iou.find_duplicates">find<wbr></wbr>_duplicates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_bbox_ious" class="internal-link" title="fiftyone.utils.iou._compute_bbox_ious">_compute<wbr></wbr>_bbox<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_keypoint_similarities" class="internal-link" title="fiftyone.utils.iou._compute_keypoint_similarities">_compute<wbr></wbr>_keypoint<wbr></wbr>_similarities</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_mask_ious" class="internal-link" title="fiftyone.utils.iou._compute_mask_ious">_compute<wbr></wbr>_mask<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_max_ious" class="internal-link" title="fiftyone.utils.iou._compute_max_ious">_compute<wbr></wbr>_max<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_object_keypoint_similarity" class="internal-link" title="fiftyone.utils.iou._compute_object_keypoint_similarity">_compute<wbr></wbr>_object<wbr></wbr>_keypoint<wbr></wbr>_similarity</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_polygon_ious" class="internal-link" title="fiftyone.utils.iou._compute_polygon_ious">_compute<wbr></wbr>_polygon<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_polyline_similarities" class="internal-link" title="fiftyone.utils.iou._compute_polyline_similarities">_compute<wbr></wbr>_polyline<wbr></wbr>_similarities</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_compute_segment_ious" class="internal-link" title="fiftyone.utils.iou._compute_segment_ious">_compute<wbr></wbr>_segment<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_extract_max_ious" class="internal-link" title="fiftyone.utils.iou._extract_max_ious">_extract<wbr></wbr>_max<wbr></wbr>_ious</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_find_duplicates" class="internal-link" title="fiftyone.utils.iou._find_duplicates">_find<wbr></wbr>_duplicates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_find_duplicates_greedy" class="internal-link" title="fiftyone.utils.iou._find_duplicates_greedy">_find<wbr></wbr>_duplicates<wbr></wbr>_greedy</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_find_duplicates_simple" class="internal-link" title="fiftyone.utils.iou._find_duplicates_simple">_find<wbr></wbr>_duplicates<wbr></wbr>_simple</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_bbox_dim" class="internal-link" title="fiftyone.utils.iou._get_bbox_dim">_get<wbr></wbr>_bbox<wbr></wbr>_dim</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_detection_box" class="internal-link" title="fiftyone.utils.iou._get_detection_box">_get<wbr></wbr>_detection<wbr></wbr>_box</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_labels" class="internal-link" title="fiftyone.utils.iou._get_labels">_get<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_poly_box" class="internal-link" title="fiftyone.utils.iou._get_poly_box">_get<wbr></wbr>_poly<wbr></wbr>_box</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_masks_to_polylines" class="internal-link" title="fiftyone.utils.iou._masks_to_polylines">_masks<wbr></wbr>_to<wbr></wbr>_polylines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_polylines_to_detections" class="internal-link" title="fiftyone.utils.iou._polylines_to_detections">_polylines<wbr></wbr>_to<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_polylines_to_shapely" class="internal-link" title="fiftyone.utils.iou._polylines_to_shapely">_polylines<wbr></wbr>_to<wbr></wbr>_shapely</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sg" class="internal-link" title="fiftyone.utils.iou.sg">sg</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#so" class="internal-link" title="fiftyone.utils.iou.so">so</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Intersection over union (IoU) utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2023">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#compute_bbox_iou" class="internal-link" title="fiftyone.utils.iou.compute_bbox_iou">compute<wbr></wbr>_bbox<wbr></wbr>_iou</a></code></td>
+    <td>Computes the IoU between the given ground truth and predicted detections.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#compute_ious" class="internal-link" title="fiftyone.utils.iou.compute_ious">compute<wbr></wbr>_ious</a></code></td>
+    <td>Computes the pairwise IoUs between the predicted and ground truth objects.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#compute_max_ious" class="internal-link" title="fiftyone.utils.iou.compute_max_ious">compute<wbr></wbr>_max<wbr></wbr>_ious</a></code></td>
+    <td>Populates an attribute on each label in the given spatial field(s) that records the max IoU between the object and another object in the same sample/frame.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#compute_segment_ious" class="internal-link" title="fiftyone.utils.iou.compute_segment_ious">compute<wbr></wbr>_segment<wbr></wbr>_ious</a></code></td>
+    <td>Computes the pairwise IoUs between the predicted and ground truth temporal detections.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#find_duplicates" class="internal-link" title="fiftyone.utils.iou.find_duplicates">find<wbr></wbr>_duplicates</a></code></td>
+    <td>Returns IDs of duplicate labels in the given field of the collection, as defined as labels with an IoU greater than a chosen threshold with another label in the field.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#sg" class="internal-link" title="fiftyone.utils.iou.sg">sg</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#so" class="internal-link" title="fiftyone.utils.iou.so">so</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_bbox_ious" class="internal-link" title="fiftyone.utils.iou._compute_bbox_ious">_compute<wbr></wbr>_bbox<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_keypoint_similarities" class="internal-link" title="fiftyone.utils.iou._compute_keypoint_similarities">_compute<wbr></wbr>_keypoint<wbr></wbr>_similarities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_mask_ious" class="internal-link" title="fiftyone.utils.iou._compute_mask_ious">_compute<wbr></wbr>_mask<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_max_ious" class="internal-link" title="fiftyone.utils.iou._compute_max_ious">_compute<wbr></wbr>_max<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_object_keypoint_similarity" class="internal-link" title="fiftyone.utils.iou._compute_object_keypoint_similarity">_compute<wbr></wbr>_object<wbr></wbr>_keypoint<wbr></wbr>_similarity</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_polygon_ious" class="internal-link" title="fiftyone.utils.iou._compute_polygon_ious">_compute<wbr></wbr>_polygon<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_polyline_similarities" class="internal-link" title="fiftyone.utils.iou._compute_polyline_similarities">_compute<wbr></wbr>_polyline<wbr></wbr>_similarities</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_compute_segment_ious" class="internal-link" title="fiftyone.utils.iou._compute_segment_ious">_compute<wbr></wbr>_segment<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_extract_max_ious" class="internal-link" title="fiftyone.utils.iou._extract_max_ious">_extract<wbr></wbr>_max<wbr></wbr>_ious</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_duplicates" class="internal-link" title="fiftyone.utils.iou._find_duplicates">_find<wbr></wbr>_duplicates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_duplicates_greedy" class="internal-link" title="fiftyone.utils.iou._find_duplicates_greedy">_find<wbr></wbr>_duplicates<wbr></wbr>_greedy</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_find_duplicates_simple" class="internal-link" title="fiftyone.utils.iou._find_duplicates_simple">_find<wbr></wbr>_duplicates<wbr></wbr>_simple</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_bbox_dim" class="internal-link" title="fiftyone.utils.iou._get_bbox_dim">_get<wbr></wbr>_bbox<wbr></wbr>_dim</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_detection_box" class="internal-link" title="fiftyone.utils.iou._get_detection_box">_get<wbr></wbr>_detection<wbr></wbr>_box</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_labels" class="internal-link" title="fiftyone.utils.iou._get_labels">_get<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_poly_box" class="internal-link" title="fiftyone.utils.iou._get_poly_box">_get<wbr></wbr>_poly<wbr></wbr>_box</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_masks_to_polylines" class="internal-link" title="fiftyone.utils.iou._masks_to_polylines">_masks<wbr></wbr>_to<wbr></wbr>_polylines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_polylines_to_detections" class="internal-link" title="fiftyone.utils.iou._polylines_to_detections">_polylines<wbr></wbr>_to<wbr></wbr>_detections</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_polylines_to_shapely" class="internal-link" title="fiftyone.utils.iou._polylines_to_shapely">_polylines<wbr></wbr>_to<wbr></wbr>_shapely</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.iou.compute_bbox_iou">
+    
+  </a>
+  <a name="compute_bbox_iou">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_bbox_iou</span><span class="function-signature">(gt, pred, gt_crowd=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L493">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#compute_bbox_iou" title="fiftyone.utils.iou.compute_bbox_iou">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Computes the IoU between the given ground truth and predicted
+detections.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gt</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pred</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gt<wbr></wbr>_crowd:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether the ground truth object is a crowd</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the IoU, in <tt class="rst-docutils rst-literal">[0, 1]</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.iou.compute_ious">
+    
+  </a>
+  <a name="compute_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_ious</span><span class="function-signature">(preds, gts, iscrowd=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, use_masks=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, use_boxes=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, tolerance=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, error_level=1)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L30">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#compute_ious" title="fiftyone.utils.iou.compute_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Computes the pairwise IoUs between the predicted and ground truth
+objects.</p>
+<p>For polylines, IoUs are computed as solid shapes when <tt class="rst-docutils rst-literal">filled=True` and
+"IoUs" are computed using
+`object keypoint similarity <span class="pre">&lt;https://cocodataset.org/#keypoints-eval&gt;`_</span>
+when ``filled=False</tt>.</p>
+<p>For keypoints, "IoUs" are computed via
+<a class="rst-external rst-reference" href="https://cocodataset.org/#keypoints-eval" target="_top">object keypoint similarity</a>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preds</span></td><td class="fieldArgDesc">a list of predicted
+<code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code>,
+<code><a href="fiftyone.core.labels.Polyline.html" class="internal-link">fiftyone.core.labels.Polyline</a></code>, or
+<code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link">fiftyone.core.labels.Keypoints</a></code> instances</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gts</span></td><td class="fieldArgDesc">a list of ground truth
+<code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code>,
+<code><a href="fiftyone.core.labels.Polyline.html" class="internal-link">fiftyone.core.labels.Polyline</a></code>, or
+<code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link">fiftyone.core.labels.Keypoints</a></code> instances</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iscrowd:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional name of a boolean attribute or boolean
+function to apply to each label that determines whether a ground
+truth object is a crowd. If provided, the area of the predicted
+object is used as the "union" area for IoU calculations involving
+crowd objects</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classwise:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to consider objects with different <tt class="rst-docutils rst-literal">label</tt>
+values as always non-overlapping (True) or to compute IoUs for all
+objects regardless of label (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use<wbr></wbr>_masks:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to compute IoUs using the instances masks in
+the <tt class="rst-docutils rst-literal">mask</tt> attribute of the provided objects, which must be
+<code><a href="fiftyone.core.labels.Detection.html" class="internal-link">fiftyone.core.labels.Detection</a></code> instances</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">use<wbr></wbr>_boxes:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to compute IoUs using the bounding boxes
+of the provided <code><a href="fiftyone.core.labels.Polyline.html" class="internal-link">fiftyone.core.labels.Polyline</a></code> instances
+rather than using their actual geometries</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tolerance:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a tolerance, in pixels, when generating approximate
+polylines for instance masks. Typical values are 1-3 pixels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sparse:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return a sparse dict of non-zero IoUs rather
+than a full matrix</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">error<wbr></wbr>_level:</span><span class="literal">1</span></td><td class="fieldArgDesc"><p>the error level to use when manipulating instance
+masks or polylines. Valid values are:</p>
+<ul class="rst-simple">
+<li>0: raise geometric errors that are encountered</li>
+<li>1: log warnings if geometric errors are encountered</li>
+<li>2: ignore geometric errors</li>
+</ul>
+<p>If <tt class="rst-docutils rst-literal">error_level &gt; 0</tt>, any calculation that raises a geometric
+error will default to an IoU of 0</p>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils rst-literal">num_preds x num_gts</tt> array of IoUs when <tt class="rst-docutils rst-literal">sparse=False</tt>, or a
+dict of the form <tt class="rst-docutils rst-literal">d[pred.id] = [(gt.id, iou), <span class="pre">...]</span></tt> when
+<tt class="rst-docutils rst-literal">sparse=True</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.iou.compute_max_ious">
+    
+  </a>
+  <a name="compute_max_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_max_ious</span><span class="function-signature">(sample_collection, label_field, other_field=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, iou_attr=<span class="rst-variable-quote">'</span><span class="rst-variable-string">max_iou</span><span class="rst-variable-quote">'</span>, id_attr=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L189">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#compute_max_ious" title="fiftyone.utils.iou.compute_max_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Populates an attribute on each label in the given spatial field(s) that
+records the max IoU between the object and another object in the same
+sample/frame.</p>
+<p>If <tt class="rst-docutils rst-literal">other_field</tt> is provided, IoUs are computed between objects in
+<tt class="rst-docutils rst-literal">label_field</tt> and <tt class="rst-docutils rst-literal">other_field</tt>.</p>
+<p>If no <tt class="rst-docutils rst-literal">other_field</tt> is provided, IoUs are computed between objects in
+<tt class="rst-docutils rst-literal">label_field</tt> alone, excluding the object itself.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_field</span></td><td class="fieldArgDesc">a label field of type
+<code><a href="fiftyone.core.labels.Detections.html" class="internal-link">fiftyone.core.labels.Detections</a></code>,
+<code><a href="fiftyone.core.labels.Polylines.html" class="internal-link">fiftyone.core.labels.Polylines</a></code>, or
+<code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link">fiftyone.core.labels.Keypoints</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other<wbr></wbr>_field:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">another label field of type
+<code><a href="fiftyone.core.labels.Detections.html" class="internal-link">fiftyone.core.labels.Detections</a></code>,
+<code><a href="fiftyone.core.labels.Polylines.html" class="internal-link">fiftyone.core.labels.Polylines</a></code>, or
+<code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link">fiftyone.core.labels.Keypoints</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iou<wbr></wbr>_attr:</span><span class="literal">"max_iou"</span></td><td class="fieldArgDesc">the label attribute in which to store the max IoU</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">id<wbr></wbr>_attr:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional attribute in which to store the label ID of
+the maximum overlapping label</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional keyword arguments for <code><a href="#compute_ious" class="internal-link" title="fiftyone.utils.iou.compute_ious">compute_ious</a></code></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.iou.compute_segment_ious">
+    
+  </a>
+  <a name="compute_segment_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">compute_segment_ious</span><span class="function-signature">(preds, gts, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L163">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#compute_segment_ious" title="fiftyone.utils.iou.compute_segment_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Computes the pairwise IoUs between the predicted and ground truth
+temporal detections.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">preds</span></td><td class="fieldArgDesc">a list of predicted
+<code><a href="fiftyone.core.labels.TemporalDetection.html" class="internal-link">fiftyone.core.labels.TemporalDetection</a></code> instances</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">gts</span></td><td class="fieldArgDesc">a list of ground truth
+<code><a href="fiftyone.core.labels.TemporalDetection.html" class="internal-link">fiftyone.core.labels.TemporalDetection</a></code> instances</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sparse:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return a sparse dict of non-zero IoUs rather
+than a full matrix</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils rst-literal">num_preds x num_gts</tt> array of segment IoUs when <tt class="rst-docutils rst-literal">sparse=False</tt>,
+or a dict of the form <tt class="rst-docutils rst-literal">d[pred.id] = [(gt.id, iou), <span class="pre">...]</span></tt> when
+<tt class="rst-docutils rst-literal">sparse=True</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.iou.find_duplicates">
+    
+  </a>
+  <a name="find_duplicates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">find_duplicates</span><span class="function-signature">(sample_collection, label_field, iou_thresh=0.999, method=<span class="rst-variable-quote">'</span><span class="rst-variable-string">simple</span><span class="rst-variable-quote">'</span>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L308">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#find_duplicates" title="fiftyone.utils.iou.find_duplicates">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns IDs of duplicate labels in the given field of the collection, as
+defined as labels with an IoU greater than a chosen threshold with another
+label in the field.</p>
+<p>The following duplicate removal methods are supported:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal"><span class="pre">method="simple"</span></tt>: mark the latter label in every pair of labels
+whose IoU exceeds the threshold. This may remove more labels than the
+greedy method</li>
+<li><tt class="rst-docutils rst-literal"><span class="pre">method="greedy"</span></tt>: apply a greedy method to mark the fewest number of
+labels as duplicate such that no non-duplicate labels have IoU greater
+than the specified threshold. This method is more computationally
+expensive than the simple method</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_field</span></td><td class="fieldArgDesc">a label field of type
+<code><a href="fiftyone.core.labels.Detections.html" class="internal-link">fiftyone.core.labels.Detections</a></code>,
+<code><a href="fiftyone.core.labels.Polylines.html" class="internal-link">fiftyone.core.labels.Polylines</a></code>, or
+<code><a href="fiftyone.core.labels.Keypoints.html" class="internal-link">fiftyone.core.labels.Keypoints</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">iou<wbr></wbr>_thresh:</span><span class="literal">0.999</span></td><td class="fieldArgDesc">the IoU threshold to use to determine whether
+labels are duplicates</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">method:</span><span class="literal">"simple"</span></td><td class="fieldArgDesc">the duplicate removal method to use. The supported
+values are <tt class="rst-docutils rst-literal">("simple", "greedy")</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional keyword arguments for <code><a href="#compute_ious" class="internal-link" title="fiftyone.utils.iou.compute_ious">compute_ious</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of IDs of duplicate labels</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.iou.sg">
+    
+  </a>
+  <a name="sg">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sg</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L26">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sg" title="fiftyone.utils.iou.sg">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.iou.so">
+    
+  </a>
+  <a name="so">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">so</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L27">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#so" title="fiftyone.utils.iou.so">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_bbox_ious">
+    
+  </a>
+  <a name="_compute_bbox_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_bbox_ious</span><span class="function-signature">(preds, gts, iscrowd=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L562">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_bbox_ious" title="fiftyone.utils.iou._compute_bbox_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_keypoint_similarities">
+    
+  </a>
+  <a name="_compute_keypoint_similarities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_keypoint_similarities</span><span class="function-signature">(preds, gts, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L845">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_keypoint_similarities" title="fiftyone.utils.iou._compute_keypoint_similarities">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_mask_ious">
+    
+  </a>
+  <a name="_compute_mask_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_mask_ious</span><span class="function-signature">(preds, gts, tolerance, error_level, iscrowd=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L759">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_mask_ious" title="fiftyone.utils.iou._compute_mask_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_max_ious">
+    
+  </a>
+  <a name="_compute_max_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_max_ious</span><span class="function-signature">(doc, field1, field2, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L380">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_max_ious" title="fiftyone.utils.iou._compute_max_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_object_keypoint_similarity">
+    
+  </a>
+  <a name="_compute_object_keypoint_similarity">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_object_keypoint_similarity</span><span class="function-signature">(gtp, predp)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L879">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_object_keypoint_similarity" title="fiftyone.utils.iou._compute_object_keypoint_similarity">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_polygon_ious">
+    
+  </a>
+  <a name="_compute_polygon_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_polygon_ious</span><span class="function-signature">(preds, gts, error_level, iscrowd=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, gt_crowds=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L627">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_polygon_ious" title="fiftyone.utils.iou._compute_polygon_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_polyline_similarities">
+    
+  </a>
+  <a name="_compute_polyline_similarities">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_polyline_similarities</span><span class="function-signature">(preds, gts, classwise=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L725">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_polyline_similarities" title="fiftyone.utils.iou._compute_polyline_similarities">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._compute_segment_ious">
+    
+  </a>
+  <a name="_compute_segment_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_compute_segment_ious</span><span class="function-signature">(preds, gts, sparse=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L800">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_compute_segment_ious" title="fiftyone.utils.iou._compute_segment_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._extract_max_ious">
+    
+  </a>
+  <a name="_extract_max_ious">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_extract_max_ious</span><span class="function-signature">(ious, labels1, labels2)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L414">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_extract_max_ious" title="fiftyone.utils.iou._extract_max_ious">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._find_duplicates">
+    
+  </a>
+  <a name="_find_duplicates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_duplicates</span><span class="function-signature">(doc, field, iou_thresh, method, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L439">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_find_duplicates" title="fiftyone.utils.iou._find_duplicates">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._find_duplicates_greedy">
+    
+  </a>
+  <a name="_find_duplicates_greedy">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_duplicates_greedy</span><span class="function-signature">(ious, iou_thresh)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L464">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_find_duplicates_greedy" title="fiftyone.utils.iou._find_duplicates_greedy">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._find_duplicates_simple">
+    
+  </a>
+  <a name="_find_duplicates_simple">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_find_duplicates_simple</span><span class="function-signature">(ious, iou_thresh)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L457">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_find_duplicates_simple" title="fiftyone.utils.iou._find_duplicates_simple">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._get_bbox_dim">
+    
+  </a>
+  <a name="_get_bbox_dim">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_bbox_dim</span><span class="function-signature">(detection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L483">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_bbox_dim" title="fiftyone.utils.iou._get_bbox_dim">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._get_detection_box">
+    
+  </a>
+  <a name="_get_detection_box">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_detection_box</span><span class="function-signature">(det, dimension=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L531">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_detection_box" title="fiftyone.utils.iou._get_detection_box">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._get_labels">
+    
+  </a>
+  <a name="_get_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_labels</span><span class="function-signature">(doc, field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L405">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_labels" title="fiftyone.utils.iou._get_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._get_poly_box">
+    
+  </a>
+  <a name="_get_poly_box">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_poly_box</span><span class="function-signature">(x)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L557">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_poly_box" title="fiftyone.utils.iou._get_poly_box">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._masks_to_polylines">
+    
+  </a>
+  <a name="_masks_to_polylines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_masks_to_polylines</span><span class="function-signature">(detections, tolerance, error_level)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L924">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_masks_to_polylines" title="fiftyone.utils.iou._masks_to_polylines">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._polylines_to_detections">
+    
+  </a>
+  <a name="_polylines_to_detections">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_polylines_to_detections</span><span class="function-signature">(polylines)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L913">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_polylines_to_detections" title="fiftyone.utils.iou._polylines_to_detections">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.iou._polylines_to_shapely">
+    
+  </a>
+  <a name="_polylines_to_shapely">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_polylines_to_shapely</span><span class="function-signature">(polylines, error_level)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/iou.py#L946">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_polylines_to_shapely" title="fiftyone.utils.iou._polylines_to_shapely">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

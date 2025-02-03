@@ -1,0 +1,1600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.html" class="internal-link" title="This class"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Video<wbr></wbr>Labels<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#close" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.log_collection">log<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.setup">setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_media" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_media">export<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#pretty_print" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.pretty_print">pretty<wbr></wbr>_print</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#frame_labels_cls" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.frame_labels_cls">frame<wbr></wbr>_labels<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.label_cls">label<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#requires_video_metadata" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.requires_video_metadata">requires<wbr></wbr>_video<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_data_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._data_dir">_data<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_dataset_index" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._dataset_index">_dataset<wbr></wbr>_index</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_description" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._description">_description</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_labels_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._labels_dir">_labels<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_manifest_path" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._manifest_path">_manifest<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.data.exporters.html" class="internal-link" title="The parent of this class">exporters</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.BatchDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.BatchDatasetExporter"><wbr></wbr>Batch<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter"><wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin"><wbr></wbr>Export<wbr></wbr>Paths<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneImageClassificationDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneImageClassificationDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Classification<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneImageDetectionDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneImageDetectionDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneImageLabelsDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneImageLabelsDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Labels<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneTemporalDetectionDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneTemporalDetectionDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Temporal<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Video<wbr></wbr>Labels<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.GenericSampleDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.GenericSampleDatasetExporter"><wbr></wbr>Generic<wbr></wbr>Sample<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.GroupDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.GroupDatasetExporter"><wbr></wbr>Group<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ImageClassificationDirectoryTreeExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.ImageClassificationDirectoryTreeExporter"><wbr></wbr>Image<wbr></wbr>Classification<wbr></wbr>Directory<wbr></wbr>Tree<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ImageDirectoryExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.ImageDirectoryExporter"><wbr></wbr>Image<wbr></wbr>Directory<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ImageExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.ImageExporter"><wbr></wbr>Image<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ImageSegmentationDirectoryExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.ImageSegmentationDirectoryExporter"><wbr></wbr>Image<wbr></wbr>Segmentation<wbr></wbr>Directory<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter"><wbr></wbr>Labeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter"><wbr></wbr>Labeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.LegacyFiftyOneDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LegacyFiftyOneDatasetExporter"><wbr></wbr>Legacy<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.MediaDirectoryExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.MediaDirectoryExporter"><wbr></wbr>Media<wbr></wbr>Directory<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.MediaExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.MediaExporter"><wbr></wbr>Media<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.UnlabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.UnlabeledImageDatasetExporter"><wbr></wbr>Unlabeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.UnlabeledMediaDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.UnlabeledMediaDatasetExporter"><wbr></wbr>Unlabeled<wbr></wbr>Media<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.UnlabeledVideoDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.UnlabeledVideoDatasetExporter"><wbr></wbr>Unlabeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.VideoClassificationDirectoryTreeExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.VideoClassificationDirectoryTreeExporter"><wbr></wbr>Video<wbr></wbr>Classification<wbr></wbr>Directory<wbr></wbr>Tree<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.VideoDirectoryExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.VideoDirectoryExporter"><wbr></wbr>Video<wbr></wbr>Directory<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.VideoExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.VideoExporter"><wbr></wbr>Video<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#build_dataset_exporter" class="internal-link" title="fiftyone.utils.data.exporters.build_dataset_exporter">build<wbr></wbr>_dataset<wbr></wbr>_exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#export_samples" class="internal-link" title="fiftyone.utils.data.exporters.export_samples">export<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#write_dataset" class="internal-link" title="fiftyone.utils.data.exporters.write_dataset">write<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_check_for_clips_export" class="internal-link" title="fiftyone.utils.data.exporters._check_for_clips_export">_check<wbr></wbr>_for<wbr></wbr>_clips<wbr></wbr>_export</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_check_for_patches_export" class="internal-link" title="fiftyone.utils.data.exporters._check_for_patches_export">_check<wbr></wbr>_for<wbr></wbr>_patches<wbr></wbr>_export</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_classification_to_detections" class="internal-link" title="fiftyone.utils.data.exporters._classification_to_detections">_classification<wbr></wbr>_to<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_export_annotation_results" class="internal-link" title="fiftyone.utils.data.exporters._export_annotation_results">_export<wbr></wbr>_annotation<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_export_brain_results" class="internal-link" title="fiftyone.utils.data.exporters._export_brain_results">_export<wbr></wbr>_brain<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_export_evaluation_results" class="internal-link" title="fiftyone.utils.data.exporters._export_evaluation_results">_export<wbr></wbr>_evaluation<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_export_run_results" class="internal-link" title="fiftyone.utils.data.exporters._export_run_results">_export<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_make_label_coercion_functions" class="internal-link" title="fiftyone.utils.data.exporters._make_label_coercion_functions">_make<wbr></wbr>_label<wbr></wbr>_coercion<wbr></wbr>_functions</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_make_single_label_to_list_fcn" class="internal-link" title="fiftyone.utils.data.exporters._make_single_label_to_list_fcn">_make<wbr></wbr>_single<wbr></wbr>_label<wbr></wbr>_to<wbr></wbr>_list<wbr></wbr>_fcn</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_parse_attributes" class="internal-link" title="fiftyone.utils.data.exporters._parse_attributes">_parse<wbr></wbr>_attributes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_parse_classifications" class="internal-link" title="fiftyone.utils.data.exporters._parse_classifications">_parse<wbr></wbr>_classifications</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_parse_detections" class="internal-link" title="fiftyone.utils.data.exporters._parse_detections">_parse<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_parse_temporal_detections" class="internal-link" title="fiftyone.utils.data.exporters._parse_temporal_detections">_parse<wbr></wbr>_temporal<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_to_labels_map_rev" class="internal-link" title="fiftyone.utils.data.exporters._to_labels_map_rev">_to<wbr></wbr>_labels<wbr></wbr>_map<wbr></wbr>_rev</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_batch_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_batch_dataset">_write<wbr></wbr>_batch<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_generic_sample_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_generic_sample_dataset">_write<wbr></wbr>_generic<wbr></wbr>_sample<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_group_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_group_dataset">_write<wbr></wbr>_group<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_image_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_image_dataset">_write<wbr></wbr>_image<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_unlabeled_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_unlabeled_dataset">_write<wbr></wbr>_unlabeled<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#_write_video_dataset" class="internal-link" title="fiftyone.utils.data.exporters._write_video_dataset">_write<wbr></wbr>_video<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.html#logger" class="internal-link" title="fiftyone.utils.data.exporters.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.exporters.html" class="internal-link" title="fiftyone.utils.data.exporters">exporters</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter">FiftyOneVideoLabelsDatasetExporter</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">FiftyOneVideoLabelsDatasetExporter</span>(<a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter">LabeledVideoDatasetExporter</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3690" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.__init__">FiftyOneVideoLabelsDatasetExporter(export_dir, export_media, rel_dir, pretty_print)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Exporter that writes a labeled video dataset with labels stored in
+<a class="rst-external rst-reference" href="https://github.com/voxel51/eta/blob/develop/docs/video_labels_guide.md" target="_top">ETA VideoLabels format</a>.</p>
+<p>See :ref:`this page &lt;FiftyOneVideoLabelsDataset-export&gt;` for format
+details.</p>
+<p>If the path to a video is provided, the video is directly copied to its
+destination, maintaining the original filename, unless a name conflict
+would occur, in which case an index of the form <tt class="rst-docutils rst-literal"><span class="pre">"-%d"</span> % count</tt> is
+appended to the base filename.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the export</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_media</span></td><td class="fieldArgDesc"><p>controls how to export the raw media. The
+supported values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">True</tt> (default): copy all media files into the output
+directory</li>
+<li><tt class="rst-docutils rst-literal">"move"</tt>: move all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">"symlink"</tt>: create symlinks to the media files in the output
+directory</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel<wbr></wbr>_dir</span></td><td class="fieldArgDesc">an optional relative directory to strip from each input
+filepath to generate a unique identifier for each video. When
+exporting media, this identifier is joined with <tt class="rst-docutils rst-literal">export_dir</tt> to
+generate an output path for each exported video. This argument
+allows for populating nested subdirectories that match the shape of
+the input paths. The path is converted to an absolute path (if
+necessary) via <code><a href="fiftyone.core.storage.html#normalize_path" class="internal-link">fiftyone.core.storage.normalize_path</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pretty<wbr></wbr>_print</span></td><td class="fieldArgDesc">whether to render the JSON in human readable
+format with newlines and indentations</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1672">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code></td>
+    <td>Exports the given sample to the dataset.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.log_collection">log<wbr></wbr>_collection</a></code></td>
+    <td>Logs any relevant information about the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will be exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.setup">setup</a></code></td>
+    <td>Performs any necessary setup before exporting the first sample in the dataset.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#export_media" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_media">export<wbr></wbr>_media</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pretty_print" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.pretty_print">pretty<wbr></wbr>_print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#frame_labels_cls" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.frame_labels_cls">frame<wbr></wbr>_labels<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) that can be exported by this exporter at the frame-level.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.label_cls">label<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) that can be exported at the sample-level.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#requires_video_metadata" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.requires_video_metadata">requires<wbr></wbr>_video<wbr></wbr>_metadata</a></code></td>
+    <td>Whether this exporter requires <code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code> instances for each sample being exported.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_data_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._data_dir">_data<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_dataset_index" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._dataset_index">_dataset<wbr></wbr>_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_description" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._description">_description</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_labels_dir" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._labels_dir">_labels<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_manifest_path" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._manifest_path">_manifest<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code> (via <code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter">LabeledVideoDatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id1673">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, export_dir, export_media=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, rel_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, pretty_print=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3723">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__init__" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span><span class="function-signature">(self, *args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3794">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#close" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.close">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#close" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.close</a></code></div>
+    <div><p>Performs any necessary actions after the last sample has been
+exported.</p>
+<p>This method is called when the exporter's context manager interface is
+exited, <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">the arguments to <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_sample">
+    
+  </a>
+  <a name="export_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_sample</span><span class="function-signature">(self, video_path, label, frames, metadata=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3779">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_sample" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html#export_sample" class="internal-link">fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.export_sample</a></code></div>
+    <div><p>Exports the given sample to the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">video<wbr></wbr>_path</span></td><td class="fieldArgDesc">the path to a video on disk</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">an instance of <code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.label_cls">label_cls</a></code>, or a dictionary mapping
+field names to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances,
+or <tt class="rst-docutils rst-literal">None</tt> if the sample has no sample-level labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frames</span></td><td class="fieldArgDesc">a dictionary mapping frame numbers to dictionaries that map
+field names to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances,
+or <tt class="rst-docutils rst-literal">None</tt> if the sample has no frame-level labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">metadata:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code>
+instance for the sample. Only required when
+<code><a href="#requires_video_metadata" class="internal-link" title="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.requires_video_metadata">requires_video_metadata</a></code> is <tt class="rst-docutils rst-literal">True</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.log_collection">
+    
+  </a>
+  <a name="log_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">log_collection</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3776">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#log_collection" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.log_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.log_collection</a></code></div>
+    <div><p>Logs any relevant information about the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will
+be exported.</p>
+<p>Subclasses can optionally implement this method if their export format
+can record information such as the
+<code><a href="fiftyone.core.collections.SampleCollection.html#info" class="internal-link">fiftyone.core.collections.SampleCollection.info</a></code> of the
+collection being exported.</p>
+<p>By convention, this method must be optional; i.e., if it is not called
+before the first call to <code><a href="#export_sample" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.export_sample">export_sample</a></code>, then the exporter must
+make do without any information about the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> (which may not be
+available, for example, if the samples being exported are not stored in
+a collection).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose
+samples will be exported</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3759">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#setup" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.setup</a></code></div>
+    <div><p>Performs any necessary setup before exporting the first sample in
+the dataset.</p>
+<p>This method is called when the exporter's context manager interface is
+entered, <code><a href="#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">DatasetExporter.__enter__</a></code>.</p>
+</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_media">
+    
+  </a>
+  <a name="export_media">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">export_media</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3731">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_media" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.export_media">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.pretty_print">
+    
+  </a>
+  <a name="pretty_print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pretty_print</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3733">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#pretty_print" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.pretty_print">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.rel_dir">
+    
+  </a>
+  <a name="rel_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rel_dir</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3732">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#rel_dir" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.rel_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.frame_labels_cls">
+    
+  </a>
+  <a name="frame_labels_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">frame_labels_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3750">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#frame_labels_cls" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.frame_labels_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html#frame_labels_cls" class="internal-link">fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.frame_labels_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) that can be
+exported by this exporter at the frame-level.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+exporter directly exports frame labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the exporter can export a single frame label field of
+any of these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the exporter can export multiple frame label fields
+with value-types specified by this dictionary. Not all keys need be
+present in the exported frame labels</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the exporter makes no guarantees about the
+frame labels that it can export</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.label_cls">
+    
+  </a>
+  <a name="label_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">label_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3746">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#label_cls" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.label_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html#label_cls" class="internal-link">fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.label_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) that can be
+exported at the sample-level.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+exporter directly exports sample-level labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the exporter can export a single sample-level label
+field of any of these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the exporter can export multiple label fields with
+value-types specified by this dictionary. Not all keys need be
+present in the exported sample-level labels</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the exporter makes no guarantees about the
+sample-level labels that it can export</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.requires_video_metadata">
+    
+  </a>
+  <a name="requires_video_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">requires_video_metadata</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3742">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#requires_video_metadata" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter.requires_video_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.html#requires_video_metadata" class="internal-link">fiftyone.utils.data.exporters.LabeledVideoDatasetExporter.requires_video_metadata</a></code></div>
+    <div><p>Whether this exporter requires
+<code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code> instances for each sample
+being exported.</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._data_dir">
+    
+  </a>
+  <a name="_data_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_data_dir</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3737">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_data_dir" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._data_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._dataset_index">
+    
+  </a>
+  <a name="_dataset_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_dataset_index</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3735">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_dataset_index" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._dataset_index">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._description">
+    
+  </a>
+  <a name="_description">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_description</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3739">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_description" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._description">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._labels_dir">
+    
+  </a>
+  <a name="_labels_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_labels_dir</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3738">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_labels_dir" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._labels_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._manifest_path">
+    
+  </a>
+  <a name="_manifest_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_manifest_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3736">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_manifest_path" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._manifest_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._media_exporter">
+    
+  </a>
+  <a name="_media_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_media_exporter</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/exporters.py#L3740">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_media_exporter" title="fiftyone.utils.data.exporters.FiftyOneVideoLabelsDatasetExporter._media_exporter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

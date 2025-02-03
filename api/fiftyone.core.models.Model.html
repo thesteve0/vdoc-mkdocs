@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.models.Model</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.models.Model.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.models.Model.html" class="internal-link" title="This class"><wbr></wbr>Model</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__enter__" class="internal-link" title="fiftyone.core.models.Model.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__exit__" class="internal-link" title="fiftyone.core.models.Model.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#predict" class="internal-link" title="fiftyone.core.models.Model.predict">predict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#predict_all" class="internal-link" title="fiftyone.core.models.Model.predict_all">predict<wbr></wbr>_all</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#preprocess.setter" class="internal-link" title="fiftyone.core.models.Model.preprocess.setter">preprocess<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#can_embed_prompts" class="internal-link" title="fiftyone.core.models.Model.can_embed_prompts">can<wbr></wbr>_embed<wbr></wbr>_prompts</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_embeddings" class="internal-link" title="fiftyone.core.models.Model.has_embeddings">has<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_logits" class="internal-link" title="fiftyone.core.models.Model.has_logits">has<wbr></wbr>_logits</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#media_type" class="internal-link" title="fiftyone.core.models.Model.media_type">media<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#preprocess" class="internal-link" title="fiftyone.core.models.Model.preprocess">preprocess</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ragged_batches" class="internal-link" title="fiftyone.core.models.Model.ragged_batches">ragged<wbr></wbr>_batches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.models.html" class="internal-link" title="The parent of this class">models</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.EmbeddingsMixin.html" class="internal-link" title="fiftyone.core.models.EmbeddingsMixin"><wbr></wbr>Embeddings<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.LogitsMixin.html" class="internal-link" title="fiftyone.core.models.LogitsMixin"><wbr></wbr>Logits<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.Model.html" class="internal-link" title="fiftyone.core.models.Model"><wbr></wbr>Model</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.ModelConfig.html" class="internal-link" title="fiftyone.core.models.ModelConfig"><wbr></wbr>Model<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.ModelManager.html" class="internal-link" title="fiftyone.core.models.ModelManager"><wbr></wbr>Model<wbr></wbr>Manager</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.ModelManagerConfig.html" class="internal-link" title="fiftyone.core.models.ModelManagerConfig"><wbr></wbr>Model<wbr></wbr>Manager<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.PromptMixin.html" class="internal-link" title="fiftyone.core.models.PromptMixin"><wbr></wbr>Prompt<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.SamplesMixin.html" class="internal-link" title="fiftyone.core.models.SamplesMixin"><wbr></wbr>Samples<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.TorchModelMixin.html" class="internal-link" title="fiftyone.core.models.TorchModelMixin"><wbr></wbr>Torch<wbr></wbr>Model<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#apply_model" class="internal-link" title="fiftyone.core.models.apply_model">apply<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#compute_embeddings" class="internal-link" title="fiftyone.core.models.compute_embeddings">compute<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#compute_patch_embeddings" class="internal-link" title="fiftyone.core.models.compute_patch_embeddings">compute<wbr></wbr>_patch<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#load_model" class="internal-link" title="fiftyone.core.models.load_model">load<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_image_model_batch" class="internal-link" title="fiftyone.core.models._apply_image_model_batch">_apply<wbr></wbr>_image<wbr></wbr>_model<wbr></wbr>_batch</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_image_model_data_loader" class="internal-link" title="fiftyone.core.models._apply_image_model_data_loader">_apply<wbr></wbr>_image<wbr></wbr>_model<wbr></wbr>_data<wbr></wbr>_loader</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_image_model_single" class="internal-link" title="fiftyone.core.models._apply_image_model_single">_apply<wbr></wbr>_image<wbr></wbr>_model<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_image_model_to_frames_batch" class="internal-link" title="fiftyone.core.models._apply_image_model_to_frames_batch">_apply<wbr></wbr>_image<wbr></wbr>_model<wbr></wbr>_to<wbr></wbr>_frames<wbr></wbr>_batch</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_image_model_to_frames_single" class="internal-link" title="fiftyone.core.models._apply_image_model_to_frames_single">_apply<wbr></wbr>_image<wbr></wbr>_model<wbr></wbr>_to<wbr></wbr>_frames<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_apply_video_model" class="internal-link" title="fiftyone.core.models._apply_video_model">_apply<wbr></wbr>_video<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_frame_embeddings_batch" class="internal-link" title="fiftyone.core.models._compute_frame_embeddings_batch">_compute<wbr></wbr>_frame<wbr></wbr>_embeddings<wbr></wbr>_batch</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_frame_embeddings_single" class="internal-link" title="fiftyone.core.models._compute_frame_embeddings_single">_compute<wbr></wbr>_frame<wbr></wbr>_embeddings<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_image_embeddings_batch" class="internal-link" title="fiftyone.core.models._compute_image_embeddings_batch">_compute<wbr></wbr>_image<wbr></wbr>_embeddings<wbr></wbr>_batch</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_image_embeddings_data_loader" class="internal-link" title="fiftyone.core.models._compute_image_embeddings_data_loader">_compute<wbr></wbr>_image<wbr></wbr>_embeddings<wbr></wbr>_data<wbr></wbr>_loader</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_image_embeddings_single" class="internal-link" title="fiftyone.core.models._compute_image_embeddings_single">_compute<wbr></wbr>_image<wbr></wbr>_embeddings<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_compute_video_embeddings" class="internal-link" title="fiftyone.core.models._compute_video_embeddings">_compute<wbr></wbr>_video<wbr></wbr>_embeddings</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_convert_model_if_necessary" class="internal-link" title="fiftyone.core.models._convert_model_if_necessary">_convert<wbr></wbr>_model<wbr></wbr>_if<wbr></wbr>_necessary</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_do_export_array" class="internal-link" title="fiftyone.core.models._do_export_array">_do<wbr></wbr>_export<wbr></wbr>_array</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_embed_frame_patches" class="internal-link" title="fiftyone.core.models._embed_frame_patches">_embed<wbr></wbr>_frame<wbr></wbr>_patches</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_embed_patches" class="internal-link" title="fiftyone.core.models._embed_patches">_embed<wbr></wbr>_patches</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_embed_patches_batch" class="internal-link" title="fiftyone.core.models._embed_patches_batch">_embed<wbr></wbr>_patches<wbr></wbr>_batch</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_embed_patches_data_loader" class="internal-link" title="fiftyone.core.models._embed_patches_data_loader">_embed<wbr></wbr>_patches<wbr></wbr>_data<wbr></wbr>_loader</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_embed_patches_single" class="internal-link" title="fiftyone.core.models._embed_patches_single">_embed<wbr></wbr>_patches<wbr></wbr>_single</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_export_arrays" class="internal-link" title="fiftyone.core.models._export_arrays">_export<wbr></wbr>_arrays</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_get_frame_counts" class="internal-link" title="fiftyone.core.models._get_frame_counts">_get<wbr></wbr>_frame<wbr></wbr>_counts</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_is_flash_model" class="internal-link" title="fiftyone.core.models._is_flash_model">_is<wbr></wbr>_flash<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_is_super_gradients_models" class="internal-link" title="fiftyone.core.models._is_super_gradients_models">_is<wbr></wbr>_super<wbr></wbr>_gradients<wbr></wbr>_models</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_is_transformers_model" class="internal-link" title="fiftyone.core.models._is_transformers_model">_is<wbr></wbr>_transformers<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_is_ultralytics_model" class="internal-link" title="fiftyone.core.models._is_ultralytics_model">_is<wbr></wbr>_ultralytics<wbr></wbr>_model</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_iter_batches" class="internal-link" title="fiftyone.core.models._iter_batches">_iter<wbr></wbr>_batches</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_make_data_loader" class="internal-link" title="fiftyone.core.models._make_data_loader">_make<wbr></wbr>_data<wbr></wbr>_loader</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_make_label_parser" class="internal-link" title="fiftyone.core.models._make_label_parser">_make<wbr></wbr>_label<wbr></wbr>_parser</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_make_patch_data_loader" class="internal-link" title="fiftyone.core.models._make_patch_data_loader">_make<wbr></wbr>_patch<wbr></wbr>_data<wbr></wbr>_loader</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_merge_config" class="internal-link" title="fiftyone.core.models._merge_config">_merge<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_parse_batch_size" class="internal-link" title="fiftyone.core.models._parse_batch_size">_parse<wbr></wbr>_batch<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#foue" class="internal-link" title="fiftyone.core.models.foue">foue</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#fouf" class="internal-link" title="fiftyone.core.models.fouf">fouf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#foui" class="internal-link" title="fiftyone.core.models.foui">foui</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#foup" class="internal-link" title="fiftyone.core.models.foup">foup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#fous" class="internal-link" title="fiftyone.core.models.fous">fous</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#fout" class="internal-link" title="fiftyone.core.models.fout">fout</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#foutr" class="internal-link" title="fiftyone.core.models.foutr">foutr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#fouu" class="internal-link" title="fiftyone.core.models.fouu">fouu</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#logger" class="internal-link" title="fiftyone.core.models.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#tud" class="internal-link" title="fiftyone.core.models.tud">tud</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html#_ALLOWED_PATCH_TYPES" class="internal-link" title="fiftyone.core.models._ALLOWED_PATCH_TYPES">_ALLOWED<wbr></wbr>_PATCH<wbr></wbr>_TYPES</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.models.html" class="internal-link" title="fiftyone.core.models">models</a></code><wbr></wbr>.<code><a href="fiftyone.core.models.Model.html" class="internal-link" title="fiftyone.core.models.Model">Model</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Model</span>(etal.Model): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1939" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.sam2.SegmentAnything2VideoModel.html" class="internal-link">fiftyone.utils.sam2.SegmentAnything2VideoModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.models.Model">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Abstract base class for models.</p>
+<p>This class declares the following conventions:</p>
+<ol class="rst-loweralpha rst-simple">
+<li><code>Model.__init__</code> should take a single <tt class="rst-docutils rst-literal">config</tt> argument
+that is an instance of <tt class="rst-docutils rst-literal">&lt;Model&gt;Config</tt></li>
+<li>Models implement the context manager interface. This means that
+models can optionally use context to perform any necessary setup
+and teardown, and so any code that builds a model should use the
+<tt class="rst-docutils rst-literal">with</tt> syntax</li>
+</ol>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id349">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__enter__" class="internal-link" title="fiftyone.core.models.Model.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__exit__" class="internal-link" title="fiftyone.core.models.Model.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#predict" class="internal-link" title="fiftyone.core.models.Model.predict">predict</a></code></td>
+    <td>Performs prediction on the given data.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#predict_all" class="internal-link" title="fiftyone.core.models.Model.predict_all">predict<wbr></wbr>_all</a></code></td>
+    <td>Performs prediction on the given iterable of data.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#preprocess.setter" class="internal-link" title="fiftyone.core.models.Model.preprocess.setter">preprocess<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#can_embed_prompts" class="internal-link" title="fiftyone.core.models.Model.can_embed_prompts">can<wbr></wbr>_embed<wbr></wbr>_prompts</a></code></td>
+    <td>Whether this instance can generate prompt embeddings.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_embeddings" class="internal-link" title="fiftyone.core.models.Model.has_embeddings">has<wbr></wbr>_embeddings</a></code></td>
+    <td>Whether this instance can generate embeddings.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_logits" class="internal-link" title="fiftyone.core.models.Model.has_logits">has<wbr></wbr>_logits</a></code></td>
+    <td>Whether this instance can generate logits for its predictions.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#media_type" class="internal-link" title="fiftyone.core.models.Model.media_type">media<wbr></wbr>_type</a></code></td>
+    <td>The media type processed by the model.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#preprocess" class="internal-link" title="fiftyone.core.models.Model.preprocess">preprocess</a></code></td>
+    <td>Whether to apply <code><a href="fiftyone.core.models.Model.html#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code> during inference (True) or to assume that they have already been applied (False).</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#ragged_batches" class="internal-link" title="fiftyone.core.models.Model.ragged_batches">ragged<wbr></wbr>_batches</a></code></td>
+    <td>True/False whether <code><a href="fiftyone.core.models.Model.html#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code> may return tensors of different sizes. If True, then passing ragged lists of data to <code><a href="fiftyone.core.models.Model.html#predict_all" class="internal-link" title="fiftyone.core.models.Model.predict_all">predict_all</a></code> is not allowed.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code></td>
+    <td>The preprocessing function that will/must be applied to each input before prediction, or <tt class="rst-docutils rst-literal">None</tt> if no preprocessing is performed.</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.models.Model.__enter__">
+    
+  </a>
+  <a name="__enter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__enter__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1953">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__enter__" title="fiftyone.core.models.Model.__enter__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.models.Model.__exit__">
+    
+  </a>
+  <a name="__exit__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__exit__</span><span class="function-signature">(self, *args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1956">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__exit__" title="fiftyone.core.models.Model.__exit__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.models.Model.predict">
+    
+  </a>
+  <a name="predict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">predict</span><span class="function-signature">(self, arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L2023">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#predict" title="fiftyone.core.models.Model.predict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.sam2.SegmentAnything2VideoModel.html" class="internal-link">fiftyone.utils.sam2.SegmentAnything2VideoModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></div>
+    <div><p>Performs prediction on the given data.</p>
+<p>Image models should support, at minimum, processing <tt class="rst-docutils rst-literal">arg</tt> values that
+are uint8 numpy arrays (HWC).</p>
+<p>Video models should support, at minimum, processing <tt class="rst-docutils rst-literal">arg</tt> values that
+are <tt class="rst-docutils rst-literal">eta.core.video.VideoReader</tt> instances.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arg</span></td><td class="fieldArgDesc">the data</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instance or dict of
+<code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances containing the
+predictions</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.models.Model.predict_all">
+    
+  </a>
+  <a name="predict_all">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">predict_all</span><span class="function-signature">(self, args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L2042">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#predict_all" title="fiftyone.core.models.Model.predict_all">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformerForDepthEstimation.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformerForDepthEstimation</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformerForImageClassification.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformerForImageClassification</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformerForObjectDetection.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformerForObjectDetection</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformerForSemanticSegmentation.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformerForSemanticSegmentation</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformerForImageClassification.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformerForImageClassification</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLODetectionModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLODetectionModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOOBBModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOOBBModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOPoseModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOPoseModel</a></code></div>
+    <div><p>Performs prediction on the given iterable of data.</p>
+<p>Image models should support, at minimum, processing <tt class="rst-docutils rst-literal">args</tt> values
+that are either lists of uint8 numpy arrays (HWC) or numpy array
+tensors (NHWC).</p>
+<p>Video models should support, at minimum, processing <tt class="rst-docutils rst-literal">args</tt> values
+that are lists of <tt class="rst-docutils rst-literal">eta.core.video.VideoReader</tt> instances.</p>
+<p>Subclasses can override this method to increase efficiency, but, by
+default, this method simply iterates over the data and applies
+<code><a href="#predict" class="internal-link" title="fiftyone.core.models.Model.predict">predict</a></code> to each.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">args</span></td><td class="fieldArgDesc">an iterable of data</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances or a list
+of dicts of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances
+containing the predictions</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.models.Model.preprocess.setter">
+    
+  </a>
+  <a name="preprocess.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#preprocess.setter" class="internal-link" title="fiftyone.core.models.Model.preprocess.setter">preprocess.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">preprocess</span><span class="function-signature">(self, value)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L2019">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#preprocess.setter" title="fiftyone.core.models.Model.preprocess.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.can_embed_prompts">
+    
+  </a>
+  <a name="can_embed_prompts">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">can_embed_prompts</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1987">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#can_embed_prompts" title="fiftyone.core.models.Model.can_embed_prompts">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.clip.zoo.TorchCLIPModel.html" class="internal-link">fiftyone.utils.clip.zoo.TorchCLIPModel</a></code>, <code><a href="fiftyone.utils.open_clip.TorchOpenClipModel.html" class="internal-link">fiftyone.utils.open_clip.TorchOpenClipModel</a></code></div>
+    <div><p>Whether this instance can generate prompt embeddings.</p>
+<p>This method returns <tt class="rst-docutils rst-literal">False</tt> by default. Methods that can generate
+prompt embeddings will override this via implementing the
+<code><a href="fiftyone.core.models.PromptMixin.html" class="internal-link" title="fiftyone.core.models.PromptMixin">PromptMixin</a></code> interface.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.has_embeddings">
+    
+  </a>
+  <a name="has_embeddings">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_embeddings</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1977">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_embeddings" title="fiftyone.core.models.Model.has_embeddings">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code></div>
+    <div><p>Whether this instance can generate embeddings.</p>
+<p>This method returns <tt class="rst-docutils rst-literal">False</tt> by default. Methods that can generate
+embeddings will override this via implementing the
+<code><a href="fiftyone.core.models.EmbeddingsMixin.html" class="internal-link" title="fiftyone.core.models.EmbeddingsMixin">EmbeddingsMixin</a></code> interface.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.has_logits">
+    
+  </a>
+  <a name="has_logits">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_logits</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1967">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_logits" title="fiftyone.core.models.Model.has_logits">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code></div>
+    <div><p>Whether this instance can generate logits for its predictions.</p>
+<p>This method returns <tt class="rst-docutils rst-literal">False</tt> by default. Methods that can generate
+logits will override this via implementing the
+<code><a href="fiftyone.core.models.LogitsMixin.html" class="internal-link" title="fiftyone.core.models.LogitsMixin">LogitsMixin</a></code> interface.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.media_type">
+    
+  </a>
+  <a name="media_type">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">media_type</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1959">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#media_type" title="fiftyone.core.models.Model.media_type">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.sam2.SegmentAnything2VideoModel.html" class="internal-link">fiftyone.utils.sam2.SegmentAnything2VideoModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></div>
+    <div><p>The media type processed by the model.</p>
+<p>Supported values are "image" and "video".</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.preprocess">
+    
+  </a>
+  <a name="preprocess">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">preprocess</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L2012">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#preprocess" title="fiftyone.core.models.Model.preprocess">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></div>
+    <div><p>Whether to apply <code><a href="#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code> during inference (True) or to
+assume that they have already been applied (False).</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.ragged_batches">
+    
+  </a>
+  <a name="ragged_batches">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">ragged_batches</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L1997">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ragged_batches" title="fiftyone.core.models.Model.ragged_batches">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></div>
+    <div><p>True/False whether <code><a href="#transforms" class="internal-link" title="fiftyone.core.models.Model.transforms">transforms</a></code> may return tensors of
+different sizes. If True, then passing ragged lists of data to
+<code><a href="#predict_all" class="internal-link" title="fiftyone.core.models.Model.predict_all">predict_all</a></code> is not allowed.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.models.Model.transforms">
+    
+  </a>
+  <a name="transforms">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">transforms</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/models.py#L2005">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#transforms" title="fiftyone.core.models.Model.transforms">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eta.ETAModel.html" class="internal-link">fiftyone.utils.eta.ETAModel</a></code>, <code><a href="fiftyone.utils.torch.TorchImageModel.html" class="internal-link">fiftyone.utils.torch.TorchImageModel</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneTransformer</a></code>, <code><a href="fiftyone.utils.transformers.FiftyOneZeroShotTransformer.html" class="internal-link">fiftyone.utils.transformers.FiftyOneZeroShotTransformer</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneRTDETRModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneRTDETRModel</a></code>, <code><a href="fiftyone.utils.ultralytics.FiftyOneYOLOModel.html" class="internal-link">fiftyone.utils.ultralytics.FiftyOneYOLOModel</a></code></div>
+    <div><p>The preprocessing function that will/must be applied to each input
+before prediction, or <tt class="rst-docutils rst-literal">None</tt> if no preprocessing is performed.</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

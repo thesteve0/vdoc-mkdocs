@@ -1,0 +1,3758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.dataset</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.dataset.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.core.dataset.html" class="internal-link" title="This module">dataset</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset"><wbr></wbr>Dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.dataset.DatasetNotFoundError.html" class="internal-link" title="fiftyone.core.dataset.DatasetNotFoundError"><wbr></wbr>Dataset<wbr></wbr>Not<wbr></wbr>Found<wbr></wbr>Error</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dataset_exists" class="internal-link" title="fiftyone.core.dataset.dataset_exists">dataset<wbr></wbr>_exists</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_dataset" class="internal-link" title="fiftyone.core.dataset.delete_dataset">delete<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_datasets" class="internal-link" title="fiftyone.core.dataset.delete_datasets">delete<wbr></wbr>_datasets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_non_persistent_datasets" class="internal-link" title="fiftyone.core.dataset.delete_non_persistent_datasets">delete<wbr></wbr>_non<wbr></wbr>_persistent<wbr></wbr>_datasets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_default_dataset_dir" class="internal-link" title="fiftyone.core.dataset.get_default_dataset_dir">get<wbr></wbr>_default<wbr></wbr>_dataset<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_default_dataset_name" class="internal-link" title="fiftyone.core.dataset.get_default_dataset_name">get<wbr></wbr>_default<wbr></wbr>_dataset<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_datasets" class="internal-link" title="fiftyone.core.dataset.list_datasets">list<wbr></wbr>_datasets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_dataset" class="internal-link" title="fiftyone.core.dataset.load_dataset">load<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#make_unique_dataset_name" class="internal-link" title="fiftyone.core.dataset.make_unique_dataset_name">make<wbr></wbr>_unique<wbr></wbr>_dataset<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_add_collection_with_new_ids" class="internal-link" title="fiftyone.core.dataset._add_collection_with_new_ids">_add<wbr></wbr>_collection<wbr></wbr>_with<wbr></wbr>_new<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_always_select_field" class="internal-link" title="fiftyone.core.dataset._always_select_field">_always<wbr></wbr>_select<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_cleanup_frame_index" class="internal-link" title="fiftyone.core.dataset._cleanup_frame_index">_cleanup<wbr></wbr>_frame<wbr></wbr>_index</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_cleanup_index" class="internal-link" title="fiftyone.core.dataset._cleanup_index">_cleanup<wbr></wbr>_index</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_collection" class="internal-link" title="fiftyone.core.dataset._clone_collection">_clone<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_collection_indexes" class="internal-link" title="fiftyone.core.dataset._clone_collection_indexes">_clone<wbr></wbr>_collection<wbr></wbr>_indexes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_extras" class="internal-link" title="fiftyone.core.dataset._clone_extras">_clone<wbr></wbr>_extras</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_indexes" class="internal-link" title="fiftyone.core.dataset._clone_indexes">_clone<wbr></wbr>_indexes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_reference_doc" class="internal-link" title="fiftyone.core.dataset._clone_reference_doc">_clone<wbr></wbr>_reference<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_clone_run" class="internal-link" title="fiftyone.core.dataset._clone_run">_clone<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_create_dataset" class="internal-link" title="fiftyone.core.dataset._create_dataset">_create<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_create_frame_document_cls" class="internal-link" title="fiftyone.core.dataset._create_frame_document_cls">_create<wbr></wbr>_frame<wbr></wbr>_document<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_create_group_indexes" class="internal-link" title="fiftyone.core.dataset._create_group_indexes">_create<wbr></wbr>_group<wbr></wbr>_indexes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_create_indexes" class="internal-link" title="fiftyone.core.dataset._create_indexes">_create<wbr></wbr>_indexes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_create_sample_document_cls" class="internal-link" title="fiftyone.core.dataset._create_sample_document_cls">_create<wbr></wbr>_sample<wbr></wbr>_document<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_declare_fields" class="internal-link" title="fiftyone.core.dataset._declare_fields">_declare<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_delete_dataset_doc" class="internal-link" title="fiftyone.core.dataset._delete_dataset_doc">_delete<wbr></wbr>_dataset<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_delete_non_persistent_datasets" class="internal-link" title="fiftyone.core.dataset._delete_non_persistent_datasets">_delete<wbr></wbr>_non<wbr></wbr>_persistent<wbr></wbr>_datasets</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_discard_none" class="internal-link" title="fiftyone.core.dataset._discard_none">_discard<wbr></wbr>_none</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_load_dataset" class="internal-link" title="fiftyone.core.dataset._do_load_dataset">_do<wbr></wbr>_load<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ensure_index" class="internal-link" title="fiftyone.core.dataset._ensure_index">_ensure<wbr></wbr>_index</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_extract_archive_if_necessary" class="internal-link" title="fiftyone.core.dataset._extract_archive_if_necessary">_extract<wbr></wbr>_archive<wbr></wbr>_if<wbr></wbr>_necessary</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_finalize_frames" class="internal-link" title="fiftyone.core.dataset._finalize_frames">_finalize<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_collstats" class="internal-link" title="fiftyone.core.dataset._get_collstats">_get<wbr></wbr>_collstats</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_ids" class="internal-link" title="fiftyone.core.dataset._get_frame_ids">_get<wbr></wbr>_frame<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_ids_for_sample" class="internal-link" title="fiftyone.core.dataset._get_frame_ids_for_sample">_get<wbr></wbr>_frame<wbr></wbr>_ids<wbr></wbr>_for<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frames_pipeline" class="internal-link" title="fiftyone.core.dataset._get_frames_pipeline">_get<wbr></wbr>_frames<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_group_field" class="internal-link" title="fiftyone.core.dataset._get_group_field">_get<wbr></wbr>_group<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_group_id" class="internal-link" title="fiftyone.core.dataset._get_group_id">_get<wbr></wbr>_group<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_group_ids" class="internal-link" title="fiftyone.core.dataset._get_group_ids">_get<wbr></wbr>_group<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_indexes_to_skip" class="internal-link" title="fiftyone.core.dataset._get_indexes_to_skip">_get<wbr></wbr>_indexes<wbr></wbr>_to<wbr></wbr>_skip</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_media_type" class="internal-link" title="fiftyone.core.dataset._get_media_type">_get<wbr></wbr>_media<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_random_characters" class="internal-link" title="fiftyone.core.dataset._get_random_characters">_get<wbr></wbr>_random<wbr></wbr>_characters</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_sample_ids" class="internal-link" title="fiftyone.core.dataset._get_sample_ids">_get<wbr></wbr>_sample<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_samples_pipeline" class="internal-link" title="fiftyone.core.dataset._get_samples_pipeline">_get<wbr></wbr>_samples<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_single_index_map" class="internal-link" title="fiftyone.core.dataset._get_single_index_map">_get<wbr></wbr>_single<wbr></wbr>_index<wbr></wbr>_map</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_handle_nested_fields" class="internal-link" title="fiftyone.core.dataset._handle_nested_fields">_handle<wbr></wbr>_nested<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_index_frames" class="internal-link" title="fiftyone.core.dataset._index_frames">_index<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_list_datasets" class="internal-link" title="fiftyone.core.dataset._list_datasets">_list<wbr></wbr>_datasets</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_list_datasets_info" class="internal-link" title="fiftyone.core.dataset._list_datasets_info">_list<wbr></wbr>_datasets<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_list_datasets_query" class="internal-link" title="fiftyone.core.dataset._list_datasets_query">_list<wbr></wbr>_datasets<wbr></wbr>_query</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_clips_source_dataset" class="internal-link" title="fiftyone.core.dataset._load_clips_source_dataset">_load<wbr></wbr>_clips<wbr></wbr>_source<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_dataset" class="internal-link" title="fiftyone.core.dataset._load_dataset">_load<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_frame_collection_name" class="internal-link" title="fiftyone.core.dataset._make_frame_collection_name">_make<wbr></wbr>_frame<wbr></wbr>_collection<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_merge_samples_generator" class="internal-link" title="fiftyone.core.dataset._make_merge_samples_generator">_make<wbr></wbr>_merge<wbr></wbr>_samples<wbr></wbr>_generator</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_sample_collection_name" class="internal-link" title="fiftyone.core.dataset._make_sample_collection_name">_make<wbr></wbr>_sample<wbr></wbr>_collection<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_dataset_doc" class="internal-link" title="fiftyone.core.dataset._merge_dataset_doc">_merge<wbr></wbr>_dataset<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_docs" class="internal-link" title="fiftyone.core.dataset._merge_docs">_merge<wbr></wbr>_docs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_label_list_field" class="internal-link" title="fiftyone.core.dataset._merge_label_list_field">_merge<wbr></wbr>_label<wbr></wbr>_list<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_list_field" class="internal-link" title="fiftyone.core.dataset._merge_list_field">_merge<wbr></wbr>_list<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_samples_pipeline" class="internal-link" title="fiftyone.core.dataset._merge_samples_pipeline">_merge<wbr></wbr>_samples<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_samples_python" class="internal-link" title="fiftyone.core.dataset._merge_samples_python">_merge<wbr></wbr>_samples<wbr></wbr>_python</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_field_mapping" class="internal-link" title="fiftyone.core.dataset._parse_field_mapping">_parse<wbr></wbr>_field<wbr></wbr>_mapping</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_fields" class="internal-link" title="fiftyone.core.dataset._parse_fields">_parse<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_save_view" class="internal-link" title="fiftyone.core.dataset._save_view">_save<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_set_field_read_only" class="internal-link" title="fiftyone.core.dataset._set_field_read_only">_set<wbr></wbr>_field<wbr></wbr>_read<wbr></wbr>_only</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_list" class="internal-link" title="fiftyone.core.dataset._to_list">_to<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_no_overwrite" class="internal-link" title="fiftyone.core.dataset._update_no_overwrite">_update<wbr></wbr>_no<wbr></wbr>_overwrite</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate_dataset_name" class="internal-link" title="fiftyone.core.dataset._validate_dataset_name">_validate<wbr></wbr>_dataset<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#foos" class="internal-link" title="fiftyone.core.dataset.foos">foos</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#fot" class="internal-link" title="fiftyone.core.dataset.fot">fot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#foud" class="internal-link" title="fiftyone.core.dataset.foud">foud</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.core.dataset.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_SUMMARY_FIELD_KEY" class="internal-link" title="fiftyone.core.dataset._SUMMARY_FIELD_KEY">_SUMMARY<wbr></wbr>_FIELD<wbr></wbr>_KEY</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.core.html" class="internal-link" title="The parent of this module">core</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.aggregations.html" class="internal-link" title="fiftyone.core.aggregations">aggregations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.html" class="internal-link" title="fiftyone.core.annotation">annotation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.brain.html" class="internal-link" title="fiftyone.core.brain">brain</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.cli.html" class="internal-link" title="fiftyone.core.cli">cli</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.clips.html" class="internal-link" title="fiftyone.core.clips">clips</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.collections.html" class="internal-link" title="fiftyone.core.collections">collections</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.html" class="internal-link" title="fiftyone.core.config">config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.context.html" class="internal-link" title="fiftyone.core.context">context</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.dataset.html" class="internal-link" title="fiftyone.core.dataset">dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.html" class="internal-link" title="fiftyone.core.document">document</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.html" class="internal-link" title="fiftyone.core.evaluation">evaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.expressions.html" class="internal-link" title="fiftyone.core.expressions">expressions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.fields.html" class="internal-link" title="fiftyone.core.fields">fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.html" class="internal-link" title="fiftyone.core.frame">frame</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame_utils.html" class="internal-link" title="fiftyone.core.frame_utils">frame<wbr></wbr>_utils</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.groups.html" class="internal-link" title="fiftyone.core.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.json.html" class="internal-link" title="fiftyone.core.json">json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html" class="internal-link" title="fiftyone.core.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.logging.html" class="internal-link" title="fiftyone.core.logging">logging</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.media.html" class="internal-link" title="fiftyone.core.media">media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.metadata.html" class="internal-link" title="fiftyone.core.metadata">metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html" class="internal-link" title="fiftyone.core.models">models</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.html" class="internal-link" title="fiftyone.core.odm">odm</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.patches.html" class="internal-link" title="fiftyone.core.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.html" class="internal-link" title="fiftyone.core.runs">runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.html" class="internal-link" title="fiftyone.core.sample">sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.service.html" class="internal-link" title="fiftyone.core.service">service</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.html" class="internal-link" title="fiftyone.core.session">session</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.singletons.html" class="internal-link" title="fiftyone.core.singletons">singletons</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html" class="internal-link" title="fiftyone.core.stages">stages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.state.html" class="internal-link" title="fiftyone.core.state">state</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.storage.html" class="internal-link" title="fiftyone.core.storage">storage</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.threed.html" class="internal-link" title="fiftyone.core.threed">threed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.uid.html" class="internal-link" title="fiftyone.core.uid">uid</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.utils.html" class="internal-link" title="fiftyone.core.utils">utils</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.validation.html" class="internal-link" title="fiftyone.core.validation">validation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.video.html" class="internal-link" title="fiftyone.core.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.view.html" class="internal-link" title="fiftyone.core.view">view</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.dataset.html" class="internal-link" title="fiftyone.core.dataset">dataset</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>FiftyOne datasets.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id168">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset"><wbr></wbr>Dataset</a></code></td>
+    <td>A FiftyOne dataset.</td>
+  </tr><tr class="exception">
+    
+    <td>Exception</td>
+    <td><code><a href="fiftyone.core.dataset.DatasetNotFoundError.html" class="internal-link" title="fiftyone.core.dataset.DatasetNotFoundError"><wbr></wbr>Dataset<wbr></wbr>Not<wbr></wbr>Found<wbr></wbr>Error</a></code></td>
+    <td>Exception raised when a dataset is not found.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#dataset_exists" class="internal-link" title="fiftyone.core.dataset.dataset_exists">dataset<wbr></wbr>_exists</a></code></td>
+    <td>Checks if the dataset exists.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_dataset" class="internal-link" title="fiftyone.core.dataset.delete_dataset">delete<wbr></wbr>_dataset</a></code></td>
+    <td>Deletes the FiftyOne dataset with the given name.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_datasets" class="internal-link" title="fiftyone.core.dataset.delete_datasets">delete<wbr></wbr>_datasets</a></code></td>
+    <td>Deletes all FiftyOne datasets whose names match the given glob pattern.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_non_persistent_datasets" class="internal-link" title="fiftyone.core.dataset.delete_non_persistent_datasets">delete<wbr></wbr>_non<wbr></wbr>_persistent<wbr></wbr>_datasets</a></code></td>
+    <td>Deletes all non-persistent datasets.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_default_dataset_dir" class="internal-link" title="fiftyone.core.dataset.get_default_dataset_dir">get<wbr></wbr>_default<wbr></wbr>_dataset<wbr></wbr>_dir</a></code></td>
+    <td>Returns the default dataset directory for the dataset with the given name.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_default_dataset_name" class="internal-link" title="fiftyone.core.dataset.get_default_dataset_name">get<wbr></wbr>_default<wbr></wbr>_dataset<wbr></wbr>_name</a></code></td>
+    <td>Returns a default dataset name based on the current time.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_datasets" class="internal-link" title="fiftyone.core.dataset.list_datasets">list<wbr></wbr>_datasets</a></code></td>
+    <td>Lists the available FiftyOne datasets.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load_dataset" class="internal-link" title="fiftyone.core.dataset.load_dataset">load<wbr></wbr>_dataset</a></code></td>
+    <td>Loads the FiftyOne dataset with the given name.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#make_unique_dataset_name" class="internal-link" title="fiftyone.core.dataset.make_unique_dataset_name">make<wbr></wbr>_unique<wbr></wbr>_dataset<wbr></wbr>_name</a></code></td>
+    <td>Makes a unique dataset name with the given root name.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#foos" class="internal-link" title="fiftyone.core.dataset.foos">foos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#fot" class="internal-link" title="fiftyone.core.dataset.fot">fot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#foud" class="internal-link" title="fiftyone.core.dataset.foud">foud</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.core.dataset.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_add_collection_with_new_ids" class="internal-link" title="fiftyone.core.dataset._add_collection_with_new_ids">_add<wbr></wbr>_collection<wbr></wbr>_with<wbr></wbr>_new<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_always_select_field" class="internal-link" title="fiftyone.core.dataset._always_select_field">_always<wbr></wbr>_select<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_cleanup_frame_index" class="internal-link" title="fiftyone.core.dataset._cleanup_frame_index">_cleanup<wbr></wbr>_frame<wbr></wbr>_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_cleanup_index" class="internal-link" title="fiftyone.core.dataset._cleanup_index">_cleanup<wbr></wbr>_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_collection" class="internal-link" title="fiftyone.core.dataset._clone_collection">_clone<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_collection_indexes" class="internal-link" title="fiftyone.core.dataset._clone_collection_indexes">_clone<wbr></wbr>_collection<wbr></wbr>_indexes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_extras" class="internal-link" title="fiftyone.core.dataset._clone_extras">_clone<wbr></wbr>_extras</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_indexes" class="internal-link" title="fiftyone.core.dataset._clone_indexes">_clone<wbr></wbr>_indexes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_reference_doc" class="internal-link" title="fiftyone.core.dataset._clone_reference_doc">_clone<wbr></wbr>_reference<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_clone_run" class="internal-link" title="fiftyone.core.dataset._clone_run">_clone<wbr></wbr>_run</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_create_dataset" class="internal-link" title="fiftyone.core.dataset._create_dataset">_create<wbr></wbr>_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_create_frame_document_cls" class="internal-link" title="fiftyone.core.dataset._create_frame_document_cls">_create<wbr></wbr>_frame<wbr></wbr>_document<wbr></wbr>_cls</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_create_group_indexes" class="internal-link" title="fiftyone.core.dataset._create_group_indexes">_create<wbr></wbr>_group<wbr></wbr>_indexes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_create_indexes" class="internal-link" title="fiftyone.core.dataset._create_indexes">_create<wbr></wbr>_indexes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_create_sample_document_cls" class="internal-link" title="fiftyone.core.dataset._create_sample_document_cls">_create<wbr></wbr>_sample<wbr></wbr>_document<wbr></wbr>_cls</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_declare_fields" class="internal-link" title="fiftyone.core.dataset._declare_fields">_declare<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_delete_dataset_doc" class="internal-link" title="fiftyone.core.dataset._delete_dataset_doc">_delete<wbr></wbr>_dataset<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_delete_non_persistent_datasets" class="internal-link" title="fiftyone.core.dataset._delete_non_persistent_datasets">_delete<wbr></wbr>_non<wbr></wbr>_persistent<wbr></wbr>_datasets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_discard_none" class="internal-link" title="fiftyone.core.dataset._discard_none">_discard<wbr></wbr>_none</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_load_dataset" class="internal-link" title="fiftyone.core.dataset._do_load_dataset">_do<wbr></wbr>_load<wbr></wbr>_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ensure_index" class="internal-link" title="fiftyone.core.dataset._ensure_index">_ensure<wbr></wbr>_index</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_extract_archive_if_necessary" class="internal-link" title="fiftyone.core.dataset._extract_archive_if_necessary">_extract<wbr></wbr>_archive<wbr></wbr>_if<wbr></wbr>_necessary</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_finalize_frames" class="internal-link" title="fiftyone.core.dataset._finalize_frames">_finalize<wbr></wbr>_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_collstats" class="internal-link" title="fiftyone.core.dataset._get_collstats">_get<wbr></wbr>_collstats</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_frame_ids" class="internal-link" title="fiftyone.core.dataset._get_frame_ids">_get<wbr></wbr>_frame<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_frame_ids_for_sample" class="internal-link" title="fiftyone.core.dataset._get_frame_ids_for_sample">_get<wbr></wbr>_frame<wbr></wbr>_ids<wbr></wbr>_for<wbr></wbr>_sample</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_frames_pipeline" class="internal-link" title="fiftyone.core.dataset._get_frames_pipeline">_get<wbr></wbr>_frames<wbr></wbr>_pipeline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_group_field" class="internal-link" title="fiftyone.core.dataset._get_group_field">_get<wbr></wbr>_group<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_group_id" class="internal-link" title="fiftyone.core.dataset._get_group_id">_get<wbr></wbr>_group<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_group_ids" class="internal-link" title="fiftyone.core.dataset._get_group_ids">_get<wbr></wbr>_group<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_indexes_to_skip" class="internal-link" title="fiftyone.core.dataset._get_indexes_to_skip">_get<wbr></wbr>_indexes<wbr></wbr>_to<wbr></wbr>_skip</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_media_type" class="internal-link" title="fiftyone.core.dataset._get_media_type">_get<wbr></wbr>_media<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_random_characters" class="internal-link" title="fiftyone.core.dataset._get_random_characters">_get<wbr></wbr>_random<wbr></wbr>_characters</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_sample_ids" class="internal-link" title="fiftyone.core.dataset._get_sample_ids">_get<wbr></wbr>_sample<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_samples_pipeline" class="internal-link" title="fiftyone.core.dataset._get_samples_pipeline">_get<wbr></wbr>_samples<wbr></wbr>_pipeline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_single_index_map" class="internal-link" title="fiftyone.core.dataset._get_single_index_map">_get<wbr></wbr>_single<wbr></wbr>_index<wbr></wbr>_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_handle_nested_fields" class="internal-link" title="fiftyone.core.dataset._handle_nested_fields">_handle<wbr></wbr>_nested<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_index_frames" class="internal-link" title="fiftyone.core.dataset._index_frames">_index<wbr></wbr>_frames</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_list_datasets" class="internal-link" title="fiftyone.core.dataset._list_datasets">_list<wbr></wbr>_datasets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_list_datasets_info" class="internal-link" title="fiftyone.core.dataset._list_datasets_info">_list<wbr></wbr>_datasets<wbr></wbr>_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_list_datasets_query" class="internal-link" title="fiftyone.core.dataset._list_datasets_query">_list<wbr></wbr>_datasets<wbr></wbr>_query</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_clips_source_dataset" class="internal-link" title="fiftyone.core.dataset._load_clips_source_dataset">_load<wbr></wbr>_clips<wbr></wbr>_source<wbr></wbr>_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_dataset" class="internal-link" title="fiftyone.core.dataset._load_dataset">_load<wbr></wbr>_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_frame_collection_name" class="internal-link" title="fiftyone.core.dataset._make_frame_collection_name">_make<wbr></wbr>_frame<wbr></wbr>_collection<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_merge_samples_generator" class="internal-link" title="fiftyone.core.dataset._make_merge_samples_generator">_make<wbr></wbr>_merge<wbr></wbr>_samples<wbr></wbr>_generator</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_sample_collection_name" class="internal-link" title="fiftyone.core.dataset._make_sample_collection_name">_make<wbr></wbr>_sample<wbr></wbr>_collection<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_dataset_doc" class="internal-link" title="fiftyone.core.dataset._merge_dataset_doc">_merge<wbr></wbr>_dataset<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_docs" class="internal-link" title="fiftyone.core.dataset._merge_docs">_merge<wbr></wbr>_docs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_label_list_field" class="internal-link" title="fiftyone.core.dataset._merge_label_list_field">_merge<wbr></wbr>_label<wbr></wbr>_list<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_list_field" class="internal-link" title="fiftyone.core.dataset._merge_list_field">_merge<wbr></wbr>_list<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_samples_pipeline" class="internal-link" title="fiftyone.core.dataset._merge_samples_pipeline">_merge<wbr></wbr>_samples<wbr></wbr>_pipeline</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_samples_python" class="internal-link" title="fiftyone.core.dataset._merge_samples_python">_merge<wbr></wbr>_samples<wbr></wbr>_python</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_field_mapping" class="internal-link" title="fiftyone.core.dataset._parse_field_mapping">_parse<wbr></wbr>_field<wbr></wbr>_mapping</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_fields" class="internal-link" title="fiftyone.core.dataset._parse_fields">_parse<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_save_view" class="internal-link" title="fiftyone.core.dataset._save_view">_save<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_set_field_read_only" class="internal-link" title="fiftyone.core.dataset._set_field_read_only">_set<wbr></wbr>_field<wbr></wbr>_read<wbr></wbr>_only</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_list" class="internal-link" title="fiftyone.core.dataset._to_list">_to<wbr></wbr>_list</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_update_no_overwrite" class="internal-link" title="fiftyone.core.dataset._update_no_overwrite">_update<wbr></wbr>_no<wbr></wbr>_overwrite</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_validate_dataset_name" class="internal-link" title="fiftyone.core.dataset._validate_dataset_name">_validate<wbr></wbr>_dataset<wbr></wbr>_name</a></code></td>
+    <td>Validates that the given dataset name is available.</td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_SUMMARY_FIELD_KEY" class="internal-link" title="fiftyone.core.dataset._SUMMARY_FIELD_KEY">_SUMMARY<wbr></wbr>_FIELD<wbr></wbr>_KEY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.dataset_exists">
+    
+  </a>
+  <a name="dataset_exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">dataset_exists</span><span class="function-signature">(name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L94">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dataset_exists" title="fiftyone.core.dataset.dataset_exists">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Checks if the dataset exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of the dataset</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.delete_dataset">
+    
+  </a>
+  <a name="delete_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_dataset</span><span class="function-signature">(name, verbose=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L226">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_dataset" title="fiftyone.core.dataset.delete_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes the FiftyOne dataset with the given name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of the dataset</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to log the name of the deleted dataset</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.delete_datasets">
+    
+  </a>
+  <a name="delete_datasets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_datasets</span><span class="function-signature">(glob_patt, verbose=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L239">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_datasets" title="fiftyone.core.dataset.delete_datasets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes all FiftyOne datasets whose names match the given glob pattern.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob<wbr></wbr>_patt</span></td><td class="fieldArgDesc">a glob pattern of datasets to delete</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to log the names of deleted datasets</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.delete_non_persistent_datasets">
+    
+  </a>
+  <a name="delete_non_persistent_datasets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_non_persistent_datasets</span><span class="function-signature">(verbose=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L250">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_non_persistent_datasets" title="fiftyone.core.dataset.delete_non_persistent_datasets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes all non-persistent datasets.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">verbose:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to log the names of deleted datasets</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.get_default_dataset_dir">
+    
+  </a>
+  <a name="get_default_dataset_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_default_dataset_dir</span><span class="function-signature">(name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L213">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_default_dataset_dir" title="fiftyone.core.dataset.get_default_dataset_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the default dataset directory for the dataset with the given
+name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the dataset name</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the default directory for the dataset</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.get_default_dataset_name">
+    
+  </a>
+  <a name="get_default_dataset_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_default_dataset_name</span><span class="function-signature">()</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L175">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_default_dataset_name" title="fiftyone.core.dataset.get_default_dataset_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a default dataset name based on the current time.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dataset name</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.list_datasets">
+    
+  </a>
+  <a name="list_datasets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_datasets</span><span class="function-signature">(glob_patt=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, info=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L75">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_datasets" title="fiftyone.core.dataset.list_datasets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists the available FiftyOne datasets.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob<wbr></wbr>_patt:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional glob pattern of names to return</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">only include datasets that have the specified tag or list
+of tags</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">info:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return info dicts describing each dataset
+rather than just their names</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of dataset names or info dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.load_dataset">
+    
+  </a>
+  <a name="load_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_dataset</span><span class="function-signature">(name, create_if_necessary=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L144">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_dataset" title="fiftyone.core.dataset.load_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads the FiftyOne dataset with the given name.</p>
+<p>To create a new dataset, use the <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">Dataset</a></code> constructor.</p>
+<div class="rst-admonition rst-note">
+<p class="rst-admonition-title rst-first">Note</p>
+<p class="rst-last"><code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">Dataset</a></code> instances are singletons keyed by their name, so all
+calls to this method with a given dataset <tt class="rst-docutils rst-literal">name</tt> in a program will
+return the same object.</p>
+</div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of the dataset</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">create<wbr></wbr>_if<wbr></wbr>_necessary:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">if no dataset exists, create an empty one</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">Dataset</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="fiftyone.core.dataset.DatasetNotFoundError.html" class="internal-link" title="fiftyone.core.dataset.DatasetNotFoundError">DatasetNotFoundError</a></code></td><td>if the dataset does not exist and
+<code>create_if_necessary</code> is False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.dataset.make_unique_dataset_name">
+    
+  </a>
+  <a name="make_unique_dataset_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_unique_dataset_name</span><span class="function-signature">(root)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L189">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#make_unique_dataset_name" title="fiftyone.core.dataset.make_unique_dataset_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Makes a unique dataset name with the given root name.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">root</span></td><td class="fieldArgDesc">the root name for the dataset</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the dataset name</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.core.dataset.foos">
+    
+  </a>
+  <a name="foos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">foos</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L59">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#foos" title="fiftyone.core.dataset.foos">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.core.dataset.fot">
+    
+  </a>
+  <a name="fot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">fot</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L57">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#fot" title="fiftyone.core.dataset.fot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.core.dataset.foud">
+    
+  </a>
+  <a name="foud">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">foud</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L58">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#foud" title="fiftyone.core.dataset.foud">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.core.dataset.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L64">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.core.dataset.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._add_collection_with_new_ids">
+    
+  </a>
+  <a name="_add_collection_with_new_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_add_collection_with_new_ids</span><span class="function-signature">(dataset, sample_collection, include_info=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite_info=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9107">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_add_collection_with_new_ids" title="fiftyone.core.dataset._add_collection_with_new_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._always_select_field">
+    
+  </a>
+  <a name="_always_select_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_always_select_field</span><span class="function-signature">(sample_collection, field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9961">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_always_select_field" title="fiftyone.core.dataset._always_select_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._cleanup_frame_index">
+    
+  </a>
+  <a name="_cleanup_frame_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_cleanup_frame_index</span><span class="function-signature">(dataset, index)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9083">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_cleanup_frame_index" title="fiftyone.core.dataset._cleanup_frame_index">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._cleanup_index">
+    
+  </a>
+  <a name="_cleanup_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_cleanup_index</span><span class="function-signature">(dataset, db_field, new_index, dropped_index)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9068">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_cleanup_index" title="fiftyone.core.dataset._cleanup_index">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_collection">
+    
+  </a>
+  <a name="_clone_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_collection</span><span class="function-signature">(sample_collection, name, persistent)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8475">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_collection" title="fiftyone.core.dataset._clone_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_collection_indexes">
+    
+  </a>
+  <a name="_clone_collection_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_collection_indexes</span><span class="function-signature">(src_collection_name, dst_collection_name, skip=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8265">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_collection_indexes" title="fiftyone.core.dataset._clone_collection_indexes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_extras">
+    
+  </a>
+  <a name="_clone_extras">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_extras</span><span class="function-signature">(src_dataset, dst_dataset, now)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8956">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_extras" title="fiftyone.core.dataset._clone_extras">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_indexes">
+    
+  </a>
+  <a name="_clone_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_indexes</span><span class="function-signature">(src_collection, dst_doc)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8195">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_indexes" title="fiftyone.core.dataset._clone_indexes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_reference_doc">
+    
+  </a>
+  <a name="_clone_reference_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_reference_doc</span><span class="function-signature">(ref_doc)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9019">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_reference_doc" title="fiftyone.core.dataset._clone_reference_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._clone_run">
+    
+  </a>
+  <a name="_clone_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_clone_run</span><span class="function-signature">(run_doc)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9024">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_clone_run" title="fiftyone.core.dataset._clone_run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._create_dataset">
+    
+  </a>
+  <a name="_create_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_dataset</span><span class="function-signature">(obj, name, persistent=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, _patches=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, _frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, _clips=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, _src_collection=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8108">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_create_dataset" title="fiftyone.core.dataset._create_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._create_frame_document_cls">
+    
+  </a>
+  <a name="_create_frame_document_cls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_frame_document_cls</span><span class="function-signature">(dataset, frame_collection_name, field_docs=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8313">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_create_frame_document_cls" title="fiftyone.core.dataset._create_frame_document_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._create_group_indexes">
+    
+  </a>
+  <a name="_create_group_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_group_indexes</span><span class="function-signature">(sample_collection_name, group_field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8187">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_create_group_indexes" title="fiftyone.core.dataset._create_group_indexes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._create_indexes">
+    
+  </a>
+  <a name="_create_indexes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_indexes</span><span class="function-signature">(sample_collection_name, frame_collection_name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8169">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_create_indexes" title="fiftyone.core.dataset._create_indexes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._create_sample_document_cls">
+    
+  </a>
+  <a name="_create_sample_document_cls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_create_sample_document_cls</span><span class="function-signature">(dataset, sample_collection_name, field_docs=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8303">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_create_sample_document_cls" title="fiftyone.core.dataset._create_sample_document_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._declare_fields">
+    
+  </a>
+  <a name="_declare_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_declare_fields</span><span class="function-signature">(dataset, doc_cls, field_docs=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8323">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_declare_fields" title="fiftyone.core.dataset._declare_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._delete_dataset_doc">
+    
+  </a>
+  <a name="_delete_dataset_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_delete_dataset_doc</span><span class="function-signature">(dataset_doc)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8419">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_delete_dataset_doc" title="fiftyone.core.dataset._delete_dataset_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._delete_non_persistent_datasets">
+    
+  </a>
+  <a name="_delete_non_persistent_datasets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_delete_non_persistent_datasets</span><span class="function-signature">(verbose=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L259">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_delete_non_persistent_datasets" title="fiftyone.core.dataset._delete_non_persistent_datasets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._discard_none">
+    
+  </a>
+  <a name="_discard_none">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_discard_none</span><span class="function-signature">(values)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10119">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_discard_none" title="fiftyone.core.dataset._discard_none">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._do_load_dataset">
+    
+  </a>
+  <a name="_do_load_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_load_dataset</span><span class="function-signature">(obj, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8386">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_load_dataset" title="fiftyone.core.dataset._do_load_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._ensure_index">
+    
+  </a>
+  <a name="_ensure_index">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ensure_index</span><span class="function-signature">(dataset, db_field, unique=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9038">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ensure_index" title="fiftyone.core.dataset._ensure_index">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._extract_archive_if_necessary">
+    
+  </a>
+  <a name="_extract_archive_if_necessary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_extract_archive_if_necessary</span><span class="function-signature">(archive_path, cleanup)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10177">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_extract_archive_if_necessary" title="fiftyone.core.dataset._extract_archive_if_necessary">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._finalize_frames">
+    
+  </a>
+  <a name="_finalize_frames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_finalize_frames</span><span class="function-signature">(sample_collection, key_field, frame_key_field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9983">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_finalize_frames" title="fiftyone.core.dataset._finalize_frames">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_collstats">
+    
+  </a>
+  <a name="_get_collstats">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_collstats</span><span class="function-signature">(coll)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9099">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_collstats" title="fiftyone.core.dataset._get_collstats">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_frame_ids">
+    
+  </a>
+  <a name="_get_frame_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_ids</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10038">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_ids" title="fiftyone.core.dataset._get_frame_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_frame_ids_for_sample">
+    
+  </a>
+  <a name="_get_frame_ids_for_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_ids_for_sample</span><span class="function-signature">(sample)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10067">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_ids_for_sample" title="fiftyone.core.dataset._get_frame_ids_for_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_frames_pipeline">
+    
+  </a>
+  <a name="_get_frames_pipeline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frames_pipeline</span><span class="function-signature">(sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8616">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frames_pipeline" title="fiftyone.core.dataset._get_frames_pipeline">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_group_field">
+    
+  </a>
+  <a name="_get_group_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_group_field</span><span class="function-signature">(schema)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10007">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_group_field" title="fiftyone.core.dataset._get_group_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_group_id">
+    
+  </a>
+  <a name="_get_group_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_group_id</span><span class="function-signature">(sample_or_group)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10099">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_group_id" title="fiftyone.core.dataset._get_group_id">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_group_ids">
+    
+  </a>
+  <a name="_get_group_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_group_ids</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10075">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_group_ids" title="fiftyone.core.dataset._get_group_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_indexes_to_skip">
+    
+  </a>
+  <a name="_get_indexes_to_skip">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_indexes_to_skip</span><span class="function-signature">(view, frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8229">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_indexes_to_skip" title="fiftyone.core.dataset._get_indexes_to_skip">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_media_type">
+    
+  </a>
+  <a name="_get_media_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_media_type</span><span class="function-signature">(sample)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9999">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_media_type" title="fiftyone.core.dataset._get_media_type">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_random_characters">
+    
+  </a>
+  <a name="_get_random_characters">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_random_characters</span><span class="function-signature">(n)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8050">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_random_characters" title="fiftyone.core.dataset._get_random_characters">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_sample_ids">
+    
+  </a>
+  <a name="_get_sample_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_sample_ids</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10017">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_sample_ids" title="fiftyone.core.dataset._get_sample_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_samples_pipeline">
+    
+  </a>
+  <a name="_get_samples_pipeline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_samples_pipeline</span><span class="function-signature">(sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8603">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_samples_pipeline" title="fiftyone.core.dataset._get_samples_pipeline">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._get_single_index_map">
+    
+  </a>
+  <a name="_get_single_index_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_single_index_map</span><span class="function-signature">(coll)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9090">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_single_index_map" title="fiftyone.core.dataset._get_single_index_map">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._handle_nested_fields">
+    
+  </a>
+  <a name="_handle_nested_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_handle_nested_fields</span><span class="function-signature">(schema)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10148">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_handle_nested_fields" title="fiftyone.core.dataset._handle_nested_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._index_frames">
+    
+  </a>
+  <a name="_index_frames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_index_frames</span><span class="function-signature">(dataset, key_field, frame_key_field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9933">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_index_frames" title="fiftyone.core.dataset._index_frames">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._list_datasets">
+    
+  </a>
+  <a name="_list_datasets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list_datasets</span><span class="function-signature">(include_private=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, glob_patt=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8056">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_list_datasets" title="fiftyone.core.dataset._list_datasets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._list_datasets_info">
+    
+  </a>
+  <a name="_list_datasets_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list_datasets_info</span><span class="function-signature">(include_private=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, glob_patt=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8068">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_list_datasets_info" title="fiftyone.core.dataset._list_datasets_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._list_datasets_query">
+    
+  </a>
+  <a name="_list_datasets_query">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_list_datasets_query</span><span class="function-signature">(include_private=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, glob_patt=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8089">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_list_datasets_query" title="fiftyone.core.dataset._list_datasets_query">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._load_clips_source_dataset">
+    
+  </a>
+  <a name="_load_clips_source_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_clips_source_dataset</span><span class="function-signature">(frame_collection_name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8347">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_clips_source_dataset" title="fiftyone.core.dataset._load_clips_source_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._load_dataset">
+    
+  </a>
+  <a name="_load_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_dataset</span><span class="function-signature">(obj, name, virtual=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8364">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_dataset" title="fiftyone.core.dataset._load_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._make_frame_collection_name">
+    
+  </a>
+  <a name="_make_frame_collection_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_frame_collection_name</span><span class="function-signature">(sample_collection_name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8299">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_frame_collection_name" title="fiftyone.core.dataset._make_frame_collection_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._make_merge_samples_generator">
+    
+  </a>
+  <a name="_make_merge_samples_generator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_merge_samples_generator</span><span class="function-signature">(dataset, samples, key_fcn, id_map, skip_existing=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, insert_new=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, merge_lists=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, expand_schema=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9291">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_merge_samples_generator" title="fiftyone.core.dataset._make_merge_samples_generator">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._make_sample_collection_name">
+    
+  </a>
+  <a name="_make_sample_collection_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_sample_collection_name</span><span class="function-signature">(dataset_id, patches=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, clips=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8282">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_sample_collection_name" title="fiftyone.core.dataset._make_sample_collection_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_dataset_doc">
+    
+  </a>
+  <a name="_merge_dataset_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_dataset_doc</span><span class="function-signature">(dataset, collection_or_doc, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, expand_schema=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, merge_info=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite_info=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8777">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_dataset_doc" title="fiftyone.core.dataset._merge_dataset_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_docs">
+    
+  </a>
+  <a name="_merge_docs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_docs</span><span class="function-signature">(sample_collection, merge_lists=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, delete_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, overwrite=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9695">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_docs" title="fiftyone.core.dataset._merge_docs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_label_list_field">
+    
+  </a>
+  <a name="_merge_label_list_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_label_list_field</span><span class="function-signature">(doc, elem_field, overwrite=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9837">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_label_list_field" title="fiftyone.core.dataset._merge_label_list_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_list_field">
+    
+  </a>
+  <a name="_merge_list_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_list_field</span><span class="function-signature">(doc, list_field)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9806">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_list_field" title="fiftyone.core.dataset._merge_list_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_samples_pipeline">
+    
+  </a>
+  <a name="_merge_samples_pipeline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_samples_pipeline</span><span class="function-signature">(src_collection, dst_dataset, key_field, skip_existing=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, insert_new=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, merge_lists=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9348">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_samples_pipeline" title="fiftyone.core.dataset._merge_samples_pipeline">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._merge_samples_python">
+    
+  </a>
+  <a name="_merge_samples_python">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_samples_python</span><span class="function-signature">(dataset, samples, key_field=<span class="rst-variable-quote">'</span><span class="rst-variable-string">filepath</span><span class="rst-variable-quote">'</span>, key_fcn=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, skip_existing=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, insert_new=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, merge_lists=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, expand_schema=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, dynamic=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, num_samples=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L9228">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_samples_python" title="fiftyone.core.dataset._merge_samples_python">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._parse_field_mapping">
+    
+  </a>
+  <a name="_parse_field_mapping">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_field_mapping</span><span class="function-signature">(field_mapping)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10132">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_field_mapping" title="fiftyone.core.dataset._parse_field_mapping">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._parse_fields">
+    
+  </a>
+  <a name="_parse_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_fields</span><span class="function-signature">(field_names)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10125">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_fields" title="fiftyone.core.dataset._parse_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._save_view">
+    
+  </a>
+  <a name="_save_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_save_view</span><span class="function-signature">(view, fields=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8652">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_save_view" title="fiftyone.core.dataset._save_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._set_field_read_only">
+    
+  </a>
+  <a name="_set_field_read_only">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_field_read_only</span><span class="function-signature">(field_doc, read_only)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10170">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_set_field_read_only" title="fiftyone.core.dataset._set_field_read_only">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._to_list">
+    
+  </a>
+  <a name="_to_list">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_list</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L10112">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_list" title="fiftyone.core.dataset._to_list">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._update_no_overwrite">
+    
+  </a>
+  <a name="_update_no_overwrite">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_no_overwrite</span><span class="function-signature">(d, dnew)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L8952">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_no_overwrite" title="fiftyone.core.dataset._update_no_overwrite">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.dataset._validate_dataset_name">
+    
+  </a>
+  <a name="_validate_dataset_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate_dataset_name</span><span class="function-signature">(name, skip=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L107">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate_dataset_name" title="fiftyone.core.dataset._validate_dataset_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Validates that the given dataset name is available.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">a dataset name</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">Dataset</a></code> to ignore</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the slug</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError" class="intersphinx-link">ValueError</a></code></td><td>if the name is not available</td></tr></table></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.core.dataset._SUMMARY_FIELD_KEY">
+    
+  </a>
+  <a name="_SUMMARY_FIELD_KEY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_SUMMARY_FIELD_KEY</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/dataset.py#L62">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_SUMMARY_FIELD_KEY" title="fiftyone.core.dataset._SUMMARY_FIELD_KEY">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">_summary_field</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

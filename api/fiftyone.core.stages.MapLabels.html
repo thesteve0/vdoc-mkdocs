@@ -1,0 +1,2085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.stages.MapLabels</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.stages.MapLabels.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.stages.MapLabels.html" class="internal-link" title="This class"><wbr></wbr>Map<wbr></wbr>Labels</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.stages.MapLabels.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_edited_fields" class="internal-link" title="fiftyone.core.stages.MapLabels.get_edited_fields">get<wbr></wbr>_edited<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_mongo" class="internal-link" title="fiftyone.core.stages.MapLabels.to_mongo">to<wbr></wbr>_mongo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#validate" class="internal-link" title="fiftyone.core.stages.MapLabels.validate">validate</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_params" class="internal-link" title="fiftyone.core.stages.MapLabels._params">_params</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_kwargs" class="internal-link" title="fiftyone.core.stages.MapLabels._kwargs">_kwargs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_needs_frames" class="internal-link" title="fiftyone.core.stages.MapLabels._needs_frames">_needs<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_needs_group_slices" class="internal-link" title="fiftyone.core.stages.MapLabels._needs_group_slices">_needs<wbr></wbr>_group<wbr></wbr>_slices</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#__eq__" class="internal-link" title="fiftyone.core.stages.ViewStage.__eq__">__eq__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#__repr__" class="internal-link" title="fiftyone.core.stages.ViewStage.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#__str__" class="internal-link" title="fiftyone.core.stages.ViewStage.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#get_excluded_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_excluded_fields">get<wbr></wbr>_excluded<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#get_filtered_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_filtered_fields">get<wbr></wbr>_filtered<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#get_group_expr" class="internal-link" title="fiftyone.core.stages.ViewStage.get_group_expr">get<wbr></wbr>_group<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#get_media_type" class="internal-link" title="fiftyone.core.stages.ViewStage.get_media_type">get<wbr></wbr>_media<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#get_selected_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_selected_fields">get<wbr></wbr>_selected<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#load_view" class="internal-link" title="fiftyone.core.stages.ViewStage.load_view">load<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#_from_dict" class="internal-link" title="fiftyone.core.stages.ViewStage._from_dict">_from<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#_serialize" class="internal-link" title="fiftyone.core.stages.ViewStage._serialize">_serialize</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#field" class="internal-link" title="fiftyone.core.stages.MapLabels.field">field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#map" class="internal-link" title="fiftyone.core.stages.MapLabels.map">map</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_field" class="internal-link" title="fiftyone.core.stages.MapLabels._field">_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_labels_field" class="internal-link" title="fiftyone.core.stages.MapLabels._labels_field">_labels<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_map" class="internal-link" title="fiftyone.core.stages.MapLabels._map">_map</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#has_view" class="internal-link" title="fiftyone.core.stages.ViewStage.has_view">has<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#outputs_dynamic_groups" class="internal-link" title="fiftyone.core.stages.ViewStage.outputs_dynamic_groups">outputs<wbr></wbr>_dynamic<wbr></wbr>_groups</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html#_uuid" class="internal-link" title="fiftyone.core.stages.ViewStage._uuid">_uuid</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.stages.html" class="internal-link" title="The parent of this class">stages</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Concat.html" class="internal-link" title="fiftyone.core.stages.Concat"><wbr></wbr>Concat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Exclude.html" class="internal-link" title="fiftyone.core.stages.Exclude"><wbr></wbr>Exclude</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ExcludeBy.html" class="internal-link" title="fiftyone.core.stages.ExcludeBy"><wbr></wbr>Exclude<wbr></wbr>By</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ExcludeFields.html" class="internal-link" title="fiftyone.core.stages.ExcludeFields"><wbr></wbr>Exclude<wbr></wbr>Fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ExcludeFrames.html" class="internal-link" title="fiftyone.core.stages.ExcludeFrames"><wbr></wbr>Exclude<wbr></wbr>Frames</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ExcludeGroups.html" class="internal-link" title="fiftyone.core.stages.ExcludeGroups"><wbr></wbr>Exclude<wbr></wbr>Groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ExcludeLabels.html" class="internal-link" title="fiftyone.core.stages.ExcludeLabels"><wbr></wbr>Exclude<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Exists.html" class="internal-link" title="fiftyone.core.stages.Exists"><wbr></wbr>Exists</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.FilterField.html" class="internal-link" title="fiftyone.core.stages.FilterField"><wbr></wbr>Filter<wbr></wbr>Field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.FilterKeypoints.html" class="internal-link" title="fiftyone.core.stages.FilterKeypoints"><wbr></wbr>Filter<wbr></wbr>Keypoints</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.FilterLabels.html" class="internal-link" title="fiftyone.core.stages.FilterLabels"><wbr></wbr>Filter<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Flatten.html" class="internal-link" title="fiftyone.core.stages.Flatten"><wbr></wbr>Flatten</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.GeoNear.html" class="internal-link" title="fiftyone.core.stages.GeoNear"><wbr></wbr>Geo<wbr></wbr>Near</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.GeoWithin.html" class="internal-link" title="fiftyone.core.stages.GeoWithin"><wbr></wbr>Geo<wbr></wbr>Within</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.GroupBy.html" class="internal-link" title="fiftyone.core.stages.GroupBy"><wbr></wbr>Group<wbr></wbr>By</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Limit.html" class="internal-link" title="fiftyone.core.stages.Limit"><wbr></wbr>Limit</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.LimitLabels.html" class="internal-link" title="fiftyone.core.stages.LimitLabels"><wbr></wbr>Limit<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.MapLabels.html" class="internal-link" title="fiftyone.core.stages.MapLabels"><wbr></wbr>Map<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Match.html" class="internal-link" title="fiftyone.core.stages.Match"><wbr></wbr>Match</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.MatchFrames.html" class="internal-link" title="fiftyone.core.stages.MatchFrames"><wbr></wbr>Match<wbr></wbr>Frames</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.MatchLabels.html" class="internal-link" title="fiftyone.core.stages.MatchLabels"><wbr></wbr>Match<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.MatchTags.html" class="internal-link" title="fiftyone.core.stages.MatchTags"><wbr></wbr>Match<wbr></wbr>Tags</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Mongo.html" class="internal-link" title="fiftyone.core.stages.Mongo"><wbr></wbr>Mongo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Select.html" class="internal-link" title="fiftyone.core.stages.Select"><wbr></wbr>Select</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectBy.html" class="internal-link" title="fiftyone.core.stages.SelectBy"><wbr></wbr>Select<wbr></wbr>By</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectFields.html" class="internal-link" title="fiftyone.core.stages.SelectFields"><wbr></wbr>Select<wbr></wbr>Fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectFrames.html" class="internal-link" title="fiftyone.core.stages.SelectFrames"><wbr></wbr>Select<wbr></wbr>Frames</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectGroups.html" class="internal-link" title="fiftyone.core.stages.SelectGroups"><wbr></wbr>Select<wbr></wbr>Groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectGroupSlices.html" class="internal-link" title="fiftyone.core.stages.SelectGroupSlices"><wbr></wbr>Select<wbr></wbr>Group<wbr></wbr>Slices</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SelectLabels.html" class="internal-link" title="fiftyone.core.stages.SelectLabels"><wbr></wbr>Select<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SetField.html" class="internal-link" title="fiftyone.core.stages.SetField"><wbr></wbr>Set<wbr></wbr>Field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Shuffle.html" class="internal-link" title="fiftyone.core.stages.Shuffle"><wbr></wbr>Shuffle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Skip.html" class="internal-link" title="fiftyone.core.stages.Skip"><wbr></wbr>Skip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SortBy.html" class="internal-link" title="fiftyone.core.stages.SortBy"><wbr></wbr>Sort<wbr></wbr>By</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.SortBySimilarity.html" class="internal-link" title="fiftyone.core.stages.SortBySimilarity"><wbr></wbr>Sort<wbr></wbr>By<wbr></wbr>Similarity</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.Take.html" class="internal-link" title="fiftyone.core.stages.Take"><wbr></wbr>Take</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ToClips.html" class="internal-link" title="fiftyone.core.stages.ToClips"><wbr></wbr>To<wbr></wbr>Clips</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ToEvaluationPatches.html" class="internal-link" title="fiftyone.core.stages.ToEvaluationPatches"><wbr></wbr>To<wbr></wbr>Evaluation<wbr></wbr>Patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ToFrames.html" class="internal-link" title="fiftyone.core.stages.ToFrames"><wbr></wbr>To<wbr></wbr>Frames</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ToPatches.html" class="internal-link" title="fiftyone.core.stages.ToPatches"><wbr></wbr>To<wbr></wbr>Patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ToTrajectories.html" class="internal-link" title="fiftyone.core.stages.ToTrajectories"><wbr></wbr>To<wbr></wbr>Trajectories</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStage.html" class="internal-link" title="fiftyone.core.stages.ViewStage"><wbr></wbr>View<wbr></wbr>Stage</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.ViewStageError.html" class="internal-link" title="fiftyone.core.stages.ViewStageError"><wbr></wbr>View<wbr></wbr>Stage<wbr></wbr>Error</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages._GeoStage.html" class="internal-link" title="fiftyone.core.stages._GeoStage">_<wbr></wbr>Geo<wbr></wbr>Stage</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages._ViewStageRepr.html" class="internal-link" title="fiftyone.core.stages._ViewStageRepr">_<wbr></wbr>View<wbr></wbr>Stage<wbr></wbr>Repr</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_extract_filter_field" class="internal-link" title="fiftyone.core.stages._extract_filter_field">_extract<wbr></wbr>_filter<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_default_similarity_run" class="internal-link" title="fiftyone.core.stages._get_default_similarity_run">_get<wbr></wbr>_default<wbr></wbr>_similarity<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_field_mongo_filter" class="internal-link" title="fiftyone.core.stages._get_field_mongo_filter">_get<wbr></wbr>_field<wbr></wbr>_mongo<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_field_only_matches_expr" class="internal-link" title="fiftyone.core.stages._get_field_only_matches_expr">_get<wbr></wbr>_field<wbr></wbr>_only<wbr></wbr>_matches<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_filter_field_pipeline" class="internal-link" title="fiftyone.core.stages._get_filter_field_pipeline">_get<wbr></wbr>_filter<wbr></wbr>_field<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_filter_frames_field_pipeline" class="internal-link" title="fiftyone.core.stages._get_filter_frames_field_pipeline">_get<wbr></wbr>_filter<wbr></wbr>_frames<wbr></wbr>_field<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_filter_frames_list_field_pipeline" class="internal-link" title="fiftyone.core.stages._get_filter_frames_list_field_pipeline">_get<wbr></wbr>_filter<wbr></wbr>_frames<wbr></wbr>_list<wbr></wbr>_field<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_filter_list_field_pipeline" class="internal-link" title="fiftyone.core.stages._get_filter_list_field_pipeline">_get<wbr></wbr>_filter<wbr></wbr>_list<wbr></wbr>_field<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_frames_field_only_matches_expr" class="internal-link" title="fiftyone.core.stages._get_frames_field_only_matches_expr">_get<wbr></wbr>_frames<wbr></wbr>_field<wbr></wbr>_only<wbr></wbr>_matches<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_frames_list_field_only_matches_expr" class="internal-link" title="fiftyone.core.stages._get_frames_list_field_only_matches_expr">_get<wbr></wbr>_frames<wbr></wbr>_list<wbr></wbr>_field<wbr></wbr>_only<wbr></wbr>_matches<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_group_id" class="internal-link" title="fiftyone.core.stages._get_group_id">_get<wbr></wbr>_group<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_label_field_only_matches_expr" class="internal-link" title="fiftyone.core.stages._get_label_field_only_matches_expr">_get<wbr></wbr>_label<wbr></wbr>_field<wbr></wbr>_only<wbr></wbr>_matches<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_list_field_mongo_filter" class="internal-link" title="fiftyone.core.stages._get_list_field_mongo_filter">_get<wbr></wbr>_list<wbr></wbr>_field<wbr></wbr>_mongo<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_list_field_only_matches_expr" class="internal-link" title="fiftyone.core.stages._get_list_field_only_matches_expr">_get<wbr></wbr>_list<wbr></wbr>_field<wbr></wbr>_only<wbr></wbr>_matches<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_list_trajectory_mongo_filter" class="internal-link" title="fiftyone.core.stages._get_list_trajectory_mongo_filter">_get<wbr></wbr>_list<wbr></wbr>_trajectory<wbr></wbr>_mongo<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_meta_filtered_fields" class="internal-link" title="fiftyone.core.stages._get_meta_filtered_fields">_get<wbr></wbr>_meta<wbr></wbr>_filtered<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_rng" class="internal-link" title="fiftyone.core.stages._get_rng">_get<wbr></wbr>_rng</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_roots" class="internal-link" title="fiftyone.core.stages._get_roots">_get<wbr></wbr>_roots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_selected_excluded_fields" class="internal-link" title="fiftyone.core.stages._get_selected_excluded_fields">_get<wbr></wbr>_selected<wbr></wbr>_excluded<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_trajectories_filter" class="internal-link" title="fiftyone.core.stages._get_trajectories_filter">_get<wbr></wbr>_trajectories<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_get_trajectory_mongo_filter" class="internal-link" title="fiftyone.core.stages._get_trajectory_mongo_filter">_get<wbr></wbr>_trajectory<wbr></wbr>_mongo<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_make_match_empty_labels_pipeline" class="internal-link" title="fiftyone.core.stages._make_match_empty_labels_pipeline">_make<wbr></wbr>_match<wbr></wbr>_empty<wbr></wbr>_labels<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_make_omit_empty_labels_pipeline" class="internal-link" title="fiftyone.core.stages._make_omit_empty_labels_pipeline">_make<wbr></wbr>_omit<wbr></wbr>_empty<wbr></wbr>_labels<wbr></wbr>_pipeline</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_matches_field_meta" class="internal-link" title="fiftyone.core.stages._matches_field_meta">_matches<wbr></wbr>_field<wbr></wbr>_meta</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_merge_frame_paths" class="internal-link" title="fiftyone.core.stages._merge_frame_paths">_merge<wbr></wbr>_frame<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_frame_ids" class="internal-link" title="fiftyone.core.stages._parse_frame_ids">_parse<wbr></wbr>_frame<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_group_ids" class="internal-link" title="fiftyone.core.stages._parse_group_ids">_parse<wbr></wbr>_group<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_labels" class="internal-link" title="fiftyone.core.stages._parse_labels">_parse<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_labels_field" class="internal-link" title="fiftyone.core.stages._parse_labels_field">_parse<wbr></wbr>_labels<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_paths" class="internal-link" title="fiftyone.core.stages._parse_paths">_parse<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_sample_ids" class="internal-link" title="fiftyone.core.stages._parse_sample_ids">_parse<wbr></wbr>_sample<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_similarity_query" class="internal-link" title="fiftyone.core.stages._parse_similarity_query">_parse<wbr></wbr>_similarity<wbr></wbr>_query</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_sort_order" class="internal-link" title="fiftyone.core.stages._parse_sort_order">_parse<wbr></wbr>_sort<wbr></wbr>_order</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_parse_stages" class="internal-link" title="fiftyone.core.stages._parse_stages">_parse<wbr></wbr>_stages</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_recursive_match" class="internal-link" title="fiftyone.core.stages._recursive_match">_recursive<wbr></wbr>_match</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_remove_path_collisions" class="internal-link" title="fiftyone.core.stages._remove_path_collisions">_remove<wbr></wbr>_path<wbr></wbr>_collisions</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_render_filter" class="internal-link" title="fiftyone.core.stages._render_filter">_render<wbr></wbr>_filter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_replace_prefix" class="internal-link" title="fiftyone.core.stages._replace_prefix">_replace<wbr></wbr>_prefix</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_serialize_sort_expr" class="internal-link" title="fiftyone.core.stages._serialize_sort_expr">_serialize<wbr></wbr>_sort<wbr></wbr>_expr</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#fob" class="internal-link" title="fiftyone.core.stages.fob">fob</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#foc" class="internal-link" title="fiftyone.core.stages.foc">foc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#focl" class="internal-link" title="fiftyone.core.stages.focl">focl</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#fod" class="internal-link" title="fiftyone.core.stages.fod">fod</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#fop" class="internal-link" title="fiftyone.core.stages.fop">fop</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#foug" class="internal-link" title="fiftyone.core.stages.foug">foug</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#fov" class="internal-link" title="fiftyone.core.stages.fov">fov</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#fovi" class="internal-link" title="fiftyone.core.stages.fovi">fovi</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_STAGES" class="internal-link" title="fiftyone.core.stages._STAGES">_STAGES</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_STAGES_THAT_SELECT_FIRST" class="internal-link" title="fiftyone.core.stages._STAGES_THAT_SELECT_FIRST">_STAGES<wbr></wbr>_THAT<wbr></wbr>_SELECT<wbr></wbr>_FIRST</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_STAGES_THAT_SELECT_OR_REORDER" class="internal-link" title="fiftyone.core.stages._STAGES_THAT_SELECT_OR_REORDER">_STAGES<wbr></wbr>_THAT<wbr></wbr>_SELECT<wbr></wbr>_OR<wbr></wbr>_REORDER</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html#_repr" class="internal-link" title="fiftyone.core.stages._repr">_repr</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.stages.html" class="internal-link" title="fiftyone.core.stages">stages</a></code><wbr></wbr>.<code><a href="fiftyone.core.stages.MapLabels.html" class="internal-link" title="fiftyone.core.stages.MapLabels">MapLabels</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">MapLabels</span>(<a href="fiftyone.core.stages.ViewStage.html" class="internal-link" title="fiftyone.core.stages.ViewStage">ViewStage</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4081" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.stages.MapLabels.__init__">MapLabels(field, map)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.stages.MapLabels">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Maps the <tt class="rst-docutils rst-literal">label</tt> values of a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> field
+to new values for each sample in a collection.</p>
+<p>Examples:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+from fiftyone import ViewField as F
+
+dataset = fo.Dataset()
+dataset.add_samples(
+    [
+        fo.Sample(
+            filepath="/path/to/image1.png",
+            weather=fo.Classification(label="sunny"),
+            predictions=fo.Detections(
+                detections=[
+                    fo.Detection(
+                        label="cat",
+                        bounding_box=[0.1, 0.1, 0.5, 0.5],
+                        confidence=0.9,
+                    ),
+                    fo.Detection(
+                        label="dog",
+                        bounding_box=[0.2, 0.2, 0.3, 0.3],
+                        confidence=0.8,
+                    ),
+                ]
+            ),
+        ),
+        fo.Sample(
+            filepath="/path/to/image2.png",
+            weather=fo.Classification(label="cloudy"),
+            predictions=fo.Detections(
+                detections=[
+                    fo.Detection(
+                        label="cat",
+                        bounding_box=[0.5, 0.5, 0.4, 0.4],
+                        confidence=0.95,
+                    ),
+                    fo.Detection(label="rabbit"),
+                ]
+            ),
+        ),
+        fo.Sample(
+            filepath="/path/to/image3.png",
+            weather=fo.Classification(label="partly cloudy"),
+            predictions=fo.Detections(
+                detections=[
+                    fo.Detection(
+                        label="squirrel",
+                        bounding_box=[0.25, 0.25, 0.5, 0.5],
+                        confidence=0.5,
+                    ),
+                ]
+            ),
+        ),
+        fo.Sample(
+            filepath="/path/to/image4.png",
+            predictions=None,
+        ),
+    ]
+)
+
+#
+# Map the "partly cloudy" weather label to "cloudy"
+#
+
+stage = fo.MapLabels("weather", {"partly cloudy": "cloudy"})
+view = dataset.add_stage(stage)
+
+#
+# Map "rabbit" and "squirrel" predictions to "other"
+#
+
+stage = fo.MapLabels(
+    "predictions", {"rabbit": "other", "squirrel": "other"}
+)
+view = dataset.add_stage(stage)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">field</span></td><td class="fieldArgDesc">the labels field to map</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">map</span></td><td class="fieldArgDesc">a dict mapping label values to new label values</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id699">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.stages.MapLabels.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_edited_fields" class="internal-link" title="fiftyone.core.stages.MapLabels.get_edited_fields">get<wbr></wbr>_edited<wbr></wbr>_fields</a></code></td>
+    <td>Returns a list of names of fields or embedded fields that may have been edited by the stage, if any.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_mongo" class="internal-link" title="fiftyone.core.stages.MapLabels.to_mongo">to<wbr></wbr>_mongo</a></code></td>
+    <td>Returns the MongoDB aggregation pipeline for the stage.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#validate" class="internal-link" title="fiftyone.core.stages.MapLabels.validate">validate</a></code></td>
+    <td>Validates that the stage can be applied to the given collection.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#field" class="internal-link" title="fiftyone.core.stages.MapLabels.field">field</a></code></td>
+    <td>The labels field to map.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#map" class="internal-link" title="fiftyone.core.stages.MapLabels.map">map</a></code></td>
+    <td>The labels map dict.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_params" class="internal-link" title="fiftyone.core.stages.MapLabels._params">_params</a></code></td>
+    <td>Returns a list of JSON dicts describing the stage's supported parameters.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_kwargs" class="internal-link" title="fiftyone.core.stages.MapLabels._kwargs">_kwargs</a></code></td>
+    <td>Returns a list of <tt class="rst-docutils rst-literal">[name, value]</tt> lists describing the parameters of this stage instance.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_needs_frames" class="internal-link" title="fiftyone.core.stages.MapLabels._needs_frames">_needs<wbr></wbr>_frames</a></code></td>
+    <td>Whether the stage requires frame labels of video samples to be attached.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_needs_group_slices" class="internal-link" title="fiftyone.core.stages.MapLabels._needs_group_slices">_needs<wbr></wbr>_group<wbr></wbr>_slices</a></code></td>
+    <td>Whether the stage requires group slice(s) to be attached.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_field" class="internal-link" title="fiftyone.core.stages.MapLabels._field">_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_labels_field" class="internal-link" title="fiftyone.core.stages.MapLabels._labels_field">_labels<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_map" class="internal-link" title="fiftyone.core.stages.MapLabels._map">_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.stages.ViewStage.html" class="internal-link" title="fiftyone.core.stages.ViewStage">ViewStage</a></code>:
+            </p>
+            <table class="children sortable" id="id700">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#__eq__" class="internal-link" title="fiftyone.core.stages.ViewStage.__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#__repr__" class="internal-link" title="fiftyone.core.stages.ViewStage.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#__str__" class="internal-link" title="fiftyone.core.stages.ViewStage.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#get_excluded_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_excluded_fields">get<wbr></wbr>_excluded<wbr></wbr>_fields</a></code></td>
+    <td>Returns a list of fields that have been excluded by the stage, if any.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#get_filtered_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_filtered_fields">get<wbr></wbr>_filtered<wbr></wbr>_fields</a></code></td>
+    <td>Returns a list of names of fields or embedded fields that contain <strong>arrays</strong> have been filtered by the stage, if any.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#get_group_expr" class="internal-link" title="fiftyone.core.stages.ViewStage.get_group_expr">get<wbr></wbr>_group<wbr></wbr>_expr</a></code></td>
+    <td>Returns the dynamic group expression for the given stage, if any.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#get_media_type" class="internal-link" title="fiftyone.core.stages.ViewStage.get_media_type">get<wbr></wbr>_media<wbr></wbr>_type</a></code></td>
+    <td>Returns the media type outputted by this stage when applied to the given collection, if and only if it is different from the input type.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#get_selected_fields" class="internal-link" title="fiftyone.core.stages.ViewStage.get_selected_fields">get<wbr></wbr>_selected<wbr></wbr>_fields</a></code></td>
+    <td>Returns a list of fields that have been selected by the stage, if any.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#load_view" class="internal-link" title="fiftyone.core.stages.ViewStage.load_view">load<wbr></wbr>_view</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> containing the output of the stage.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#has_view" class="internal-link" title="fiftyone.core.stages.ViewStage.has_view">has<wbr></wbr>_view</a></code></td>
+    <td>Whether this stage's output view should be loaded via <code><a href="fiftyone.core.stages.ViewStage.html#load_view" class="internal-link" title="fiftyone.core.stages.ViewStage.load_view">load_view</a></code> rather than appending stages to an aggregation pipeline via <code><a href="fiftyone.core.stages.ViewStage.html#to_mongo" class="internal-link" title="fiftyone.core.stages.ViewStage.to_mongo">to_mongo</a></code>.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#outputs_dynamic_groups" class="internal-link" title="fiftyone.core.stages.ViewStage.outputs_dynamic_groups">outputs<wbr></wbr>_dynamic<wbr></wbr>_groups</a></code></td>
+    <td>Whether this stage outputs or flattens dynamic groups.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#_from_dict" class="internal-link" title="fiftyone.core.stages.ViewStage._from_dict">_from<wbr></wbr>_dict</a></code></td>
+    <td>Creates a <code><a href="fiftyone.core.stages.ViewStage.html" class="internal-link" title="fiftyone.core.stages.ViewStage">ViewStage</a></code> instance from a serialized JSON dict representation of it.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#_serialize" class="internal-link" title="fiftyone.core.stages.ViewStage._serialize">_serialize</a></code></td>
+    <td>Returns a JSON dict representation of the <code><a href="fiftyone.core.stages.ViewStage.html" class="internal-link" title="fiftyone.core.stages.ViewStage">ViewStage</a></code>.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.stages.ViewStage.html#_uuid" class="internal-link" title="fiftyone.core.stages.ViewStage._uuid">_uuid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, field, map)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4166">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.stages.MapLabels.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.get_edited_fields">
+    
+  </a>
+  <a name="get_edited_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_edited_fields</span><span class="function-signature">(self, sample_collection, frames=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4181">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_edited_fields" title="fiftyone.core.stages.MapLabels.get_edited_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#get_edited_fields" class="internal-link">fiftyone.core.stages.ViewStage.get_edited_fields</a></code></div>
+    <div><p>Returns a list of names of fields or embedded fields that may have
+been edited by the stage, if any.</p>
+<p>The <tt class="rst-docutils rst-literal">"frames."</tt> prefix should be omitted when <tt class="rst-docutils rst-literal">frames</tt> is True.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> to which
+the stage is being applied</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frames:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return sample-level (False) or
+frame-level (True) fields</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of fields, or <tt class="rst-docutils rst-literal">None</tt> if no fields have been edited</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.to_mongo">
+    
+  </a>
+  <a name="to_mongo">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_mongo</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4191">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_mongo" title="fiftyone.core.stages.MapLabels.to_mongo">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#to_mongo" class="internal-link">fiftyone.core.stages.ViewStage.to_mongo</a></code></div>
+    <div><p>Returns the MongoDB aggregation pipeline for the stage.</p>
+<p>Only usable if <code><a href="#has_view" class="internal-link" title="fiftyone.core.stages.ViewStage.has_view">has_view</a></code> is <tt class="rst-docutils rst-literal">False</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> to which
+the stage is being applied</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a MongoDB aggregation pipeline (list of dicts)</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.validate">
+    
+  </a>
+  <a name="validate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">validate</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4225">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#validate" title="fiftyone.core.stages.MapLabels.validate">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#validate" class="internal-link">fiftyone.core.stages.ViewStage.validate</a></code></div>
+    <div><p>Validates that the stage can be applied to the given collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="fiftyone.core.stages.ViewStageError.html" class="internal-link" title="fiftyone.core.stages.ViewStageError">ViewStageError</a></code></td><td>if the stage cannot be applied to the
+collection</td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.field">
+    
+  </a>
+  <a name="field">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4171">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#field" title="fiftyone.core.stages.MapLabels.field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The labels field to map.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels.map">
+    
+  </a>
+  <a name="map">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">map</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4176">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#map" title="fiftyone.core.stages.MapLabels.map">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The labels map dict.</p></div>
+    
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._params">
+    
+  </a>
+  <a name="_params">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_params</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4218">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_params" title="fiftyone.core.stages.MapLabels._params">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#_params" class="internal-link">fiftyone.core.stages.ViewStage._params</a></code></div>
+    <div><p>Returns a list of JSON dicts describing the stage's supported
+parameters.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of JSON dicts</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._kwargs">
+    
+  </a>
+  <a name="_kwargs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_kwargs</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4212">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_kwargs" title="fiftyone.core.stages.MapLabels._kwargs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#_kwargs" class="internal-link">fiftyone.core.stages.ViewStage._kwargs</a></code></div>
+    <div><p>Returns a list of <tt class="rst-docutils rst-literal">[name, value]</tt> lists describing the parameters
+of this stage instance.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of <tt class="rst-docutils rst-literal">[name, value]</tt> lists</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._needs_frames">
+    
+  </a>
+  <a name="_needs_frames">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_needs_frames</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4200">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_needs_frames" title="fiftyone.core.stages.MapLabels._needs_frames">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#_needs_frames" class="internal-link">fiftyone.core.stages.ViewStage._needs_frames</a></code></div>
+    <div><p>Whether the stage requires frame labels of video samples to be
+attached.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> to which
+the stage is being applied</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._needs_group_slices">
+    
+  </a>
+  <a name="_needs_group_slices">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_needs_group_slices</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4206">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_needs_group_slices" title="fiftyone.core.stages.MapLabels._needs_group_slices">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.stages.ViewStage.html#_needs_group_slices" class="internal-link">fiftyone.core.stages.ViewStage._needs_group_slices</a></code></div>
+    <div><p>Whether the stage requires group slice(s) to be attached.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> to which
+the stage is being applied</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">None, or a list of group slices</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._field">
+    
+  </a>
+  <a name="_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4167">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_field" title="fiftyone.core.stages.MapLabels._field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._labels_field">
+    
+  </a>
+  <a name="_labels_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_labels_field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4169">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_labels_field" title="fiftyone.core.stages.MapLabels._labels_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.stages.MapLabels._map">
+    
+  </a>
+  <a name="_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_map</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/stages.py#L4168">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_map" title="fiftyone.core.stages.MapLabels._map">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,3240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.session.session.Session</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.session.session.Session.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="This class"><wbr></wbr>Session</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__del__" class="internal-link" title="fiftyone.core.session.session.Session.__del__">__del__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.session.session.Session.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__repr__" class="internal-link" title="fiftyone.core.session.session.Session.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#auto.setter" class="internal-link" title="fiftyone.core.session.session.Session.auto.setter">auto<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_dataset" class="internal-link" title="fiftyone.core.session.session.Session.clear_dataset">clear<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_selected" class="internal-link" title="fiftyone.core.session.session.Session.clear_selected">clear<wbr></wbr>_selected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.clear_selected_labels">clear<wbr></wbr>_selected<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_view" class="internal-link" title="fiftyone.core.session.session.Session.clear_view">clear<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#close" class="internal-link" title="fiftyone.core.session.session.Session.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#color_scheme.setter" class="internal-link" title="fiftyone.core.session.session.Session.color_scheme.setter">color<wbr></wbr>_scheme<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#config.setter" class="internal-link" title="fiftyone.core.session.session.Session.config.setter">config<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dataset.setter" class="internal-link" title="fiftyone.core.session.session.Session.dataset.setter">dataset<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#freeze" class="internal-link" title="fiftyone.core.session.session.Session.freeze">freeze</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#group_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.group_id.setter">group<wbr></wbr>_id<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_workspace" class="internal-link" title="fiftyone.core.session.session.Session.load_workspace">load<wbr></wbr>_workspace</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#no_show" class="internal-link" title="fiftyone.core.session.session.Session.no_show">no<wbr></wbr>_show</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#open" class="internal-link" title="fiftyone.core.session.session.Session.open">open</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#open_tab" class="internal-link" title="fiftyone.core.session.session.Session.open_tab">open<wbr></wbr>_tab</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#plots.setter" class="internal-link" title="fiftyone.core.session.session.Session.plots.setter">plots<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#refresh" class="internal-link" title="fiftyone.core.session.session.Session.refresh">refresh</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.sample_id.setter">sample<wbr></wbr>_id<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#select_labels" class="internal-link" title="fiftyone.core.session.session.Session.select_labels">select<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#select_samples" class="internal-link" title="fiftyone.core.session.session.Session.select_samples">select<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#selected.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected.setter">selected<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#selected_labels.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels.setter">selected<wbr></wbr>_labels<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#show" class="internal-link" title="fiftyone.core.session.session.Session.show">show</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#spaces.setter" class="internal-link" title="fiftyone.core.session.session.Session.spaces.setter">spaces<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#summary" class="internal-link" title="fiftyone.core.session.session.Session.summary">summary</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#tag_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.tag_selected_labels">tag<wbr></wbr>_selected<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#tag_selected_samples" class="internal-link" title="fiftyone.core.session.session.Session.tag_selected_samples">tag<wbr></wbr>_selected<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#untag_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.untag_selected_labels">untag<wbr></wbr>_selected<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#untag_selected_samples" class="internal-link" title="fiftyone.core.session.session.Session.untag_selected_samples">untag<wbr></wbr>_selected<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#view.setter" class="internal-link" title="fiftyone.core.session.session.Session.view.setter">view<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#wait" class="internal-link" title="fiftyone.core.session.session.Session.wait">wait</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_set_dataset" class="internal-link" title="fiftyone.core.session.session.Session._set_dataset">_set<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_set_view" class="internal-link" title="fiftyone.core.session.session.Session._set_view">_set<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate" class="internal-link" title="fiftyone.core.session.session.Session._validate">_validate</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#browser" class="internal-link" title="fiftyone.core.session.session.Session.browser">browser</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">selected<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#spaces" class="internal-link" title="fiftyone.core.session.session.Session.spaces">spaces</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#auto" class="internal-link" title="fiftyone.core.session.session.Session.auto">auto</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#color_scheme" class="internal-link" title="fiftyone.core.session.session.Session.color_scheme">color<wbr></wbr>_scheme</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#config" class="internal-link" title="fiftyone.core.session.session.Session.config">config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dataset" class="internal-link" title="fiftyone.core.session.session.Session.dataset">dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#group_id" class="internal-link" title="fiftyone.core.session.session.Session.group_id">group<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_plots" class="internal-link" title="fiftyone.core.session.session.Session.has_plots">has<wbr></wbr>_plots</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#plots" class="internal-link" title="fiftyone.core.session.session.Session.plots">plots</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#remote" class="internal-link" title="fiftyone.core.session.session.Session.remote">remote</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_id" class="internal-link" title="fiftyone.core.session.session.Session.sample_id">sample<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">selected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#selected_view" class="internal-link" title="fiftyone.core.session.session.Session.selected_view">selected<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#server_address" class="internal-link" title="fiftyone.core.session.session.Session.server_address">server<wbr></wbr>_address</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#server_port" class="internal-link" title="fiftyone.core.session.session.Session.server_port">server<wbr></wbr>_port</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#url" class="internal-link" title="fiftyone.core.session.session.Session.url">url</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#view" class="internal-link" title="fiftyone.core.session.session.Session.view">view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_client" class="internal-link" title="fiftyone.core.session.session.Session._client">_client</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_disable_wait_warning" class="internal-link" title="fiftyone.core.session.session.Session._disable_wait_warning">_disable<wbr></wbr>_wait<wbr></wbr>_warning</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_time" class="internal-link" title="fiftyone.core.session.session.Session._get_time">_get<wbr></wbr>_time</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_notebook_cells" class="internal-link" title="fiftyone.core.session.session.Session._notebook_cells">_notebook<wbr></wbr>_cells</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_plots" class="internal-link" title="fiftyone.core.session.session.Session._plots">_plots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_state" class="internal-link" title="fiftyone.core.session.session.Session._state">_state</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_wait_closed" class="internal-link" title="fiftyone.core.session.session.Session._wait_closed">_wait<wbr></wbr>_closed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_collection" class="internal-link" title="fiftyone.core.session.session.Session._collection">_collection</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.session.session.html" class="internal-link" title="The parent of this class">session</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session"><wbr></wbr>Session</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#close_app" class="internal-link" title="fiftyone.core.session.session.close_app">close<wbr></wbr>_app</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#launch_app" class="internal-link" title="fiftyone.core.session.session.launch_app">launch<wbr></wbr>_app</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update<wbr></wbr>_state</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_attach_listeners" class="internal-link" title="fiftyone.core.session.session._attach_listeners">_attach<wbr></wbr>_listeners</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_log_welcome_message_if_allowed" class="internal-link" title="fiftyone.core.session.session._log_welcome_message_if_allowed">_log<wbr></wbr>_welcome<wbr></wbr>_message<wbr></wbr>_if<wbr></wbr>_allowed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_on_refresh" class="internal-link" title="fiftyone.core.session.session._on_refresh">_on<wbr></wbr>_refresh</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_pull_group_slice" class="internal-link" title="fiftyone.core.session.session._pull_group_slice">_pull<wbr></wbr>_group<wbr></wbr>_slice</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_register_session" class="internal-link" title="fiftyone.core.session.session._register_session">_register<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_unregister_session" class="internal-link" title="fiftyone.core.session.session._unregister_session">_unregister<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#logger" class="internal-link" title="fiftyone.core.session.session.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_APP_NOTEBOOK_MESSAGE" class="internal-link" title="fiftyone.core.session.session._APP_NOTEBOOK_MESSAGE">_APP<wbr></wbr>_NOTEBOOK<wbr></wbr>_MESSAGE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_APP_WEB_MESSAGE" class="internal-link" title="fiftyone.core.session.session._APP_WEB_MESSAGE">_APP<wbr></wbr>_WEB<wbr></wbr>_MESSAGE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_REMOTE_INSTRUCTIONS" class="internal-link" title="fiftyone.core.session.session._REMOTE_INSTRUCTIONS">_REMOTE<wbr></wbr>_INSTRUCTIONS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_WAIT_INSTRUCTIONS" class="internal-link" title="fiftyone.core.session.session._WAIT_INSTRUCTIONS">_WAIT<wbr></wbr>_INSTRUCTIONS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_WELCOME_MESSAGE" class="internal-link" title="fiftyone.core.session.session._WELCOME_MESSAGE">_WELCOME<wbr></wbr>_MESSAGE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_server_services" class="internal-link" title="fiftyone.core.session.session._server_services">_server<wbr></wbr>_services</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_session" class="internal-link" title="fiftyone.core.session.session._session">_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.session.html#_subscribed_sessions" class="internal-link" title="fiftyone.core.session.session._subscribed_sessions">_subscribed<wbr></wbr>_sessions</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.session.html" class="internal-link" title="fiftyone.core.session">session</a></code><wbr></wbr>.<code><a href="fiftyone.core.session.session.html" class="internal-link" title="fiftyone.core.session.session">session</a></code><wbr></wbr>.<code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session">Session</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">Session</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L260" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.session.session.Session.__init__">Session(dataset, view, sample_id, group_id, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.session.session.Session">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Session that maintains a 1-1 shared state with the FiftyOne App.</p>
+<p><strong>Basic Usage</strong></p>
+<ul class="rst-simple">
+<li>Use <code><a href="fiftyone.core.session.session.html#launch_app" class="internal-link" title="fiftyone.core.session.session.launch_app">launch_app</a></code> to launch the App and retrieve its
+corresponding <code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session">Session</a></code> instance.</li>
+<li>To open a dataset in the App, simply set the
+<code><a href="#dataset" class="internal-link" title="fiftyone.core.session.session.Session.dataset">Session.dataset</a></code> property of the session to your
+<code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code>.</li>
+<li>To load a specific view into your dataset, simply set the
+<code><a href="#view" class="internal-link" title="fiftyone.core.session.session.Session.view">Session.view</a></code> property of the session to your
+<code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code>.</li>
+<li>To load a specific sample in the modal, simply set the
+<code><a href="#sample_id" class="internal-link" title="fiftyone.core.session.session.Session.sample_id">Session.sample_id</a></code> property of the session to the ID of the
+<code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code>.</li>
+<li>To load a specific group in the modal, simply set the
+<code><a href="#group_id" class="internal-link" title="fiftyone.core.session.session.Session.group_id">Session.group_id</a></code> property of the session to the ID of the
+<code><a href="fiftyone.core.groups.Group.html" class="internal-link">fiftyone.core.groups.Group</a></code>.</li>
+<li>To attach/remove interactive plots, use the methods exposed on the
+<code><a href="#plots" class="internal-link" title="fiftyone.core.session.session.Session.plots">Session.plots</a></code> property of the session.</li>
+<li>Use <code><a href="#refresh" class="internal-link" title="fiftyone.core.session.session.Session.refresh">Session.refresh</a></code> to refresh the App if you update a dataset
+outside of the App</li>
+<li>Use <code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">Session.selected</a></code> to retrieve the IDs of the currently
+selected samples in the App.</li>
+<li>Use <code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">Session.selected_labels</a></code> to retrieve the IDs of the
+currently selected labels in the App.</li>
+<li>In notebook contexts, use <code><a href="#freeze" class="internal-link" title="fiftyone.core.session.session.Session.freeze">Session.freeze</a></code> to replace the App and
+any attached plots with static images.</li>
+<li>Use <code><a href="#close" class="internal-link" title="fiftyone.core.session.session.Session.close">Session.close</a></code> and <code><a href="#open" class="internal-link" title="fiftyone.core.session.session.Session.open">Session.open</a></code> to temporarily close
+and reopen the App without creating a new <code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session">Session</a></code>
+instance.</li>
+<li>Use <code><a href="fiftyone.core.session.session.html#close_app" class="internal-link" title="fiftyone.core.session.session.close_app">close_app</a></code> to programmatically close the App and
+terminate the session.</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> or
+<code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> to load</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">view</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> to
+load</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_id</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code> ID
+to load in the modal</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">group<wbr></wbr>_id</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.groups.Group.html" class="internal-link">fiftyone.core.groups.Group</a></code> ID
+to load in the modal</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">spaces</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.odm.workspace.Space.html" class="internal-link">fiftyone.core.odm.workspace.Space</a></code>
+instance defining a space configuration to load</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">color<wbr></wbr>_scheme</span></td><td class="fieldArgDesc">an optional
+<code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link">fiftyone.core.odm.dataset.ColorScheme</a></code> defining a custom
+color scheme to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plots</span></td><td class="fieldArgDesc">an optional
+<code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link">fiftyone.core.plots.manager.PlotManager</a></code> to connect to this
+session</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">port</span></td><td class="fieldArgDesc">the port number to serve the App. If None,
+<tt class="rst-docutils rst-literal">fiftyone.config.default_app_port</tt> is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">address</span></td><td class="fieldArgDesc">the address to serve the App. If None,
+<tt class="rst-docutils rst-literal">fiftyone.config.default_app_address</tt> is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">remote</span></td><td class="fieldArgDesc">whether this is a remote session, and opening the App
+should not be attempted</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">browser</span></td><td class="fieldArgDesc">an optional browser to use to open the App. If None,
+the default browser will be used. Refer to list of supported
+browsers at <a class="rst-external rst-reference" href="https://docs.python.org/3/library/webbrowser.html" target="_top">https://docs.python.org/3/library/webbrowser.html</a></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">height</span></td><td class="fieldArgDesc">an optional height, in pixels, at which to render App
+instances in notebook cells. Only applicable in notebook contexts</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">auto</span></td><td class="fieldArgDesc">whether to automatically show a new App window
+whenever the state of the session is updated. Only applicable
+in notebook contexts</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">an optional <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link">fiftyone.core.config.AppConfig</a></code> to
+control fine-grained default App settings</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id652">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__del__" class="internal-link" title="fiftyone.core.session.session.Session.__del__">__del__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.session.session.Session.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__" class="internal-link" title="fiftyone.core.session.session.Session.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#auto.setter" class="internal-link" title="fiftyone.core.session.session.Session.auto.setter">auto<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_dataset" class="internal-link" title="fiftyone.core.session.session.Session.clear_dataset">clear<wbr></wbr>_dataset</a></code></td>
+    <td>Clears the current <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> from the session, if any.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_selected" class="internal-link" title="fiftyone.core.session.session.Session.clear_selected">clear<wbr></wbr>_selected</a></code></td>
+    <td>Clears the currently selected samples, if any.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.clear_selected_labels">clear<wbr></wbr>_selected<wbr></wbr>_labels</a></code></td>
+    <td>Clears the currently selected labels, if any.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_view" class="internal-link" title="fiftyone.core.session.session.Session.clear_view">clear<wbr></wbr>_view</a></code></td>
+    <td>Clears the current <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> from the session, if any.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close" class="internal-link" title="fiftyone.core.session.session.Session.close">close</a></code></td>
+    <td>Closes the session and terminates the App, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#color_scheme.setter" class="internal-link" title="fiftyone.core.session.session.Session.color_scheme.setter">color<wbr></wbr>_scheme<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#config.setter" class="internal-link" title="fiftyone.core.session.session.Session.config.setter">config<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#dataset.setter" class="internal-link" title="fiftyone.core.session.session.Session.dataset.setter">dataset<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#freeze" class="internal-link" title="fiftyone.core.session.session.Session.freeze">freeze</a></code></td>
+    <td>Screenshots the active App cell, replacing it with a static image.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#group_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.group_id.setter">group<wbr></wbr>_id<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#load_workspace" class="internal-link" title="fiftyone.core.session.session.Session.load_workspace">load<wbr></wbr>_workspace</a></code></td>
+    <td>Loads the given saved workspace.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#no_show" class="internal-link" title="fiftyone.core.session.session.Session.no_show">no<wbr></wbr>_show</a></code></td>
+    <td>Returns a context manager that temporarily prevents new App instances from being opened in the current notebook cell when methods are run that normally would show new App windows.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#open" class="internal-link" title="fiftyone.core.session.session.Session.open">open</a></code></td>
+    <td>Opens the App, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#open_tab" class="internal-link" title="fiftyone.core.session.session.Session.open_tab">open<wbr></wbr>_tab</a></code></td>
+    <td>Opens the App in a new tab of your browser.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#plots.setter" class="internal-link" title="fiftyone.core.session.session.Session.plots.setter">plots<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#refresh" class="internal-link" title="fiftyone.core.session.session.Session.refresh">refresh</a></code></td>
+    <td>Refreshes the current App window.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sample_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.sample_id.setter">sample<wbr></wbr>_id<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#select_labels" class="internal-link" title="fiftyone.core.session.session.Session.select_labels">select<wbr></wbr>_labels</a></code></td>
+    <td>Selects the specified labels in the current view in the App.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#select_samples" class="internal-link" title="fiftyone.core.session.session.Session.select_samples">select<wbr></wbr>_samples</a></code></td>
+    <td>Selects the specified samples in the current view in the App,</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#selected.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected.setter">selected<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#selected_labels.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels.setter">selected<wbr></wbr>_labels<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show" class="internal-link" title="fiftyone.core.session.session.Session.show">show</a></code></td>
+    <td>Opens the App in the output of the current notebook cell.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#spaces.setter" class="internal-link" title="fiftyone.core.session.session.Session.spaces.setter">spaces<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#summary" class="internal-link" title="fiftyone.core.session.session.Session.summary">summary</a></code></td>
+    <td>Returns a string summary of the session.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tag_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.tag_selected_labels">tag<wbr></wbr>_selected<wbr></wbr>_labels</a></code></td>
+    <td>Adds the tag to the currently selected labels, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#tag_selected_samples" class="internal-link" title="fiftyone.core.session.session.Session.tag_selected_samples">tag<wbr></wbr>_selected<wbr></wbr>_samples</a></code></td>
+    <td>Adds the tag to the currently selected samples, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#untag_selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.untag_selected_labels">untag<wbr></wbr>_selected<wbr></wbr>_labels</a></code></td>
+    <td>Removes the tag from the currently selected labels, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#untag_selected_samples" class="internal-link" title="fiftyone.core.session.session.Session.untag_selected_samples">untag<wbr></wbr>_selected<wbr></wbr>_samples</a></code></td>
+    <td>Removes the tag from the currently selected samples, if necessary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#view.setter" class="internal-link" title="fiftyone.core.session.session.Session.view.setter">view<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#wait" class="internal-link" title="fiftyone.core.session.session.Session.wait">wait</a></code></td>
+    <td>Blocks execution until the App is closed by the user.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#browser" class="internal-link" title="fiftyone.core.session.session.Session.browser">browser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">selected<wbr></wbr>_labels</a></code></td>
+    <td>A list of labels currently selected in the App.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#spaces" class="internal-link" title="fiftyone.core.session.session.Session.spaces">spaces</a></code></td>
+    <td>The layout state for the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#auto" class="internal-link" title="fiftyone.core.session.session.Session.auto">auto</a></code></td>
+    <td>The auto setting for the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#color_scheme" class="internal-link" title="fiftyone.core.session.session.Session.color_scheme">color<wbr></wbr>_scheme</a></code></td>
+    <td>The color scheme for the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#config" class="internal-link" title="fiftyone.core.session.session.Session.config">config</a></code></td>
+    <td>The current <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link">fiftyone.core.config.AppConfig</a></code>.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#dataset" class="internal-link" title="fiftyone.core.session.session.Session.dataset">dataset</a></code></td>
+    <td>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> connected to the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#group_id" class="internal-link" title="fiftyone.core.session.session.Session.group_id">group<wbr></wbr>_id</a></code></td>
+    <td>The current <code><a href="fiftyone.core.groups.Group.html" class="internal-link">fiftyone.core.groups.Group</a></code> ID in the modal, if any.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_plots" class="internal-link" title="fiftyone.core.session.session.Session.has_plots">has<wbr></wbr>_plots</a></code></td>
+    <td>Whether this session has any attached plots.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#plots" class="internal-link" title="fiftyone.core.session.session.Session.plots">plots</a></code></td>
+    <td>The <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link">fiftyone.core.plots.manager.PlotManager</a></code> instance that manages plots attached to this session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#remote" class="internal-link" title="fiftyone.core.session.session.Session.remote">remote</a></code></td>
+    <td>Whether the session is remote.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#sample_id" class="internal-link" title="fiftyone.core.session.session.Session.sample_id">sample<wbr></wbr>_id</a></code></td>
+    <td>The current <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code> ID in the modal, if any.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">selected</a></code></td>
+    <td>A list of sample IDs of the currently selected samples in the App, if any.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#selected_view" class="internal-link" title="fiftyone.core.session.session.Session.selected_view">selected<wbr></wbr>_view</a></code></td>
+    <td>A <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> containing the currently selected content in the App.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#server_address" class="internal-link" title="fiftyone.core.session.session.Session.server_address">server<wbr></wbr>_address</a></code></td>
+    <td>The server address for the session, or None if not specified.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#server_port" class="internal-link" title="fiftyone.core.session.session.Session.server_port">server<wbr></wbr>_port</a></code></td>
+    <td>The server port for the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#url" class="internal-link" title="fiftyone.core.session.session.Session.url">url</a></code></td>
+    <td>The URL of the session.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#view" class="internal-link" title="fiftyone.core.session.session.Session.view">view</a></code></td>
+    <td>The <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> connected to the session, or <tt class="rst-docutils rst-literal">None</tt> if no view is connected.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_dataset" class="internal-link" title="fiftyone.core.session.session.Session._set_dataset">_set<wbr></wbr>_dataset</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_view" class="internal-link" title="fiftyone.core.session.session.Session._set_view">_set<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_validate" class="internal-link" title="fiftyone.core.session.session.Session._validate">_validate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_client" class="internal-link" title="fiftyone.core.session.session.Session._client">_client</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_disable_wait_warning" class="internal-link" title="fiftyone.core.session.session.Session._disable_wait_warning">_disable<wbr></wbr>_wait<wbr></wbr>_warning</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_get_time" class="internal-link" title="fiftyone.core.session.session.Session._get_time">_get<wbr></wbr>_time</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_notebook_cells" class="internal-link" title="fiftyone.core.session.session.Session._notebook_cells">_notebook<wbr></wbr>_cells</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_plots" class="internal-link" title="fiftyone.core.session.session.Session._plots">_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_state" class="internal-link" title="fiftyone.core.session.session.Session._state">_state</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_wait_closed" class="internal-link" title="fiftyone.core.session.session.Session._wait_closed">_wait<wbr></wbr>_closed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_collection" class="internal-link" title="fiftyone.core.session.session.Session._collection">_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.__del__">
+    
+  </a>
+  <a name="__del__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__del__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L498">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__del__" title="fiftyone.core.session.session.Session.__del__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, dataset: <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">fod.Dataset</a> | <a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, view: <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, sample_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, group_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, spaces: <code><a href="fiftyone.core.odm.workspace.Space.html" class="internal-link" title="fiftyone.core.odm.workspace.Space">Space</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, color_scheme: <code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link" title="fiftyone.core.odm.dataset.ColorScheme">food.ColorScheme</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, plots: <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">fop.PlotManager</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, port: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, address: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, remote: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> = <a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, browser: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, height: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, auto: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> = <a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, config: <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link" title="fiftyone.core.config.AppConfig">AppConfig</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, view_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L341">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.session.session.Session.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span><span class="function-signature">(self) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L495">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__repr__" title="fiftyone.core.session.session.Session.__repr__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.auto.setter">
+    
+  </a>
+  <a name="auto.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#auto.setter" class="internal-link" title="fiftyone.core.session.session.Session.auto.setter">auto.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">auto</span><span class="function-signature">(self, auto: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L518">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#auto.setter" title="fiftyone.core.session.session.Session.auto.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.clear_dataset">
+    
+  </a>
+  <a name="clear_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_dataset</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L680">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear_dataset" title="fiftyone.core.session.session.Session.clear_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clears the current <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> from the
+session, if any.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.clear_selected">
+    
+  </a>
+  <a name="clear_selected">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear_selected</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L791">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear_selected" title="fiftyone.core.session.session.Session.clear_selected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clears the currently selected samples, if any.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.clear_selected_labels">
+    
+  </a>
+  <a name="clear_selected_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_selected_labels</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L861">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear_selected_labels" title="fiftyone.core.session.session.Session.clear_selected_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clears the currently selected labels, if any.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.clear_view">
+    
+  </a>
+  <a name="clear_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">clear_view</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L723">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear_view" title="fiftyone.core.session.session.Session.clear_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Clears the current <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> from the
+session, if any.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1133">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#close" title="fiftyone.core.session.session.Session.close">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Closes the session and terminates the App, if necessary.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.color_scheme.setter">
+    
+  </a>
+  <a name="color_scheme.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#color_scheme.setter" class="internal-link" title="fiftyone.core.session.session.Session.color_scheme.setter">color_scheme.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">color_scheme</span><span class="function-signature">(self, color_scheme: <code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link" title="fiftyone.core.odm.dataset.ColorScheme">food.ColorScheme</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L643">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#color_scheme.setter" title="fiftyone.core.session.session.Session.color_scheme.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.config.setter">
+    
+  </a>
+  <a name="config.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#config.setter" class="internal-link" title="fiftyone.core.session.session.Session.config.setter">config.setter</a><br />@<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">config</span><span class="function-signature">(self, config: <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link" title="fiftyone.core.config.AppConfig">AppConfig</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L566">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#config.setter" title="fiftyone.core.session.session.Session.config.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.dataset.setter">
+    
+  </a>
+  <a name="dataset.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#dataset.setter" class="internal-link" title="fiftyone.core.session.session.Session.dataset.setter">dataset.setter</a><br />@<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>(<wbr></wbr>auto_show=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">dataset</span><span class="function-signature">(self, dataset: <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">fod.Dataset</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L669">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dataset.setter" title="fiftyone.core.session.session.Session.dataset.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.freeze">
+    
+  </a>
+  <a name="freeze">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">freeze</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1141">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#freeze" title="fiftyone.core.session.session.Session.freeze">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Screenshots the active App cell, replacing it with a static image.</p>
+<p>Only applicable to notebook contexts.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.group_id.setter">
+    
+  </a>
+  <a name="group_id.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#group_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.group_id.setter">group_id.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">group_id</span><span class="function-signature">(self, group_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L587">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#group_id.setter" title="fiftyone.core.session.session.Session.group_id.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.load_workspace">
+    
+  </a>
+  <a name="load_workspace">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_workspace</span><span class="function-signature">(self, workspace: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L629">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_workspace" title="fiftyone.core.session.session.Session.load_workspace">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads the given saved workspace.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">workspace:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">the name of a saved workspace</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.no_show">
+    
+  </a>
+  <a name="no_show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">no_show</span><span class="function-signature">(self) -&gt; <code><a href="fiftyone.core.utils.SetAttributes.html" class="internal-link" title="fiftyone.core.utils.SetAttributes">fou.SetAttributes</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1076">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#no_show" title="fiftyone.core.session.session.Session.no_show">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a context manager that temporarily prevents new App
+instances from being opened in the current notebook cell when methods
+are run that normally would show new App windows.</p>
+<p>This method has no effect in non-notebook contexts.</p>
+<p>Examples:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+
+dataset = foz.load_zoo_dataset("quickstart")
+session = fo.launch_app(dataset)
+
+# (new cell)
+
+# Opens a new App instance
+session.view = dataset.take(100)
+
+# (new cell)
+
+# Does not open a new App instance
+with session.no_show():
+    session.view = dataset.take(100)
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="fiftyone.core.utils.SetAttributes.html" class="internal-link" title="fiftyone.core.utils.SetAttributes">fou.SetAttributes</a></code></td><td class="fieldArgDesc">a context manager</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.open">
+    
+  </a>
+  <a name="open">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">open</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L998">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#open" title="fiftyone.core.session.session.Session.open">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Opens the App, if necessary.</p>
+<p>The behavior of this method depends on your context:</p>
+<ul class="rst-simple">
+<li>Notebooks: calls <code><a href="#show" class="internal-link" title="fiftyone.core.session.session.Session.show">Session.show</a></code> to open a new App window in
+the output of your current cell</li>
+<li>Other (non-remote): opens the App in a new browser tab</li>
+</ul>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.open_tab">
+    
+  </a>
+  <a name="open_tab">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">open_tab</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1021">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#open_tab" title="fiftyone.core.session.session.Session.open_tab">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Opens the App in a new tab of your browser.</p>
+<p>This method can be called from Jupyter notebooks to override the
+default location of the App.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.plots.setter">
+    
+  </a>
+  <a name="plots.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#plots.setter" class="internal-link" title="fiftyone.core.session.session.Session.plots.setter">plots.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">plots</span><span class="function-signature">(self, plots: <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">fop.PlotManager</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L760">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#plots.setter" title="fiftyone.core.session.session.Session.plots.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.refresh">
+    
+  </a>
+  <a name="refresh">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">refresh</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L775">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#refresh" title="fiftyone.core.session.session.Session.refresh">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Refreshes the current App window.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.sample_id.setter">
+    
+  </a>
+  <a name="sample_id.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#sample_id.setter" class="internal-link" title="fiftyone.core.session.session.Session.sample_id.setter">sample_id.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">sample_id</span><span class="function-signature">(self, sample_id: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L602">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sample_id.setter" title="fiftyone.core.session.session.Session.sample_id.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.select_labels">
+    
+  </a>
+  <a name="select_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">select_labels</span><span class="function-signature">(self, labels: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, ids: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/typing.html#typing.Iterable" class="intersphinx-link">t.Iterable</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/typing.html#typing.Iterable" class="intersphinx-link">t.Iterable</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, fields: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/typing.html#typing.Iterable" class="intersphinx-link">t.Iterable</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L835">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#select_labels" title="fiftyone.core.session.session.Session.select_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Selects the specified labels in the current view in the App.</p>
+<p>This method uses the same interface as
+<code><a href="fiftyone.core.collections.SampleCollection.html#select_labels" class="internal-link">fiftyone.core.collections.SampleCollection.select_labels</a></code> to
+specify the labels to select.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a list of dicts specifying the labels to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ids:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an ID or iterable of IDs of the labels to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a tag or iterable of tags of labels to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fields:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a field or iterable of fields from which to select</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.select_samples">
+    
+  </a>
+  <a name="select_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">select_samples</span><span class="function-signature">(self, ids: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/typing.html#typing.Iterable" class="intersphinx-link">t.Iterable</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, tags: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/typing.html#typing.Iterable" class="intersphinx-link">t.Iterable</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>] | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L796">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#select_samples" title="fiftyone.core.session.session.Session.select_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Selects the specified samples in the current view in the App,</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">ids:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an ID or iterable of IDs of samples to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tags:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a tag or iterable of tags of samples to select</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.selected.setter">
+    
+  </a>
+  <a name="selected.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#selected.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected.setter">selected.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">selected</span><span class="function-signature">(self, sample_ids: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L786">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#selected.setter" title="fiftyone.core.session.session.Session.selected.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.selected_labels.setter">
+    
+  </a>
+  <a name="selected_labels.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#selected_labels.setter" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels.setter">selected_labels.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">selected_labels</span><span class="function-signature">(self, labels: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L830">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#selected_labels.setter" title="fiftyone.core.session.session.Session.selected_labels.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.show">
+    
+  </a>
+  <a name="show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">show</span><span class="function-signature">(self, height: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1045">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#show" title="fiftyone.core.session.session.Session.show">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Opens the App in the output of the current notebook cell.</p>
+<p>This method has no effect in non-notebook contexts.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">height:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a height, in pixels, for the App</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.spaces.setter">
+    
+  </a>
+  <a name="spaces.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#spaces.setter" class="internal-link" title="fiftyone.core.session.session.Session.spaces.setter">spaces.setter</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">spaces</span><span class="function-signature">(self, spaces: <code><a href="fiftyone.core.odm.workspace.Space.html" class="internal-link" title="fiftyone.core.odm.workspace.Space">Space</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L615">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#spaces.setter" title="fiftyone.core.session.session.Session.spaces.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.summary">
+    
+  </a>
+  <a name="summary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">summary</span><span class="function-signature">(self) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L950">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#summary" title="fiftyone.core.session.session.Session.summary">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a string summary of the session.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">a string summary</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.tag_selected_labels">
+    
+  </a>
+  <a name="tag_selected_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">tag_selected_labels</span><span class="function-signature">(self, tag: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L890">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#tag_selected_labels" title="fiftyone.core.session.session.Session.tag_selected_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Adds the tag to the currently selected labels, if necessary.</p>
+<p>The currently selected labels are <code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">Session.selected_labels</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">a tag</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.tag_selected_samples">
+    
+  </a>
+  <a name="tag_selected_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">tag_selected_samples</span><span class="function-signature">(self, tag: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L866">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#tag_selected_samples" title="fiftyone.core.session.session.Session.tag_selected_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Adds the tag to the currently selected samples, if necessary.</p>
+<p>The currently selected labels are <code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">Session.selected</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">a tag</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.untag_selected_labels">
+    
+  </a>
+  <a name="untag_selected_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">untag_selected_labels</span><span class="function-signature">(self, tag: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L904">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#untag_selected_labels" title="fiftyone.core.session.session.Session.untag_selected_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Removes the tag from the currently selected labels, if necessary.</p>
+<p>The currently selected labels are <code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">Session.selected_labels</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">a tag</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.untag_selected_samples">
+    
+  </a>
+  <a name="untag_selected_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>()<br />
+    <span class="py-keyword">def</span> <span class="py-defname">untag_selected_samples</span><span class="function-signature">(self, tag: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L878">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#untag_selected_samples" title="fiftyone.core.session.session.Session.untag_selected_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Removes the tag from the currently selected samples, if necessary.</p>
+<p>The currently selected labels are <code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">Session.selected</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">a tag</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.view.setter">
+    
+  </a>
+  <a name="view.setter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="#view.setter" class="internal-link" title="fiftyone.core.session.session.Session.view.setter">view.setter</a><br />@<a href="fiftyone.core.session.session.html#update_state" class="internal-link" title="fiftyone.core.session.session.update_state">update_state</a>(<wbr></wbr>auto_show=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)<br />
+    <span class="py-keyword">def</span> <span class="py-defname">view</span><span class="function-signature">(self, view: <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L712">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#view.setter" title="fiftyone.core.session.session.Session.view.setter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.session.session.Session.wait">
+    
+  </a>
+  <a name="wait">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">wait</span><span class="function-signature">(self, wait: <code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code> = 3)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L1106">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#wait" title="fiftyone.core.session.session.Session.wait">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Blocks execution until the App is closed by the user.</p>
+<p>All connected windows (tabs) must be closed before this method will
+unblock.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">wait:</span><span class="literal">3</span></td><td class="fieldArgDesc">the number of seconds to wait for a new App connection
+before returning if all connections are lost. If negative, the
+process will wait forever, regardless of connections</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.session.session.Session.browser">
+    
+  </a>
+  <a name="browser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">browser</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L434">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#browser" title="fiftyone.core.session.session.Session.browser">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.session.session.Session.selected_labels">
+    
+  </a>
+  <a name="selected_labels">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">selected_labels</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L816">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#selected_labels" title="fiftyone.core.session.session.Session.selected_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A list of labels currently selected in the App.</p>
+<p>Items are dictionaries with the following keys:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">label_id</tt>: the ID of the label</li>
+<li><tt class="rst-docutils rst-literal">sample_id</tt>: the ID of the sample containing the label</li>
+<li><tt class="rst-docutils rst-literal">field</tt>: the field name containing the label</li>
+<li><tt class="rst-docutils rst-literal">frame_number</tt>: the frame number containing the label (only
+applicable to video samples)</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.session.session.Session.spaces">
+    
+  </a>
+  <a name="spaces">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">spaces</span>: <code><a href="fiftyone.core.odm.workspace.Space.html" class="internal-link" title="fiftyone.core.odm.workspace.Space">Space</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L610">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#spaces" title="fiftyone.core.session.session.Session.spaces">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The layout state for the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.auto">
+    
+  </a>
+  <a name="auto">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">auto</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L513">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#auto" title="fiftyone.core.session.session.Session.auto">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The auto setting for the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.color_scheme">
+    
+  </a>
+  <a name="color_scheme">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">color_scheme</span>: <code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link" title="fiftyone.core.odm.dataset.ColorScheme">food.ColorScheme</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L638">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#color_scheme" title="fiftyone.core.session.session.Session.color_scheme">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The color scheme for the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.config">
+    
+  </a>
+  <a name="config">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">config</span>: <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link" title="fiftyone.core.config.AppConfig">AppConfig</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L546">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#config" title="fiftyone.core.session.session.Session.config">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The current <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link">fiftyone.core.config.AppConfig</a></code>.</p>
+<p>For changes to a session's config to take effect in the App,
+a call to <code><a href="#refresh" class="internal-link" title="fiftyone.core.session.session.Session.refresh">Session.refresh</a></code> or another state-updating action
+such as <code>session.view = my_view</code> must occur.</p>
+<p>Example usage:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+
+dataset, session = fo.quickstart()
+
+# change the show confidence setting and push the change to the App
+session.config.show_confidence = False
+session.refresh()
+</pre>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.dataset">
+    
+  </a>
+  <a name="dataset">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">dataset</span>: <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">fod.Dataset</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L664">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dataset" title="fiftyone.core.session.session.Session.dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> connected to the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.group_id">
+    
+  </a>
+  <a name="group_id">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">group_id</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L580">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#group_id" title="fiftyone.core.session.session.Session.group_id">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The current <code><a href="fiftyone.core.groups.Group.html" class="internal-link">fiftyone.core.groups.Group</a></code> ID in the modal, if
+any.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.has_plots">
+    
+  </a>
+  <a name="has_plots">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_plots</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L748">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_plots" title="fiftyone.core.session.session.Session.has_plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this session has any attached plots.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.plots">
+    
+  </a>
+  <a name="plots">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">plots</span>: <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">fop.PlotManager</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L753">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#plots" title="fiftyone.core.session.session.Session.plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link">fiftyone.core.plots.manager.PlotManager</a></code> instance that
+manages plots attached to this session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.remote">
+    
+  </a>
+  <a name="remote">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">remote</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L532">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#remote" title="fiftyone.core.session.session.Session.remote">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether the session is remote.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.sample_id">
+    
+  </a>
+  <a name="sample_id">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">sample_id</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L595">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sample_id" title="fiftyone.core.session.session.Session.sample_id">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The current <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code> ID in the modal, if
+any.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.selected">
+    
+  </a>
+  <a name="selected">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">selected</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L779">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#selected" title="fiftyone.core.session.session.Session.selected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A list of sample IDs of the currently selected samples in the App,
+if any.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.selected_view">
+    
+  </a>
+  <a name="selected_view">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">selected_view</span>: <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L918">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#selected_view" title="fiftyone.core.session.session.Session.selected_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> containing the currently
+selected content in the App.</p>
+<p>The selected view is defined as follows:</p>
+<ul class="rst-simple">
+<li>If both samples and labels are selected, the view will contain only
+the <code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">selected_labels</a></code> from within the <code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">selected</a></code>
+samples</li>
+<li>If samples are selected, the view will only contain the
+<code><a href="#selected" class="internal-link" title="fiftyone.core.session.session.Session.selected">selected</a></code> samples</li>
+<li>If labels are selected, the view will only contain the
+<code><a href="#selected_labels" class="internal-link" title="fiftyone.core.session.session.Session.selected_labels">selected_labels</a></code></li>
+<li>If no samples or labels are selected, the view will be <tt class="rst-docutils rst-literal">None</tt></li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.server_address">
+    
+  </a>
+  <a name="server_address">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">server_address</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L527">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#server_address" title="fiftyone.core.session.session.Session.server_address">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The server address for the session, or None if not specified.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.server_port">
+    
+  </a>
+  <a name="server_port">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">server_port</span>: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L522">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#server_port" title="fiftyone.core.session.session.Session.server_port">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The server port for the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.url">
+    
+  </a>
+  <a name="url">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">url</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L537">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#url" title="fiftyone.core.session.session.Session.url">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The URL of the session.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.session.session.Session.view">
+    
+  </a>
+  <a name="view">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">view</span>: <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L705">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#view" title="fiftyone.core.session.session.Session.view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> connected to the
+session, or <tt class="rst-docutils rst-literal">None</tt> if no view is connected.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._set_dataset">
+    
+  </a>
+  <a name="_set_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_dataset</span><span class="function-signature">(self, dataset)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L687">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_set_dataset" title="fiftyone.core.session.session.Session._set_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._set_view">
+    
+  </a>
+  <a name="_set_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_view</span><span class="function-signature">(self, view)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L730">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_set_view" title="fiftyone.core.session.session.Session._set_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._validate">
+    
+  </a>
+  <a name="_validate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate</span><span class="function-signature">(self, dataset: <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">fod.Dataset</a> | <a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>, view: <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>, spaces: <code><a href="fiftyone.core.odm.workspace.Space.html" class="internal-link" title="fiftyone.core.odm.workspace.Space">Space</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>, color_scheme: <code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link" title="fiftyone.core.odm.dataset.ColorScheme">food.ColorScheme</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>, plots: <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">fop.PlotManager</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>, config: <code><a href="fiftyone.core.config.AppConfig.html" class="internal-link" title="fiftyone.core.config.AppConfig">AppConfig</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L448">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate" title="fiftyone.core.session.session.Session._validate">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._client">
+    
+  </a>
+  <a name="_client">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_client</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L420">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_client" title="fiftyone.core.session.session.Session._client">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._disable_wait_warning">
+    
+  </a>
+  <a name="_disable_wait_warning">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_disable_wait_warning</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L397">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_disable_wait_warning" title="fiftyone.core.session.session.Session._disable_wait_warning">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._get_time">
+    
+  </a>
+  <a name="_get_time">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_get_time</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L396">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_time" title="fiftyone.core.session.session.Session._get_time">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._notebook_cells">
+    
+  </a>
+  <a name="_notebook_cells">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_notebook_cells</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="fiftyone.core.session.notebooks.NotebookCell.html" class="internal-link" title="fiftyone.core.session.notebooks.NotebookCell">fosn.NotebookCell</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L398">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_notebook_cells" title="fiftyone.core.session.session.Session._notebook_cells">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._plots">
+    
+  </a>
+  <a name="_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_plots</span>: <code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">fop.PlotManager</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L392">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_plots" title="fiftyone.core.session.session.Session._plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._state">
+    
+  </a>
+  <a name="_state">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_state</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L409">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_state" title="fiftyone.core.session.session.Session._state">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._wait_closed">
+    
+  </a>
+  <a name="_wait_closed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_wait_closed</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L393">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_wait_closed" title="fiftyone.core.session.session.Session._wait_closed">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty private">
+  
+  
+  <a name="fiftyone.core.session.session.Session._collection">
+    
+  </a>
+  <a name="_collection">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">_collection</span>: <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link" title="fiftyone.core.dataset.Dataset">fod.Dataset</a> | <a href="fiftyone.core.view.DatasetView.html" class="internal-link" title="fiftyone.core.view.DatasetView">fov.DatasetView</a> | <a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/session/session.py#L657">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_collection" title="fiftyone.core.session.session.Session._collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

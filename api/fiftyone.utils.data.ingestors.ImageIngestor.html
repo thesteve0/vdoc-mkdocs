@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.data.ingestors.ImageIngestor</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.data.ingestors.ImageIngestor.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.data.ingestors.ImageIngestor.html" class="internal-link" title="This class"><wbr></wbr>Image<wbr></wbr>Ingestor</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ingest_image" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image">_ingest<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ingest_image_from_path" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image_from_path">_ingest<wbr></wbr>_image<wbr></wbr>_from<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ingest_in_memory_image" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_in_memory_image">_ingest<wbr></wbr>_in<wbr></wbr>_memory<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_setup" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._setup">_setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#dataset_dir" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.dataset_dir">dataset<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#image_format" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.image_format">image<wbr></wbr>_format</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_filename_maker" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._filename_maker">_filename<wbr></wbr>_maker</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.data.ingestors.html" class="internal-link" title="The parent of this class">ingestors</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.ImageIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor"><wbr></wbr>Image<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor"><wbr></wbr>Labeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor"><wbr></wbr>Labeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor"><wbr></wbr>Unlabeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.UnlabeledVideoDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.UnlabeledVideoDatasetIngestor"><wbr></wbr>Unlabeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor"><wbr></wbr>Video<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.html#logger" class="internal-link" title="fiftyone.utils.data.ingestors.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.ingestors.html" class="internal-link" title="fiftyone.utils.data.ingestors">ingestors</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.ingestors.ImageIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor">ImageIngestor</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">ImageIngestor</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L27" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor</a></code>, <code><a href="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.__init__">ImageIngestor(dataset_dir, image_format)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.data.ingestors.ImageIngestor">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Mixin for <code><a href="fiftyone.utils.data.importers.DatasetImporter.html" class="internal-link">fiftyone.utils.data.importers.DatasetImporter</a></code>
+instances that ingest images into the provided <tt class="rst-docutils rst-literal">dataset_dir</tt> during
+import.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory where input images will be ingested into</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_format</span></td><td class="fieldArgDesc">the image format to use when writing in-memory
+images to disk. By default, <tt class="rst-docutils rst-literal">fiftyone.config.default_image_ext</tt>
+is used</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1726">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#dataset_dir" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.dataset_dir">dataset<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#image_format" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor.image_format">image<wbr></wbr>_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_ingest_image" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image">_ingest<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_ingest_image_from_path" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image_from_path">_ingest<wbr></wbr>_image<wbr></wbr>_from<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_ingest_in_memory_image" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_in_memory_image">_ingest<wbr></wbr>_in<wbr></wbr>_memory<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_setup" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._setup">_setup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_filename_maker" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor._filename_maker">_filename<wbr></wbr>_maker</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, dataset_dir, image_format=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L39">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.data.ingestors.ImageIngestor.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor</a></code>, <code><a href="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor.dataset_dir">
+    
+  </a>
+  <a name="dataset_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">dataset_dir</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L43">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#dataset_dir" title="fiftyone.utils.data.ingestors.ImageIngestor.dataset_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor.image_format">
+    
+  </a>
+  <a name="image_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">image_format</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L44">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#image_format" title="fiftyone.utils.data.ingestors.ImageIngestor.image_format">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor</a></code>, <code><a href="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor.html" class="internal-link">fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image">
+    
+  </a>
+  <a name="_ingest_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ingest_image</span><span class="function-signature">(self, sample_parser)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L48">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ingest_image" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image_from_path">
+    
+  </a>
+  <a name="_ingest_image_from_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ingest_image_from_path</span><span class="function-signature">(self, sample_parser)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L61">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ingest_image_from_path" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_image_from_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor._ingest_in_memory_image">
+    
+  </a>
+  <a name="_ingest_in_memory_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ingest_in_memory_image</span><span class="function-signature">(self, sample_parser)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L67">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ingest_in_memory_image" title="fiftyone.utils.data.ingestors.ImageIngestor._ingest_in_memory_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor._setup">
+    
+  </a>
+  <a name="_setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L73">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_setup" title="fiftyone.utils.data.ingestors.ImageIngestor._setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.ImageIngestor._filename_maker">
+    
+  </a>
+  <a name="_filename_maker">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_filename_maker</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L46">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_filename_maker" title="fiftyone.utils.data.ingestors.ImageIngestor._filename_maker">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

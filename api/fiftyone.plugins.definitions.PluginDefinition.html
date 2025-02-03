@@ -1,0 +1,1691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.plugins.definitions.PluginDefinition</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.plugins.definitions.PluginDefinition.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="This class"><wbr></wbr>Plugin<wbr></wbr>Definition</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_disk" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.from_disk">from<wbr></wbr>_disk</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#can_register_operator" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.can_register_operator">can<wbr></wbr>_register<wbr></wbr>_operator</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_dict" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.to_dict">to<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_abs_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._get_abs_path">_get<wbr></wbr>_abs<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._validate">_validate</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#author" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.author">author</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#builtin" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.builtin">builtin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#description" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.description">description</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#directory" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.directory">directory</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#fiftyone_compatibility" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_compatibility">fiftyone<wbr></wbr>_compatibility</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#fiftyone_requirement" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_requirement">fiftyone<wbr></wbr>_requirement</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_js" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_js">has<wbr></wbr>_js</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_package_json" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_package_json">has<wbr></wbr>_package<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_py" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_py">has<wbr></wbr>_py</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#js_bundle" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle">js<wbr></wbr>_bundle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#js_bundle_hash" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_hash">js<wbr></wbr>_bundle<wbr></wbr>_hash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#js_bundle_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_path">js<wbr></wbr>_bundle<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#js_bundle_server_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_server_path">js<wbr></wbr>_bundle<wbr></wbr>_server<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#license" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.license">license</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#name" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.name">name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#operators" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.operators">operators</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#package_json_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.package_json_path">package<wbr></wbr>_json<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#py_entry" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.py_entry">py<wbr></wbr>_entry</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#py_entry_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.py_entry_path">py<wbr></wbr>_entry<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#secrets" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.secrets">secrets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#server_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.server_path">server<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#shadow_paths" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.shadow_paths">shadow<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#url" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.url">url</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#version" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.version">version</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_REQUIRED_METADATA_KEYS" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._REQUIRED_METADATA_KEYS">_REQUIRED<wbr></wbr>_METADATA<wbr></wbr>_KEYS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_directory" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._directory">_directory</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_metadata" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._metadata">_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_shadow_paths" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._shadow_paths">_shadow<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.plugins.definitions.html" class="internal-link" title="The parent of this class">definitions</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition"><wbr></wbr>Plugin<wbr></wbr>Definition</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.plugins.html" class="internal-link" title="fiftyone.plugins">plugins</a></code><wbr></wbr>.<code><a href="fiftyone.plugins.definitions.html" class="internal-link" title="fiftyone.plugins.definitions">definitions</a></code><wbr></wbr>.<code><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition">PluginDefinition</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PluginDefinition</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L19" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.__init__">PluginDefinition(directory, metadata, shadow_paths)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.plugins.definitions.PluginDefinition">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>A plugin definition.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">directory</span></td><td class="fieldArgDesc">the directory containing the plugin</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">metadata</span></td><td class="fieldArgDesc">a plugin metadata dict</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">shadow<wbr></wbr>_paths</span></td><td class="fieldArgDesc">a list of plugin directories that this plugin
+shadows</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1187">
+  
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_disk" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.from_disk">from<wbr></wbr>_disk</a></code></td>
+    <td>Creates a <code><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition">PluginDefinition</a></code> for the given metadata file.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#can_register_operator" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.can_register_operator">can<wbr></wbr>_register<wbr></wbr>_operator</a></code></td>
+    <td>Whether the plugin can register the given operator.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_dict" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.to_dict">to<wbr></wbr>_dict</a></code></td>
+    <td>Returns a JSON dict representation of the plugin metadata.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#author" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.author">author</a></code></td>
+    <td>The author of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#builtin" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.builtin">builtin</a></code></td>
+    <td>Whether the plugin is a builtin plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#description" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.description">description</a></code></td>
+    <td>The description of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#directory" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.directory">directory</a></code></td>
+    <td>The directory containing the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#fiftyone_compatibility" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_compatibility">fiftyone<wbr></wbr>_compatibility</a></code></td>
+    <td>The FiftyOne compatibility version.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#fiftyone_requirement" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_requirement">fiftyone<wbr></wbr>_requirement</a></code></td>
+    <td>The FiftyOne requirement as a string like <tt class="rst-docutils rst-literal"><span class="pre">fiftyone&gt;=0.21</span></tt>.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_js" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_js">has<wbr></wbr>_js</a></code></td>
+    <td>Whether the plugin has a JS bundle file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_package_json" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_package_json">has<wbr></wbr>_package<wbr></wbr>_json</a></code></td>
+    <td>Whether the plugin has a package.json file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_py" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.has_py">has<wbr></wbr>_py</a></code></td>
+    <td>Whether the plugin has a Python entry file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#js_bundle" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle">js<wbr></wbr>_bundle</a></code></td>
+    <td>The relative path to the JS bundle file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#js_bundle_hash" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_hash">js<wbr></wbr>_bundle<wbr></wbr>_hash</a></code></td>
+    <td>A hash of the plugin's JS bundle file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#js_bundle_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_path">js<wbr></wbr>_bundle<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#js_bundle_server_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_server_path">js<wbr></wbr>_bundle<wbr></wbr>_server<wbr></wbr>_path</a></code></td>
+    <td>The default server path to the JS bundle.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#license" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.license">license</a></code></td>
+    <td>The license of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#name" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.name">name</a></code></td>
+    <td>The name of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#operators" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.operators">operators</a></code></td>
+    <td>The operators of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#package_json_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.package_json_path">package<wbr></wbr>_json<wbr></wbr>_path</a></code></td>
+    <td>The absolute path to the package.json file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#py_entry" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.py_entry">py<wbr></wbr>_entry</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#py_entry_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.py_entry_path">py<wbr></wbr>_entry<wbr></wbr>_path</a></code></td>
+    <td>The absolute path to the Python entry file.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#secrets" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.secrets">secrets</a></code></td>
+    <td>A list of required secrets for the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#server_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.server_path">server<wbr></wbr>_path</a></code></td>
+    <td>The default server path to the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#shadow_paths" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.shadow_paths">shadow<wbr></wbr>_paths</a></code></td>
+    <td>A list of plugin directories that this plugin shadows.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#url" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.url">url</a></code></td>
+    <td>The URL of the plugin.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#version" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition.version">version</a></code></td>
+    <td>The version of the plugin.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_abs_path" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._get_abs_path">_get<wbr></wbr>_abs<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_validate" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._validate">_validate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_REQUIRED_METADATA_KEYS" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._REQUIRED_METADATA_KEYS">_REQUIRED<wbr></wbr>_METADATA<wbr></wbr>_KEYS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_directory" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._directory">_directory</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_metadata" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._metadata">_metadata</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_shadow_paths" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition._shadow_paths">_shadow<wbr></wbr>_paths</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.from_disk">
+    
+  </a>
+  <a name="from_disk">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_disk</span><span class="function-signature">(cls, metadata_path, shadow_paths=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L226">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_disk" title="fiftyone.plugins.definitions.PluginDefinition.from_disk">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Creates a <code><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition">PluginDefinition</a></code> for the given metadata file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">metadata<wbr></wbr>_path</span></td><td class="fieldArgDesc">the path to a plugin <tt class="rst-docutils rst-literal">.yaml</tt> file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">shadow<wbr></wbr>_paths:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a list of plugin directories that this plugin
+shadows</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.plugins.definitions.PluginDefinition.html" class="internal-link" title="fiftyone.plugins.definitions.PluginDefinition">PluginDefinition</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, directory, metadata, shadow_paths=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L31">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.plugins.definitions.PluginDefinition.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.can_register_operator">
+    
+  </a>
+  <a name="can_register_operator">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">can_register_operator</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L171">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#can_register_operator" title="fiftyone.plugins.definitions.PluginDefinition.can_register_operator">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Whether the plugin can register the given operator.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the operator name</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.to_dict">
+    
+  </a>
+  <a name="to_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_dict</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L197">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_dict" title="fiftyone.plugins.definitions.PluginDefinition.to_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a JSON dict representation of the plugin metadata.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a JSON dict</td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.author">
+    
+  </a>
+  <a name="author">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">author</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L57">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#author" title="fiftyone.plugins.definitions.PluginDefinition.author">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The author of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.builtin">
+    
+  </a>
+  <a name="builtin">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">builtin</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L47">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#builtin" title="fiftyone.plugins.definitions.PluginDefinition.builtin">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether the plugin is a builtin plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.description">
+    
+  </a>
+  <a name="description">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">description</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L77">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#description" title="fiftyone.plugins.definitions.PluginDefinition.description">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The description of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.directory">
+    
+  </a>
+  <a name="directory">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">directory</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L42">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#directory" title="fiftyone.plugins.definitions.PluginDefinition.directory">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The directory containing the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.fiftyone_compatibility">
+    
+  </a>
+  <a name="fiftyone_compatibility">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">fiftyone_compatibility</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L82">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#fiftyone_compatibility" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_compatibility">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The FiftyOne compatibility version.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.fiftyone_requirement">
+    
+  </a>
+  <a name="fiftyone_requirement">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">fiftyone_requirement</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L87">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#fiftyone_requirement" title="fiftyone.plugins.definitions.PluginDefinition.fiftyone_requirement">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The FiftyOne requirement as a string like <tt class="rst-docutils rst-literal"><span class="pre">fiftyone&gt;=0.21</span></tt>.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.has_js">
+    
+  </a>
+  <a name="has_js">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_js</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L187">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_js" title="fiftyone.plugins.definitions.PluginDefinition.has_js">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether the plugin has a JS bundle file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.has_package_json">
+    
+  </a>
+  <a name="has_package_json">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_package_json</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L113">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_package_json" title="fiftyone.plugins.definitions.PluginDefinition.has_package_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether the plugin has a package.json file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.has_py">
+    
+  </a>
+  <a name="has_py">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_py</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L182">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_py" title="fiftyone.plugins.definitions.PluginDefinition.has_py">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether the plugin has a Python entry file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.js_bundle">
+    
+  </a>
+  <a name="js_bundle">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">js_bundle</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L118">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#js_bundle" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The relative path to the JS bundle file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.js_bundle_hash">
+    
+  </a>
+  <a name="js_bundle_hash">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">js_bundle_hash</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L157">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#js_bundle_hash" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_hash">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A hash of the plugin's JS bundle file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.js_bundle_path">
+    
+  </a>
+  <a name="js_bundle_path">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">js_bundle_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L132">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#js_bundle_path" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.js_bundle_server_path">
+    
+  </a>
+  <a name="js_bundle_server_path">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">js_bundle_server_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L151">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#js_bundle_server_path" title="fiftyone.plugins.definitions.PluginDefinition.js_bundle_server_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The default server path to the JS bundle.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.license">
+    
+  </a>
+  <a name="license">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">license</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L72">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#license" title="fiftyone.plugins.definitions.PluginDefinition.license">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The license of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L37">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#name" title="fiftyone.plugins.definitions.PluginDefinition.name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The name of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.operators">
+    
+  </a>
+  <a name="operators">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">operators</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L101">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#operators" title="fiftyone.plugins.definitions.PluginDefinition.operators">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The operators of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.package_json_path">
+    
+  </a>
+  <a name="package_json_path">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">package_json_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L108">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#package_json_path" title="fiftyone.plugins.definitions.PluginDefinition.package_json_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The absolute path to the package.json file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.py_entry">
+    
+  </a>
+  <a name="py_entry">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">py_entry</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L136">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#py_entry" title="fiftyone.plugins.definitions.PluginDefinition.py_entry">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.py_entry_path">
+    
+  </a>
+  <a name="py_entry_path">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">py_entry_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L140">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#py_entry_path" title="fiftyone.plugins.definitions.PluginDefinition.py_entry_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The absolute path to the Python entry file.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.secrets">
+    
+  </a>
+  <a name="secrets">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">secrets</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L192">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#secrets" title="fiftyone.plugins.definitions.PluginDefinition.secrets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A list of required secrets for the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.server_path">
+    
+  </a>
+  <a name="server_path">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">server_path</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L145">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#server_path" title="fiftyone.plugins.definitions.PluginDefinition.server_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The default server path to the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.shadow_paths">
+    
+  </a>
+  <a name="shadow_paths">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">shadow_paths</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L52">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#shadow_paths" title="fiftyone.plugins.definitions.PluginDefinition.shadow_paths">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>A list of plugin directories that this plugin shadows.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.url">
+    
+  </a>
+  <a name="url">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">url</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L67">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#url" title="fiftyone.plugins.definitions.PluginDefinition.url">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The URL of the plugin.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition.version">
+    
+  </a>
+  <a name="version">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">version</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L62">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#version" title="fiftyone.plugins.definitions.PluginDefinition.version">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The version of the plugin.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._get_abs_path">
+    
+  </a>
+  <a name="_get_abs_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_abs_path</span><span class="function-signature">(self, filename)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L253">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_abs_path" title="fiftyone.plugins.definitions.PluginDefinition._get_abs_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._validate">
+    
+  </a>
+  <a name="_validate">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L244">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate" title="fiftyone.plugins.definitions.PluginDefinition._validate">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._REQUIRED_METADATA_KEYS">
+    
+  </a>
+  <a name="_REQUIRED_METADATA_KEYS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_REQUIRED_METADATA_KEYS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L29">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_REQUIRED_METADATA_KEYS" title="fiftyone.plugins.definitions.PluginDefinition._REQUIRED_METADATA_KEYS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">name</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._directory">
+    
+  </a>
+  <a name="_directory">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_directory</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L32">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_directory" title="fiftyone.plugins.definitions.PluginDefinition._directory">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._metadata">
+    
+  </a>
+  <a name="_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_metadata</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L33">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_metadata" title="fiftyone.plugins.definitions.PluginDefinition._metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.plugins.definitions.PluginDefinition._shadow_paths">
+    
+  </a>
+  <a name="_shadow_paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_shadow_paths</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/plugins/definitions.py#L34">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_shadow_paths" title="fiftyone.plugins.definitions.PluginDefinition._shadow_paths">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

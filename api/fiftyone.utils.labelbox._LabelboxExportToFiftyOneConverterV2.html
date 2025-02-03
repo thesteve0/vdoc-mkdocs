@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2.html" class="internal-link" title="This class">_<wbr></wbr>Labelbox<wbr></wbr>Export<wbr></wbr>To<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Converter<wbr></wbr>V2</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_bounding_box_name" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._bounding_box_name">_bounding<wbr></wbr>_box<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_answer_value" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_answer_value">_get<wbr></wbr>_answer<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_datarow_id" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_datarow_id">_get<wbr></wbr>_datarow<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_global_key" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_global_key">_get<wbr></wbr>_global<wbr></wbr>_key</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_label_field_attr" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_label_field_attr">_get<wbr></wbr>_label<wbr></wbr>_field<wbr></wbr>_attr</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_labels_dict" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_labels_dict">_get<wbr></wbr>_labels<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_mask_url" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_mask_url">_get<wbr></wbr>_mask<wbr></wbr>_url</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_iter_video_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._iter_video_labels">_iter<wbr></wbr>_video<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_attributes" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_attributes">_parse<wbr></wbr>_attributes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_classifications" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_classifications">_parse<wbr></wbr>_classifications</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_mask" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_mask">_parse<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_bbox" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_bbox">_parse<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_image_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_image_labels">_parse<wbr></wbr>_image<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_objects" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_objects">_parse<wbr></wbr>_objects</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_point" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_point">_parse<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_points" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_points">_parse<wbr></wbr>_points</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_video_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_video_labels">_parse<wbr></wbr>_video<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="The parent of this class">labelbox</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.LabelboxAnnotationAPI.html" class="internal-link" title="fiftyone.utils.labelbox.LabelboxAnnotationAPI"><wbr></wbr>Labelbox<wbr></wbr>Annotation<wbr></wbr>API</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.LabelboxAnnotationResults.html" class="internal-link" title="fiftyone.utils.labelbox.LabelboxAnnotationResults"><wbr></wbr>Labelbox<wbr></wbr>Annotation<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.LabelboxBackend.html" class="internal-link" title="fiftyone.utils.labelbox.LabelboxBackend"><wbr></wbr>Labelbox<wbr></wbr>Backend</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.LabelboxBackendConfig.html" class="internal-link" title="fiftyone.utils.labelbox.LabelboxBackendConfig"><wbr></wbr>Labelbox<wbr></wbr>Backend<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.LabelboxExportVersion.html" class="internal-link" title="fiftyone.utils.labelbox.LabelboxExportVersion"><wbr></wbr>Labelbox<wbr></wbr>Export<wbr></wbr>Version</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._FiftyOneToLabelboxConverterBase.html" class="internal-link" title="fiftyone.utils.labelbox._FiftyOneToLabelboxConverterBase">_<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>To<wbr></wbr>Labelbox<wbr></wbr>Converter<wbr></wbr>Base</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._FiftyOneToLabelboxExportConverterV1.html" class="internal-link" title="fiftyone.utils.labelbox._FiftyOneToLabelboxExportConverterV1">_<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>To<wbr></wbr>Labelbox<wbr></wbr>Export<wbr></wbr>Converter<wbr></wbr>V1</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1">_<wbr></wbr>Labelbox<wbr></wbr>Export<wbr></wbr>To<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Converter<wbr></wbr>V1</a></code>
+            </div>
+        
+
+    </li><li class="private thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2.html" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2">_<wbr></wbr>Labelbox<wbr></wbr>Export<wbr></wbr>To<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Converter<wbr></wbr>V2</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#convert_labelbox_export_to_import" class="internal-link" title="fiftyone.utils.labelbox.convert_labelbox_export_to_import">convert<wbr></wbr>_labelbox<wbr></wbr>_export<wbr></wbr>_to<wbr></wbr>_import</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#download_labels_from_labelbox" class="internal-link" title="fiftyone.utils.labelbox.download_labels_from_labelbox">download<wbr></wbr>_labels<wbr></wbr>_from<wbr></wbr>_labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#export_to_labelbox" class="internal-link" title="fiftyone.utils.labelbox.export_to_labelbox">export<wbr></wbr>_to<wbr></wbr>_labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#import_from_labelbox" class="internal-link" title="fiftyone.utils.labelbox.import_from_labelbox">import<wbr></wbr>_from<wbr></wbr>_labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#upload_labels_to_labelbox" class="internal-link" title="fiftyone.utils.labelbox.upload_labels_to_labelbox">upload<wbr></wbr>_labels<wbr></wbr>_to<wbr></wbr>_labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#upload_media_to_labelbox" class="internal-link" title="fiftyone.utils.labelbox.upload_media_to_labelbox">upload<wbr></wbr>_media<wbr></wbr>_to<wbr></wbr>_labelbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_convert_labelbox_frames_export_to_import" class="internal-link" title="fiftyone.utils.labelbox._convert_labelbox_frames_export_to_import">_convert<wbr></wbr>_labelbox<wbr></wbr>_frames<wbr></wbr>_export<wbr></wbr>_to<wbr></wbr>_import</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_download_labels_from_labelbox_v1" class="internal-link" title="fiftyone.utils.labelbox._download_labels_from_labelbox_v1">_download<wbr></wbr>_labels<wbr></wbr>_from<wbr></wbr>_labelbox<wbr></wbr>_v1</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_download_or_load_ndjson" class="internal-link" title="fiftyone.utils.labelbox._download_or_load_ndjson">_download<wbr></wbr>_or<wbr></wbr>_load<wbr></wbr>_ndjson</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_get_attr_type" class="internal-link" title="fiftyone.utils.labelbox._get_attr_type">_get<wbr></wbr>_attr<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_get_frame_labels" class="internal-link" title="fiftyone.utils.labelbox._get_frame_labels">_get<wbr></wbr>_frame<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_get_labels" class="internal-link" title="fiftyone.utils.labelbox._get_labels">_get<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_ingest_label" class="internal-link" title="fiftyone.utils.labelbox._ingest_label">_ingest<wbr></wbr>_label</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_make_video_anno" class="internal-link" title="fiftyone.utils.labelbox._make_video_anno">_make<wbr></wbr>_video<wbr></wbr>_anno</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_parse_attribute" class="internal-link" title="fiftyone.utils.labelbox._parse_attribute">_parse<wbr></wbr>_attribute</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_warn_labelbox_v1" class="internal-link" title="fiftyone.utils.labelbox._warn_labelbox_v1">_warn<wbr></wbr>_labelbox<wbr></wbr>_v1</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#lb" class="internal-link" title="fiftyone.utils.labelbox.lb">lb</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#lbo" class="internal-link" title="fiftyone.utils.labelbox.lbo">lbo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#lbr" class="internal-link" title="fiftyone.utils.labelbox.lbr">lbr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#lbs" class="internal-link" title="fiftyone.utils.labelbox.lbs">lbs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#logger" class="internal-link" title="fiftyone.utils.labelbox.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html#_UNIQUE_TYPE_MAP" class="internal-link" title="fiftyone.utils.labelbox._UNIQUE_TYPE_MAP">_UNIQUE<wbr></wbr>_TYPE<wbr></wbr>_MAP</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class private"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code><wbr></wbr>.<code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2.html" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2">_LabelboxExportToFiftyOneConverterV2</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">_LabelboxExportToFiftyOneConverterV2</span>(<a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1">_LabelboxExportToFiftyOneConverterV1</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2745" class="sourceLink">(source)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p class="undocumented">Undocumented</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2072">
+  
+  
+  <tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_bounding_box_name" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._bounding_box_name">_bounding<wbr></wbr>_box<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_answer_value" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_answer_value">_get<wbr></wbr>_answer<wbr></wbr>_value</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_datarow_id" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_datarow_id">_get<wbr></wbr>_datarow<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_global_key" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_global_key">_get<wbr></wbr>_global<wbr></wbr>_key</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_label_field_attr" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_label_field_attr">_get<wbr></wbr>_label<wbr></wbr>_field<wbr></wbr>_attr</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_labels_dict" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_labels_dict">_get<wbr></wbr>_labels<wbr></wbr>_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_mask_url" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_mask_url">_get<wbr></wbr>_mask<wbr></wbr>_url</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_iter_video_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._iter_video_labels">_iter<wbr></wbr>_video<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_parse_attributes" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_attributes">_parse<wbr></wbr>_attributes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_parse_classifications" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_classifications">_parse<wbr></wbr>_classifications</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_parse_mask" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_mask">_parse<wbr></wbr>_mask</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1">_LabelboxExportToFiftyOneConverterV1</a></code>:
+            </p>
+            <table class="children sortable" id="id2073">
+  
+  
+  <tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_bbox" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_bbox">_parse<wbr></wbr>_bbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_image_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_image_labels">_parse<wbr></wbr>_image<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_objects" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_objects">_parse<wbr></wbr>_objects</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_point" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_point">_parse<wbr></wbr>_point</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_points" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_points">_parse<wbr></wbr>_points</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_video_labels" class="internal-link" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_video_labels">_parse<wbr></wbr>_video<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._bounding_box_name">
+    
+  </a>
+  <a name="_bounding_box_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_bounding_box_name</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2867">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_bounding_box_name" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._bounding_box_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_bounding_box_name" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._bounding_box_name</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_answer_value">
+    
+  </a>
+  <a name="_get_answer_value">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_answer_value</span><span class="function-signature">(cls, answer)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2748">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_answer_value" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_answer_value">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_answer_value" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_answer_value</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_datarow_id">
+    
+  </a>
+  <a name="_get_datarow_id">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_datarow_id</span><span class="function-signature">(cls, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2752">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_datarow_id" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_datarow_id">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_datarow_id" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_datarow_id</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_global_key">
+    
+  </a>
+  <a name="_get_global_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_global_key</span><span class="function-signature">(cls, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2756">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_global_key" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_global_key">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_global_key" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_global_key</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_label_field_attr">
+    
+  </a>
+  <a name="_get_label_field_attr">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_label_field_attr</span><span class="function-signature">(cls, od)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2875">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_label_field_attr" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_label_field_attr">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_label_field_attr" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_label_field_attr</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_labels_dict">
+    
+  </a>
+  <a name="_get_labels_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_labels_dict</span><span class="function-signature">(cls, d, project_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2785">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_labels_dict" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_labels_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_labels_dict" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_labels_dict</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_mask_url">
+    
+  </a>
+  <a name="_get_mask_url">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_mask_url</span><span class="function-signature">(cls, od)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2871">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_mask_url" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._get_mask_url">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_get_mask_url" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._get_mask_url</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._iter_video_labels">
+    
+  </a>
+  <a name="_iter_video_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_iter_video_labels</span><span class="function-signature">(cls, d, project_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2760">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_iter_video_labels" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._iter_video_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_iter_video_labels" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._iter_video_labels</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_attributes">
+    
+  </a>
+  <a name="_parse_attributes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_attributes</span><span class="function-signature">(cls, cd_list)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2836">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_attributes" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_attributes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_attributes" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_attributes</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_classifications">
+    
+  </a>
+  <a name="_parse_classifications">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_classifications</span><span class="function-signature">(cls, cd_list)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2799">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_classifications" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_classifications">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_classifications" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_classifications</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_mask">
+    
+  </a>
+  <a name="_parse_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_mask</span><span class="function-signature">(cls, instance_uri, headers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/labelbox.py#L2879">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_mask" title="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV2._parse_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1.html#_parse_mask" class="internal-link">fiftyone.utils.labelbox._LabelboxExportToFiftyOneConverterV1._parse_mask</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

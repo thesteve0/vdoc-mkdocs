@@ -1,0 +1,2653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.plots.manager.PlotManager</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.plots.manager.PlotManager.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="This class"><wbr></wbr>Plot<wbr></wbr>Manager</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__bool__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__bool__">__bool__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__contains__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__contains__">__contains__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__delitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__delitem__">__delitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__getitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__getitem__">__getitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__iter__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__iter__">__iter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__len__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__len__">__len__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__repr__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__setitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__setitem__">__setitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__str__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#attach" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.attach">attach</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.clear">clear</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#connect" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.connect">connect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#disconnect" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.disconnect">disconnect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#freeze" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.freeze">freeze</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#items" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.items">items</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#keys" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.keys">keys</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#pop" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.pop">pop</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#remove" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.remove">remove</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#summary" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.summary">summary</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sync" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.sync">sync</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#values" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.values">values</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_connect_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._connect_plot">_connect<wbr></wbr>_plot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_disconnect_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._disconnect_plot">_disconnect<wbr></wbr>_plot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_current_label_ids_for_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._get_current_label_ids_for_plot">_get<wbr></wbr>_current<wbr></wbr>_label<wbr></wbr>_ids<wbr></wbr>_for<wbr></wbr>_plot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_needs_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._needs_update">_needs<wbr></wbr>_update</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_plot_selection" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._on_plot_selection">_on<wbr></wbr>_plot<wbr></wbr>_selection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_on_session_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._on_session_update">_on<wbr></wbr>_session<wbr></wbr>_update</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ready_for_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._ready_for_update">_ready<wbr></wbr>_for<wbr></wbr>_update</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_set_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._set_session">_set<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_summarize_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._summarize_plots">_summarize<wbr></wbr>_plots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_all_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_all_plots">_update<wbr></wbr>_all<wbr></wbr>_plots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_ids_from_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_ids_from_session">_update<wbr></wbr>_ids<wbr></wbr>_from<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_interactive_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_interactive_plot">_update<wbr></wbr>_interactive<wbr></wbr>_plot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_plots">_update<wbr></wbr>_plots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_plots_from_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_plots_from_session">_update<wbr></wbr>_plots<wbr></wbr>_from<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_session">_update<wbr></wbr>_session</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_update_view_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_view_plots">_update<wbr></wbr>_view<wbr></wbr>_plots</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_frame_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_frame_links">has<wbr></wbr>_frame<wbr></wbr>_links</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_label_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_label_links">has<wbr></wbr>_label<wbr></wbr>_links</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_sample_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_sample_links">has<wbr></wbr>_sample<wbr></wbr>_links</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_view_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_view_links">has<wbr></wbr>_view<wbr></wbr>_links</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#is_connected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.is_connected">is<wbr></wbr>_connected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#is_disconnected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.is_disconnected">is<wbr></wbr>_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_MIN_UPDATE_DELTA_SECONDS" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._MIN_UPDATE_DELTA_SECONDS">_MIN<wbr></wbr>_UPDATE<wbr></wbr>_DELTA<wbr></wbr>_SECONDS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_aggs" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._aggs">_aggs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_connected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._connected">_connected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_current_frame_ids" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_frame_ids">_current<wbr></wbr>_frame<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_current_labels" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_labels">_current<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_current_sample_ids" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_sample_ids">_current<wbr></wbr>_sample<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_disconnected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._disconnected">_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_last_session_view" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_session_view">_last<wbr></wbr>_session<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_last_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_update">_last<wbr></wbr>_update</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_last_updates" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_updates">_last<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._plots">_plots</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._session">_session</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.plots.manager.html" class="internal-link" title="The parent of this class">manager</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager"><wbr></wbr>Plot<wbr></wbr>Manager</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.manager.html#logger" class="internal-link" title="fiftyone.core.plots.manager.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.manager.html" class="internal-link" title="fiftyone.core.plots.manager">manager</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.manager.PlotManager.html" class="internal-link" title="fiftyone.core.plots.manager.PlotManager">PlotManager</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PlotManager</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L27" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__init__">PlotManager(session)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.plots.manager.PlotManager">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Class that manages communication between a
+<code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session">fiftyone.core.session.Session</a></code> and one or more
+<code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link">fiftyone.core.plots.base.ResponsivePlot</a></code> instances.</p>
+<p>Each plot can be linked to either the view, samples, frames, or labels of a
+session:</p>
+<ul class="rst-simple">
+<li><strong>View links:</strong> When a plot has <tt class="rst-docutils rst-literal">link_type == "view"</tt>, then, when the
+session's view changes, the plot is updated based on the content of the
+view</li>
+<li><strong>Sample links:</strong> When points are selected in a plot with
+<tt class="rst-docutils rst-literal">link_type == "samples"</tt>, a view containing the corresponding samples
+is loaded in the App. Conversely, when the session's view changes, the
+corresponding points are selected in the plot</li>
+<li><strong>Frame links:</strong> When points are selected in a plot with
+<tt class="rst-docutils rst-literal">link_type == "frames"</tt>, a view containing the corresponding frames
+is loaded in the App. Conversely, when the session's view changes, the
+corresponding points are selected in the plot</li>
+<li><strong>Label links:</strong> When points are selected in a plot with
+<tt class="rst-docutils rst-literal">link_type == "labels"</tt>, a view containing the corresponding labels
+is loaded in the App. Conversely, when the session's view changes, the
+points in the plot corresponding to all labels in the view are selected
+in the plot</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">session</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.session.session.Session.html" class="internal-link" title="fiftyone.core.session.session.Session">fiftyone.core.session.Session</a></code></td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id509">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__bool__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__bool__">__bool__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__contains__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__contains__">__contains__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__delitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__getitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__getitem__">__getitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__len__">__len__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__repr__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__setitem__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__setitem__">__setitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__str__" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#attach" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.attach">attach</a></code></td>
+    <td>Attaches a plot to this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.clear">clear</a></code></td>
+    <td>Removes all plots from this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#connect" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.connect">connect</a></code></td>
+    <td>Connects this manager to its session and all plots.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#disconnect" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.disconnect">disconnect</a></code></td>
+    <td>Disconnects this manager from its session and all plots.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#freeze" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.freeze">freeze</a></code></td>
+    <td>Freezes all connected plots, replacing them with static images.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#items" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.items">items</a></code></td>
+    <td>Returns an iterator over the <tt class="rst-docutils rst-literal">(name, plot)</tt> pairs in this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#keys" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.keys">keys</a></code></td>
+    <td>Returns an iterator over the names of plots in this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#pop" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.pop">pop</a></code></td>
+    <td>Removes the plot from this manager and returns it.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#remove" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.remove">remove</a></code></td>
+    <td>Removes the plot from this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#summary" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.summary">summary</a></code></td>
+    <td>Returns a string summary of this manager.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#sync" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.sync">sync</a></code></td>
+    <td>Syncs all connected plots with the session's current view.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#values" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.values">values</a></code></td>
+    <td>Returns an iterator over the plots in this manager.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_frame_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_frame_links">has<wbr></wbr>_frame<wbr></wbr>_links</a></code></td>
+    <td>Whether this manager has plots linked to frames.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_label_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_label_links">has<wbr></wbr>_label<wbr></wbr>_links</a></code></td>
+    <td>Whether this manager has plots linked to labels.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_sample_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_sample_links">has<wbr></wbr>_sample<wbr></wbr>_links</a></code></td>
+    <td>Whether this manager has plots linked to samples.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_view_links" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.has_view_links">has<wbr></wbr>_view<wbr></wbr>_links</a></code></td>
+    <td>Whether this manager has plots linked to views.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_connected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.is_connected">is<wbr></wbr>_connected</a></code></td>
+    <td>Whether this manager is currently connected to its plots.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#is_disconnected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager.is_disconnected">is<wbr></wbr>_disconnected</a></code></td>
+    <td>Whether this manager is currently disconnected from its plots.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_connect_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._connect_plot">_connect<wbr></wbr>_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_disconnect_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._disconnect_plot">_disconnect<wbr></wbr>_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_get_current_label_ids_for_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._get_current_label_ids_for_plot">_get<wbr></wbr>_current<wbr></wbr>_label<wbr></wbr>_ids<wbr></wbr>_for<wbr></wbr>_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_needs_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._needs_update">_needs<wbr></wbr>_update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_plot_selection" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._on_plot_selection">_on<wbr></wbr>_plot<wbr></wbr>_selection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_on_session_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._on_session_update">_on<wbr></wbr>_session<wbr></wbr>_update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_ready_for_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._ready_for_update">_ready<wbr></wbr>_for<wbr></wbr>_update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_set_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._set_session">_set<wbr></wbr>_session</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_summarize_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._summarize_plots">_summarize<wbr></wbr>_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_all_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_all_plots">_update<wbr></wbr>_all<wbr></wbr>_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_ids_from_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_ids_from_session">_update<wbr></wbr>_ids<wbr></wbr>_from<wbr></wbr>_session</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_interactive_plot" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_interactive_plot">_update<wbr></wbr>_interactive<wbr></wbr>_plot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_plots">_update<wbr></wbr>_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_plots_from_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_plots_from_session">_update<wbr></wbr>_plots<wbr></wbr>_from<wbr></wbr>_session</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_session">_update<wbr></wbr>_session</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_update_view_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._update_view_plots">_update<wbr></wbr>_view<wbr></wbr>_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_MIN_UPDATE_DELTA_SECONDS" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._MIN_UPDATE_DELTA_SECONDS">_MIN<wbr></wbr>_UPDATE<wbr></wbr>_DELTA<wbr></wbr>_SECONDS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_aggs" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._aggs">_aggs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_connected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._connected">_connected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_current_frame_ids" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_frame_ids">_current<wbr></wbr>_frame<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_current_labels" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_labels">_current<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_current_sample_ids" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._current_sample_ids">_current<wbr></wbr>_sample<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_disconnected" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._disconnected">_disconnected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_last_session_view" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_session_view">_last<wbr></wbr>_session<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_last_update" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_update">_last<wbr></wbr>_update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_last_updates" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._last_updates">_last<wbr></wbr>_updates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_plots" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._plots">_plots</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_session" class="internal-link" title="fiftyone.core.plots.manager.PlotManager._session">_session</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__bool__">
+    
+  </a>
+  <a name="__bool__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__bool__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L97">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__bool__" title="fiftyone.core.plots.manager.PlotManager.__bool__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__contains__">
+    
+  </a>
+  <a name="__contains__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__contains__</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L85">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__contains__" title="fiftyone.core.plots.manager.PlotManager.__contains__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__delitem__">
+    
+  </a>
+  <a name="__delitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__delitem__</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L94">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__delitem__" title="fiftyone.core.plots.manager.PlotManager.__delitem__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__getitem__">
+    
+  </a>
+  <a name="__getitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__getitem__</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L91">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__getitem__" title="fiftyone.core.plots.manager.PlotManager.__getitem__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, session)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L61">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.plots.manager.PlotManager.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L82">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__iter__" title="fiftyone.core.plots.manager.PlotManager.__iter__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L100">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__len__" title="fiftyone.core.plots.manager.PlotManager.__len__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__repr__">
+    
+  </a>
+  <a name="__repr__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__repr__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L79">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__repr__" title="fiftyone.core.plots.manager.PlotManager.__repr__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__setitem__">
+    
+  </a>
+  <a name="__setitem__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__setitem__</span><span class="function-signature">(self, name, plot)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L88">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__setitem__" title="fiftyone.core.plots.manager.PlotManager.__setitem__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.__str__">
+    
+  </a>
+  <a name="__str__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__str__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L76">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__str__" title="fiftyone.core.plots.manager.PlotManager.__str__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.attach">
+    
+  </a>
+  <a name="attach">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">attach</span><span class="function-signature">(self, plot, name=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, connect=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L221">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#attach" title="fiftyone.core.plots.manager.PlotManager.attach">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Attaches a plot to this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">plot</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link">fiftyone.core.plots.base.ResponsivePlot</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional name for the plot</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">connect:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to immediately connect the plot</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to overwrite an existing plot of the same
+name</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.clear">
+    
+  </a>
+  <a name="clear">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L281">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear" title="fiftyone.core.plots.manager.PlotManager.clear">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Removes all plots from this manager.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.connect">
+    
+  </a>
+  <a name="connect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">connect</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L309">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#connect" title="fiftyone.core.plots.manager.PlotManager.connect">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Connects this manager to its session and all plots.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.disconnect">
+    
+  </a>
+  <a name="disconnect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">disconnect</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L348">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#disconnect" title="fiftyone.core.plots.manager.PlotManager.disconnect">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Disconnects this manager from its session and all plots.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.freeze">
+    
+  </a>
+  <a name="freeze">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">freeze</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L377">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#freeze" title="fiftyone.core.plots.manager.PlotManager.freeze">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Freezes all connected plots, replacing them with static images.</p>
+<p>Only applicable in notebook contexts.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.items">
+    
+  </a>
+  <a name="items">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">items</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L158">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#items" title="fiftyone.core.plots.manager.PlotManager.items">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns an iterator over the <tt class="rst-docutils rst-literal">(name, plot)</tt> pairs in this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an iterator that emits <tt class="rst-docutils rst-literal">(name, ResponsivePlot)</tt> tuples</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.keys">
+    
+  </a>
+  <a name="keys">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">keys</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L150">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#keys" title="fiftyone.core.plots.manager.PlotManager.keys">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns an iterator over the names of plots in this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an iterator over plot names</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.pop">
+    
+  </a>
+  <a name="pop">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">pop</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L287">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#pop" title="fiftyone.core.plots.manager.PlotManager.pop">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Removes the plot from this manager and returns it.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of a plot</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link">fiftyone.core.plots.base.ResponsivePlot</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.remove">
+    
+  </a>
+  <a name="remove">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">remove</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L273">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#remove" title="fiftyone.core.plots.manager.PlotManager.remove">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Removes the plot from this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of a plot</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.summary">
+    
+  </a>
+  <a name="summary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">summary</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L112">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#summary" title="fiftyone.core.plots.manager.PlotManager.summary">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a string summary of this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a string summary</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.sync">
+    
+  </a>
+  <a name="sync">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sync</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L369">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sync" title="fiftyone.core.plots.manager.PlotManager.sync">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Syncs all connected plots with the session's current view.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.values">
+    
+  </a>
+  <a name="values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">values</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L166">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#values" title="fiftyone.core.plots.manager.PlotManager.values">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns an iterator over the plots in this manager.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an iterator that emits
+<code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link">fiftyone.core.plots.base.ResponsivePlot</a></code> instances</td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.has_frame_links">
+    
+  </a>
+  <a name="has_frame_links">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_frame_links</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L203">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_frame_links" title="fiftyone.core.plots.manager.PlotManager.has_frame_links">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager has plots linked to frames.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.has_label_links">
+    
+  </a>
+  <a name="has_label_links">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_label_links</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L212">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_label_links" title="fiftyone.core.plots.manager.PlotManager.has_label_links">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager has plots linked to labels.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.has_sample_links">
+    
+  </a>
+  <a name="has_sample_links">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_sample_links</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L194">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_sample_links" title="fiftyone.core.plots.manager.PlotManager.has_sample_links">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager has plots linked to samples.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.has_view_links">
+    
+  </a>
+  <a name="has_view_links">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_view_links</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L185">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_view_links" title="fiftyone.core.plots.manager.PlotManager.has_view_links">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager has plots linked to views.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.is_connected">
+    
+  </a>
+  <a name="is_connected">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">is_connected</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L175">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#is_connected" title="fiftyone.core.plots.manager.PlotManager.is_connected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager is currently connected to its plots.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager.is_disconnected">
+    
+  </a>
+  <a name="is_disconnected">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">is_disconnected</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L180">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#is_disconnected" title="fiftyone.core.plots.manager.PlotManager.is_disconnected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Whether this manager is currently disconnected from its plots.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._connect_plot">
+    
+  </a>
+  <a name="_connect_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_connect_plot</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L326">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_connect_plot" title="fiftyone.core.plots.manager.PlotManager._connect_plot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._disconnect_plot">
+    
+  </a>
+  <a name="_disconnect_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_disconnect_plot</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L365">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_disconnect_plot" title="fiftyone.core.plots.manager.PlotManager._disconnect_plot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._get_current_label_ids_for_plot">
+    
+  </a>
+  <a name="_get_current_label_ids_for_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_current_label_ids_for_plot</span><span class="function-signature">(self, plot)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L721">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_current_label_ids_for_plot" title="fiftyone.core.plots.manager.PlotManager._get_current_label_ids_for_plot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._needs_update">
+    
+  </a>
+  <a name="_needs_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_needs_update</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L751">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_needs_update" title="fiftyone.core.plots.manager.PlotManager._needs_update">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._on_plot_selection">
+    
+  </a>
+  <a name="_on_plot_selection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_plot_selection</span><span class="function-signature">(self, name, ids)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L404">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_plot_selection" title="fiftyone.core.plots.manager.PlotManager._on_plot_selection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._on_session_update">
+    
+  </a>
+  <a name="_on_session_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_on_session_update</span><span class="function-signature">(self, _)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L391">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_on_session_update" title="fiftyone.core.plots.manager.PlotManager._on_session_update">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._ready_for_update">
+    
+  </a>
+  <a name="_ready_for_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ready_for_update</span><span class="function-signature">(self, name)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L736">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ready_for_update" title="fiftyone.core.plots.manager.PlotManager._ready_for_update">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._set_session">
+    
+  </a>
+  <a name="_set_session">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_set_session</span><span class="function-signature">(self, session)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L103">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_set_session" title="fiftyone.core.plots.manager.PlotManager._set_session">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._summarize_plots">
+    
+  </a>
+  <a name="_summarize_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_summarize_plots</span><span class="function-signature">(self, names)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L139">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_summarize_plots" title="fiftyone.core.plots.manager.PlotManager._summarize_plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_all_plots">
+    
+  </a>
+  <a name="_update_all_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_all_plots</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L634">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_all_plots" title="fiftyone.core.plots.manager.PlotManager._update_all_plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_ids_from_session">
+    
+  </a>
+  <a name="_update_ids_from_session">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_ids_from_session</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L554">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_ids_from_session" title="fiftyone.core.plots.manager.PlotManager._update_ids_from_session">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_interactive_plot">
+    
+  </a>
+  <a name="_update_interactive_plot">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_interactive_plot</span><span class="function-signature">(self, name, view)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L705">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_interactive_plot" title="fiftyone.core.plots.manager.PlotManager._update_interactive_plot">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_plots">
+    
+  </a>
+  <a name="_update_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_plots</span><span class="function-signature">(self, names)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L638">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_plots" title="fiftyone.core.plots.manager.PlotManager._update_plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_plots_from_session">
+    
+  </a>
+  <a name="_update_plots_from_session">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_plots_from_session</span><span class="function-signature">(self, exclude=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L625">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_plots_from_session" title="fiftyone.core.plots.manager.PlotManager._update_plots_from_session">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_session">
+    
+  </a>
+  <a name="_update_session">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_session</span><span class="function-signature">(self, view)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L617">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_session" title="fiftyone.core.plots.manager.PlotManager._update_session">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._update_view_plots">
+    
+  </a>
+  <a name="_update_view_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_update_view_plots</span><span class="function-signature">(self, names, view)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L668">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_update_view_plots" title="fiftyone.core.plots.manager.PlotManager._update_view_plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._MIN_UPDATE_DELTA_SECONDS">
+    
+  </a>
+  <a name="_MIN_UPDATE_DELTA_SECONDS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MIN_UPDATE_DELTA_SECONDS</span>: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L59">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_MIN_UPDATE_DELTA_SECONDS" title="fiftyone.core.plots.manager.PlotManager._MIN_UPDATE_DELTA_SECONDS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._aggs">
+    
+  </a>
+  <a name="_aggs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_aggs</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L64">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_aggs" title="fiftyone.core.plots.manager.PlotManager._aggs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._connected">
+    
+  </a>
+  <a name="_connected">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_connected</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L71">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_connected" title="fiftyone.core.plots.manager.PlotManager._connected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._current_frame_ids">
+    
+  </a>
+  <a name="_current_frame_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_current_frame_ids</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L66">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_current_frame_ids" title="fiftyone.core.plots.manager.PlotManager._current_frame_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._current_labels">
+    
+  </a>
+  <a name="_current_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_current_labels</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L67">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_current_labels" title="fiftyone.core.plots.manager.PlotManager._current_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._current_sample_ids">
+    
+  </a>
+  <a name="_current_sample_ids">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_current_sample_ids</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L65">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_current_sample_ids" title="fiftyone.core.plots.manager.PlotManager._current_sample_ids">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._disconnected">
+    
+  </a>
+  <a name="_disconnected">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_disconnected</span>: <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L72">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_disconnected" title="fiftyone.core.plots.manager.PlotManager._disconnected">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._last_session_view">
+    
+  </a>
+  <a name="_last_session_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_last_session_view</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L68">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_last_session_view" title="fiftyone.core.plots.manager.PlotManager._last_session_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._last_update">
+    
+  </a>
+  <a name="_last_update">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_last_update</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L69">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_last_update" title="fiftyone.core.plots.manager.PlotManager._last_update">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._last_updates">
+    
+  </a>
+  <a name="_last_updates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_last_updates</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L70">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_last_updates" title="fiftyone.core.plots.manager.PlotManager._last_updates">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._plots">
+    
+  </a>
+  <a name="_plots">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_plots</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L63">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_plots" title="fiftyone.core.plots.manager.PlotManager._plots">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.core.plots.manager.PlotManager._session">
+    
+  </a>
+  <a name="_session">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_session</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/manager.py#L62">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_session" title="fiftyone.core.plots.manager.PlotManager._session">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.data.importers.GroupDatasetImporter</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.data.importers.GroupDatasetImporter.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.data.importers.GroupDatasetImporter.html" class="internal-link" title="This class"><wbr></wbr>Group<wbr></wbr>Dataset<wbr></wbr>Importer</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__len__" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.__len__">__len__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__next__" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.__next__">__next__</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__init__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__iter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__iter__">__iter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#close" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#get_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.get_dataset_info">get<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#setup" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.setup">setup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html#get_sample_field_schema" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter.get_sample_field_schema">get<wbr></wbr>_sample<wbr></wbr>_field<wbr></wbr>_schema</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#_preprocess_list" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter._preprocess_list">_preprocess<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#group_field" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.group_field">group<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#has_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.has_dataset_info">has<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html#has_sample_field_schema" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter.has_sample_field_schema">has<wbr></wbr>_sample<wbr></wbr>_field<wbr></wbr>_schema</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.data.importers.html" class="internal-link" title="The parent of this class">importers</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.BatchDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.BatchDatasetImporter"><wbr></wbr>Batch<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter"><wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneImageClassificationDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneImageClassificationDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Classification<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneImageDetectionDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneImageDetectionDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneImageLabelsDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneImageLabelsDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Image<wbr></wbr>Labels<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneTemporalDetectionDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneTemporalDetectionDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Temporal<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.FiftyOneVideoLabelsDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.FiftyOneVideoLabelsDatasetImporter"><wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Video<wbr></wbr>Labels<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter"><wbr></wbr>Generic<wbr></wbr>Sample<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.GroupDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter"><wbr></wbr>Group<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.ImageClassificationDirectoryTreeImporter.html" class="internal-link" title="fiftyone.utils.data.importers.ImageClassificationDirectoryTreeImporter"><wbr></wbr>Image<wbr></wbr>Classification<wbr></wbr>Directory<wbr></wbr>Tree<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.ImageDirectoryImporter.html" class="internal-link" title="fiftyone.utils.data.importers.ImageDirectoryImporter"><wbr></wbr>Image<wbr></wbr>Directory<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.ImageSegmentationDirectoryImporter.html" class="internal-link" title="fiftyone.utils.data.importers.ImageSegmentationDirectoryImporter"><wbr></wbr>Image<wbr></wbr>Segmentation<wbr></wbr>Directory<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.ImportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.importers.ImportPathsMixin"><wbr></wbr>Import<wbr></wbr>Paths<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.LabeledImageDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LabeledImageDatasetImporter"><wbr></wbr>Labeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LabeledVideoDatasetImporter"><wbr></wbr>Labeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.LegacyFiftyOneDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LegacyFiftyOneDatasetImporter"><wbr></wbr>Legacy<wbr></wbr>Fifty<wbr></wbr>One<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.MediaDirectoryImporter.html" class="internal-link" title="fiftyone.utils.data.importers.MediaDirectoryImporter"><wbr></wbr>Media<wbr></wbr>Directory<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.UnlabeledImageDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.UnlabeledImageDatasetImporter"><wbr></wbr>Unlabeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.UnlabeledMediaDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.UnlabeledMediaDatasetImporter"><wbr></wbr>Unlabeled<wbr></wbr>Media<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.UnlabeledVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.UnlabeledVideoDatasetImporter"><wbr></wbr>Unlabeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.VideoClassificationDirectoryTreeImporter.html" class="internal-link" title="fiftyone.utils.data.importers.VideoClassificationDirectoryTreeImporter"><wbr></wbr>Video<wbr></wbr>Classification<wbr></wbr>Directory<wbr></wbr>Tree<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.VideoDirectoryImporter.html" class="internal-link" title="fiftyone.utils.data.importers.VideoDirectoryImporter"><wbr></wbr>Video<wbr></wbr>Directory<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#build_dataset_importer" class="internal-link" title="fiftyone.utils.data.importers.build_dataset_importer">build<wbr></wbr>_dataset<wbr></wbr>_importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#import_samples" class="internal-link" title="fiftyone.utils.data.importers.import_samples">import<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#merge_samples" class="internal-link" title="fiftyone.utils.data.importers.merge_samples">merge<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#parse_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.parse_dataset_info">parse<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_build_parse_sample_fcn" class="internal-link" title="fiftyone.utils.data.importers._build_parse_sample_fcn">_build<wbr></wbr>_parse<wbr></wbr>_sample<wbr></wbr>_fcn</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_generate_group_samples" class="internal-link" title="fiftyone.utils.data.importers._generate_group_samples">_generate<wbr></wbr>_group<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_get_rng" class="internal-link" title="fiftyone.utils.data.importers._get_rng">_get<wbr></wbr>_rng</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_handle_legacy_formats" class="internal-link" title="fiftyone.utils.data.importers._handle_legacy_formats">_handle<wbr></wbr>_legacy<wbr></wbr>_formats</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_import_runs" class="internal-link" title="fiftyone.utils.data.importers._import_runs">_import<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_import_saved_views" class="internal-link" title="fiftyone.utils.data.importers._import_saved_views">_import<wbr></wbr>_saved<wbr></wbr>_views</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_import_workspaces" class="internal-link" title="fiftyone.utils.data.importers._import_workspaces">_import<wbr></wbr>_workspaces</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_load_labeled_dataset_index" class="internal-link" title="fiftyone.utils.data.importers._load_labeled_dataset_index">_load<wbr></wbr>_labeled<wbr></wbr>_dataset<wbr></wbr>_index</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_parse_media_fields" class="internal-link" title="fiftyone.utils.data.importers._parse_media_fields">_parse<wbr></wbr>_media<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_parse_nested_media_field" class="internal-link" title="fiftyone.utils.data.importers._parse_nested_media_field">_parse<wbr></wbr>_nested<wbr></wbr>_media<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_set_created_at" class="internal-link" title="fiftyone.utils.data.importers._set_created_at">_set<wbr></wbr>_created<wbr></wbr>_at</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_to_list" class="internal-link" title="fiftyone.utils.data.importers._to_list">_to<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#_update_no_overwrite" class="internal-link" title="fiftyone.utils.data.importers._update_no_overwrite">_update<wbr></wbr>_no<wbr></wbr>_overwrite</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.html#logger" class="internal-link" title="fiftyone.utils.data.importers.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.importers.html" class="internal-link" title="fiftyone.utils.data.importers">importers</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.importers.GroupDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter">GroupDatasetImporter</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">GroupDatasetImporter</span>(<a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter">GenericSampleDatasetImporter</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/importers.py#L1067" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__init__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__init__">GroupDatasetImporter(dataset_dir, shuffle, seed, max_samples)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.data.importers.GroupDatasetImporter">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Interface for importing datasets that contain arbitrary grouped
+<code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code> instances.</p>
+<p>Typically, dataset importers should implement the parameters documented on
+this class, although this is not mandatory.</p>
+<p>See :ref:`this page &lt;writing-a-custom-dataset-importer&gt;` for information
+about implementing/using dataset importers.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the dataset directory. This may be optional for
+some importers</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">shuffle</span></td><td class="fieldArgDesc">whether to randomly shuffle the order in which the
+samples are imported</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seed</span></td><td class="fieldArgDesc">a random seed to use when shuffling</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max<wbr></wbr>_samples</span></td><td class="fieldArgDesc">a maximum number of samples to import. By default,
+all samples are imported</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1681">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.__len__">__len__</a></code></td>
+    <td>The total number of samples that will be imported across all group slices.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__next__" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.__next__">__next__</a></code></td>
+    <td>Returns information about the next group in the dataset.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#group_field" class="internal-link" title="fiftyone.utils.data.importers.GroupDatasetImporter.group_field">group<wbr></wbr>_field</a></code></td>
+    <td>The name of the group field to populate on each sample.</td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter">GenericSampleDatasetImporter</a></code>:
+            </p>
+            <table class="children sortable" id="id1682">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html#get_sample_field_schema" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter.get_sample_field_schema">get<wbr></wbr>_sample<wbr></wbr>_field<wbr></wbr>_schema</a></code></td>
+    <td>Returns a dictionary describing the field schema of the samples loaded by this importer.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html#has_sample_field_schema" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter.has_sample_field_schema">has<wbr></wbr>_sample<wbr></wbr>_field<wbr></wbr>_schema</a></code></td>
+    <td>Whether this importer produces a sample field schema.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.importers.DatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter">DatasetImporter</a></code> (via <code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.GenericSampleDatasetImporter">GenericSampleDatasetImporter</a></code>):
+            </p>
+            <table class="children sortable" id="id1683">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__init__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__iter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#close" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been imported.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#get_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.get_dataset_info">get<wbr></wbr>_dataset<wbr></wbr>_info</a></code></td>
+    <td>Returns the dataset info for the dataset.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#setup" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.setup">setup</a></code></td>
+    <td>Performs any necessary setup before importing the first sample in the dataset.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#has_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.has_dataset_info">has<wbr></wbr>_dataset<wbr></wbr>_info</a></code></td>
+    <td>Whether this importer produces a dataset info dictionary.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#_preprocess_list" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter._preprocess_list">_preprocess<wbr></wbr>_list</a></code></td>
+    <td>Internal utility that preprocesses the given list---which is presumed to be a list defining the samples that should be imported---by applying the values of the <tt class="rst-docutils rst-literal">shuffle</tt>, <tt class="rst-docutils rst-literal">seed</tt>, and <tt class="rst-docutils rst-literal">max_samples</tt> parameters of the importer.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.importers.GroupDatasetImporter.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/importers.py#L1090">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__len__" title="fiftyone.utils.data.importers.GroupDatasetImporter.__len__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__len__" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.__len__</a></code></div>
+    <div><p>The total number of samples that will be imported across all group
+slices.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#TypeError" class="intersphinx-link">TypeError</a></code></td><td>if the total number is not known</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.importers.GroupDatasetImporter.__next__">
+    
+  </a>
+  <a name="__next__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__next__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/importers.py#L1102">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__next__" title="fiftyone.utils.data.importers.GroupDatasetImporter.__next__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.GenericSampleDatasetImporter.html#__next__" class="internal-link">fiftyone.utils.data.importers.GenericSampleDatasetImporter.__next__</a></code></div>
+    <div><p>Returns information about the next group in the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict mapping slice names to <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code>
+instances</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#StopIteration" class="intersphinx-link">StopIteration</a></code></td><td>if there are no more samples to import</td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.importers.GroupDatasetImporter.group_field">
+    
+  </a>
+  <a name="group_field">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">group_field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/importers.py#L1114">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#group_field" title="fiftyone.utils.data.importers.GroupDatasetImporter.group_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>The name of the group field to populate on each sample.</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

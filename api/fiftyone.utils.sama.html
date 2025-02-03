@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.sama</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.sama.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.sama.html" class="internal-link" title="This module">sama</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_sama_coco_dataset_split" class="internal-link" title="fiftyone.utils.sama.download_sama_coco_dataset_split">download<wbr></wbr>_sama<wbr></wbr>_coco<wbr></wbr>_dataset<wbr></wbr>_split</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_merge_annotations" class="internal-link" title="fiftyone.utils.sama._merge_annotations">_merge<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.sama.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ANNOTATION_DOWNLOAD_LINKS" class="internal-link" title="fiftyone.utils.sama._ANNOTATION_DOWNLOAD_LINKS">_ANNOTATION<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINKS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ANNOTATION_PATHS" class="internal-link" title="fiftyone.utils.sama._ANNOTATION_PATHS">_ANNOTATION<wbr></wbr>_PATHS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_CSV_DELIMITERS" class="internal-link" title="fiftyone.utils.sama._CSV_DELIMITERS">_CSV<wbr></wbr>_DELIMITERS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_IMAGE_DOWNLOAD_LINKS" class="internal-link" title="fiftyone.utils.sama._IMAGE_DOWNLOAD_LINKS">_IMAGE<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINKS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_SPLIT_SIZES" class="internal-link" title="fiftyone.utils.sama._SPLIT_SIZES">_SPLIT<wbr></wbr>_SIZES</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_SUPPORTED_LABEL_TYPES" class="internal-link" title="fiftyone.utils.sama._SUPPORTED_LABEL_TYPES">_SUPPORTED<wbr></wbr>_LABEL<wbr></wbr>_TYPES</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_SUPPORTED_SPLITS" class="internal-link" title="fiftyone.utils.sama._SUPPORTED_SPLITS">_SUPPORTED<wbr></wbr>_SPLITS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_TEST_INFO_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.sama._TEST_INFO_DOWNLOAD_LINK">_TEST<wbr></wbr>_INFO<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_TEST_INFO_PATHS" class="internal-link" title="fiftyone.utils.sama._TEST_INFO_PATHS">_TEST<wbr></wbr>_INFO<wbr></wbr>_PATHS</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Sama utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2186">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_sama_coco_dataset_split" class="internal-link" title="fiftyone.utils.sama.download_sama_coco_dataset_split">download<wbr></wbr>_sama<wbr></wbr>_coco<wbr></wbr>_dataset<wbr></wbr>_split</a></code></td>
+    <td>Utility that downloads full or partial data splits of the <a class="rst-external rst-reference" href="https://cocodataset.org" target="_top">COCO dataset</a> with annotation splits found at <a class="rst-external rst-reference" href="https://www.sama.com/sama-coco-dataset" target="_top">https://www.sama.com/sama-coco-dataset</a>.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.sama.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_merge_annotations" class="internal-link" title="fiftyone.utils.sama._merge_annotations">_merge<wbr></wbr>_annotations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_ANNOTATION_DOWNLOAD_LINKS" class="internal-link" title="fiftyone.utils.sama._ANNOTATION_DOWNLOAD_LINKS">_ANNOTATION<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINKS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_ANNOTATION_PATHS" class="internal-link" title="fiftyone.utils.sama._ANNOTATION_PATHS">_ANNOTATION<wbr></wbr>_PATHS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_CSV_DELIMITERS" class="internal-link" title="fiftyone.utils.sama._CSV_DELIMITERS">_CSV<wbr></wbr>_DELIMITERS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_IMAGE_DOWNLOAD_LINKS" class="internal-link" title="fiftyone.utils.sama._IMAGE_DOWNLOAD_LINKS">_IMAGE<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINKS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_SPLIT_SIZES" class="internal-link" title="fiftyone.utils.sama._SPLIT_SIZES">_SPLIT<wbr></wbr>_SIZES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_SUPPORTED_LABEL_TYPES" class="internal-link" title="fiftyone.utils.sama._SUPPORTED_LABEL_TYPES">_SUPPORTED<wbr></wbr>_LABEL<wbr></wbr>_TYPES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_SUPPORTED_SPLITS" class="internal-link" title="fiftyone.utils.sama._SUPPORTED_SPLITS">_SUPPORTED<wbr></wbr>_SPLITS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_TEST_INFO_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.sama._TEST_INFO_DOWNLOAD_LINK">_TEST<wbr></wbr>_INFO<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_TEST_INFO_PATHS" class="internal-link" title="fiftyone.utils.sama._TEST_INFO_PATHS">_TEST<wbr></wbr>_INFO<wbr></wbr>_PATHS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.sama.download_sama_coco_dataset_split">
+    
+  </a>
+  <a name="download_sama_coco_dataset_split">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_sama_coco_dataset_split</span><span class="function-signature">(dataset_dir, split, label_types=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, image_ids=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, shuffle=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, seed=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, max_samples=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, raw_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, scratch_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L24">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_sama_coco_dataset_split" title="fiftyone.utils.sama.download_sama_coco_dataset_split">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Utility that downloads full or partial data splits of the
+<a class="rst-external rst-reference" href="https://cocodataset.org" target="_top">COCO dataset</a> with annotation splits found
+at <a class="rst-external rst-reference" href="https://www.sama.com/sama-coco-dataset" target="_top">https://www.sama.com/sama-coco-dataset</a>.</p>
+<p>See :ref:`this page &lt;COCODetectionDataset-export&gt;` for the format in which
+<tt class="rst-docutils rst-literal">dataset_dir</tt> will be arranged.</p>
+<p>Any existing files are not re-downloaded.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to download the dataset</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">split</span></td><td class="fieldArgDesc">the split to download. Supported values are
+<tt class="rst-docutils rst-literal">("train", "validation", "test")</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_types:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a label type or list of label types to load. The
+supported values are <tt class="rst-docutils rst-literal">("detections", "segmentations")</tt>. By
+default, all label types are loaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a string or list of strings specifying required classes
+to load. Only samples containing at least one instance of a
+specified class will be loaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_ids:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>an optional list of specific image IDs to load. Can
+be provided in any of the following formats:</p>
+<ul class="rst-simple">
+<li>a list of <tt class="rst-docutils rst-literal"><span class="pre">&lt;image-id&gt;</span></tt> ints or strings</li>
+<li>a list of <tt class="rst-docutils rst-literal"><span class="pre">&lt;split&gt;/&lt;image-id&gt;</span></tt> strings</li>
+<li>the path to a text (newline-separated), JSON, or CSV file
+containing the list of image IDs to load in either of the first
+two formats</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num<wbr></wbr>_workers:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a suggested number of threads to use when
+downloading individual images</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">shuffle:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to randomly shuffle the order in which samples
+are chosen for partial downloads</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seed:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a random seed to use when shuffling</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max<wbr></wbr>_samples:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a maximum number of samples to load. If
+<tt class="rst-docutils rst-literal">label_types</tt> and/or <tt class="rst-docutils rst-literal">classes</tt> are also specified, first
+priority will be given to samples that contain all of the specified
+label types and/or classes, followed by samples that contain at
+least one of the specified labels types or classes. The actual
+number of samples loaded may be less than this maximum value if the
+dataset does not contain sufficient samples matching your
+requirements. By default, all matching samples are loaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">raw<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a directory in which full annotations files may be
+stored to avoid re-downloads in the future</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scratch<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a scratch directory to use to download any
+necessary temporary files</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">a tuple of</td><td class="fieldArgDesc"><ul class="rst-simple">
+<li>num_samples: the total number of downloaded images</li>
+<li>classes: the list of all classes</li>
+<li>did_download: whether any content was downloaded (True) or if all
+necessary files were already downloaded (False)</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.sama.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L21">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.sama.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.sama._merge_annotations">
+    
+  </a>
+  <a name="_merge_annotations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_merge_annotations</span><span class="function-signature">(merge_dir, output)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L317">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_merge_annotations" title="fiftyone.utils.sama._merge_annotations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._ANNOTATION_DOWNLOAD_LINKS">
+    
+  </a>
+  <a name="_ANNOTATION_DOWNLOAD_LINKS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ANNOTATION_DOWNLOAD_LINKS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L356">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ANNOTATION_DOWNLOAD_LINKS" title="fiftyone.utils.sama._ANNOTATION_DOWNLOAD_LINKS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">https://sama-documentation-assets.s3.amazonaws.com/sama-coco/sama-coc</span><span class="rst-variable-linewrap">↵</span>
+<span class="rst-variable-string">o-train.zip</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">validation</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">https://sama-documentation-assets.s3.amazonaws.com/sama-coco/sam</span><span class="rst-variable-linewrap">↵</span>
+<span class="rst-variable-string">a-coco-val.zip</span><span class="rst-variable-quote">'</span>}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._ANNOTATION_PATHS">
+    
+  </a>
+  <a name="_ANNOTATION_PATHS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ANNOTATION_PATHS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L361">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ANNOTATION_PATHS" title="fiftyone.utils.sama._ANNOTATION_PATHS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">annotations/sama_coco_train.json</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">validation</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">annotations/sama_coco_validation.json</span><span class="rst-variable-quote">'</span>}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._CSV_DELIMITERS">
+    
+  </a>
+  <a name="_CSV_DELIMITERS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_CSV_DELIMITERS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L376">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_CSV_DELIMITERS" title="fiftyone.utils.sama._CSV_DELIMITERS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">,</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">;</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">:</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string"> </span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">\t</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">\n</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._IMAGE_DOWNLOAD_LINKS">
+    
+  </a>
+  <a name="_IMAGE_DOWNLOAD_LINKS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_IMAGE_DOWNLOAD_LINKS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L348">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_IMAGE_DOWNLOAD_LINKS" title="fiftyone.utils.sama._IMAGE_DOWNLOAD_LINKS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">http://images.cocodataset.org/zips/train2017.zip</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">validation</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">http://images.cocodataset.org/zips/val2017.zip</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">test</span><span class="rst-variable-quote">'</span>: <span class="rst-variable-quote">'</span><span class="rst-variable-string">http://images.cocodataset.org/zips/test2017.zip</span><span class="rst-variable-quote">'</span>}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._SPLIT_SIZES">
+    
+  </a>
+  <a name="_SPLIT_SIZES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_SPLIT_SIZES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>, <wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L354">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_SPLIT_SIZES" title="fiftyone.utils.sama._SPLIT_SIZES">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>: 118287, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">test</span><span class="rst-variable-quote">'</span>: 40670, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">validation</span><span class="rst-variable-quote">'</span>: 5000}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._SUPPORTED_LABEL_TYPES">
+    
+  </a>
+  <a name="_SUPPORTED_LABEL_TYPES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_SUPPORTED_LABEL_TYPES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L372">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_SUPPORTED_LABEL_TYPES" title="fiftyone.utils.sama._SUPPORTED_LABEL_TYPES">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">detections</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">segmentations</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._SUPPORTED_SPLITS">
+    
+  </a>
+  <a name="_SUPPORTED_SPLITS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_SUPPORTED_SPLITS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L374">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_SUPPORTED_SPLITS" title="fiftyone.utils.sama._SUPPORTED_SPLITS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">validation</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">test</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._TEST_INFO_DOWNLOAD_LINK">
+    
+  </a>
+  <a name="_TEST_INFO_DOWNLOAD_LINK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_TEST_INFO_DOWNLOAD_LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L366">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_TEST_INFO_DOWNLOAD_LINK" title="fiftyone.utils.sama._TEST_INFO_DOWNLOAD_LINK">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">http://images.cocodataset.org/annotations/image_info_test2017.zip</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.sama._TEST_INFO_PATHS">
+    
+  </a>
+  <a name="_TEST_INFO_PATHS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_TEST_INFO_PATHS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/sama.py#L370">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_TEST_INFO_PATHS" title="fiftyone.utils.sama._TEST_INFO_PATHS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">annotations/image_info_test2017.json</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.html" class="internal-link" title="This class"><wbr></wbr>Labeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__iter__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__iter__">__iter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__len__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__len__">__len__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__next__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__next__">__next__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.setup">setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#close" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#get_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.get_dataset_info">get<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#_preprocess_list" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter._preprocess_list">_preprocess<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_ingest_video" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._ingest_video">_ingest<wbr></wbr>_video</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_setup" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._setup">_setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_parser" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.sample_parser">sample<wbr></wbr>_parser</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.samples">samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#frame_labels_cls" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.frame_labels_cls">frame<wbr></wbr>_labels<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_dataset_info" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_dataset_info">has<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_video_metadata" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_video_metadata">has<wbr></wbr>_video<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.label_cls">label<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_iter_samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._iter_samples">_iter<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_num_imported" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_imported">_num<wbr></wbr>_imported</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_num_samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_samples">_num<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_filename_maker" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._filename_maker">_filename<wbr></wbr>_maker</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.data.ingestors.html" class="internal-link" title="The parent of this class">ingestors</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.ImageIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.ImageIngestor"><wbr></wbr>Image<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledImageDatasetIngestor"><wbr></wbr>Labeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor"><wbr></wbr>Labeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.UnlabeledImageDatasetIngestor"><wbr></wbr>Unlabeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.UnlabeledVideoDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.UnlabeledVideoDatasetIngestor"><wbr></wbr>Unlabeled<wbr></wbr>Video<wbr></wbr>Dataset<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor"><wbr></wbr>Video<wbr></wbr>Ingestor</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.ingestors.html#logger" class="internal-link" title="fiftyone.utils.data.ingestors.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.ingestors.html" class="internal-link" title="fiftyone.utils.data.ingestors">ingestors</a></code><wbr></wbr>.<code><a href="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor">LabeledVideoDatasetIngestor</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">LabeledVideoDatasetIngestor</span>(<a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LabeledVideoDatasetImporter">LabeledVideoDatasetImporter</a>, <a href="fiftyone.utils.data.ingestors.VideoIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor">VideoIngestor</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L416" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__init__">LabeledVideoDatasetIngestor(dataset_dir, samples, sample_parser, max_samples)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Dataset importer that ingests labeled videos into the provided
+<tt class="rst-docutils rst-literal">dataset_dir</tt> during import.</p>
+<p>The source videos and labels are parsed from the provided <tt class="rst-docutils rst-literal">samples</tt> using
+the provided <code><a href="fiftyone.utils.data.parsers.LabeledVideoSampleParser.html" class="internal-link">fiftyone.utils.data.parsers.LabeledVideoSampleParser</a></code>.</p>
+<p>The source videos are directly copied from their source locations into
+<tt class="rst-docutils rst-literal">dataset_dir</tt>, maintaining the original filenames, unless a name conflict
+would occur, in which case an index of the form <tt class="rst-docutils rst-literal"><span class="pre">"-%d"</span> % count</tt> is
+appended to the base filename.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory where input videos will be ingested into</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">an iterable of samples that can be parsed by <tt class="rst-docutils rst-literal">sample_parser</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_parser</span></td><td class="fieldArgDesc">an
+<code><a href="fiftyone.utils.data.parsers.LabeledVideoSampleParser.html" class="internal-link">fiftyone.utils.data.parsers.LabeledVideoSampleParser</a></code> to
+use to parse the samples</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max<wbr></wbr>_samples</span></td><td class="fieldArgDesc">a maximum number of samples to import. By default,
+all samples are imported</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1737">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__iter__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__iter__">__iter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__len__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__len__">__len__</a></code></td>
+    <td>The total number of samples that will be imported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__next__" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__next__">__next__</a></code></td>
+    <td>Returns information about the next sample in the dataset.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.setup">setup</a></code></td>
+    <td>Performs any necessary setup before importing the first sample in the dataset.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#sample_parser" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.sample_parser">sample<wbr></wbr>_parser</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.samples">samples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#frame_labels_cls" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.frame_labels_cls">frame<wbr></wbr>_labels<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) returned by this importer within the frame labels that it produces.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_dataset_info" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_dataset_info">has<wbr></wbr>_dataset<wbr></wbr>_info</a></code></td>
+    <td>Whether this importer produces a dataset info dictionary.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#has_video_metadata" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_video_metadata">has<wbr></wbr>_video<wbr></wbr>_metadata</a></code></td>
+    <td>Whether this importer produces <code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code> instances for each video.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.label_cls">label<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) returned by this importer within the sample-level labels that it produces.</td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_iter_samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._iter_samples">_iter<wbr></wbr>_samples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_num_imported" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_imported">_num<wbr></wbr>_imported</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_num_samples" class="internal-link" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_samples">_num<wbr></wbr>_samples</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.importers.DatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter">DatasetImporter</a></code> (via <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LabeledVideoDatasetImporter">LabeledVideoDatasetImporter</a></code>):
+            </p>
+            <table class="children sortable" id="id1738">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#close" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been imported.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#get_dataset_info" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.get_dataset_info">get<wbr></wbr>_dataset<wbr></wbr>_info</a></code></td>
+    <td>Returns the dataset info for the dataset.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.importers.DatasetImporter.html#_preprocess_list" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter._preprocess_list">_preprocess<wbr></wbr>_list</a></code></td>
+    <td>Internal utility that preprocesses the given list---which is presumed to be a list defining the samples that should be imported---by applying the values of the <tt class="rst-docutils rst-literal">shuffle</tt>, <tt class="rst-docutils rst-literal">seed</tt>, and <tt class="rst-docutils rst-literal">max_samples</tt> parameters of the importer.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor">VideoIngestor</a></code> (via <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.LabeledVideoDatasetImporter">LabeledVideoDatasetImporter</a></code>, <code><a href="fiftyone.utils.data.importers.DatasetImporter.html" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter">DatasetImporter</a></code>):
+            </p>
+            <table class="children sortable" id="id1739">
+  
+  
+  <tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_ingest_video" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._ingest_video">_ingest<wbr></wbr>_video</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_setup" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._setup">_setup</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.utils.data.ingestors.VideoIngestor.html#_filename_maker" class="internal-link" title="fiftyone.utils.data.ingestors.VideoIngestor._filename_maker">_filename<wbr></wbr>_maker</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, dataset_dir, samples, sample_parser, max_samples=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L438">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__init__" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__iter__">
+    
+  </a>
+  <a name="__iter__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__iter__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L457">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__iter__" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__iter__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__iter__" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.__iter__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__len__">
+    
+  </a>
+  <a name="__len__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__len__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L462">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__len__" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__len__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#__len__" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.__len__</a></code></div>
+    <div><p>The total number of samples that will be imported.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#TypeError" class="intersphinx-link">TypeError</a></code></td><td>if the total number is not known</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__next__">
+    
+  </a>
+  <a name="__next__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__next__</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L468">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__next__" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.__next__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html#__next__" class="internal-link">fiftyone.utils.data.importers.LabeledVideoDatasetImporter.__next__</a></code></div>
+    <div><p>Returns information about the next sample in the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">an<tt class="rst-docutils rst-literal">(video_path, video_metadata, labels, frames)</tt><blockquote>
+tuple</blockquote>
+, <code>where</code></td><td class="fieldArgDesc"><ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">video_path</tt>: the path to the video on disk</li>
+<li><tt class="rst-docutils rst-literal">video_metadata</tt>: an
+<code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code> instances for the
+video, or <tt class="rst-docutils rst-literal">None</tt> if <code><a href="#has_video_metadata" class="internal-link" title="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.has_video_metadata">has_video_metadata</a></code> is <tt class="rst-docutils rst-literal">False</tt></li>
+<li><tt class="rst-docutils rst-literal">labels</tt>: sample-level labels for the video, which can be any
+of the following:<ul>
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instance</li>
+<li>a dictionary mapping label fields to
+<code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances</li>
+<li><tt class="rst-docutils rst-literal">None</tt> if the sample has no sample-level labels</li>
+</ul>
+</li>
+<li><tt class="rst-docutils rst-literal">frames</tt>: frame-level labels for the video, which can
+be any of the following:<ul>
+<li>a dictionary mapping frame numbers to dictionaries that
+map label fields to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code>
+instances for each video frame</li>
+<li><tt class="rst-docutils rst-literal">None</tt> if the sample has no frame-level labels</li>
+</ul>
+</li>
+</ul>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#StopIteration" class="intersphinx-link">StopIteration</a></code></td><td>if there are no more samples to import</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L509">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#setup" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.setup</a></code></div>
+    <div><p>Performs any necessary setup before importing the first sample in
+the dataset.</p>
+<p>This method is called when the importer's context manager interface is
+entered, <code><a href="#__enter__" class="internal-link" title="fiftyone.utils.data.importers.DatasetImporter.__enter__">DatasetImporter.__enter__</a></code>.</p>
+</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.sample_parser">
+    
+  </a>
+  <a name="sample_parser">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sample_parser</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L451">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sample_parser" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.sample_parser">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.samples">
+    
+  </a>
+  <a name="samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">samples</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L450">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#samples" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.frame_labels_cls">
+    
+  </a>
+  <a name="frame_labels_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">frame_labels_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L505">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#frame_labels_cls" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.frame_labels_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html#frame_labels_cls" class="internal-link">fiftyone.utils.data.importers.LabeledVideoDatasetImporter.frame_labels_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) returned by this
+importer within the frame labels that it produces.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+importer is guaranteed to return frame labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the importer can produce a single frame label field of
+any of these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the importer will return frame label dictionaries
+with keys and value-types specified by this dictionary. Not all
+keys need be present in each frame</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the importer makes no guarantees about the
+frame labels that it may return</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_dataset_info">
+    
+  </a>
+  <a name="has_dataset_info">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_dataset_info</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L493">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_dataset_info" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_dataset_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.DatasetImporter.html#has_dataset_info" class="internal-link">fiftyone.utils.data.importers.DatasetImporter.has_dataset_info</a></code></div>
+    <div><p>Whether this importer produces a dataset info dictionary.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_video_metadata">
+    
+  </a>
+  <a name="has_video_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">has_video_metadata</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L497">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_video_metadata" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.has_video_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html#has_video_metadata" class="internal-link">fiftyone.utils.data.importers.LabeledVideoDatasetImporter.has_video_metadata</a></code></div>
+    <div><p>Whether this importer produces
+<code><a href="fiftyone.core.metadata.VideoMetadata.html" class="internal-link">fiftyone.core.metadata.VideoMetadata</a></code> instances for each video.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.label_cls">
+    
+  </a>
+  <a name="label_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">label_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L501">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#label_cls" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor.label_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.importers.LabeledVideoDatasetImporter.html#label_cls" class="internal-link">fiftyone.utils.data.importers.LabeledVideoDatasetImporter.label_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) returned by this
+importer within the sample-level labels that it produces.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+importer is guaranteed to return sample-level labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the importer can produce a single sample-level label
+field of any of these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the importer will return sample-level label
+dictionaries with keys and value-types specified by this
+dictionary. Not all keys need be present in the imported labels</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the importer makes no guarantees about the
+sample-level labels that it may return</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._iter_samples">
+    
+  </a>
+  <a name="_iter_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_iter_samples</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L453">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_iter_samples" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._iter_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_imported">
+    
+  </a>
+  <a name="_num_imported">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_num_imported</span>: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L455">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_num_imported" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_imported">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_samples">
+    
+  </a>
+  <a name="_num_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_num_samples</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/data/ingestors.py#L454">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_num_samples" title="fiftyone.utils.data.ingestors.LabeledVideoDatasetIngestor._num_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

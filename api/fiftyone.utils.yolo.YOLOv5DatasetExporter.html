@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.yolo.YOLOv5DatasetExporter</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.yolo.YOLOv5DatasetExporter.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.yolo.YOLOv5DatasetExporter.html" class="internal-link" title="This class"><wbr></wbr>YOLOv5<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#close" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_sample">export<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.setup">setup</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._parse_classes">_parse<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.log_collection">log<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.classes">classes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#data_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.data_path">data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_media" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_media">export<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#image_format" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.image_format">image<wbr></wbr>_format</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#include_confidence" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_confidence">include<wbr></wbr>_confidence</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#include_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_path">include<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.labels_path">labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#split" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.split">split</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#yaml_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.yaml_path">yaml<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.label_cls">label<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.requires_image_metadata">requires<wbr></wbr>_image<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._classes">_classes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_dynamic_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._dynamic_classes">_dynamic<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_images" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._images">_images</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_labels_map_rev" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._labels_map_rev">_labels<wbr></wbr>_map<wbr></wbr>_rev</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_rel_dir" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._rel_dir">_rel<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_writer" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._writer">_writer</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.yolo.html" class="internal-link" title="The parent of this class">yolo</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.YOLOAnnotationWriter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOAnnotationWriter"><wbr></wbr>YOLOAnnotation<wbr></wbr>Writer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.YOLOv4DatasetExporter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOv4DatasetExporter"><wbr></wbr>YOLOv4<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.YOLOv4DatasetImporter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOv4DatasetImporter"><wbr></wbr>YOLOv4<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.YOLOv5DatasetExporter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter"><wbr></wbr>YOLOv5<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.YOLOv5DatasetImporter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetImporter"><wbr></wbr>YOLOv5<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#add_yolo_labels" class="internal-link" title="fiftyone.utils.yolo.add_yolo_labels">add<wbr></wbr>_yolo<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#load_yolo_annotations" class="internal-link" title="fiftyone.utils.yolo.load_yolo_annotations">load<wbr></wbr>_yolo<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_get_yolo_v5_labels_path" class="internal-link" title="fiftyone.utils.yolo._get_yolo_v5_labels_path">_get<wbr></wbr>_yolo<wbr></wbr>_v5<wbr></wbr>_labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_make_yolo_row" class="internal-link" title="fiftyone.utils.yolo._make_yolo_row">_make<wbr></wbr>_yolo<wbr></wbr>_row</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_make_yolo_v5_path" class="internal-link" title="fiftyone.utils.yolo._make_yolo_v5_path">_make<wbr></wbr>_yolo<wbr></wbr>_v5<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_parse_yolo_classes" class="internal-link" title="fiftyone.utils.yolo._parse_yolo_classes">_parse<wbr></wbr>_yolo<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_parse_yolo_row" class="internal-link" title="fiftyone.utils.yolo._parse_yolo_row">_parse<wbr></wbr>_yolo<wbr></wbr>_row</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_parse_yolo_v5_path" class="internal-link" title="fiftyone.utils.yolo._parse_yolo_v5_path">_parse<wbr></wbr>_yolo<wbr></wbr>_v5<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_read_file_lines" class="internal-link" title="fiftyone.utils.yolo._read_file_lines">_read<wbr></wbr>_file<wbr></wbr>_lines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_read_yaml_file" class="internal-link" title="fiftyone.utils.yolo._read_yaml_file">_read<wbr></wbr>_yaml<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_to_classes" class="internal-link" title="fiftyone.utils.yolo._to_classes">_to<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_to_labels_map_rev" class="internal-link" title="fiftyone.utils.yolo._to_labels_map_rev">_to<wbr></wbr>_labels<wbr></wbr>_map<wbr></wbr>_rev</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_write_file_lines" class="internal-link" title="fiftyone.utils.yolo._write_file_lines">_write<wbr></wbr>_file<wbr></wbr>_lines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#_write_yaml_file" class="internal-link" title="fiftyone.utils.yolo._write_yaml_file">_write<wbr></wbr>_yaml<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html#logger" class="internal-link" title="fiftyone.utils.yolo.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code><wbr></wbr>.<code><a href="fiftyone.utils.yolo.YOLOv5DatasetExporter.html" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter">YOLOv5DatasetExporter</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">YOLOv5DatasetExporter</span>(<a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">foud.LabeledImageDatasetExporter</a>, <a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">foud.ExportPathsMixin</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L772" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.__init__">YOLOv5DatasetExporter(export_dir, split, data_path, labels_path, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.yolo.YOLOv5DatasetExporter">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Exporter that writes YOLOv5 datasets to disk.</p>
+<p>See :ref:`this page &lt;YOLOv5Dataset-export&gt;` for format details.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the export. This has no
+effect if <tt class="rst-docutils rst-literal">data_path</tt>, <tt class="rst-docutils rst-literal">labels_path</tt>, and <tt class="rst-docutils rst-literal">yaml_path</tt> are
+absolute paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">split</span></td><td class="fieldArgDesc">the split being exported. Typical values are
+<tt class="rst-docutils rst-literal">("train", "val")</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the exported media. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a folder name like <tt class="rst-docutils rst-literal">"images"</tt> or <tt class="rst-docutils rst-literal">"images/"</tt> specifying a
+subfolder of <tt class="rst-docutils rst-literal">export_dir</tt> in which to export the images</li>
+<li>an absolute directory path in which to export the images. In
+this case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of
+the images</li>
+</ul>
+<p>If None, the data will be written into <tt class="rst-docutils rst-literal">export_dir</tt> using the
+default folder name</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit
+control over the location of the exported labels. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a folder name like <tt class="rst-docutils rst-literal">"labels"</tt> or <tt class="rst-docutils rst-literal">"labels/"</tt> specifying the
+location in <tt class="rst-docutils rst-literal">export_dir</tt> in which to export the labels</li>
+<li>an absolute folder path to which to export the labels. In this
+case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of
+the labels</li>
+</ul>
+<p>If None, the labels will be written into <tt class="rst-docutils rst-literal">export_dir</tt> using the
+default folder name</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">yaml<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the dataset YAML file. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a filename like <tt class="rst-docutils rst-literal">"dataset.yaml"</tt> specifying the location in
+<tt class="rst-docutils rst-literal">export_dir</tt> to write the YAML file</li>
+<li>an absolute filepath to which to write the YAML file. In this
+case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of
+the image listing</li>
+</ul>
+<p>If None, the dataset YAML file will be written into <tt class="rst-docutils rst-literal">export_dir</tt>
+using the default filename, unless no media is being exported, in
+which case this file will not be written</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_media</span></td><td class="fieldArgDesc"><p>controls how to export the raw media. The
+supported values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">True</tt>: copy all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">False</tt>: don't export media</li>
+<li><tt class="rst-docutils rst-literal">"move"</tt>: move all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">"symlink"</tt>: create symlinks to the media files in the output
+directory</li>
+</ul>
+<p>If None, the default value of this parameter will be chosen based
+on the value of the <tt class="rst-docutils rst-literal">data_path</tt> parameter</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel<wbr></wbr>_dir</span></td><td class="fieldArgDesc">an optional relative directory to strip from each input
+filepath to generate a unique identifier for each image. When
+exporting media, this identifier is joined with <tt class="rst-docutils rst-literal">data_path</tt> and
+<tt class="rst-docutils rst-literal">labels_path</tt> to generate output paths for each exported image
+and labels file. This argument allows for populating nested
+subdirectories that match the shape of the input paths. The path is
+converted to an absolute path (if necessary) via
+<code><a href="fiftyone.core.storage.html#normalize_path" class="internal-link">fiftyone.core.storage.normalize_path</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes</span></td><td class="fieldArgDesc">the list of possible class labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_confidence</span></td><td class="fieldArgDesc">whether to include detection confidences in
+the export, if they exist</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_format</span></td><td class="fieldArgDesc">the image format to use when writing in-memory
+images to disk. By default, <tt class="rst-docutils rst-literal">fiftyone.config.default_image_ext</tt>
+is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_path</span></td><td class="fieldArgDesc">whether to include the directory name containing
+the YAML file in the <tt class="rst-docutils rst-literal">path</tt> key of the exported YAML</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2417">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_sample">export<wbr></wbr>_sample</a></code></td>
+    <td>Exports the given sample to the dataset.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.setup">setup</a></code></td>
+    <td>Performs any necessary setup before exporting the first sample in the dataset.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.classes">classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#data_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.data_path">data<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#export_media" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_media">export<wbr></wbr>_media</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#image_format" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.image_format">image<wbr></wbr>_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#include_confidence" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_confidence">include<wbr></wbr>_confidence</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#include_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_path">include<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.labels_path">labels<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#split" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.split">split</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#yaml_path" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.yaml_path">yaml<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#label_cls" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.label_cls">label<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) exported by this exporter.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.requires_image_metadata">requires<wbr></wbr>_image<wbr></wbr>_metadata</a></code></td>
+    <td>Whether this exporter requires <code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code> instances for each sample being exported.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._parse_classes">_parse<wbr></wbr>_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._classes">_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_dynamic_classes" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._dynamic_classes">_dynamic<wbr></wbr>_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_images" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._images">_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_labels_map_rev" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._labels_map_rev">_labels<wbr></wbr>_map<wbr></wbr>_rev</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_rel_dir" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._rel_dir">_rel<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_writer" class="internal-link" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._writer">_writer</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code> (via <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">LabeledImageDatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2418">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.log_collection">log<wbr></wbr>_collection</a></code></td>
+    <td>Logs any relevant information about the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will be exported.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">ExportPathsMixin</a></code> (via <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter">LabeledImageDatasetExporter</a></code>, <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2419">
+  
+  
+  <tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">data_path</tt> and <tt class="rst-docutils rst-literal">export_media</tt> parameters supported by many exporters.</td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">labels_path</tt> parameter supported by many exporters.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, export_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, split=<span class="rst-variable-quote">'</span><span class="rst-variable-string">val</span><span class="rst-variable-quote">'</span>, data_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, labels_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, yaml_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, export_media=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, rel_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_confidence=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, image_format=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, include_path=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L851">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__init__" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span><span class="function-signature">(self, *args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L947">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#close" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.close">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#close" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.close</a></code></div>
+    <div><p>Performs any necessary actions after the last sample has been
+exported.</p>
+<p>This method is called when the exporter's context manager interface is
+exited, <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">the arguments to <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_sample">
+    
+  </a>
+  <a name="export_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_sample</span><span class="function-signature">(self, image_or_path, label, metadata=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L931">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_sample" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#export_sample" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.export_sample</a></code></div>
+    <div><p>Exports the given sample to the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_or<wbr></wbr>_path</span></td><td class="fieldArgDesc">an image or the path to the image on disk</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">an instance of <code><a href="#label_cls" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.label_cls">label_cls</a></code>, or a dictionary mapping
+field names to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances,
+or <tt class="rst-docutils rst-literal">None</tt> if the sample is unlabeled</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">metadata:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code>
+instance for the sample. Only required when
+<code><a href="#requires_image_metadata" class="internal-link" title="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.requires_image_metadata">requires_image_metadata</a></code> is <tt class="rst-docutils rst-literal">True</tt></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L913">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#setup" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.setup</a></code></div>
+    <div><p>Performs any necessary setup before exporting the first sample in
+the dataset.</p>
+<p>This method is called when the exporter's context manager interface is
+entered, <code><a href="#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">DatasetExporter.__enter__</a></code>.</p>
+</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.classes">
+    
+  </a>
+  <a name="classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">classes</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L892">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#classes" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.data_path">
+    
+  </a>
+  <a name="data_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">data_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L887">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#data_path" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.data_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_media">
+    
+  </a>
+  <a name="export_media">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">export_media</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L890">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_media" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.export_media">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.image_format">
+    
+  </a>
+  <a name="image_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">image_format</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L894">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#image_format" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.image_format">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_confidence">
+    
+  </a>
+  <a name="include_confidence">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">include_confidence</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L893">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#include_confidence" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_confidence">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_path">
+    
+  </a>
+  <a name="include_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">include_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L895">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#include_path" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.include_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.labels_path">
+    
+  </a>
+  <a name="labels_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">labels_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L888">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#labels_path" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.labels_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.rel_dir">
+    
+  </a>
+  <a name="rel_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rel_dir</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L891">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#rel_dir" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.rel_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.split">
+    
+  </a>
+  <a name="split">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">split</span>: <span class="literal">"val"</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L886">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#split" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.split">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.yaml_path">
+    
+  </a>
+  <a name="yaml_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">yaml_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L889">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#yaml_path" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.yaml_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.label_cls">
+    
+  </a>
+  <a name="label_cls">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">label_cls</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L909">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#label_cls" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.label_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#label_cls" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.label_cls</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) exported by this
+exporter.</p>
+<p>This can be any of the following:</p>
+<ul class="rst-simple">
+<li>a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class. In this case, the
+exporter directly exports labels of this type</li>
+<li>a list or tuple of <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes. In
+this case, the exporter can export a single label field of any of
+these types</li>
+<li>a dict mapping keys to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> classes.
+In this case, the exporter can handle label dictionaries with
+value-types specified by this dictionary. Not all keys need be
+present in the exported label dicts</li>
+<li><tt class="rst-docutils rst-literal">None</tt>. In this case, the exporter makes no guarantees about the
+labels that it can export</li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter.requires_image_metadata">
+    
+  </a>
+  <a name="requires_image_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">requires_image_metadata</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L905">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#requires_image_metadata" title="fiftyone.utils.yolo.YOLOv5DatasetExporter.requires_image_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.LabeledImageDatasetExporter.html#requires_image_metadata" class="internal-link">fiftyone.utils.data.exporters.LabeledImageDatasetExporter.requires_image_metadata</a></code></div>
+    <div><p>Whether this exporter requires
+<code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code> instances for each sample
+being exported.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._parse_classes">
+    
+  </a>
+  <a name="_parse_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_classes</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L982">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_classes" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._parse_classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._classes">
+    
+  </a>
+  <a name="_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_classes</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L897">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_classes" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._dynamic_classes">
+    
+  </a>
+  <a name="_dynamic_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_dynamic_classes</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L898">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_dynamic_classes" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._dynamic_classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._images">
+    
+  </a>
+  <a name="_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_images</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L901">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_images" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._images">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._labels_map_rev">
+    
+  </a>
+  <a name="_labels_map_rev">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_labels_map_rev</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L899">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_labels_map_rev" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._labels_map_rev">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._media_exporter">
+    
+  </a>
+  <a name="_media_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_media_exporter</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L903">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_media_exporter" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._media_exporter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._rel_dir">
+    
+  </a>
+  <a name="_rel_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_rel_dir</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L900">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_rel_dir" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._rel_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.yolo.YOLOv5DatasetExporter._writer">
+    
+  </a>
+  <a name="_writer">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_writer</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/yolo.py#L902">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_writer" title="fiftyone.utils.yolo.YOLOv5DatasetExporter._writer">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

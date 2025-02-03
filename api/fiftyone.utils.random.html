@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.random</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.random.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.random.html" class="internal-link" title="This module">random</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#balanced_sample" class="internal-link" title="fiftyone.utils.random.balanced_sample">balanced<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#random_split" class="internal-link" title="fiftyone.utils.random.random_split">random<wbr></wbr>_split</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#weighted_sample" class="internal-link" title="fiftyone.utils.random.weighted_sample">weighted<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/random.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Random sampling utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2151">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#balanced_sample" class="internal-link" title="fiftyone.utils.random.balanced_sample">balanced<wbr></wbr>_sample</a></code></td>
+    <td>Generates a random sample of size <tt class="rst-docutils rst-literal">k</tt> from the given collection such that the expected histogram of <tt class="rst-docutils rst-literal">path</tt> values in the sample is uniform.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#random_split" class="internal-link" title="fiftyone.utils.random.random_split">random<wbr></wbr>_split</a></code></td>
+    <td>Generates a random partition of the samples in the collection according to the specified split fractions.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#weighted_sample" class="internal-link" title="fiftyone.utils.random.weighted_sample">weighted<wbr></wbr>_sample</a></code></td>
+    <td>Generates a random sample of size <tt class="rst-docutils rst-literal">k</tt> from the given collection such that the probability of selecting each sample is proportional to the given per-sample weights.</td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.random.balanced_sample">
+    
+  </a>
+  <a name="balanced_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">balanced_sample</span><span class="function-signature">(sample_collection, k, path, tag=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, exact=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, seed=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/random.py#L163">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#balanced_sample" title="fiftyone.utils.random.balanced_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Generates a random sample of size <tt class="rst-docutils rst-literal">k</tt> from the given collection such
+that the expected histogram of <tt class="rst-docutils rst-literal">path</tt> values in the sample is uniform.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+import fiftyone.utils.random as four
+import fiftyone.zoo as foz
+from fiftyone import ViewField as F
+
+dataset = foz.load_zoo_dataset("cifar10", split="train")
+
+# Sample proportional to label length
+weights = dataset.values(F("ground_truth.label").strlen())
+view1 = four.weighted_sample(dataset, 10000, weights)
+
+# Now take a balanced sample from this unbalanced sample
+view2 = four.balanced_sample(view1, 2000, "ground_truth.label")
+
+# Plot results
+plot1 = fo.CategoricalHistogram("ground_truth.label", init_view=dataset)
+plot2 = fo.CategoricalHistogram(
+    "ground_truth.label",
+    order=lambda kv: -len(kv[0]),  # order by label length
+    init_view=view1,
+)
+plot3 = fo.CategoricalHistogram("ground_truth.label", init_view=view2)
+plot = fo.ViewGrid([plot1, plot2, plot3])
+plot.show()
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k</span></td><td class="fieldArgDesc">the number of samples to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the categorical field against which to sample, e.g.,
+<tt class="rst-docutils rst-literal">"ground_truth.label"</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional sample tag to use to encode the results</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">exact:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to tag exactly <tt class="rst-docutils rst-literal">k</tt> samples (True) or sample so
+that the expected number of samples is <tt class="rst-docutils rst-literal">k</tt> (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seed:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional random seed to use</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> containing the sample</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.random.random_split">
+    
+  </a>
+  <a name="random_split">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">random_split</span><span class="function-signature">(sample_collection, split_fracs, seed=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/random.py#L11">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#random_split" title="fiftyone.utils.random.random_split">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Generates a random partition of the samples in the collection according
+to the specified split fractions.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+import fiftyone.utils.random as four
+import fiftyone.zoo as foz
+
+# A dataset with `ground_truth` detections and no tags
+dataset = (
+    foz.load_zoo_dataset("quickstart")
+    .select_fields("ground_truth")
+    .set_field("tags", [])
+).clone()
+
+#
+# Generate a random sample and encode results via tags
+#
+
+four.random_split(dataset, {"train": 0.7, "test": 0.2, "val": 0.1})
+
+print(dataset.count_sample_tags())
+# {'train': 140, 'test': 40, 'val': 20}
+
+#
+# Generate a random sample in-memory
+#
+
+view1, view2 = four.random_split(dataset, [0.5, 0.5])
+
+assert len(view1) + len(view2) == len(dataset)
+assert set(view1.values("id")).isdisjoint(set(view2.values("id")))
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">split<wbr></wbr>_fracs</span></td><td class="fieldArgDesc"><p>can be either of the following:</p>
+<ul class="rst-simple">
+<li>a dict mapping tag strings to split fractions in <tt class="rst-docutils rst-literal">[0, 1]</tt>. In
+this case, the partition is denoted by tagging each sample with
+its assigned split</li>
+<li>a list of split fractions in <tt class="rst-docutils rst-literal">[0, 1]</tt>. In this case, a
+corresponding list of <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code>
+instances containing the partition is returned</li>
+</ul>
+<p>In either case, the split fractions are normalized so that they sum
+to 1, if necessary</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seed:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional random seed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2"><p>one of the following</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">None</tt>, if <tt class="rst-docutils rst-literal">split_fracs</tt> is a dict</li>
+<li>a tuple of <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> instances, if
+<tt class="rst-docutils rst-literal">split_fracs</tt> is a list</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.random.weighted_sample">
+    
+  </a>
+  <a name="weighted_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">weighted_sample</span><span class="function-signature">(sample_collection, k, weights, tag=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, exact=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, seed=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/random.py#L95">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#weighted_sample" title="fiftyone.utils.random.weighted_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Generates a random sample of size <tt class="rst-docutils rst-literal">k</tt> from the given collection such
+that the probability of selecting each sample is proportional to the given
+per-sample weights.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+import fiftyone as fo
+import fiftyone.utils.random as four
+import fiftyone.zoo as foz
+from fiftyone import ViewField as F
+
+dataset = foz.load_zoo_dataset("cifar10", split="train")
+
+# Sample proportional to label length
+weights = dataset.values(F("ground_truth.label").strlen())
+sample = four.weighted_sample(dataset, 10000, weights)
+
+# Plot results
+plot = fo.CategoricalHistogram(
+    "ground_truth.label",
+    order=lambda kv: -len(kv[0]),  # order by label length
+    init_view=sample,
+)
+plot.show()
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">k</span></td><td class="fieldArgDesc">the number of samples to select</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">weights</span></td><td class="fieldArgDesc">an array of per-sample weights</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tag:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional sample tag to use to encode the results</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">exact:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to tag exactly <tt class="rst-docutils rst-literal">k</tt> samples (True) or sample so
+that the expected number of samples is <tt class="rst-docutils rst-literal">k</tt> (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">seed:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional random seed to use</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> containing the sample</td></tr></table></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

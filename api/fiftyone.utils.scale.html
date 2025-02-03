@@ -1,0 +1,2855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.scale</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.scale.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.scale.html" class="internal-link" title="This module">scale</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#convert_scale_export_to_import" class="internal-link" title="fiftyone.utils.scale.convert_scale_export_to_import">convert<wbr></wbr>_scale<wbr></wbr>_export<wbr></wbr>_to<wbr></wbr>_import</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_to_scale" class="internal-link" title="fiftyone.utils.scale.export_to_scale">export<wbr></wbr>_to<wbr></wbr>_scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#import_from_scale" class="internal-link" title="fiftyone.utils.scale.import_from_scale">import<wbr></wbr>_from<wbr></wbr>_scale</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_or_load_image" class="internal-link" title="fiftyone.utils.scale._download_or_load_image">_download<wbr></wbr>_or<wbr></wbr>_load<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_or_load_json" class="internal-link" title="fiftyone.utils.scale._download_or_load_json">_download<wbr></wbr>_or<wbr></wbr>_load<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_finalize_events" class="internal-link" title="fiftyone.utils.scale._finalize_events">_finalize<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_attributes" class="internal-link" title="fiftyone.utils.scale._get_attributes">_get<wbr></wbr>_attributes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_labels" class="internal-link" title="fiftyone.utils.scale._get_frame_labels">_get<wbr></wbr>_frame<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_frame_numbers" class="internal-link" title="fiftyone.utils.scale._get_frame_numbers">_get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_labels" class="internal-link" title="fiftyone.utils.scale._get_labels">_get<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ingest_event_label" class="internal-link" title="fiftyone.utils.scale._ingest_event_label">_ingest<wbr></wbr>_event<wbr></wbr>_label</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_init_video_box" class="internal-link" title="fiftyone.utils.scale._init_video_box">_init<wbr></wbr>_video<wbr></wbr>_box</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_labels" class="internal-link" title="fiftyone.utils.scale._load_labels">_load<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_labels_dir" class="internal-link" title="fiftyone.utils.scale._load_labels_dir">_load<wbr></wbr>_labels<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_task_labels" class="internal-link" title="fiftyone.utils.scale._load_task_labels">_load<wbr></wbr>_task<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_base_anno" class="internal-link" title="fiftyone.utils.scale._make_base_anno">_make<wbr></wbr>_base<wbr></wbr>_anno</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_bbox" class="internal-link" title="fiftyone.utils.scale._make_bbox">_make<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_event" class="internal-link" title="fiftyone.utils.scale._make_event">_make<wbr></wbr>_event</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_point" class="internal-link" title="fiftyone.utils.scale._make_point">_make<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_video_box_frame" class="internal-link" title="fiftyone.utils.scale._make_video_box_frame">_make<wbr></wbr>_video<wbr></wbr>_box<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_bbox" class="internal-link" title="fiftyone.utils.scale._parse_bbox">_parse<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_classifications" class="internal-link" title="fiftyone.utils.scale._parse_classifications">_parse<wbr></wbr>_classifications</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_frame_events" class="internal-link" title="fiftyone.utils.scale._parse_frame_events">_parse<wbr></wbr>_frame<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_image_labels" class="internal-link" title="fiftyone.utils.scale._parse_image_labels">_parse<wbr></wbr>_image<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_mask" class="internal-link" title="fiftyone.utils.scale._parse_mask">_parse<wbr></wbr>_mask</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_objects" class="internal-link" title="fiftyone.utils.scale._parse_objects">_parse<wbr></wbr>_objects</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_point" class="internal-link" title="fiftyone.utils.scale._parse_point">_parse<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_points" class="internal-link" title="fiftyone.utils.scale._parse_points">_parse<wbr></wbr>_points</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_annotation_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_annotation_labels">_parse<wbr></wbr>_video<wbr></wbr>_annotation<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_bbox" class="internal-link" title="fiftyone.utils.scale._parse_video_bbox">_parse<wbr></wbr>_video<wbr></wbr>_bbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_labels">_parse<wbr></wbr>_video<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_playback_events" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_events">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_playback_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_labels">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_video_playback_objects" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_objects">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_objects</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_classification" class="internal-link" title="fiftyone.utils.scale._to_classification">_to<wbr></wbr>_classification</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_detections" class="internal-link" title="fiftyone.utils.scale._to_detections">_to<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_points" class="internal-link" title="fiftyone.utils.scale._to_points">_to<wbr></wbr>_points</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_polylines" class="internal-link" title="fiftyone.utils.scale._to_polylines">_to<wbr></wbr>_polylines</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_scale_image_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_image_labels">_to<wbr></wbr>_scale<wbr></wbr>_image<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_scale_video_annotation_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_video_annotation_labels">_to<wbr></wbr>_scale<wbr></wbr>_video<wbr></wbr>_annotation<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_scale_video_playback_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_video_playback_labels">_to<wbr></wbr>_scale<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.scale.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Utilities for working with annotations in
+<a class="rst-external rst-reference" href="https://docs.scale.com/reference/introduction" target="_top">Scale AI format</a>.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2187">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#convert_scale_export_to_import" class="internal-link" title="fiftyone.utils.scale.convert_scale_export_to_import">convert<wbr></wbr>_scale<wbr></wbr>_export<wbr></wbr>_to<wbr></wbr>_import</a></code></td>
+    <td>Converts a Scale AI JSON export generated by <code><a href="fiftyone.utils.scale.html#export_to_scale" class="internal-link" title="fiftyone.utils.scale.export_to_scale">export_to_scale</a></code> into the format expected by <code><a href="fiftyone.utils.scale.html#import_from_scale" class="internal-link" title="fiftyone.utils.scale.import_from_scale">import_from_scale</a></code>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#export_to_scale" class="internal-link" title="fiftyone.utils.scale.export_to_scale">export<wbr></wbr>_to<wbr></wbr>_scale</a></code></td>
+    <td>Exports labels from the FiftyOne samples to Scale AI format.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#import_from_scale" class="internal-link" title="fiftyone.utils.scale.import_from_scale">import<wbr></wbr>_from<wbr></wbr>_scale</a></code></td>
+    <td>Imports the Scale AI labels into the FiftyOne dataset.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.scale.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_or_load_image" class="internal-link" title="fiftyone.utils.scale._download_or_load_image">_download<wbr></wbr>_or<wbr></wbr>_load<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_or_load_json" class="internal-link" title="fiftyone.utils.scale._download_or_load_json">_download<wbr></wbr>_or<wbr></wbr>_load<wbr></wbr>_json</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_finalize_events" class="internal-link" title="fiftyone.utils.scale._finalize_events">_finalize<wbr></wbr>_events</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_attributes" class="internal-link" title="fiftyone.utils.scale._get_attributes">_get<wbr></wbr>_attributes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_frame_labels" class="internal-link" title="fiftyone.utils.scale._get_frame_labels">_get<wbr></wbr>_frame<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_frame_numbers" class="internal-link" title="fiftyone.utils.scale._get_frame_numbers">_get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_labels" class="internal-link" title="fiftyone.utils.scale._get_labels">_get<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ingest_event_label" class="internal-link" title="fiftyone.utils.scale._ingest_event_label">_ingest<wbr></wbr>_event<wbr></wbr>_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_init_video_box" class="internal-link" title="fiftyone.utils.scale._init_video_box">_init<wbr></wbr>_video<wbr></wbr>_box</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_labels" class="internal-link" title="fiftyone.utils.scale._load_labels">_load<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_labels_dir" class="internal-link" title="fiftyone.utils.scale._load_labels_dir">_load<wbr></wbr>_labels<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_task_labels" class="internal-link" title="fiftyone.utils.scale._load_task_labels">_load<wbr></wbr>_task<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_base_anno" class="internal-link" title="fiftyone.utils.scale._make_base_anno">_make<wbr></wbr>_base<wbr></wbr>_anno</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_bbox" class="internal-link" title="fiftyone.utils.scale._make_bbox">_make<wbr></wbr>_bbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_event" class="internal-link" title="fiftyone.utils.scale._make_event">_make<wbr></wbr>_event</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_point" class="internal-link" title="fiftyone.utils.scale._make_point">_make<wbr></wbr>_point</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_video_box_frame" class="internal-link" title="fiftyone.utils.scale._make_video_box_frame">_make<wbr></wbr>_video<wbr></wbr>_box<wbr></wbr>_frame</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_bbox" class="internal-link" title="fiftyone.utils.scale._parse_bbox">_parse<wbr></wbr>_bbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_classifications" class="internal-link" title="fiftyone.utils.scale._parse_classifications">_parse<wbr></wbr>_classifications</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_frame_events" class="internal-link" title="fiftyone.utils.scale._parse_frame_events">_parse<wbr></wbr>_frame<wbr></wbr>_events</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_image_labels" class="internal-link" title="fiftyone.utils.scale._parse_image_labels">_parse<wbr></wbr>_image<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_mask" class="internal-link" title="fiftyone.utils.scale._parse_mask">_parse<wbr></wbr>_mask</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_objects" class="internal-link" title="fiftyone.utils.scale._parse_objects">_parse<wbr></wbr>_objects</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_point" class="internal-link" title="fiftyone.utils.scale._parse_point">_parse<wbr></wbr>_point</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_points" class="internal-link" title="fiftyone.utils.scale._parse_points">_parse<wbr></wbr>_points</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_annotation_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_annotation_labels">_parse<wbr></wbr>_video<wbr></wbr>_annotation<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_bbox" class="internal-link" title="fiftyone.utils.scale._parse_video_bbox">_parse<wbr></wbr>_video<wbr></wbr>_bbox</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_labels">_parse<wbr></wbr>_video<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_playback_events" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_events">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_events</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_playback_labels" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_labels">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_video_playback_objects" class="internal-link" title="fiftyone.utils.scale._parse_video_playback_objects">_parse<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_objects</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_classification" class="internal-link" title="fiftyone.utils.scale._to_classification">_to<wbr></wbr>_classification</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_detections" class="internal-link" title="fiftyone.utils.scale._to_detections">_to<wbr></wbr>_detections</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_points" class="internal-link" title="fiftyone.utils.scale._to_points">_to<wbr></wbr>_points</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_polylines" class="internal-link" title="fiftyone.utils.scale._to_polylines">_to<wbr></wbr>_polylines</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_scale_image_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_image_labels">_to<wbr></wbr>_scale<wbr></wbr>_image<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_scale_video_annotation_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_video_annotation_labels">_to<wbr></wbr>_scale<wbr></wbr>_video<wbr></wbr>_annotation<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_scale_video_playback_labels" class="internal-link" title="fiftyone.utils.scale._to_scale_video_playback_labels">_to<wbr></wbr>_scale<wbr></wbr>_video<wbr></wbr>_playback<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.scale.convert_scale_export_to_import">
+    
+  </a>
+  <a name="convert_scale_export_to_import">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">convert_scale_export_to_import</span><span class="function-signature">(inpath, outpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L492">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#convert_scale_export_to_import" title="fiftyone.utils.scale.convert_scale_export_to_import">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Converts a Scale AI JSON export generated by <code><a href="#export_to_scale" class="internal-link" title="fiftyone.utils.scale.export_to_scale">export_to_scale</a></code>
+into the format expected by <code><a href="#import_from_scale" class="internal-link" title="fiftyone.utils.scale.import_from_scale">import_from_scale</a></code>.</p>
+<p>The output JSON file will have the same format that is generated when
+performing a bulk export of a Scale AI project's labels.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inpath</span></td><td class="fieldArgDesc">the path to an JSON file generated (for example) by
+<code><a href="#export_to_scale" class="internal-link" title="fiftyone.utils.scale.export_to_scale">export_to_scale</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpath</span></td><td class="fieldArgDesc">the path to write a JSON file containing the converted labels</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dictionary mapping sample IDs to the task IDs that were generated for
+each sample</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.scale.export_to_scale">
+    
+  </a>
+  <a name="export_to_scale">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_to_scale</span><span class="function-signature">(sample_collection, json_path, video_labels_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, video_events_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, video_playback=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, label_field=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, frame_labels_field=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L257">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_to_scale" title="fiftyone.utils.scale.export_to_scale">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Exports labels from the FiftyOne samples to Scale AI format.</p>
+<p>This function is useful for generating pre-annotations that can be provided
+to Scale AI via the <tt class="rst-docutils rst-literal">hypothesis</tt> parameter of the following endpoints:</p>
+<ul class="rst-simple">
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-image-annotation" target="_top">General Image Annotation</a></li>
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-video-annotation" target="_top">General Video Annotation</a></li>
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/video-playback" target="_top">Video Playback</a></li>
+</ul>
+<p>The output <tt class="rst-docutils rst-literal">json_path</tt> will be a JSON file in the following format:</p>
+<pre class="rst-literal-block">
+{
+    &lt;sample-id1&gt;: {
+        "filepath": &lt;filepath1&gt;,
+        "hypothesis": {...}
+    },
+    &lt;sample-id2&gt;: {
+        "filepath": &lt;filepath2&gt;,
+        "hypothesis": {...}
+    },
+    ...
+}
+</pre>
+<p>The format of the <tt class="rst-docutils rst-literal">hypothesis</tt> field depends on the label type:</p>
+<ul>
+<li><p class="rst-first">Sample-level classifications, detections, polylines, polygons, and
+keypoints:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": [...],
+    "global_attributes": {...}
+}
+</pre>
+</li>
+<li><p class="rst-first">Video samples:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {
+        "url": &lt;filepath&gt;
+    }
+}
+</pre>
+</li>
+</ul>
+<p>When exporting labels for video datasets, the <tt class="rst-docutils rst-literal">url</tt> field will contain
+the paths on disk to per-sample JSON files that are written to
+<tt class="rst-docutils rst-literal">video_labels_dir</tt> as follows:</p>
+<pre class="rst-literal-block">
+video_labels_dir/
+    &lt;sample-id1&gt;.json
+    &lt;sample-id2&gt;.json
+    ...
+</pre>
+<p>When <tt class="rst-docutils rst-literal">video_playback == False</tt>, the per-sample JSON files are written in
+<a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-video-annotation" target="_top">General Video Annotation format</a>:</p>
+<pre class="rst-literal-block">
+[
+    {
+        "annotations": [...],
+        "global_attributes": {...}
+    },
+    {
+        "annotations": [...],
+        "global_attributes": {...}
+    },
+    ...
+]
+</pre>
+<p>where the n-th element in the list contains the labels for the n-th frame
+of the video.</p>
+<p>When <tt class="rst-docutils rst-literal">video_playback == True</tt>, the per-sample JSON files are written in
+<a class="rst-external rst-reference" href="https://docs.scale.com/reference/video-playback" target="_top">Video Playback format</a>:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {...}
+}
+</pre>
+<p>When exporting labels for videos and the <tt class="rst-docutils rst-literal">video_events_dir</tt> parameter is
+provided, the <tt class="rst-docutils rst-literal">hypothesis</tt> fields of the JSON written to <tt class="rst-docutils rst-literal">json_path</tt>
+will include an <tt class="rst-docutils rst-literal">events</tt> field:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {
+        "url": &lt;filepath&gt;
+    },
+    "events": {
+        "url": &lt;filepath&gt;
+    }
+}
+</pre>
+<p>whose <tt class="rst-docutils rst-literal">url</tt> field will contain the paths on disk to per-sample JSON files
+that are written to <tt class="rst-docutils rst-literal">video_events_dir</tt> as follows:</p>
+<pre class="rst-literal-block">
+video_events_dir/
+    &lt;sample-id1&gt;.json
+    &lt;sample-id2&gt;.json
+    ...
+</pre>
+<p>where each per-sample JSON file contains the
+<a class="rst-external rst-reference" href="https://docs.scale.com/reference/events" target="_top">events in the video</a>:</p>
+<pre class="rst-literal-block">
+{
+    "events": [...]
+}
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">json<wbr></wbr>_path</span></td><td class="fieldArgDesc">the path to write the JSON export</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">video<wbr></wbr>_labels<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a directory to write the per-sample video
+labels. Only applicable for video datasets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">video<wbr></wbr>_events<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a directory to write the per-sample video
+events. Only applicable for video datasets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">video<wbr></wbr>_playback:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to export video labels in a suitable
+format for use with the
+<a class="rst-external rst-reference" href="https://docs.scale.com/reference/video-playback" target="_top">Video Playback</a> task.
+By default, video labels are exported for in a suitable format for
+the <a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-video-annotation" target="_top">General Video Annotation</a>
+task. Only applicable for video datasets</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_field:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>optional label field(s) to export. Can be any of
+the following:</p>
+<ul class="rst-simple">
+<li>the name of a label field to export</li>
+<li>a glob pattern of label field(s) to export</li>
+<li>a list or tuple of label field(s) to export</li>
+<li>a dictionary mapping label field names to keys to use when
+constructing the exported labels</li>
+</ul>
+<p>By default, no labels are exported</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_labels<wbr></wbr>_field:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>optional frame label field(s) to export.
+Only applicable to video datasets. Can be any of the following:</p>
+<ul class="rst-simple">
+<li>the name of a frame label field to export</li>
+<li>a glob pattern of frame label field(s) to export</li>
+<li>a list or tuple of frame label field(s) to export</li>
+<li>a dictionary mapping frame label field names to keys to use
+when constructing the exported frame labels</li>
+</ul>
+<p>By default, no frame labels are exported</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.scale.import_from_scale">
+    
+  </a>
+  <a name="import_from_scale">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">import_from_scale</span><span class="function-signature">(dataset, labels_dir_or_json, label_prefix=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, scale_id_field=<span class="rst-variable-quote">'</span><span class="rst-variable-string">scale_id</span><span class="rst-variable-quote">'</span>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L35">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#import_from_scale" title="fiftyone.utils.scale.import_from_scale">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Imports the Scale AI labels into the FiftyOne dataset.</p>
+<p>This method supports importing annotations from the following Scale API
+endpoints:</p>
+<ul class="rst-simple">
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-image-annotation" target="_top">General Image Annotation</a></li>
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/semantic-segmentation-annotation" target="_top">Semantic Segmentation Annotation</a></li>
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-video-annotation" target="_top">General Video Annotation</a></li>
+<li><a class="rst-external rst-reference" href="https://docs.scale.com/reference/video-playback" target="_top">Video Playback</a></li>
+</ul>
+<p>The <tt class="rst-docutils rst-literal">scale_id_field</tt> of the FiftyOne samples are used to associate
+samples with their corresponding Scale task IDs.</p>
+<p>The provided <tt class="rst-docutils rst-literal">labels_dir_or_json</tt> can either be the path to a JSON
+export in the following format:</p>
+<pre class="rst-literal-block">
+[
+    {
+        "task_id": &lt;scale-task-id1&gt;,
+        "response": {...},
+        ...
+    },
+    {
+        "task_id": &lt;scale-task-id2&gt;,
+        "response": {...},
+        ...
+    },
+    ...
+]
+</pre>
+<p>or a directory of per-task JSON files, which can either (a) directly
+contain the elements of the list above, or (b) contain task labels
+organized in the following format:</p>
+<pre class="rst-literal-block">
+labels_dir/
+    &lt;scale-task-id1&gt;.json
+    &lt;scale-task-id2&gt;.json
+    ...
+</pre>
+<p>where each JSON file contains only the contents of the <tt class="rst-docutils rst-literal">response</tt> field
+for the task.</p>
+<p>The contents of the <tt class="rst-docutils rst-literal">response</tt> field should be as follows:</p>
+<ul>
+<li><p class="rst-first"><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-image-annotation" target="_top">General Image Annotation</a>:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": [...]
+    "global_attributes": {...}
+}
+</pre>
+</li>
+<li><p class="rst-first"><a class="rst-external rst-reference" href="https://docs.scale.com/reference/semantic-segmentation-annotation" target="_top">Semantic Segmentation Annotation</a>:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {
+        ...
+        "combined": {
+            ...
+            "indexedImage": &lt;url-or-filepath&gt;
+        }
+    },
+    "labelMapping": {...}
+}
+</pre>
+<p>where the <tt class="rst-docutils rst-literal">indexedImage</tt> field (which is the only version of the
+segmentation used by this method) can contain either a URL, in which
+case the mask is downloaded from the web, or the path to the mask on
+disk.</p>
+</li>
+<li><p class="rst-first"><a class="rst-external rst-reference" href="https://docs.scale.com/reference/general-video-annotation" target="_top">General Video Annotation</a>:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {
+        "url": &lt;url-or-filepath&gt;
+    },
+    "events": {
+        "url": &lt;url-or-filepath&gt;
+    }
+}
+</pre>
+<p>where the <tt class="rst-docutils rst-literal">url</tt> fields can contain either a URL, in which case the
+file is downloaded from the web, or the path to JSON file on disk.</p>
+<p>The annotations file should contain per-frame annotations in the
+following format:</p>
+<pre class="rst-literal-block">
+[
+    {
+        "annotations": [...],
+        "global_attributes": {...}
+    },
+    {
+        "annotations": [...],
+        "global_attributes": {...}
+    },
+    ...
+]
+</pre>
+<p>where the n-th element in the list contains the labels for the n-th
+frame that was labeled.</p>
+<p>Note that, if parameters such as <tt class="rst-docutils rst-literal">duration_time</tt>, <tt class="rst-docutils rst-literal">frame_rate</tt>, and
+<tt class="rst-docutils rst-literal">start_time</tt> were used to specify which frames of the video to
+annotate, then you must ensure that the <tt class="rst-docutils rst-literal">labels_dir_or_json</tt> JSON
+that you provide to this method contains the <tt class="rst-docutils rst-literal">task</tt> fields for each
+Scale task so that the correct frame numbers can be determined from
+these values.</p>
+<p>The optional events file should contain a list of events in the video:</p>
+<pre class="rst-literal-block">
+{
+    "events": [...]
+}
+</pre>
+</li>
+<li><p class="rst-first"><a class="rst-external rst-reference" href="https://docs.scale.com/reference/video-playback" target="_top">Video Playback</a>:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {
+        "url": &lt;url-or-filepath&gt;
+    },
+    "events": {
+        "url": &lt;url-or-filepath&gt;
+    }
+}
+</pre>
+<p>where the <tt class="rst-docutils rst-literal">url</tt> fields can contain either a URL, in which case the
+file is downloaded from the web, or the path to JSON files on disk.</p>
+<p>The annotations file should contain a dictionary of object
+trajectories:</p>
+<pre class="rst-literal-block">
+{
+    "annotations": {...}
+}
+</pre>
+<p>The optional events file should contain a list of events in the video:</p>
+<pre class="rst-literal-block">
+{
+    "events": [...]
+}
+</pre>
+</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels<wbr></wbr>_dir<wbr></wbr>_or<wbr></wbr>_json</span></td><td class="fieldArgDesc">the path to a Scale AI JSON export or a directory
+of JSON exports as per the formats described above</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_prefix:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a prefix to prepend to the sample label field(s)
+that are created, separated by an underscore</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scale<wbr></wbr>_id<wbr></wbr>_field:</span><span class="literal">"scale_id"</span></td><td class="fieldArgDesc">the sample field to use to associate Scale
+task IDs with FiftyOne samples</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.scale.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L32">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.scale.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._download_or_load_image">
+    
+  </a>
+  <a name="_download_or_load_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_or_load_image</span><span class="function-signature">(url_or_filepath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1179">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_or_load_image" title="fiftyone.utils.scale._download_or_load_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._download_or_load_json">
+    
+  </a>
+  <a name="_download_or_load_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_or_load_json</span><span class="function-signature">(url_or_filepath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1171">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_or_load_json" title="fiftyone.utils.scale._download_or_load_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._finalize_events">
+    
+  </a>
+  <a name="_finalize_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_finalize_events</span><span class="function-signature">(events, frame_number, in_progress_events)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L703">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_finalize_events" title="fiftyone.utils.scale._finalize_events">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._get_attributes">
+    
+  </a>
+  <a name="_get_attributes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_attributes</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L762">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_attributes" title="fiftyone.utils.scale._get_attributes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._get_frame_labels">
+    
+  </a>
+  <a name="_get_frame_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_labels</span><span class="function-signature">(sample, frame_label_fields)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L564">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_labels" title="fiftyone.utils.scale._get_frame_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._get_frame_numbers">
+    
+  </a>
+  <a name="_get_frame_numbers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_frame_numbers</span><span class="function-signature">(task, metadata)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L923">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_frame_numbers" title="fiftyone.utils.scale._get_frame_numbers">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._get_labels">
+    
+  </a>
+  <a name="_get_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_labels</span><span class="function-signature">(sample_or_frame, label_fields)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L554">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_labels" title="fiftyone.utils.scale._get_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._ingest_event_label">
+    
+  </a>
+  <a name="_ingest_event_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ingest_event_label</span><span class="function-signature">(label, frame_number, in_progress_events)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L687">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ingest_event_label" title="fiftyone.utils.scale._ingest_event_label">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._init_video_box">
+    
+  </a>
+  <a name="_init_video_box">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_init_video_box</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L729">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_init_video_box" title="fiftyone.utils.scale._init_video_box">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._load_labels">
+    
+  </a>
+  <a name="_load_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_labels</span><span class="function-signature">(json_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L522">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_labels" title="fiftyone.utils.scale._load_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._load_labels_dir">
+    
+  </a>
+  <a name="_load_labels_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_labels_dir</span><span class="function-signature">(labels_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L527">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_labels_dir" title="fiftyone.utils.scale._load_labels_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._load_task_labels">
+    
+  </a>
+  <a name="_load_task_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_task_labels</span><span class="function-signature">(json_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L537">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_task_labels" title="fiftyone.utils.scale._load_task_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._make_base_anno">
+    
+  </a>
+  <a name="_make_base_anno">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_base_anno</span><span class="function-signature">(type_, label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L839">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_base_anno" title="fiftyone.utils.scale._make_base_anno">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._make_bbox">
+    
+  </a>
+  <a name="_make_bbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_bbox</span><span class="function-signature">(bounding_box, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L847">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_bbox" title="fiftyone.utils.scale._make_bbox">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._make_event">
+    
+  </a>
+  <a name="_make_event">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_event</span><span class="function-signature">(label, start, end)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L712">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_event" title="fiftyone.utils.scale._make_event">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._make_point">
+    
+  </a>
+  <a name="_make_point">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_point</span><span class="function-signature">(point, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L858">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_point" title="fiftyone.utils.scale._make_point">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._make_video_box_frame">
+    
+  </a>
+  <a name="_make_video_box_frame">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_video_box_frame</span><span class="function-signature">(detection, frame_number, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L738">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_video_box_frame" title="fiftyone.utils.scale._make_video_box_frame">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_bbox">
+    
+  </a>
+  <a name="_parse_bbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_bbox</span><span class="function-signature">(anno, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1122">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_bbox" title="fiftyone.utils.scale._parse_bbox">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_classifications">
+    
+  </a>
+  <a name="_parse_classifications">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_classifications</span><span class="function-signature">(attrs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1044">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_classifications" title="fiftyone.utils.scale._parse_classifications">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_frame_events">
+    
+  </a>
+  <a name="_parse_frame_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_frame_events</span><span class="function-signature">(labels_dict, frame_number, events, in_progress_events)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L677">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_frame_events" title="fiftyone.utils.scale._parse_frame_events">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_image_labels">
+    
+  </a>
+  <a name="_parse_image_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_image_labels</span><span class="function-signature">(anno_dict, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1029">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_image_labels" title="fiftyone.utils.scale._parse_image_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_mask">
+    
+  </a>
+  <a name="_parse_mask">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_mask</span><span class="function-signature">(anno_dict)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1150">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_mask" title="fiftyone.utils.scale._parse_mask">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_objects">
+    
+  </a>
+  <a name="_parse_objects">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_objects</span><span class="function-signature">(anno_dict, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1055">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_objects" title="fiftyone.utils.scale._parse_objects">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_point">
+    
+  </a>
+  <a name="_parse_point">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_point</span><span class="function-signature">(vertex, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1144">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_point" title="fiftyone.utils.scale._parse_point">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_points">
+    
+  </a>
+  <a name="_parse_points">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_points</span><span class="function-signature">(vertices, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1140">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_points" title="fiftyone.utils.scale._parse_points">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_annotation_labels">
+    
+  </a>
+  <a name="_parse_video_annotation_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_annotation_labels</span><span class="function-signature">(annos, events, metadata, task=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L885">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_annotation_labels" title="fiftyone.utils.scale._parse_video_annotation_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_bbox">
+    
+  </a>
+  <a name="_parse_video_bbox">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_bbox</span><span class="function-signature">(anno, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L1131">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_bbox" title="fiftyone.utils.scale._parse_video_bbox">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_labels">
+    
+  </a>
+  <a name="_parse_video_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_labels</span><span class="function-signature">(task_labels, metadata)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L864">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_labels" title="fiftyone.utils.scale._parse_video_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_playback_events">
+    
+  </a>
+  <a name="_parse_video_playback_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_playback_events</span><span class="function-signature">(frames, events)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L968">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_playback_events" title="fiftyone.utils.scale._parse_video_playback_events">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_playback_labels">
+    
+  </a>
+  <a name="_parse_video_playback_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_playback_labels</span><span class="function-signature">(annos, events, metadata)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L952">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_playback_labels" title="fiftyone.utils.scale._parse_video_playback_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._parse_video_playback_objects">
+    
+  </a>
+  <a name="_parse_video_playback_objects">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_video_playback_objects</span><span class="function-signature">(frames, annotations, metadata)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L996">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_video_playback_objects" title="fiftyone.utils.scale._parse_video_playback_objects">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_classification">
+    
+  </a>
+  <a name="_to_classification">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_classification</span><span class="function-signature">(name, label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L757">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_classification" title="fiftyone.utils.scale._to_classification">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_detections">
+    
+  </a>
+  <a name="_to_detections">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_detections</span><span class="function-signature">(label, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L775">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_detections" title="fiftyone.utils.scale._to_detections">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_points">
+    
+  </a>
+  <a name="_to_points">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_points</span><span class="function-signature">(label, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L819">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_points" title="fiftyone.utils.scale._to_points">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_polylines">
+    
+  </a>
+  <a name="_to_polylines">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_polylines</span><span class="function-signature">(label, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L797">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_polylines" title="fiftyone.utils.scale._to_polylines">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_scale_image_labels">
+    
+  </a>
+  <a name="_to_scale_image_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_scale_image_labels</span><span class="function-signature">(labels_dict, frame_size)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L573">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_scale_image_labels" title="fiftyone.utils.scale._to_scale_image_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_scale_video_annotation_labels">
+    
+  </a>
+  <a name="_to_scale_video_annotation_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_scale_video_annotation_labels</span><span class="function-signature">(frames, frame_size, make_events=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L602">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_scale_video_annotation_labels" title="fiftyone.utils.scale._to_scale_video_annotation_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.scale._to_scale_video_playback_labels">
+    
+  </a>
+  <a name="_to_scale_video_playback_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_scale_video_playback_labels</span><span class="function-signature">(frames, frame_size, make_events=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/scale.py#L625">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_scale_video_playback_labels" title="fiftyone.utils.scale._to_scale_video_playback_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

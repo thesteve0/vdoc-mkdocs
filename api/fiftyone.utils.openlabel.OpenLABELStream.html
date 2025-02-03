@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.openlabel.OpenLABELStream</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.openlabel.OpenLABELStream.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.openlabel.OpenLABELStream.html" class="internal-link" title="This class"><wbr></wbr>Open<wbr></wbr>LABELStream</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#from_anno_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.from_anno_dict">from<wbr></wbr>_anno<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_frame_numbers" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.get_frame_numbers">get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#update_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.update_dict">update<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_stream_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._parse_stream_dict">_parse<wbr></wbr>_stream<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_check_height_width" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._check_height_width">_check<wbr></wbr>_height<wbr></wbr>_width</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_properties_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._parse_properties_dict">_parse<wbr></wbr>_properties<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#frame_streams" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.frame_streams">frame<wbr></wbr>_streams</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#height" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.height">height</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#name" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.name">name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#other_attrs" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.other_attrs">other<wbr></wbr>_attrs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#properties" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.properties">properties</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#type" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.type">type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#width" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.width">width</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#uris" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.uris">uris</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_HEIGHT_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._HEIGHT_KEYS">_HEIGHT<wbr></wbr>_KEYS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_URI_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._URI_KEYS">_URI<wbr></wbr>_KEYS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_WIDTH_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._WIDTH_KEYS">_WIDTH<wbr></wbr>_KEYS</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_uris" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._uris">_uris</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="The parent of this class">openlabel</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.AttributeParser.html" class="internal-link" title="fiftyone.utils.openlabel.AttributeParser"><wbr></wbr>Attribute<wbr></wbr>Parser</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELAnnotations.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELAnnotations"><wbr></wbr>Open<wbr></wbr>LABELAnnotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELBBox.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELBBox"><wbr></wbr>Open<wbr></wbr>LABELBBox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELGroup.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELGroup"><wbr></wbr>Open<wbr></wbr>LABELGroup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELImageDatasetImporter.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELImageDatasetImporter"><wbr></wbr>Open<wbr></wbr>LABELImage<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELMetadata.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELMetadata"><wbr></wbr>Open<wbr></wbr>LABELMetadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELObject.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELObject"><wbr></wbr>Open<wbr></wbr>LABELObject</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELObjects.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELObjects"><wbr></wbr>Open<wbr></wbr>LABELObjects</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELPoint.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELPoint"><wbr></wbr>Open<wbr></wbr>LABELPoint</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELPoly2D.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELPoly2D"><wbr></wbr>Open<wbr></wbr>LABELPoly2<wbr></wbr>D</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELShape.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELShape"><wbr></wbr>Open<wbr></wbr>LABELShape</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELShapes.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELShapes"><wbr></wbr>Open<wbr></wbr>LABELShapes</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELStream.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream"><wbr></wbr>Open<wbr></wbr>LABELStream</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELStreamInfo.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStreamInfo"><wbr></wbr>Open<wbr></wbr>LABELStream<wbr></wbr>Info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELStreamInfos.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStreamInfos"><wbr></wbr>Open<wbr></wbr>LABELStream<wbr></wbr>Infos</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELStreams.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStreams"><wbr></wbr>Open<wbr></wbr>LABELStreams</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.OpenLABELVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELVideoDatasetImporter"><wbr></wbr>Open<wbr></wbr>LABELVideo<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.SegmentationType.html" class="internal-link" title="fiftyone.utils.openlabel.SegmentationType"><wbr></wbr>Segmentation<wbr></wbr>Type</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_extend_labels" class="internal-link" title="fiftyone.utils.openlabel._extend_labels">_extend<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_merge_frame_labels" class="internal-link" title="fiftyone.utils.openlabel._merge_frame_labels">_merge<wbr></wbr>_frame<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_pairwise" class="internal-link" title="fiftyone.utils.openlabel._pairwise">_pairwise</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_parse_label_types" class="internal-link" title="fiftyone.utils.openlabel._parse_label_types">_parse<wbr></wbr>_label<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_remove_empty_label_type" class="internal-link" title="fiftyone.utils.openlabel._remove_empty_label_type">_remove<wbr></wbr>_empty<wbr></wbr>_label<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_remove_empty_labels" class="internal-link" title="fiftyone.utils.openlabel._remove_empty_labels">_remove<wbr></wbr>_empty<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_remove_ext" class="internal-link" title="fiftyone.utils.openlabel._remove_ext">_remove<wbr></wbr>_ext</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_validate_file_ids" class="internal-link" title="fiftyone.utils.openlabel._validate_file_ids">_validate<wbr></wbr>_file<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#logger" class="internal-link" title="fiftyone.utils.openlabel.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html#_SUPPORTED_LABEL_TYPES" class="internal-link" title="fiftyone.utils.openlabel._SUPPORTED_LABEL_TYPES">_SUPPORTED<wbr></wbr>_LABEL<wbr></wbr>_TYPES</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code><wbr></wbr>.<code><a href="fiftyone.utils.openlabel.OpenLABELStream.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream">OpenLABELStream</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">OpenLABELStream</span>(<a href="https://docs.python.org/3/library/functions.html#object" class="intersphinx-link">object</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1425" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.__init__">OpenLABELStream(name, type, properties, uris, other_attrs)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.openlabel.OpenLABELStream">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>An OpenLABEL stream corresponding to one uri or file_id.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of the stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">type</span></td><td class="fieldArgDesc">the type of the stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">description</span></td><td class="fieldArgDesc">a string description for this stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">properties</span></td><td class="fieldArgDesc">a dict of properties for this stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">uri</span></td><td class="fieldArgDesc">the uri or file_id of the media corresponding to this
+stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">other<wbr></wbr>_attrs</span></td><td class="fieldArgDesc">a dictionary of other attributes corresponding to
+this stream</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2141">
+  
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#from_anno_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.from_anno_dict">from<wbr></wbr>_anno<wbr></wbr>_dict</a></code></td>
+    <td>Create an OpenLABEL stream from the stream information dictionary.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_frame_numbers" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.get_frame_numbers">get<wbr></wbr>_frame<wbr></wbr>_numbers</a></code></td>
+    <td>Get frame numbers corresponding to the given uri.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.update_dict">update<wbr></wbr>_dict</a></code></td>
+    <td>Updates this stream with additional information.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#frame_streams" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.frame_streams">frame<wbr></wbr>_streams</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#height" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.height">height</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#name" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#other_attrs" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.other_attrs">other<wbr></wbr>_attrs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#properties" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.properties">properties</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#type" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.type">type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#width" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.width">width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#uris" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream.uris">uris</a></code></td>
+    <td>Get uris corresponding to any stream in this collection.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_parse_stream_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._parse_stream_dict">_parse<wbr></wbr>_stream<wbr></wbr>_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_check_height_width" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._check_height_width">_check<wbr></wbr>_height<wbr></wbr>_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_properties_dict" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._parse_properties_dict">_parse<wbr></wbr>_properties<wbr></wbr>_dict</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_HEIGHT_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._HEIGHT_KEYS">_HEIGHT<wbr></wbr>_KEYS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_URI_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._URI_KEYS">_URI<wbr></wbr>_KEYS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_WIDTH_KEYS" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._WIDTH_KEYS">_WIDTH<wbr></wbr>_KEYS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_uris" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream._uris">_uris</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.from_anno_dict">
+    
+  </a>
+  <a name="from_anno_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">from_anno_dict</span><span class="function-signature">(cls, stream_name, d, frame_number)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1543">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#from_anno_dict" title="fiftyone.utils.openlabel.OpenLABELStream.from_anno_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Create an OpenLABEL stream from the stream information dictionary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">stream<wbr></wbr>_name</span></td><td class="fieldArgDesc">the name of the stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc">a dict containing information about this stream</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_number</span></td><td class="fieldArgDesc">the frame number from which this stream
+information dict was parsed, 'None' if from the top-level
+streams</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">An <code><a href="fiftyone.utils.openlabel.OpenLABELStream.html" class="internal-link" title="fiftyone.utils.openlabel.OpenLABELStream">OpenLABELStream</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, name, type=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, properties=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, uris=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, other_attrs=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1443">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.openlabel.OpenLABELStream.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.get_frame_numbers">
+    
+  </a>
+  <a name="get_frame_numbers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_frame_numbers</span><span class="function-signature">(self, uri)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1523">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_frame_numbers" title="fiftyone.utils.openlabel.OpenLABELStream.get_frame_numbers">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Get frame numbers corresponding to the given uri.</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.update_dict">
+    
+  </a>
+  <a name="update_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_dict</span><span class="function-signature">(self, d, frame_number=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1479">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#update_dict" title="fiftyone.utils.openlabel.OpenLABELStream.update_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Updates this stream with additional information.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc">a dict containing additional stream information</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">frame<wbr></wbr>_number:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the frame number from which this stream
+information dict was parsed, 'None' if from the top-level
+streams</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.frame_streams">
+    
+  </a>
+  <a name="frame_streams">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">frame_streams</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1460">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#frame_streams" title="fiftyone.utils.openlabel.OpenLABELStream.frame_streams">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.height">
+    
+  </a>
+  <a name="height">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">height</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1454">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#height" title="fiftyone.utils.openlabel.OpenLABELStream.height">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1451">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#name" title="fiftyone.utils.openlabel.OpenLABELStream.name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.other_attrs">
+    
+  </a>
+  <a name="other_attrs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">other_attrs</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1456">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#other_attrs" title="fiftyone.utils.openlabel.OpenLABELStream.other_attrs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.properties">
+    
+  </a>
+  <a name="properties">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">properties</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1453">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#properties" title="fiftyone.utils.openlabel.OpenLABELStream.properties">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.type">
+    
+  </a>
+  <a name="type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">type</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1452">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#type" title="fiftyone.utils.openlabel.OpenLABELStream.type">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.width">
+    
+  </a>
+  <a name="width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">width</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1455">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#width" title="fiftyone.utils.openlabel.OpenLABELStream.width">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream.uris">
+    
+  </a>
+  <a name="uris">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">uris</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1514">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#uris" title="fiftyone.utils.openlabel.OpenLABELStream.uris">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p>Get uris corresponding to any stream in this collection.</p></div>
+    
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._parse_stream_dict">
+    
+  </a>
+  <a name="_parse_stream_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_stream_dict</span><span class="function-signature">(cls, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1575">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_stream_dict" title="fiftyone.utils.openlabel.OpenLABELStream._parse_stream_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._check_height_width">
+    
+  </a>
+  <a name="_check_height_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_height_width</span><span class="function-signature">(self, key, value)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1472">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_check_height_width" title="fiftyone.utils.openlabel.OpenLABELStream._check_height_width">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._parse_properties_dict">
+    
+  </a>
+  <a name="_parse_properties_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_properties_dict</span><span class="function-signature">(self, d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1465">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_properties_dict" title="fiftyone.utils.openlabel.OpenLABELStream._parse_properties_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._HEIGHT_KEYS">
+    
+  </a>
+  <a name="_HEIGHT_KEYS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_HEIGHT_KEYS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1439">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_HEIGHT_KEYS" title="fiftyone.utils.openlabel.OpenLABELStream._HEIGHT_KEYS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">height</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">height_px</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._URI_KEYS">
+    
+  </a>
+  <a name="_URI_KEYS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_URI_KEYS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1441">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_URI_KEYS" title="fiftyone.utils.openlabel.OpenLABELStream._URI_KEYS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">uri</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._WIDTH_KEYS">
+    
+  </a>
+  <a name="_WIDTH_KEYS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_WIDTH_KEYS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1440">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_WIDTH_KEYS" title="fiftyone.utils.openlabel.OpenLABELStream._WIDTH_KEYS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">width</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">width_px</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.openlabel.OpenLABELStream._uris">
+    
+  </a>
+  <a name="_uris">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_uris</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/openlabel.py#L1458">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_uris" title="fiftyone.utils.openlabel.OpenLABELStream._uris">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

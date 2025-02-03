@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.plots.plotly.PlotlyInteractivePlot</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.plots.plotly.PlotlyInteractivePlot.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.plots.plotly.PlotlyInteractivePlot.html" class="internal-link" title="This class"><wbr></wbr>Plotly<wbr></wbr>Interactive<wbr></wbr>Plot</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.show">show</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.update_layout">update<wbr></wbr>_layout</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#recommend_link_type" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.recommend_link_type">recommend<wbr></wbr>_link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_disconnect_callback">register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_selection_callback">register<wbr></wbr>_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_sync_callback">register<wbr></wbr>_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.reset">reset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.select_ids">select<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode.setter" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode.setter">selection<wbr></wbr>_mode<wbr></wbr>.setter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#save" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin.save">save</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_disconnect_callback">_register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_selection_callback">_register<wbr></wbr>_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_sync_callback">_register<wbr></wbr>_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._select_ids">_select<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connect">_connect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnect">_disconnect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_reopen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._reopen">_reopen</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_freeze" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._freeze">_freeze</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_screenshot" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._screenshot">_screenshot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._show">_show</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._update_layout">_update<wbr></wbr>_layout</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#label_fields" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.label_fields">label<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.init_view">init<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selected_ids">selected<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode">selection<wbr></wbr>_mode</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._disconnect_callback">_disconnect<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn">_init<wbr></wbr>_fcn</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn_view">_init<wbr></wbr>_fcn<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_view">_init<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_callback">_selection<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_mode">_selection<wbr></wbr>_mode</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._sync_callback">_sync<wbr></wbr>_callback</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_handle" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._handle">_handle</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_widget" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._widget">_widget</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selected_ids">_selected<wbr></wbr>_ids</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.plots.plotly.html" class="internal-link" title="The parent of this class">plotly</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.InteractiveHeatmap.html" class="internal-link" title="fiftyone.core.plots.plotly.InteractiveHeatmap"><wbr></wbr>Interactive<wbr></wbr>Heatmap</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.InteractiveScatter.html" class="internal-link" title="fiftyone.core.plots.plotly.InteractiveScatter"><wbr></wbr>Interactive<wbr></wbr>Scatter</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyInteractivePlot.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot"><wbr></wbr>Plotly<wbr></wbr>Interactive<wbr></wbr>Plot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyNotebookPlot.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyNotebookPlot"><wbr></wbr>Plotly<wbr></wbr>Notebook<wbr></wbr>Plot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin"><wbr></wbr>Plotly<wbr></wbr>Widget<wbr></wbr>Mixin</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#get_colormap" class="internal-link" title="fiftyone.core.plots.plotly.get_colormap">get<wbr></wbr>_colormap</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#lines" class="internal-link" title="fiftyone.core.plots.plotly.lines">lines</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#location_scatterplot" class="internal-link" title="fiftyone.core.plots.plotly.location_scatterplot">location<wbr></wbr>_scatterplot</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#plot_confusion_matrix" class="internal-link" title="fiftyone.core.plots.plotly.plot_confusion_matrix">plot<wbr></wbr>_confusion<wbr></wbr>_matrix</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#plot_pr_curve" class="internal-link" title="fiftyone.core.plots.plotly.plot_pr_curve">plot<wbr></wbr>_pr<wbr></wbr>_curve</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#plot_pr_curves" class="internal-link" title="fiftyone.core.plots.plotly.plot_pr_curves">plot<wbr></wbr>_pr<wbr></wbr>_curves</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#plot_regressions" class="internal-link" title="fiftyone.core.plots.plotly.plot_regressions">plot<wbr></wbr>_regressions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#plot_roc_curve" class="internal-link" title="fiftyone.core.plots.plotly.plot_roc_curve">plot<wbr></wbr>_roc<wbr></wbr>_curve</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#scatterplot" class="internal-link" title="fiftyone.core.plots.plotly.scatterplot">scatterplot</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_check_plotly_jupyter_environment" class="internal-link" title="fiftyone.core.plots.plotly._check_plotly_jupyter_environment">_check<wbr></wbr>_plotly<wbr></wbr>_jupyter<wbr></wbr>_environment</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_compute_zoom_center" class="internal-link" title="fiftyone.core.plots.plotly._compute_zoom_center">_compute<wbr></wbr>_zoom<wbr></wbr>_center</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_get_colorscale" class="internal-link" title="fiftyone.core.plots.plotly._get_colorscale">_get<wbr></wbr>_colorscale</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_get_continuous_color" class="internal-link" title="fiftyone.core.plots.plotly._get_continuous_color">_get<wbr></wbr>_continuous<wbr></wbr>_color</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_get_qualitative_colors" class="internal-link" title="fiftyone.core.plots.plotly._get_qualitative_colors">_get<wbr></wbr>_qualitative<wbr></wbr>_colors</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_get_qualitative_colorscale" class="internal-link" title="fiftyone.core.plots.plotly._get_qualitative_colorscale">_get<wbr></wbr>_qualitative<wbr></wbr>_colorscale</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_make_edges_scatter" class="internal-link" title="fiftyone.core.plots.plotly._make_edges_scatter">_make<wbr></wbr>_edges<wbr></wbr>_scatter</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_make_edges_scatter_mapbox" class="internal-link" title="fiftyone.core.plots.plotly._make_edges_scatter_mapbox">_make<wbr></wbr>_edges<wbr></wbr>_scatter<wbr></wbr>_mapbox</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_parse_titles" class="internal-link" title="fiftyone.core.plots.plotly._parse_titles">_parse<wbr></wbr>_titles</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_patch_perform_plotly_relayout" class="internal-link" title="fiftyone.core.plots.plotly._patch_perform_plotly_relayout">_patch<wbr></wbr>_perform<wbr></wbr>_plotly<wbr></wbr>_relayout</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_confusion_matrix_interactive" class="internal-link" title="fiftyone.core.plots.plotly._plot_confusion_matrix_interactive">_plot<wbr></wbr>_confusion<wbr></wbr>_matrix<wbr></wbr>_interactive</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_confusion_matrix_static" class="internal-link" title="fiftyone.core.plots.plotly._plot_confusion_matrix_static">_plot<wbr></wbr>_confusion<wbr></wbr>_matrix<wbr></wbr>_static</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_categorical" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_categorical">_plot<wbr></wbr>_scatter<wbr></wbr>_categorical</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_categorical_single_trace" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_categorical_single_trace">_plot<wbr></wbr>_scatter<wbr></wbr>_categorical<wbr></wbr>_single<wbr></wbr>_trace</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_mapbox_categorical" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_mapbox_categorical">_plot<wbr></wbr>_scatter<wbr></wbr>_mapbox<wbr></wbr>_categorical</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_mapbox_categorical_single_trace" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_mapbox_categorical_single_trace">_plot<wbr></wbr>_scatter<wbr></wbr>_mapbox<wbr></wbr>_categorical<wbr></wbr>_single<wbr></wbr>_trace</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_mapbox_density" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_mapbox_density">_plot<wbr></wbr>_scatter<wbr></wbr>_mapbox<wbr></wbr>_density</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_mapbox_numeric" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_mapbox_numeric">_plot<wbr></wbr>_scatter<wbr></wbr>_mapbox<wbr></wbr>_numeric</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_plot_scatter_numeric" class="internal-link" title="fiftyone.core.plots.plotly._plot_scatter_numeric">_plot<wbr></wbr>_scatter<wbr></wbr>_numeric</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_set_map_type_to_figure" class="internal-link" title="fiftyone.core.plots.plotly._set_map_type_to_figure">_set<wbr></wbr>_map<wbr></wbr>_type<wbr></wbr>_to<wbr></wbr>_figure</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_to_log_colorscale" class="internal-link" title="fiftyone.core.plots.plotly._to_log_colorscale">_to<wbr></wbr>_log<wbr></wbr>_colorscale</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#logger" class="internal-link" title="fiftyone.core.plots.plotly.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_DEFAULT_CONTINUOUS_COLORSCALE" class="internal-link" title="fiftyone.core.plots.plotly._DEFAULT_CONTINUOUS_COLORSCALE">_DEFAULT<wbr></wbr>_CONTINUOUS<wbr></wbr>_COLORSCALE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_DEFAULT_LAYOUT" class="internal-link" title="fiftyone.core.plots.plotly._DEFAULT_LAYOUT">_DEFAULT<wbr></wbr>_LAYOUT</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_DEFAULT_LINE_COLOR" class="internal-link" title="fiftyone.core.plots.plotly._DEFAULT_LINE_COLOR">_DEFAULT<wbr></wbr>_LINE<wbr></wbr>_COLOR</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.plotly.html#_MAX_LABEL_TRACES" class="internal-link" title="fiftyone.core.plots.plotly._MAX_LABEL_TRACES">_MAX<wbr></wbr>_LABEL<wbr></wbr>_TRACES</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.plotly.html" class="internal-link" title="fiftyone.core.plots.plotly">plotly</a></code><wbr></wbr>.<code><a href="fiftyone.core.plots.plotly.PlotlyInteractivePlot.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot">PlotlyInteractivePlot</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PlotlyInteractivePlot</span>(<a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a>, <a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/plotly.py#L1755" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.core.plots.plotly.InteractiveHeatmap.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveHeatmap</a></code>, <code><a href="fiftyone.core.plots.plotly.InteractiveScatter.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveScatter</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.__init__">PlotlyInteractivePlot(widget, **kwargs)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.plots.plotly.PlotlyInteractivePlot">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Base class for <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link">fiftyone.core.plots.base.InteractivePlot</a></code>
+instances with Plotly backends.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">widget</span></td><td class="fieldArgDesc">a <code>plotly:plotly.graph_objects.FigureWidget</code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">keyword arguments for the
+<code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link">fiftyone.core.plots.base.InteractivePlot</a></code> constructor</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id525">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.show">show</a></code></td>
+    <td>Shows the plot.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.update_layout">update<wbr></wbr>_layout</a></code></td>
+    <td>Updates the layout of the plot.</td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>:
+            </p>
+            <table class="children sortable" id="id526">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#save" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin.save">save</a></code></td>
+    <td>Saves the plot as an image or HTML.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_freeze" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._freeze">_freeze</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_screenshot" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._screenshot">_screenshot</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_show" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._show">_show</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_update_layout" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._update_layout">_update<wbr></wbr>_layout</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_handle" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._handle">_handle</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#_widget" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin._widget">_widget</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code> (via <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>):
+            </p>
+            <table class="children sortable" id="id527">
+  
+  
+  <tr class="basestaticmethod">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#recommend_link_type" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.recommend_link_type">recommend<wbr></wbr>_link<wbr></wbr>_type</a></code></td>
+    <td>Recommends a link type for the given info.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_disconnect_callback">register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code></td>
+    <td>Registers a callback that can disconnect this plot from a <code>SessionPlot</code> connected to it.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_selection_callback">register<wbr></wbr>_selection<wbr></wbr>_callback</a></code></td>
+    <td>Registers a selection callback for this plot.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.register_sync_callback">register<wbr></wbr>_sync<wbr></wbr>_callback</a></code></td>
+    <td>Registers a callback that can sync this plot with a <code>SessionPlot</code> connected to it.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#reset" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.reset">reset</a></code></td>
+    <td>Resets the plot to its default state.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.select_ids">select<wbr></wbr>_ids</a></code></td>
+    <td>Selects the points with the given IDs in this plot.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode.setter" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode.setter">selection<wbr></wbr>_mode<wbr></wbr>.setter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#label_fields" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.label_fields">label<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.init_view">init<wbr></wbr>_view</a></code></td>
+    <td>A <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> defining the initial view from which to derive selection views when points are selected in the plot.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selected_ids">selected<wbr></wbr>_ids</a></code></td>
+    <td>A list of IDs of the currently selected points.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot.selection_mode">selection<wbr></wbr>_mode</a></code></td>
+    <td>The current selection mode of the plot.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_disconnect_callback">_register<wbr></wbr>_disconnect<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_selection_callback">_register<wbr></wbr>_selection<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_register_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._register_sync_callback">_register<wbr></wbr>_sync<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_select_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._select_ids">_select<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_disconnect_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._disconnect_callback">_disconnect<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn">_init<wbr></wbr>_fcn</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_fcn_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_fcn_view">_init<wbr></wbr>_fcn<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_init_view" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._init_view">_init<wbr></wbr>_view</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_callback">_selection<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selection_mode" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selection_mode">_selection<wbr></wbr>_mode</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_sync_callback" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._sync_callback">_sync<wbr></wbr>_callback</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty private">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.InteractivePlot.html#_selected_ids" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot._selected_ids">_selected<wbr></wbr>_ids</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code> (via <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>, <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code>):
+            </p>
+            <table class="children sortable" id="id528">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.connect">connect</a></code></td>
+    <td>Connects this plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.disconnect">disconnect</a></code></td>
+    <td>Disconnects the plot, if necessary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#freeze" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.freeze">freeze</a></code></td>
+    <td>Freezes the plot, replacing it with a static image.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_connected">is<wbr></wbr>_connected</a></code></td>
+    <td>Whether this plot is currently connected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_disconnected">is<wbr></wbr>_disconnected</a></code></td>
+    <td>Whether this plot is currently disconnected.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#is_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.is_frozen">is<wbr></wbr>_frozen</a></code></td>
+    <td>Whether this plot is currently frozen.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#supports_session_updates" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot.supports_session_updates">supports<wbr></wbr>_session<wbr></wbr>_updates</a></code></td>
+    <td>Whether this plot supports automatic updates in response to session changes.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connect">_connect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnect" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnect">_disconnect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_reopen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._reopen">_reopen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_connected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._connected">_connected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_disconnected" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._disconnected">_disconnected</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_frozen" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._frozen">_frozen</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.plots.base.ResponsivePlot.html#_link_type" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot._link_type">_link<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.plots.base.Plot.html" class="internal-link" title="fiftyone.core.plots.base.Plot">Plot</a></code> (via <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html" class="internal-link" title="fiftyone.core.plots.plotly.PlotlyWidgetMixin">PlotlyWidgetMixin</a></code>, <code><a href="fiftyone.core.plots.base.InteractivePlot.html" class="internal-link" title="fiftyone.core.plots.base.InteractivePlot">InteractivePlot</a></code>, <code><a href="fiftyone.core.plots.base.ResponsivePlot.html" class="internal-link" title="fiftyone.core.plots.base.ResponsivePlot">ResponsivePlot</a></code>):
+            </p>
+            <table class="children sortable" id="id529">
+  
+  
+  <tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.plots.base.Plot.html#_repr_pretty_" class="internal-link" title="fiftyone.core.plots.base.Plot._repr_pretty_">_repr<wbr></wbr>_pretty_</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.plotly.PlotlyInteractivePlot.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, widget, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/plotly.py#L1765">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.plotly.PlotlyWidgetMixin.html#__init__" class="internal-link">fiftyone.core.plots.plotly.PlotlyWidgetMixin.__init__</a></code></div><div class="interfaceinfo">overridden in <code><a href="fiftyone.core.plots.plotly.InteractiveHeatmap.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveHeatmap</a></code>, <code><a href="fiftyone.core.plots.plotly.InteractiveScatter.html" class="internal-link">fiftyone.core.plots.plotly.InteractiveScatter</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.plotly.PlotlyInteractivePlot.show">
+    
+  </a>
+  <a name="show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show</span><span class="function-signature">(self, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/plotly.py#L1778">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#show" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.show">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.plots.base.ResponsivePlot.html#show" class="internal-link">fiftyone.core.plots.base.ResponsivePlot.show</a></code></div>
+    <div><p>Shows the plot.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional parameters for
+<code>plotly:plotly.graph_objects.Figure.update_layout</code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.plots.plotly.PlotlyInteractivePlot.update_layout">
+    
+  </a>
+  <a name="update_layout">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">update_layout</span><span class="function-signature">(self, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/plots/plotly.py#L1769">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#update_layout" title="fiftyone.core.plots.plotly.PlotlyInteractivePlot.update_layout">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Updates the layout of the plot.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">valid arguments for
+<code>plotly:plotly.graph_objects.Figure.update_layout</code></td></tr></table></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

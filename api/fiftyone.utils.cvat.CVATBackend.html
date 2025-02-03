@@ -1,0 +1,2013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.cvat.CVATBackend</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.cvat.CVATBackend.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.cvat.CVATBackend.html" class="internal-link" title="This class"><wbr></wbr>CVATBackend</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_annotations" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.download_annotations">download<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#recommend_attr_tool" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.recommend_attr_tool">recommend<wbr></wbr>_attr<wbr></wbr>_tool</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#requires_attr_values" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.requires_attr_values">requires<wbr></wbr>_attr<wbr></wbr>_values</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#upload_annotations" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.upload_annotations">upload<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_connect_to_api" class="internal-link" title="fiftyone.utils.cvat.CVATBackend._connect_to_api">_connect<wbr></wbr>_to<wbr></wbr>_api</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.AnnotationMethod.html#run_info_cls" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">cleanup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#rename" class="internal-link" title="fiftyone.core.runs.BaseRun.rename">rename</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__enter__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__exit__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__init__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#connect_to_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.connect_to_api">connect<wbr></wbr>_to<wbr></wbr>_api</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#get_fields" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.get_fields">get<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#use_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.use_api">use<wbr></wbr>_api</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_patch_function" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._patch_function">_patch<wbr></wbr>_function</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_results_cache_field" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_run_str" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._run_str">_run<wbr></wbr>_str</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_runs_field" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._runs_field">_runs<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_run">_validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#requires_label_schema" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.requires_label_schema">requires<wbr></wbr>_label<wbr></wbr>_schema</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supported_attr_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_attr_types">supported<wbr></wbr>_attr<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supported_label_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_label_types">supported<wbr></wbr>_label<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supported_media_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_media_types">supported<wbr></wbr>_media<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supported_scalar_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_scalar_types">supported<wbr></wbr>_scalar<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supports_clips_views" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_clips_views">supports<wbr></wbr>_clips<wbr></wbr>_views</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supports_keyframes" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_keyframes">supports<wbr></wbr>_keyframes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#supports_video_sample_fields" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_video_sample_fields">supports<wbr></wbr>_video<wbr></wbr>_sample<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend._api">_api</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.cvat.html" class="internal-link" title="The parent of this class">cvat</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATAnnotationAPI.html" class="internal-link" title="fiftyone.utils.cvat.CVATAnnotationAPI"><wbr></wbr>CVATAnnotation<wbr></wbr>API</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATAnnotationResults.html" class="internal-link" title="fiftyone.utils.cvat.CVATAnnotationResults"><wbr></wbr>CVATAnnotation<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATAttribute.html" class="internal-link" title="fiftyone.utils.cvat.CVATAttribute"><wbr></wbr>CVATAttribute</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATBackend.html" class="internal-link" title="fiftyone.utils.cvat.CVATBackend"><wbr></wbr>CVATBackend</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATBackendConfig.html" class="internal-link" title="fiftyone.utils.cvat.CVATBackendConfig"><wbr></wbr>CVATBackend<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImage.html" class="internal-link" title="fiftyone.utils.cvat.CVATImage"><wbr></wbr>CVATImage</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageAnno.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageAnno"><wbr></wbr>CVATImage<wbr></wbr>Anno</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageAnnotationWriter.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageAnnotationWriter"><wbr></wbr>CVATImage<wbr></wbr>Annotation<wbr></wbr>Writer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageBox.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageBox"><wbr></wbr>CVATImage<wbr></wbr>Box</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageDatasetExporter.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageDatasetExporter"><wbr></wbr>CVATImage<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageDatasetImporter.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageDatasetImporter"><wbr></wbr>CVATImage<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImagePoints.html" class="internal-link" title="fiftyone.utils.cvat.CVATImagePoints"><wbr></wbr>CVATImage<wbr></wbr>Points</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImagePolygon.html" class="internal-link" title="fiftyone.utils.cvat.CVATImagePolygon"><wbr></wbr>CVATImage<wbr></wbr>Polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImagePolyline.html" class="internal-link" title="fiftyone.utils.cvat.CVATImagePolyline"><wbr></wbr>CVATImage<wbr></wbr>Polyline</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATImageTag.html" class="internal-link" title="fiftyone.utils.cvat.CVATImageTag"><wbr></wbr>CVATImage<wbr></wbr>Tag</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATLabel.html" class="internal-link" title="fiftyone.utils.cvat.CVATLabel"><wbr></wbr>CVATLabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATShape.html" class="internal-link" title="fiftyone.utils.cvat.CVATShape"><wbr></wbr>CVATShape</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATTag.html" class="internal-link" title="fiftyone.utils.cvat.CVATTag"><wbr></wbr>CVATTag</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATTaskLabels.html" class="internal-link" title="fiftyone.utils.cvat.CVATTaskLabels"><wbr></wbr>CVATTask<wbr></wbr>Labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATTrack.html" class="internal-link" title="fiftyone.utils.cvat.CVATTrack"><wbr></wbr>CVATTrack</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoAnno.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoAnno"><wbr></wbr>CVATVideo<wbr></wbr>Anno</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoAnnotationWriter.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoAnnotationWriter"><wbr></wbr>CVATVideo<wbr></wbr>Annotation<wbr></wbr>Writer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoBox.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoBox"><wbr></wbr>CVATVideo<wbr></wbr>Box</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoDatasetExporter.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoDatasetExporter"><wbr></wbr>CVATVideo<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoDatasetImporter.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoDatasetImporter"><wbr></wbr>CVATVideo<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoPoints.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoPoints"><wbr></wbr>CVATVideo<wbr></wbr>Points</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoPolygon.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoPolygon"><wbr></wbr>CVATVideo<wbr></wbr>Polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.CVATVideoPolyline.html" class="internal-link" title="fiftyone.utils.cvat.CVATVideoPolyline"><wbr></wbr>CVATVideo<wbr></wbr>Polyline</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.HasCVATBinaryMask.html" class="internal-link" title="fiftyone.utils.cvat.HasCVATBinaryMask"><wbr></wbr>Has<wbr></wbr>CVATBinary<wbr></wbr>Mask</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.HasCVATPoints.html" class="internal-link" title="fiftyone.utils.cvat.HasCVATPoints"><wbr></wbr>Has<wbr></wbr>CVATPoints</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#import_annotations" class="internal-link" title="fiftyone.utils.cvat.import_annotations">import<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#load_cvat_image_annotations" class="internal-link" title="fiftyone.utils.cvat.load_cvat_image_annotations">load<wbr></wbr>_cvat<wbr></wbr>_image<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#load_cvat_video_annotations" class="internal-link" title="fiftyone.utils.cvat.load_cvat_video_annotations">load<wbr></wbr>_cvat<wbr></wbr>_video<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_build_sparse_frame_id_map" class="internal-link" title="fiftyone.utils.cvat._build_sparse_frame_id_map">_build<wbr></wbr>_sparse<wbr></wbr>_frame<wbr></wbr>_id<wbr></wbr>_map</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_cvat_tracks_to_frames_dict" class="internal-link" title="fiftyone.utils.cvat._cvat_tracks_to_frames_dict">_cvat<wbr></wbr>_tracks<wbr></wbr>_to<wbr></wbr>_frames<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_do_download_media" class="internal-link" title="fiftyone.utils.cvat._do_download_media">_do<wbr></wbr>_download<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_download_annotations" class="internal-link" title="fiftyone.utils.cvat._download_annotations">_download<wbr></wbr>_annotations</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_download_media" class="internal-link" title="fiftyone.utils.cvat._download_media">_download<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_ensure_list" class="internal-link" title="fiftyone.utils.cvat._ensure_list">_ensure<wbr></wbr>_list</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_frames_to_cvat_tracks" class="internal-link" title="fiftyone.utils.cvat._frames_to_cvat_tracks">_frames<wbr></wbr>_to<wbr></wbr>_cvat<wbr></wbr>_tracks</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_from_int_bool" class="internal-link" title="fiftyone.utils.cvat._from_int_bool">_from<wbr></wbr>_int<wbr></wbr>_bool</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_get_interpolated_shapes" class="internal-link" title="fiftyone.utils.cvat._get_interpolated_shapes">_get<wbr></wbr>_interpolated<wbr></wbr>_shapes</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_get_next_frame" class="internal-link" title="fiftyone.utils.cvat._get_next_frame">_get<wbr></wbr>_next<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_get_single_polyline_points" class="internal-link" title="fiftyone.utils.cvat._get_single_polyline_points">_get<wbr></wbr>_single<wbr></wbr>_polyline<wbr></wbr>_points</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_is_supported_attribute_type" class="internal-link" title="fiftyone.utils.cvat._is_supported_attribute_type">_is<wbr></wbr>_supported<wbr></wbr>_attribute<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_parse_frame_step" class="internal-link" title="fiftyone.utils.cvat._parse_frame_step">_parse<wbr></wbr>_frame<wbr></wbr>_step</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_parse_occlusion_value" class="internal-link" title="fiftyone.utils.cvat._parse_occlusion_value">_parse<wbr></wbr>_occlusion<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_parse_task_metadata" class="internal-link" title="fiftyone.utils.cvat._parse_task_metadata">_parse<wbr></wbr>_task<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_parse_value" class="internal-link" title="fiftyone.utils.cvat._parse_value">_parse<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_remap_annotation_frame" class="internal-link" title="fiftyone.utils.cvat._remap_annotation_frame">_remap<wbr></wbr>_annotation<wbr></wbr>_frame</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_remap_annotation_frames" class="internal-link" title="fiftyone.utils.cvat._remap_annotation_frames">_remap<wbr></wbr>_annotation<wbr></wbr>_frames</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_render_frame_arg" class="internal-link" title="fiftyone.utils.cvat._render_frame_arg">_render<wbr></wbr>_frame<wbr></wbr>_arg</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_stringify_value" class="internal-link" title="fiftyone.utils.cvat._stringify_value">_stringify<wbr></wbr>_value</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_to_int_bool" class="internal-link" title="fiftyone.utils.cvat._to_int_bool">_to<wbr></wbr>_int<wbr></wbr>_bool</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#_validate_frame_arg" class="internal-link" title="fiftyone.utils.cvat._validate_frame_arg">_validate<wbr></wbr>_frame<wbr></wbr>_arg</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html#logger" class="internal-link" title="fiftyone.utils.cvat.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code><wbr></wbr>.<code><a href="fiftyone.utils.cvat.CVATBackend.html" class="internal-link" title="fiftyone.utils.cvat.CVATBackend">CVATBackend</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">CVATBackend</span>(<a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend">foua.AnnotationBackend</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3250" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__init__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__init__">CVATBackend(*args, **kwargs)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.cvat.CVATBackend">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Class for interacting with the CVAT annotation backend.</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1601">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#download_annotations" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.download_annotations">download<wbr></wbr>_annotations</a></code></td>
+    <td>Downloads the annotations from the annotation backend for the given results.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#recommend_attr_tool" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.recommend_attr_tool">recommend<wbr></wbr>_attr<wbr></wbr>_tool</a></code></td>
+    <td>Recommends an attribute tool for an attribute with the given name and value.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#requires_attr_values" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.requires_attr_values">requires<wbr></wbr>_attr<wbr></wbr>_values</a></code></td>
+    <td>Determines whether the list of possible values are required for attributes of the given type.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#upload_annotations" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.upload_annotations">upload<wbr></wbr>_annotations</a></code></td>
+    <td>Uploads the samples and relevant existing labels from the label schema to the annotation backend.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#requires_label_schema" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.requires_label_schema">requires<wbr></wbr>_label<wbr></wbr>_schema</a></code></td>
+    <td>Whether this backend requires a pre-defined label schema for its annotation runs.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supported_attr_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_attr_types">supported<wbr></wbr>_attr<wbr></wbr>_types</a></code></td>
+    <td>The list of attribute types supported by the backend.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supported_label_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_label_types">supported<wbr></wbr>_label<wbr></wbr>_types</a></code></td>
+    <td>The list of label types supported by the backend.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supported_media_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_media_types">supported<wbr></wbr>_media<wbr></wbr>_types</a></code></td>
+    <td>The list of media types that this backend supports.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supported_scalar_types" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supported_scalar_types">supported<wbr></wbr>_scalar<wbr></wbr>_types</a></code></td>
+    <td>The list of scalar field types supported by the backend.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supports_clips_views" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_clips_views">supports<wbr></wbr>_clips<wbr></wbr>_views</a></code></td>
+    <td>Whether this backend supports annotating clips views.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supports_keyframes" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_keyframes">supports<wbr></wbr>_keyframes</a></code></td>
+    <td>Whether this backend supports uploading only keyframes when editing existing video track annotations.</td>
+  </tr><tr class="property">
+    
+    <td>Property</td>
+    <td><code><a href="#supports_video_sample_fields" class="internal-link" title="fiftyone.utils.cvat.CVATBackend.supports_video_sample_fields">supports<wbr></wbr>_video<wbr></wbr>_sample<wbr></wbr>_fields</a></code></td>
+    <td>Whether this backend supports annotating video labels at a sample-level.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_connect_to_api" class="internal-link" title="fiftyone.utils.cvat.CVATBackend._connect_to_api">_connect<wbr></wbr>_to<wbr></wbr>_api</a></code></td>
+    <td>Returns a new API instance connected to the annotation backend.</td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend">AnnotationBackend</a></code>:
+            </p>
+            <table class="children sortable" id="id1602">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__enter__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__exit__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#__init__" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#connect_to_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.connect_to_api">connect<wbr></wbr>_to<wbr></wbr>_api</a></code></td>
+    <td>Returns an API instance connected to the annotation backend.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#get_fields" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.get_fields">get<wbr></wbr>_fields</a></code></td>
+    <td>Gets the fields that were involved in the given run.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#use_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend.use_api">use<wbr></wbr>_api</a></code></td>
+    <td>Registers an API instance to use for subsequent operations.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.utils.annotations.AnnotationBackend.html#_api" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend._api">_api</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod">AnnotationMethod</a></code> (via <code><a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend">AnnotationBackend</a></code>):
+            </p>
+            <table class="children sortable" id="id1603">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.annotation.AnnotationMethod.html#run_info_cls" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> class associated with this class.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_patch_function" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._patch_function">_patch<wbr></wbr>_function</a></code></td>
+    <td>A function that can patch any ReferenceField issues with a dataset's runs.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_results_cache_field" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> field that stores the results cache for these runs.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_run_str" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._run_str">_run<wbr></wbr>_str</a></code></td>
+    <td>A string to use when referring to these runs in log messages.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.annotation.AnnotationMethod.html#_runs_field" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod._runs_field">_runs<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link">fiftyone.core.odm.dataset.DatasetDocument</a></code> field in which these runs are stored.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun">BaseRun</a></code> (via <code><a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend">AnnotationBackend</a></code>, <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod">AnnotationMethod</a></code>):
+            </p>
+            <table class="children sortable" id="id1604">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code></td>
+    <td>Deletes the results associated with the given run key from the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code></td>
+    <td>Deletes all runs from the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Gets the <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> for the given key on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Determines whether <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key are cached on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code></td>
+    <td>Returns the list of run keys on the given collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> on which the specified run was performed.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Saves the run information on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Saves the run results on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code></td>
+    <td>Updates the <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for the given run on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code></td>
+    <td>Replaces the key for the given run with a new key.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">cleanup</a></code></td>
+    <td>Cleans up the results of the run with the given key from the collection.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to execute this run are installed.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to use existing results for this run are installed.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code></td>
+    <td>Registers a run of this method under the given key on the given collection.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#rename" class="internal-link" title="fiftyone.core.runs.BaseRun.rename">rename</a></code></td>
+    <td>Performs any necessary operations required to rename this run's key.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code></td>
+    <td>Validates that the collection can accept this run.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_run">_validate<wbr></wbr>_run</a></code></td>
+    <td>Subclass-specific validation when a run with the given key already exists.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.config.Configurable.html" class="internal-link" title="fiftyone.core.config.Configurable">Configurable</a></code> (via <code><a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationBackend">AnnotationBackend</a></code>, <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link" title="fiftyone.core.annotation.AnnotationMethod">AnnotationMethod</a></code>, <code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun">BaseRun</a></code>):
+            </p>
+            <table class="children sortable" id="id1605">
+  
+  
+  <tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.download_annotations">
+    
+  </a>
+  <a name="download_annotations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_annotations</span><span class="function-signature">(self, results)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3361">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_annotations" title="fiftyone.utils.cvat.CVATBackend.download_annotations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#download_annotations" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.download_annotations</a></code></div>
+    <div><p>Downloads the annotations from the annotation backend for the given
+results.</p>
+<p>The returned labels should be represented as either scalar values or
+<code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instances.</p>
+<p>For image datasets, the return dictionary should have the following
+nested structure:</p>
+<pre class="rst-literal-block">
+# Scalar fields
+results[label_type][sample_id] = scalar
+
+# Label fields
+results[label_type][sample_id][label_id] = label
+</pre>
+<p>For video datasets, the returned labels dictionary should have the
+following nested structure:</p>
+<pre class="rst-literal-block">
+# Scalar fields
+results[label_type][sample_id][frame_id] = scalar
+
+# Label fields
+results[label_type][sample_id][frame_id][label_id] = label
+</pre>
+<p>The valid values for <tt class="rst-docutils rst-literal">label_type</tt> are:</p>
+<ul class="rst-simple">
+<li>"classifications": single or multilabel classifications</li>
+<li>"detections": detections or instance segmentations</li>
+<li>"polylines": polygons or polylines</li>
+<li>"segmentation": semantic segmentations</li>
+<li>"scalar": scalar values</li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">results</span></td><td class="fieldArgDesc">an <code><a href="fiftyone.utils.annotations.AnnotationResults.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationResults">AnnotationResults</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the labels results dict</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.recommend_attr_tool">
+    
+  </a>
+  <a name="recommend_attr_tool">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">recommend_attr_tool</span><span class="function-signature">(self, name, value)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3312">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#recommend_attr_tool" title="fiftyone.utils.cvat.CVATBackend.recommend_attr_tool">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#recommend_attr_tool" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.recommend_attr_tool</a></code></div>
+    <div><p>Recommends an attribute tool for an attribute with the given name
+and value.</p>
+<p>For example, a backend may recommend a tool as follows for a boolean
+value:</p>
+<pre class="rst-literal-block">
+{
+    "type": "radio",
+    "values": [False, True],
+}
+</pre>
+<p>or a tool as follows for a generic value:</p>
+<pre class="rst-literal-block">
+{"type": "text"}
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">name</span></td><td class="fieldArgDesc">the name of the attribute</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">value</span></td><td class="fieldArgDesc">the attribute value, which may be <tt class="rst-docutils rst-literal">None</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an attribute type dict</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.requires_attr_values">
+    
+  </a>
+  <a name="requires_attr_values">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">requires_attr_values</span><span class="function-signature">(self, attr_type)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3325">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#requires_attr_values" title="fiftyone.utils.cvat.CVATBackend.requires_attr_values">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#requires_attr_values" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.requires_attr_values</a></code></div>
+    <div><p>Determines whether the list of possible values are required for
+attributes of the given type.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">attr<wbr></wbr>_type</span></td><td class="fieldArgDesc">the attribute type string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.upload_annotations">
+    
+  </a>
+  <a name="upload_annotations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">upload_annotations</span><span class="function-signature">(self, samples, anno_key, launch_editor=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3352">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#upload_annotations" title="fiftyone.utils.cvat.CVATBackend.upload_annotations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#upload_annotations" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.upload_annotations</a></code></div>
+    <div><p>Uploads the samples and relevant existing labels from the label
+schema to the annotation backend.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">anno<wbr></wbr>_key</span></td><td class="fieldArgDesc">the annotation key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">launch<wbr></wbr>_editor:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to launch the annotation backend's
+editor after uploading the samples</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an <code><a href="fiftyone.utils.annotations.AnnotationResults.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationResults">AnnotationResults</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.requires_label_schema">
+    
+  </a>
+  <a name="requires_label_schema">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">requires_label_schema</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3308">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#requires_label_schema" title="fiftyone.utils.cvat.CVATBackend.requires_label_schema">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#requires_label_schema" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.requires_label_schema</a></code></div>
+    <div><p>Whether this backend requires a pre-defined label schema for its
+annotation runs.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supported_attr_types">
+    
+  </a>
+  <a name="supported_attr_types">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supported_attr_types</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3285">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supported_attr_types" title="fiftyone.utils.cvat.CVATBackend.supported_attr_types">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supported_attr_types" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supported_attr_types</a></code></div>
+    <div><p>The list of attribute types supported by the backend.</p>
+<p>This list defines the valid string values for the <tt class="rst-docutils rst-literal">type</tt> field of
+an attributes dict of the label schema provided to the backend.</p>
+<p>For example, CVAT supports <tt class="rst-docutils rst-literal">["text", "select", "radio", "checkbox"]</tt>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supported_label_types">
+    
+  </a>
+  <a name="supported_label_types">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supported_label_types</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3257">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supported_label_types" title="fiftyone.utils.cvat.CVATBackend.supported_label_types">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supported_label_types" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supported_label_types</a></code></div>
+    <div><p>The list of label types supported by the backend.</p>
+<p>Backends may support any subset of the following label types:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">"classification"</tt></li>
+<li><tt class="rst-docutils rst-literal">"classifications"</tt></li>
+<li><tt class="rst-docutils rst-literal">"detection"</tt></li>
+<li><tt class="rst-docutils rst-literal">"detections"</tt></li>
+<li><tt class="rst-docutils rst-literal">"instance"</tt></li>
+<li><tt class="rst-docutils rst-literal">"instances"</tt></li>
+<li><tt class="rst-docutils rst-literal">"polyline"</tt></li>
+<li><tt class="rst-docutils rst-literal">"polylines"</tt></li>
+<li><tt class="rst-docutils rst-literal">"polygon"</tt></li>
+<li><tt class="rst-docutils rst-literal">"polygons"</tt></li>
+<li><tt class="rst-docutils rst-literal">"keypoint"</tt></li>
+<li><tt class="rst-docutils rst-literal">"keypoints"</tt></li>
+<li><tt class="rst-docutils rst-literal">"segmentation"</tt></li>
+<li><tt class="rst-docutils rst-literal">"scalar"</tt></li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supported_media_types">
+    
+  </a>
+  <a name="supported_media_types">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supported_media_types</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3253">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supported_media_types" title="fiftyone.utils.cvat.CVATBackend.supported_media_types">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supported_media_types" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supported_media_types</a></code></div>
+    <div><p>The list of media types that this backend supports.</p>
+<p>For example, CVAT supports <tt class="rst-docutils rst-literal">["image", "video"]</tt>.</p>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supported_scalar_types">
+    
+  </a>
+  <a name="supported_scalar_types">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supported_scalar_types</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3276">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supported_scalar_types" title="fiftyone.utils.cvat.CVATBackend.supported_scalar_types">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supported_scalar_types" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supported_scalar_types</a></code></div>
+    <div><p>The list of scalar field types supported by the backend.</p>
+<p>For example, CVAT supports the following types:</p>
+<ul class="rst-simple">
+<li><code><a href="fiftyone.core.fields.IntField.html" class="internal-link">fiftyone.core.fields.IntField</a></code></li>
+<li><code><a href="fiftyone.core.fields.FloatField.html" class="internal-link">fiftyone.core.fields.FloatField</a></code></li>
+<li><code><a href="fiftyone.core.fields.StringField.html" class="internal-link">fiftyone.core.fields.StringField</a></code></li>
+<li><code><a href="fiftyone.core.fields.BooleanField.html" class="internal-link">fiftyone.core.fields.BooleanField</a></code></li>
+</ul>
+</div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supports_clips_views">
+    
+  </a>
+  <a name="supports_clips_views">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supports_clips_views</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3296">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supports_clips_views" title="fiftyone.utils.cvat.CVATBackend.supports_clips_views">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supports_clips_views" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supports_clips_views</a></code></div>
+    <div><p>Whether this backend supports annotating clips views.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supports_keyframes">
+    
+  </a>
+  <a name="supports_keyframes">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supports_keyframes</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3300">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supports_keyframes" title="fiftyone.utils.cvat.CVATBackend.supports_keyframes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supports_keyframes" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supports_keyframes</a></code></div>
+    <div><p>Whether this backend supports uploading only keyframes when editing
+existing video track annotations.</p></div>
+    
+  </div>
+</div><div class="baseproperty">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend.supports_video_sample_fields">
+    
+  </a>
+  <a name="supports_video_sample_fields">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">supports_video_sample_fields</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3304">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#supports_video_sample_fields" title="fiftyone.utils.cvat.CVATBackend.supports_video_sample_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#supports_video_sample_fields" class="internal-link">fiftyone.utils.annotations.AnnotationBackend.supports_video_sample_fields</a></code></div>
+    <div><p>Whether this backend supports annotating video labels at a
+sample-level.</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.cvat.CVATBackend._connect_to_api">
+    
+  </a>
+  <a name="_connect_to_api">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_connect_to_api</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/cvat.py#L3341">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_connect_to_api" title="fiftyone.utils.cvat.CVATBackend._connect_to_api">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.annotations.AnnotationBackend.html#_connect_to_api" class="internal-link">fiftyone.utils.annotations.AnnotationBackend._connect_to_api</a></code></div>
+    <div><p>Returns a new API instance connected to the annotation backend.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an <code><a href="fiftyone.utils.annotations.AnnotationAPI.html" class="internal-link" title="fiftyone.utils.annotations.AnnotationAPI">AnnotationAPI</a></code>, or <tt class="rst-docutils rst-literal">None</tt> if the backend does not
+expose an API</td></tr></table></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

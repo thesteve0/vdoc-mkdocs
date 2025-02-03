@@ -1,0 +1,2758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.odm.dataset.DatasetDocument</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.odm.dataset.DatasetDocument.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link" title="This class"><wbr></wbr>Dataset<wbr></wbr>Document</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_annotation_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_annotation_runs">get<wbr></wbr>_annotation<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_brain_methods" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_brain_methods">get<wbr></wbr>_brain<wbr></wbr>_methods</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_evaluations" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_evaluations">get<wbr></wbr>_evaluations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_runs">get<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_saved_views" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_saved_views">get<wbr></wbr>_saved<wbr></wbr>_views</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_workspaces" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_workspaces">get<wbr></wbr>_workspaces</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_dict" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.to_dict">to<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#from_dict" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.from_dict">from<wbr></wbr>_dict</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#from_json" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.from_json">from<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.BaseDocument.html#__eq__" class="internal-link" title="fiftyone.core.odm.document.BaseDocument.__eq__">__eq__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#__init__" class="internal-link" title="fiftyone.core.odm.document.Document.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#copy" class="internal-link" title="fiftyone.core.odm.document.Document.copy">copy</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#copy_with_new_id" class="internal-link" title="fiftyone.core.odm.document.Document.copy_with_new_id">copy<wbr></wbr>_with<wbr></wbr>_new<wbr></wbr>_id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#reload" class="internal-link" title="fiftyone.core.odm.document.Document.reload">reload</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#save" class="internal-link" title="fiftyone.core.odm.document.Document.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__deepcopy__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__deepcopy__">__deepcopy__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__delattr__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__delattr__">__delattr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__delitem__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__delitem__">__delitem__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#clear_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.clear_field">clear<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_to_mongo" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_to_mongo">field<wbr></wbr>_to<wbr></wbr>_mongo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_to_python" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_to_python">field<wbr></wbr>_to<wbr></wbr>_python</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#get_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.get_field">get<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#has_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.has_field">has<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#set_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.set_field">set<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#__repr__" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.__repr__">__repr__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#__str__" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.__str__">__str__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#fancy_repr" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.fancy_repr">fancy<wbr></wbr>_repr</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#iter_fields" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.iter_fields">iter<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#merge" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.merge">merge</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.SerializableDocument.html#to_json" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.to_json">to<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_doc_name" class="internal-link" title="fiftyone.core.odm.document.Document._doc_name">_doc<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.BaseDocument.html#_get_repr_fields" class="internal-link" title="fiftyone.core.odm.document.BaseDocument._get_repr_fields">_get<wbr></wbr>_repr<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_deferred_updates" class="internal-link" title="fiftyone.core.odm.document.Document._deferred_updates">_deferred<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_do_updates" class="internal-link" title="fiftyone.core.odm.document.Document._do_updates">_do<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_insert" class="internal-link" title="fiftyone.core.odm.document.Document._insert">_insert</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_parse_changed_fields" class="internal-link" title="fiftyone.core.odm.document.Document._parse_changed_fields">_parse<wbr></wbr>_changed<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_parse_db_path" class="internal-link" title="fiftyone.core.odm.document.Document._parse_db_path">_parse<wbr></wbr>_db<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_save" class="internal-link" title="fiftyone.core.odm.document.Document._save">_save</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_update" class="internal-link" title="fiftyone.core.odm.document.Document._update">_update</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_update_last_loaded_at" class="internal-link" title="fiftyone.core.odm.document.Document._update_last_loaded_at">_update<wbr></wbr>_last<wbr></wbr>_loaded<wbr></wbr>_at</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_validate" class="internal-link" title="fiftyone.core.odm.document.Document._validate">_validate</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_validate_updates" class="internal-link" title="fiftyone.core.odm.document.Document._validate_updates">_validate<wbr></wbr>_updates</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_get_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._get_field">_get<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_get_field_names" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_to_db_fields" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._to_db_fields">_to<wbr></wbr>_db<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#annotation_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.annotation_runs">annotation<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#app_config" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.app_config">app<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#brain_methods" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.brain_methods">brain<wbr></wbr>_methods</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#classes" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.classes">classes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#created_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.created_at">created<wbr></wbr>_at</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#default_classes" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_classes">default<wbr></wbr>_classes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#default_group_slice" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_group_slice">default<wbr></wbr>_group<wbr></wbr>_slice</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#default_mask_targets" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_mask_targets">default<wbr></wbr>_mask<wbr></wbr>_targets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#default_skeleton" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_skeleton">default<wbr></wbr>_skeleton</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#description" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.description">description</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#evaluations" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.evaluations">evaluations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#frame_collection_name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.frame_collection_name">frame<wbr></wbr>_collection<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#frame_fields" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.frame_fields">frame<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#group_field" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.group_field">group<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#group_media_types" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.group_media_types">group<wbr></wbr>_media<wbr></wbr>_types</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#info" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.info">info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mask_targets" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.mask_targets">mask<wbr></wbr>_targets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#media_type" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.media_type">media<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#meta" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.meta">meta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.name">name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#persistent" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.persistent">persistent</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.runs">runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_collection_name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.sample_collection_name">sample<wbr></wbr>_collection<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sample_fields" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.sample_fields">sample<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#saved_views" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.saved_views">saved<wbr></wbr>_views</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#skeletons" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.skeletons">skeletons</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#slug" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.slug">slug</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#tags" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.tags">tags</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#version" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.version">version</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#workspaces" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.workspaces">workspaces</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#last_loaded_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.last_loaded_at">last<wbr></wbr>_loaded<wbr></wbr>_at</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#last_modified_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.last_modified_at">last<wbr></wbr>_modified<wbr></wbr>_at</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#id" class="internal-link" title="fiftyone.core.odm.document.Document.id">id</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.BaseDocument.html#in_db" class="internal-link" title="fiftyone.core.odm.document.BaseDocument.in_db">in<wbr></wbr>_db</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_names" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_names">field<wbr></wbr>_names</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_changed_fields" class="internal-link" title="fiftyone.core.odm.document.Document._changed_fields">_changed<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.Document.html#_created" class="internal-link" title="fiftyone.core.odm.document.Document._created">_created</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_fields_ordered" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._fields_ordered">_fields<wbr></wbr>_ordered</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.odm.dataset.html" class="internal-link" title="The parent of this class">dataset</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.ColorScheme.html" class="internal-link" title="fiftyone.core.odm.dataset.ColorScheme"><wbr></wbr>Color<wbr></wbr>Scheme</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.DatasetAppConfig.html" class="internal-link" title="fiftyone.core.odm.dataset.DatasetAppConfig"><wbr></wbr>Dataset<wbr></wbr>App<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument"><wbr></wbr>Dataset<wbr></wbr>Document</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.KeypointSkeleton.html" class="internal-link" title="fiftyone.core.odm.dataset.KeypointSkeleton"><wbr></wbr>Keypoint<wbr></wbr>Skeleton</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.SampleFieldDocument.html" class="internal-link" title="fiftyone.core.odm.dataset.SampleFieldDocument"><wbr></wbr>Sample<wbr></wbr>Field<wbr></wbr>Document</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.SidebarGroupDocument.html" class="internal-link" title="fiftyone.core.odm.dataset.SidebarGroupDocument"><wbr></wbr>Sidebar<wbr></wbr>Group<wbr></wbr>Document</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_delete_path" class="internal-link" title="fiftyone.core.odm.dataset._delete_path">_delete<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_make_default_sidebar_groups" class="internal-link" title="fiftyone.core.odm.dataset._make_default_sidebar_groups">_make<wbr></wbr>_default<wbr></wbr>_sidebar<wbr></wbr>_groups</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_matches_path" class="internal-link" title="fiftyone.core.odm.dataset._matches_path">_matches<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_parse_schema" class="internal-link" title="fiftyone.core.odm.dataset._parse_schema">_parse<wbr></wbr>_schema</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_rename_path" class="internal-link" title="fiftyone.core.odm.dataset._rename_path">_rename<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#_update_path" class="internal-link" title="fiftyone.core.odm.dataset._update_path">_update<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#fol" class="internal-link" title="fiftyone.core.odm.dataset.fol">fol</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#fom" class="internal-link" title="fiftyone.core.odm.dataset.fom">fom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#fop" class="internal-link" title="fiftyone.core.odm.dataset.fop">fop</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.dataset.html#logger" class="internal-link" title="fiftyone.core.odm.dataset.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.odm.html" class="internal-link" title="fiftyone.core.odm">odm</a></code><wbr></wbr>.<code><a href="fiftyone.core.odm.dataset.html" class="internal-link" title="fiftyone.core.odm.dataset">dataset</a></code><wbr></wbr>.<code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument">DatasetDocument</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">DatasetDocument</span>(<a href="fiftyone.core.odm.document.Document.html" class="internal-link" title="fiftyone.core.odm.document.Document">Document</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L803" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="fiftyone.core.odm.document.Document.html#__init__" class="internal-link" title="fiftyone.core.odm.document.Document.__init__">DatasetDocument(**kwargs)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.odm.dataset.DatasetDocument">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Backing document for datasets.</p></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id381">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_annotation_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_annotation_runs">get<wbr></wbr>_annotation<wbr></wbr>_runs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_brain_methods" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_brain_methods">get<wbr></wbr>_brain<wbr></wbr>_methods</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_evaluations" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_evaluations">get<wbr></wbr>_evaluations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_runs">get<wbr></wbr>_runs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_saved_views" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_saved_views">get<wbr></wbr>_saved<wbr></wbr>_views</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_workspaces" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.get_workspaces">get<wbr></wbr>_workspaces</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#to_dict" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.to_dict">to<wbr></wbr>_dict</a></code></td>
+    <td>Serializes this document to a BSON/JSON dictionary.</td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#annotation_runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.annotation_runs">annotation<wbr></wbr>_runs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#app_config" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.app_config">app<wbr></wbr>_config</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#brain_methods" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.brain_methods">brain<wbr></wbr>_methods</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#classes" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.classes">classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#created_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.created_at">created<wbr></wbr>_at</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#default_classes" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_classes">default<wbr></wbr>_classes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#default_group_slice" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_group_slice">default<wbr></wbr>_group<wbr></wbr>_slice</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#default_mask_targets" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_mask_targets">default<wbr></wbr>_mask<wbr></wbr>_targets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#default_skeleton" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.default_skeleton">default<wbr></wbr>_skeleton</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#description" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.description">description</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#evaluations" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.evaluations">evaluations</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#frame_collection_name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.frame_collection_name">frame<wbr></wbr>_collection<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#frame_fields" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.frame_fields">frame<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#group_field" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.group_field">group<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#group_media_types" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.group_media_types">group<wbr></wbr>_media<wbr></wbr>_types</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#info" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.info">info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#mask_targets" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.mask_targets">mask<wbr></wbr>_targets</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#media_type" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.media_type">media<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#meta" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.meta">meta</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.name">name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#persistent" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.persistent">persistent</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#runs" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.runs">runs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#sample_collection_name" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.sample_collection_name">sample<wbr></wbr>_collection<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#sample_fields" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.sample_fields">sample<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#saved_views" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.saved_views">saved<wbr></wbr>_views</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#skeletons" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.skeletons">skeletons</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#slug" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.slug">slug</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#tags" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.tags">tags</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#version" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.version">version</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classvariable">
+    
+    <td>Class Variable</td>
+    <td><code><a href="#workspaces" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.workspaces">workspaces</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#last_loaded_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.last_loaded_at">last<wbr></wbr>_loaded<wbr></wbr>_at</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#last_modified_at" class="internal-link" title="fiftyone.core.odm.dataset.DatasetDocument.last_modified_at">last<wbr></wbr>_modified<wbr></wbr>_at</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link" title="fiftyone.core.odm.document.Document">Document</a></code>:
+            </p>
+            <table class="children sortable" id="id382">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#__init__" class="internal-link" title="fiftyone.core.odm.document.Document.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#copy" class="internal-link" title="fiftyone.core.odm.document.Document.copy">copy</a></code></td>
+    <td>Returns a deep copy of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#copy_with_new_id" class="internal-link" title="fiftyone.core.odm.document.Document.copy_with_new_id">copy<wbr></wbr>_with<wbr></wbr>_new<wbr></wbr>_id</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#reload" class="internal-link" title="fiftyone.core.odm.document.Document.reload">reload</a></code></td>
+    <td>Reloads the document from the database.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#save" class="internal-link" title="fiftyone.core.odm.document.Document.save">save</a></code></td>
+    <td>Saves the document to the database.</td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#id" class="internal-link" title="fiftyone.core.odm.document.Document.id">id</a></code></td>
+    <td>the ID of the document, or <tt class="rst-docutils rst-literal">None</tt> if it has not been added to the database</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_doc_name" class="internal-link" title="fiftyone.core.odm.document.Document._doc_name">_doc<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_deferred_updates" class="internal-link" title="fiftyone.core.odm.document.Document._deferred_updates">_deferred<wbr></wbr>_updates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_do_updates" class="internal-link" title="fiftyone.core.odm.document.Document._do_updates">_do<wbr></wbr>_updates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_insert" class="internal-link" title="fiftyone.core.odm.document.Document._insert">_insert</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_parse_changed_fields" class="internal-link" title="fiftyone.core.odm.document.Document._parse_changed_fields">_parse<wbr></wbr>_changed<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_parse_db_path" class="internal-link" title="fiftyone.core.odm.document.Document._parse_db_path">_parse<wbr></wbr>_db<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_save" class="internal-link" title="fiftyone.core.odm.document.Document._save">_save</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_update" class="internal-link" title="fiftyone.core.odm.document.Document._update">_update</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_update_last_loaded_at" class="internal-link" title="fiftyone.core.odm.document.Document._update_last_loaded_at">_update<wbr></wbr>_last<wbr></wbr>_loaded<wbr></wbr>_at</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_validate" class="internal-link" title="fiftyone.core.odm.document.Document._validate">_validate</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_validate_updates" class="internal-link" title="fiftyone.core.odm.document.Document._validate_updates">_validate<wbr></wbr>_updates</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_changed_fields" class="internal-link" title="fiftyone.core.odm.document.Document._changed_fields">_changed<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.odm.document.Document.html#_created" class="internal-link" title="fiftyone.core.odm.document.Document._created">_created</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.odm.document.BaseDocument.html" class="internal-link" title="fiftyone.core.odm.document.BaseDocument">BaseDocument</a></code> (via <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link" title="fiftyone.core.odm.document.Document">Document</a></code>):
+            </p>
+            <table class="children sortable" id="id383">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.BaseDocument.html#__eq__" class="internal-link" title="fiftyone.core.odm.document.BaseDocument.__eq__">__eq__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.odm.document.BaseDocument.html#in_db" class="internal-link" title="fiftyone.core.odm.document.BaseDocument.in_db">in<wbr></wbr>_db</a></code></td>
+    <td>Whether the document has been inserted into the database.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.BaseDocument.html#_get_repr_fields" class="internal-link" title="fiftyone.core.odm.document.BaseDocument._get_repr_fields">_get<wbr></wbr>_repr<wbr></wbr>_fields</a></code></td>
+    <td>Returns an ordered tuple of field names that should be included in the <tt class="rst-docutils rst-literal">repr</tt> of the document.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument">MongoEngineBaseDocument</a></code> (via <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link" title="fiftyone.core.odm.document.Document">Document</a></code>, <code><a href="fiftyone.core.odm.document.BaseDocument.html" class="internal-link" title="fiftyone.core.odm.document.BaseDocument">BaseDocument</a></code>):
+            </p>
+            <table class="children sortable" id="id384">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#from_dict" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.from_dict">from<wbr></wbr>_dict</a></code></td>
+    <td>Loads the document from a BSON/JSON dictionary.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__deepcopy__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__deepcopy__">__deepcopy__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__delattr__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__delattr__">__delattr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#__delitem__" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.__delitem__">__delitem__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#clear_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.clear_field">clear<wbr></wbr>_field</a></code></td>
+    <td>Clears the field from the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_to_mongo" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_to_mongo">field<wbr></wbr>_to<wbr></wbr>_mongo</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_to_python" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_to_python">field<wbr></wbr>_to<wbr></wbr>_python</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#get_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.get_field">get<wbr></wbr>_field</a></code></td>
+    <td>Gets the field of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#has_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.has_field">has<wbr></wbr>_field</a></code></td>
+    <td>Determines whether the document has a field of the given name.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#set_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.set_field">set<wbr></wbr>_field</a></code></td>
+    <td>Sets the value of a field of the document.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#field_names" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument.field_names">field<wbr></wbr>_names</a></code></td>
+    <td>An ordered tuple of the public fields of this document.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_get_field" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._get_field">_get<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_get_field_names" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._get_field_names">_get<wbr></wbr>_field<wbr></wbr>_names</a></code></td>
+    <td>Returns an ordered tuple of field names of this document.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_to_db_fields" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._to_db_fields">_to<wbr></wbr>_db<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#_fields_ordered" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument._fields_ordered">_fields<wbr></wbr>_ordered</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.odm.document.SerializableDocument.html" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument">SerializableDocument</a></code> (via <code><a href="fiftyone.core.odm.document.Document.html" class="internal-link" title="fiftyone.core.odm.document.Document">Document</a></code>, <code><a href="fiftyone.core.odm.document.BaseDocument.html" class="internal-link" title="fiftyone.core.odm.document.BaseDocument">BaseDocument</a></code>, <code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html" class="internal-link" title="fiftyone.core.odm.document.MongoEngineBaseDocument">MongoEngineBaseDocument</a></code>):
+            </p>
+            <table class="children sortable" id="id385">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#from_json" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.from_json">from<wbr></wbr>_json</a></code></td>
+    <td>Loads the document from a JSON string.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#__repr__" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.__repr__">__repr__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#__str__" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.__str__">__str__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#fancy_repr" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.fancy_repr">fancy<wbr></wbr>_repr</a></code></td>
+    <td>Generates a customizable string representation of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#iter_fields" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.iter_fields">iter<wbr></wbr>_fields</a></code></td>
+    <td>Returns an iterator over the <tt class="rst-docutils rst-literal">(name, value)</tt> pairs of the public fields of the document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#merge" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.merge">merge</a></code></td>
+    <td>Merges the contents of the given document into this document.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.odm.document.SerializableDocument.html#to_json" class="internal-link" title="fiftyone.core.odm.document.SerializableDocument.to_json">to<wbr></wbr>_json</a></code></td>
+    <td>Serializes the document to a JSON string.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_annotation_runs">
+    
+  </a>
+  <a name="get_annotation_runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_annotation_runs</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L876">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_annotation_runs" title="fiftyone.core.odm.dataset.DatasetDocument.get_annotation_runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_brain_methods">
+    
+  </a>
+  <a name="get_brain_methods">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_brain_methods</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L891">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_brain_methods" title="fiftyone.core.odm.dataset.DatasetDocument.get_brain_methods">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_evaluations">
+    
+  </a>
+  <a name="get_evaluations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_evaluations</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L906">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_evaluations" title="fiftyone.core.odm.dataset.DatasetDocument.get_evaluations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_runs">
+    
+  </a>
+  <a name="get_runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_runs</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L921">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_runs" title="fiftyone.core.odm.dataset.DatasetDocument.get_runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_saved_views">
+    
+  </a>
+  <a name="get_saved_views">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_saved_views</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L846">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_saved_views" title="fiftyone.core.odm.dataset.DatasetDocument.get_saved_views">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.get_workspaces">
+    
+  </a>
+  <a name="get_workspaces">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_workspaces</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L861">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_workspaces" title="fiftyone.core.odm.dataset.DatasetDocument.get_workspaces">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.to_dict">
+    
+  </a>
+  <a name="to_dict">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_dict</span><span class="function-signature">(self, *args, no_dereference=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L936">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_dict" title="fiftyone.core.odm.dataset.DatasetDocument.to_dict">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.odm.document.MongoEngineBaseDocument.html#to_dict" class="internal-link">fiftyone.core.odm.document.MongoEngineBaseDocument.to_dict</a></code></div>
+    <div><p>Serializes this document to a BSON/JSON dictionary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">no<wbr></wbr>_dereference</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">extended:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to serialize extended JSON constructs
+such as ObjectIDs, Binary, etc. into JSON format</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict</td></tr></table></div>
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.annotation_runs">
+    
+  </a>
+  <a name="annotation_runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">annotation_runs</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L841">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#annotation_runs" title="fiftyone.core.odm.dataset.DatasetDocument.annotation_runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.app_config">
+    
+  </a>
+  <a name="app_config">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">app_config</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L828">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#app_config" title="fiftyone.core.odm.dataset.DatasetDocument.app_config">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.brain_methods">
+    
+  </a>
+  <a name="brain_methods">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">brain_methods</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L842">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#brain_methods" title="fiftyone.core.odm.dataset.DatasetDocument.brain_methods">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.classes">
+    
+  </a>
+  <a name="classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">classes</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L831">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#classes" title="fiftyone.core.odm.dataset.DatasetDocument.classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.created_at">
+    
+  </a>
+  <a name="created_at">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">created_at</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L815">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#created_at" title="fiftyone.core.odm.dataset.DatasetDocument.created_at">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.default_classes">
+    
+  </a>
+  <a name="default_classes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_classes</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L832">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#default_classes" title="fiftyone.core.odm.dataset.DatasetDocument.default_classes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.default_group_slice">
+    
+  </a>
+  <a name="default_group_slice">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_group_slice</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L824">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#default_group_slice" title="fiftyone.core.odm.dataset.DatasetDocument.default_group_slice">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.default_mask_targets">
+    
+  </a>
+  <a name="default_mask_targets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_mask_targets</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L834">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#default_mask_targets" title="fiftyone.core.odm.dataset.DatasetDocument.default_mask_targets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.default_skeleton">
+    
+  </a>
+  <a name="default_skeleton">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">default_skeleton</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L836">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#default_skeleton" title="fiftyone.core.odm.dataset.DatasetDocument.default_skeleton">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.description">
+    
+  </a>
+  <a name="description">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">description</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L826">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#description" title="fiftyone.core.odm.dataset.DatasetDocument.description">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.evaluations">
+    
+  </a>
+  <a name="evaluations">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">evaluations</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L843">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#evaluations" title="fiftyone.core.odm.dataset.DatasetDocument.evaluations">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.frame_collection_name">
+    
+  </a>
+  <a name="frame_collection_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">frame_collection_name</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L819">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#frame_collection_name" title="fiftyone.core.odm.dataset.DatasetDocument.frame_collection_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.frame_fields">
+    
+  </a>
+  <a name="frame_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">frame_fields</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L838">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#frame_fields" title="fiftyone.core.odm.dataset.DatasetDocument.frame_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.group_field">
+    
+  </a>
+  <a name="group_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">group_field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L822">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#group_field" title="fiftyone.core.odm.dataset.DatasetDocument.group_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.group_media_types">
+    
+  </a>
+  <a name="group_media_types">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">group_media_types</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L823">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#group_media_types" title="fiftyone.core.odm.dataset.DatasetDocument.group_media_types">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.info">
+    
+  </a>
+  <a name="info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">info</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L827">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#info" title="fiftyone.core.odm.dataset.DatasetDocument.info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.mask_targets">
+    
+  </a>
+  <a name="mask_targets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">mask_targets</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L833">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#mask_targets" title="fiftyone.core.odm.dataset.DatasetDocument.mask_targets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.media_type">
+    
+  </a>
+  <a name="media_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">media_type</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L821">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#media_type" title="fiftyone.core.odm.dataset.DatasetDocument.media_type">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.meta">
+    
+  </a>
+  <a name="meta">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">meta</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L807">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#meta" title="fiftyone.core.odm.dataset.DatasetDocument.meta">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.odm.document.Document.html#meta" class="internal-link">fiftyone.core.odm.document.Document.meta</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.name">
+    
+  </a>
+  <a name="name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">name</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L812">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#name" title="fiftyone.core.odm.dataset.DatasetDocument.name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.persistent">
+    
+  </a>
+  <a name="persistent">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">persistent</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L820">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#persistent" title="fiftyone.core.odm.dataset.DatasetDocument.persistent">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.runs">
+    
+  </a>
+  <a name="runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">runs</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L844">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#runs" title="fiftyone.core.odm.dataset.DatasetDocument.runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.sample_collection_name">
+    
+  </a>
+  <a name="sample_collection_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sample_collection_name</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L818">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sample_collection_name" title="fiftyone.core.odm.dataset.DatasetDocument.sample_collection_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.sample_fields">
+    
+  </a>
+  <a name="sample_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">sample_fields</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L837">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sample_fields" title="fiftyone.core.odm.dataset.DatasetDocument.sample_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.saved_views">
+    
+  </a>
+  <a name="saved_views">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">saved_views</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L839">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#saved_views" title="fiftyone.core.odm.dataset.DatasetDocument.saved_views">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.skeletons">
+    
+  </a>
+  <a name="skeletons">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">skeletons</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L835">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#skeletons" title="fiftyone.core.odm.dataset.DatasetDocument.skeletons">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.slug">
+    
+  </a>
+  <a name="slug">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">slug</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L813">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#slug" title="fiftyone.core.odm.dataset.DatasetDocument.slug">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.tags">
+    
+  </a>
+  <a name="tags">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">tags</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L825">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#tags" title="fiftyone.core.odm.dataset.DatasetDocument.tags">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.version">
+    
+  </a>
+  <a name="version">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">version</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L814">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#version" title="fiftyone.core.odm.dataset.DatasetDocument.version">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseclassvariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.workspaces">
+    
+  </a>
+  <a name="workspaces">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">workspaces</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L840">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#workspaces" title="fiftyone.core.odm.dataset.DatasetDocument.workspaces">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.last_loaded_at">
+    
+  </a>
+  <a name="last_loaded_at">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">last_loaded_at</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L817">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#last_loaded_at" title="fiftyone.core.odm.dataset.DatasetDocument.last_loaded_at">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.odm.document.Document.html#last_loaded_at" class="internal-link">fiftyone.core.odm.document.Document.last_loaded_at</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.core.odm.dataset.DatasetDocument.last_modified_at">
+    
+  </a>
+  <a name="last_modified_at">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">last_modified_at</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/odm/dataset.py#L816">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#last_modified_at" title="fiftyone.core.odm.dataset.DatasetDocument.last_modified_at">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.core.odm.document.Document.html#last_modified_at" class="internal-link">fiftyone.core.odm.document.Document.last_modified_at</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

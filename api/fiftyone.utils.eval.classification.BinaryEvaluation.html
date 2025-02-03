@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.eval.classification.BinaryEvaluation</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.eval.classification.BinaryEvaluation.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.eval.classification.BinaryEvaluation.html" class="internal-link" title="This class"><wbr></wbr>Binary<wbr></wbr>Evaluation</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#evaluate_samples" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation.evaluate_samples">evaluate<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#register_samples" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation.register_samples">register<wbr></wbr>_samples</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#run_info_cls" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#cleanup_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.cleanup_custom_metrics">cleanup<wbr></wbr>_custom<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#compute_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.compute_custom_metrics">compute<wbr></wbr>_custom<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#get_custom_metric_fields" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.get_custom_metric_fields">get<wbr></wbr>_custom<wbr></wbr>_metric<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#rename_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.rename_custom_metrics">rename<wbr></wbr>_custom<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#cleanup" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.cleanup">cleanup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#get_fields" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.get_fields">get<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#rename" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.rename">rename</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_patch_function" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._patch_function">_patch<wbr></wbr>_function</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_results_cache_field" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_run_str" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._run_str">_run<wbr></wbr>_str</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_runs_field" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._runs_field">_runs<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#_get_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod._get_custom_metrics">_get<wbr></wbr>_custom<wbr></wbr>_metrics</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#_validate_run" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation._validate_run">_validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.eval.classification.html" class="internal-link" title="The parent of this class">classification</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.BinaryClassificationResults.html" class="internal-link" title="fiftyone.utils.eval.classification.BinaryClassificationResults"><wbr></wbr>Binary<wbr></wbr>Classification<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.BinaryEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation"><wbr></wbr>Binary<wbr></wbr>Evaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.BinaryEvaluationConfig.html" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluationConfig"><wbr></wbr>Binary<wbr></wbr>Evaluation<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation"><wbr></wbr>Classification<wbr></wbr>Evaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluationConfig.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluationConfig"><wbr></wbr>Classification<wbr></wbr>Evaluation<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationResults"><wbr></wbr>Classification<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.SimpleEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.SimpleEvaluation"><wbr></wbr>Simple<wbr></wbr>Evaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.SimpleEvaluationConfig.html" class="internal-link" title="fiftyone.utils.eval.classification.SimpleEvaluationConfig"><wbr></wbr>Simple<wbr></wbr>Evaluation<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.TopKEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.TopKEvaluation"><wbr></wbr>Top<wbr></wbr>KEvaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.TopKEvaluationConfig.html" class="internal-link" title="fiftyone.utils.eval.classification.TopKEvaluationConfig"><wbr></wbr>Top<wbr></wbr>KEvaluation<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.html#evaluate_classifications" class="internal-link" title="fiftyone.utils.eval.classification.evaluate_classifications">evaluate<wbr></wbr>_classifications</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.html#_evaluate_top_k" class="internal-link" title="fiftyone.utils.eval.classification._evaluate_top_k">_evaluate<wbr></wbr>_top<wbr></wbr>_k</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.html#_parse_config" class="internal-link" title="fiftyone.utils.eval.classification._parse_config">_parse<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.classification.html#_to_binary_scores" class="internal-link" title="fiftyone.utils.eval.classification._to_binary_scores">_to<wbr></wbr>_binary<wbr></wbr>_scores</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.classification.html" class="internal-link" title="fiftyone.utils.eval.classification">classification</a></code><wbr></wbr>.<code><a href="fiftyone.utils.eval.classification.BinaryEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation">BinaryEvaluation</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">BinaryEvaluation</span>(<a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/classification.py#L577" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">BinaryEvaluation(config)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.eval.classification.BinaryEvaluation">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Binary classification evaluation.</p>
+<p>Evaluates the binary classification predictions in the given collection
+with respect to the specified ground truth labels.</p>
+<p>Any missing ground truth or prediction labels are assumed to be examples of
+the negative class (with zero confidence, for predictions).</p>
+<p>If an <tt class="rst-docutils rst-literal">eval_key</tt> is specified, this method will record the TP/FP/FN/TN
+status of each prediction in this field.</p>
+<p>This method requires that the <tt class="rst-docutils rst-literal">(neg_label, pos_label)</tt> label strings for
+the task are provided via the <tt class="rst-docutils rst-literal">classes</tt> argument.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.utils.eval.classification.BinaryEvaluationConfig.html" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluationConfig">BinaryEvaluationConfig</a></code></td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1887">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#evaluate_samples" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation.evaluate_samples">evaluate<wbr></wbr>_samples</a></code></td>
+    <td>Evaluates the predicted classifications in the given samples with respect to the specified ground truth labels.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#register_samples" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation.register_samples">register<wbr></wbr>_samples</a></code></td>
+    <td>Registers the collection on which evaluation will be performed.</td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a></code>:
+            </p>
+            <table class="children sortable" id="id1888">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#cleanup" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.cleanup">cleanup</a></code></td>
+    <td>Cleans up the results of the run with the given key from the collection.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#get_fields" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.get_fields">get<wbr></wbr>_fields</a></code></td>
+    <td>Gets the fields that were involved in the given run.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#rename" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation.rename">rename</a></code></td>
+    <td>Performs any necessary operations required to rename this run's key.</td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#_validate_run" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation._validate_run">_validate<wbr></wbr>_run</a></code></td>
+    <td>Subclass-specific validation when a run with the given key already exists.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod">BaseEvaluationMethod</a></code> (via <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a></code>):
+            </p>
+            <table class="children sortable" id="id1889">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#cleanup_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.cleanup_custom_metrics">cleanup<wbr></wbr>_custom<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#compute_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.compute_custom_metrics">compute<wbr></wbr>_custom<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#get_custom_metric_fields" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.get_custom_metric_fields">get<wbr></wbr>_custom<wbr></wbr>_metric<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#rename_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod.rename_custom_metrics">rename<wbr></wbr>_custom<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html#_get_custom_metrics" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod._get_custom_metrics">_get<wbr></wbr>_custom<wbr></wbr>_metrics</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod">EvaluationMethod</a></code> (via <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod">BaseEvaluationMethod</a></code>):
+            </p>
+            <table class="children sortable" id="id1890">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#run_info_cls" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> class associated with this class.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_patch_function" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._patch_function">_patch<wbr></wbr>_function</a></code></td>
+    <td>A function that can patch any ReferenceField issues with a dataset's runs.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_results_cache_field" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> field that stores the results cache for these runs.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_run_str" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._run_str">_run<wbr></wbr>_str</a></code></td>
+    <td>A string to use when referring to these runs in log messages.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.evaluation.EvaluationMethod.html#_runs_field" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod._runs_field">_runs<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link">fiftyone.core.odm.dataset.DatasetDocument</a></code> field in which these runs are stored.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun">BaseRun</a></code> (via <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod">BaseEvaluationMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod">EvaluationMethod</a></code>):
+            </p>
+            <table class="children sortable" id="id1891">
+  
+  
+  <tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code></td>
+    <td>Deletes the results associated with the given run key from the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code></td>
+    <td>Deletes all runs from the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Gets the <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> for the given key on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Determines whether <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key are cached on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code></td>
+    <td>Returns the list of run keys on the given collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> on which the specified run was performed.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Saves the run information on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Saves the run results on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code></td>
+    <td>Updates the <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for the given run on the collection.</td>
+  </tr><tr class="baseclassmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code></td>
+    <td>Replaces the key for the given run with a new key.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to execute this run are installed.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to use existing results for this run are installed.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code></td>
+    <td>Registers a run of this method under the given key on the given collection.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code></td>
+    <td>Validates that the collection can accept this run.</td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseclassmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod private">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.runs.BaseRun.html#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.config.Configurable.html" class="internal-link" title="fiftyone.core.config.Configurable">Configurable</a></code> (via <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationEvaluation">ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.base.BaseEvaluationMethod.html" class="internal-link" title="fiftyone.utils.eval.base.BaseEvaluationMethod">BaseEvaluationMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link" title="fiftyone.core.evaluation.EvaluationMethod">EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun">BaseRun</a></code>):
+            </p>
+            <table class="children sortable" id="id1892">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.classification.BinaryEvaluation.evaluate_samples">
+    
+  </a>
+  <a name="evaluate_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">evaluate_samples</span><span class="function-signature">(self, samples, eval_key=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, classes=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, missing=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/classification.py#L619">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#evaluate_samples" title="fiftyone.utils.eval.classification.BinaryEvaluation.evaluate_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#evaluate_samples" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation.evaluate_samples</a></code></div>
+    <div><p>Evaluates the predicted classifications in the given samples with
+respect to the specified ground truth labels.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">eval<wbr></wbr>_key:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an evaluation key for this evaluation</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">classes:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the list of possible classes. If not provided, the
+observed ground truth/predicted labels are used for results
+purposes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">missing:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a missing label string. Any None-valued labels are
+given this label for results purposes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use
+the default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt>
+(None), or a progress callback function to invoke instead</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.utils.eval.classification.ClassificationResults.html" class="internal-link" title="fiftyone.utils.eval.classification.ClassificationResults">ClassificationResults</a></code> instance</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.eval.classification.BinaryEvaluation.register_samples">
+    
+  </a>
+  <a name="register_samples">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">register_samples</span><span class="function-signature">(self, samples, eval_key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/eval/classification.py#L596">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#register_samples" title="fiftyone.utils.eval.classification.BinaryEvaluation.register_samples">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html#register_samples" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation.register_samples</a></code></div>
+    <div><p>Registers the collection on which evaluation will be performed.</p>
+<p>This method will be called before calling <code><a href="#evaluate_samples" class="internal-link" title="fiftyone.utils.eval.classification.BinaryEvaluation.evaluate_samples">evaluate_samples</a></code>.
+Subclasses can extend this method to perform any setup required for an
+evaluation run.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">eval<wbr></wbr>_key</span></td><td class="fieldArgDesc">the evaluation key for this evaluation</td></tr></table></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

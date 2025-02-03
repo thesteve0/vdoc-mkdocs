@@ -1,0 +1,3469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.storage</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.storage.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.core.storage.html" class="internal-link" title="This module">storage</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.storage.FileSystem.html" class="internal-link" title="fiftyone.core.storage.FileSystem"><wbr></wbr>File<wbr></wbr>System</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.storage.TempDir.html" class="internal-link" title="fiftyone.core.storage.TempDir"><wbr></wbr>Temp<wbr></wbr>Dir</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#abspath" class="internal-link" title="fiftyone.core.storage.abspath">abspath</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#copy_dir" class="internal-link" title="fiftyone.core.storage.copy_dir">copy<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#copy_file" class="internal-link" title="fiftyone.core.storage.copy_file">copy<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#copy_files" class="internal-link" title="fiftyone.core.storage.copy_files">copy<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_dir" class="internal-link" title="fiftyone.core.storage.delete_dir">delete<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_file" class="internal-link" title="fiftyone.core.storage.delete_file">delete<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_files" class="internal-link" title="fiftyone.core.storage.delete_files">delete<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_basedir" class="internal-link" title="fiftyone.core.storage.ensure_basedir">ensure<wbr></wbr>_basedir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_dir" class="internal-link" title="fiftyone.core.storage.ensure_dir">ensure<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_empty_dir" class="internal-link" title="fiftyone.core.storage.ensure_empty_dir">ensure<wbr></wbr>_empty<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_local" class="internal-link" title="fiftyone.core.storage.ensure_local">ensure<wbr></wbr>_local</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#exists" class="internal-link" title="fiftyone.core.storage.exists">exists</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#extract_archive" class="internal-link" title="fiftyone.core.storage.extract_archive">extract<wbr></wbr>_archive</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_bucket_name" class="internal-link" title="fiftyone.core.storage.get_bucket_name">get<wbr></wbr>_bucket<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_file_system" class="internal-link" title="fiftyone.core.storage.get_file_system">get<wbr></wbr>_file<wbr></wbr>_system</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_glob_matches" class="internal-link" title="fiftyone.core.storage.get_glob_matches">get<wbr></wbr>_glob<wbr></wbr>_matches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_glob_root" class="internal-link" title="fiftyone.core.storage.get_glob_root">get<wbr></wbr>_glob<wbr></wbr>_root</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#is_local" class="internal-link" title="fiftyone.core.storage.is_local">is<wbr></wbr>_local</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#isabs" class="internal-link" title="fiftyone.core.storage.isabs">isabs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#isdir" class="internal-link" title="fiftyone.core.storage.isdir">isdir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#isfile" class="internal-link" title="fiftyone.core.storage.isfile">isfile</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#join" class="internal-link" title="fiftyone.core.storage.join">join</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_available_file_systems" class="internal-link" title="fiftyone.core.storage.list_available_file_systems">list<wbr></wbr>_available<wbr></wbr>_file<wbr></wbr>_systems</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_buckets" class="internal-link" title="fiftyone.core.storage.list_buckets">list<wbr></wbr>_buckets</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_files" class="internal-link" title="fiftyone.core.storage.list_files">list<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_subdirs" class="internal-link" title="fiftyone.core.storage.list_subdirs">list<wbr></wbr>_subdirs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_json" class="internal-link" title="fiftyone.core.storage.load_json">load<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_ndjson" class="internal-link" title="fiftyone.core.storage.load_ndjson">load<wbr></wbr>_ndjson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#make_archive" class="internal-link" title="fiftyone.core.storage.make_archive">make<wbr></wbr>_archive</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#make_temp_dir" class="internal-link" title="fiftyone.core.storage.make_temp_dir">make<wbr></wbr>_temp<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#move_dir" class="internal-link" title="fiftyone.core.storage.move_dir">move<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#move_file" class="internal-link" title="fiftyone.core.storage.move_file">move<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#move_files" class="internal-link" title="fiftyone.core.storage.move_files">move<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#normalize_path" class="internal-link" title="fiftyone.core.storage.normalize_path">normalize<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#normpath" class="internal-link" title="fiftyone.core.storage.normpath">normpath</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#open_file" class="internal-link" title="fiftyone.core.storage.open_file">open<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#open_files" class="internal-link" title="fiftyone.core.storage.open_files">open<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#read_file" class="internal-link" title="fiftyone.core.storage.read_file">read<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#read_files" class="internal-link" title="fiftyone.core.storage.read_files">read<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#read_json" class="internal-link" title="fiftyone.core.storage.read_json">read<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#read_ndjson" class="internal-link" title="fiftyone.core.storage.read_ndjson">read<wbr></wbr>_ndjson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#read_yaml" class="internal-link" title="fiftyone.core.storage.read_yaml">read<wbr></wbr>_yaml</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#realpath" class="internal-link" title="fiftyone.core.storage.realpath">realpath</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#run" class="internal-link" title="fiftyone.core.storage.run">run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sep" class="internal-link" title="fiftyone.core.storage.sep">sep</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#split_prefix" class="internal-link" title="fiftyone.core.storage.split_prefix">split<wbr></wbr>_prefix</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#write_file" class="internal-link" title="fiftyone.core.storage.write_file">write<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#write_json" class="internal-link" title="fiftyone.core.storage.write_json">write<wbr></wbr>_json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#write_ndjson" class="internal-link" title="fiftyone.core.storage.write_ndjson">write<wbr></wbr>_ndjson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#write_yaml" class="internal-link" title="fiftyone.core.storage.write_yaml">write<wbr></wbr>_yaml</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_copy_file" class="internal-link" title="fiftyone.core.storage._copy_file">_copy<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_copy_files" class="internal-link" title="fiftyone.core.storage._copy_files">_copy<wbr></wbr>_files</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_delete_file" class="internal-link" title="fiftyone.core.storage._delete_file">_delete<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_copy_file" class="internal-link" title="fiftyone.core.storage._do_copy_file">_do<wbr></wbr>_copy<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_delete_file" class="internal-link" title="fiftyone.core.storage._do_delete_file">_do<wbr></wbr>_delete<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_move_file" class="internal-link" title="fiftyone.core.storage._do_move_file">_do<wbr></wbr>_move<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_open_file" class="internal-link" title="fiftyone.core.storage._do_open_file">_do<wbr></wbr>_open<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_do_read_file" class="internal-link" title="fiftyone.core.storage._do_read_file">_do<wbr></wbr>_read<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_local_metadata" class="internal-link" title="fiftyone.core.storage._get_local_metadata">_get<wbr></wbr>_local<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_open_file" class="internal-link" title="fiftyone.core.storage._open_file">_open<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_read_file" class="internal-link" title="fiftyone.core.storage._read_file">_read<wbr></wbr>_file</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_run" class="internal-link" title="fiftyone.core.storage._run">_run</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_bytes" class="internal-link" title="fiftyone.core.storage._to_bytes">_to<wbr></wbr>_bytes</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.core.storage.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.core.html" class="internal-link" title="The parent of this module">core</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.aggregations.html" class="internal-link" title="fiftyone.core.aggregations">aggregations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.annotation.html" class="internal-link" title="fiftyone.core.annotation">annotation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.brain.html" class="internal-link" title="fiftyone.core.brain">brain</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.cli.html" class="internal-link" title="fiftyone.core.cli">cli</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.clips.html" class="internal-link" title="fiftyone.core.clips">clips</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.collections.html" class="internal-link" title="fiftyone.core.collections">collections</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.html" class="internal-link" title="fiftyone.core.config">config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.context.html" class="internal-link" title="fiftyone.core.context">context</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.dataset.html" class="internal-link" title="fiftyone.core.dataset">dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.document.html" class="internal-link" title="fiftyone.core.document">document</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.evaluation.html" class="internal-link" title="fiftyone.core.evaluation">evaluation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.expressions.html" class="internal-link" title="fiftyone.core.expressions">expressions</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.fields.html" class="internal-link" title="fiftyone.core.fields">fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame.html" class="internal-link" title="fiftyone.core.frame">frame</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.frame_utils.html" class="internal-link" title="fiftyone.core.frame_utils">frame<wbr></wbr>_utils</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.groups.html" class="internal-link" title="fiftyone.core.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.json.html" class="internal-link" title="fiftyone.core.json">json</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.labels.html" class="internal-link" title="fiftyone.core.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.logging.html" class="internal-link" title="fiftyone.core.logging">logging</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.media.html" class="internal-link" title="fiftyone.core.media">media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.metadata.html" class="internal-link" title="fiftyone.core.metadata">metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.models.html" class="internal-link" title="fiftyone.core.models">models</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.odm.html" class="internal-link" title="fiftyone.core.odm">odm</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.patches.html" class="internal-link" title="fiftyone.core.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.plots.html" class="internal-link" title="fiftyone.core.plots">plots</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.html" class="internal-link" title="fiftyone.core.runs">runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.sample.html" class="internal-link" title="fiftyone.core.sample">sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.service.html" class="internal-link" title="fiftyone.core.service">service</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.session.html" class="internal-link" title="fiftyone.core.session">session</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.singletons.html" class="internal-link" title="fiftyone.core.singletons">singletons</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.stages.html" class="internal-link" title="fiftyone.core.stages">stages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.state.html" class="internal-link" title="fiftyone.core.state">state</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.storage.html" class="internal-link" title="fiftyone.core.storage">storage</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.threed.html" class="internal-link" title="fiftyone.core.threed">threed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.uid.html" class="internal-link" title="fiftyone.core.uid">uid</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.utils.html" class="internal-link" title="fiftyone.core.utils">utils</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.validation.html" class="internal-link" title="fiftyone.core.validation">validation</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.video.html" class="internal-link" title="fiftyone.core.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.view.html" class="internal-link" title="fiftyone.core.view">view</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.storage.html" class="internal-link" title="fiftyone.core.storage">storage</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>File storage utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id751">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.core.storage.FileSystem.html" class="internal-link" title="fiftyone.core.storage.FileSystem"><wbr></wbr>File<wbr></wbr>System</a></code></td>
+    <td>Enumeration of the available file systems.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.core.storage.TempDir.html" class="internal-link" title="fiftyone.core.storage.TempDir"><wbr></wbr>Temp<wbr></wbr>Dir</a></code></td>
+    <td>Context manager that creates and destroys a temporary directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#abspath" class="internal-link" title="fiftyone.core.storage.abspath">abspath</a></code></td>
+    <td>Converts the given path to an absolute path, resolving relative path indicators such as <tt class="rst-docutils rst-literal">.</tt> and <tt class="rst-docutils rst-literal">..</tt>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#copy_dir" class="internal-link" title="fiftyone.core.storage.copy_dir">copy<wbr></wbr>_dir</a></code></td>
+    <td>Copies the input directory to the output directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#copy_file" class="internal-link" title="fiftyone.core.storage.copy_file">copy<wbr></wbr>_file</a></code></td>
+    <td>Copies the input file to the output location.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#copy_files" class="internal-link" title="fiftyone.core.storage.copy_files">copy<wbr></wbr>_files</a></code></td>
+    <td>Copies the files to the given locations.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_dir" class="internal-link" title="fiftyone.core.storage.delete_dir">delete<wbr></wbr>_dir</a></code></td>
+    <td>Deletes the given directory and recursively deletes any empty directories from the resulting directory tree.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_file" class="internal-link" title="fiftyone.core.storage.delete_file">delete<wbr></wbr>_file</a></code></td>
+    <td>Deletes the file at the given path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#delete_files" class="internal-link" title="fiftyone.core.storage.delete_files">delete<wbr></wbr>_files</a></code></td>
+    <td>Deletes the files from the given locations.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ensure_basedir" class="internal-link" title="fiftyone.core.storage.ensure_basedir">ensure<wbr></wbr>_basedir</a></code></td>
+    <td>Makes the base directory of the given path, if necessary.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ensure_dir" class="internal-link" title="fiftyone.core.storage.ensure_dir">ensure<wbr></wbr>_dir</a></code></td>
+    <td>Makes the given directory, if necessary.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ensure_empty_dir" class="internal-link" title="fiftyone.core.storage.ensure_empty_dir">ensure<wbr></wbr>_empty<wbr></wbr>_dir</a></code></td>
+    <td>Ensures that the given directory exists and is empty.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ensure_local" class="internal-link" title="fiftyone.core.storage.ensure_local">ensure<wbr></wbr>_local</a></code></td>
+    <td>Ensures that the given path is local.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#exists" class="internal-link" title="fiftyone.core.storage.exists">exists</a></code></td>
+    <td>Determines whether the given file or directory exists.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#extract_archive" class="internal-link" title="fiftyone.core.storage.extract_archive">extract<wbr></wbr>_archive</a></code></td>
+    <td>Extracts the contents of an archive.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_bucket_name" class="internal-link" title="fiftyone.core.storage.get_bucket_name">get<wbr></wbr>_bucket<wbr></wbr>_name</a></code></td>
+    <td>Gets the bucket name from the given path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_file_system" class="internal-link" title="fiftyone.core.storage.get_file_system">get<wbr></wbr>_file<wbr></wbr>_system</a></code></td>
+    <td>Returns the file system enum for the given path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_glob_matches" class="internal-link" title="fiftyone.core.storage.get_glob_matches">get<wbr></wbr>_glob<wbr></wbr>_matches</a></code></td>
+    <td>Returns a list of file paths matching the given glob pattern.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_glob_root" class="internal-link" title="fiftyone.core.storage.get_glob_root">get<wbr></wbr>_glob<wbr></wbr>_root</a></code></td>
+    <td>Finds the root directory of the given glob pattern, i.e., the deepest subdirectory that contains no glob characters.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#is_local" class="internal-link" title="fiftyone.core.storage.is_local">is<wbr></wbr>_local</a></code></td>
+    <td>Determines whether the given path is local.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#isabs" class="internal-link" title="fiftyone.core.storage.isabs">isabs</a></code></td>
+    <td>Determines whether the given path is absolute.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#isdir" class="internal-link" title="fiftyone.core.storage.isdir">isdir</a></code></td>
+    <td>Determines whether the given directory exists.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#isfile" class="internal-link" title="fiftyone.core.storage.isfile">isfile</a></code></td>
+    <td>Determines whether the given file exists.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#join" class="internal-link" title="fiftyone.core.storage.join">join</a></code></td>
+    <td>Joins the given path components into a single path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_available_file_systems" class="internal-link" title="fiftyone.core.storage.list_available_file_systems">list<wbr></wbr>_available<wbr></wbr>_file<wbr></wbr>_systems</a></code></td>
+    <td>Lists the file systems that are currently available for use with methods like <code><a href="fiftyone.core.storage.html#list_files" class="internal-link" title="fiftyone.core.storage.list_files">list_files</a></code> and <code><a href="fiftyone.core.storage.html#list_buckets" class="internal-link" title="fiftyone.core.storage.list_buckets">list_buckets</a></code>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_buckets" class="internal-link" title="fiftyone.core.storage.list_buckets">list<wbr></wbr>_buckets</a></code></td>
+    <td>Lists the available buckets in the given file system.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_files" class="internal-link" title="fiftyone.core.storage.list_files">list<wbr></wbr>_files</a></code></td>
+    <td>Lists the files in the given directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#list_subdirs" class="internal-link" title="fiftyone.core.storage.list_subdirs">list<wbr></wbr>_subdirs</a></code></td>
+    <td>Lists the subdirectories in the given directory, sorted alphabetically and excluding hidden directories.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load_json" class="internal-link" title="fiftyone.core.storage.load_json">load<wbr></wbr>_json</a></code></td>
+    <td>Loads JSON from the input argument.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load_ndjson" class="internal-link" title="fiftyone.core.storage.load_ndjson">load<wbr></wbr>_ndjson</a></code></td>
+    <td>Loads NDJSON from the input argument.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#make_archive" class="internal-link" title="fiftyone.core.storage.make_archive">make<wbr></wbr>_archive</a></code></td>
+    <td>Makes an archive containing the given directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#make_temp_dir" class="internal-link" title="fiftyone.core.storage.make_temp_dir">make<wbr></wbr>_temp<wbr></wbr>_dir</a></code></td>
+    <td>Makes a temporary directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#move_dir" class="internal-link" title="fiftyone.core.storage.move_dir">move<wbr></wbr>_dir</a></code></td>
+    <td>Moves the contents of the given directory into the given output directory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#move_file" class="internal-link" title="fiftyone.core.storage.move_file">move<wbr></wbr>_file</a></code></td>
+    <td>Moves the given file to a new location.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#move_files" class="internal-link" title="fiftyone.core.storage.move_files">move<wbr></wbr>_files</a></code></td>
+    <td>Moves the files to the given locations.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normalize_path" class="internal-link" title="fiftyone.core.storage.normalize_path">normalize<wbr></wbr>_path</a></code></td>
+    <td>Normalizes the given path by converting it to an absolute path and expanding the user directory, if necessary.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#normpath" class="internal-link" title="fiftyone.core.storage.normpath">normpath</a></code></td>
+    <td>Normalizes the given path by converting all slashes to forward slashes on Unix and backslashes on Windows and removing duplicate slashes.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#open_file" class="internal-link" title="fiftyone.core.storage.open_file">open<wbr></wbr>_file</a></code></td>
+    <td>Opens the given file for reading or writing.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#open_files" class="internal-link" title="fiftyone.core.storage.open_files">open<wbr></wbr>_files</a></code></td>
+    <td>Opens the given files for reading or writing.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_file" class="internal-link" title="fiftyone.core.storage.read_file">read<wbr></wbr>_file</a></code></td>
+    <td>Reads the file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_files" class="internal-link" title="fiftyone.core.storage.read_files">read<wbr></wbr>_files</a></code></td>
+    <td>Reads the specified files into memory.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_json" class="internal-link" title="fiftyone.core.storage.read_json">read<wbr></wbr>_json</a></code></td>
+    <td>Reads a JSON file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_ndjson" class="internal-link" title="fiftyone.core.storage.read_ndjson">read<wbr></wbr>_ndjson</a></code></td>
+    <td>Reads an NDJSON file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#read_yaml" class="internal-link" title="fiftyone.core.storage.read_yaml">read<wbr></wbr>_yaml</a></code></td>
+    <td>Reads a YAML file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#realpath" class="internal-link" title="fiftyone.core.storage.realpath">realpath</a></code></td>
+    <td>Converts the given path to absolute, resolving symlinks and relative path indicators such as <tt class="rst-docutils rst-literal">.</tt> and <tt class="rst-docutils rst-literal">..</tt>.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#run" class="internal-link" title="fiftyone.core.storage.run">run</a></code></td>
+    <td>Applies the given function to each element of the given tasks.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sep" class="internal-link" title="fiftyone.core.storage.sep">sep</a></code></td>
+    <td>Returns the path separator for the given path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#split_prefix" class="internal-link" title="fiftyone.core.storage.split_prefix">split<wbr></wbr>_prefix</a></code></td>
+    <td>Splits the file system prefix from the given path.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#write_file" class="internal-link" title="fiftyone.core.storage.write_file">write<wbr></wbr>_file</a></code></td>
+    <td>Writes the given string/bytes to a file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#write_json" class="internal-link" title="fiftyone.core.storage.write_json">write<wbr></wbr>_json</a></code></td>
+    <td>Writes JSON object to file.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#write_ndjson" class="internal-link" title="fiftyone.core.storage.write_ndjson">write<wbr></wbr>_ndjson</a></code></td>
+    <td>Writes the list of JSON dicts in NDJSON format.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#write_yaml" class="internal-link" title="fiftyone.core.storage.write_yaml">write<wbr></wbr>_yaml</a></code></td>
+    <td>Writes the object to a YAML file.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.core.storage.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_copy_file" class="internal-link" title="fiftyone.core.storage._copy_file">_copy<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_copy_files" class="internal-link" title="fiftyone.core.storage._copy_files">_copy<wbr></wbr>_files</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_delete_file" class="internal-link" title="fiftyone.core.storage._delete_file">_delete<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_copy_file" class="internal-link" title="fiftyone.core.storage._do_copy_file">_do<wbr></wbr>_copy<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_delete_file" class="internal-link" title="fiftyone.core.storage._do_delete_file">_do<wbr></wbr>_delete<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_move_file" class="internal-link" title="fiftyone.core.storage._do_move_file">_do<wbr></wbr>_move<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_open_file" class="internal-link" title="fiftyone.core.storage._do_open_file">_do<wbr></wbr>_open<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_do_read_file" class="internal-link" title="fiftyone.core.storage._do_read_file">_do<wbr></wbr>_read<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_local_metadata" class="internal-link" title="fiftyone.core.storage._get_local_metadata">_get<wbr></wbr>_local<wbr></wbr>_metadata</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_open_file" class="internal-link" title="fiftyone.core.storage._open_file">_open<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_read_file" class="internal-link" title="fiftyone.core.storage._read_file">_read<wbr></wbr>_file</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_run" class="internal-link" title="fiftyone.core.storage._run">_run</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_bytes" class="internal-link" title="fiftyone.core.storage._to_bytes">_to<wbr></wbr>_bytes</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.abspath">
+    
+  </a>
+  <a name="abspath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">abspath</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L308">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#abspath" title="fiftyone.core.storage.abspath">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Converts the given path to an absolute path, resolving relative path
+indicators such as <tt class="rst-docutils rst-literal">.</tt> and <tt class="rst-docutils rst-literal">..</tt>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the absolute path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.copy_dir">
+    
+  </a>
+  <a name="copy_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copy_dir</span><span class="function-signature">(indir, outdir, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L743">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#copy_dir" title="fiftyone.core.storage.copy_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Copies the input directory to the output directory.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">indir</span></td><td class="fieldArgDesc">the input directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outdir</span></td><td class="fieldArgDesc">the output directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to delete an existing output directory (True)
+or merge its contents (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.copy_file">
+    
+  </a>
+  <a name="copy_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copy_file</span><span class="function-signature">(inpath, outpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L718">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#copy_file" title="fiftyone.core.storage.copy_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Copies the input file to the output location.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inpath</span></td><td class="fieldArgDesc">the input path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpath</span></td><td class="fieldArgDesc">the output path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.copy_files">
+    
+  </a>
+  <a name="copy_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">copy_files</span><span class="function-signature">(inpaths, outpaths, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L728">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#copy_files" title="fiftyone.core.storage.copy_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Copies the files to the given locations.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inpaths</span></td><td class="fieldArgDesc">a list of input paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpaths</span></td><td class="fieldArgDesc">a list of output paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.delete_dir">
+    
+  </a>
+  <a name="delete_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_dir</span><span class="function-signature">(dirpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L853">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_dir" title="fiftyone.core.storage.delete_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes the given directory and recursively deletes any empty
+directories from the resulting directory tree.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the directory path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.delete_file">
+    
+  </a>
+  <a name="delete_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_file</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L823">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_file" title="fiftyone.core.storage.delete_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes the file at the given path.</p>
+<p>Any empty directories are also recursively deleted from the resulting
+directory tree.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.delete_files">
+    
+  </a>
+  <a name="delete_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">delete_files</span><span class="function-signature">(paths, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L835">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_files" title="fiftyone.core.storage.delete_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes the files from the given locations.</p>
+<p>Any empty directories are also recursively deleted from the resulting
+directory tree.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">paths</span></td><td class="fieldArgDesc">a list of paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.ensure_basedir">
+    
+  </a>
+  <a name="ensure_basedir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_basedir</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L433">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_basedir" title="fiftyone.core.storage.ensure_basedir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Makes the base directory of the given path, if necessary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.ensure_dir">
+    
+  </a>
+  <a name="ensure_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_dir</span><span class="function-signature">(dirpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L442">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_dir" title="fiftyone.core.storage.ensure_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Makes the given directory, if necessary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the directory path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.ensure_empty_dir">
+    
+  </a>
+  <a name="ensure_empty_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_empty_dir</span><span class="function-signature">(dirpath, cleanup=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L420">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_empty_dir" title="fiftyone.core.storage.ensure_empty_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Ensures that the given directory exists and is empty.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the directory path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to delete any existing directory contents</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError" class="intersphinx-link">ValueError</a></code></td><td>if the directory is not empty and <tt class="rst-docutils rst-literal">cleanup</tt> is False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.ensure_local">
+    
+  </a>
+  <a name="ensure_local">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_local</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L106">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_local" title="fiftyone.core.storage.ensure_local">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Ensures that the given path is local.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.exists">
+    
+  </a>
+  <a name="exists">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">exists</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L340">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#exists" title="fiftyone.core.storage.exists">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether the given file or directory exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the file or directory path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.extract_archive">
+    
+  </a>
+  <a name="extract_archive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extract_archive</span><span class="function-signature">(archive_path, outdir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, cleanup=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L395">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#extract_archive" title="fiftyone.core.storage.extract_archive">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Extracts the contents of an archive.</p>
+<p>The following formats are guaranteed to work:
+<tt class="rst-docutils rst-literal">.zip</tt>, <tt class="rst-docutils rst-literal">.tar</tt>, <tt class="rst-docutils rst-literal">.tar.gz</tt>, <tt class="rst-docutils rst-literal">.tgz</tt>, <tt class="rst-docutils rst-literal">.tar.bz</tt>, <tt class="rst-docutils rst-literal">.tbz</tt>.</p>
+<p>If an archive <em>not</em> in the above list is found, extraction will be
+attempted via the <tt class="rst-docutils rst-literal">patool</tt> package, which supports many formats but may
+require that additional system packages be installed.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">archive<wbr></wbr>_path</span></td><td class="fieldArgDesc">the archive path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outdir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the directory into which to extract the archive. By
+default, the directory containing the archive is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to delete the archive after extraction</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.get_bucket_name">
+    
+  </a>
+  <a name="get_bucket_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_bucket_name</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L73">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_bucket_name" title="fiftyone.core.storage.get_bucket_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Gets the bucket name from the given path.</p>
+<p>The bucket name for local paths is <tt class="rst-docutils rst-literal">""</tt>.</p>
+<p>Example usages:</p>
+<pre class="rst-literal-block">
+import fiftyone.core.storage as fos
+
+fos.get_bucket_name("/path/to/file")       # ''
+fos.get_bucket_name("a/file")              # ''
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the bucket name string</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.get_file_system">
+    
+  </a>
+  <a name="get_file_system">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_file_system</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L40">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_file_system" title="fiftyone.core.storage.get_file_system">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the file system enum for the given path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.storage.FileSystem.html" class="internal-link" title="fiftyone.core.storage.FileSystem">FileSystem</a></code> value</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.get_glob_matches">
+    
+  </a>
+  <a name="get_glob_matches">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_glob_matches</span><span class="function-signature">(glob_patt)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L674">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_glob_matches" title="fiftyone.core.storage.get_glob_matches">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a list of file paths matching the given glob pattern.</p>
+<p>The matches are returned in sorted order.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob<wbr></wbr>_patt</span></td><td class="fieldArgDesc">a glob pattern like <tt class="rst-docutils rst-literal"><span class="pre">/path/to/files-*.jpg</span></tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of file paths</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.get_glob_root">
+    
+  </a>
+  <a name="get_glob_root">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_glob_root</span><span class="function-signature">(glob_patt)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L688">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_glob_root" title="fiftyone.core.storage.get_glob_root">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Finds the root directory of the given glob pattern, i.e., the deepest
+subdirectory that contains no glob characters.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">glob<wbr></wbr>_patt</span></td><td class="fieldArgDesc">a glob pattern like <tt class="rst-docutils rst-literal"><span class="pre">/path/to/files-*.jpg</span></tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">a tuple of</td><td class="fieldArgDesc"><ul class="rst-simple">
+<li>the root</li>
+<li>True/False whether the pattern contains any special characters</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.is_local">
+    
+  </a>
+  <a name="is_local">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">is_local</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L94">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#is_local" title="fiftyone.core.storage.is_local">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether the given path is local.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.isabs">
+    
+  </a>
+  <a name="isabs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isabs</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L296">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#isabs" title="fiftyone.core.storage.isabs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether the given path is absolute.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.isdir">
+    
+  </a>
+  <a name="isdir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isdir</span><span class="function-signature">(dirpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L364">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#isdir" title="fiftyone.core.storage.isdir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether the given directory exists.</p>
+<p>Cloud "folders" are deemed to exist only if they are non-empty.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the directory path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.isfile">
+    
+  </a>
+  <a name="isfile">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">isfile</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L352">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#isfile" title="fiftyone.core.storage.isfile">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether the given file exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.join">
+    
+  </a>
+  <a name="join">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">join</span><span class="function-signature">(a, *p)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L270">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#join" title="fiftyone.core.storage.join">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Joins the given path components into a single path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">a</span></td><td class="fieldArgDesc">the root</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*p</span></td><td class="fieldArgDesc">additional path components</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the joined path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.list_available_file_systems">
+    
+  </a>
+  <a name="list_available_file_systems">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_available_file_systems</span><span class="function-signature">()</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L664">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_available_file_systems" title="fiftyone.core.storage.list_available_file_systems">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists the file systems that are currently available for use with methods
+like <code><a href="#list_files" class="internal-link" title="fiftyone.core.storage.list_files">list_files</a></code> and <code><a href="#list_buckets" class="internal-link" title="fiftyone.core.storage.list_buckets">list_buckets</a></code>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of <code><a href="fiftyone.core.storage.FileSystem.html" class="internal-link" title="fiftyone.core.storage.FileSystem">FileSystem</a></code> values</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.list_buckets">
+    
+  </a>
+  <a name="list_buckets">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_buckets</span><span class="function-signature">(fs, abs_paths=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L647">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_buckets" title="fiftyone.core.storage.list_buckets">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists the available buckets in the given file system.</p>
+<p>This method returns subdirectories of <tt class="rst-docutils rst-literal">/</tt> (or the current drive on
+Windows).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fs</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.storage.FileSystem.html" class="internal-link" title="fiftyone.core.storage.FileSystem">FileSystem</a></code> value</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">abs<wbr></wbr>_paths:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return absolute paths</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of buckets</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.list_files">
+    
+  </a>
+  <a name="list_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_files</span><span class="function-signature">(dirpath, abs_paths=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, recursive=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, include_hidden_files=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, return_metadata=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, sort=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L571">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_files" title="fiftyone.core.storage.list_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists the files in the given directory.</p>
+<p>If the directory does not exist, an empty list is returned.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the path to the directory to list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">abs<wbr></wbr>_paths:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return the absolute paths to the files</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">recursive:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to recursively traverse subdirectories</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">include<wbr></wbr>_hidden<wbr></wbr>_files:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to include dot files</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">return<wbr></wbr>_metadata:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return metadata dicts for each file
+instead of filepaths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sort:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to sort the list of files</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of filepaths or metadata dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.list_subdirs">
+    
+  </a>
+  <a name="list_subdirs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">list_subdirs</span><span class="function-signature">(dirpath, abs_paths=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, recursive=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L632">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_subdirs" title="fiftyone.core.storage.list_subdirs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Lists the subdirectories in the given directory, sorted alphabetically
+and excluding hidden directories.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the path to the directory to list</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">abs<wbr></wbr>_paths:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to return absolute paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">recursive:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to recursively traverse subdirectories</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of subdirectories</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.load_json">
+    
+  </a>
+  <a name="load_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_json</span><span class="function-signature">(path_or_str)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L451">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_json" title="fiftyone.core.storage.load_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads JSON from the input argument.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path<wbr></wbr>_or<wbr></wbr>_str</span></td><td class="fieldArgDesc">the filepath or JSON string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the loaded JSON</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.load_ndjson">
+    
+  </a>
+  <a name="load_ndjson">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_ndjson</span><span class="function-signature">(path_or_str)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L500">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_ndjson" title="fiftyone.core.storage.load_ndjson">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads NDJSON from the input argument.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path<wbr></wbr>_or<wbr></wbr>_str</span></td><td class="fieldArgDesc">the filepath or NDJSON string</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of JSON dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.make_archive">
+    
+  </a>
+  <a name="make_archive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_archive</span><span class="function-signature">(dirpath, archive_path, cleanup=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L378">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#make_archive" title="fiftyone.core.storage.make_archive">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Makes an archive containing the given directory.</p>
+<p>Supported formats include <tt class="rst-docutils rst-literal">.zip</tt>, <tt class="rst-docutils rst-literal">.tar</tt>, <tt class="rst-docutils rst-literal">.tar.gz</tt>, <tt class="rst-docutils rst-literal">.tgz</tt>,
+<tt class="rst-docutils rst-literal">.tar.bz</tt> and <tt class="rst-docutils rst-literal">.tbz</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dirpath</span></td><td class="fieldArgDesc">the directory to archive</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">archive<wbr></wbr>_path</span></td><td class="fieldArgDesc">the archive path to write</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to delete the directory after archiving it</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.make_temp_dir">
+    
+  </a>
+  <a name="make_temp_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">make_temp_dir</span><span class="function-signature">(basedir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L132">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#make_temp_dir" title="fiftyone.core.storage.make_temp_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Makes a temporary directory.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">basedir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">an optional directory in which to create the new
+directory. The default is
+<tt class="rst-docutils rst-literal">fiftyone.config.default_dataset_dir</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the temporary directory path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.move_dir">
+    
+  </a>
+  <a name="move_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">move_dir</span><span class="function-signature">(indir, outdir, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L798">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#move_dir" title="fiftyone.core.storage.move_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Moves the contents of the given directory into the given output
+directory.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">indir</span></td><td class="fieldArgDesc">the input directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outdir</span></td><td class="fieldArgDesc">the output directory</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to delete an existing output directory (True)
+or merge its contents (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.move_file">
+    
+  </a>
+  <a name="move_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">move_file</span><span class="function-signature">(inpath, outpath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L772">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#move_file" title="fiftyone.core.storage.move_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Moves the given file to a new location.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inpath</span></td><td class="fieldArgDesc">the input path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpath</span></td><td class="fieldArgDesc">the output path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.move_files">
+    
+  </a>
+  <a name="move_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">move_files</span><span class="function-signature">(inpaths, outpaths, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L782">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#move_files" title="fiftyone.core.storage.move_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Moves the files to the given locations.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">inpaths</span></td><td class="fieldArgDesc">a list of input paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">outpaths</span></td><td class="fieldArgDesc">a list of output paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.normalize_path">
+    
+  </a>
+  <a name="normalize_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normalize_path</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L119">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#normalize_path" title="fiftyone.core.storage.normalize_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Normalizes the given path by converting it to an absolute path and
+expanding the user directory, if necessary.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the normalized path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.normpath">
+    
+  </a>
+  <a name="normpath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">normpath</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L321">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#normpath" title="fiftyone.core.storage.normpath">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Normalizes the given path by converting all slashes to forward slashes
+on Unix and backslashes on Windows and removing duplicate slashes.</p>
+<p>Use this function when you need a version of <tt class="rst-docutils rst-literal">os.path.normpath</tt> that
+converts <tt class="rst-docutils rst-literal">\</tt> to <tt class="rst-docutils rst-literal">/</tt> on Unix.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the normalized path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.open_file">
+    
+  </a>
+  <a name="open_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">open_file</span><span class="function-signature">(path, mode=<span class="rst-variable-quote">'</span><span class="rst-variable-string">r</span><span class="rst-variable-quote">'</span>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L170">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#open_file" title="fiftyone.core.storage.open_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Opens the given file for reading or writing.</p>
+<p>Example usage:</p>
+<pre class="rst-literal-block">
+import fiftyone.core.storage as fos
+
+with fos.open_file("/tmp/file.txt", "w") as f:
+    f.write("Hello, world!")
+
+with fos.open_file("/tmp/file.txt", "r") as f:
+    print(f.read())
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the path</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mode:</span><span class="literal">"r"</span></td><td class="fieldArgDesc">the mode. Supported values are <tt class="rst-docutils rst-literal">("r", "rb", "w", "wb")</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">an open file-like object</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.open_files">
+    
+  </a>
+  <a name="open_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">open_files</span><span class="function-signature">(paths, mode=<span class="rst-variable-quote">'</span><span class="rst-variable-string">r</span><span class="rst-variable-quote">'</span>, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L193">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#open_files" title="fiftyone.core.storage.open_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Opens the given files for reading or writing.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">paths</span></td><td class="fieldArgDesc">a list of paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">mode:</span><span class="literal">"r"</span></td><td class="fieldArgDesc">the mode. Supported values are <tt class="rst-docutils rst-literal">("r", "rb", "w", "wb")</tt></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of open file-like objects</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.read_file">
+    
+  </a>
+  <a name="read_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_file</span><span class="function-signature">(path, binary=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L212">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#read_file" title="fiftyone.core.storage.read_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Reads the file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">binary:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to read the file in binary mode</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the file contents</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.read_files">
+    
+  </a>
+  <a name="read_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_files</span><span class="function-signature">(paths, binary=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, skip_failures=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L225">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#read_files" title="fiftyone.core.storage.read_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Reads the specified files into memory.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">paths</span></td><td class="fieldArgDesc">a list of filepaths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">binary:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to read the files in binary mode</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_failures:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to gracefully continue without raising
+an error if an operation fails</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of file contents</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.read_json">
+    
+  </a>
+  <a name="read_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_json</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L471">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#read_json" title="fiftyone.core.storage.read_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Reads a JSON file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the JSON data</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.read_ndjson">
+    
+  </a>
+  <a name="read_ndjson">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_ndjson</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L520">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#read_ndjson" title="fiftyone.core.storage.read_ndjson">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Reads an NDJSON file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of JSON dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.read_yaml">
+    
+  </a>
+  <a name="read_yaml">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">read_yaml</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L546">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#read_yaml" title="fiftyone.core.storage.read_yaml">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Reads a YAML file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of JSON dicts</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.realpath">
+    
+  </a>
+  <a name="realpath">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">realpath</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L283">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#realpath" title="fiftyone.core.storage.realpath">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Converts the given path to absolute, resolving symlinks and relative
+path indicators such as <tt class="rst-docutils rst-literal">.</tt> and <tt class="rst-docutils rst-literal">..</tt>.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the resolved path</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.run">
+    
+  </a>
+  <a name="run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">run</span><span class="function-signature">(fcn, tasks, return_results=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L863">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#run" title="fiftyone.core.storage.run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Applies the given function to each element of the given tasks.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">fcn</span></td><td class="fieldArgDesc">a function that accepts a single argument</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">tasks</span></td><td class="fieldArgDesc">an iterable of function arguments</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">return<wbr></wbr>_results:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to return the function results</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">num<wbr></wbr>_workers:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a suggested number of threads to use</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the list of function outputs, or None if <tt class="rst-docutils rst-literal">return_results == False</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.sep">
+    
+  </a>
+  <a name="sep">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sep</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L258">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#sep" title="fiftyone.core.storage.sep">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the path separator for the given path.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the path separator</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.split_prefix">
+    
+  </a>
+  <a name="split_prefix">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">split_prefix</span><span class="function-signature">(path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L52">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#split_prefix" title="fiftyone.core.storage.split_prefix">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Splits the file system prefix from the given path.</p>
+<p>The prefix for local paths is <tt class="rst-docutils rst-literal">""</tt>.</p>
+<p>Example usages:</p>
+<pre class="rst-literal-block">
+import fiftyone.core.storage as fos
+
+fos.split_prefix("/path/to/file")       # ('', '/path/to/file')
+fos.split_prefix("a/file")              # ('', 'a/file')
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">a path</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <tt class="rst-docutils rst-literal">(prefix, path)</tt> tuple</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.write_file">
+    
+  </a>
+  <a name="write_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_file</span><span class="function-signature">(str_or_bytes, path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L244">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#write_file" title="fiftyone.core.storage.write_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Writes the given string/bytes to a file.</p>
+<p>If a string is provided, it is encoded via <tt class="rst-docutils rst-literal">.encode()</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">str<wbr></wbr>_or<wbr></wbr>_bytes</span></td><td class="fieldArgDesc">the string or bytes</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.write_json">
+    
+  </a>
+  <a name="write_json">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_json</span><span class="function-signature">(d, path, pretty_print=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L487">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#write_json" title="fiftyone.core.storage.write_json">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Writes JSON object to file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc">JSON data</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pretty<wbr></wbr>_print:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to render the JSON in human readable
+format with newlines and indentations</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.write_ndjson">
+    
+  </a>
+  <a name="write_ndjson">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_ndjson</span><span class="function-signature">(obj, path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L534">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#write_ndjson" title="fiftyone.core.storage.write_ndjson">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Writes the list of JSON dicts in NDJSON format.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj</span></td><td class="fieldArgDesc">a list of JSON dicts</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.core.storage.write_yaml">
+    
+  </a>
+  <a name="write_yaml">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">write_yaml</span><span class="function-signature">(obj, path, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L559">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#write_yaml" title="fiftyone.core.storage.write_yaml">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Writes the object to a YAML file.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">obj</span></td><td class="fieldArgDesc">a Python object</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">path</span></td><td class="fieldArgDesc">the filepath</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional arguments for <tt class="rst-docutils rst-literal"><span class="pre">yaml.dump(...,</span> **kwargs)</tt></td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.core.storage.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L31">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.core.storage.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._copy_file">
+    
+  </a>
+  <a name="_copy_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_copy_file</span><span class="function-signature">(inpath, outpath, cleanup=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L999">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_copy_file" title="fiftyone.core.storage._copy_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._copy_files">
+    
+  </a>
+  <a name="_copy_files">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_copy_files</span><span class="function-signature">(inpaths, outpaths, skip_failures, progress)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L887">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_copy_files" title="fiftyone.core.storage._copy_files">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._delete_file">
+    
+  </a>
+  <a name="_delete_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_delete_file</span><span class="function-signature">(filepath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L1007">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_delete_file" title="fiftyone.core.storage._delete_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._do_copy_file">
+    
+  </a>
+  <a name="_do_copy_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_copy_file</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L924">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_copy_file" title="fiftyone.core.storage._do_copy_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._do_delete_file">
+    
+  </a>
+  <a name="_do_delete_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_delete_file</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L950">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_delete_file" title="fiftyone.core.storage._do_delete_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._do_move_file">
+    
+  </a>
+  <a name="_do_move_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_move_file</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L937">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_move_file" title="fiftyone.core.storage._do_move_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._do_open_file">
+    
+  </a>
+  <a name="_do_open_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_open_file</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L963">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_open_file" title="fiftyone.core.storage._do_open_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._do_read_file">
+    
+  </a>
+  <a name="_do_read_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_do_read_file</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L980">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_do_read_file" title="fiftyone.core.storage._do_read_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._get_local_metadata">
+    
+  </a>
+  <a name="_get_local_metadata">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_local_metadata</span><span class="function-signature">(filepath)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L623">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_local_metadata" title="fiftyone.core.storage._get_local_metadata">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._open_file">
+    
+  </a>
+  <a name="_open_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_open_file</span><span class="function-signature">(path, mode)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L976">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_open_file" title="fiftyone.core.storage._open_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._read_file">
+    
+  </a>
+  <a name="_read_file">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_read_file</span><span class="function-signature">(filepath, binary=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L993">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_read_file" title="fiftyone.core.storage._read_file">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._run">
+    
+  </a>
+  <a name="_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_run</span><span class="function-signature">(fcn, tasks, return_results=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, num_workers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L892">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_run" title="fiftyone.core.storage._run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.core.storage._to_bytes">
+    
+  </a>
+  <a name="_to_bytes">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_bytes</span><span class="function-signature">(val, encoding=<span class="rst-variable-quote">'</span><span class="rst-variable-string">utf-8</span><span class="rst-variable-quote">'</span>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/storage.py#L1011">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_bytes" title="fiftyone.core.storage._to_bytes">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

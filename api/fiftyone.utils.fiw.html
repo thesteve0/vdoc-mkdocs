@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.fiw</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.fiw.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.fiw.html" class="internal-link" title="This module">fiw</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.FIWDatasetImporter.html" class="internal-link" title="fiftyone.utils.fiw.FIWDatasetImporter"><wbr></wbr>FIWDataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#download_fiw_dataset" class="internal-link" title="fiftyone.utils.fiw.download_fiw_dataset">download<wbr></wbr>_fiw<wbr></wbr>_dataset</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_identifier_filepaths_map" class="internal-link" title="fiftyone.utils.fiw.get_identifier_filepaths_map">get<wbr></wbr>_identifier<wbr></wbr>_filepaths<wbr></wbr>_map</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_pairwise_labels" class="internal-link" title="fiftyone.utils.fiw.get_pairwise_labels">get<wbr></wbr>_pairwise<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_images_if_necessary" class="internal-link" title="fiftyone.utils.fiw._download_images_if_necessary">_download<wbr></wbr>_images<wbr></wbr>_if<wbr></wbr>_necessary</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_download_labels_if_necessary" class="internal-link" title="fiftyone.utils.fiw._download_labels_if_necessary">_download<wbr></wbr>_labels<wbr></wbr>_if<wbr></wbr>_necessary</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_format_mid" class="internal-link" title="fiftyone.utils.fiw._format_mid">_format<wbr></wbr>_mid</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_dataset_info" class="internal-link" title="fiftyone.utils.fiw._get_dataset_info">_get<wbr></wbr>_dataset<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_gender" class="internal-link" title="fiftyone.utils.fiw._get_gender">_get<wbr></wbr>_gender</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_mid" class="internal-link" title="fiftyone.utils.fiw._get_mid">_get<wbr></wbr>_mid</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_name" class="internal-link" title="fiftyone.utils.fiw._get_name">_get<wbr></wbr>_name</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_picture_face" class="internal-link" title="fiftyone.utils.fiw._get_picture_face">_get<wbr></wbr>_picture<wbr></wbr>_face</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_relationships" class="internal-link" title="fiftyone.utils.fiw._get_relationships">_get<wbr></wbr>_relationships</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_is_missing_images" class="internal-link" title="fiftyone.utils.fiw._is_missing_images">_is<wbr></wbr>_missing<wbr></wbr>_images</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_is_missing_labels" class="internal-link" title="fiftyone.utils.fiw._is_missing_labels">_is<wbr></wbr>_missing<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_member" class="internal-link" title="fiftyone.utils.fiw._load_member">_load<wbr></wbr>_member</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_load_split" class="internal-link" title="fiftyone.utils.fiw._load_split">_load<wbr></wbr>_split</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_organize_data" class="internal-link" title="fiftyone.utils.fiw._organize_data">_organize<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_organize_labels" class="internal-link" title="fiftyone.utils.fiw._organize_labels">_organize<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_identifier" class="internal-link" title="fiftyone.utils.fiw._parse_identifier">_parse<wbr></wbr>_identifier</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_kinship_map" class="internal-link" title="fiftyone.utils.fiw._parse_kinship_map">_parse<wbr></wbr>_kinship<wbr></wbr>_map</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.fiw.logger">logger</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_IMAGES_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._IMAGES_DOWNLOAD_LINK">_IMAGES<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_LISTS_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._LISTS_DOWNLOAD_LINK">_LISTS<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_MD5_DATA_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._MD5_DATA_DOWNLOAD_LINK">_MD5<wbr></wbr>_DATA<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_MD5_LISTS_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._MD5_LISTS_DOWNLOAD_LINK">_MD5<wbr></wbr>_LISTS<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_RELATIONSHIP_MAP" class="internal-link" title="fiftyone.utils.fiw._RELATIONSHIP_MAP">_RELATIONSHIP<wbr></wbr>_MAP</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_SPLITS" class="internal-link" title="fiftyone.utils.fiw._SPLITS">_SPLITS</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Utilities for working with the
+<a class="rst-external rst-reference" href="https://web.northeastern.edu/smilelab/fiw/" target="_top">Families in the Wild dataset</a>.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1993">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.utils.fiw.FIWDatasetImporter.html" class="internal-link" title="fiftyone.utils.fiw.FIWDatasetImporter"><wbr></wbr>FIWDataset<wbr></wbr>Importer</a></code></td>
+    <td>Importer for Faces in the Wild-formatted datasets stored on disk.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#download_fiw_dataset" class="internal-link" title="fiftyone.utils.fiw.download_fiw_dataset">download<wbr></wbr>_fiw<wbr></wbr>_dataset</a></code></td>
+    <td>Downloads and extracts the Families in the Wild dataset.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_identifier_filepaths_map" class="internal-link" title="fiftyone.utils.fiw.get_identifier_filepaths_map">get<wbr></wbr>_identifier<wbr></wbr>_filepaths<wbr></wbr>_map</a></code></td>
+    <td>Creates a mapping of <tt class="rst-docutils rst-literal">family_id/member_id</tt> identifier to a list of filepaths for each person.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_pairwise_labels" class="internal-link" title="fiftyone.utils.fiw.get_pairwise_labels">get<wbr></wbr>_pairwise<wbr></wbr>_labels</a></code></td>
+    <td>Gets a list of all pairs of people that are related and the label of their relation, either through the "kinships" or "relationships" field.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.fiw.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_images_if_necessary" class="internal-link" title="fiftyone.utils.fiw._download_images_if_necessary">_download<wbr></wbr>_images<wbr></wbr>_if<wbr></wbr>_necessary</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_download_labels_if_necessary" class="internal-link" title="fiftyone.utils.fiw._download_labels_if_necessary">_download<wbr></wbr>_labels<wbr></wbr>_if<wbr></wbr>_necessary</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_format_mid" class="internal-link" title="fiftyone.utils.fiw._format_mid">_format<wbr></wbr>_mid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_dataset_info" class="internal-link" title="fiftyone.utils.fiw._get_dataset_info">_get<wbr></wbr>_dataset<wbr></wbr>_info</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_gender" class="internal-link" title="fiftyone.utils.fiw._get_gender">_get<wbr></wbr>_gender</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_mid" class="internal-link" title="fiftyone.utils.fiw._get_mid">_get<wbr></wbr>_mid</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_name" class="internal-link" title="fiftyone.utils.fiw._get_name">_get<wbr></wbr>_name</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_picture_face" class="internal-link" title="fiftyone.utils.fiw._get_picture_face">_get<wbr></wbr>_picture<wbr></wbr>_face</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_get_relationships" class="internal-link" title="fiftyone.utils.fiw._get_relationships">_get<wbr></wbr>_relationships</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_is_missing_images" class="internal-link" title="fiftyone.utils.fiw._is_missing_images">_is<wbr></wbr>_missing<wbr></wbr>_images</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_is_missing_labels" class="internal-link" title="fiftyone.utils.fiw._is_missing_labels">_is<wbr></wbr>_missing<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_member" class="internal-link" title="fiftyone.utils.fiw._load_member">_load<wbr></wbr>_member</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_load_split" class="internal-link" title="fiftyone.utils.fiw._load_split">_load<wbr></wbr>_split</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_organize_data" class="internal-link" title="fiftyone.utils.fiw._organize_data">_organize<wbr></wbr>_data</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_organize_labels" class="internal-link" title="fiftyone.utils.fiw._organize_labels">_organize<wbr></wbr>_labels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_identifier" class="internal-link" title="fiftyone.utils.fiw._parse_identifier">_parse<wbr></wbr>_identifier</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_kinship_map" class="internal-link" title="fiftyone.utils.fiw._parse_kinship_map">_parse<wbr></wbr>_kinship<wbr></wbr>_map</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_IMAGES_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._IMAGES_DOWNLOAD_LINK">_IMAGES<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_LISTS_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._LISTS_DOWNLOAD_LINK">_LISTS<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_MD5_DATA_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._MD5_DATA_DOWNLOAD_LINK">_MD5<wbr></wbr>_DATA<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_MD5_LISTS_DOWNLOAD_LINK" class="internal-link" title="fiftyone.utils.fiw._MD5_LISTS_DOWNLOAD_LINK">_MD5<wbr></wbr>_LISTS<wbr></wbr>_DOWNLOAD<wbr></wbr>_LINK</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_RELATIONSHIP_MAP" class="internal-link" title="fiftyone.utils.fiw._RELATIONSHIP_MAP">_RELATIONSHIP<wbr></wbr>_MAP</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_SPLITS" class="internal-link" title="fiftyone.utils.fiw._SPLITS">_SPLITS</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.fiw.download_fiw_dataset">
+    
+  </a>
+  <a name="download_fiw_dataset">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">download_fiw_dataset</span><span class="function-signature">(dataset_dir, split, scratch_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, cleanup=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L286">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#download_fiw_dataset" title="fiftyone.utils.fiw.download_fiw_dataset">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Downloads and extracts the Families in the Wild dataset.</p>
+<p>Any existing files are not re-downloaded.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">dataset<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to output the final dataset</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">split</span></td><td class="fieldArgDesc">the split being loaded</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scratch<wbr></wbr>_dir:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a scratch directory to use to store temporary files</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to cleanup the scratch directory after
+extraction</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.fiw.get_identifier_filepaths_map">
+    
+  </a>
+  <a name="get_identifier_filepaths_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_identifier_filepaths_map</span><span class="function-signature">(samples)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L103">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_identifier_filepaths_map" title="fiftyone.utils.fiw.get_identifier_filepaths_map">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Creates a mapping of <tt class="rst-docutils rst-literal">family_id/member_id</tt> identifier to a list of
+filepaths for each person.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+{
+    "F0325/MID4": [
+        "/path/to/fiftyone/fiw/train/data/F0325/MID4/P03451_face4.jpg",
+        ...
+    ],
+    ...
+}
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a dict mapping <tt class="rst-docutils rst-literal">family_id/member_id</tt> identifiers to a list of
+filepaths containing images of the corresponding person</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.fiw.get_pairwise_labels">
+    
+  </a>
+  <a name="get_pairwise_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pairwise_labels</span><span class="function-signature">(samples, label_type=<span class="rst-variable-quote">'</span><span class="rst-variable-string">kinships</span><span class="rst-variable-quote">'</span>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L60">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_pairwise_labels" title="fiftyone.utils.fiw.get_pairwise_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Gets a list of all pairs of people that are related and the label of
+their relation, either through the "kinships" or "relationships" field.</p>
+<p>Example:</p>
+<pre class="rst-literal-block">
+[
+   ["F0009/MID2", "F0009/MID4", "sibling"],
+   ...
+]
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label<wbr></wbr>_type:</span><span class="literal">"kinships"</span></td><td class="fieldArgDesc">the type of label of which to return pairwise
+listings options are <tt class="rst-docutils rst-literal">("kinships", "relationships")</tt></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of triplets containing the identifier of person 1, identifier of
+person 2, and their kinship or relationship</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.fiw.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L25">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.fiw.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._download_images_if_necessary">
+    
+  </a>
+  <a name="_download_images_if_necessary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_images_if_necessary</span><span class="function-signature">(dataset_dir, scratch_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L317">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_images_if_necessary" title="fiftyone.utils.fiw._download_images_if_necessary">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._download_labels_if_necessary">
+    
+  </a>
+  <a name="_download_labels_if_necessary">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_download_labels_if_necessary</span><span class="function-signature">(dataset_dir, scratch_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L362">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_download_labels_if_necessary" title="fiftyone.utils.fiw._download_labels_if_necessary">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._format_mid">
+    
+  </a>
+  <a name="_format_mid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_format_mid</span><span class="function-signature">(member_id_int)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L244">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_format_mid" title="fiftyone.utils.fiw._format_mid">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_dataset_info">
+    
+  </a>
+  <a name="_get_dataset_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_dataset_info</span><span class="function-signature">(dataset_dir, split)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L389">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_dataset_info" title="fiftyone.utils.fiw._get_dataset_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_gender">
+    
+  </a>
+  <a name="_get_gender">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_gender</span><span class="function-signature">(labels, member_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L256">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_gender" title="fiftyone.utils.fiw._get_gender">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_mid">
+    
+  </a>
+  <a name="_get_mid">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_mid</span><span class="function-signature">(member_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L240">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_mid" title="fiftyone.utils.fiw._get_mid">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_name">
+    
+  </a>
+  <a name="_get_name">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_name</span><span class="function-signature">(labels, member_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L248">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_name" title="fiftyone.utils.fiw._get_name">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_picture_face">
+    
+  </a>
+  <a name="_get_picture_face">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_picture_face</span><span class="function-signature">(img_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L235">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_picture_face" title="fiftyone.utils.fiw._get_picture_face">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._get_relationships">
+    
+  </a>
+  <a name="_get_relationships">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_get_relationships</span><span class="function-signature">(labels, member_id_int, num_members, family_id)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L210">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_relationships" title="fiftyone.utils.fiw._get_relationships">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._is_missing_images">
+    
+  </a>
+  <a name="_is_missing_images">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_is_missing_images</span><span class="function-signature">(dataset_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L333">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_is_missing_images" title="fiftyone.utils.fiw._is_missing_images">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._is_missing_labels">
+    
+  </a>
+  <a name="_is_missing_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_is_missing_labels</span><span class="function-signature">(dataset_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L349">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_is_missing_labels" title="fiftyone.utils.fiw._is_missing_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._load_member">
+    
+  </a>
+  <a name="_load_member">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_member</span><span class="function-signature">(dir_images, family_id, member_id, labels, face_indices, tags, kinship_map)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L161">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_member" title="fiftyone.utils.fiw._load_member">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._load_split">
+    
+  </a>
+  <a name="_load_split">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_load_split</span><span class="function-signature">(split_dir, tags, labels_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L133">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_load_split" title="fiftyone.utils.fiw._load_split">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._organize_data">
+    
+  </a>
+  <a name="_organize_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_organize_data</span><span class="function-signature">(unzip_path, dataset_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L341">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_organize_data" title="fiftyone.utils.fiw._organize_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._organize_labels">
+    
+  </a>
+  <a name="_organize_labels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_organize_labels</span><span class="function-signature">(scratch_dir, dataset_dir)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L376">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_organize_labels" title="fiftyone.utils.fiw._organize_labels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._parse_identifier">
+    
+  </a>
+  <a name="_parse_identifier">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_identifier</span><span class="function-signature">(identifier)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L278">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_identifier" title="fiftyone.utils.fiw._parse_identifier">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.fiw._parse_kinship_map">
+    
+  </a>
+  <a name="_parse_kinship_map">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_kinship_map</span><span class="function-signature">(labels_path)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L264">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_kinship_map" title="fiftyone.utils.fiw._parse_kinship_map">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._IMAGES_DOWNLOAD_LINK">
+    
+  </a>
+  <a name="_IMAGES_DOWNLOAD_LINK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_IMAGES_DOWNLOAD_LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L413">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_IMAGES_DOWNLOAD_LINK" title="fiftyone.utils.fiw._IMAGES_DOWNLOAD_LINK">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">1rkrDGOjS0e_pptzRHZl5bRGq0yy5xQxQ</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._LISTS_DOWNLOAD_LINK">
+    
+  </a>
+  <a name="_LISTS_DOWNLOAD_LINK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_LISTS_DOWNLOAD_LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L415">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_LISTS_DOWNLOAD_LINK" title="fiftyone.utils.fiw._LISTS_DOWNLOAD_LINK">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">1nt22yiCfdGF7aIguUb-SJmsM_1CvcYjg</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._MD5_DATA_DOWNLOAD_LINK">
+    
+  </a>
+  <a name="_MD5_DATA_DOWNLOAD_LINK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MD5_DATA_DOWNLOAD_LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L414">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_MD5_DATA_DOWNLOAD_LINK" title="fiftyone.utils.fiw._MD5_DATA_DOWNLOAD_LINK">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">121lbbeaiY-qM2tK9sJXWNuvMczVuwi2p</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._MD5_LISTS_DOWNLOAD_LINK">
+    
+  </a>
+  <a name="_MD5_LISTS_DOWNLOAD_LINK">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_MD5_LISTS_DOWNLOAD_LINK</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L416">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_MD5_LISTS_DOWNLOAD_LINK" title="fiftyone.utils.fiw._MD5_LISTS_DOWNLOAD_LINK">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">1nt22yiCfdGF7aIguUb-SJmsM_1CvcYjg</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._RELATIONSHIP_MAP">
+    
+  </a>
+  <a name="_RELATIONSHIP_MAP">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_RELATIONSHIP_MAP</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a>[<wbr></wbr><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a>, <wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L401">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_RELATIONSHIP_MAP" title="fiftyone.utils.fiw._RELATIONSHIP_MAP">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{<wbr></wbr>1: <span class="rst-variable-quote">'</span><span class="rst-variable-string">child</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>2: <span class="rst-variable-quote">'</span><span class="rst-variable-string">sibling</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>3: <span class="rst-variable-quote">'</span><span class="rst-variable-string">grandchild</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>4: <span class="rst-variable-quote">'</span><span class="rst-variable-string">parent</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>5: <span class="rst-variable-quote">'</span><span class="rst-variable-string">spouse</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>6: <span class="rst-variable-quote">'</span><span class="rst-variable-string">grandparent</span><span class="rst-variable-quote">'</span>,
+ <wbr></wbr>7: <span class="rst-variable-quote">'</span><span class="rst-variable-string">great grandchild</span><span class="rst-variable-quote">'</span>,
+<span class="rst-variable-ellipsis">...</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.fiw._SPLITS">
+    
+  </a>
+  <a name="_SPLITS">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_SPLITS</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a>[<wbr></wbr><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a>]</code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/fiw.py#L399">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_SPLITS" title="fiftyone.utils.fiw._SPLITS">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>[<wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">train</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">test</span><span class="rst-variable-quote">'</span>, <wbr></wbr><span class="rst-variable-quote">'</span><span class="rst-variable-string">val</span><span class="rst-variable-quote">'</span>]</code></pre></td></tr></table>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

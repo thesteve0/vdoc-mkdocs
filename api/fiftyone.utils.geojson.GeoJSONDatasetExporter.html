@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.geojson.GeoJSONDatasetExporter</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.geojson.GeoJSONDatasetExporter.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.geojson.GeoJSONDatasetExporter.html" class="internal-link" title="This class"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Exporter</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#close" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.close">close</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#log_collection" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.log_collection">log<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#setup" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.setup">setup</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#abs_paths" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.abs_paths">abs<wbr></wbr>_paths</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#data_path" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.data_path">data<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#export_media" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_media">export<wbr></wbr>_media</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#image_format" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.image_format">image<wbr></wbr>_format</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.labels_path">labels<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#location_field" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.location_field">location<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#omit_none_fields" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.omit_none_fields">omit<wbr></wbr>_none<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#pretty_print" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.pretty_print">pretty<wbr></wbr>_print</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#property_makers" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.property_makers">property<wbr></wbr>_makers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_features" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._features">_features</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_location_field" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._location_field">_location<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.geojson.html" class="internal-link" title="The parent of this class">geojson</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.GeoJSONDatasetExporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.GeoJSONDatasetImporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetImporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#extract_coordinates" class="internal-link" title="fiftyone.utils.geojson.extract_coordinates">extract<wbr></wbr>_coordinates</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#geo_within" class="internal-link" title="fiftyone.utils.geojson.geo_within">geo<wbr></wbr>_within</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#load_location_data" class="internal-link" title="fiftyone.utils.geojson.load_location_data">load<wbr></wbr>_location<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#parse_point" class="internal-link" title="fiftyone.utils.geojson.parse_point">parse<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#parse_polygon" class="internal-link" title="fiftyone.utils.geojson.parse_polygon">parse<wbr></wbr>_polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#to_geo_json_geometry" class="internal-link" title="fiftyone.utils.geojson.to_geo_json_geometry">to<wbr></wbr>_geo<wbr></wbr>_json<wbr></wbr>_geometry</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_ensure_type" class="internal-link" title="fiftyone.utils.geojson._ensure_type">_ensure<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_make_geometry" class="internal-link" title="fiftyone.utils.geojson._make_geometry">_make<wbr></wbr>_geometry</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_parse_geometries" class="internal-link" title="fiftyone.utils.geojson._parse_geometries">_parse<wbr></wbr>_geometries</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_to_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_geo_collection">_to<wbr></wbr>_geo<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_to_geo_primitive" class="internal-link" title="fiftyone.utils.geojson._to_geo_primitive">_to<wbr></wbr>_geo<wbr></wbr>_primitive</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#_to_multi_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_multi_geo_collection">_to<wbr></wbr>_multi<wbr></wbr>_geo<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html#logger" class="internal-link" title="fiftyone.utils.geojson.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code><wbr></wbr>.<code><a href="fiftyone.utils.geojson.GeoJSONDatasetExporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter">GeoJSONDatasetExporter</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">GeoJSONDatasetExporter</span>(<a href="fiftyone.utils.data.exporters.GenericSampleDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.GenericSampleDatasetExporter">foud.GenericSampleDatasetExporter</a>, <a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">foud.ExportPathsMixin</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L508" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.__init__">GeoJSONDatasetExporter(export_dir, data_path, labels_path, export_media, ...)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.geojson.GeoJSONDatasetExporter">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Exporter for image or video datasets whose location data and labels are
+stored in GeoJSON format.</p>
+<p>See :ref:`this page &lt;GeoJSONDataset-export&gt;` for format details.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_dir</span></td><td class="fieldArgDesc">the directory to write the export. This has no
+effect if <tt class="rst-docutils rst-literal">data_path</tt> and <tt class="rst-docutils rst-literal">labels_path</tt> are absolute paths</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">data<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the exported media. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a folder name like <tt class="rst-docutils rst-literal">"data"</tt> or <tt class="rst-docutils rst-literal">"data/"</tt> specifying a
+subfolder of <tt class="rst-docutils rst-literal">export_dir</tt> in which to export the media</li>
+<li>an absolute directory path in which to export the media. In
+this case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of
+the data</li>
+<li>a JSON filename like <tt class="rst-docutils rst-literal">"data.json"</tt> specifying the filename of
+the manifest file in <tt class="rst-docutils rst-literal">export_dir</tt> generated when
+<tt class="rst-docutils rst-literal">export_media</tt> is <tt class="rst-docutils rst-literal">"manifest"</tt></li>
+<li>an absolute filepath specifying the location to write the JSON
+manifest file when <tt class="rst-docutils rst-literal">export_media</tt> is <tt class="rst-docutils rst-literal">"manifest"</tt>. In this
+case, <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of the data</li>
+</ul>
+<p>If None, the default value of this parameter will be chosen based
+on the value of the <tt class="rst-docutils rst-literal">export_media</tt> parameter</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">labels<wbr></wbr>_path</span></td><td class="fieldArgDesc"><p>an optional parameter that enables explicit control
+over the location of the exported labels. Can be any of the
+following:</p>
+<ul class="rst-simple">
+<li>a filename like <tt class="rst-docutils rst-literal">"labels.json"</tt> specifying the location in
+<tt class="rst-docutils rst-literal">export_dir</tt> in which to export the labels</li>
+<li>an absolute filepath to which to export the labels. In this
+case, the <tt class="rst-docutils rst-literal">export_dir</tt> has no effect on the location of the
+labels</li>
+</ul>
+<p>If None, the labels will be exported into <tt class="rst-docutils rst-literal">export_dir</tt> using the
+default filename</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">export<wbr></wbr>_media</span></td><td class="fieldArgDesc"><p>controls how to export the raw media. The
+supported values are:</p>
+<ul class="rst-simple">
+<li><tt class="rst-docutils rst-literal">True</tt>: copy all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">False</tt>: don't export media</li>
+<li><tt class="rst-docutils rst-literal">"move"</tt>: move all media files into the output directory</li>
+<li><tt class="rst-docutils rst-literal">"symlink"</tt>: create symlinks to the media files in the output
+directory</li>
+<li><tt class="rst-docutils rst-literal">"manifest"</tt>: create a <tt class="rst-docutils rst-literal">data.json</tt> in the output directory
+that maps UUIDs used in the labels files to the filepaths of
+the source media, rather than exporting the actual media</li>
+</ul>
+<p>If None, the default value of this parameter will be chosen based
+on the value of the <tt class="rst-docutils rst-literal">data_path</tt> parameter</p>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">rel<wbr></wbr>_dir</span></td><td class="fieldArgDesc">an optional relative directory to strip from each input
+filepath to generate a unique identifier for each media. When
+exporting media, this identifier is joined with <tt class="rst-docutils rst-literal">data_path</tt> to
+generate an output path for each exported media. This argument
+allows for populating nested subdirectories that match the shape of
+the input paths. The path is converted to an absolute path (if
+necessary) via <code><a href="fiftyone.core.storage.html#normalize_path" class="internal-link">fiftyone.core.storage.normalize_path</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">abs<wbr></wbr>_paths</span></td><td class="fieldArgDesc">whether to store absolute paths to the images in the
+exported labels</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">image<wbr></wbr>_format</span></td><td class="fieldArgDesc">the image format to use when writing in-memory
+images to disk. By default, <tt class="rst-docutils rst-literal">fiftyone.config.default_image_ext</tt>
+is used</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">location<wbr></wbr>_field</span></td><td class="fieldArgDesc"><p>the name of the field containing the location
+data for each sample. Can be any of the following:</p>
+<ul class="rst-simple">
+<li>The name of a <code>fiftyone.core.fields.GeoLocation</code> field</li>
+<li>The name of a <code>fiftyone.core.fields.GeoLocations</code> field</li>
+<li><tt class="rst-docutils rst-literal">None</tt>, in which case there must be a single
+<code>fiftyone.core.fields.GeoLocation</code> field on the samples,
+which is used by default</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">property<wbr></wbr>_makers</span></td><td class="fieldArgDesc">an optional dict mapping sample field names to
+functions that convert the field values to property values to be
+stored in the <tt class="rst-docutils rst-literal">properties</tt> field of the GeoJSON <tt class="rst-docutils rst-literal">Feature</tt> for
+the sample. By default, no properties are written</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">omit<wbr></wbr>_none<wbr></wbr>_fields</span></td><td class="fieldArgDesc">whether to omit <tt class="rst-docutils rst-literal">None</tt>-valued Sample fields
+from the output properties</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pretty<wbr></wbr>_print</span></td><td class="fieldArgDesc">whether to render the JSON in human readable
+format with newlines and indentations</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2003">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#close" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.close">close</a></code></td>
+    <td>Performs any necessary actions after the last sample has been exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#export_sample" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_sample">export<wbr></wbr>_sample</a></code></td>
+    <td>Exports the given sample to the dataset.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#log_collection" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.log_collection">log<wbr></wbr>_collection</a></code></td>
+    <td>Logs any relevant information about the <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will be exported.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#setup" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.setup">setup</a></code></td>
+    <td>Performs any necessary setup before exporting the first sample in the dataset.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#abs_paths" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.abs_paths">abs<wbr></wbr>_paths</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#data_path" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.data_path">data<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#export_media" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_media">export<wbr></wbr>_media</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#image_format" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.image_format">image<wbr></wbr>_format</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#labels_path" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.labels_path">labels<wbr></wbr>_path</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#location_field" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.location_field">location<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#omit_none_fields" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.omit_none_fields">omit<wbr></wbr>_none<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#pretty_print" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.pretty_print">pretty<wbr></wbr>_print</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#property_makers" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.property_makers">property<wbr></wbr>_makers</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#rel_dir" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.rel_dir">rel<wbr></wbr>_dir</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_features" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._features">_features</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_location_field" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._location_field">_location<wbr></wbr>_field</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_media_exporter" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._media_exporter">_media<wbr></wbr>_exporter</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code> (via <code><a href="fiftyone.utils.data.exporters.GenericSampleDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.GenericSampleDatasetExporter">GenericSampleDatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2004">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">__enter__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">__exit__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin">ExportPathsMixin</a></code> (via <code><a href="fiftyone.utils.data.exporters.GenericSampleDatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.GenericSampleDatasetExporter">GenericSampleDatasetExporter</a></code>, <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter">DatasetExporter</a></code>):
+            </p>
+            <table class="children sortable" id="id2005">
+  
+  
+  <tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_data_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_data_path">_parse<wbr></wbr>_data<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">data_path</tt> and <tt class="rst-docutils rst-literal">export_media</tt> parameters supported by many exporters.</td>
+  </tr><tr class="basestaticmethod private">
+    
+    <td>Static Method</td>
+    <td><code><a href="fiftyone.utils.data.exporters.ExportPathsMixin.html#_parse_labels_path" class="internal-link" title="fiftyone.utils.data.exporters.ExportPathsMixin._parse_labels_path">_parse<wbr></wbr>_labels<wbr></wbr>_path</a></code></td>
+    <td>Helper function that computes default values for the <tt class="rst-docutils rst-literal">labels_path</tt> parameter supported by many exporters.</td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, export_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, data_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, labels_path=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, export_media=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, rel_dir=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, abs_paths=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>, image_format=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, location_field=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, property_makers=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, omit_none_fields=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, pretty_print=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L594">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#__init__" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.close">
+    
+  </a>
+  <a name="close">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">close</span><span class="function-signature">(self, *args)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L677">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#close" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.close">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#close" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.close</a></code></div>
+    <div><p>Performs any necessary actions after the last sample has been
+exported.</p>
+<p>This method is called when the exporter's context manager interface is
+exited, <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">*args</span></td><td class="fieldArgDesc">the arguments to <code><a href="#__exit__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__exit__">DatasetExporter.__exit__</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_sample">
+    
+  </a>
+  <a name="export_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">export_sample</span><span class="function-signature">(self, sample)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L651">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_sample" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.GenericSampleDatasetExporter.html#export_sample" class="internal-link">fiftyone.utils.data.exporters.GenericSampleDatasetExporter.export_sample</a></code></div>
+    <div><p>Exports the given sample to the dataset.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.sample.Sample.html" class="internal-link">fiftyone.core.sample.Sample</a></code></td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.log_collection">
+    
+  </a>
+  <a name="log_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">log_collection</span><span class="function-signature">(self, sample_collection)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L647">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#log_collection" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.log_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#log_collection" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.log_collection</a></code></div>
+    <div><p>Logs any relevant information about the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose samples will
+be exported.</p>
+<p>Subclasses can optionally implement this method if their export format
+can record information such as the
+<code><a href="fiftyone.core.collections.SampleCollection.html#info" class="internal-link">fiftyone.core.collections.SampleCollection.info</a></code> of the
+collection being exported.</p>
+<p>By convention, this method must be optional; i.e., if it is not called
+before the first call to <code><a href="#export_sample" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.export_sample">export_sample</a></code>, then the exporter must
+make do without any information about the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> (which may not be
+available, for example, if the samples being exported are not stored in
+a collection).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">sample<wbr></wbr>_collection</span></td><td class="fieldArgDesc">the
+<code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code> whose
+samples will be exported</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.setup">
+    
+  </a>
+  <a name="setup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">setup</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L638">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#setup" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.setup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.exporters.DatasetExporter.html#setup" class="internal-link">fiftyone.utils.data.exporters.DatasetExporter.setup</a></code></div>
+    <div><p>Performs any necessary setup before exporting the first sample in
+the dataset.</p>
+<p>This method is called when the exporter's context manager interface is
+entered, <code><a href="#__enter__" class="internal-link" title="fiftyone.utils.data.exporters.DatasetExporter.__enter__">DatasetExporter.__enter__</a></code>.</p>
+</div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.abs_paths">
+    
+  </a>
+  <a name="abs_paths">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">abs_paths</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L627">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#abs_paths" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.abs_paths">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.data_path">
+    
+  </a>
+  <a name="data_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">data_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L623">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#data_path" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.data_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_media">
+    
+  </a>
+  <a name="export_media">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">export_media</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L625">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#export_media" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.export_media">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.image_format">
+    
+  </a>
+  <a name="image_format">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">image_format</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L628">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#image_format" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.image_format">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.labels_path">
+    
+  </a>
+  <a name="labels_path">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">labels_path</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L624">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#labels_path" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.labels_path">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.location_field">
+    
+  </a>
+  <a name="location_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">location_field</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L629">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#location_field" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.location_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.omit_none_fields">
+    
+  </a>
+  <a name="omit_none_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">omit_none_fields</span>: <code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L631">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#omit_none_fields" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.omit_none_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.pretty_print">
+    
+  </a>
+  <a name="pretty_print">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">pretty_print</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L632">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#pretty_print" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.pretty_print">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.property_makers">
+    
+  </a>
+  <a name="property_makers">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">property_makers</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L630">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#property_makers" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.property_makers">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter.rel_dir">
+    
+  </a>
+  <a name="rel_dir">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">rel_dir</span>: <code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L626">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#rel_dir" title="fiftyone.utils.geojson.GeoJSONDatasetExporter.rel_dir">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter._features">
+    
+  </a>
+  <a name="_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_features</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L634">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_features" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._features">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter._location_field">
+    
+  </a>
+  <a name="_location_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_location_field</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L635">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_location_field" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._location_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.geojson.GeoJSONDatasetExporter._media_exporter">
+    
+  </a>
+  <a name="_media_exporter">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_media_exporter</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L636">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_media_exporter" title="fiftyone.utils.geojson.GeoJSONDatasetExporter._media_exporter">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

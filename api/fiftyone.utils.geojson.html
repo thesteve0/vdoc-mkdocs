@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.geojson</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.geojson.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="fiftyone.utils.geojson.html" class="internal-link" title="This module">geojson</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.GeoJSONDatasetExporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.GeoJSONDatasetImporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetImporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#extract_coordinates" class="internal-link" title="fiftyone.utils.geojson.extract_coordinates">extract<wbr></wbr>_coordinates</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#geo_within" class="internal-link" title="fiftyone.utils.geojson.geo_within">geo<wbr></wbr>_within</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_location_data" class="internal-link" title="fiftyone.utils.geojson.load_location_data">load<wbr></wbr>_location<wbr></wbr>_data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_point" class="internal-link" title="fiftyone.utils.geojson.parse_point">parse<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#parse_polygon" class="internal-link" title="fiftyone.utils.geojson.parse_polygon">parse<wbr></wbr>_polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#to_geo_json_geometry" class="internal-link" title="fiftyone.utils.geojson.to_geo_json_geometry">to<wbr></wbr>_geo<wbr></wbr>_json<wbr></wbr>_geometry</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ensure_type" class="internal-link" title="fiftyone.utils.geojson._ensure_type">_ensure<wbr></wbr>_type</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_geometry" class="internal-link" title="fiftyone.utils.geojson._make_geometry">_make<wbr></wbr>_geometry</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_geometries" class="internal-link" title="fiftyone.utils.geojson._parse_geometries">_parse<wbr></wbr>_geometries</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_geo_collection">_to<wbr></wbr>_geo<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_geo_primitive" class="internal-link" title="fiftyone.utils.geojson._to_geo_primitive">_to<wbr></wbr>_geo<wbr></wbr>_primitive</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_to_multi_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_multi_geo_collection">_to<wbr></wbr>_multi<wbr></wbr>_geo<wbr></wbr>_collection</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#logger" class="internal-link" title="fiftyone.utils.geojson.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="fiftyone.utils.html" class="internal-link" title="The parent of this module">utils</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.activitynet.html" class="internal-link" title="fiftyone.utils.activitynet">activitynet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.annotations.html" class="internal-link" title="fiftyone.utils.annotations">annotations</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.aws.html" class="internal-link" title="fiftyone.utils.aws">aws</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.bdd.html" class="internal-link" title="fiftyone.utils.bdd">bdd</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.beam.html" class="internal-link" title="fiftyone.utils.beam">beam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cityscapes.html" class="internal-link" title="fiftyone.utils.cityscapes">cityscapes</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.clip.html" class="internal-link" title="fiftyone.utils.clip">clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.coco.html" class="internal-link" title="fiftyone.utils.coco">coco</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.csv.html" class="internal-link" title="fiftyone.utils.csv">csv</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.cvat.html" class="internal-link" title="fiftyone.utils.cvat">cvat</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.html" class="internal-link" title="fiftyone.utils.data">data</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.dicom.html" class="internal-link" title="fiftyone.utils.dicom">dicom</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eta.html" class="internal-link" title="fiftyone.utils.eta">eta</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.eval.html" class="internal-link" title="fiftyone.utils.eval">eval</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.fiw.html" class="internal-link" title="fiftyone.utils.fiw">fiw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.flash.html" class="internal-link" title="fiftyone.utils.flash">flash</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.geotiff.html" class="internal-link" title="fiftyone.utils.geotiff">geotiff</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.github.html" class="internal-link" title="fiftyone.utils.github">github</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.groups.html" class="internal-link" title="fiftyone.utils.groups">groups</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.hmdb51.html" class="internal-link" title="fiftyone.utils.hmdb51">hmdb51</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.huggingface.html" class="internal-link" title="fiftyone.utils.huggingface">huggingface</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.image.html" class="internal-link" title="fiftyone.utils.image">image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.imagenet.html" class="internal-link" title="fiftyone.utils.imagenet">imagenet</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.iou.html" class="internal-link" title="fiftyone.utils.iou">iou</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kinetics.html" class="internal-link" title="fiftyone.utils.kinetics">kinetics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.kitti.html" class="internal-link" title="fiftyone.utils.kitti">kitti</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelbox.html" class="internal-link" title="fiftyone.utils.labelbox">labelbox</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labels.html" class="internal-link" title="fiftyone.utils.labels">labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.labelstudio.html" class="internal-link" title="fiftyone.utils.labelstudio">labelstudio</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.lfw.html" class="internal-link" title="fiftyone.utils.lfw">lfw</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.open_clip.html" class="internal-link" title="fiftyone.utils.open_clip">open<wbr></wbr>_clip</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openimages.html" class="internal-link" title="fiftyone.utils.openimages">openimages</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.openlabel.html" class="internal-link" title="fiftyone.utils.openlabel">openlabel</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.patches.html" class="internal-link" title="fiftyone.utils.patches">patches</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.places.html" class="internal-link" title="fiftyone.utils.places">places</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.quickstart.html" class="internal-link" title="fiftyone.utils.quickstart">quickstart</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.random.html" class="internal-link" title="fiftyone.utils.random">random</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.rerun.html" class="internal-link" title="fiftyone.utils.rerun">rerun</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam.html" class="internal-link" title="fiftyone.utils.sam">sam</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sam2.html" class="internal-link" title="fiftyone.utils.sam2">sam2</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.sama.html" class="internal-link" title="fiftyone.utils.sama">sama</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.scale.html" class="internal-link" title="fiftyone.utils.scale">scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.super_gradients.html" class="internal-link" title="fiftyone.utils.super_gradients">super<wbr></wbr>_gradients</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.torch.html" class="internal-link" title="fiftyone.utils.torch">torch</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tracking.html" class="internal-link" title="fiftyone.utils.tracking">tracking</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.transformers.html" class="internal-link" title="fiftyone.utils.transformers">transformers</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ucf101.html" class="internal-link" title="fiftyone.utils.ucf101">ucf101</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.ultralytics.html" class="internal-link" title="fiftyone.utils.ultralytics">ultralytics</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.utils3d.html" class="internal-link" title="fiftyone.utils.utils3d">utils3d</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.video.html" class="internal-link" title="fiftyone.utils.video">video</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.voc.html" class="internal-link" title="fiftyone.utils.voc">voc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.yolo.html" class="internal-link" title="fiftyone.utils.yolo">yolo</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.youtube.html" class="internal-link" title="fiftyone.utils.youtube">youtube</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.geojson.html" class="internal-link" title="fiftyone.utils.geojson">geojson</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py" class="sourceLink">(source)</a>
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>GeoJSON utilities.</p>
+<div class="rst-line-block">
+<div class="rst-line">Copyright 2017-2025, Voxel51, Inc.</div>
+<div class="rst-line"><a class="rst-external rst-reference" href="https://voxel51.com/" target="_top">voxel51.com</a></div>
+<div class="rst-line"><br /></div>
+</div>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id1998">
+  
+  
+  <tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.utils.geojson.GeoJSONDatasetExporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetExporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Exporter</a></code></td>
+    <td>Exporter for image or video datasets whose location data and labels are stored in GeoJSON format.</td>
+  </tr><tr class="class">
+    
+    <td>Class</td>
+    <td><code><a href="fiftyone.utils.geojson.GeoJSONDatasetImporter.html" class="internal-link" title="fiftyone.utils.geojson.GeoJSONDatasetImporter"><wbr></wbr>Geo<wbr></wbr>JSONDataset<wbr></wbr>Importer</a></code></td>
+    <td>Importer for image or video datasets whose location data and labels are stored in GeoJSON format.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#extract_coordinates" class="internal-link" title="fiftyone.utils.geojson.extract_coordinates">extract<wbr></wbr>_coordinates</a></code></td>
+    <td>Extracts the coordinates from all geometries in the GeoJSON dictionary.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#geo_within" class="internal-link" title="fiftyone.utils.geojson.geo_within">geo<wbr></wbr>_within</a></code></td>
+    <td>Creates a MongoDB query expression that tests whether the given location field is contained within the specified boundary shape.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#load_location_data" class="internal-link" title="fiftyone.utils.geojson.load_location_data">load<wbr></wbr>_location<wbr></wbr>_data</a></code></td>
+    <td>Loads geolocation data for the given samples from the given GeoJSON data.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_point" class="internal-link" title="fiftyone.utils.geojson.parse_point">parse<wbr></wbr>_point</a></code></td>
+    <td>Parses the point into GeoJSON dict representation.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#parse_polygon" class="internal-link" title="fiftyone.utils.geojson.parse_polygon">parse<wbr></wbr>_polygon</a></code></td>
+    <td>Parses the polygon or multi-polygon into GeoJSON dict representation.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#to_geo_json_geometry" class="internal-link" title="fiftyone.utils.geojson.to_geo_json_geometry">to<wbr></wbr>_geo<wbr></wbr>_json<wbr></wbr>_geometry</a></code></td>
+    <td>Returns a GeoJSON <tt class="rst-docutils rst-literal">geometry</tt> dict representation for the given location.</td>
+  </tr><tr class="variable">
+    
+    <td>Variable</td>
+    <td><code><a href="#logger" class="internal-link" title="fiftyone.utils.geojson.logger">logger</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ensure_type" class="internal-link" title="fiftyone.utils.geojson._ensure_type">_ensure<wbr></wbr>_type</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_geometry" class="internal-link" title="fiftyone.utils.geojson._make_geometry">_make<wbr></wbr>_geometry</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_parse_geometries" class="internal-link" title="fiftyone.utils.geojson._parse_geometries">_parse<wbr></wbr>_geometries</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_geo_collection">_to<wbr></wbr>_geo<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_geo_primitive" class="internal-link" title="fiftyone.utils.geojson._to_geo_primitive">_to<wbr></wbr>_geo<wbr></wbr>_primitive</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_to_multi_geo_collection" class="internal-link" title="fiftyone.utils.geojson._to_multi_geo_collection">_to<wbr></wbr>_multi<wbr></wbr>_geo<wbr></wbr>_collection</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.extract_coordinates">
+    
+  </a>
+  <a name="extract_coordinates">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">extract_coordinates</span><span class="function-signature">(d)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L272">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#extract_coordinates" title="fiftyone.utils.geojson.extract_coordinates">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Extracts the coordinates from all geometries in the GeoJSON dictionary.</p>
+<p>The dict can have any <tt class="rst-docutils rst-literal">type</tt> supported by the GeoJSON spec, including
+<tt class="rst-docutils rst-literal">Feature</tt>, <tt class="rst-docutils rst-literal">FeatureCollection</tt>, <tt class="rst-docutils rst-literal">GeometryCollection</tt>, and primitive
+geometries <tt class="rst-docutils rst-literal">Point</tt>, <tt class="rst-docutils rst-literal">LineString</tt>, <tt class="rst-docutils rst-literal">Polygon</tt>, <tt class="rst-docutils rst-literal">MultiPoint</tt>,
+<tt class="rst-docutils rst-literal">MultiLineString</tt>, or <tt class="rst-docutils rst-literal">MultiPolygon</tt>.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">d</span></td><td class="fieldArgDesc">a GeoJSON dict</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer">a tuple of</td><td class="fieldArgDesc"><ul class="rst-simple">
+<li>points: a list of <tt class="rst-docutils rst-literal">Point</tt> coordinates</li>
+<li>lines: a list of <tt class="rst-docutils rst-literal">LineString</tt> coordinates</li>
+<li>points: a list of <tt class="rst-docutils rst-literal">Polygon</tt> coordinates</li>
+</ul>
+</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.geo_within">
+    
+  </a>
+  <a name="geo_within">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">geo_within</span><span class="function-signature">(location_field, boundary, strict=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L251">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#geo_within" title="fiftyone.utils.geojson.geo_within">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Creates a MongoDB query expression that tests whether the given location
+field is contained within the specified boundary shape.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">location<wbr></wbr>_field</span></td><td class="fieldArgDesc">the embedded field containing GeoJSON data</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">boundary</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code>,
+<code><a href="fiftyone.core.labels.GeoLocations.html" class="internal-link">fiftyone.core.labels.GeoLocations</a></code>, GeoJSON dict, or
+list of coordinates that define a <tt class="rst-docutils rst-literal">Polygon</tt> or
+<tt class="rst-docutils rst-literal">MultiPolygon</tt> to search within</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">strict:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether documents must exist entirely within (True)
+or intersect (False) the boundary</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a MongoDB query dict</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.load_location_data">
+    
+  </a>
+  <a name="load_location_data">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">load_location_data</span><span class="function-signature">(samples, geojson_or_path, location_field=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, skip_missing=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, progress=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L26">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_location_data" title="fiftyone.utils.geojson.load_location_data">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads geolocation data for the given samples from the given GeoJSON
+data.</p>
+<p>The GeoJSON data must be a <tt class="rst-docutils rst-literal">FeatureCollection</tt> whose features have their
+<tt class="rst-docutils rst-literal">filename</tt> properties populated, which are used to match the provided
+samples.</p>
+<p>Example GeoJSON data:</p>
+<pre class="rst-literal-block">
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99496451958454,
+                    40.66338032487842
+                ]
+            },
+            "properties": {
+                "filename": "b1c66a42-6f7d68ca.jpg"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -73.80992143421788,
+                        40.65611832778962
+                    ],
+                    [
+                        -74.02930609818584,
+                        40.60505054722865
+                    ]
+                ]
+            },
+            "properties": {
+                "filename": "/path/to/b1c81faa-3df17267.jpg"
+            }
+        },
+    ]
+}
+</pre>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">geojson<wbr></wbr>_or<wbr></wbr>_path</span></td><td class="fieldArgDesc">a GeoJSON <tt class="rst-docutils rst-literal">FeatureCollection</tt> dict or the path to
+one on disk</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">location<wbr></wbr>_field:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">the name of the location field in which to store
+the location data, which can be either a
+<code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code> or
+<code><a href="fiftyone.core.labels.GeoLocations.html" class="internal-link">fiftyone.core.labels.GeoLocations</a></code> field. If not specified,
+then, if there is an existing
+<code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code> field, that field is
+used, else a new "location" field is created</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">skip<wbr></wbr>_missing:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to skip GeoJSON features with no
+<tt class="rst-docutils rst-literal">filename</tt> properties (True) or raise an error (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">progress:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">whether to render a progress bar (True/False), use the
+default value <tt class="rst-docutils rst-literal">fiftyone.config.show_progress_bars</tt> (None), or a
+progress callback function to invoke instead</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.parse_point">
+    
+  </a>
+  <a name="parse_point">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_point</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L193">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_point" title="fiftyone.utils.geojson.parse_point">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the point into GeoJSON dict representation.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arg</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">point</span></td><td class="fieldArgDesc"><p>a point specified in any of the following formats:</p>
+<ul class="rst-simple">
+<li>A <tt class="rst-docutils rst-literal">[longitude, latitude]</tt> list</li>
+<li>A GeoJSON dict with <tt class="rst-docutils rst-literal">Point</tt> type</li>
+<li>A <code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code> instance whose
+<tt class="rst-docutils rst-literal">point</tt> attribute contains the point</li>
+</ul>
+</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a GeoJSON dict of type <tt class="rst-docutils rst-literal">Point</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.parse_polygon">
+    
+  </a>
+  <a name="parse_polygon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">parse_polygon</span><span class="function-signature">(arg)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L220">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#parse_polygon" title="fiftyone.utils.geojson.parse_polygon">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Parses the polygon or multi-polygon into GeoJSON dict representation.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">arg</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code>,
+<code><a href="fiftyone.core.labels.GeoLocations.html" class="internal-link">fiftyone.core.labels.GeoLocations</a></code>, GeoJSON dict, or list
+of coordinates that define a <tt class="rst-docutils rst-literal">Polygon</tt> or <tt class="rst-docutils rst-literal">MultiPolygon</tt> to
+search within</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a GeoJSON dict of type <tt class="rst-docutils rst-literal">Polygon</tt> or <tt class="rst-docutils rst-literal">MultiPolygon</tt></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="fiftyone.utils.geojson.to_geo_json_geometry">
+    
+  </a>
+  <a name="to_geo_json_geometry">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">to_geo_json_geometry</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L161">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#to_geo_json_geometry" title="fiftyone.utils.geojson.to_geo_json_geometry">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns a GeoJSON <tt class="rst-docutils rst-literal">geometry</tt> dict representation for the given
+location.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">label</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.labels.GeoLocation.html" class="internal-link">fiftyone.core.labels.GeoLocation</a></code> o
+<code><a href="fiftyone.core.labels.GeoLocations.html" class="internal-link">fiftyone.core.labels.GeoLocations</a></code> instance</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a GeoJSON dict</td></tr></table></div>
+  </div>
+</div><div class="basevariable">
+  
+  
+  <a name="fiftyone.utils.geojson.logger">
+    
+  </a>
+  <a name="logger">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">logger</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L23">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#logger" title="fiftyone.utils.geojson.logger">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._ensure_type">
+    
+  </a>
+  <a name="_ensure_type">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ensure_type</span><span class="function-signature">(d, type_)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L757">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_ensure_type" title="fiftyone.utils.geojson._ensure_type">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._make_geometry">
+    
+  </a>
+  <a name="_make_geometry">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_geometry</span><span class="function-signature">(type_, coordinates)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L728">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_make_geometry" title="fiftyone.utils.geojson._make_geometry">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._parse_geometries">
+    
+  </a>
+  <a name="_parse_geometries">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_geometries</span><span class="function-signature">(geometries)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L732">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_geometries" title="fiftyone.utils.geojson._parse_geometries">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._to_geo_collection">
+    
+  </a>
+  <a name="_to_geo_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_geo_collection</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L698">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_geo_collection" title="fiftyone.utils.geojson._to_geo_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._to_geo_primitive">
+    
+  </a>
+  <a name="_to_geo_primitive">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_geo_primitive</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L685">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_geo_primitive" title="fiftyone.utils.geojson._to_geo_primitive">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="fiftyone.utils.geojson._to_multi_geo_collection">
+    
+  </a>
+  <a name="_to_multi_geo_collection">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_to_multi_geo_collection</span><span class="function-signature">(label)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/geojson.py#L713">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_to_multi_geo_collection" title="fiftyone.utils.geojson._to_multi_geo_collection">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

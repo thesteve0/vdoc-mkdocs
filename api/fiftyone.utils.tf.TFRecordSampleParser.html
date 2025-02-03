@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.utils.tf.TFRecordSampleParser</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.utils.tf.TFRecordSampleParser.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.utils.tf.TFRecordSampleParser.html" class="internal-link" title="This class"><wbr></wbr>TFRecord<wbr></wbr>Sample<wbr></wbr>Parser</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#__init__" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.__init__">__init__</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_sample" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.clear_sample">clear<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_image" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.get_image">get<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_label" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.get_label">get<wbr></wbr>_label</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_features" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_features">_parse<wbr></wbr>_features</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_image" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_image">_parse<wbr></wbr>_image</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_parse_label" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_label">_parse<wbr></wbr>_label</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_image_metadata" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image_metadata">get<wbr></wbr>_image<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_image_path" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image_path">get<wbr></wbr>_image<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.SampleParser.html#with_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser.with_sample">with<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#force_rgb" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.force_rgb">force<wbr></wbr>_rgb</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_FEATURES" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._FEATURES">_FEATURES</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_channels" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._channels">_channels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_current_features_cache" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._current_features_cache">_current<wbr></wbr>_features<wbr></wbr>_cache</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_current_features" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._current_features">_current<wbr></wbr>_features</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#has_image_metadata" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_metadata">has<wbr></wbr>_image<wbr></wbr>_metadata</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#has_image_path" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_path">has<wbr></wbr>_image<wbr></wbr>_path</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#label_cls" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.label_cls">label<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.SampleParser.html#current_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser.current_sample">current<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.data.parsers.SampleParser.html#_current_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser._current_sample">_current<wbr></wbr>_sample</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.utils.tf.html" class="internal-link" title="The parent of this class">tf</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFExampleGenerator.html" class="internal-link" title="fiftyone.utils.tf.TFExampleGenerator"><wbr></wbr>TFExample<wbr></wbr>Generator</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFImageClassificationDatasetExporter.html" class="internal-link" title="fiftyone.utils.tf.TFImageClassificationDatasetExporter"><wbr></wbr>TFImage<wbr></wbr>Classification<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFImageClassificationDatasetImporter.html" class="internal-link" title="fiftyone.utils.tf.TFImageClassificationDatasetImporter"><wbr></wbr>TFImage<wbr></wbr>Classification<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFImageClassificationExampleGenerator.html" class="internal-link" title="fiftyone.utils.tf.TFImageClassificationExampleGenerator"><wbr></wbr>TFImage<wbr></wbr>Classification<wbr></wbr>Example<wbr></wbr>Generator</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link" title="fiftyone.utils.tf.TFImageClassificationSampleParser"><wbr></wbr>TFImage<wbr></wbr>Classification<wbr></wbr>Sample<wbr></wbr>Parser</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFObjectDetectionDatasetExporter.html" class="internal-link" title="fiftyone.utils.tf.TFObjectDetectionDatasetExporter"><wbr></wbr>TFObject<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFObjectDetectionDatasetImporter.html" class="internal-link" title="fiftyone.utils.tf.TFObjectDetectionDatasetImporter"><wbr></wbr>TFObject<wbr></wbr>Detection<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFObjectDetectionExampleGenerator.html" class="internal-link" title="fiftyone.utils.tf.TFObjectDetectionExampleGenerator"><wbr></wbr>TFObject<wbr></wbr>Detection<wbr></wbr>Example<wbr></wbr>Generator</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link" title="fiftyone.utils.tf.TFObjectDetectionSampleParser"><wbr></wbr>TFObject<wbr></wbr>Detection<wbr></wbr>Sample<wbr></wbr>Parser</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFRecordSampleParser.html" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser"><wbr></wbr>TFRecord<wbr></wbr>Sample<wbr></wbr>Parser</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFRecordsDatasetExporter.html" class="internal-link" title="fiftyone.utils.tf.TFRecordsDatasetExporter"><wbr></wbr>TFRecords<wbr></wbr>Dataset<wbr></wbr>Exporter</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFRecordsLabeledImageDatasetImporter.html" class="internal-link" title="fiftyone.utils.tf.TFRecordsLabeledImageDatasetImporter"><wbr></wbr>TFRecords<wbr></wbr>Labeled<wbr></wbr>Image<wbr></wbr>Dataset<wbr></wbr>Importer</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.TFRecordsWriter.html" class="internal-link" title="fiftyone.utils.tf.TFRecordsWriter"><wbr></wbr>TFRecords<wbr></wbr>Writer</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_image_classification_dir_tree" class="internal-link" title="fiftyone.utils.tf.from_image_classification_dir_tree">from<wbr></wbr>_image<wbr></wbr>_classification<wbr></wbr>_dir<wbr></wbr>_tree</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_image_paths_and_labels" class="internal-link" title="fiftyone.utils.tf.from_image_paths_and_labels">from<wbr></wbr>_image<wbr></wbr>_paths<wbr></wbr>_and<wbr></wbr>_labels</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_images" class="internal-link" title="fiftyone.utils.tf.from_images">from<wbr></wbr>_images</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_images_dir" class="internal-link" title="fiftyone.utils.tf.from_images_dir">from<wbr></wbr>_images<wbr></wbr>_dir</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_images_patt" class="internal-link" title="fiftyone.utils.tf.from_images_patt">from<wbr></wbr>_images<wbr></wbr>_patt</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#from_tf_records" class="internal-link" title="fiftyone.utils.tf.from_tf_records">from<wbr></wbr>_tf<wbr></wbr>_records</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#write_tf_records" class="internal-link" title="fiftyone.utils.tf.write_tf_records">write<wbr></wbr>_tf<wbr></wbr>_records</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_bytes_feature" class="internal-link" title="fiftyone.utils.tf._bytes_feature">_bytes<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_bytes_list_feature" class="internal-link" title="fiftyone.utils.tf._bytes_list_feature">_bytes<wbr></wbr>_list<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_float_feature" class="internal-link" title="fiftyone.utils.tf._float_feature">_float<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_float_list_feature" class="internal-link" title="fiftyone.utils.tf._float_list_feature">_float<wbr></wbr>_list<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_get_classes_for_detections" class="internal-link" title="fiftyone.utils.tf._get_classes_for_detections">_get<wbr></wbr>_classes<wbr></wbr>_for<wbr></wbr>_detections</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_int64_feature" class="internal-link" title="fiftyone.utils.tf._int64_feature">_int64<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_int64_list_feature" class="internal-link" title="fiftyone.utils.tf._int64_list_feature">_int64<wbr></wbr>_list<wbr></wbr>_feature</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_parse_image_tf" class="internal-link" title="fiftyone.utils.tf._parse_image_tf">_parse<wbr></wbr>_image<wbr></wbr>_tf</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#_to_labels_map_rev" class="internal-link" title="fiftyone.utils.tf._to_labels_map_rev">_to<wbr></wbr>_labels<wbr></wbr>_map<wbr></wbr>_rev</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.utils.tf.html#logger" class="internal-link" title="fiftyone.utils.tf.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.utils.html" class="internal-link" title="fiftyone.utils">utils</a></code><wbr></wbr>.<code><a href="fiftyone.utils.tf.html" class="internal-link" title="fiftyone.utils.tf">tf</a></code><wbr></wbr>.<code><a href="fiftyone.utils.tf.TFRecordSampleParser.html" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser">TFRecordSampleParser</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">TFRecordSampleParser</span>(<a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser">foud.LabeledImageSampleParser</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L283" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link">fiftyone.utils.tf.TFImageClassificationSampleParser</a></code>, <code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link">fiftyone.utils.tf.TFObjectDetectionSampleParser</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.__init__">TFRecordSampleParser(force_rgb)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.utils.tf.TFRecordSampleParser">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Base class for sample parsers that ingest <tt class="rst-docutils rst-literal">tf.train.Example</tt> protos
+containing labeled images.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">force<wbr></wbr>_rgb</span></td><td class="fieldArgDesc">whether to force convert all images to RGB</td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id2200">
+  
+  
+  <tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#__init__" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#clear_sample" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.clear_sample">clear<wbr></wbr>_sample</a></code></td>
+    <td>Clears the current sample.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_image" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.get_image">get<wbr></wbr>_image</a></code></td>
+    <td>Returns the image from the current sample.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_label" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.get_label">get<wbr></wbr>_label</a></code></td>
+    <td>Returns the label for the current sample.</td>
+  </tr><tr class="instancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#force_rgb" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser.force_rgb">force<wbr></wbr>_rgb</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_features" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_features">_parse<wbr></wbr>_features</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_image" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_image">_parse<wbr></wbr>_image</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_parse_label" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._parse_label">_parse<wbr></wbr>_label</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_FEATURES" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._FEATURES">_FEATURES</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_channels" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._channels">_channels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_current_features_cache" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._current_features_cache">_current<wbr></wbr>_features<wbr></wbr>_cache</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="property private">
+    
+    <td>Property</td>
+    <td><code><a href="#_current_features" class="internal-link" title="fiftyone.utils.tf.TFRecordSampleParser._current_features">_current<wbr></wbr>_features</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser">LabeledImageSampleParser</a></code>:
+            </p>
+            <table class="children sortable" id="id2201">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_image_metadata" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image_metadata">get<wbr></wbr>_image<wbr></wbr>_metadata</a></code></td>
+    <td>Returns the image metadata for the current sample.</td>
+  </tr><tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_image_path" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image_path">get<wbr></wbr>_image<wbr></wbr>_path</a></code></td>
+    <td>Returns the image path for the current sample.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#has_image_metadata" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_metadata">has<wbr></wbr>_image<wbr></wbr>_metadata</a></code></td>
+    <td>Whether this parser produces <code><a href="fiftyone.core.metadata.ImageMetadata.html" class="internal-link">fiftyone.core.metadata.ImageMetadata</a></code> instances for samples that it parses.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#has_image_path" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.has_image_path">has<wbr></wbr>_image<wbr></wbr>_path</a></code></td>
+    <td>Whether this parser produces paths to images on disk for samples that it parses.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#label_cls" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser.label_cls">label<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> class(es) returned by this parser.</td>
+  </tr>
+</table>
+            
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.utils.data.parsers.SampleParser.html" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser">SampleParser</a></code> (via <code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html" class="internal-link" title="fiftyone.utils.data.parsers.LabeledImageSampleParser">LabeledImageSampleParser</a></code>):
+            </p>
+            <table class="children sortable" id="id2202">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.utils.data.parsers.SampleParser.html#with_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser.with_sample">with<wbr></wbr>_sample</a></code></td>
+    <td>Sets the current sample so that subsequent calls to methods of this parser will return information from the given sample.</td>
+  </tr><tr class="baseproperty">
+    
+    <td>Property</td>
+    <td><code><a href="fiftyone.utils.data.parsers.SampleParser.html#current_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser.current_sample">current<wbr></wbr>_sample</a></code></td>
+    <td>The current sample.</td>
+  </tr><tr class="baseinstancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.utils.data.parsers.SampleParser.html#_current_sample" class="internal-link" title="fiftyone.utils.data.parsers.SampleParser._current_sample">_current<wbr></wbr>_sample</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser.__init__">
+    
+  </a>
+  <a name="__init__">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">__init__</span><span class="function-signature">(self, force_rgb=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L294">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#__init__" title="fiftyone.utils.tf.TFRecordSampleParser.__init__">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.parsers.SampleParser.html#__init__" class="internal-link">fiftyone.utils.data.parsers.SampleParser.__init__</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser.clear_sample">
+    
+  </a>
+  <a name="clear_sample">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear_sample</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L307">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#clear_sample" title="fiftyone.utils.tf.TFRecordSampleParser.clear_sample">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.parsers.SampleParser.html#clear_sample" class="internal-link">fiftyone.utils.data.parsers.SampleParser.clear_sample</a></code></div>
+    <div><p>Clears the current sample.</p>
+<p>Also clears any cached sample information stored by the parser.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser.get_image">
+    
+  </a>
+  <a name="get_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_image</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L301">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_image" title="fiftyone.utils.tf.TFRecordSampleParser.get_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_image" class="internal-link">fiftyone.utils.data.parsers.LabeledImageSampleParser.get_image</a></code></div>
+    <div><p>Returns the image from the current sample.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a numpy image</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser.get_label">
+    
+  </a>
+  <a name="get_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_label</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L304">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_label" title="fiftyone.utils.tf.TFRecordSampleParser.get_label">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overrides <code><a href="fiftyone.utils.data.parsers.LabeledImageSampleParser.html#get_label" class="internal-link">fiftyone.utils.data.parsers.LabeledImageSampleParser.get_label</a></code></div>
+    <div><p>Returns the label for the current sample.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code> instance, or a dictionary
+mapping field names to <code><a href="fiftyone.core.labels.Label.html" class="internal-link">fiftyone.core.labels.Label</a></code>
+instances, or <tt class="rst-docutils rst-literal">None</tt> if the sample is unlabeled</td></tr></table></div>
+  </div>
+</div><div class="baseinstancevariable">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser.force_rgb">
+    
+  </a>
+  <a name="force_rgb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">force_rgb</span>: <code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L296">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#force_rgb" title="fiftyone.utils.tf.TFRecordSampleParser.force_rgb">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link">fiftyone.utils.tf.TFImageClassificationSampleParser</a></code>, <code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link">fiftyone.utils.tf.TFObjectDetectionSampleParser</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._parse_features">
+    
+  </a>
+  <a name="_parse_features">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_features</span><span class="function-signature">(self, sample)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L320">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_features" title="fiftyone.utils.tf.TFRecordSampleParser._parse_features">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._parse_image">
+    
+  </a>
+  <a name="_parse_image">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_image</span><span class="function-signature">(self, features)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L323">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_image" title="fiftyone.utils.tf.TFRecordSampleParser._parse_image">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link">fiftyone.utils.tf.TFImageClassificationSampleParser</a></code>, <code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link">fiftyone.utils.tf.TFObjectDetectionSampleParser</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._parse_label">
+    
+  </a>
+  <a name="_parse_label">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_parse_label</span><span class="function-signature">(self, features)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L326">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_parse_label" title="fiftyone.utils.tf.TFRecordSampleParser._parse_label">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link">fiftyone.utils.tf.TFImageClassificationSampleParser</a></code>, <code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link">fiftyone.utils.tf.TFObjectDetectionSampleParser</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._FEATURES">
+    
+  </a>
+  <a name="_FEATURES">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_FEATURES</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L292">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_FEATURES" title="fiftyone.utils.tf.TFRecordSampleParser._FEATURES">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.tf.TFImageClassificationSampleParser.html" class="internal-link">fiftyone.utils.tf.TFImageClassificationSampleParser</a></code>, <code><a href="fiftyone.utils.tf.TFObjectDetectionSampleParser.html" class="internal-link">fiftyone.utils.tf.TFObjectDetectionSampleParser</a></code></div>
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>{}</code></pre></td></tr></table>
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._channels">
+    
+  </a>
+  <a name="_channels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_channels</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L299">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_channels" title="fiftyone.utils.tf.TFRecordSampleParser._channels">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._current_features_cache">
+    
+  </a>
+  <a name="_current_features_cache">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_current_features_cache</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L298">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_current_features_cache" title="fiftyone.utils.tf.TFRecordSampleParser._current_features_cache">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseproperty private">
+  
+  
+  <a name="fiftyone.utils.tf.TFRecordSampleParser._current_features">
+    
+  </a>
+  <a name="_current_features">
+    
+  </a>
+  <div class="functionHeader">
+    @<a href="https://docs.python.org/3/library/functions.html#property" class="intersphinx-link">property</a><br />
+    <span class="py-defname">_current_features</span> =
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/utils/tf.py#L311">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_current_features" title="fiftyone.utils.tf.TFRecordSampleParser._current_features">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>

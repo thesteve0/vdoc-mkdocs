@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>fiftyone.core.runs.BaseRun</title>
+    <meta name="generator" content="pydoctor 24.11.2"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+    <link rel="canonical" href="https://docs.voxel51.com/api/fiftyone.core.runs.BaseRun.html" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a> <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="apidocs-help-button" title="Help" href="apidocs-help.html"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 10px;">
+          <p>For more information on the search, visit the <a href="apidocs-help.html#rst-search">help page</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Class</span>
+        <code class="thisobject"><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="This class"><wbr></wbr>Base<wbr></wbr>Run</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#run_info_cls" class="internal-link" title="fiftyone.core.runs.BaseRun.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">cleanup</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_fields" class="internal-link" title="fiftyone.core.runs.BaseRun.get_fields">get<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rename" class="internal-link" title="fiftyone.core.runs.BaseRun.rename">rename</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_patch_function" class="internal-link" title="fiftyone.core.runs.BaseRun._patch_function">_patch<wbr></wbr>_function</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_results_cache_field" class="internal-link" title="fiftyone.core.runs.BaseRun._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_run_str" class="internal-link" title="fiftyone.core.runs.BaseRun._run_str">_run<wbr></wbr>_str</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_runs_field" class="internal-link" title="fiftyone.core.runs.BaseRun._runs_field">_runs<wbr></wbr>_field</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_run">_validate<wbr></wbr>_run</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        <div class="childrenKindTitle">Inherited Methods</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">__init__</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Inherited Attributes</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code><a href="fiftyone.core.runs.html" class="internal-link" title="The parent of this class">runs</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        <div class="childrenKindTitle">Classes</div>
+        <ul>
+    
+    <li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun"><wbr></wbr>Base<wbr></wbr>Run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig"><wbr></wbr>Base<wbr></wbr>Run<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo"><wbr></wbr>Base<wbr></wbr>Run<wbr></wbr>Info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults"><wbr></wbr>Base<wbr></wbr>Run<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.Run.html" class="internal-link" title="fiftyone.core.runs.Run"><wbr></wbr>Run</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.RunConfig.html" class="internal-link" title="fiftyone.core.runs.RunConfig"><wbr></wbr>Run<wbr></wbr>Config</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.RunInfo.html" class="internal-link" title="fiftyone.core.runs.RunInfo"><wbr></wbr>Run<wbr></wbr>Info</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.RunResults.html" class="internal-link" title="fiftyone.core.runs.RunResults"><wbr></wbr>Run<wbr></wbr>Results</a></code>
+            </div>
+        
+
+    </li>
+</ul>
+
+        
+         
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="fiftyone.core.runs.html#logger" class="internal-link" title="fiftyone.core.runs.logger">logger</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="class"><code><code><a href="index.html" class="internal-link">fiftyone</a></code><wbr></wbr>.<code><a href="fiftyone.core.html" class="internal-link" title="fiftyone.core">core</a></code><wbr></wbr>.<code><a href="fiftyone.core.runs.html" class="internal-link" title="fiftyone.core.runs">runs</a></code><wbr></wbr>.<code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link" title="fiftyone.core.runs.BaseRun">BaseRun</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          class documentation
+        </div>
+
+        <div class="extrasDocstring">
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">BaseRun</span>(<a href="fiftyone.core.config.Configurable.html" class="internal-link" title="fiftyone.core.config.Configurable">Configurable</a>): <a href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L205" class="sourceLink">(source)</a></code></p><p>Known subclasses: <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></p><p>Constructor: <code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">BaseRun(config)</a></code></p>
+          <p><a href="classIndex.html#fiftyone.core.runs.BaseRun">View In Hierarchy</a></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>Base class for methods that can be run on a dataset.</p>
+<p>Subclasses will typically declare an interface method that handles
+performing the actual run. The function of this base class is to declare
+how to validate that a run is valid and how to cleanup after a run.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code></td></tr></table></div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id572">
+  
+  
+  <tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#delete_run" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_run">delete<wbr></wbr>_run</a></code></td>
+    <td>Deletes the results associated with the given run key from the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#delete_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.delete_runs">delete<wbr></wbr>_runs</a></code></td>
+    <td>Deletes all runs from the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#get_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.get_run_info">get<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Gets the <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> for the given key on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#has_cached_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.has_cached_run_results">has<wbr></wbr>_cached<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Determines whether <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key are cached on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#list_runs" class="internal-link" title="fiftyone.core.runs.BaseRun.list_runs">list<wbr></wbr>_runs</a></code></td>
+    <td>Returns the list of run keys on the given collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#load_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_results">load<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#load_run_view" class="internal-link" title="fiftyone.core.runs.BaseRun.load_run_view">load<wbr></wbr>_run<wbr></wbr>_view</a></code></td>
+    <td>Loads the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> on which the specified run was performed.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#run_info_cls" class="internal-link" title="fiftyone.core.runs.BaseRun.run_info_cls">run<wbr></wbr>_info<wbr></wbr>_cls</a></code></td>
+    <td>The <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> class associated with this class.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#save_run_info" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_info">save<wbr></wbr>_run<wbr></wbr>_info</a></code></td>
+    <td>Saves the run information on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#save_run_results" class="internal-link" title="fiftyone.core.runs.BaseRun.save_run_results">save<wbr></wbr>_run<wbr></wbr>_results</a></code></td>
+    <td>Saves the run results on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#update_run_config" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_config">update<wbr></wbr>_run<wbr></wbr>_config</a></code></td>
+    <td>Updates the <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for the given run on the collection.</td>
+  </tr><tr class="classmethod">
+    
+    <td>Class Method</td>
+    <td><code><a href="#update_run_key" class="internal-link" title="fiftyone.core.runs.BaseRun.update_run_key">update<wbr></wbr>_run<wbr></wbr>_key</a></code></td>
+    <td>Replaces the key for the given run with a new key.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">cleanup</a></code></td>
+    <td>Cleans up the results of the run with the given key from the collection.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ensure_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_requirements">ensure<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to execute this run are installed.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#ensure_usage_requirements" class="internal-link" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">ensure<wbr></wbr>_usage<wbr></wbr>_requirements</a></code></td>
+    <td>Ensures that any necessary packages to use existing results for this run are installed.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#get_fields" class="internal-link" title="fiftyone.core.runs.BaseRun.get_fields">get<wbr></wbr>_fields</a></code></td>
+    <td>Gets the fields that were involved in the given run.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#register_run" class="internal-link" title="fiftyone.core.runs.BaseRun.register_run">register<wbr></wbr>_run</a></code></td>
+    <td>Registers a run of this method under the given key on the given collection.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#rename" class="internal-link" title="fiftyone.core.runs.BaseRun.rename">rename</a></code></td>
+    <td>Performs any necessary operations required to rename this run's key.</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun.validate_run">validate<wbr></wbr>_run</a></code></td>
+    <td>Validates that the collection can accept this run.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_run_doc" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_doc">_get<wbr></wbr>_run<wbr></wbr>_doc</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_run_docs" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_docs">_get<wbr></wbr>_run<wbr></wbr>_docs</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_get_run_fields" class="internal-link" title="fiftyone.core.runs.BaseRun._get_run_fields">_get<wbr></wbr>_run<wbr></wbr>_fields</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_patch_function" class="internal-link" title="fiftyone.core.runs.BaseRun._patch_function">_patch<wbr></wbr>_function</a></code></td>
+    <td>A function that can patch any ReferenceField issues with a dataset's runs.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_results_cache_field" class="internal-link" title="fiftyone.core.runs.BaseRun._results_cache_field">_results<wbr></wbr>_cache<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> field that stores the results cache for these runs.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_run_str" class="internal-link" title="fiftyone.core.runs.BaseRun._run_str">_run<wbr></wbr>_str</a></code></td>
+    <td>A string to use when referring to these runs in log messages.</td>
+  </tr><tr class="classmethod private">
+    
+    <td>Class Method</td>
+    <td><code><a href="#_runs_field" class="internal-link" title="fiftyone.core.runs.BaseRun._runs_field">_runs<wbr></wbr>_field</a></code></td>
+    <td>The <code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link">fiftyone.core.odm.dataset.DatasetDocument</a></code> field in which these runs are stored.</td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_validate_fields_match" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_fields_match">_validate<wbr></wbr>_fields<wbr></wbr>_match</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method private">
+    
+    <td>Method</td>
+    <td><code><a href="#_validate_run" class="internal-link" title="fiftyone.core.runs.BaseRun._validate_run">_validate<wbr></wbr>_run</a></code></td>
+    <td>Subclass-specific validation when a run with the given key already exists.</td>
+  </tr>
+</table>
+          
+            <p class="inheritedFrom">
+              Inherited from <code><a href="fiftyone.core.config.Configurable.html" class="internal-link" title="fiftyone.core.config.Configurable">Configurable</a></code>:
+            </p>
+            <table class="children sortable" id="id573">
+  
+  
+  <tr class="basemethod">
+    
+    <td>Method</td>
+    <td><code><a href="fiftyone.core.config.Configurable.html#__init__" class="internal-link" title="fiftyone.core.config.Configurable.__init__">__init__</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="baseinstancevariable">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="fiftyone.core.config.Configurable.html#config" class="internal-link" title="fiftyone.core.config.Configurable.config">config</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+            
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.delete_run">
+    
+  </a>
+  <a name="delete_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">delete_run</span><span class="function-signature">(cls, samples, key, cleanup=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L797">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_run" title="fiftyone.core.runs.BaseRun.delete_run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes the results associated with the given run key from the
+collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to execute the run's
+<code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">BaseRun.cleanup</a></code> method</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.delete_runs">
+    
+  </a>
+  <a name="delete_runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">delete_runs</span><span class="function-signature">(cls, samples, cleanup=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L847">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#delete_runs" title="fiftyone.core.runs.BaseRun.delete_runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Deletes all runs from the collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to execute the run's
+<code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">BaseRun.cleanup</a></code> methods</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.get_run_info">
+    
+  </a>
+  <a name="get_run_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">get_run_info</span><span class="function-signature">(cls, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L520">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_run_info" title="fiftyone.core.runs.BaseRun.get_run_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Gets the <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> for the given key on the collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.has_cached_run_results">
+    
+  </a>
+  <a name="has_cached_run_results">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">has_cached_run_results</span><span class="function-signature">(cls, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L732">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#has_cached_run_results" title="fiftyone.core.runs.BaseRun.has_cached_run_results">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Determines whether <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key are
+cached on the collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">True/False</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.list_runs">
+    
+  </a>
+  <a name="list_runs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">list_runs</span><span class="function-signature">(cls, samples, type=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, method=<a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L409">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#list_runs" title="fiftyone.core.runs.BaseRun.list_runs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Returns the list of run keys on the given collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">type:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc"><p>a specific run type to match, which can be:</p>
+<ul class="rst-simple">
+<li>a string <code><a href="fiftyone.core.runs.BaseRunConfig.html#type" class="internal-link">fiftyone.core.runs.BaseRunConfig.type</a></code></li>
+<li>a <code><a href="fiftyone.core.runs.BaseRun.html" class="internal-link">fiftyone.core.runs.BaseRun</a></code> class or its
+fully-qualified class name string</li>
+</ul>
+</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">method:</span><code><a href="https://docs.python.org/3/library/constants.html#None" class="intersphinx-link">None</a></code></td><td class="fieldArgDesc">a specific
+<code><a href="fiftyone.core.runs.BaseRunConfig.html#method" class="internal-link">fiftyone.core.runs.BaseRunConfig.method</a></code> string to match</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">optional config parameters to match</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of run keys</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.load_run_results">
+    
+  </a>
+  <a name="load_run_results">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">load_run_results</span><span class="function-signature">(cls, samples, key, cache=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, load_view=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, **kwargs)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L659">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_run_results" title="fiftyone.core.runs.BaseRun.load_run_results">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads the <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code> for the given key on the
+collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cache:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to cache the results on the collection</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">load<wbr></wbr>_view:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to load the run view in the results
+(True) or the full dataset (False)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">**kwargs</span></td><td class="fieldArgDesc">keyword arguments for the run's
+<code><a href="fiftyone.core.runs.BaseRunConfig.html#load_credentials" class="internal-link" title="fiftyone.core.runs.BaseRunConfig.load_credentials">BaseRunConfig.load_credentials</a></code> method</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code>, or None if the run did not save results</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.load_run_view">
+    
+  </a>
+  <a name="load_run_view">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">load_run_view</span><span class="function-signature">(cls, samples, key, select_fields=<a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L748">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#load_run_view" title="fiftyone.core.runs.BaseRun.load_run_view">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Loads the <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code> on which the
+specified run was performed.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">select<wbr></wbr>_fields:</span><code><a href="https://docs.python.org/3/library/constants.html#False" class="intersphinx-link">False</a></code></td><td class="fieldArgDesc">whether to exclude fields involved in other
+runs of the same type</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a <code><a href="fiftyone.core.view.DatasetView.html" class="internal-link">fiftyone.core.view.DatasetView</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.run_info_cls">
+    
+  </a>
+  <a name="run_info_cls">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">run_info_cls</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L216">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#run_info_cls" title="fiftyone.core.runs.BaseRun.run_info_cls">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code> class associated with this class.</p></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.save_run_info">
+    
+  </a>
+  <a name="save_run_info">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">save_run_info</span><span class="function-signature">(cls, samples, run_info, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, cleanup=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L554">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#save_run_info" title="fiftyone.core.runs.BaseRun.save_run_info">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Saves the run information on the collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">run<wbr></wbr>_info</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to overwrite an existing run with the
+same key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to execute an existing run's
+<code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">BaseRun.cleanup</a></code> method when overwriting it</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.save_run_results">
+    
+  </a>
+  <a name="save_run_results">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">save_run_results</span><span class="function-signature">(cls, samples, key, run_results, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, cache=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L614">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#save_run_results" title="fiftyone.core.runs.BaseRun.save_run_results">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Saves the run results on the collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">run<wbr></wbr>_results</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.runs.BaseRunResults.html" class="internal-link" title="fiftyone.core.runs.BaseRunResults">BaseRunResults</a></code>, or None</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to overwrite an existing result with the
+same key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cache:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to cache the results on the collection</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.update_run_config">
+    
+  </a>
+  <a name="update_run_config">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">update_run_config</span><span class="function-signature">(cls, samples, key, config)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L597">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#update_run_config" title="fiftyone.core.runs.BaseRun.update_run_config">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Updates the <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code> for the given run on the
+collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.runs.BaseRunConfig.html" class="internal-link" title="fiftyone.core.runs.BaseRunConfig">BaseRunConfig</a></code></td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.update_run_key">
+    
+  </a>
+  <a name="update_run_key">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">update_run_key</span><span class="function-signature">(cls, samples, key, new_key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L474">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#update_run_key" title="fiftyone.core.runs.BaseRun.update_run_key">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Replaces the key for the given run with a new key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new<wbr></wbr>_key</span></td><td class="fieldArgDesc">a new run key</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.cleanup">
+    
+  </a>
+  <a name="cleanup">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">cleanup</span><span class="function-signature">(self, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L289">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#cleanup" title="fiftyone.core.runs.BaseRun.cleanup">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionEvaluation.html" class="internal-link">fiftyone.utils.eval.detection.DetectionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.regression.RegressionEvaluation.html" class="internal-link">fiftyone.utils.eval.regression.RegressionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationEvaluation.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationEvaluation</a></code></div>
+    <div><p>Cleans up the results of the run with the given key from the
+collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.ensure_requirements">
+    
+  </a>
+  <a name="ensure_requirements">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_requirements</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L249">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_requirements" title="fiftyone.core.runs.BaseRun.ensure_requirements">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Ensures that any necessary packages to execute this run are
+installed.</p>
+<p>Runs should respect <tt class="rst-docutils rst-literal">fiftyone.config.requirement_error_level</tt> when
+handling errors.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.ensure_usage_requirements">
+    
+  </a>
+  <a name="ensure_usage_requirements">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ensure_usage_requirements</span><span class="function-signature">(self)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L258">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#ensure_usage_requirements" title="fiftyone.core.runs.BaseRun.ensure_usage_requirements">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Ensures that any necessary packages to use existing results for this
+run are installed.</p>
+<p>Runs should respect <tt class="rst-docutils rst-literal">fiftyone.config.requirement_error_level</tt> when
+handling errors.</p>
+</div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.get_fields">
+    
+  </a>
+  <a name="get_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_fields</span><span class="function-signature">(self, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L267">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#get_fields" title="fiftyone.core.runs.BaseRun.get_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.annotations.AnnotationBackend.html" class="internal-link">fiftyone.utils.annotations.AnnotationBackend</a></code>, <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionEvaluation.html" class="internal-link">fiftyone.utils.eval.detection.DetectionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.regression.RegressionEvaluation.html" class="internal-link">fiftyone.utils.eval.regression.RegressionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationEvaluation.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationEvaluation</a></code></div>
+    <div><p>Gets the fields that were involved in the given run.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">a list of fields</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.register_run">
+    
+  </a>
+  <a name="register_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">register_run</span><span class="function-signature">(self, samples, key, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>, cleanup=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L299">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#register_run" title="fiftyone.core.runs.BaseRun.register_run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Registers a run of this method under the given key on the given
+collection.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to allow overwriting an existing run of
+the same type</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">cleanup:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to execute an existing run's
+<code><a href="#cleanup" class="internal-link" title="fiftyone.core.runs.BaseRun.cleanup">BaseRun.cleanup</a></code> method when overwriting it</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.rename">
+    
+  </a>
+  <a name="rename">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rename</span><span class="function-signature">(self, samples, key, new_key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L279">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#rename" title="fiftyone.core.runs.BaseRun.rename">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionEvaluation.html" class="internal-link">fiftyone.utils.eval.detection.DetectionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.regression.RegressionEvaluation.html" class="internal-link">fiftyone.utils.eval.regression.RegressionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationEvaluation.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationEvaluation</a></code></div>
+    <div><p>Performs any necessary operations required to rename this run's key.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">new<wbr></wbr>_key</span></td><td class="fieldArgDesc">a new run key</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun.validate_run">
+    
+  </a>
+  <a name="validate_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">validate_run</span><span class="function-signature">(self, samples, key, overwrite=<a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a>)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L325">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#validate_run" title="fiftyone.core.runs.BaseRun.validate_run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>Validates that the collection can accept this run.</p>
+<p>The run may be invalid if, for example, a run of a different type has
+already been run under the same key and thus overwriting it would cause
+ambiguity on how to cleanup the results.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">overwrite:</span><code><a href="https://docs.python.org/3/library/constants.html#True" class="intersphinx-link">True</a></code></td><td class="fieldArgDesc">whether to allow overwriting an existing run of
+the same type</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError" class="intersphinx-link">ValueError</a></code></td><td>if the run is invalid</td></tr></table></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._get_run_doc">
+    
+  </a>
+  <a name="_get_run_doc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_run_doc</span><span class="function-signature">(cls, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L877">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_run_doc" title="fiftyone.core.runs.BaseRun._get_run_doc">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._get_run_docs">
+    
+  </a>
+  <a name="_get_run_docs">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_run_docs</span><span class="function-signature">(cls, samples)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L859">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_run_docs" title="fiftyone.core.runs.BaseRun._get_run_docs">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._get_run_fields">
+    
+  </a>
+  <a name="_get_run_fields">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_get_run_fields</span><span class="function-signature">(cls, samples, key)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L888">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_get_run_fields" title="fiftyone.core.runs.BaseRun._get_run_fields">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._patch_function">
+    
+  </a>
+  <a name="_patch_function">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_patch_function</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L233">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_patch_function" title="fiftyone.core.runs.BaseRun._patch_function">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></div>
+    <div><p>A function that can patch any ReferenceField issues with a dataset's
+runs.</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._results_cache_field">
+    
+  </a>
+  <a name="_results_cache_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_results_cache_field</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L240">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_results_cache_field" title="fiftyone.core.runs.BaseRun._results_cache_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.dataset.Dataset.html" class="internal-link">fiftyone.core.dataset.Dataset</a></code> field that stores the
+results cache for these runs.</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._run_str">
+    
+  </a>
+  <a name="_run_str">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_run_str</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L228">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_run_str" title="fiftyone.core.runs.BaseRun._run_str">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></div>
+    <div><p>A string to use when referring to these runs in log messages.</p></div>
+  </div>
+</div><div class="baseclassmethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._runs_field">
+    
+  </a>
+  <a name="_runs_field">
+    
+  </a>
+  <div class="functionHeader">
+    
+    @<a href="https://docs.python.org/3/library/functions.html#classmethod" class="intersphinx-link">classmethod</a><br />
+    <span class="py-keyword">def</span> <span class="py-defname">_runs_field</span><span class="function-signature">(cls)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L221">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_runs_field" title="fiftyone.core.runs.BaseRun._runs_field">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.core.annotation.AnnotationMethod.html" class="internal-link">fiftyone.core.annotation.AnnotationMethod</a></code>, <code><a href="fiftyone.core.brain.BrainMethod.html" class="internal-link">fiftyone.core.brain.BrainMethod</a></code>, <code><a href="fiftyone.core.evaluation.EvaluationMethod.html" class="internal-link">fiftyone.core.evaluation.EvaluationMethod</a></code>, <code><a href="fiftyone.core.runs.Run.html" class="internal-link">fiftyone.core.runs.Run</a></code></div>
+    <div><p>The <code><a href="fiftyone.core.odm.dataset.DatasetDocument.html" class="internal-link">fiftyone.core.odm.dataset.DatasetDocument</a></code> field in
+which these runs are stored.</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._validate_fields_match">
+    
+  </a>
+  <a name="_validate_fields_match">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate_fields_match</span><span class="function-signature">(self, key, field_name, existing_info)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L391">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate_fields_match" title="fiftyone.core.runs.BaseRun._validate_fields_match">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basemethod private">
+  
+  
+  <a name="fiftyone.core.runs.BaseRun._validate_run">
+    
+  </a>
+  <a name="_validate_run">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_validate_run</span><span class="function-signature">(self, samples, key, existing_info)</span>:
+    <a class="sourceLink" href="https://github.com/voxel51/fiftyone/tree/v1.3.0/fiftyone/core/runs.py#L377">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_validate_run" title="fiftyone.core.runs.BaseRun._validate_run">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    <div class="interfaceinfo">overridden in <code><a href="fiftyone.utils.eval.classification.ClassificationEvaluation.html" class="internal-link">fiftyone.utils.eval.classification.ClassificationEvaluation</a></code>, <code><a href="fiftyone.utils.eval.detection.DetectionEvaluation.html" class="internal-link">fiftyone.utils.eval.detection.DetectionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.regression.RegressionEvaluation.html" class="internal-link">fiftyone.utils.eval.regression.RegressionEvaluation</a></code>, <code><a href="fiftyone.utils.eval.segmentation.SegmentationEvaluation.html" class="internal-link">fiftyone.utils.eval.segmentation.SegmentationEvaluation</a></code></div>
+    <div><p>Subclass-specific validation when a run with the given key already
+exists.</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">samples</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.collections.SampleCollection.html" class="internal-link">fiftyone.core.collections.SampleCollection</a></code></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">key</span></td><td class="fieldArgDesc">a run key</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">existing<wbr></wbr>_info</span></td><td class="fieldArgDesc">a <code><a href="fiftyone.core.runs.BaseRunInfo.html" class="internal-link" title="fiftyone.core.runs.BaseRunInfo">BaseRunInfo</a></code></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/exceptions.html#ValueError" class="intersphinx-link">ValueError</a></code></td><td>if the run is invalid</td></tr></table></div>
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container-fluid">
+    <a href="index.html">API Documentation</a> for <a href="https://github.com/voxel51/" class="projecthome">FiftyOne</a>,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    24.11.2 at 2025-02-01 10:22:11.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
