@@ -9,9 +9,6 @@ To install and edit the doc:
 5.  PARTY!
 
 
-To build the entire docs site you will also need Yarn installed (we need it for the TypeScript build)
-
-
 To do:
 
 
