@@ -1,0 +1,168 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>FiftyOne TypeScript API</title><meta name="description" content="Documentation for FiftyOne TypeScript API"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base=".">
+<div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<div class="field">
+<div id="tsd-toolbar-links"></div></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">FiftyOne TypeScript API</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
+<div class="container container-main">
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<h2>FiftyOne TypeScript API</h2></div>
+<div class="tsd-panel tsd-typography">
+<a href="#fiftyone-app" id="fiftyone-app" style="color: inherit; text-decoration: none;">
+  <h1>FiftyOne App</h1>
+</a>
+<p>The home of the
+<a href="https://voxel51.com/docs/fiftyone/user_guide/app.html">FiftyOne App</a>.</p>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p>The following installation steps are a part of the
+<a href="../install.bash">install script</a>.</p>
+<p>First, install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a> and install and set your
+node version to <code>v17.9.0</code> using <code>nvm</code>.</p>
+<pre><code class="language-sh"><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">v17.9.0</span><br/><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">use</span><span class="hl-1"> </span><span class="hl-2">v17.9.0</span>
+</code></pre>
+<p>Then install <code>yarn</code> globally in your node environment with <code>npm</code>:</p>
+<pre><code class="language-shell"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">yarn</span>
+</code></pre>
+<p>Install the app with <code>yarn</code> in this directory:</p>
+<pre><code class="language-shell"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code></pre>
+
+<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+  <h2>Development</h2>
+</a>
+<p>First, start the App client development server with hot reloading by running:</p>
+<pre><code class="language-shell"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">dev</span>
+</code></pre>
+<p>Next, we generally recommend starting the backend server manually so you have
+access to stack traces:</p>
+<pre><code class="language-shell"><span class="hl-0">python</span><span class="hl-1"> </span><span class="hl-2">fiftyone/server/main.py</span>
+</code></pre>
+<p>If you want to run both the app client development server and the backend
+server, try running:</p>
+<pre><code class="language-shell"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">dev:wpy</span>
+</code></pre>
+<p>Either way, now simply launch the App like normal:</p>
+<pre><code class="language-py"><span class="hl-4">import</span><span class="hl-1"> fiftyone </span><span class="hl-4">as</span><span class="hl-1"> fo</span><br/><span class="hl-4">import</span><span class="hl-1"> fiftyone.zoo </span><span class="hl-4">as</span><span class="hl-1"> foz</span><br/><br/><span class="hl-1">dataset = foz.load_zoo_dataset(</span><span class="hl-2">&quot;quickstart&quot;</span><span class="hl-1">)</span><br/><br/><span class="hl-1">session = fo.launch_app(dataset)</span>
+</code></pre>
+
+<a href="#style-guide" id="style-guide" style="color: inherit; text-decoration: none;">
+  <h2>Style Guide</h2>
+</a>
+<p>All App code contributed to FiftyOne must follow our
+<a href="../STYLE_GUIDE.md#app-style-guide">style guide</a>.</p>
+
+<a href="#testing" id="testing" style="color: inherit; text-decoration: none;">
+  <h2>Testing</h2>
+</a>
+<p>All new feature and bug fix pull requests should contain associated unit tests.
+Each subpackage in the monorepo has a <code>./test</code> directory in which each module
+should have a corresponding <code>&lt;module-name&gt;.test.ts</code> module. Tests are
+implemented and run with <a href="https://vitest.dev">Vitest</a>, a testing framework very
+similar to Jest, with the <code>yarn test</code> script. Coverage is monitored in all pull
+requests that modify App source code via
+<a href="https://app.codecov.io/gh/voxel51/fiftyone/">Codecov</a>.</p>
+<p>A recommended approach to local development is to have a running Vitest UI open
+with coverage to watch for failures as you develop. Coverage can be monitored
+for open files in VS Code via the Coverage Gutters extension.</p>
+<pre><code class="language-sh"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">test</span><span class="hl-1"> </span><span class="hl-3">--ui</span><span class="hl-1"> </span><span class="hl-3">--coverage</span>
+</code></pre>
+<p>Generally speaking, new modules and source code should have 100% coverage. If
+you are refactoring or bug fixing older code without tests, please add them.</p>
+
+<a href="#testing-recoil-and-recoil-relay" id="testing-recoil-and-recoil-relay" style="color: inherit; text-decoration: none;">
+  <h3>Testing Recoil and Recoil Relay</h3>
+</a>
+<p>Most Recoil and Recoil Relay selectors and hooks are defined in
+<a href="packages/state"><code>@fiftyone/state</code></a>. This is a primary way in which data and
+state flows through the App.</p>
+
+<a href="#selectors-and-graphql-selectors" id="selectors-and-graphql-selectors" style="color: inherit; text-decoration: none;">
+  <h4>Selectors and GraphQL Selectors</h4>
+</a>
+<p>In order to write unit tests for selectors you must mock <code>recoil</code> (and
+<code>recoil-relay</code> if GraphQL selectors are being tested, or selectors being tested
+depend on GraphQL selectors).</p>
+<p>These unit tests are only for testing a selector&#39;s <code>get</code> and optionally <code>set</code>
+methods, treating theme as pure functions.</p>
+<p>For <code>get</code>, the inputs are the mocked parent values. All parent selectors or
+atoms must have mock values set. The output is the return value.</p>
+<p>For <code>set</code>, the inputs are also the mocked parent values and all parent
+selectors or atoms must have mock values set. The outputs are the set of
+selectors or atoms that were set with the <code>set</code> function. These values can be
+asserted from the mock values store after the function is run.</p>
+<pre><code class="language-ts"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">describe</span><span class="hl-1">, </span><span class="hl-5">expect</span><span class="hl-1">, </span><span class="hl-5">it</span><span class="hl-1">, </span><span class="hl-5">vi</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;vitest&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">vi</span><span class="hl-1">.</span><span class="hl-0">mock</span><span class="hl-1">(</span><span class="hl-2">&quot;recoil&quot;</span><span class="hl-1">);</span><br/><span class="hl-5">vi</span><span class="hl-1">.</span><span class="hl-0">mock</span><span class="hl-1">(</span><span class="hl-2">&quot;recoil-relay&quot;</span><span class="hl-1">);</span><br/><span class="hl-6">// import recoil module(s) for testing after mocking</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">atom</span><span class="hl-1">, </span><span class="hl-5">selectorFamily</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;./recoil&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-7">one</span><span class="hl-1"> = </span><span class="hl-0">atom</span><span class="hl-1">&lt;</span><span class="hl-8">number</span><span class="hl-1">&gt;({</span><br/><span class="hl-1">    </span><span class="hl-5">key:</span><span class="hl-1"> </span><span class="hl-2">&quot;one&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">default:</span><span class="hl-1"> </span><span class="hl-9">1</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-7">two</span><span class="hl-1"> = </span><span class="hl-0">selectorFamily</span><span class="hl-1">&lt;</span><span class="hl-8">number</span><span class="hl-1">, </span><span class="hl-8">number</span><span class="hl-1">&gt;({</span><br/><span class="hl-1">    </span><span class="hl-5">key:</span><span class="hl-1"> </span><span class="hl-2">&quot;two&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-0">get</span><span class="hl-5">:</span><span class="hl-1"> (</span><span class="hl-5">param</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><span class="hl-1"> () </span><span class="hl-3">=&gt;</span><span class="hl-1"> </span><span class="hl-5">param</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-7">exampleSelector</span><span class="hl-1"> = </span><span class="hl-0">selectorFamily</span><span class="hl-1">&lt;</span><span class="hl-8">number</span><span class="hl-1">, </span><span class="hl-8">number</span><span class="hl-1">&gt;({</span><br/><span class="hl-1">    </span><span class="hl-5">key:</span><span class="hl-1"> </span><span class="hl-2">&quot;exampleSelectorFamily&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">get:</span><br/><span class="hl-1">        (</span><span class="hl-5">param</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">        ({ </span><span class="hl-5">get</span><span class="hl-1"> }) </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">            </span><span class="hl-5">param</span><span class="hl-1"> + </span><span class="hl-0">get</span><span class="hl-1">(</span><span class="hl-5">one</span><span class="hl-1">) + </span><span class="hl-0">get</span><span class="hl-1">(</span><span class="hl-0">two</span><span class="hl-1">(</span><span class="hl-5">param</span><span class="hl-1">)),</span><br/><span class="hl-1">    </span><span class="hl-5">set:</span><br/><span class="hl-1">        (</span><span class="hl-5">param</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">        ({ </span><span class="hl-5">set</span><span class="hl-1"> }, </span><span class="hl-5">newValue</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">            </span><span class="hl-0">set</span><span class="hl-1">(</span><span class="hl-5">one</span><span class="hl-1">, </span><span class="hl-5">newValue</span><span class="hl-1">),</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-4">import</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-5">getValue</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">setMockAtoms</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">TestSelector</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">TestSelectorFamily</span><span class="hl-1">,</span><br/><span class="hl-1">} </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;./__mocks__/recoil&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-0">describe</span><span class="hl-1">(</span><span class="hl-2">&quot;my tests&quot;</span><span class="hl-1">, () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-0">test</span><span class="hl-1"> = &lt;</span><span class="hl-8">TestSelectorFamily</span><span class="hl-1">&lt;</span><span class="hl-3">typeof</span><span class="hl-1"> </span><span class="hl-5">exampleSelectorFamily</span><span class="hl-1">&gt;&gt;(</span><br/><span class="hl-1">        (&lt;</span><span class="hl-8">unknown</span><span class="hl-1">&gt;</span><span class="hl-0">exampleSelectorFamily</span><span class="hl-1">(</span><span class="hl-9">1</span><span class="hl-1">))</span><br/><span class="hl-1">    );</span><br/><br/><span class="hl-1">    </span><span class="hl-0">it</span><span class="hl-1">(</span><span class="hl-2">&quot;resolves get correctly&quot;</span><span class="hl-1">, () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">        </span><span class="hl-0">setMockAtoms</span><span class="hl-1">({</span><br/><span class="hl-1">            </span><span class="hl-5">one:</span><span class="hl-1"> </span><span class="hl-9">1</span><span class="hl-1">,</span><br/><span class="hl-1">            </span><span class="hl-0">two</span><span class="hl-5">:</span><span class="hl-1"> (</span><span class="hl-5">param</span><span class="hl-1">) </span><span class="hl-3">=&gt;</span><span class="hl-1"> </span><span class="hl-9">1</span><span class="hl-1">,</span><br/><span class="hl-1">        });</span><br/><span class="hl-1">        </span><span class="hl-0">expect</span><span class="hl-1">(</span><span class="hl-0">test</span><span class="hl-1">()).</span><span class="hl-0">toBe</span><span class="hl-1">(</span><span class="hl-9">3</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><br/><span class="hl-1">    </span><span class="hl-0">it</span><span class="hl-1">(</span><span class="hl-2">&quot;resolves set correctly&quot;</span><span class="hl-1">, () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">        </span><span class="hl-5">test</span><span class="hl-1">.</span><span class="hl-0">set</span><span class="hl-1">(</span><span class="hl-9">2</span><span class="hl-1">);</span><br/><span class="hl-1">        </span><span class="hl-0">expect</span><span class="hl-1">(</span><span class="hl-0">getValue</span><span class="hl-1">(</span><span class="hl-5">one</span><span class="hl-1">)).</span><span class="hl-0">toBe</span><span class="hl-1">(</span><span class="hl-9">2</span><span class="hl-1">);</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">});</span>
+</code></pre>
+
+<a href="#hooks" id="hooks" style="color: inherit; text-decoration: none;">
+  <h4>Hooks</h4>
+</a>
+<p>Hooks can be tested with the
+<a href="https://react-hooks-testing-library.com/">React Hooks Testing Library</a>. These
+follow an integration testing pattern as the full recoil graph must be
+manipulated to test various outcomes.</p>
+<pre><code class="language-ts"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">act</span><span class="hl-1">, </span><span class="hl-5">renderHook</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;@testing-library/react-hooks&quot;</span><span class="hl-1">;</span><br/><span class="hl-4">import</span><span class="hl-1"> </span><span class="hl-5">React</span><span class="hl-1"> </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;react&quot;</span><span class="hl-1">;</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">atom</span><span class="hl-1">, </span><span class="hl-5">RecoilRoot</span><span class="hl-1">, </span><span class="hl-5">useRecoilValue</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;recoil&quot;</span><span class="hl-1">;</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">expect</span><span class="hl-1">, </span><span class="hl-5">test</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&quot;vitest&quot;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-7">value</span><span class="hl-1"> = </span><span class="hl-0">atom</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-5">key:</span><span class="hl-1"> </span><span class="hl-2">&quot;value&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">default:</span><span class="hl-1"> </span><span class="hl-3">false</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-7">Root</span><span class="hl-1">: </span><span class="hl-8">React</span><span class="hl-1">.</span><span class="hl-8">FC</span><span class="hl-1">&lt;</span><span class="hl-8">React</span><span class="hl-1">.</span><span class="hl-8">PropsWithChildren</span><span class="hl-1">&lt;{}&gt;&gt; = ({ </span><span class="hl-5">children</span><span class="hl-1"> }) </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-4">return</span><span class="hl-1"> (</span><br/><span class="hl-1">        &lt;</span><span class="hl-5">RecoilRoot</span><br/><span class="hl-1">            </span><span class="hl-5">initializeState</span><span class="hl-1">={(snapshot) =&gt; {</span><br/><span class="hl-1">                </span><span class="hl-5">snapshot</span><span class="hl-1">.</span><span class="hl-0">set</span><span class="hl-1">(</span><span class="hl-5">value</span><span class="hl-1">, </span><span class="hl-3">true</span><span class="hl-1">);</span><br/><span class="hl-1">            }}</span><br/><span class="hl-1">        &gt;</span><br/><span class="hl-1">            {</span><span class="hl-5">children</span><span class="hl-1">}</span><br/><span class="hl-1">        &lt;/</span><span class="hl-5">RecoilRoot</span><span class="hl-1">&gt;</span><br/><span class="hl-1">    );</span><br/><span class="hl-1">};</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-0">useHook</span><span class="hl-1"> = () </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">    </span><span class="hl-0">useRecoilCallback</span><span class="hl-1">(</span><br/><span class="hl-1">        ({ </span><span class="hl-5">set</span><span class="hl-1"> }) </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">            () </span><span class="hl-3">=&gt;</span><br/><span class="hl-1">                </span><span class="hl-0">set</span><span class="hl-1">(</span><span class="hl-5">value</span><span class="hl-1">, </span><span class="hl-3">false</span><span class="hl-1">)</span><br/><span class="hl-1">    );</span><br/><br/><span class="hl-0">test</span><span class="hl-1">(</span><span class="hl-2">&quot;Test hook&quot;</span><span class="hl-1">, () </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-3">const</span><span class="hl-1"> { </span><span class="hl-7">result</span><span class="hl-1"> } = </span><span class="hl-0">renderHook</span><span class="hl-1">(</span><br/><span class="hl-1">        () </span><span class="hl-3">=&gt;</span><span class="hl-1"> ({</span><br/><span class="hl-1">            </span><span class="hl-5">run:</span><span class="hl-1"> </span><span class="hl-0">useHook</span><span class="hl-1">(),</span><br/><span class="hl-1">            </span><span class="hl-5">value:</span><span class="hl-1"> </span><span class="hl-0">useRecoilValue</span><span class="hl-1">(</span><span class="hl-5">value</span><span class="hl-1">),</span><br/><span class="hl-1">        }),</span><br/><span class="hl-1">        {</span><br/><span class="hl-1">            </span><span class="hl-5">wrapper:</span><span class="hl-1"> </span><span class="hl-5">Root</span><span class="hl-1">,</span><br/><span class="hl-1">        }</span><br/><span class="hl-1">    );</span><br/><br/><span class="hl-1">    </span><span class="hl-0">expect</span><span class="hl-1">(</span><span class="hl-5">result</span><span class="hl-1">.</span><span class="hl-5">current</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">).</span><span class="hl-0">toBe</span><span class="hl-1">(</span><span class="hl-3">true</span><span class="hl-1">);</span><br/><span class="hl-1">    </span><span class="hl-0">act</span><span class="hl-1">(() </span><span class="hl-3">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">        </span><span class="hl-5">result</span><span class="hl-1">.</span><span class="hl-5">current</span><span class="hl-1">.</span><span class="hl-0">run</span><span class="hl-1">();</span><br/><span class="hl-1">    });</span><br/><span class="hl-1">    </span><span class="hl-0">expect</span><span class="hl-1">(</span><span class="hl-5">result</span><span class="hl-1">.</span><span class="hl-5">current</span><span class="hl-1">.</span><span class="hl-5">value</span><span class="hl-1">).</span><span class="hl-0">toBe</span><span class="hl-1">(</span><span class="hl-3">false</span><span class="hl-1">);</span><br/><span class="hl-1">});</span>
+</code></pre>
+
+<a href="#best-practices" id="best-practices" style="color: inherit; text-decoration: none;">
+  <h2>Best practices</h2>
+</a>
+<p>This section will continue to evolve as we learn more about what works best.</p>
+<p>It should be noted that this App began as this
+<a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">boilerplate</a>.</p>
+<p>Best practices:</p>
+<ul>
+<li>All React components should be function-based, not class-based</li>
+<li>We recommend writing fully typed TypeScript, although we are still
+transitioning</li>
+<li>With the app dev environment installed, you can run <code>yarn storybook</code></li>
+</ul>
+</div></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li class="current selected"><a href="modules.html">Fifty<wbr/>One <wbr/>Type<wbr/>Script API</a>
+<ul>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_aggregations.html">@fiftyone/aggregations</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_aggregations.aggregations.html">aggregations</a></li></ul></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_operators.html">@fiftyone/operators</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_operators.types.html">types</a></li></ul></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_plugins.html">@fiftyone/plugins</a></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_relay.html">@fiftyone/relay</a></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_spaces.html">@fiftyone/spaces</a></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_state.html">@fiftyone/state</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_state.State.html">State</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_state.constants.html">constants</a></li></ul></li>
+<li class="tsd-kind-module"><a href="modules/_fiftyone_utilities.html">@fiftyone/utilities</a>
+<ul>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_utilities.constants.html">constants</a></li>
+<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="modules/_fiftyone_utilities.styles.html">styles</a></li></ul></li></ul></li></ul></div></details></nav></div></div>
+<div class="container tsd-generator">
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="assets/main.js"></script></body></html>
