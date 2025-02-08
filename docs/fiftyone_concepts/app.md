@@ -21,7 +21,7 @@ practices when working in each environment.
 
 ## Sessions [¶](\#sessions "Permalink to this headline")
 
-The basic FiftyOne workflow is to open a Python shell and load a [`Dataset`](../api/fiftyone.core.dataset.md#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset").
+The basic FiftyOne workflow is to open a Python shell and load a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset").
 From there you can launch the FiftyOne App and interact with it
 programmatically via a _session_.
 

@@ -3889,7 +3889,7 @@ legacy 3D visualizer settings
 [#2474](https://github.com/voxel51/fiftyone/pull/2474)
 
 - Added support for filtering datasets when using
-[`list_zoo_datasets()`](api/fiftyone.zoo.datasets.md#fiftyone.zoo.datasets.list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") [#2448](https://github.com/voxel51/fiftyone/pull/2448)
+[`list_zoo_datasets()`](api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") [#2448](https://github.com/voxel51/fiftyone/pull/2448)
 
 
 Docs
@@ -4278,7 +4278,7 @@ Annotation
 - Added a new [Label Studio integration!](integrations/labelstudio.md#label-studio-integration) [#1848](https://github.com/voxel51/fiftyone/pull/1848)
 
 - Optimized loading CVAT annotations and performing operations on
-[`CVATAnnotationResults`](api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.CVATAnnotationResults "fiftyone.utils.cvat.CVATAnnotationResults") [#1944](https://github.com/voxel51/fiftyone/pull/1944)
+[`CVATAnnotationResults`](api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATAnnotationResults "fiftyone.utils.cvat.CVATAnnotationResults") [#1944](https://github.com/voxel51/fiftyone/pull/1944)
 
 - Upgraded the [`AnnotationAPI`](api/fiftyone.utils.annotations.html#fiftyone.utils.annotations.AnnotationAPI "fiftyone.utils.annotations.AnnotationAPI")
 interface [#1997](https://github.com/voxel51/fiftyone/pull/1997)
@@ -4904,7 +4904,7 @@ Annotation
 
 - Added a new [Labelbox integration](integrations/labelbox.md#labelbox-integration)!
 
-- Added an [`import_annotations()`](api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations")
+- Added an [`import_annotations()`](api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.import_annotations "fiftyone.utils.cvat.import_annotations")
 method for importing existing CVAT projects or task(s) into FiftyOne
 
 - Added support for [configuring the size of CVAT tasks](integrations/cvat.md#cvat-large-runs)

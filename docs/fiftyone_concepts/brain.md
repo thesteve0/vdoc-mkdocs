@@ -121,12 +121,12 @@ support a variety of ways to generate embeddings for your data:
 - Provide nothing, in which case a default general purpose model is used to
 embed your data
 
-- Provide a [`Model`](api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance or the name of any model from the
+- Provide a [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance or the name of any model from the
 [Model Zoo](../models/model_zoo/index.md#model-zoo) that supports embeddings
 
 - Provide your own precomputed embeddings in array form
 
-- Provide the name of a [`VectorField`](api/fiftyone.core.fields.html#fiftyone.core.fields.VectorField "fiftyone.core.fields.VectorField") or [`ArrayField`](api/fiftyone.core.fields.html#fiftyone.core.fields.ArrayField "fiftyone.core.fields.ArrayField") of your dataset in
+- Provide the name of a [`VectorField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.VectorField "fiftyone.core.fields.VectorField") or [`ArrayField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.ArrayField "fiftyone.core.fields.ArrayField") of your dataset in
 which precomputed embeddings are stored
 
 
@@ -398,7 +398,7 @@ The FiftyOne Brain provides a
 you can use to index the images or object patches in a dataset by similarity.
 
 Once you’ve indexed a dataset by similarity, you can use the
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically sort your dataset by similarity to any image(s)
 or object patch(es) of your choice in your dataset. In addition, the App
 provides a convenient [point-and-click interface](app.md#app-similarity) for
@@ -422,12 +422,12 @@ variety of ways to generate embeddings for your data:
 - Provide nothing, in which case a default general purpose model is used to
 index your data
 
-- Provide a [`Model`](api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance or the name of any model from the
+- Provide a [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance or the name of any model from the
 [Model Zoo](../models/model_zoo/index.md#model-zoo) that supports embeddings
 
 - Provide your own precomputed embeddings in array form
 
-- Provide the name of a [`VectorField`](api/fiftyone.core.fields.html#fiftyone.core.fields.VectorField "fiftyone.core.fields.VectorField") or [`ArrayField`](api/fiftyone.core.fields.html#fiftyone.core.fields.ArrayField "fiftyone.core.fields.ArrayField") of your dataset in
+- Provide the name of a [`VectorField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.VectorField "fiftyone.core.fields.VectorField") or [`ArrayField`](../api/fiftyone.core.fields.html#fiftyone.core.fields.ArrayField "fiftyone.core.fields.ArrayField") of your dataset in
 which precomputed embeddings are stored
 
 
@@ -483,11 +483,11 @@ This section demonstrates the basic workflow of:
 by visual similarity
 
 - Using the SDK’s
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically query the index
 
 
-To index a dataset by image similarity, pass the [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") of
+To index a dataset by image similarity, pass the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") of
 interest to `compute_similarity()`
 along with a name for the index via the `brain_key` argument.
 
@@ -527,7 +527,7 @@ to generate embeddings, but you can also provide
 ![image-similarity](../_images/brain-image-similarity.gif)
 
 Alternatively, you can use the
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically [construct a view](using_views.md#using-views) that
 contains the sorted results:
 
@@ -544,11 +544,11 @@ session.view = view
 
 Note
 
-Performing a similarity search on a [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") will **only** return
+Performing a similarity search on a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") will **only** return
 results from the view; if the view contains samples that were not included
 in the index, they will never be included in the result.
 
-This means that you can index an entire [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
+This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
 [constructing views](using_views.md#using-views) that contain the images of
 interest.
@@ -569,15 +569,15 @@ This section demonstrates the basic workflow of:
 query by visual similarity
 
 - Using the SDK’s
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically query the index
 
 
-You can index any objects stored on datasets in [`Detection`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection"), [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections"),
-[`Polyline`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline"), or [`Polylines`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") format. See [this section](using_datasets.md#using-labels) for
+You can index any objects stored on datasets in [`Detection`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detection "fiftyone.core.labels.Detection"), [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections"),
+[`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline"), or [`Polylines`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") format. See [this section](using_datasets.md#using-labels) for
 more information about adding labels to your datasets.
 
-To index by object patches, simply pass the [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") of
+To index by object patches, simply pass the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") of
 interest to `compute_similarity()`
 along with the name of the patches field and a name for the index via the
 `brain_key` argument.
@@ -622,7 +622,7 @@ to generate embeddings, but you can also provide
 ![object-similarity](../_images/brain-object-similarity.gif)
 
 Alternatively, you can directly use the
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 view stage to programmatically [construct a view](using_views.md#using-views) that
 contains the sorted results:
 
@@ -642,11 +642,11 @@ session.view = view
 
 Note
 
-Performing a similarity search on a [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") will **only** return
+Performing a similarity search on a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") will **only** return
 results from the view; if the view contains objects that were not included
 in the index, they will never be included in the result.
 
-This means that you can index an entire [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
+This means that you can index an entire [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") once and then perform
 searches on subsets of the dataset by
 [constructing views](using_views.md#using-views) that contain the objects of
 interest.
@@ -667,14 +667,14 @@ arbitrary natural language queries
 ![text-similarity](../_images/brain-text-similarity.gif)
 
 You can also perform text queries via the SDK by passing a prompt directly to
-[`sort_by_similarity()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
+[`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
 along with the `brain_key` of a compatible similarity index:
 
 Note
 
 In general, any custom model that is made available via the
 [model zoo interface](../models/model_zoo/api.md#model-zoo-add) that implements the
-[`PromptMixin`](api/fiftyone.core.models.html#fiftyone.core.models.PromptMixin "fiftyone.core.models.PromptMixin") interface can
+[`PromptMixin`](../api/fiftyone.core.models.html#fiftyone.core.models.PromptMixin "fiftyone.core.models.PromptMixin") interface can
 support text similarity queries!
 
 ### Similarity API [¶](\#similarity-api "Permalink to this headline")
@@ -852,7 +852,7 @@ Calling
 `cleanup()` has
 no effect when working with the default sklearn backend. The index is
 deleted only when you call
-[`delete_brain_run()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run "fiftyone.core.collections.SampleCollection.delete_brain_run").
+[`delete_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run "fiftyone.core.collections.SampleCollection.delete_brain_run").
 
 ### Applications [¶](\#brain-similarity-applications "Permalink to this headline")
 
@@ -915,7 +915,7 @@ Notice how the splits of the dataset can be defined in three ways: through
 sample tags, through a string field that assigns each split a unique value in
 the field, or by directly providing views that define the splits.
 
-**Input**: A [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"), and a definition of splits through one
+**Input**: A [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView"), and a definition of splits through one
 of tags, a field, or views.
 
 **Output**: An index that will allow you to look through your leaks with
@@ -1247,7 +1247,7 @@ machine learning workflow when you are deciding what subset of data with which
 to bootstrap your models. Unique samples are vital in creating training
 batches that help your model learn as efficiently and effectively as possible.
 
-The uniqueness of a [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") can be computed directly without need the
+The uniqueness of a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") can be computed directly without need the
 predictions of a pre-trained model via the
 `compute_uniqueness()` method:
 
@@ -1284,7 +1284,7 @@ You can customize the name of this field by passing the optional
 `compute_uniqueness()`.
 
 **What to expect**: Uniqueness uses a tuned algorithm that measures the
-distribution of each [`Sample`](api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in the [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"). Using this distribution, it
+distribution of each [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") in the [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset"). Using this distribution, it
 ranks each sample based on its relative _similarity_ to other samples. Those
 that are close to other samples are not unique whereas those that are far from
 most other samples are more unique.
@@ -1294,7 +1294,7 @@ Note
 Did you know? You can specify a region of interest within each image to use
 to compute uniqueness by providing the optional `roi_field` argument to
 `compute_uniqueness()`, which
-contains [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") or [`Polylines`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") that define the ROI for each sample.
+contains [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") or [`Polylines`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") that define the ROI for each sample.
 
 Note
 
@@ -1319,7 +1319,7 @@ These hard samples are also useful as seeds when considering what other new
 samples to add to a training dataset.
 
 In order to compute hardness, all you need to do is add your model predictions
-and their logits to your FiftyOne [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and then run the
+and their logits to your FiftyOne [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") and then run the
 `compute_hardness()` method:
 
 ```python
@@ -1332,7 +1332,7 @@ fob.compute_hardness(dataset, "predictions")
 
 ```
 
-**Input**: A [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") on which predictions have been
+**Input**: A [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") or [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.DatasetView "fiftyone.core.view.DatasetView") on which predictions have been
 computed and are stored in the `"predictions"` argument. Ground truth
 annotations are not required for hardness.
 
@@ -1365,7 +1365,7 @@ finds samples which are very similar to large clusters of your data. Highly
 representative samples are great for finding modes or easy examples in your
 dataset.
 
-The representativeness of a [`Dataset`](api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") can be computed directly without the need
+The representativeness of a [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset") can be computed directly without the need
 for the predictions of a pre-trained model via the
 `compute_representativeness()`
 method:
@@ -1407,7 +1407,7 @@ Did you know? You can specify a region of interest within each image to use
 to compute representativeness by providing the optional `roi_field`
 argument to
 `compute_representativeness()`,
-which contains [`Detections`](api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") or [`Polylines`](api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") that define the ROI for each
+which contains [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") or [`Polylines`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") that define the ROI for each
 sample.
 
 ![representativeness](../_images/brain-representativeness.png)
@@ -1420,17 +1420,17 @@ delete it (along with any modifications to your dataset that were performed by
 it), and even retrieve the view that you computed on using the following
 methods on your dataset:
 
-- [`list_brain_runs()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
+- [`list_brain_runs()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.list_brain_runs "fiftyone.core.collections.SampleCollection.list_brain_runs")
 
-- [`get_brain_info()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
+- [`get_brain_info()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.get_brain_info "fiftyone.core.collections.SampleCollection.get_brain_info")
 
-- [`load_brain_results()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results")
+- [`load_brain_results()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_results "fiftyone.core.collections.SampleCollection.load_brain_results")
 
-- [`load_brain_view()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_view "fiftyone.core.collections.SampleCollection.load_brain_view")
+- [`load_brain_view()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.load_brain_view "fiftyone.core.collections.SampleCollection.load_brain_view")
 
-- [`rename_brain_run()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
+- [`rename_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.rename_brain_run "fiftyone.core.collections.SampleCollection.rename_brain_run")
 
-- [`delete_brain_run()`](api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run "fiftyone.core.collections.SampleCollection.delete_brain_run")
+- [`delete_brain_run()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.delete_brain_run "fiftyone.core.collections.SampleCollection.delete_brain_run")
 
 
 The example below demonstrates the basic interface:

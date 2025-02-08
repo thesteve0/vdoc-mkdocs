@@ -69,8 +69,8 @@ about the dataset:
 | `license` |  | The license under which the dataset is distributed |
 | `description` |  | A brief description of the dataset |
 | `fiftyone.version` |  | A semver version specifier (or `*`) describing the required<br>FiftyOne version for the dataset to load properly |
-| `supports_partial_downloads` |  | Specify `true` or `false` whether parts of the dataset can be<br>downloaded/loaded by providing `kwargs` to<br>[`download_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset")<br>or [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") as<br>[described here](#dataset-zoo-remote-partial-downloads). If omitted,<br>this is assumed to be `false` |
-| `tags` |  | A list of tags for the dataset. Useful in conjunction with<br>[`list_zoo_datasets()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") |
+| `supports_partial_downloads` |  | Specify `true` or `false` whether parts of the dataset can be<br>downloaded/loaded by providing `kwargs` to<br>[`download_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset")<br>or [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset") as<br>[described here](#dataset-zoo-remote-partial-downloads). If omitted,<br>this is assumed to be `false` |
+| `tags` |  | A list of tags for the dataset. Useful in conjunction with<br>[`list_zoo_datasets()`](../../api/fiftyone.zoo.datasets.html#list_zoo_datasets "fiftyone.zoo.datasets.list_zoo_datasets") |
 | `splits` |  | A list of the dataset’s supported splits. This should be omitted if the<br>dataset does not contain splits |
 | `size_samples` |  | The totaal number of samples in the dataset, or a list of per-split sizes |
 
@@ -125,8 +125,8 @@ def download_and_prepare(dataset_dir, split=None, **kwargs):
 ```
 
 This method is called under-the-hood when a user calls
-[`download_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset") or
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"), and its
+[`download_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset") or
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"), and its
 job is to download any relevant files from the web and organize and/or prepare
 them as necessary into a format that’s ready to be loaded into a FiftyOne
 dataset.
@@ -187,9 +187,9 @@ def load_dataset(dataset, dataset_dir, split=None, **kwargs):
 ```
 
 This method’s job is to load the filepaths and any relevant labels into
-[`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") objects and then call
-[`add_samples()`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset.add_samples "fiftyone.core.dataset.Dataset.add_samples") or a similar
-method to add them to the provided [`Dataset`](../api/fiftyone.core.dataset.html#fiftyone.core.dataset.Dataset "fiftyone.core.dataset.Dataset").
+[`Sample`](../../api/fiftyone.core.sample.Sample.html "fiftyone.core.sample.Sample") objects and then call
+[`add_samples()`](../../api/fiftyone.core.dataset.Dataset.html#add_samples "fiftyone.core.dataset.Dataset.add_samples") or a similar
+method to add them to the provided [`Dataset`](../../api/fiftyone.core.dataset.Dataset.html "fiftyone.core.dataset.Dataset").
 
 ## Partial downloads [¶](\#partial-downloads "Permalink to this headline")
 
@@ -224,12 +224,12 @@ def load_dataset(dataset, dataset_dir, split=None, **kwargs):
 ```
 
 When
-[`download_zoo_dataset(url, ..., **kwargs)`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset")
+[`download_zoo_dataset(url, ..., **kwargs)`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.download_zoo_dataset "fiftyone.zoo.datasets.download_zoo_dataset")
 is called, any `kwargs` declared by `download_and_prepare()` are passed
 through to it.
 
 When
-[`load_zoo_dataset(name_or_url, ..., **kwargs)`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset")
+[`load_zoo_dataset(name_or_url, ..., **kwargs)`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset")
 is called, any `kwargs` declared by `download_and_prepare()` and
 `load_dataset()` are passed through to them, respectively.
 

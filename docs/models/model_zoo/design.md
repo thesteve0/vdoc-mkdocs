@@ -1,16 +1,16 @@
 # Model Interface [¶](\#model-interface "Permalink to this headline")
 
-All models in the Model Zoo are exposed via the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") class, which defines a
+All models in the Model Zoo are exposed via the [`Model`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") class, which defines a
 common interface for loading models and generating predictions with defined
 input and output data formats.
 
 Note
 
-If you write a wrapper for your custom model that implements the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model")
+If you write a wrapper for your custom model that implements the [`Model`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model")
 interface, then you can pass your models to built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 and
-[`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings")
+[`compute_embeddings()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings")
 too!
 
 FiftyOne provides classes that make it easy to deploy models in custom
@@ -22,18 +22,18 @@ using FiftyOne.
 ## Prediction [¶](\#prediction "Permalink to this headline")
 
 Inside built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
-predictions of a [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance are generated using the following pattern:
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
+predictions of a [`Model`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance are generated using the following pattern:
 
-By convention, [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instances must implement the context manager interface,
+By convention, [`Model`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instances must implement the context manager interface,
 which handles any necessary setup and teardown required to use the model.
 
 Predictions are generated via the
-[`Model.predict()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface method, which
+[`Model.predict()`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface method, which
 takes an image/video as input and returns the predictions.
 
 In order to be compatible with built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
 models should support the following basic signature of running inference and
 storing the output labels:
 
@@ -52,7 +52,7 @@ where the model should, at minimum, support `arg` values that are:
 
 and the output `labels` can be any of the following:
 
-- A [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instance, in which case the labels are directly saved in the
+- A [`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instance, in which case the labels are directly saved in the
 specified `label_field` of the sample
 
 
@@ -62,7 +62,7 @@ sample[label_field] = labels
 
 ```
 
-- A dict mapping keys to [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In this case, the labels are
+- A dict mapping keys to [`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In this case, the labels are
 added as follows:
 
 
@@ -73,7 +73,7 @@ for key, value in labels.items():
 
 ```
 
-- A dict mapping frame numbers to [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In this case, the
+- A dict mapping frame numbers to [`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In this case, the
 provided labels are interpreted as frame-level labels that should be added
 as follows:
 
@@ -89,7 +89,7 @@ sample.frames.merge(
 
 ```
 
-- A dict mapping frame numbers to dicts mapping keys to [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In
+- A dict mapping frame numbers to dicts mapping keys to [`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") instances. In
 this case, the provided labels are interpreted as frame-level labels that
 should be added as follows:
 
@@ -118,58 +118,58 @@ else:
 
 ```
 
-For models that support batching, the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface also provides a
-[`predict_all()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all "fiftyone.core.models.Model.predict_all") method that can
+For models that support batching, the [`Model`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface also provides a
+[`predict_all()`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all "fiftyone.core.models.Model.predict_all") method that can
 provide an efficient implementation of predicting on a batch of data.
 
 Note
 
 Built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 provide a `batch_size` parameter that can be used to control the batch
 size used when performing inference with models that support efficient
 batching.
 
 Note
 
-PyTorch models can implement the [`TorchModelMixin`](../api/fiftyone.core.models.html#fiftyone.core.models.TorchModelMixin "fiftyone.core.models.TorchModelMixin") mixin, in which case
+PyTorch models can implement the [`TorchModelMixin`](../../api/fiftyone.core.models.html#fiftyone.core.models.TorchModelMixin "fiftyone.core.models.TorchModelMixin") mixin, in which case
 [DataLoaders](https://pytorch.org/docs/stable/data.html#torch.utils.data.DataLoader)
 are used to efficiently feed data to the models during inference.
 
 ## Embeddings [¶](\#embeddings "Permalink to this headline")
 
 Models that can compute embeddings for their input data can expose this
-capability by implementing the [`EmbeddingsMixin`](../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin "fiftyone.core.models.EmbeddingsMixin") mixin.
+capability by implementing the [`EmbeddingsMixin`](../../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin "fiftyone.core.models.EmbeddingsMixin") mixin.
 
 Inside built-in methods like
-[`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"),
+[`compute_embeddings()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"),
 embeddings for a collection of samples are generated using an analogous pattern
 to the prediction code shown above, except that the embeddings are generated
-using [`Model.embed()`](../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed "fiftyone.core.models.EmbeddingsMixin.embed") in
-place of [`Model.predict()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict "fiftyone.core.models.Model.predict").
+using [`Model.embed()`](../../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed "fiftyone.core.models.EmbeddingsMixin.embed") in
+place of [`Model.predict()`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict "fiftyone.core.models.Model.predict").
 
 By convention,
-[`Model.embed()`](../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed "fiftyone.core.models.EmbeddingsMixin.embed") should
+[`Model.embed()`](../../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin.embed "fiftyone.core.models.EmbeddingsMixin.embed") should
 return a numpy array containing the embedding.
 
 Note
 
 Embeddings are typically 1D vectors, but this is not strictly required.
 
-For models that support batching, the [`EmbeddingsMixin`](../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin "fiftyone.core.models.EmbeddingsMixin") interface also provides
-a [`embed_all()`](../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all "fiftyone.core.models.Model.predict_all") method that can
+For models that support batching, the [`EmbeddingsMixin`](../../api/fiftyone.core.models.html#fiftyone.core.models.EmbeddingsMixin "fiftyone.core.models.EmbeddingsMixin") interface also provides
+a [`embed_all()`](../../api/fiftyone.core.models.html#fiftyone.core.models.Model.predict_all "fiftyone.core.models.Model.predict_all") method that can
 provide an efficient implementation of embedding a batch of data.
 
 ## Logits [¶](\#logits "Permalink to this headline")
 
 Models that generate logits for their predictions can expose them to FiftyOne
-by implementing the [`LogitsMixin`](../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin "fiftyone.core.models.LogitsMixin") mixin.
+by implementing the [`LogitsMixin`](../../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin "fiftyone.core.models.LogitsMixin") mixin.
 
 Inside built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model"),
 if the user requests logits, the model’s
-[`store_logits`](../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin.store_logits "fiftyone.core.models.LogitsMixin.store_logits")
-property is set to indicate that the model should store logits in the [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label")
+[`store_logits`](../../api/fiftyone.core.models.html#fiftyone.core.models.LogitsMixin.store_logits "fiftyone.core.models.LogitsMixin.store_logits")
+property is set to indicate that the model should store logits in the [`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label")
 instances that it produces during inference.
 
 ## Custom models [¶](\#custom-models "Permalink to this headline")
@@ -178,9 +178,9 @@ FiftyOne provides a
 `TorchImageModel`
 class that you can use to load your own custom Torch model and pass it to
 built-in methods like
-[`apply_model()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
+[`apply_model()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.apply_model "fiftyone.core.collections.SampleCollection.apply_model")
 and
-[`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings").
+[`compute_embeddings()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings").
 
 For example, the snippet below loads a pretrained model from `torchvision`
 and uses it both as a classifier and to generate image embeddings:
@@ -244,7 +244,7 @@ The `output_processor_cls` parameter of
 must be set to the fully-qualified class name of an
 `OutputProcessor` subclass that
 defines how to translate the model’s raw output into the suitable FiftyOne
-[`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, and is instantiated as follows:
+[`Label`](../../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, and is instantiated as follows:
 
 ```python
 output_processor = output_processor_cls(classes=classes, **output_processor_args)
@@ -272,7 +272,7 @@ or you can write your own
 `OutputProcessor` subclass.
 
 Finally, if you would like to pass your custom model to methods like
-[`compute_embeddings()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"),
+[`compute_embeddings()`](../../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.compute_embeddings "fiftyone.core.collections.SampleCollection.compute_embeddings"),
 set the `embeddings_layer` parameter to the name of a layer whose output to
 expose as embeddings (or prepend `<` to use the input tensor instead).
 

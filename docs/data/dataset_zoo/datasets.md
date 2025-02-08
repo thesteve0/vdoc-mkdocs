@@ -96,7 +96,7 @@ from the
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`ActivityNet100Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet100Dataset "fiftyone.zoo.datasets.base.ActivityNet100Dataset")
+[`ActivityNet100Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet100Dataset "fiftyone.zoo.datasets.base.ActivityNet100Dataset")
 
 
 **Full split stats**
@@ -117,7 +117,7 @@ resorting to downloading additional data from YouTube.
 
 The following parameters are available to configure a partial download of
 ActivityNet 100 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -156,10 +156,10 @@ matching samples are loaded
 Note
 
 See
-[`ActivityNet100Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet100Dataset "fiftyone.zoo.datasets.base.ActivityNet100Dataset") and
-[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.md#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
+[`ActivityNet100Dataset`](../../api/fiftyone.zoo.datasets.base.ActivityNet100Dataset.html "fiftyone.zoo.datasets.base.ActivityNet100Dataset") and
+[`ActivityNetDatasetImporter`](../../api/fiftyone.utils.activitynet.ActivityNetDatasetImporter.html "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Full split downloads**
 
@@ -173,7 +173,7 @@ To download the source files, you must fill out
 
 Refer to [this page](../../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
 full splits by passing the `source_dir` parameter to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -227,7 +227,7 @@ from the
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`ActivityNet200Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet200Dataset "fiftyone.zoo.datasets.base.ActivityNet200Dataset")
+[`ActivityNet200Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet200Dataset "fiftyone.zoo.datasets.base.ActivityNet200Dataset")
 
 
 **Full split stats**
@@ -248,7 +248,7 @@ resorting to downloading additional data from YouTube.
 
 The following parameters are available to configure a partial download of
 ActivityNet 200 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -287,10 +287,10 @@ matching samples are loaded
 Note
 
 See
-[`ActivityNet200Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet200Dataset "fiftyone.zoo.datasets.base.ActivityNet200Dataset") and
-[`ActivityNetDatasetImporter`](../api/fiftyone.utils.activitynet.md#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
+[`ActivityNet200Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ActivityNet200Dataset "fiftyone.zoo.datasets.base.ActivityNet200Dataset") and
+[`ActivityNetDatasetImporter`](../../api/fiftyone.utils.activitynet.html#fiftyone.utils.activitynet.ActivityNetDatasetImporter "fiftyone.utils.activitynet.ActivityNetDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Full split downloads**
 
@@ -304,7 +304,7 @@ To download the source files, you must fill out
 
 Refer to [this page](../../integrations/activitynet.md#activitynet-full-split-downloads) to see how to load
 full splits by passing the `source_dir` parameter to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -369,7 +369,7 @@ to download the data.
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`BDD100KDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.BDD100KDataset "fiftyone.zoo.datasets.base.BDD100KDataset")
+[`BDD100KDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.BDD100KDataset "fiftyone.zoo.datasets.base.BDD100KDataset")
 
 
 **Example usage**
@@ -401,7 +401,7 @@ pixels. This version contains image-level labels only.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`Caltech101Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Caltech101Dataset "fiftyone.zoo.datasets.base.Caltech101Dataset")
+[`Caltech101Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Caltech101Dataset "fiftyone.zoo.datasets.base.Caltech101Dataset")
 
 
 **Example usage**
@@ -432,7 +432,7 @@ Images are of variable sizes, with typical edge lengths of 80-800 pixels.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`Caltech256Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Caltech256Dataset "fiftyone.zoo.datasets.base.Caltech256Dataset")
+[`Caltech256Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Caltech256Dataset "fiftyone.zoo.datasets.base.Caltech256Dataset")
 
 
 **Example usage**
@@ -460,9 +460,9 @@ images per class. There are 50,000 training images and 10,000 test images.
 
 - ZooDataset classes:
 
-  - [`CIFAR10Dataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.CIFAR10Dataset "fiftyone.zoo.datasets.tf.CIFAR10Dataset") (TF backend)
+  - [`CIFAR10Dataset`](../../api/fiftyone.zoo.datasets.tf.CIFAR10Dataset.html "fiftyone.zoo.datasets.tf.CIFAR10Dataset") (TF backend)
 
-  - [`CIFAR10Dataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.CIFAR10Dataset "fiftyone.zoo.datasets.torch.CIFAR10Dataset") (Torch backend)
+  - [`CIFAR10Dataset`](../../api/fiftyone.zoo.datasets.torch.CIFAR10Dataset.html "fiftyone.zoo.datasets.torch.CIFAR10Dataset") (Torch backend)
 
 Note
 
@@ -496,9 +496,9 @@ images.
 
 - ZooDataset classes:
 
-  - [`CIFAR100Dataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.CIFAR100Dataset "fiftyone.zoo.datasets.tf.CIFAR100Dataset") (TF backend)
+  - [`CIFAR100Dataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.CIFAR100Dataset "fiftyone.zoo.datasets.tf.CIFAR100Dataset") (TF backend)
 
-  - [`CIFAR100Dataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.CIFAR100Dataset "fiftyone.zoo.datasets.torch.CIFAR100Dataset") (Torch backend)
+  - [`CIFAR100Dataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.CIFAR100Dataset "fiftyone.zoo.datasets.torch.CIFAR100Dataset") (Torch backend)
 
 Note
 
@@ -557,7 +557,7 @@ to get links to download the data.
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`CityscapesDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.CityscapesDataset "fiftyone.zoo.datasets.base.CityscapesDataset")
+[`CityscapesDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.CityscapesDataset "fiftyone.zoo.datasets.base.CityscapesDataset")
 
 
 **Example usage**
@@ -605,7 +605,7 @@ work with COCO.
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`COCO2014Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2014Dataset "fiftyone.zoo.datasets.base.COCO2014Dataset")
+[`COCO2014Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2014Dataset "fiftyone.zoo.datasets.base.COCO2014Dataset")
 
 
 **Full split stats**
@@ -626,7 +626,7 @@ to downloading additional data from the web.
 
 The following parameters are available to configure a partial download of
 COCO-2014 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -684,10 +684,10 @@ matching your requirements
 Note
 
 See
-[`COCO2014Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2014Dataset "fiftyone.zoo.datasets.base.COCO2014Dataset") and
-[`COCODetectionDatasetImporter`](../api/fiftyone.utils.coco.html#fiftyone.utils.coco.COCODetectionDatasetImporter "fiftyone.utils.coco.COCODetectionDatasetImporter")
+[`COCO2014Dataset`](../../api/fiftyone.zoo.datasets.base.COCO2014Dataset.html "fiftyone.zoo.datasets.base.COCO2014Dataset") and
+[`COCODetectionDatasetImporter`](../../api/fiftyone.utils.coco.COCODetectionDatasetImporter.html "fiftyone.utils.coco.COCODetectionDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -734,7 +734,7 @@ work with COCO.
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`COCO2017Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2017Dataset "fiftyone.zoo.datasets.base.COCO2017Dataset")
+[`COCO2017Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2017Dataset "fiftyone.zoo.datasets.base.COCO2017Dataset")
 
 
 **Full split stats**
@@ -755,7 +755,7 @@ to downloading additional data from the web.
 
 The following parameters are available to configure a partial download of
 COCO-2017 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -813,10 +813,10 @@ matching your requirements
 Note
 
 See
-[`COCO2017Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2017Dataset "fiftyone.zoo.datasets.base.COCO2017Dataset") and
-[`COCODetectionDatasetImporter`](../api/fiftyone.utils.coco.html#fiftyone.utils.coco.COCODetectionDatasetImporter "fiftyone.utils.coco.COCODetectionDatasetImporter")
+[`COCO2017Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.COCO2017Dataset "fiftyone.zoo.datasets.base.COCO2017Dataset") and
+[`COCODetectionDatasetImporter`](../../api/fiftyone.utils.coco.html#fiftyone.utils.coco.COCODetectionDatasetImporter "fiftyone.utils.coco.COCODetectionDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -843,9 +843,9 @@ There are 60,000 training images and 10,000 test images.
 
 - ZooDataset classes:
 
-  - [`FashionMNISTDataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.FashionMNISTDataset "fiftyone.zoo.datasets.tf.FashionMNISTDataset") (TF backend)
+  - [`FashionMNISTDataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.FashionMNISTDataset "fiftyone.zoo.datasets.tf.FashionMNISTDataset") (TF backend)
 
-  - [`FashionMNISTDataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.FashionMNISTDataset "fiftyone.zoo.datasets.torch.FashionMNISTDataset") (Torch backend)
+  - [`FashionMNISTDataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.FashionMNISTDataset "fiftyone.zoo.datasets.torch.FashionMNISTDataset") (Torch backend)
 
 Note
 
@@ -966,15 +966,15 @@ Analysis and Machine Intelligence (PAMI), 2021.
 - Supported splits: `test, val, train`
 
 - ZooDataset class:
-[`FIWDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.FIWDataset "fiftyone.zoo.datasets.base.FIWDataset")
+[`FIWDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.FIWDataset "fiftyone.zoo.datasets.base.FIWDataset")
 
 
 Note
 
 For your convenience, FiftyOne provides
-[`get_pairwise_labels()`](../api/fiftyone.utils.fiw.html#fiftyone.utils.fiw.get_pairwise_labels "fiftyone.utils.fiw.get_pairwise_labels")
+[`get_pairwise_labels()`](../../api/fiftyone.utils.fiw.html#get_pairwise_labels "fiftyone.utils.fiw.get_pairwise_labels")
 and
-[`get_identifier_filepaths_map()`](../api/fiftyone.utils.fiw.html#fiftyone.utils.fiw.get_identifier_filepaths_map "fiftyone.utils.fiw.get_identifier_filepaths_map")
+[`get_identifier_filepaths_map()`](../../api/fiftyone.utils.fiw.html#get_identifier_filepaths_map "fiftyone.utils.fiw.get_identifier_filepaths_map")
 utilities for FIW.
 
 **Example usage**
@@ -999,7 +999,7 @@ clips distributed across 51 action classes.
 - Supported splits: `train, test, other`
 
 - ZooDataset class:
-[`HMDB51Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.HMDB51Dataset "fiftyone.zoo.datasets.base.HMDB51Dataset")
+[`HMDB51Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.HMDB51Dataset "fiftyone.zoo.datasets.base.HMDB51Dataset")
 
 
 **Example usage**
@@ -1058,9 +1058,9 @@ get links to download the data.
 
 - ZooDataset classes:
 
-  - [`ImageNet2012Dataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.ImageNet2012Dataset "fiftyone.zoo.datasets.tf.ImageNet2012Dataset") (TF backend)
+  - [`ImageNet2012Dataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.ImageNet2012Dataset "fiftyone.zoo.datasets.tf.ImageNet2012Dataset") (TF backend)
 
-  - [`ImageNet2012Dataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.ImageNet2012Dataset "fiftyone.zoo.datasets.torch.ImageNet2012Dataset") (Torch backend)
+  - [`ImageNet2012Dataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.ImageNet2012Dataset "fiftyone.zoo.datasets.torch.ImageNet2012Dataset") (Torch backend)
 
 Note
 
@@ -1131,7 +1131,7 @@ to the following terms and conditions:
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`ImageNetSampleDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ImageNetSampleDataset "fiftyone.zoo.datasets.base.ImageNetSampleDataset")
+[`ImageNetSampleDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.ImageNetSampleDataset "fiftyone.zoo.datasets.base.ImageNetSampleDataset")
 
 
 **Example usage**
@@ -1164,7 +1164,7 @@ version of the dataset.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`Kinetics400Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics400Dataset "fiftyone.zoo.datasets.base.Kinetics400Dataset")
+[`Kinetics400Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics400Dataset "fiftyone.zoo.datasets.base.Kinetics400Dataset")
 
 
 Original split stats:
@@ -1213,7 +1213,7 @@ AWS.
 
 The following parameters are available to configure a partial download of
 Kinetics by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1279,7 +1279,7 @@ version of the dataset.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`Kinetics600Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics600Dataset "fiftyone.zoo.datasets.base.Kinetics600Dataset")
+[`Kinetics600Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics600Dataset "fiftyone.zoo.datasets.base.Kinetics600Dataset")
 
 
 Original split stats:
@@ -1328,7 +1328,7 @@ AWS.
 
 The following parameters are available to configure a partial download of
 Kinetics by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1388,7 +1388,7 @@ version of the dataset.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`Kinetics700Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics700Dataset "fiftyone.zoo.datasets.base.Kinetics700Dataset")
+[`Kinetics700Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics700Dataset "fiftyone.zoo.datasets.base.Kinetics700Dataset")
 
 
 Split stats:
@@ -1428,7 +1428,7 @@ AWS.
 
 The following parameters are available to configure a partial download of
 Kinetics by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1489,7 +1489,7 @@ is a superset of Kinetics 700.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`Kinetics7002020Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics7002020Dataset "fiftyone.zoo.datasets.base.Kinetics7002020Dataset")
+[`Kinetics7002020Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Kinetics7002020Dataset "fiftyone.zoo.datasets.base.Kinetics7002020Dataset")
 
 
 Original split stats:
@@ -1538,7 +1538,7 @@ AWS.
 
 The following parameters are available to configure a partial download of
 Kinetics by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1599,7 +1599,7 @@ object development kit on the KITTI homepage.
 - Supported splits: `train, test`
 
 - ZooDataset class:
-[`KITTIDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.KITTIDataset "fiftyone.zoo.datasets.base.KITTIDataset")
+[`KITTIDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.KITTIDataset "fiftyone.zoo.datasets.base.KITTIDataset")
 
 
 **Example usage**
@@ -1639,7 +1639,7 @@ object development kit on the KITTI homepage.
 - Supported splits: `train, test`
 
 - ZooDataset class:
-[`KITTIMultiviewDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.KITTIMultiviewDataset "fiftyone.zoo.datasets.base.KITTIMultiviewDataset")
+[`KITTIMultiviewDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.KITTIMultiviewDataset "fiftyone.zoo.datasets.base.KITTIMultiviewDataset")
 
 
 **Example usage**
@@ -1670,7 +1670,7 @@ Viola-Jones face detector.
 - Supported splits: `test, train`
 
 - ZooDataset class:
-[`LabeledFacesInTheWildDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.LabeledFacesInTheWildDataset "fiftyone.zoo.datasets.base.LabeledFacesInTheWildDataset")
+[`LabeledFacesInTheWildDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.LabeledFacesInTheWildDataset "fiftyone.zoo.datasets.base.LabeledFacesInTheWildDataset")
 
 
 **Example usage**
@@ -1698,9 +1698,9 @@ There are 60,000 training images and 10,000 test images.
 
 - ZooDataset classes:
 
-  - [`MNISTDataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.MNISTDataset "fiftyone.zoo.datasets.tf.MNISTDataset") (TF backend)
+  - [`MNISTDataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.MNISTDataset "fiftyone.zoo.datasets.tf.MNISTDataset") (TF backend)
 
-  - [`MNISTDataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.MNISTDataset "fiftyone.zoo.datasets.torch.MNISTDataset") (Torch backend)
+  - [`MNISTDataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.MNISTDataset "fiftyone.zoo.datasets.torch.MNISTDataset") (Torch backend)
 
 Note
 
@@ -1743,7 +1743,7 @@ FiftyOne to work with Open Images.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`OpenImagesV6Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV6Dataset "fiftyone.zoo.datasets.base.OpenImagesV6Dataset")
+[`OpenImagesV6Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV6Dataset "fiftyone.zoo.datasets.base.OpenImagesV6Dataset")
 
 
 **Notes**
@@ -1773,7 +1773,7 @@ web.
 
 The following parameters are available to configure a partial download of Open
 Images V6 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1788,8 +1788,8 @@ By default, all labels types are loaded
 - **classes** ( _None_): a string or list of strings specifying required
 classes to load. If provided, only samples containing at least one instance
 of a specified class will be loaded. You can use
-[`get_classes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_classes "fiftyone.utils.openimages.get_classes") and
-[`get_segmentation_classes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_segmentation_classes "fiftyone.utils.openimages.get_segmentation_classes")
+[`get_classes()`](../../api/fiftyone.utils.openimages.html#get_classes "fiftyone.utils.openimages.get_classes") and
+[`get_segmentation_classes()`](../../api/fiftyone.utils.openimages.html#get_segmentation_classes "fiftyone.utils.openimages.get_segmentation_classes")
 to see the available classes and segmentation classes, respectively
 
 - **attrs** ( _None_): a string or list of strings specifying required
@@ -1797,7 +1797,7 @@ relationship attributes to load. This parameter is only applicable if
 `label_types` contains `"relationships"`. If provided, only samples
 containing at least one instance of a specified attribute will be loaded.
 You can use
-[`get_attributes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_attributes "fiftyone.utils.openimages.get_attributes")
+[`get_attributes()`](../../api/fiftyone.utils.openimages.html#get_attributes "fiftyone.utils.openimages.get_attributes")
 to see the available attributes
 
 - **image\_ids** ( _None_): a list of specific image IDs to load. The IDs can
@@ -1833,10 +1833,10 @@ contain sufficient samples matching your requirements
 Note
 
 See
-[`OpenImagesV6Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV6Dataset "fiftyone.zoo.datasets.base.OpenImagesV6Dataset")
-and [`OpenImagesV6DatasetImporter`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.OpenImagesV6DatasetImporter "fiftyone.utils.openimages.OpenImagesV6DatasetImporter")
+[`OpenImagesV6Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV6Dataset "fiftyone.zoo.datasets.base.OpenImagesV6Dataset")
+and [`OpenImagesV6DatasetImporter`](../../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.OpenImagesV6DatasetImporter "fiftyone.utils.openimages.OpenImagesV6DatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -1873,7 +1873,7 @@ FiftyOne to work with Open Images.
 - Supported splits: `train, test, validation`
 
 - ZooDataset class:
-[`OpenImagesV7Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV7Dataset "fiftyone.zoo.datasets.base.OpenImagesV7Dataset")
+[`OpenImagesV7Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV7Dataset "fiftyone.zoo.datasets.base.OpenImagesV7Dataset")
 
 
 **Notes**
@@ -1903,7 +1903,7 @@ web.
 
 The following parameters are available to configure a partial download of Open
 Images V7 by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -1918,8 +1918,8 @@ By default, all labels types are loaded
 - **classes** ( _None_): a string or list of strings specifying required
 classes to load. If provided, only samples containing at least one instance
 of a specified class will be loaded. You can use
-[`get_classes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_classes "fiftyone.utils.openimages.get_classes") and
-[`get_segmentation_classes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_segmentation_classes "fiftyone.utils.openimages.get_segmentation_classes")
+[`get_classes()`](../../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_classes "fiftyone.utils.openimages.get_classes") and
+[`get_segmentation_classes()`](../../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_segmentation_classes "fiftyone.utils.openimages.get_segmentation_classes")
 to see the available classes and segmentation classes, respectively
 
 - **attrs** ( _None_): a string or list of strings specifying required
@@ -1927,7 +1927,7 @@ relationship attributes to load. This parameter is only applicable if
 `label_types` contains `"relationships"`. If provided, only samples
 containing at least one instance of a specified attribute will be loaded.
 You can use
-[`get_attributes()`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_attributes "fiftyone.utils.openimages.get_attributes")
+[`get_attributes()`](../../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.get_attributes "fiftyone.utils.openimages.get_attributes")
 to see the available attributes
 
 - **image\_ids** ( _None_): a list of specific image IDs to load. The IDs can
@@ -1963,10 +1963,10 @@ contain sufficient samples matching your requirements
 Note
 
 See
-[`OpenImagesV7Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV7Dataset "fiftyone.zoo.datasets.base.OpenImagesV7Dataset")
-and [`OpenImagesV7DatasetImporter`](../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.OpenImagesV7DatasetImporter "fiftyone.utils.openimages.OpenImagesV7DatasetImporter")
+[`OpenImagesV7Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.OpenImagesV7Dataset "fiftyone.zoo.datasets.base.OpenImagesV7Dataset")
+and [`OpenImagesV7DatasetImporter`](../../api/fiftyone.utils.openimages.html#fiftyone.utils.openimages.OpenImagesV7DatasetImporter "fiftyone.utils.openimages.OpenImagesV7DatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -1993,7 +1993,7 @@ and diverse list of the types of environments encountered in the world.
 - Supported splits: `train, validation, test`
 
 - ZooDataset classes:
-[`PlacesDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.PlacesDataset "fiftyone.zoo.datasets.base.PlacesDataset")
+[`PlacesDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.PlacesDataset "fiftyone.zoo.datasets.base.PlacesDataset")
 
 
 **Full split stats**
@@ -2029,7 +2029,7 @@ from
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`QuickstartDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartDataset "fiftyone.zoo.datasets.base.QuickstartDataset")
+[`QuickstartDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartDataset "fiftyone.zoo.datasets.base.QuickstartDataset")
 
 
 **Example usage**
@@ -2054,7 +2054,7 @@ dataset in the New York City area with object detections and GPS timestamps.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`QuickstartGeoDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartGeoDataset "fiftyone.zoo.datasets.base.QuickstartGeoDataset")
+[`QuickstartGeoDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartGeoDataset "fiftyone.zoo.datasets.base.QuickstartGeoDataset")
 
 
 **Example usage**
@@ -2079,7 +2079,7 @@ generated by human annotators.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`QuickstartVideoDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartVideoDataset "fiftyone.zoo.datasets.base.QuickstartVideoDataset")
+[`QuickstartVideoDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartVideoDataset "fiftyone.zoo.datasets.base.QuickstartVideoDataset")
 
 
 **Example usage**
@@ -2110,7 +2110,7 @@ annotation data.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`QuickstartGroupsDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartGroupsDataset "fiftyone.zoo.datasets.base.QuickstartGroupsDataset")
+[`QuickstartGroupsDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.QuickstartGroupsDataset "fiftyone.zoo.datasets.base.QuickstartGroupsDataset")
 
 
 **Example usage**
@@ -2139,7 +2139,7 @@ Objects have been rescaled and recentered from the original dataset.
 - Supported splits: `N/A`
 
 - ZooDataset class:
-[`Quickstart3DDataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Quickstart3DDataset "fiftyone.zoo.datasets.base.Quickstart3DDataset")
+[`Quickstart3DDataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.Quickstart3DDataset "fiftyone.zoo.datasets.base.Quickstart3DDataset")
 
 
 **Example usage**
@@ -2180,7 +2180,7 @@ by Sama.
 - Supported splits: `train, validation, test`
 
 - ZooDataset class:
-[`SamaCOCODataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.SamaCOCODataset "fiftyone.zoo.datasets.base.SamaCOCODataset")
+[`SamaCOCODataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.SamaCOCODataset "fiftyone.zoo.datasets.base.SamaCOCODataset")
 
 
 **Full split stats**
@@ -2201,7 +2201,7 @@ resorting to downloading additional data from the web.
 
 The following parameters are available to configure a partial download of
 Sama-COCO by passing them to
-[`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
+[`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset"):
 
 - **split** ( _None_) and **splits** ( _None_): a string or list of strings,
 respectively, specifying the splits to load. Supported values are
@@ -2259,10 +2259,10 @@ matching your requirements
 Note
 
 See
-[`SamaCOCODataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.SamaCOCODataset "fiftyone.zoo.datasets.base.SamaCOCODataset") and
-[`COCODetectionDatasetImporter`](../api/fiftyone.utils.coco.html#fiftyone.utils.coco.COCODetectionDatasetImporter "fiftyone.utils.coco.COCODetectionDatasetImporter")
+[`SamaCOCODataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.SamaCOCODataset "fiftyone.zoo.datasets.base.SamaCOCODataset") and
+[`COCODetectionDatasetImporter`](../../api/fiftyone.utils.coco.html#fiftyone.utils.coco.COCODetectionDatasetImporter "fiftyone.utils.coco.COCODetectionDatasetImporter")
 for complete descriptions of the optional keyword arguments that you can
-pass to [`load_zoo_dataset()`](../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
+pass to [`load_zoo_dataset()`](../../api/fiftyone.zoo.datasets.html#fiftyone.zoo.datasets.load_zoo_dataset "fiftyone.zoo.datasets.load_zoo_dataset").
 
 **Example usage**
 
@@ -2301,7 +2301,7 @@ viewpoint, etc.
 - Supported splits: `train, test`
 
 - ZooDataset class:
-[`UCF101Dataset`](../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.UCF101Dataset "fiftyone.zoo.datasets.base.UCF101Dataset")
+[`UCF101Dataset`](../../api/fiftyone.zoo.datasets.base.html#fiftyone.zoo.datasets.base.UCF101Dataset "fiftyone.zoo.datasets.base.UCF101Dataset")
 
 
 **Example usage**
@@ -2347,9 +2347,9 @@ contain annotations.
 
 - ZooDataset classes:
 
-  - [`VOC2007Dataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.VOC2007Dataset "fiftyone.zoo.datasets.tf.VOC2007Dataset") (TF backend)
+  - [`VOC2007Dataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.VOC2007Dataset "fiftyone.zoo.datasets.tf.VOC2007Dataset") (TF backend)
 
-  - [`VOC2007Dataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.VOC2007Dataset "fiftyone.zoo.datasets.torch.VOC2007Dataset") (Torch backend)
+  - [`VOC2007Dataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.VOC2007Dataset "fiftyone.zoo.datasets.torch.VOC2007Dataset") (Torch backend)
 
 Note
 
@@ -2392,9 +2392,9 @@ contain annotations.
 
 - ZooDataset classes:
 
-  - [`VOC2012Dataset`](../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.VOC2012Dataset "fiftyone.zoo.datasets.tf.VOC2012Dataset") (TF backend)
+  - [`VOC2012Dataset`](../../api/fiftyone.zoo.datasets.tf.html#fiftyone.zoo.datasets.tf.VOC2012Dataset "fiftyone.zoo.datasets.tf.VOC2012Dataset") (TF backend)
 
-  - [`VOC2012Dataset`](../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.VOC2012Dataset "fiftyone.zoo.datasets.torch.VOC2012Dataset") (Torch backend)
+  - [`VOC2012Dataset`](../../api/fiftyone.zoo.datasets.torch.html#fiftyone.zoo.datasets.torch.VOC2012Dataset "fiftyone.zoo.datasets.torch.VOC2012Dataset") (Torch backend)
 
 Note
 

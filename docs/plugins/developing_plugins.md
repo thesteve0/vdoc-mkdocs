@@ -459,8 +459,8 @@ number of builtin `Python` and
 [JS](https://github.com/voxel51/fiftyone/blob/develop/app/packages/operators/src/built-in-operators.ts)
 operators for common tasks.
 
-The [`fiftyone.operators.types`](../api/fiftyone.operators.types.html#module-fiftyone.operators.types "fiftyone.operators.types") module and
-[`@fiftyone/operators`](api/plugins.fiftyone.operators.html#module-fiftyone-operators "@fiftyone/operators") package define a rich
+The [`fiftyone.operators.types`](../api/fiftyone.operators.types.html "fiftyone.operators.types") module and
+[`@fiftyone/operators`](../api/fiftyone.operators.html "@fiftyone/operators") package define a rich
 builtin type system that operator developers can use to define the input and
 output properties of their operators without the need to build custom user
 interfaces from scratch. These types handle all aspects of input collection,
@@ -1409,7 +1409,7 @@ scenarios.
 
 Panels, like [operators](#developing-operators), can make use of the
 [`fiftyone.operators.types`](../api/fiftyone.operators.types.html#module-fiftyone.operators.types "fiftyone.operators.types") module and the
-[`@fiftyone/operators`](api/plugins.fiftyone.operators.html#module-fiftyone-operators "@fiftyone/operators") package, which define a
+[`@fiftyone/operators`](../api/fiftyone.operators.html "@fiftyone/operators") package, which define a
 rich builtin type system that panel developers can use to implement the layout
 and associated events that define the panel.
 

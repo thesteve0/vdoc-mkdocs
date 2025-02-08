@@ -57,22 +57,22 @@ example syntaxes for downloading and working with them.
 The remote source’s `manifest.json` file defines relevant metadata about the
 model(s) that it contains:
 
-| Field | Required? | Description |
-| --- | --- | --- |
-| `base_name` | **yes** | The base name of the model (no version info) |
-| `base_filename` |  | The base filename or directory of the model (no version info), if applicable.<br>This is required in order for<br>[`list_downloaded_zoo_models()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.list_downloaded_zoo_models "fiftyone.zoo.models.list_downloaded_zoo_models")<br>to detect the model and [`delete_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.delete_zoo_model "fiftyone.zoo.models.delete_zoo_model")<br>to delete the local copy if it is downloaded |
-| `author` |  | The author of the model |
-| `version` |  | The version of the model (if applicable).<br>If a version is provided, then users can refer to a specific version of the model by<br>appending `@<ver>` to its name when using methods like<br>[`load_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"), otherwise the latest<br>version of the model is loaded by default |
-| `url` |  | The URL at which the model is hosted |
-| `license` |  | The license under which the model is distributed |
-| `source` |  | The original source of the model |
-| `description` |  | A brief description of the model |
-| `tags` |  | A list of tags for the model. Useful in conjunction with<br>[`list_zoo_models()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.list_zoo_models "fiftyone.zoo.models.list_zoo_models") |
-| `size_bytes` |  | The size of the model on disk |
-| `date_added` |  | The time that the model was added to the source |
-| `requirements` |  | JSON description of the model’s package/runtime requirements |
-| `manager` |  | A [`fiftyone.core.models.ModelManagerConfig`](../api/fiftyone.core.models.html#fiftyone.core.models.ModelManagerConfig "fiftyone.core.models.ModelManagerConfig") dict that describes the remote<br>location of the model and how to download it. If this is not provided, then a<br>[download\_model()](#model-zoo-remote-download-model) function must be provided |
-| `default_deployment_config_dict` |  | A [`fiftyone.core.models.ModelConfig`](../api/fiftyone.core.models.html#fiftyone.core.models.ModelConfig "fiftyone.core.models.ModelConfig") dict describing how to load the model. If<br>this is not provided, then a [load\_model()](#model-zoo-remote-load-model) function<br>must be provided |
+| Field | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| --- | --- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `base_name` | **yes** | The base name of the model (no version info)                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `base_filename` |  | The base filename or directory of the model (no version info), if applicable.<br>This is required in order for<br>[`list_downloaded_zoo_models()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.list_downloaded_zoo_models "fiftyone.zoo.models.list_downloaded_zoo_models")<br>to detect the model and [`delete_zoo_model()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.delete_zoo_model "fiftyone.zoo.models.delete_zoo_model")<br>to delete the local copy if it is downloaded |
+| `author` |  | The author of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `version` |  | The version of the model (if applicable).<br>If a version is provided, then users can refer to a specific version of the model by<br>appending `@<ver>` to its name when using methods like<br>[`load_zoo_model()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"), otherwise the latest<br>version of the model is loaded by default                                                                                                       |
+| `url` |  | The URL at which the model is hosted                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `license` |  | The license under which the model is distributed                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `source` |  | The original source of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `description` |  | A brief description of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `tags` |  | A list of tags for the model. Useful in conjunction with<br>[`list_zoo_models()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.list_zoo_models "fiftyone.zoo.models.list_zoo_models")                                                                                                                                                                                                                                                                                                          |
+| `size_bytes` |  | The size of the model on disk                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `date_added` |  | The time that the model was added to the source                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `requirements` |  | JSON description of the model’s package/runtime requirements                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `manager` |  | A [`fiftyone.core.models.ModelManagerConfig`](../../api/fiftyone.core.models.ModelManagerConfig.html "fiftyone.core.models.ModelManagerConfig") dict that describes the remote<br>location of the model and how to download it. If this is not provided, then a<br>[download\_model()](#model-zoo-remote-download-model) function must be provided                                                                                                                                                       |
+| `default_deployment_config_dict` |  | A [`fiftyone.core.models.ModelConfig`](../../api/fiftyone.core.models.ModelConfig.html "fiftyone.core.models.ModelConfig") dict describing how to load the model. If<br>this is not provided, then a [load\_model()](#model-zoo-remote-load-model) function<br>must be provided                                                                                                                                                                                                                          |
 
 It can also provide optional metadata about the remote source itself:
 
@@ -147,8 +147,8 @@ def download_model(model_name, model_path):
 ```
 
 This method is called under-the-hood when a user calls
-[`download_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.download_zoo_model "fiftyone.zoo.models.download_zoo_model") or
-[`load_zoo_model()`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"), and its job is
+[`download_zoo_model()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.download_zoo_model "fiftyone.zoo.models.download_zoo_model") or
+[`load_zoo_model()`](../../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model"), and its job is
 to download any relevant files from the web and organize and/or prepare
 them as necessary at the provided path.
 
@@ -188,19 +188,19 @@ def load_model(model_name, model_path, **kwargs):
 
 ```
 
-This method’s job is to load the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") instance for the specified model whose
+This method’s job is to load the [`Model`](../../api/fiftyone.core.models.Model.html "fiftyone.core.models.Model") instance for the specified model whose
 associated weights are stored at the provided path.
 
 Note
 
 Refer to [this page](design.md#model-zoo-design-overview) for more information
-about wrapping models in the [`Model`](../api/fiftyone.core.models.html#fiftyone.core.models.Model "fiftyone.core.models.Model") interface.
+about wrapping models in the [`Model`](../../api/fiftyone.core.models.Model.html "fiftyone.core.models.Model") interface.
 
 Remotely-sourced models can optionally support customized loading by accepting
 optional keyword arguments to their `load_model()` method.
 
 When
-[`load_zoo_model(name_or_url, ..., **kwargs)`](../api/fiftyone.zoo.models.html#fiftyone.zoo.models.load_zoo_model "fiftyone.zoo.models.load_zoo_model")
+[`load_zoo_model(name_or_url, ..., **kwargs)`](../../api/fiftyone.zoo.models.html#load_zoo_model "fiftyone.zoo.models.load_zoo_model")
 is called, any `kwargs` are passed through to `load_model(..., **kwargs)`.
 
 Note

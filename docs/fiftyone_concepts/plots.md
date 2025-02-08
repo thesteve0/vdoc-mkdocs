@@ -1115,7 +1115,7 @@ property of an [`InteractivePlot`](../api/fiftyone.core.plots.base.html#fiftyone
 
 ### Plotting backend [¶](\#plotting-backend "Permalink to this headline")
 
-Most plotting methods in the [`fiftyone.core.plots()`](../api/fiftyone.core.plots.mdFindex.html#module-fiftyone.core.plots "fiftyone.core.plots") module provide an
+Most plotting methods in the [`fiftyone.core.plots()`](../api/fiftyone.core.plots.html "fiftyone.core.plots") module provide an
 optional `backend` parameter that you can use to control the plotting backend
 used to render plots.
 

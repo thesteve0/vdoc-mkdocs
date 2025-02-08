@@ -195,7 +195,7 @@ which you can see by inspecting the parameters of a backend’s associated
 
 The relevant classes for the builtin annotation backends are:
 
-- `"cvat"`: [`fiftyone.utils.cvat.CVATBackendConfig`](../api/fiftyone.utils.cvat.md#fiftyone.utils.cvat.CVATBackendConfig "fiftyone.utils.cvat.CVATBackendConfig")
+- `"cvat"`: [`fiftyone.utils.cvat.CVATBackendConfig`](../api/fiftyone.utils.cvat.html#fiftyone.utils.cvat.CVATBackendConfig "fiftyone.utils.cvat.CVATBackendConfig")
 
 - `"labelstudio"`: [`fiftyone.utils.labelstudio.LabelStudioBackendConfig`](../api/fiftyone.utils.labelstudio.html#fiftyone.utils.labelstudio.LabelStudioBackendConfig "fiftyone.utils.labelstudio.LabelStudioBackendConfig")
 
