@@ -3,7 +3,7 @@
 With FiftyOne, you can easily download, visualize, and evaluate on the
 [ActivityNet dataset](http://activity-net.org/index.html)!
 
-![activitynet-200-validation](../_images/activitynet-200-validation.png)
+![activitynet-200-validation](../_images/activitynet-200-validation.webp)
 
 ## Loading the ActivityNet dataset [¶](\#loading-the-activitynet-dataset "Permalink to this headline")
 
@@ -358,7 +358,7 @@ Walking the dog       0.50      0.60      0.55         5
 
 ```
 
-![activitynet-evaluate-detections](../_images/activitynet_evaluate_detections.png)
+![activitynet-evaluate-detections](../_images/activitynet_evaluate_detections.webp)
 
 ### mAP and PR curves [¶](\#map-and-pr-curves "Permalink to this headline")
 
@@ -417,7 +417,7 @@ plot.show()
 
 ```
 
-![activitynet-pr-curves](../_images/activitynet_pr_curves.png)
+![activitynet-pr-curves](../_images/activitynet_pr_curves.webp)
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
@@ -471,7 +471,7 @@ plot.show()
 
 ```
 
-![activitynet-confusion-matrix](../_images/activitynet_confusion_matrix.png)
+![activitynet-confusion-matrix](../_images/activitynet_confusion_matrix.webp)
 
 Note
 

@@ -175,7 +175,7 @@ def batch_convert_to_webp(input_dir, output_dir, num_cores=2, quality=80):
 
 
 if __name__ == "__main__":
-    input_directory = "./docs/_images"
+    input_directory = "./docs/_static/images"
     output_directory = "webp_output"
 
     # Example usage with 2 cores

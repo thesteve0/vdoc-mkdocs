@@ -44,7 +44,7 @@ datasets:
 - [Semantic segmentation](../fiftyone_concepts/using_datasets.md#semantic-segmentation)
 
 
-![cvat-example](../_images/cvat_example.png)
+![cvat-example](../_images/cvat_example.webp)
 
 Note
 
@@ -1271,7 +1271,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-tag](../_images/cvat_tag.png)
+![cvat-tag](../_images/cvat_tag.webp)
 
 ### Editing existing labels [¶](\#editing-existing-labels "Permalink to this headline")
 
@@ -1301,7 +1301,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-example](../_images/cvat_example.png)
+![cvat-example](../_images/cvat_example.webp)
 
 The above code snippet will infer the possible classes and label attributes
 from your FiftyOne dataset. However, the `classes` and `attributes` parameters
@@ -1345,7 +1345,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-new-class](../_images/cvat_new_class.png)
+![cvat-new-class](../_images/cvat_new_class.webp)
 
 Warning
 
@@ -1531,7 +1531,7 @@ if you define an annotation schema that involves the same class label in
 multiple fields, the name of the label field will be appended to the class
 in CVAT in order to distinguish the class labels.
 
-![cvat-multiple-fields](../_images/cvat_multiple_fields.png)
+![cvat-multiple-fields](../_images/cvat_multiple_fields.webp)
 
 ### Unexpected annotations [¶](\#unexpected-annotations "Permalink to this headline")
 
@@ -1583,7 +1583,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-polyline](../_images/cvat_polyline.png)
+![cvat-polyline](../_images/cvat_polyline.webp)
 
 ### Creating projects [¶](\#creating-projects "Permalink to this headline")
 
@@ -1877,7 +1877,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-scalar](../_images/cvat_scalar.png)
+![cvat-scalar](../_images/cvat_scalar.webp)
 
 ### Uploading alternate media [¶](\#uploading-alternate-media "Permalink to this headline")
 
@@ -1935,7 +1935,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-alt-media](../_images/cvat_alt_media.png)
+![cvat-alt-media](../_images/cvat_alt_media.webp)
 
 ### Using CVAT’s occlusion widget [¶](\#using-cvat-s-occlusion-widget "Permalink to this headline")
 
@@ -2028,7 +2028,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-occ-widget](../_images/cvat_occ_widget.png)
+![cvat-occ-widget](../_images/cvat_occ_widget.webp)
 
 ### Using CVAT groups [¶](\#using-cvat-groups "Permalink to this headline")
 
@@ -2301,7 +2301,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![cvat-video](../_images/cvat_video.png)
+![cvat-video](../_images/cvat_video.webp)
 
 ### Editing frame-level label tracks [¶](\#editing-frame-level-label-tracks "Permalink to this headline")
 

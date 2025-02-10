@@ -13,7 +13,7 @@ workflows.
 
 Basics,Dataset-Curation
 
-![](../_static/images/recipes/creating_views.png)
+![](../_static/images/recipes/creating_views.webp)
 
 #### Removing duplicate images from a dataset
 
@@ -21,7 +21,7 @@ Basics,Dataset-Curation
 
 Basics,Dataset-Curation
 
-![](../_static/images/recipes/image_deduplication.png)
+![](../_static/images/recipes/image_deduplication.webp)
 
 #### Removing duplicate objects from a dataset
 
@@ -29,7 +29,7 @@ Basics,Dataset-Curation
 
 Basics,Dataset-Curation
 
-![](../_static/images/recipes/remove_duplicate_annos.png)
+![](../_static/images/recipes/remove_duplicate_annos.webp)
 
 #### Adding classifier predictions to a dataset
 
@@ -37,7 +37,7 @@ Basics,Dataset-Curation
 
 Basics,Model-Training
 
-![](../_static/images/recipes/adding_classifications.png)
+![](../_static/images/recipes/adding_classifications.webp)
 
 #### Adding object detections to a dataset
 
@@ -45,7 +45,7 @@ Basics,Model-Training
 
 Basics,Model-Training
 
-![](../_static/images/recipes/adding_detections.png)
+![](../_static/images/recipes/adding_detections.webp)
 
 #### Draw labels on samples
 
@@ -53,7 +53,7 @@ Basics,Model-Training
 
 Basics,Visualization
 
-![](../_static/images/recipes/draw_labels.png)
+![](../_static/images/recipes/draw_labels.webp)
 
 #### Convert dataset formats on disk
 
@@ -61,7 +61,7 @@ Basics,Visualization
 
 Basics,I/O
 
-![](../_static/images/recipes/convert_datasets.png)
+![](../_static/images/recipes/convert_datasets.webp)
 
 #### Merging datasets
 
@@ -69,7 +69,7 @@ Basics,I/O
 
 Basics,I/O
 
-![](../_static/images/recipes/merge_datasets.png)
+![](../_static/images/recipes/merge_datasets.webp)
 
 #### Import datasets in custom formats
 
@@ -77,7 +77,7 @@ Basics,I/O
 
 Advanced,I/O
 
-![](../_static/images/recipes/custom_importer.png)
+![](../_static/images/recipes/custom_importer.webp)
 
 #### Export datasets in custom formats
 
@@ -85,7 +85,7 @@ Advanced,I/O
 
 Advanced,I/O
 
-![](../_static/images/recipes/custom_exporter.png)
+![](../_static/images/recipes/custom_exporter.webp)
 
 #### Parse samples in custom formats
 
@@ -93,7 +93,7 @@ Advanced,I/O
 
 Advanced,I/O
 
-![](../_static/images/recipes/custom_parser.png)
+![](../_static/images/recipes/custom_parser.webp)
 
 Note
 

@@ -17,12 +17,12 @@ to any plugins that require them.
 Admins can add, configure, and remove secrets in the FiftyOne Teams App by
 navigating to the Secrets Management page under Settings > Secrets:
 
-![teams-secrets-page](../_images/secrets_page.png)
+![teams-secrets-page](../_images/secrets_page.webp)
 
 When you tap on the “Add secret” button, you will see that a secret is
 comprised of a key, value, and optional description:
 
-![teams-create-secret-form](../_images/create_secret_form.png)
+![teams-create-secret-form](../_images/create_secret_form.webp)
 
 Secret keys must be upper snake case strings like `MY_SECRET_KEY`.
 

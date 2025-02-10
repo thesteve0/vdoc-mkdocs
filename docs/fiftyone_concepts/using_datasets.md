@@ -1518,7 +1518,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![quickstart-video](../_images/quickstart-video.gif)
+![quickstart-video](../_images/quickstart-video.webp)
 
 One approach is to directly query the frame-level field ( `frames.detections`
 in this case) in the App’s sidebar. However, when the dataset is large, such
@@ -1554,7 +1554,7 @@ Moreover, summary fields are [indexed](app.md#app-optimizing-query-performance)
 by default and the App can natively leverage these indexes to provide
 performant filtering:
 
-![quickstart-video-summary-fields](../_images/quickstart-video-summary-fields.gif)
+![quickstart-video-summary-fields](../_images/quickstart-video-summary-fields.webp)
 
 Note
 
@@ -2490,7 +2490,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![cuboids](../_images/cuboids.png)
+![cuboids](../_images/cuboids.webp)
 
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your cuboids by
 dynamically adding new fields to each [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instance:
@@ -2554,7 +2554,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![rotated-bounding-boxes](../_images/rotated-bounding-boxes.png)
+![rotated-bounding-boxes](../_images/rotated-bounding-boxes.webp)
 
 Like all [`Label`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Label "fiftyone.core.labels.Label") types, you can also add custom attributes to your rotated
 bounding boxes by dynamically adding new fields to each [`Polyline`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polyline "fiftyone.core.labels.Polyline") instance:
@@ -4190,7 +4190,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![quickstart](../_images/quickstart.gif)
+![quickstart](../_images/quickstart.webp)
 
 ## Video datasets [¶](\#video-datasets "Permalink to this headline")
 
@@ -4430,7 +4430,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![quickstart-video](../_images/quickstart-video.gif)
+![quickstart-video](../_images/quickstart-video.webp)
 
 ## 3D datasets [¶](\#d-datasets "Permalink to this headline")
 
@@ -4775,7 +4775,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![quickstart-3d](../_images/quickstart-3d.gif)
+![quickstart-3d](../_images/quickstart-3d.webp)
 
 Also check out the
 [quickstart-groups dataset](../data/dataset_zoo/datasets.md#dataset-zoo-quickstart-groups), which
@@ -4800,7 +4800,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![quickstart-groups](../_images/quickstart-groups.gif)
+![quickstart-groups](../_images/quickstart-groups.webp)
 
 ## Point cloud datasets [¶](\#point-cloud-datasets "Permalink to this headline")
 

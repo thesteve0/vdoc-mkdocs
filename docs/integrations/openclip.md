@@ -99,7 +99,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![zero-shot-classification-example](../_images/zsc-openclip.png)
+![zero-shot-classification-example](../_images/zsc-openclip.webp)
 
 ## Embeddings [¶](\#embeddings "Permalink to this headline")
 
@@ -145,7 +145,7 @@ fob.compute_visualization(
 
 Here is the final result!
 
-![clip-compare](../_images/clip-compare.gif)
+![clip-compare](../_images/clip-compare.webp)
 
 ## Text similarity search [¶](\#text-similarity-search "Permalink to this headline")
 

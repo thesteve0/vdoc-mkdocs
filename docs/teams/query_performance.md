@@ -13,7 +13,7 @@ The App’s sidebar is optimized to leverage database indexes whenever possible.
 Fields that are indexed are indicated by lightning bolt icons next to their
 field/attribute names:
 
-![app-query-performance](../_images/app-query-performance.gif)
+![app-query-performance](../_images/app-query-performance.webp)
 
 The above GIF shows Query Performance in action on the train split of the
 [BDD100K dataset](../data/dataset_zoo/datasets.md#dataset-zoo-bdd100k) with an index on the
@@ -28,7 +28,7 @@ If you perform a filter that could benefit from an index and the query takes
 longer than a few seconds, you’ll see a toast notification that nudges you to
 take the appropriate action to optimize the query:
 
-![query-performance-toast](../_images/qp_toast.png)
+![query-performance-toast](../_images/qp_toast.webp)
 
 Clicking “Create Index” will open the
 [Query Performance panel](#query-performance-panel) with a preconfigured
@@ -46,24 +46,24 @@ You can open the Query Performance panel manually either by clicking the “+”
 icon next to the Samples tab or by clicking the yellow lightning bolt in the
 top-right of the sidbar:
 
-![query-performance-tooltip](../_images/qp_tooltip.png)
+![query-performance-tooltip](../_images/qp_tooltip.webp)
 
 The first time you open the Query Performance panel, you’ll see a welcome page:
 
-![query-performance-home-tab](../_images/qp_home.png)
+![query-performance-home-tab](../_images/qp_home.webp)
 
 After you’ve created at least one custom index or summary field for a dataset,
 you’ll instead see a list of the indexes and summary fields that exist on the
 dataset:
 
-![query-performance-tableview](../_images/qp_tableview.png)
+![query-performance-tableview](../_images/qp_tableview.webp)
 
 ### Creating indexes [¶](\#creating-indexes "Permalink to this headline")
 
 You can create a new index at any time by clicking the `Create Index` button
 in the top-right of the panel:
 
-![query-performance-create-index](../_images/qp_create_index.png)
+![query-performance-create-index](../_images/qp_create_index.webp)
 
 When you click “Execute”, the index will be initiated and you’ll see
 “In progress” in the panel’s summary table.
@@ -99,7 +99,7 @@ You can create a new summary field at any time by clicking the `Create Index`
 button in the top-right of the panel and selecting the “Summary field” type in
 the model:
 
-![query-performance-create-summary-field](../_images/qp_create_summary_field.png)
+![query-performance-create-summary-field](../_images/qp_create_summary_field.webp)
 
 Warning
 
@@ -137,12 +137,12 @@ You can enable/disable Query Performance for a particular dataset for its
 lifetime (in your current browser) via the gear icon in the Samples panel’s
 actions row:
 
-![app-query-performance-disabled](../_images/app-query-performance-disabled.gif)
+![app-query-performance-disabled](../_images/app-query-performance-disabled.webp)
 
 You can also enable/disable Query Performance via the status button in the
 upper right corner of the Query Performance panel:
 
-![query-performance-config](../_images/qp_config.png)
+![query-performance-config](../_images/qp_config.webp)
 
 Deployment admins can also configure the global behavior of Query Performance
 via the following environment variables:

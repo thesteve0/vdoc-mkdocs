@@ -19,7 +19,7 @@ Did you know? You can
 [search by natural language](../fiftyone_concepts/brain.md#brain-similarity-text) using MongoDB
 similarity indexes!
 
-![image-similarity](../_images/brain-image-similarity.gif)
+![image-similarity](../_images/brain-image-similarity.webp)
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 

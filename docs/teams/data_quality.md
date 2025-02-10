@@ -32,18 +32,18 @@ data with either the same or different filenames
 
 Click on the right arrow of an issue type’s card to open its expanded view.
 
-![data-quality-home](../_images/data_quality_home.png)
+![data-quality-home](../_images/data_quality_home.webp)
 
 ## Scanning for issues [¶](\#scanning-for-issues "Permalink to this headline")
 
 If you have not yet scanned a dataset for a given issue type, you’ll see a
 landing page like this:
 
-![data-quality-brightness-scan](../_images/data_quality_brightness_scan.png)
+![data-quality-brightness-scan](../_images/data_quality_brightness_scan.webp)
 
 Clicking the “Scan Dataset” button presents two choices for execution:
 
-![data-quality-brightness-scan-options](../_images/data_quality_brightness_scan_options.png)
+![data-quality-brightness-scan-options](../_images/data_quality_brightness_scan_options.webp)
 
 Note
 
@@ -57,7 +57,7 @@ cluster.
 
 While a scan is in-progress, you’ll see a status page like this:
 
-![data-quality-brightness-scheduled](../_images/data_quality_brightness_scheduled.png)
+![data-quality-brightness-scheduled](../_images/data_quality_brightness_scheduled.webp)
 
 Click the link in the notification to navigate to the dataset’s
 [Runs page](teams_plugins.md#teams-managing-delegated-operations) where you can monitor
@@ -68,7 +68,7 @@ the status of the task.
 Once an issue scan is complete, its card will update to display an interactive
 histogram that you can use to analyze the findings:
 
-![data-quality-brightness-analysis](../_images/data_quality_brightness_analysis.png)
+![data-quality-brightness-analysis](../_images/data_quality_brightness_analysis.webp)
 
 Note
 
@@ -108,7 +108,7 @@ You can also use the threshold slider to manually explore different threshold
 ranges. When you release the slider, the Samples panel will automatically
 update to show the corresponding samples:
 
-![data-quality-brightness-slider](../_images/data_quality_brightness_slider.gif)
+![data-quality-brightness-slider](../_images/data_quality_brightness_slider.webp)
 
 If you find a better threshold for a dataset, you can save it via the
 “Save Threshold” option under the settings menu. You can use
@@ -118,7 +118,7 @@ Once you’ve reviewed the potential issues in the grid, you can use the
 “Add Tags” button to take action on them. Clicking the button will display a
 modal like this:
 
-![data-quality-brightness-tag](../_images/data_quality_brightness_tag.png)
+![data-quality-brightness-tag](../_images/data_quality_brightness_tag.webp)
 
 Note
 
@@ -138,7 +138,7 @@ If you navigate away from an issue type that is currently “In Review”, you�
 be prompted to indicate whether or not you’d like to mark the issue type as
 “Reviewed”:
 
-![data-quality-brightness-mark-as-reviewed](../_images/data_quality_brightness_mark_as_reviewed.png)
+![data-quality-brightness-mark-as-reviewed](../_images/data_quality_brightness_mark_as_reviewed.webp)
 
 ## Updating a scan [¶](\#updating-a-scan "Permalink to this headline")
 
@@ -155,14 +155,14 @@ the panel will automatically detect the presence of unscanned samples and will
 display contextual information from the [home page](#data-quality-home)
 and [analysis page](#data-quality-analyze):
 
-![data-quality-new-samples-home](../_images/data_quality_new_samples_home.png)
+![data-quality-new-samples-home](../_images/data_quality_new_samples_home.webp)
 
 To update an existing scan, open the issue type and click the
 “Scan New Samples” button in the bottom-right corner of the
 [analysis page](#data-quality-analyze). This will open a modal that
 provides additional context and prompts you to initiate the new samples scan:
 
-![data-quality-new-samples-modal](../_images/data_quality_new_samples_modal.png)
+![data-quality-new-samples-modal](../_images/data_quality_new_samples_modal.webp)
 
 ## Deleting a scan [¶](\#deleting-a-scan "Permalink to this headline")
 

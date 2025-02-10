@@ -394,7 +394,7 @@ session = fo.launch_app(view=similar_cats)
 
 ```
 
-![cats-similar](../_images/cats-similar.png)
+![cats-similar](../_images/cats-similar.webp)
 
 ## Aggregations [¶](\#aggregations "Permalink to this headline")
 

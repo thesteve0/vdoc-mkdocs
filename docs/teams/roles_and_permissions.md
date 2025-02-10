@@ -20,7 +20,7 @@ Admins can access user management features by clicking on their account icon in
 the upper-right of the FiftyOne Teams App and navigating to the
 “Settings > Team > Users” page:
 
-![admin-team-users-page](../_images/admin_team_users_page.png)
+![admin-team-users-page](../_images/admin_team_users_page.webp)
 
 Admins can invite new users by clicking on “Invite people”, as shown below.
 Invited users will receive an email invitation with a link to accept the
@@ -32,7 +32,7 @@ Invited users may login using any identity provider that has been enabled on you
 deployment. If you need more information about configuring IdPs or increasing
 your user quotas, contact your Voxel51 CS engineer.
 
-![user-invitation](../_images/user_invitation.png)
+![user-invitation](../_images/user_invitation.webp)
 
 ### Admin [¶](\#admin "Permalink to this headline")
 
@@ -85,12 +85,12 @@ Each group can be given specific dataset access permissions, which apply to
 all users within the group. Collaborators’ and guests’ access to the dataset is
 limited by the maximum dataset access level of the role.
 
-![admin-team-groups-page](../_images/admin_team_groups_page.png)
+![admin-team-groups-page](../_images/admin_team_groups_page.webp)
 
 Admins can create a new group by clicking on “Create group” and then adding
 existing users to the group by clicking on “Add users”.
 
-![admin-create-group](../_images/admin_create_group.png)![admin-team-add-users-to-team](../_images/admin_add_users_to_team.png)
+![admin-create-group](../_images/admin_create_group.webp)![admin-team-add-users-to-team](../_images/admin_add_users_to_team.webp)
 
 Note
 
@@ -138,7 +138,7 @@ level that all Members have on the dataset.
 A dataset’s default access level can be set to **No access**, **Can view**,
 **Can tag**, **Can edit**, or **Can manage** as shown below:
 
-![default-access](../_images/dataset_default_access.png)
+![default-access](../_images/dataset_default_access.webp)
 
 Note
 
@@ -154,7 +154,7 @@ To give access to an existing user or group, simply click “Share” button on
 the top right. A list of users with access to the dataset is shown. Click
 “Add User” or “Add Group” to grant access to a new user or group.
 
-![specific-access](../_images/share_dataset.png)![specific-access](../_images/dataset_specific_access.png)
+![specific-access](../_images/share_dataset.webp)![specific-access](../_images/dataset_specific_access.webp)
 
 The following permissions are available to each user role:
 
@@ -243,5 +243,5 @@ view) will be granted **Can manage** permissions on the new dataset.
 Admins can review the actions and permissions available to each user role by
 navigating to the “Settings > Security > Roles” page:
 
-![admin-roles-page](../_images/admin_roles_page.png)
+![admin-roles-page](../_images/admin_roles_page.webp)
 

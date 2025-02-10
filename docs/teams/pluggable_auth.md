@@ -38,7 +38,7 @@ and [OAuth2](https://oauth.net/2/).
 
 ## Super Admin UI [¶](\#super-admin-ui "Permalink to this headline")
 
-![Super Admin UI](../_images/cas_api_docs.png)
+![Super Admin UI](../_images/cas_api_docs.webp)
 
 The Super Admin UI contains FiftyOne Teams deployment wide configurations. When
 logging into FiftyOne Teams as an admin, you are in the context of an
@@ -49,7 +49,7 @@ global configurations (Identity Providers, Session timeouts, and JS hooks).
 > **NOTE**: In v1.6.0, the Super Admin UI is only available in
 > [internal mode](#internal-mode)
 
-![Sign In to CAS](../_images/cas_sign_in.png)
+![Sign In to CAS](../_images/cas_sign_in.webp)
 
 To login to this application navigate to
 `https://<YOUR_FIFTYONE_TEAMS_URL>/cas/configurations`. In the top right of the
@@ -64,7 +64,7 @@ As of FiftyOne Teams 2.1.0, onboarding new users can be done via invitation
 links. To do so, “Enable invitation” must be toggled on in the Organizations
 section of the [Super Admin UI](#super-admin-ui).
 
-![Enable Invitations](../_images/org_enable_invitations.png)
+![Enable Invitations](../_images/org_enable_invitations.webp)
 
 This allows creating invitation links in [internal mode](#internal-mode) that
 can be manually sent to users. When those users click the links, they will be
@@ -83,12 +83,12 @@ need for Auth0 or any other external connections beyond the SMTP server itself.
 To do so, “Send email invitations” must be toggled on in the Organizations
 section of the [Super Admin UI](#super-admin-ui)
 
-![Send email invitations](../_images/org_send_email_invitations.png)
+![Send email invitations](../_images/org_send_email_invitations.webp)
 
 To configure your SMTP connection, navigate to the SMTP section of the
 [Super Admin UI](#super-admin-ui)
 
-![SMTP Config](../_images/SMTP_config.png)
+![SMTP Config](../_images/SMTP_config.webp)
 
 A notification at the top of the menu will inform if an SMTP configuration is
 already saved. Currently, only one SMTP configuration can be saved per
@@ -102,7 +102,7 @@ provided. The configuration will not save otherwise.
 Additionally, users can enter a valid email address and click Send Test Email
 to test the connection.
 
-![SMTP Config test email](../_images/SMTP_config_test_email.png)
+![SMTP Config test email](../_images/SMTP_config_test_email.webp)
 
 > **NOTE:** Emails and an SMTP connection are not required to use invitations.
 > Invitation links can still be generated and manually distributed without an

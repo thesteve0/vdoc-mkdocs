@@ -115,7 +115,7 @@ for sample in dataset.iter_samples(progress=True):
 
 ```
 
-![ultralytics-boxes](../_images/ultralytics_boxes.jpg)
+![ultralytics-boxes](../_images/ultralytics_boxes.webp)
 
 You can also load any of these models directly from the
 [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo):
@@ -192,7 +192,7 @@ for sample in dataset.iter_samples(progress=True):
 
 ```
 
-![ultralytics-instances](../_images/ultralytics_instances.jpg)
+![ultralytics-instances](../_images/ultralytics_instances.webp)
 
 You can also load YOLOv8, YOLOv9, and YOLO11 segmentation models from the
 [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo):
@@ -265,7 +265,7 @@ for sample in dataset.iter_samples(progress=True):
 
 ```
 
-![ultralytics-keypoints](../_images/ultralytics_keypoints.jpg)
+![ultralytics-keypoints](../_images/ultralytics_keypoints.webp)
 
 ### Oriented bounding boxes [¶](\#oriented-bounding-boxes "Permalink to this headline")
 
@@ -353,7 +353,7 @@ session = fo.launch_app(patches)
 
 ```
 
-![ultralytics-open-world-boxes](../_images/ultralytics_open_world_boxes.png)
+![ultralytics-open-world-boxes](../_images/ultralytics_open_world_boxes.webp)
 
 You can also load these open-vocabulary models from the
 [FiftyOne Model Zoo](../models/model_zoo/index.md#model-zoo), optionally specifying the classes that

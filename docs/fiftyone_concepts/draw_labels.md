@@ -128,7 +128,7 @@ foua.draw_labeled_image(sample, outpath)
 
 ```
 
-![image-annotated.jpg](../_images/example1.jpg)
+![image-annotated.webp](../_images/example1.webp)
 
 Similarly, you can draw an annotated version of a video sample with its frame
 labels overlaid via
@@ -166,5 +166,5 @@ foua.draw_labeled_image(sample, outpath, config=config)
 
 ```
 
-![image-annotated.jpg](../_images/example2.jpg)
+![image-annotated.webp](../_images/example2.webp)
 

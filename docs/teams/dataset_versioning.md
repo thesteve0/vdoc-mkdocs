@@ -1,4 +1,4 @@
-# Dataset Versioning [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#dataset-versioning "Permalink to this headline")
+# Dataset Versioning [¶](\#dataset-versioning "Permalink to this headline")
 
 FiftyOne Teams provides native support for versioning your datasets!
 
@@ -55,10 +55,10 @@ Watch on
 
 [Watch on YouTube](https://www.youtube.com/watch?v=DKUkiDQVDqA "Watch on YouTube")
 
-## Overview [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#overview "Permalink to this headline")
+## Overview [¶](#overview "Permalink to this headline")
 
 Dataset Versioning in FiftyOne Teams is implemented as a linear sequence of
-read-only [Snapshots](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-snapshots). In other words,
+read-only [Snapshots](\#dataset-versioning-snapshots). In other words,
 creating a new Snapshot creates a permanent record of the dataset’s contents
 that can be loaded and viewed at any time in the future, but not directly
 edited. Conversely, the current version of a dataset is called its HEAD
@@ -84,9 +84,9 @@ users may already have a versioning solution external to FiftyOne Teams, and
 the goal is to support integration around those use cases as well.
 
 Currently, only the
-[internal duplication backend](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#internal-duplication-backend) is
+[internal duplication backend](\#internal-duplication-backend) is
 available, but further improvements and implementing additional backend choices
-are [on the roadmap](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-roadmap).
+are [on the roadmap](\#dataset-versioning-roadmap).
 
 Warning
 
@@ -94,7 +94,7 @@ Dataset Versioning is not a replacement for database backups. We strongly
 encourage the use of regular data backups and good storage maintenance
 processes.
 
-## Snapshots [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#snapshots "Permalink to this headline")
+## Snapshots [¶](\#snapshots "Permalink to this headline")
 
 Dataset Versioning in FiftyOne Teams is implemented as a linear history of
 **Snapshots**. A Snapshot captures the state of a dataset at a particular point
@@ -107,28 +107,28 @@ The current working version of the dataset (called the **HEAD**) can be edited
 by anyone with appropriate permissions, as normal. Since Snapshots include a
 commit-like operation, they can only be created on the dataset HEAD.
 
-### Snapshot states [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#snapshot-states "Permalink to this headline")
+### Snapshot states [¶](\#snapshot-states "Permalink to this headline")
 
 Snapshots can be in a few different states of existence depending on deployment
 choices and user actions.
 
-Materialized Snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#term-Materialized-Snapshot "Permalink to this term")
+Materialized Snapshot [¶](\#term-Materialized-Snapshot "Permalink to this term")
 
 A Snapshot whose state and contents are entirely _materialized_ in
 the MongoDB database. The Snapshot is “ready to go” and be loaded
 instantly for analysis and visualization.
 
-Archived Snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#term-Archived-Snapshot "Permalink to this term")
+Archived Snapshot [¶](\#term-Archived-Snapshot "Permalink to this term")
 
 A materialized Snapshot that has been archived to cold storage to
 free up working space in the MongoDB instance. The Snapshot cannot be
 loaded by users until it is re-materialized into MongoDB. Since it is
 stored in its materialized form already though, an archived Snapshot
 can be re-materialized easily, at merely the cost of network transfer
-and MongoDB write latencies. See [here](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-snapshot-archival)
+and MongoDB write latencies. See [here](\#dataset-versioning-snapshot-archival)
 for more.
 
-Virtual Snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#term-Virtual-Snapshot "Permalink to this term")
+Virtual Snapshot [¶](\#term-Virtual-Snapshot "Permalink to this term")
 
 A Snapshot whose state and contents are stored by the pluggable backend
 versioning implementation in whatever way it chooses. In order to be
@@ -143,19 +143,19 @@ been re-materialized but kept in cold storage also).
 
 Note
 
-With the [internal duplication backend](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#internal-duplication-backend)
+With the [internal duplication backend](\#internal-duplication-backend)
 there is no distinction between materialized and virtual Snapshots since by
 definition the implementation uses materialized Snapshots as its method of
 storage.
 
-### Snapshot archival [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#snapshot-archival "Permalink to this headline")
+### Snapshot archival [¶](\#snapshot-archival "Permalink to this headline")
 
 Snapshot your datasets easier knowing your database won’t be overrun!
 
 If your snapshots are important for historical significance but aren’t used
 very often, then you can consider archiving snapshots. This is especially
 helpful with the
-[internal duplication backend](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#internal-duplication-backend) where
+[internal duplication backend](\#internal-duplication-backend) where
 creating snapshots causes database storage to grow quickly!
 
 When a snapshot is archived, all of its contents are stored in an archive in
@@ -168,13 +168,13 @@ Note
 Snapshots must be unarchived in order to browse them in the UI or load them
 with the SDK.
 
-#### Automatic archival [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#automatic-archival "Permalink to this headline")
+#### Automatic archival [¶](\#automatic-archival "Permalink to this headline")
 
 If snapshot archival is enabled, snapshots will automatically be archived
 to make room for newer snapshots as necessary. This can be triggered when a
 snapshot is created or unarchived, which would then put the number of snapshots
 in the database above one of the
-[configured limits](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-configuration).
+[configured limits](\#dataset-versioning-configuration).
 
 If the total materialized snapshots limit is exceeded, then the snapshot
 that was least-recently loaded will be automatically archived.
@@ -193,20 +193,20 @@ If no snapshot can be automatically archived then the triggering event will
 report an error and fail. This can be fixed by deleting snapshots, manually
 archiving snapshots, or changing deployment configuration values.
 
-#### Manual archival [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#manual-archival "Permalink to this headline")
+#### Manual archival [¶](\#manual-archival "Permalink to this headline")
 
 Users with Can Manage permissions to a dataset can manually archive snapshots
-[via the UI or management SDK](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-archive-snapshot).
+[via the UI or management SDK](\#dataset-versioning-archive-snapshot).
 
-#### Unarchival [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#unarchival "Permalink to this headline")
+#### Unarchival [¶](\#unarchival "Permalink to this headline")
 
 While a snapshot is archived, you cannot browse it in the UI or load with
 the SDK.
 
 To enable browsing or loading again, the snapshot can be unarchived
-[via the UI or management SDK](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-unarchive-snapshot).
+[via the UI or management SDK](\#dataset-versioning-unarchive-snapshot).
 
-#### Usage notes [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#usage-notes "Permalink to this headline")
+#### Usage notes [¶](\#usage-notes "Permalink to this headline")
 
 Note
 
@@ -220,7 +220,7 @@ must be recomputed against the previous snapshot. However, if either of
 these snapshots are currently archived then the change summary cannot be
 recomputed and may be reported as unknown.
 
-## Snapshot permissions [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#snapshot-permissions "Permalink to this headline")
+## Snapshot permissions [¶](\#snapshot-permissions "Permalink to this headline")
 
 The table below shows the [dataset permissions](FIXMEgithub.io/zxcv/teams/roles_and_permissions.html#teams-permissions)
 required to perform different Snapshot-related operations:
@@ -237,7 +237,7 @@ required to perform different Snapshot-related operations:
 | Revert dataset to Snapshot |  |  | ✅ |
 | Edit Snapshot’s contents | ❌ | ❌ | ❌ |
 
-## Using snapshots [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#using-snapshots "Permalink to this headline")
+## Using snapshots [¶](\#using-snapshots "Permalink to this headline")
 
 In contrast to a dataset’s HEAD, Snapshots are **read-only**. When viewing in
 the App, the UI is similar to interacting with a HEAD dataset, but users will
@@ -245,21 +245,21 @@ not be able to make any edits to the objects. Similarly, when using the
 FiftyOne SDK, users will not be able to perform any operation that would
 trigger a modification to the stored dataset.
 
-### List snapshots [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#list-snapshots "Permalink to this headline")
+### List snapshots [¶](\#list-snapshots "Permalink to this headline")
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#teams-ui "Permalink to this headline")
+#### Teams UI [¶](\#teams-ui "Permalink to this headline")
 
 To access the Snapshot history and management page, click the “History tab” on
 a dataset’s main page.
 
-![history-tab-button](../_images/history-tab-button.png)
+![history-tab-button](../_images/history-tab-button.webp)
 
 On this page you can see a listing of the Snapshot history for the dataset.
 Each row contains information about a single Snapshot.
 
-![snapshot-list](../_images/snapshot-list.png)
+![snapshot-list](../_images/snapshot-list.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#sdk "Permalink to this headline")
+#### SDK [¶](\#sdk "Permalink to this headline")
 
 You can also list Snapshot names for a dataset using the
 `list_snapshots()` method
@@ -287,18 +287,18 @@ fom.get_snapshot_info(dataset, snapshot_name)
 
 ```
 
-### Loading snapshots [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#loading-snapshots "Permalink to this headline")
+### Loading snapshots [¶](\#loading-snapshots "Permalink to this headline")
 
 Any user with Can View permissions to a dataset can view and load its snapshots
 via the Teams UI or the SDK.
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id2 "Permalink to this headline")
+#### Teams UI [¶](\#id2 "Permalink to this headline")
 
 From the dataset’s History tab, click the “Browse” button next to a Snapshot in
-the [snapshot list](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-list-snapshots) to load the
+the [snapshot list](\#dataset-versioning-list-snapshots) to load the
 Snapshot in the UI.
 
-![history-browse-button](../_images/browse-button.png)
+![history-browse-button](../_images/browse-button.webp)
 
 This will open the Snapshot in the normal dataset samples UI with all your
 favorite FiftyOne visualization tools at your fingertips! However, all
@@ -319,18 +319,18 @@ Clicking the name line drops down a list of the Snapshots where the current one
 is highlighted. Clicking on a Snapshot in the dropdown will navigate to the
 browse page for that Snapshot.
 
-![browse-banner-dropdown](../_images/browse-banner-dropdown.png)
+![browse-banner-dropdown](../_images/browse-banner-dropdown.webp)
 
 On the right side of the banner, clicking the “Back to the latest version”
 button will take you back to the samples page for the dataset HEAD. You can
 also do this by clicking the “Samples” tab. There is also a convenient dropdown
 from the 3-dot (kebab) menu which gives various
-[management functions](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-snapshot-management) for the
+[management functions](\#dataset-versioning-snapshot-management) for the
 current Snapshot.
 
-![browse-banner-rightside](../_images/browse-banner-right.png)
+![browse-banner-rightside](../_images/browse-banner-right.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id3 "Permalink to this headline")
+#### SDK [¶](\#id3 "Permalink to this headline")
 
 Snapshots can also be loaded via the FiftyOne SDK
 [`load_dataset()`](FIXMEgithub.io/zxcv/api/fiftyone.core.dataset.html#fiftyone.core.dataset.load_dataset "fiftyone.core.dataset.load_dataset") method. The
@@ -349,11 +349,11 @@ print(snapshot)
 
 ```
 
-## Snapshot management [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#snapshot-management "Permalink to this headline")
+## Snapshot management [¶](\#snapshot-management "Permalink to this headline")
 
 The following sections describe how to create and use snapshots.
 
-### Creating a snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#creating-a-snapshot "Permalink to this headline")
+### Creating a snapshot [¶](\#creating-a-snapshot "Permalink to this headline")
 
 Users with Can Manage permissions to a dataset can create Snapshots through the
 Teams UI or the Management SDK.
@@ -362,7 +362,7 @@ Note
 
 Snapshots can only be created from the HEAD of the dataset.
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id4 "Permalink to this headline")
+#### Teams UI [¶](\#id4 "Permalink to this headline")
 
 At the top of the History tab for a dataset is the Create snapshot panel.
 This panel shows the number of changes that have happened between the last
@@ -373,24 +373,24 @@ Note
 The latest changes summary is not continuously updated; click the “Refresh”
 button to recompute these values.
 
-![create-refresh-button](../_images/create-refresh-button.png)
+![create-refresh-button](../_images/create-refresh-button.webp)
 
 To create a Snapshot, provide a unique name and an optional description, then
 click the “Save new snapshot” button.
 
 Note
 
-Depending on the [versioning backend](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-backends)
+Depending on the [versioning backend](\#dataset-versioning-backends)
 used, deployment options chosen, and the size of the dataset, this may take
 some time.
 
-![create-save-button](../_images/create-save-button.png)
+![create-save-button](../_images/create-save-button.webp)
 
 After creation, the new Snapshot will show up in the list!
 
-![history-new-snapshot](../_images/history-new-snapshot.png)
+![history-new-snapshot](../_images/history-new-snapshot.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id5 "Permalink to this headline")
+#### SDK [¶](\#id5 "Permalink to this headline")
 
 You can also create Snapshots via the Management SDK.
 
@@ -438,14 +438,14 @@ snapshot = fom.create_snapshot(dataset_name, snapshot_name, description)
 
 ```
 
-### Deleting a snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#deleting-a-snapshot "Permalink to this headline")
+### Deleting a snapshot [¶](\#deleting-a-snapshot "Permalink to this headline")
 
 Users with Can Manage permissions to a dataset can delete snapshots through the
 Teams UI or the Management SDK.
 
 If the Snapshot is the most recent, the latest (HEAD) sample changes summary is
 not automatically recalculated. See
-[this section](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-creating-snapshot) to see how to
+[this section](\#dataset-versioning-creating-snapshot) to see how to
 recalculate these now-stale values.
 
 If the Snapshot is _not_ the most recent, the sample change summary for the
@@ -456,15 +456,15 @@ Warning
 
 Deleting a Snapshot cannot be undone!
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id6 "Permalink to this headline")
+#### Teams UI [¶](\#id6 "Permalink to this headline")
 
 To delete a Snapshot via the App, open the 3-dot (kebab) menu for the Snapshot.
 In the menu, click “Delete snapshot”. This will bring up a confirmation dialog
 to prevent accidental deletions.
 
-![delete-snapshot](../_images/delete-snapshot.png)
+![delete-snapshot](../_images/delete-snapshot.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id7 "Permalink to this headline")
+#### SDK [¶](\#id7 "Permalink to this headline")
 
 You can also use the
 `delete_snapshot()` method
@@ -479,7 +479,7 @@ fom.delete_snapshot(dataset, snapshot_name)
 
 ```
 
-### Rollback dataset to snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#rollback-dataset-to-snapshot "Permalink to this headline")
+### Rollback dataset to snapshot [¶](\#rollback-dataset-to-snapshot "Permalink to this headline")
 
 In case unwanted edits have been added to the dataset HEAD, FiftyOne provides
 the ability for dataset Managers to roll the dataset back (revert) to the state
@@ -491,16 +491,16 @@ This is a destructive operation! Rolling back to a Snapshot discards
 **all** changes between the selected Snapshot and the current working
 version of the dataset, including all newer Snapshots.
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id8 "Permalink to this headline")
+#### Teams UI [¶](\#id8 "Permalink to this headline")
 
 To revert a dataset to a Snapshot’s state, click the 3-dot (kebab) menu in
 the History tab for the Snapshot you want to rollback to and select
 “Rollback to this snapshot”. This will bring up a confirmation dialog to
 prevent accidental deletions.
 
-![rollback-snapshot](../_images/rollback-snapshot.png)
+![rollback-snapshot](../_images/rollback-snapshot.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id9 "Permalink to this headline")
+#### SDK [¶](\#id9 "Permalink to this headline")
 
 You can also use the
 `revert_dataset_to_snapshot()`
@@ -525,28 +525,28 @@ assert len(dataset) > 0
 
 ```
 
-### Archive snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#archive-snapshot "Permalink to this headline")
+### Archive snapshot [¶](\#archive-snapshot "Permalink to this headline")
 
 Users with Can Manage permissions to a dataset can manually
-[archive snapshots](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-automatic-archival) to the
+[archive snapshots](\#dataset-versioning-automatic-archival) to the
 configured cold storage location via the UI or the Management SDK.
 
 Note
 
 Users cannot browse archived snapshots via the UI or load them via the SDK.
 The snapshot must first be
-[unarchived](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-unarchive-snapshot).
+[unarchived](\#dataset-versioning-unarchive-snapshot).
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id10 "Permalink to this headline")
+#### Teams UI [¶](\#id10 "Permalink to this headline")
 
 To manually archive a snapshot, click the 3-dot (kebab) menu in the History tab
 for a snapshot you want to archive and select “Archive snapshot”. This will
 begin the archival process and the browse button will be replaced with an
 “Archiving” spinner”:
 
-![archive-snapshot](../_images/archive-snapshot.png)
+![archive-snapshot](../_images/archive-snapshot.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id11 "Permalink to this headline")
+#### SDK [¶](\#id11 "Permalink to this headline")
 
 You can also use the
 `archive_snapshot()`
@@ -565,20 +565,20 @@ fo.load_dataset(dataset.name, snapshot_name) # throws error, can't load!
 
 ```
 
-### Unarchive snapshot [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#unarchive-snapshot "Permalink to this headline")
+### Unarchive snapshot [¶](\#unarchive-snapshot "Permalink to this headline")
 
 To make an archived snapshot browsable again, users with Can Manage
 permissions to the dataset can unarchive it via the UI or Management SDK.
 
-#### Teams UI [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id12 "Permalink to this headline")
+#### Teams UI [¶](\#id12 "Permalink to this headline")
 
 To unarchive a snapshot, click the “Unarchive” button in the History tab for a
 snapshot you want to unarchive. This will begin the unarchival process and the
 archive button will be replaced with an “Unarchiving” spinner:
 
-![unarchive-snapshot](../_images/unarchive-snapshot.png)
+![unarchive-snapshot](../_images/unarchive-snapshot.webp)
 
-#### SDK [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#id13 "Permalink to this headline")
+#### SDK [¶](\#id13 "Permalink to this headline")
 
 You can also use the
 `unarchive_snapshot()`
@@ -601,7 +601,7 @@ fo.load_dataset(dataset.name, snapshot_name) # works now!
 
 ```
 
-## Pluggable backends [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#pluggable-backends "Permalink to this headline")
+## Pluggable backends [¶](\#pluggable-backends "Permalink to this headline")
 
 Dataset versioning was built with an extensible architecture to support
 different versioning backend implementations being built and swapped in to
@@ -615,7 +615,7 @@ future, but for now, releasing dataset versioning with the first
 iteration was prioritized so that users can begin to see value and provide
 feedback as soon as possible.
 
-### Internal duplication backend [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#internal-duplication-backend "Permalink to this headline")
+### Internal duplication backend [¶](\#internal-duplication-backend "Permalink to this headline")
 
 This backend is similar to cloning a dataset; Snapshots are stored in the same
 MongoDB database as the original dataset.
@@ -630,9 +630,9 @@ At this time, Snapshots are stored in the same database as the original dataset.
 
 These requirements should be taken into consideration when using Snapshots and
 when determining values for the
-[max number of Snapshots allowed](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-configuration).
+[max number of Snapshots allowed](\#dataset-versioning-configuration).
 
-#### Time and space [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#time-and-space "Permalink to this headline")
+#### Time and space [¶](\#time-and-space "Permalink to this headline")
 
 **Time**
 
@@ -657,7 +657,7 @@ the volume of changes. Since it is stored in the same database as normal
 datasets, creating too many Snapshots without the ability to archive them
 could fill up the database.
 
-#### Strengths [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#strengths "Permalink to this headline")
+#### Strengths [¶](\#strengths "Permalink to this headline")
 
 |     |     |
 | --- | --- |
@@ -666,7 +666,7 @@ could fill up the database.
 | ✅ | Browsing/loading is fast because the Snapshots are always materialized |
 | ✅ | For a create-then-load workflow, it has the lowest overhead cost of<br>any backend since materialized and virtual forms are one and the same |
 
-#### Limitations [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#limitations "Permalink to this headline")
+#### Limitations [¶](\#limitations "Permalink to this headline")
 
 |     |     |
 | --- | --- |
@@ -674,13 +674,13 @@ could fill up the database.
 | ❌ | Calculating sample change summaries is less efficient |
 | ❌ | Storage is highly duplicative |
 
-#### Configuration [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#configuration "Permalink to this headline")
+#### Configuration [¶](\#configuration "Permalink to this headline")
 
 There are no unique configuration options for this backend.
 
-## Usage considerations [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#usage-considerations "Permalink to this headline")
+## Usage considerations [¶](\#usage-considerations "Permalink to this headline")
 
-### Best practices [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#best-practices "Permalink to this headline")
+### Best practices [¶](\#best-practices "Permalink to this headline")
 
 As this feature matures, we will have better recommendations for best practices.
 For now given the limited starting options in the initial iteration, we have the
@@ -693,12 +693,12 @@ events which you want to revisit or restore later.
 
 - Delete old snapshots you don’t need anymore.
 
-- Set the [versioning configuration](FIXMEgithub.io/zxcv/teams/dataset_versioning.html#dataset-versioning-configuration)
+- Set the [versioning configuration](\#dataset-versioning-configuration)
 to the highest your deployment can comfortably support, to better enable
 user workflows without breaking the (MongoDB) bank.
 
 
-### Configuration [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#dataset-versioning-configuration "Permalink to this headline")
+### Configuration [¶](\#dataset-versioning-configuration "Permalink to this headline")
 
 Since Snapshots impact the storage needs of FiftyOne Teams, some guard rails
 have been put in place to control the maximum amount of Snapshots that can be
@@ -717,7 +717,7 @@ storage requirements necessary.
 | Snapshot Archive Path | `FIFTYONE_SNAPSHOTS_ARCHIVE_PATH` | `None` | Full path to network-mounted file system or a cloud storage path to use for<br>snapshot archive storage. The default `None` means archival is disabled. |
 | Automatic Archival Min Age | `FIFTYONE_SNAPSHOTS_MIN_LAST_LOADED_SEC` | 86400 | The minimum last-loaded age in seconds (as defined by `now-last_loaded_at`<br>) a snapshot must meet to be considered for automatic archival. This limit<br>is intended to help curtail automatic archival of a snapshot a user is<br>actively working with. The default value is 1 day. |
 
-## Roadmap [¶](FIXMEgithub.io/zxcv/teams/dataset_versioning.html\#roadmap "Permalink to this headline")
+## Roadmap [¶](\#roadmap "Permalink to this headline")
 
 The following are some items that are on the roadmap for future iterations
 of the dataset versioning system. Keep an eye out for future FiftyOne Teams

@@ -77,7 +77,7 @@ Examples of [`InteractivePlot`](../api/fiftyone.core.plots.base.html#fiftyone.co
 [location scatterplots](#geolocation-plots), and
 [interactive heatmaps](#confusion-matrix-plots).
 
-![interactive-plots](../_images/mnist-interactive1.gif)
+![interactive-plots](../_images/mnist-interactive1.webp)
 
 ### View plots [¶](\#view-plots "Permalink to this headline")
 
@@ -90,7 +90,7 @@ More view plot types are being continually added to the library over time.
 Current varieties include [`CategoricalHistogram`](../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.CategoricalHistogram "fiftyone.core.plots.views.CategoricalHistogram"), [`NumericalHistogram`](../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.NumericalHistogram "fiftyone.core.plots.views.NumericalHistogram"), and
 [`ViewGrid`](../api/fiftyone.core.plots.views.html#fiftyone.core.plots.views.ViewGrid "fiftyone.core.plots.views.ViewGrid").
 
-![view-plots](../_images/view-plots.gif)
+![view-plots](../_images/view-plots.webp)
 
 ## Working in notebooks [¶](\#working-in-notebooks "Permalink to this headline")
 
@@ -176,7 +176,7 @@ plot.show(height=720)
 
 ```
 
-![mnist-scatterplot](../_images/mnist-scatterplot.png)
+![mnist-scatterplot](../_images/mnist-scatterplot.webp)
 
 As you can see, the 2D embeddings are naturally clustered according to their
 ground truth label!
@@ -249,13 +249,13 @@ To give a taste of the possible interactions, let’s hide all zero digit images
 and select the other digits near the zero cluster; this isolates the non-zero
 digit images in the App that are likely to be confused as zeros:
 
-![mnist-interactive1](../_images/mnist-interactive1.gif)
+![mnist-interactive1](../_images/mnist-interactive1.webp)
 
 Alternatively, let’s hide all classes except the zero digits, and then select
 the zero digits that are _not_ in the zero cluster; this isolates the zero
 digit images in the App that are likely to be confused as other digits:
 
-![mnist-interactive2](../_images/mnist-interactive2.gif)
+![mnist-interactive2](../_images/mnist-interactive2.webp)
 
 ## Geolocation plots [¶](\#geolocation-plots "Permalink to this headline")
 
@@ -320,7 +320,7 @@ plot.show()
 
 ```
 
-![location-scatterplot](../_images/location-scatterplot.gif)
+![location-scatterplot](../_images/location-scatterplot.webp)
 
 You can also change the style to `style="density"` in order to view the data
 as a density plot:
@@ -338,7 +338,7 @@ plot.show()
 
 ```
 
-![location-densityplot](../_images/location-densityplot.gif)
+![location-densityplot](../_images/location-densityplot.webp)
 
 ### Interactive plots [¶](\#id8 "Permalink to this headline")
 
@@ -394,7 +394,7 @@ session.plots.attach(plot)
 
 ```
 
-![location-scatterplot-interactive](../_images/location-scatterplot-interactive.gif)
+![location-scatterplot-interactive](../_images/location-scatterplot-interactive.webp)
 
 ## Regression plots [¶](\#regression-plots "Permalink to this headline")
 
@@ -468,7 +468,7 @@ session.plots.attach(plot)
 
 ```
 
-![regression-evaluation](../_images/regression-evaluation.gif)
+![regression-evaluation](../_images/regression-evaluation.webp)
 
 ## Line plots [¶](\#line-plots "Permalink to this headline")
 
@@ -523,7 +523,7 @@ session.plots.attach(plot)
 
 ```
 
-![lines](../_images/lines.gif)
+![lines](../_images/lines.webp)
 
 ## Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
@@ -587,7 +587,7 @@ session.plots.attach(plot)
 
 ```
 
-![detection-evaluation](../_images/detection-evaluation.gif)
+![detection-evaluation](../_images/detection-evaluation.webp)
 
 When you pass an `eval_key` to
 [`evaluate_detections()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.evaluate_detections "fiftyone.core.collections.SampleCollection.evaluate_detections"),
@@ -614,7 +614,7 @@ session.plots.attach(plot)
 
 ```
 
-![detection-evaluation-patches](../_images/detection-evaluation-patches.gif)
+![detection-evaluation-patches](../_images/detection-evaluation-patches.webp)
 
 If you prefer a different selection behavior, you can simply change the plot’s
 [selection mode](#plot-selection-modes).
@@ -668,7 +668,7 @@ session.plots.attach(plot)
 
 ```
 
-![view-plots](../_images/view-plots.gif)
+![view-plots](../_images/view-plots.webp)
 
 ## Attaching plots to the App [¶](\#attaching-plots-to-the-app "Permalink to this headline")
 
@@ -903,7 +903,7 @@ plot.save("./histogram.jpg", scale=2.0)
 
 ```
 
-![save-histogram](../_images/save-histogram.jpg)
+![save-histogram](../_images/save-histogram.webp)
 
 Or you can save an [embedding scatterplot](#embeddings-plots):
 
@@ -917,7 +917,7 @@ plot.save("./embeddings.png", height=300, width=800)
 
 ```
 
-![save-embeddings](../_images/save-embeddings.png)
+![save-embeddings](../_images/save-embeddings.webp)
 
 You can also save plots generated using the
 [matplotlib backend](#plotting-backend):
@@ -933,7 +933,7 @@ plot.save("./embeddings-matplotlib.png", dpi=200)
 
 ```
 
-![save-embeddings-matplotlib](../_images/save-embeddings-matplotlib.png)
+![save-embeddings-matplotlib](../_images/save-embeddings-matplotlib.webp)
 
 ## Advanced usage [¶](\#advanced-usage "Permalink to this headline")
 
@@ -1148,7 +1148,7 @@ plot.show(height=512)
 
 ```
 
-![plotly-backend](../_images/plotly-backend.png)
+![plotly-backend](../_images/plotly-backend.webp)
 
 ```python
 import matplotlib.pyplot as plt
@@ -1161,7 +1161,7 @@ plt.show(block=False)
 
 ```
 
-![matplotlib-backend](../_images/matplotlib-backend.png)
+![matplotlib-backend](../_images/matplotlib-backend.webp)
 
 ### Interactive matplotlib plots [¶](\#interactive-matplotlib-plots "Permalink to this headline")
 

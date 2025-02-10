@@ -35,7 +35,7 @@ the following label types are supported, for both image and video datasets:
 - [Semantic segmentation](../fiftyone_concepts/using_datasets.md#semantic-segmentation)
 
 
-![labelbox-video](../_images/labelbox_video.png)
+![labelbox-video](../_images/labelbox_video.webp)
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 
@@ -961,7 +961,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![labelbox-tag](../_images/labelbox_tag.png)
+![labelbox-tag](../_images/labelbox_tag.webp)
 
 ### Editing labels with a free Labelbox account [¶](\#editing-labels-with-a-free-labelbox-account "Permalink to this headline")
 
@@ -1055,7 +1055,7 @@ dataset.delete_labels(tags="edit")
 
 ```
 
-![labelbox-example](../_images/labelbox_example.png)![labelbox-new-class](../_images/labelbox_new_class.png)
+![labelbox-example](../_images/labelbox_example.webp)![labelbox-new-class](../_images/labelbox_new_class.webp)
 
 ### Editing existing labels [¶](\#editing-existing-labels "Permalink to this headline")
 
@@ -1112,7 +1112,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![labelbox-multiple-fields](../_images/labelbox_multiple_fields.png)
+![labelbox-multiple-fields](../_images/labelbox_multiple_fields.webp)
 
 ### Configuring Labelbox projects [¶](\#configuring-labelbox-projects "Permalink to this headline")
 
@@ -1222,7 +1222,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![labelbox-scalar](../_images/labelbox_scalar.png)
+![labelbox-scalar](../_images/labelbox_scalar.webp)
 
 ### Uploading alternate media [¶](\#uploading-alternate-media "Permalink to this headline")
 
@@ -1283,7 +1283,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![labelbox-alt-media](../_images/labelbox_alt_media.png)
+![labelbox-alt-media](../_images/labelbox_alt_media.webp)
 
 ### Annotating classes directly [¶](\#annotating-classes-directly "Permalink to this headline")
 
@@ -1329,7 +1329,7 @@ dataset.delete_annotation_run(anno_key)
 
 ```
 
-![labelbox_classes_as_attrs](../_images/labelbox_classes_as_attrs.png)
+![labelbox_classes_as_attrs](../_images/labelbox_classes_as_attrs.webp)
 
 ## Annotating videos [¶](\#annotating-videos "Permalink to this headline")
 
@@ -1377,7 +1377,7 @@ Note
 Prepend `"frames."` to reference frame-level fields when calling
 [`annotate()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.annotate "fiftyone.core.collections.SampleCollection.annotate").
 
-![labelbox-video](../_images/labelbox_video.png)
+![labelbox-video](../_images/labelbox_video.webp)
 
 ## Additional utilities [¶](\#additional-utilities "Permalink to this headline")
 

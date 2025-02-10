@@ -12,7 +12,7 @@ Whether your data resides in a database like PostgreSQL or a data lake like
 data sources, visualize sample data, and import into FiftyOne for further
 analysis.
 
-![data-lens-home-tab](../_images/data_lens_home.png)
+![data-lens-home-tab](../_images/data_lens_home.webp)
 
 ## How it works [¶](\#how-it-works "Permalink to this headline")
 
@@ -50,18 +50,18 @@ Once your operator is defined, you can navigate to the “Data sources” tab by
 clicking on the tab header or by clicking on “Connect to a data source” from
 the “Home” tab.
 
-![data-lens-data-sources-empty](../_images/data_lens_data_sources_empty.png)
+![data-lens-data-sources-empty](../_images/data_lens_data_sources_empty.webp)
 
 Add a new data source by clicking on “Add data source”.
 
 Enter a useful name for your data source and provide the URI for your operator.
 The URI should have the format `<your-plugin-name>/<your-operator-name>`.
 
-![data-lens-add-data-source](../_images/data_lens_add_data_source.png)
+![data-lens-add-data-source](../_images/data_lens_add_data_source.webp)
 
 Click “Connect” once you’re finished to save your configuration.
 
-![data-lens-data-sources](../_images/data_lens_data_sources.png)
+![data-lens-data-sources](../_images/data_lens_data_sources.webp)
 
 If you need to update your Data Lens configuration, simply click the action
 menu icon and select “Edit”. Similarly, you can delete a Data Lens
@@ -89,14 +89,14 @@ allowing you to tailor your search experience to exactly what you need.
 Selecting a new data source will automatically update the query parameters to
 match those expected by your data source.
 
-![data-lens-query](../_images/data_lens_query.png)
+![data-lens-query](../_images/data_lens_query.webp)
 
 After you enter your query parameters, you can click the “Preview data” button
 at the bottom of the page to fetch samples which match your query parameters.
 These samples will be displayed in the preview panel, along with any features
 associated with the sample like labels or bounding boxes.
 
-![data-lens-preview](../_images/data_lens_preview.png)
+![data-lens-preview](../_images/data_lens_preview.webp)
 
 You can use the zoom slider to control the size of the samples, and you can
 modify the number of preview samples shown by changing the “Number of preview
@@ -114,7 +114,7 @@ import your samples to a dataset.
 After generating a preview in Data Lens, you can click on the “Import data”
 button to open the import dialog.
 
-![data-lens-import-dialog](../_images/data_lens_import_dialog.png)
+![data-lens-import-dialog](../_images/data_lens_import_dialog.webp)
 
 Imports can be limited to a specific number of samples, or you can import all
 samples matching your query parameters.
@@ -139,7 +139,7 @@ sample.
 When you click import, you will have the option to either execute immediately
 or to schedule this import for asynchronous execution.
 
-![data-lens-import-options](../_images/data_lens_import_options.png)
+![data-lens-import-options](../_images/data_lens_import_options.webp)
 
 If you are importing a small number of samples, then immediate execution may
 be appropriate. However, for most cases it is recommended to schedule the
@@ -158,22 +158,22 @@ In the case of immediate execution, you will be presented with an option to
 view your samples once the import is complete. Clicking on this button will
 open your destination dataset containing your imported samples.
 
-![data-lens-immediate-import](../_images/data_lens_immediate_import.png)
+![data-lens-immediate-import](../_images/data_lens_immediate_import.webp)
 
 In the case of scheduled execution, you will be presented with an option to
 visit the [Runs page](teams_plugins.md#teams-runs-page).
 
-![data-lens-scheduled-import](../_images/data_lens_scheduled_import.png)
+![data-lens-scheduled-import](../_images/data_lens_scheduled_import.webp)
 
 From the Runs page, you can track the status of your import.
 
-![data-lens-runs-page](../_images/data_lens_runs_page.png)
+![data-lens-runs-page](../_images/data_lens_runs_page.webp)
 
 Once your samples are imported, you will be able to leverage the full
 capabilities of FiftyOne to analyze and curate your data, and you can continue
 to use Data Lens to augment your datasets.
 
-![data-lens-imported-samples](../_images/data_lens_imported_samples.png)
+![data-lens-imported-samples](../_images/data_lens_imported_samples.webp)
 
 ## Integrating with Data Lens [¶](\#integrating-with-data-lens "Permalink to this headline")
 
@@ -381,7 +381,7 @@ tab to interact with the operator. When we click the preview button, the Data
 Lens framework invokes our operator to retrieve sample data. Our operator
 yields a single sample, and we see that sample shown in the preview.
 
-![data-lens-synthetic-sample](../_images/data_lens_synthetic_sample.png)
+![data-lens-synthetic-sample](../_images/data_lens_synthetic_sample.webp)
 
 Let’s modify our operator to incorporate the `request.batch_size` property.
 
@@ -414,7 +414,7 @@ def handle_lens_search_request(
 Now if we re-run our preview, we see that we get a number of samples equal to
 the “Number of preview samples” input.
 
-![data-lens-synthetic-batch](../_images/data_lens_synthetic_batch.png)
+![data-lens-synthetic-batch](../_images/data_lens_synthetic_batch.webp)
 
 If we modify that number and regenerate the preview, we can see that the number
 of samples remains in sync. For preview functionality, Data Lens fetches
@@ -453,7 +453,7 @@ For more information on operator inputs, see
 With this method implemented, Data Lens will construct a form allowing users
 to define any or all of these inputs.
 
-![data-lens-synthetic-query](../_images/data_lens_synthetic_query.png)
+![data-lens-synthetic-query](../_images/data_lens_synthetic_query.webp)
 
 We can then use this data to change the behavior of our operator. Let’s add
 logic to integrate `sample_text` into our operator.
@@ -503,7 +503,7 @@ Now when we run our preview, we can see that the text we provide as input is
 reflected in the samples returned by our operator. Modifying the text and
 regenerating the preview yields the expected result.
 
-![data-lens-synthetic-text](../_images/data_lens_synthetic_text.png)
+![data-lens-synthetic-text](../_images/data_lens_synthetic_text.webp)
 
 There are a couple things to note about the changes we made here.
 

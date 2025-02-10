@@ -1034,7 +1034,7 @@ push_to_hub(
 The preview file will be uploaded to the Hub along with the dataset, and will be
 displayed on the dataset card!
 
-![Pushing a dataset to the Hugging Face Hub with a preview image](../_images/hf_data_card_preview.jpg)
+![Pushing a dataset to the Hugging Face Hub with a preview image](../_images/hf_data_card_preview.webp)
 
 #### Pushing large datasets [¶](\#pushing-large-datasets "Permalink to this headline")
 
@@ -1114,7 +1114,7 @@ push_to_hub(
 The pushed dataset will be available on the Hub and the dataset page will look
 like this:
 
-![Pushing a dataset to the Hugging Face Hub with advanced options](../_images/hf_push_advanced_example.jpg)
+![Pushing a dataset to the Hugging Face Hub with advanced options](../_images/hf_push_advanced_example.webp)
 
 Note
 

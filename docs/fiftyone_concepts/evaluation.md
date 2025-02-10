@@ -61,7 +61,7 @@ When you load a dataset in the App that contains one or more
 [Model Evaluation panel](app.md#app-model-evaluation-panel) to visualize and
 interactively explore the evaluation results in the App:
 
-![model-evaluation-compare](../_images/model-evaluation-compare.gif)
+![model-evaluation-compare](../_images/model-evaluation-compare.webp)
 
 ### Per-class metrics [¶](\#per-class-metrics "Permalink to this headline")
 
@@ -135,7 +135,7 @@ session = fo.launch_app(view=view)
 
 ```
 
-![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.gif)
+![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.webp)
 
 Notice anything wrong? The sample with the most false positives is a plate of
 carrots where the entire plate has been boxed as a single example in the ground
@@ -173,7 +173,7 @@ session.plots.attach(plot)
 
 ```
 
-![detection-evaluation](../_images/detection-evaluation.gif)
+![detection-evaluation](../_images/detection-evaluation.webp)
 
 In this setup, you can click on individual cells of the confusion matrix to
 select the corresponding ground truth and/or predicted objects in the App. For
@@ -334,7 +334,7 @@ support                   200
 
 ```
 
-![regression-evaluation-plot](../_images/regression_evaluation_plot.png)
+![regression-evaluation-plot](../_images/regression_evaluation_plot.webp)
 
 Note
 
@@ -462,7 +462,7 @@ weighted avg       0.90      0.90      0.90      1000
 
 ```
 
-![cifar10-simple-confusion-matrix](../_images/cifar10_simple_confusion_matrix.png)
+![cifar10-simple-confusion-matrix](../_images/cifar10_simple_confusion_matrix.webp)
 
 Note
 
@@ -545,7 +545,7 @@ session.view = (
 
 ```
 
-![imagenet-top-k-eval](../_images/imagenet_top_k_eval.png)
+![imagenet-top-k-eval](../_images/imagenet_top_k_eval.webp)
 
 Note
 
@@ -643,7 +643,7 @@ weighted avg       0.83      0.48      0.59      1000
 
 ```
 
-![cifar10-binary-pr-curve](../_images/cifar10_binary_pr_curve.png)
+![cifar10-binary-pr-curve](../_images/cifar10_binary_pr_curve.webp)
 
 Note
 
@@ -839,7 +839,7 @@ Note
 Did you know? You can convert to evaluation patches view directly
 [from the App](app.md#app-evaluation-patches)!
 
-![evaluation-patches](../_images/evaluation_patches.gif)
+![evaluation-patches](../_images/evaluation_patches.webp)
 
 Evaluation patches views are just like any other
 [dataset view](using_views.md#using-views) in the sense that:
@@ -1019,7 +1019,7 @@ traffic light       0.22      0.54      0.31        24
 
 ```
 
-![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.png)
+![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.webp)
 
 Note
 
@@ -1063,7 +1063,7 @@ plot.show()
 
 ```
 
-![coco-pr-curves](../_images/coco_pr_curves.png)
+![coco-pr-curves](../_images/coco_pr_curves.webp)
 
 #### Confusion matrices [¶](\#id6 "Permalink to this headline")
 
@@ -1093,7 +1093,7 @@ plot.show()
 
 ```
 
-![coco-confusion-matrix](../_images/coco_confusion_matrix.png)
+![coco-confusion-matrix](../_images/coco_confusion_matrix.webp)
 
 ### Open Images-style evaluation [¶](\#open-images-style-evaluation "Permalink to this headline")
 
@@ -1257,7 +1257,7 @@ traffic light       0.32      0.79      0.45        24
 
 ```
 
-![quickstart-evaluate-detections-oi](../_images/quickstart_evaluate_detections_oi.png)
+![quickstart-evaluate-detections-oi](../_images/quickstart_evaluate_detections_oi.webp)
 
 Note
 
@@ -1297,7 +1297,7 @@ plot.show()
 
 ```
 
-![oi-pr-curve](../_images/oi_pr_curve.png)
+![oi-pr-curve](../_images/oi_pr_curve.webp)
 
 #### Confusion matrices [¶](\#id11 "Permalink to this headline")
 
@@ -1330,7 +1330,7 @@ plot.show()
 
 ```
 
-![oi-confusion-matrix](../_images/oi_confusion_matrix.png)
+![oi-confusion-matrix](../_images/oi_confusion_matrix.webp)
 
 ### ActivityNet-style evaluation (default temporal) [¶](\#activitynet-style-evaluation-default-temporal "Permalink to this headline")
 
@@ -1482,7 +1482,7 @@ Walking the dog       0.50      0.60      0.55         5
 
 ```
 
-![activitynet-evaluate-detections](../_images/activitynet_evaluate_detections.png)
+![activitynet-evaluate-detections](../_images/activitynet_evaluate_detections.webp)
 
 Note
 
@@ -1546,7 +1546,7 @@ plot.show()
 
 ```
 
-![activitynet-pr-curves](../_images/activitynet_pr_curves.png)
+![activitynet-pr-curves](../_images/activitynet_pr_curves.webp)
 
 #### Confusion matrices [¶](\#id15 "Permalink to this headline")
 
@@ -1600,7 +1600,7 @@ plot.show()
 
 ```
 
-![activitynet-confusion-matrix](../_images/activitynet_confusion_matrix.png)
+![activitynet-confusion-matrix](../_images/activitynet_confusion_matrix.webp)
 
 ## Semantic segmentations [¶](\#semantic-segmentations "Permalink to this headline")
 
@@ -1726,7 +1726,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![evaluate-segmentations](../_images/evaluate_segmentations.gif)
+![evaluate-segmentations](../_images/evaluate_segmentations.webp)
 
 Note
 

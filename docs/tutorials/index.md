@@ -11,7 +11,7 @@ Translate your pandas knowledge to FiftyOne. [This tutorial](./pandas_comparison
 
 Filtering,Dataset-Evaluation
 
-![](../_static/images/tutorials/pandas_tutorial.png)
+![](../_static/images/tutorials/pandas_tutorial.webp)
 
 #### Evaluating object detections
 
@@ -19,7 +19,7 @@ Aggregate statistics aren't sufficient for object detection. [This tutorial](eva
 
 Model-Evaluation
 
-![](../_static/images/tutorials/evaluate_detections.png)
+![](../_static/images/tutorials/evaluate_detections.webp)
 
 #### Evaluating a classifier
 
@@ -27,7 +27,7 @@ Evaluation made easy. [This tutorial](evaluate_classifications.ipynb) walks thro
 
 Model-Evaluation
 
-![](../_static/images/tutorials/evaluate_classifications.png)
+![](../_static/images/tutorials/evaluate_classifications.webp)
 
 #### Using image embeddings
 
@@ -35,7 +35,7 @@ Visualize your data in new ways. [This tutorial](image_embeddings.ipynb) shows h
 
 Visualization,Brain,Embeddings
 
-![](../_static/images/tutorials/image_embeddings.png)
+![](../_static/images/tutorials/image_embeddings.webp)
 
 #### Annotating with CVAT
 
@@ -43,7 +43,7 @@ So you've loaded and explored your data in FiftyOne... but now what? [See how](c
 
 Annotation,Dataset-Evaluation
 
-![](../_static/images/tutorials/cvat_segmentation.png)
+![](../_static/images/tutorials/cvat_segmentation.webp)
 
 #### Annotating with Labelbox
 
@@ -51,7 +51,7 @@ Unlock the power of the Labelbox platform. [See how](labelbox_annotation.ipynb) 
 
 Annotation,Dataset-Evaluation
 
-![](../_static/images/tutorials/labelbox_square.png)
+![](../_static/images/tutorials/labelbox_square.webp)
 
 #### Training with Detectron2
 
@@ -59,7 +59,7 @@ Put your FiftyOne datasets to work and [learn how](detectron2.ipynb) to train an
 
 Model-Training,Model-Evaluation
 
-![](../_static/images/tutorials/detectron2.png)
+![](../_static/images/tutorials/detectron2.webp)
 
 #### Downloading and evaluating Open Images
 
@@ -67,7 +67,7 @@ Model-Training,Model-Evaluation
 
 Dataset-Evaluation,Model-Evaluation,Dataset-Zoo
 
-![](../_static/images/tutorials/open_images.png)
+![](../_static/images/tutorials/open_images.webp)
 
 #### Exploring image uniqueness
 
@@ -75,7 +75,7 @@ Your models need diverse data. [This tutorial](uniqueness.ipynb) shows how Fifty
 
 Dataset-Evaluation,Brain
 
-![](../_static/images/tutorials/uniqueness.png)
+![](../_static/images/tutorials/uniqueness.webp)
 
 #### Finding classification mistakes
 
@@ -83,7 +83,7 @@ Better models start with better data. [This tutorial](classification_mistakes.ip
 
 Dataset-Evaluation,Brain
 
-![](../_static/images/tutorials/classification_mistakes.png)
+![](../_static/images/tutorials/classification_mistakes.webp)
 
 #### Finding detection mistakes
 
@@ -91,7 +91,7 @@ How good are your ground truth objects? [Use the](detection_mistakes.ipynb) Fift
 
 Dataset-Evaluation,Brain
 
-![](../_static/images/tutorials/detection_mistakes.png)
+![](../_static/images/tutorials/detection_mistakes.webp)
 
 #### Nearest Neighbor Embeddings Classification with Qdrant
 
@@ -99,7 +99,7 @@ Dataset-Evaluation,Brain
 
 Dataset-Evaluation,Model-Evaluation,Embeddings
 
-![](../_static/images/tutorials/qdrant.png)
+![](../_static/images/tutorials/qdrant.webp)
 
 #### Fine-tuning YOLOv8 model predictions
 
@@ -107,7 +107,7 @@ Dataset-Evaluation,Model-Evaluation,Embeddings
 
 Model-Evaluation
 
-![](../_static/images/tutorials/yolov8.png)
+![](../_static/images/tutorials/yolov8.webp)
 
 #### Build 3D point cloud datasets with Point-E
 
@@ -115,7 +115,7 @@ Lidar is expensive. [This tutorial](pointe.ipynb) shows how FiftyOne can help yo
 
 Dataset-Curation,Filtering,Visualization
 
-![](../_static/images/tutorials/pointe.png)
+![](../_static/images/tutorials/pointe.webp)
 
 #### Monocular Depth Estimation with Hugging Face
 
@@ -123,7 +123,7 @@ Metrics for monocular depth estimation can be deceiving. [Run MDE models](monocu
 
 Model-Evaluation,Visualization
 
-![](../_static/images/tutorials/monocular_depth_estimation.png)
+![](../_static/images/tutorials/monocular_depth_estimation.webp)
 
 #### Visualizing Data with Dimensionality Reduction
 
@@ -131,7 +131,7 @@ Model-Evaluation,Visualization
 
 Brain,Visualization
 
-![](../_static/images/tutorials/dimension_reduction.png)
+![](../_static/images/tutorials/dimension_reduction.webp)
 
 #### Zero-Shot Image Classification
 
@@ -139,7 +139,7 @@ Brain,Visualization
 
 Filtering,Model-Evaluation,Model-Zoo
 
-![](../_static/images/tutorials/zero_shot_classification.png)
+![](../_static/images/tutorials/zero_shot_classification.webp)
 
 #### Augmenting Datasets with Albumentations
 
@@ -147,7 +147,7 @@ Filtering,Model-Evaluation,Model-Zoo
 
 App,Dataset-Curation,Visualization
 
-![](../_static/images/tutorials/data_augmentation.png)
+![](../_static/images/tutorials/data_augmentation.webp)
 
 #### Clustering Images with Embeddings
 
@@ -155,7 +155,7 @@ App,Dataset-Curation,Visualization
 
 App,Brain,Dataset-Curation,Embeddings,Visualization
 
-![](../_static/images/tutorials/clustering.jpg)
+![](../_static/images/tutorials/clustering.webp)
 
 #### Small Object Detection with SAHI
 
@@ -163,7 +163,7 @@ App,Brain,Dataset-Curation,Embeddings,Visualization
 
 Model-Evaluation,Model-Zoo
 
-![](../_static/images/tutorials/small_object_detection.jpg)
+![](../_static/images/tutorials/small_object_detection.webp)
 
 #### Anomaly Detection with Anomalib
 
@@ -171,7 +171,7 @@ Model-Evaluation,Model-Zoo
 
 Embeddings,Model-Evaluation,Model-Training,Visualization
 
-![](../_static/images/tutorials/anomaly_detection.jpg)
+![](../_static/images/tutorials/anomaly_detection.webp)
 
 Note
 

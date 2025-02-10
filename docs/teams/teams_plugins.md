@@ -23,7 +23,7 @@ Admins can access the plugins page under Settings > Plugins. It displays a
 list of all installed plugins and their operators, as well as the enablement
 and permissions of each.
 
-![teams-plugins-page](../_images/plugins_page.png)
+![teams-plugins-page](../_images/plugins_page.webp)
 
 ## Installing a plugin [¶](\#installing-a-plugin "Permalink to this headline")
 
@@ -38,17 +38,17 @@ A plugin is a directory (or ZIP of it) that contains a top-level
 
 To install a plugin, click the “Install plugin” button on the plugins page.
 
-![teams-plugins-page-install-button](../_images/plugins_install_btn.png)
+![teams-plugins-page-install-button](../_images/plugins_install_btn.webp)
 
 Then upload or drag and drop the plugin contents as a ZIP file and click
 install.
 
-![teams-plugins-page-install-page](../_images/plugins_install.png)
+![teams-plugins-page-install-page](../_images/plugins_install.webp)
 
 You should then see a success message and the newly installed plugin listed on
 the plugins page.
 
-![teams-plugins-page-install-success-page](../_images/plugins_install_success.png)
+![teams-plugins-page-install-success-page](../_images/plugins_install_success.webp)
 
 ### SDK [¶](\#sdk "Permalink to this headline")
 
@@ -72,12 +72,12 @@ Admins can upgrade plugins at any time through the Teams UI or Management SDK.
 
 To upgrade a plugin, click the plugin’s dropdown and select “Upgrade plugin”.
 
-![teams-plugins-page-upgrade-btn](../_images/plugins_upgrade_btn.png)
+![teams-plugins-page-upgrade-btn](../_images/plugins_upgrade_btn.webp)
 
 Then upload or drag and drop the upgraded plugin as a ZIP file and click
 upgrade.
 
-![teams-plugins-page-upgrade-page](../_images/plugins_upgrade_page.png)
+![teams-plugins-page-upgrade-page](../_images/plugins_upgrade_page.webp)
 
 Note
 
@@ -88,7 +88,7 @@ delete the old one.
 You should then see a success message and the updated information about the
 plugin on the plugins page.
 
-![teams-plugins-page-upgrade-success-page](../_images/plugins_upgrade_success_page.png)
+![teams-plugins-page-upgrade-success-page](../_images/plugins_upgrade_success_page.webp)
 
 ### SDK [¶](\#id2 "Permalink to this headline")
 
@@ -120,7 +120,7 @@ permanently uninstalling them.
 To uninstall a plugin, click the plugin’s dropdown and select
 “Uninstall plugin”.
 
-![teams-plugins-page-uninstall-btn](../_images/plugins_uninstall_btn.png)
+![teams-plugins-page-uninstall-btn](../_images/plugins_uninstall_btn.webp)
 
 ### SDK [¶](\#id4 "Permalink to this headline")
 
@@ -145,16 +145,16 @@ with any operators they contain.
 Admins can enable/disable a plugin and all of its operators by toggling the
 enabled/disabled switch.
 
-![teams-plugins-page-disable](../_images/plugins_disable.png)
+![teams-plugins-page-disable](../_images/plugins_disable.webp)
 
 Admins can also disable/enable specific operators within an (enabled) plugin
 by clicking on the plugin’s operators link.
 
-![teams-plugins-page-operators-btn](../_images/plugins_operators_btn.png)
+![teams-plugins-page-operators-btn](../_images/plugins_operators_btn.webp)
 
 and then toggling the enabled/disabled switch for each operator as necessary.
 
-![teams-plugins-page-operators-disable](../_images/plugins_operators_disable.png)
+![teams-plugins-page-operators-disable](../_images/plugins_operators_disable.webp)
 
 ### SDK [¶](\#id6 "Permalink to this headline")
 
@@ -190,12 +190,12 @@ within them via any combination of the permissions described below:
 To configure the permissions for an operator, first click on the plugin’s
 operators link.
 
-![teams-plugins-page-operators-btn](../_images/plugins_operators_btn.png)
+![teams-plugins-page-operators-btn](../_images/plugins_operators_btn.webp)
 
 Then change the dropdown for the operator to reflect the desired permission
 level.
 
-[![teams-plugins-page-operators-perms](../_images/plugins_operators_perms.png)](../_images/plugins_operators_perms.png) [![teams-plugins-page-operators-perms2](../_images/plugins_operators_perms2.png)](../_images/plugins_operators_perms2.png)
+[![teams-plugins-page-operators-perms](../_images/plugins_operators_perms.webp)](../_images/plugins_operators_perms.webp) [![teams-plugins-page-operators-perms2](../_images/plugins_operators_perms2.webp)](../_images/plugins_operators_perms2.webp)
 
 ### SDK [¶](\#id8 "Permalink to this headline")
 
@@ -248,7 +248,7 @@ Default operator permissions can be configured by navigating to the page at
 Settings > Security and looking under the Plugins header. Click the dropdown
 for the permission you want to change and select the new value.
 
-![teams-plugins-page-org-settings](../_images/plugins_org_settings.png)
+![teams-plugins-page-org-settings](../_images/plugins_org_settings.webp)
 
 #### SDK [¶](\#id10 "Permalink to this headline")
 
@@ -304,26 +304,26 @@ For example, wish you could import data from within the App? With the
 [@voxel51/io](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/io/README.md),
 plugin you can!
 
-![../_images/import.gif](../_images/import.gif)
+![../_images/import.webp](../_images/import.webp)
 
 Want to send data for annotation from within the App? Sure thing, just install the
 [@voxel51/annotation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/annotation/README.md)
 plugin:
 
-![../_images/annotation.gif](../_images/annotation.gif)
+![../_images/annotation.webp](../_images/annotation.webp)
 
 Have model predictions on your dataset that you want to evaluate? The
 [@voxel51/evaluation](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/evaluation/README.md)
 plugin makes it easy:
 
-![../_images/evaluation.gif](../_images/evaluation.gif)
+![../_images/evaluation.webp](../_images/evaluation.webp)
 
 Need to compute embedding for your dataset so you can visualize them in the
 [Embeddings panel](../fiftyone_concepts/app.md#app-embeddings-panel)? Kick off the task with the
 [@voxel51/brain](https://github.com/voxel51/fiftyone-plugins/blob/main/plugins/brain/README.md)
 plugin and proceed with other work while the execution happens in the background:
 
-![../_images/embeddings.gif](../_images/embeddings.gif)
+![../_images/embeddings.webp](../_images/embeddings.webp)
 
 When you choose delegated execution in the App, these tasks are automatically
 scheduled for execution on your
@@ -372,7 +372,7 @@ Once you are on the Runs page, you will see a table with the list of all
 operators scheduled by any user of your organization on the dataset. You can
 sort, search and filter runs listed to refine the list as you like:
 
-![../_images/runs_page.png](../_images/runs_page.png)
+![../_images/runs_page.webp](../_images/runs_page.webp)
 
 #### Sorting [¶](\#sorting "Permalink to this headline")
 
@@ -380,7 +380,7 @@ By default, the runs table is sorted by recency, but you can use the dropdown
 menu in the upper left of table to sort by other fields like update time or the
 name of the operator:
 
-![../_images/sort.png](../_images/sort.png)
+![../_images/sort.webp](../_images/sort.webp)
 
 #### Filtering [¶](\#filtering "Permalink to this headline")
 
@@ -388,12 +388,12 @@ You can also filter the runs table to see a subset of runs.
 
 Use the “My runs” radio button to see only the runs that you scheduled:
 
-![../_images/my_runs.png](../_images/my_runs.png)
+![../_images/my_runs.webp](../_images/my_runs.webp)
 
 You can further refine the list of runs using the status dropdown to select one
 or more status you would like to filter by:
 
-![../_images/filter_by_status.png](../_images/filter_by_status.png)
+![../_images/filter_by_status.webp](../_images/filter_by_status.webp)
 
 #### Searching [¶](\#searching "Permalink to this headline")
 
@@ -401,7 +401,7 @@ You can also use the search functionality to filter the list of runs by
 keyword. As you type your query in the search box, the list of runs will be
 updated to show only the runs matching your query:
 
-![../_images/search_by_name.png](../_images/search_by_name.png)
+![../_images/search_by_name.webp](../_images/search_by_name.webp)
 
 Note
 
@@ -414,7 +414,7 @@ name, not label. For example, searches will not match against
 From the Runs page, you can trigger a re-run of any listed run by clicking the
 three-dots to open actions menu and then clicking “Re-run”:
 
-![../_images/re_run.png](../_images/re_run.png)
+![../_images/re_run.webp](../_images/re_run.webp)
 
 #### Pinning [¶](\#pinning "Permalink to this headline")
 
@@ -425,7 +425,7 @@ runs, you will see a button to expand the list.
 To pin a run, hover over its row in the runs table and click the pin icon that
 appears beside the operator label:
 
-![../_images/pinning.png](../_images/pinning.png)
+![../_images/pinning.webp](../_images/pinning.webp)
 
 Note
 
@@ -443,7 +443,7 @@ present an input field indicated by “2” where you can update label to text o
 your choice. Once you are ready to apply changes, click the save button
 indicated by “3”.
 
-![../_images/edit_label.png](../_images/edit_label.png)
+![../_images/edit_label.webp](../_images/edit_label.webp)
 
 #### Mark as failed [¶](\#mark-as-failed "Permalink to this headline")
 
@@ -454,7 +454,7 @@ To mark a run as failed, click the three dots indicated by “1”. Then, in the
 menu, click “Mark as failed” as indicated by “2”. The run status will be
 updated and will now display as failed.
 
-![../_images/mark_as_failed.png](../_images/mark_as_failed.png)
+![../_images/mark_as_failed.webp](../_images/mark_as_failed.webp)
 
 Note
 
@@ -472,7 +472,7 @@ as indicated by “2”. By default, the progress of running operations is
 automatically refreshed. You can disable auto-refresh of running operations by
 toggling the auto refresh setting indicated by “1”.
 
-![../_images/run_progress.png](../_images/run_progress.png)
+![../_images/run_progress.webp](../_images/run_progress.webp)
 
 Note
 
@@ -491,7 +491,7 @@ the Pinned runs, or Recent runs widgets.
 The Input tab on the Run page lets you see the input parameters that were
 provided when the run was scheduled:
 
-![../_images/input.png](../_images/input.png)
+![../_images/input.webp](../_images/input.webp)
 
 **Raw input**
 
@@ -499,7 +499,7 @@ By default, a rendered version (similar to what is displayed when invoking an
 operator) of input parameters is displayed. However, you can switch to raw view
 by clicking the “Show raw” toggle button:
 
-![../_images/raw_input.png](../_images/raw_input.png)
+![../_images/raw_input.webp](../_images/raw_input.webp)
 
 #### Output [¶](\#output "Permalink to this headline")
 
@@ -510,19 +510,19 @@ Note
 
 Output tab is only available for completed run.
 
-![../_images/output.png](../_images/output.png)
+![../_images/output.webp](../_images/output.webp)
 
 #### Errors [¶](\#errors "Permalink to this headline")
 
 The Errors tab on the Run page will appear if the run failed and lets you see
 the errors that occurred:
 
-![../_images/errors.png](../_images/errors.png)
+![../_images/errors.webp](../_images/errors.webp)
 
 #### View [¶](\#view "Permalink to this headline")
 
 The View tab on the Run page lets you see the dataset view on which the run was
 scheduled:
 
-![../_images/view.png](../_images/view.png)
+![../_images/view.webp](../_images/view.webp)
 

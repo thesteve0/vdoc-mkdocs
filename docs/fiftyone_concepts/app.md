@@ -4,7 +4,7 @@ The FiftyOne App is a powerful graphical user interface that enables you to
 visualize, browse, and interact directly with your
 [datasets](using_datasets.md#using-datasets).
 
-![app-filters](../_images/app-filters.gif)
+![app-filters](../_images/app-filters.webp)
 
 Note
 
@@ -39,7 +39,7 @@ session = fo.launch_app()
 
 ```
 
-![app-empty](../_images/app-empty.png)
+![app-empty](../_images/app-empty.webp)
 
 App sessions are highly flexible. For example, you can launch
 [launch multiple App instances](../faq/index.md#faq-multiple-apps) and connect multiple
@@ -123,7 +123,7 @@ session.dataset = dataset
 
 ```
 
-![app-scroll](../_images/app-scroll.gif)
+![app-scroll](../_images/app-scroll.webp)
 
 ### Updating a session’s view [¶](\#updating-a-session-s-view "Permalink to this headline")
 
@@ -140,7 +140,7 @@ session.view = dataset.sort_by("uniqueness").limit(10)
 
 ```
 
-![app-views1](../_images/app-views1.gif)
+![app-views1](../_images/app-views1.webp)
 
 ### Loading a sample or group [¶](\#loading-a-sample-or-group "Permalink to this headline")
 
@@ -237,13 +237,13 @@ and run multiple remote sessions
 Any labels, tags, and scalar fields can be overlaid on the samples in the App
 by toggling the corresponding display options in the App’s sidebar:
 
-![app-fields](../_images/app-fields.gif)
+![app-fields](../_images/app-fields.webp)
 
 If you have [stored metadata](using_datasets.md#storing-field-metadata) on your fields,
 then you can view this information in the App by hovering over field or
 attribute names in the App’s sidebar:
 
-![app-field-tooltips](../_images/app-field-tooltips.gif)
+![app-field-tooltips](../_images/app-field-tooltips.webp)
 
 ### Filtering sample fields [¶](\#filtering-sample-fields "Permalink to this headline")
 
@@ -267,7 +267,7 @@ appears in the top-left corner of the sample grid. Click this button to
 convert your filters to an equivalent set of stage(s) in the
 [view bar](#app-create-view)!
 
-![app-filters](../_images/app-filters.gif)
+![app-filters](../_images/app-filters.webp)
 
 ### Optimizing Query Performance [¶](\#optimizing-query-performance "Permalink to this headline")
 
@@ -276,7 +276,7 @@ The App’s sidebar is optimized to leverage database indexes whenever possible.
 Fields that are indexed are indicated by lightning bolt icons next to their
 field/attribute names:
 
-![app-query-performance](../_images/app-query-performance.gif)
+![app-query-performance](../_images/app-query-performance.webp)
 
 The above GIF shows query performance in action on the train split of the
 [BDD100K dataset](../data/dataset_zoo/datasets.md#bdd100k) with an index on the
@@ -428,7 +428,7 @@ label/value counts that are useful but more expensive to compute.
 You can disable Query Performance for a particular dataset for its lifetime
 (in your current browser) via the gear icon in the Samples panel’s actions row:
 
-![app-query-performance-disabled](../_images/app-query-performance-disabled.gif)
+![app-query-performance-disabled](../_images/app-query-performance-disabled.webp)
 
 You can also disable Query Performance by default for all datasets by setting
 `default_query_performance=False` in your
@@ -448,7 +448,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![app-sidebar-groups](../_images/app-sidebar-groups.gif)
+![app-sidebar-groups](../_images/app-sidebar-groups.webp)
 
 Note
 
@@ -510,14 +510,14 @@ automatically reflected in the [`DatasetView`](../api/fiftyone.core.view.html#fi
 [`Session.view`](../api/fiftyone.core.session.html#fiftyone.core.session.Session.view "fiftyone.core.session.Session.view") property of the
 App’s session object.
 
-![app-views2](../_images/app-views2.gif)
+![app-views2](../_images/app-views2.webp)
 
 ## Grouping samples [¶](\#grouping-samples "Permalink to this headline")
 
 You can use the group action in the App’s menu to
 [dynamically group](using_views.md#view-groups) your samples by a field of your choice:
 
-![dynamic-groups](../_images/app-dynamic-groups.gif)
+![dynamic-groups](../_images/app-dynamic-groups.webp)
 
 In this mode, the App’s grid shows the first sample from each group, and you
 can click on a sample to view all elements of the group in the modal.
@@ -525,12 +525,12 @@ can click on a sample to view all elements of the group in the modal.
 You may navigate through the elements of the group either sequentially using
 the carousel, or randomly using the pagination UI at the bottom of the modal.
 
-![dynamic-groups-pagination](../_images/dynamic-groups.gif)
+![dynamic-groups-pagination](../_images/dynamic-groups.webp)
 
 When viewing _ordered_ groups, you have an additional option to render the
 elements of the group as a video.
 
-![dynamic-groups](../_images/dynamic-groups-frames-as-video.gif)
+![dynamic-groups](../_images/dynamic-groups-frames-as-video.webp)
 
 ## Field visibility [¶](\#field-visibility "Permalink to this headline")
 
@@ -581,7 +581,7 @@ the sidebar indicating how many fields are currently excluded. You can reset
 your selection by clicking this icon or reopening the modal and pressing the
 `Reset` button at the bottom.
 
-![field-visibility-selection](../_images/app-field-visibility-selection.gif)
+![field-visibility-selection](../_images/app-field-visibility-selection.webp)
 
 Note
 
@@ -605,7 +605,7 @@ time as you modify the dataset’s schema.
 Filter rules provide a simple syntax with different options for matching
 fields:
 
-![field-visibility-filter-syntax](../_images/app-field-visibility-filter-syntax.jpg)
+![field-visibility-filter-syntax](../_images/app-field-visibility-filter-syntax.webp)
 
 Note
 
@@ -647,7 +647,7 @@ attributes in color by `value` mode
 - Save the customized color scheme as the default for the dataset
 
 
-![color-schemes](../_images/app-color-schemes.gif)
+![color-schemes](../_images/app-color-schemes.webp)
 
 Note
 
@@ -788,7 +788,7 @@ You can use the menu in the upper-left of the App to record the current state
 of the App’s view bar and filters sidebar as a **saved view** into your
 dataset:
 
-![app-save-view](../_images/app-save-view.gif)
+![app-save-view](../_images/app-save-view.webp)
 
 Saved views are persisted on your dataset under a name of your choice so that
 you can quickly load them in a future session via this UI.
@@ -817,11 +817,11 @@ add/remove this tag from samples.
 
 You can load a saved view at any time by selecting it from the saved view menu:
 
-![app-load-saved-view](../_images/app-load-saved-view.gif)
+![app-load-saved-view](../_images/app-load-saved-view.webp)
 
 You can also edit or delete saved views by clicking on their pencil icon:
 
-![app-edit-saved-view](../_images/app-edit-saved-view.gif)
+![app-edit-saved-view](../_images/app-edit-saved-view.webp)
 
 Note
 
@@ -834,7 +834,7 @@ Click a sample to open an expanded view of the sample. This modal also
 contains information about the fields of the [`Sample`](../api/fiftyone.core.sample.html#fiftyone.core.sample.Sample "fiftyone.core.sample.Sample") and allows you to access
 the raw JSON description of the sample.
 
-![app-expanded](../_images/app-expanded.gif)
+![app-expanded](../_images/app-expanded.webp)
 
 If your labels contain many [dynamic attributes](using_datasets.md#dynamic-attributes), you
 may find it helpful to configure which attributes are shown in the tooltip.
@@ -846,7 +846,7 @@ Note
 Tooltip customizations are persisted in your browser’s local storage on a
 per-dataset and per-field basis.
 
-![app-scrollable-tooltip](../_images/app-scrollable-tooltip.gif)
+![app-scrollable-tooltip](../_images/app-scrollable-tooltip.webp)
 
 ## Using the image visualizer [¶](\#using-the-image-visualizer "Permalink to this headline")
 
@@ -873,7 +873,7 @@ Keyboard shortcuts are available for almost every action. Click the `?` icon
 in the controls HUD or use the `?` keyboard shortcut to display the list of
 available actions and their associated hotkeys.
 
-![image-visualizer](../_images/app-image-visualizer.gif)
+![image-visualizer](../_images/app-image-visualizer.webp)
 
 Note
 
@@ -913,7 +913,7 @@ Did you know? The video visualizer streams frame data on-demand, which
 means that playback begins as soon as possible and even heavyweight label
 types like segmentations are supported!
 
-![video-visualizer](../_images/app-video-visualizer.gif)
+![video-visualizer](../_images/app-video-visualizer.webp)
 
 Note
 
@@ -930,7 +930,7 @@ The 3D visualizer allows you to interactively visualize
 along with any associated
 [3D detections](using_datasets.md#d-detections) and [3D polylines](using_datasets.md#d-polylines):
 
-![3d-visualizer](../_images/app-new-3d-visualizer.gif)
+![3d-visualizer](../_images/app-new-3d-visualizer.webp)
 
 The table below summarizes the mouse/keyboard controls that the 3D visualizer
 supports:
@@ -1000,7 +1000,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![orthographic-projections](../_images/app-orthographic-projections.gif)
+![orthographic-projections](../_images/app-orthographic-projections.webp)
 
 ### Configuring the 3D visualizer [¶](\#configuring-the-3d-visualizer "Permalink to this headline")
 
@@ -1076,7 +1076,7 @@ Note
 
 You can also configure custom Panels [via plugins](../plugins/index.md#fiftyone-plugins)!
 
-![spaces-hero](../_images/app-spaces-hero.png)
+![spaces-hero](../_images/app-spaces-hero.webp)
 
 ### Configuring spaces in the App [¶](\#configuring-spaces-in-the-app "Permalink to this headline")
 
@@ -1099,17 +1099,17 @@ below.
 
 Click the `+` icon in any Space to add a new Panel:
 
-![app-spaces-layout1](../_images/app-spaces-layout1.gif)
+![app-spaces-layout1](../_images/app-spaces-layout1.webp)
 
 When you have multiple Panels open in a Space, you can use the divider buttons
 to split the Space either horizontally or vertically:
 
-![app-spaces-layout2](../_images/app-spaces-layout2.gif)
+![app-spaces-layout2](../_images/app-spaces-layout2.webp)
 
 You can rearrange Panels at any time by dragging their tabs between Spaces, or
 close Panels by clicking their `x` icon:
 
-![app-spaces-layout3](../_images/app-spaces-layout3.gif)
+![app-spaces-layout3](../_images/app-spaces-layout3.webp)
 
 ### Configuring spaces in Python [¶](\#configuring-spaces-in-python "Permalink to this headline")
 
@@ -1220,7 +1220,7 @@ configured a spaces layout of interest, click the “Unsaved workspace” icon i
 the upper right corner to open the workspaces menu and save your current
 workspace with a name and optional description/color of your choice:
 
-![app-save-workspace](../_images/app-save-workspace.gif)
+![app-save-workspace](../_images/app-save-workspace.webp)
 
 Note
 
@@ -1230,12 +1230,12 @@ panel!
 
 You can load saved workspaces at any time later via this same menu:
 
-![app-load-workspace](../_images/app-load-workspace.gif)
+![app-load-workspace](../_images/app-load-workspace.webp)
 
 You can also edit the details of an existing saved workspace at any time by
 clicking on its pencil icon in the workspace menu:
 
-![app-update-workspace](../_images/app-update-workspace.gif)
+![app-update-workspace](../_images/app-update-workspace.webp)
 
 Note
 
@@ -1358,7 +1358,7 @@ to manage your saved workspaces.
 By default, when you launch the App, your spaces layout will contain a single
 space with the Samples panel active:
 
-![app-samples-panel](../_images/app-samples-panel.gif)
+![app-samples-panel](../_images/app-samples-panel.webp)
 
 When configuring spaces [in Python](#app-spaces-python), you can create a
 Samples panel as follows:
@@ -1407,7 +1407,7 @@ embeddings) to color the points by
 From there you can lasso points in the plot to show only the corresponding
 samples/patches in the Samples panel:
 
-![app-embeddings-panel](../_images/app-embeddings-panel.gif)
+![app-embeddings-panel](../_images/app-embeddings-panel.webp)
 
 Note
 
@@ -1438,7 +1438,7 @@ of each class of points:
 - Double click on a legend trace to show/hide all other classes in the plot
 
 
-![app-embeddings-panel-controls](../_images/app-embeddings-panel-controls.gif)
+![app-embeddings-panel-controls](../_images/app-embeddings-panel-controls.webp)
 
 When configuring spaces [in Python](#app-spaces-python), you can define an
 Embeddings panel as follows:
@@ -1490,7 +1490,7 @@ review status, and any evaluation notes that you’ve added. Click on an
 evaluation to open its expanded view, which provides a set of expandable cards
 that dives into various aspects of the model’s performance:
 
-![model-evaluation-open](../_images/model-evaluation-open.gif)
+![model-evaluation-open](../_images/model-evaluation-open.webp)
 
 Note
 
@@ -1503,14 +1503,14 @@ model evaluations natively from the App
 You can use the status pill in the upper right-hand corner of the panel to
 toggle an evaluation between `Needs Review`, `In Review`, and `Reviewed`:
 
-![model-evaluation-review](../_images/model-evaluation-review.gif)
+![model-evaluation-review](../_images/model-evaluation-review.webp)
 
 ### Evaluation notes [¶](\#evaluation-notes "Permalink to this headline")
 
 The Evaluation Notes card provides a place to add your own Markdown-formatted
 notes about the model’s performance:
 
-![model-evaluation-notes](../_images/model-evaluation-notes.gif)
+![model-evaluation-notes](../_images/model-evaluation-notes.webp)
 
 ### Summary [¶](\#summary "Permalink to this headline")
 
@@ -1518,14 +1518,14 @@ The Summary card provides a table of common model performance metrics. You can
 click on the grid icons next to TP/FP/FN to load the corresponding labels in
 the Samples panel:
 
-![model-evaluation-summary](../_images/model-evaluation-summary.gif)
+![model-evaluation-summary](../_images/model-evaluation-summary.webp)
 
 ### Metric performance [¶](\#metric-performance "Permalink to this headline")
 
 The Metric Performance card provides a graphical summary of key model
 performance metrics:
 
-![model-evaluation-metric](../_images/model-evaluation-metric.gif)
+![model-evaluation-metric](../_images/model-evaluation-metric.webp)
 
 ### Class performance [¶](\#class-performance "Permalink to this headline")
 
@@ -1535,7 +1535,7 @@ settings menu to control which classes are shown. The histograms are also
 interactive: you can click on bars to show the corresponding labels in the
 Samples panel:
 
-![model-evaluation-class](../_images/model-evaluation-class.gif)
+![model-evaluation-class](../_images/model-evaluation-class.webp)
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
@@ -1544,7 +1544,7 @@ evaluation. If an evaluation contains many classes, you can use the settings
 menu to control which classes are shown. You can also click on cells to show
 the corresponding labels in the Samples panel:
 
-![model-evaluation-confusion](../_images/model-evaluation-confusion.gif)
+![model-evaluation-confusion](../_images/model-evaluation-confusion.webp)
 
 ### Comparing models [¶](\#comparing-models "Permalink to this headline")
 
@@ -1566,7 +1566,7 @@ session.refresh()
 
 ```
 
-![model-evaluation-compare](../_images/model-evaluation-compare.gif)
+![model-evaluation-compare](../_images/model-evaluation-compare.webp)
 
 ## Map panel [¶](\#map-panel "Permalink to this headline")
 
@@ -1595,13 +1595,13 @@ FiftyOne uses the Mapbox GL JS API,
 [which is free](https://www.mapbox.com/pricing/#maps) up to 50,000 map
 loads each month.
 
-![app-map-panel](../_images/app-map-panel.gif)
+![app-map-panel](../_images/app-map-panel.webp)
 
 You can lasso points in the map to show only the corresponding data in the
 Samples panel. Confirm the selection by either double-clicking the last
 vertex or typing `enter`:
 
-![app-map-panel-selection](../_images/app-map-panel-selection.gif)
+![app-map-panel-selection](../_images/app-map-panel-selection.webp)
 
 The map UI also provides a number of additional controls:
 
@@ -1614,7 +1614,7 @@ current view’s location data
 - Press the `x` icon to clear the current selection
 
 
-![app-map-panel-controls](../_images/app-map-panel-controls.gif)
+![app-map-panel-controls](../_images/app-map-panel-controls.webp)
 
 When configuring spaces [in Python](#app-spaces-python), you can define a
 Map panel as follows:
@@ -1719,7 +1719,7 @@ Note
 The statistics in the plots automatically update to reflect the current
 [view](using_views.md#using-views) that you have loaded in the App!
 
-![app-histograms-panel](../_images/app-histograms-panel.gif)
+![app-histograms-panel](../_images/app-histograms-panel.webp)
 
 When configuring spaces [in Python](#app-spaces-python), you can define a
 Histograms panel as follows:
@@ -1744,7 +1744,7 @@ One common workflow is to select samples visually in the App and then access
 the data for the selected samples in Python. To perform this workflow, first
 select some samples in the App:
 
-![app-selection](../_images/app-selection.gif)
+![app-selection](../_images/app-selection.webp)
 
 The selected samples checkmark in the options row in the upper-left corner of
 the sample grid records the number of samples that you have currently selected.
@@ -1785,7 +1785,7 @@ creating a [`DatasetView`](../api/fiftyone.core.view.html#fiftyone.core.view.Dat
 To perform this workflow, open the expanded sample view by clicking on a sample
 in the App. Then click on individual labels to select them:
 
-![app-label-selection](../_images/app-label-selection.gif)
+![app-label-selection](../_images/app-label-selection.webp)
 
 Selected labels will appear with dotted lines around them. The example above
 shows selecting an object detection, but classifications, polygons, polylines,
@@ -1867,7 +1867,7 @@ filters or show/hide checkboxes you have applied in the filters sidebar,
 unless you have selected individual samples, in which case the operation
 will only apply to the **selected samples**.
 
-![app-tagging-samples](../_images/app-tagging-samples.gif)
+![app-tagging-samples](../_images/app-tagging-samples.webp)
 
 The App also supports tagging data in individual samples when you have opened
 the expanded sample view by clicking on a sample. The tag icon is located in
@@ -1881,7 +1881,7 @@ filters or show/hide checkboxes you have applied, unless you have selected
 individual labels, in which case the operation will only apply to the
 **selected labels**. The latter may span multiple samples.
 
-![app-tagging-expanded](../_images/app-tagging-expanded.gif)
+![app-tagging-expanded](../_images/app-tagging-expanded.webp)
 
 If your dataset has sample or label tags, you can use the `SAMPLE TAGS` and
 `LABEL TAGS` sections of the filters sidebar to filter by your tags.
@@ -1925,7 +1925,7 @@ Switching to patches view will create patches for **only** the contents of
 your current view, so you can use the view bar and the filters sidebar to
 select only the content of interest prior to extracting patches.
 
-![object-patches](../_images/app-object-patches.gif)
+![object-patches](../_images/app-object-patches.webp)
 
 You can interact with object patches views in the App just like you would with
 any other view, including:
@@ -1973,7 +1973,7 @@ Refer to the [evaluation guide](evaluation.md#evaluating-detections) guide for m
 information about running evaluations and using evaluation patches views
 to analyze object detection models.
 
-![evaluation-patches](../_images/app-evaluation-patches.gif)
+![evaluation-patches](../_images/app-evaluation-patches.webp)
 
 You can interact with evaluation patches views in the App just like you would
 with any other view, including:
@@ -2019,13 +2019,13 @@ Creating a clips view for a [`TemporalDetection`](../api/fiftyone.core.labels.ht
 will create one sample per temporal detection defined by its `[first, last]`
 frame support:
 
-![clip-views](../_images/app-clip-views1.gif)
+![clip-views](../_images/app-clip-views1.webp)
 
 Creating a clips view for a frame-level label list field such as [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections")
 will contain one sample per contiguous range of frames that contains at least
 one label in the specified field:
 
-![clip-views](../_images/app-clip-views2.gif)
+![clip-views](../_images/app-clip-views2.webp)
 
 Note
 
@@ -2085,7 +2085,7 @@ You can use the advanced settings menu to choose between multiple brain keys
 and optionally specify a maximum number of matches to return ( `k`) and whether
 to query by greatest or least similarity (if supported).
 
-![image-similarity](../_images/brain-image-similarity.gif)
+![image-similarity](../_images/brain-image-similarity.webp)
 
 Note
 
@@ -2111,13 +2111,13 @@ You can use the advanced settings menu to choose between multiple brain keys
 and optionally specify a maximum number of matches to return ( `k`) and whether
 to query by greatest or least similarity (if supported).
 
-![object-similarity](../_images/brain-object-similarity.gif)
+![object-similarity](../_images/brain-object-similarity.webp)
 
 You can also sort by similarity to an object from the expanded sample view in
 the App by selecting an object and then using the similarity menu that appears
 in the upper-right corner of the modal:
 
-![object-similarity-modal](../_images/brain-object-similarity-modal.gif)
+![object-similarity-modal](../_images/brain-object-similarity-modal.webp)
 
 Note
 
@@ -2136,7 +2136,7 @@ You can use the advanced settings menu to choose between multiple brain keys
 and optionally specify a maximum number of matches to return ( `k`) and whether
 to query by greatest or least similarity (if supported).
 
-![text-similarity](../_images/brain-text-similarity.gif)
+![text-similarity](../_images/brain-text-similarity.webp)
 
 Note
 
@@ -2221,7 +2221,7 @@ setting the
 to `thumbnail_path` instructs the App to use the thumbnail images by default in
 the grid view:
 
-![multiple-media-fields](../_images/app-multiple-media-fields.gif)
+![multiple-media-fields](../_images/app-multiple-media-fields.webp)
 
 Warning
 

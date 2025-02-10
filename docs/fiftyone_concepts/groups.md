@@ -9,7 +9,7 @@ Grouped datasets can be used to represent multiview scenes, where data for
 multiple perspectives of the same scene can be stored, visualized, and queried
 in ways that respect the relationships between the slices of data.
 
-![groups-sizzle](../_images/groups-modal.gif)
+![groups-sizzle](../_images/groups-modal.webp)
 
 Note
 
@@ -541,7 +541,7 @@ dataset = foz.load_zoo_dataset("kitti-multiview", split="train")
 
 ```
 
-![kitti-multiview-train](../_images/kitti-multiview-train.png)
+![kitti-multiview-train](../_images/kitti-multiview-train.webp)
 
 ### Toy dataset [¶](\#toy-dataset "Permalink to this headline")
 
@@ -607,7 +607,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![toy-point-cloud](../_images/toy-point-cloud.png)
+![toy-point-cloud](../_images/toy-point-cloud.webp)
 
 ## Grouped views [¶](\#grouped-views "Permalink to this headline")
 
@@ -957,7 +957,7 @@ session = fo.launch_app(dataset)
 
 You can use the selector shown below to change which slice you are viewing:
 
-![groups-grid-view](../_images/groups-grid-view.gif)
+![groups-grid-view](../_images/groups-grid-view.webp)
 
 Note
 
@@ -974,7 +974,7 @@ in the maximized image/video visualizer below.
 If the group contains 3D slices, the righthand side of the modal will contain a
 [3D visualizer](app.md#app-3d-visualizer):
 
-![groups-modal](../_images/groups-modal.gif)
+![groups-modal](../_images/groups-modal.webp)
 
 By default, the filters sidebar shows statistics for **only** the group slice
 that currently has focus in the grid/modal. In the grid view, the active slice
@@ -984,7 +984,7 @@ modal, the active sample is denoted by the `pin icon` in the upper-left corner.
 However, you can opt to show statistics across all slices of a grouped dataset
 by selecting `group` mode under the App’s settings menu:
 
-![groups-stats](../_images/groups-stats.gif)
+![groups-stats](../_images/groups-stats.webp)
 
 You can also use the App’s [dynamic groups](app.md#app-dynamic-groups) feature
 to view _groups of groups_ organized by a field of your choice.
@@ -993,7 +993,7 @@ For example, if you have a grouped dataset whose group slices contain different
 sensor modalities for each `frame_number` of a scene with a given `scene_id`,
 you can use the dynamic grouping action to playback scenes in sequential order:
 
-![dynamic-groups](../_images/dynamic-groups.gif)
+![dynamic-groups](../_images/dynamic-groups.webp)
 
 Note
 

@@ -96,7 +96,7 @@ Surveys show that machine learning engineers spend over half of their time wrang
 
 [Learn how to load data into FiftyOne](fiftyone_concepts/dataset_creation/index.md)
 
-![](_static/images/homepage_curate.gif)
+![](_static/images/homepage_curate.webp)
 
 ### Evaluating models
 
@@ -104,7 +104,7 @@ Aggregate metrics alone don’t give you the full picture of your ML models. In 
 
 [See how to evaluate models with FiftyOne](tutorials/evaluate_detections.ipynb)
 
-![](_static/images/homepage_evaluate.gif)
+![](_static/images/homepage_evaluate.webp)
 
 ### Visualizing embeddings
 
@@ -112,7 +112,7 @@ Are you using embeddings to analyze your data and models? Use FiftyOne's embeddi
 
 [Experience the power of embeddings](tutorials/image_embeddings.ipynb)
 
-![](_static/images/homepage_embeddings.gif)
+![](_static/images/homepage_embeddings.webp)
 
 ### Working with geolocation
 
@@ -120,7 +120,7 @@ Many datasets have location metadata, but visualizing location-based datasets ha
 
 [Visualize your location data](fiftyone_concepts/plots.md#geolocation-plots)
 
-![](_static/images/homepage_location.gif)
+![](_static/images/homepage_location.webp)
 
 ### Finding annotation mistakes
 
@@ -128,7 +128,7 @@ Annotations mistakes create an artificial ceiling on the performance of your mod
 
 [Check out the label mistakes tutorial](tutorials/classification_mistakes.ipynb)
 
-![](_static/images/homepage_mistakes.gif)
+![](_static/images/homepage_mistakes.webp)
 
 ### Removing redundant images
 
@@ -136,7 +136,7 @@ During model training, the best results will be seen when training on unique dat
 
 [Try the image uniqueness tutorial](tutorials/uniqueness.ipynb)
 
-![](_static/images/homepage_redundant.gif)
+![](_static/images/homepage_redundant.webp)
 
 ## Core Concepts [¶](\#core-concepts "Permalink to this headline")
 
@@ -185,7 +185,7 @@ slice your dataset into any subset of interest; and more.
 
 [See more of the App](fiftyone_concepts/app.md)
 
-![fiftyone-app](_images/homepage_app.png)
+![fiftyone-app](_images/homepage_app.webp)
 
 ### FiftyOne Brain [¶](\#fiftyone-brain "Permalink to this headline")
 
@@ -219,7 +219,7 @@ run on a connected compute cluster.
 
 [Install some plugins!](plugins/index.md)
 
-![fiftyone-plugins](_images/embeddings.gif)
+![fiftyone-plugins](_images/embeddings.webp)
 
 ### Dataset Zoo [¶](\#dataset-zoo "Permalink to this headline")
 
@@ -242,7 +242,7 @@ session = fo.launch_app(dataset)
 
 ```
 
-![dataset-zoo](_images/dataset_zoo_coco_2017.png)
+![dataset-zoo](_images/dataset_zoo_coco_2017.webp)
 
 ### Model Zoo [¶](\#model-zoo "Permalink to this headline")
 

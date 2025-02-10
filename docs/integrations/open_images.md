@@ -10,7 +10,7 @@ Note
 Check out [this tutorial](../tutorials/open_images.md) to see how you can
 use FiftyOne to download and evaluate models on Open Images.
 
-![open-images-v6](../_images/open-images-v6.png)
+![open-images-v6](../_images/open-images-v6.webp)
 
 ## Loading Open Images [¶](\#loading-open-images "Permalink to this headline")
 
@@ -344,7 +344,7 @@ traffic light       0.32      0.79      0.45        24
 
 ```
 
-![quickstart-evaluate-detections-oi](../_images/quickstart_evaluate_detections_oi.png)
+![quickstart-evaluate-detections-oi](../_images/quickstart_evaluate_detections_oi.webp)
 
 ### mAP and PR curves [¶](\#map-and-pr-curves "Permalink to this headline")
 
@@ -379,7 +379,7 @@ plot.show()
 
 ```
 
-![oi-pr-curve](../_images/oi_pr_curve.png)
+![oi-pr-curve](../_images/oi_pr_curve.webp)
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
@@ -412,7 +412,7 @@ plot.show()
 
 ```
 
-![oi-confusion-matrix](../_images/oi_confusion_matrix.png)
+![oi-confusion-matrix](../_images/oi_confusion_matrix.webp)
 
 Note
 

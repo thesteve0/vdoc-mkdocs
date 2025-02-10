@@ -28,7 +28,7 @@ cloud-backed media.
 You can find the installation instructions under the “Install FiftyOne” section
 of the Teams App by clicking on your user icon in the upper right corner:
 
-[![install-teams](../_images/install_fiftyone.png)](../_images/install_fiftyone.png)
+[![install-teams](../_images/install_fiftyone.webp)](../_images/install_fiftyone.webp)
 
 There you’ll see instructions for installing a `fiftyone` package from the
 private PyPI server as shown below:
@@ -567,12 +567,12 @@ will not be displayed in this page.
 
 To upload a new credential, click the `Add credential` button:
 
-![cloud-creds-add-credentials-button](../_images/cloud_creds_add_btn.png)
+![cloud-creds-add-credentials-button](../_images/cloud_creds_add_btn.webp)
 
 This will open a modal that you can use to add a credential for any of the
 available providers:
 
-![blank-cloud-creds-modal](../_images/cloud_creds_modal_blank.png)
+![blank-cloud-creds-modal](../_images/cloud_creds_modal_blank.webp)
 
 After the appropriate files or fields are populated, click `Save credential`
 to store the (encrypted) credential.

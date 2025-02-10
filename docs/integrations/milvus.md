@@ -17,7 +17,7 @@ Did you know? You can
 [search by natural language](../fiftyone_concepts/brain.md#brain-similarity-text) using Milvus
 similarity indexes!
 
-![object-similarity](../_images/brain-object-similarity.gif)
+![object-similarity](../_images/brain-object-similarity.webp)
 
 ## Basic recipe [¶](\#basic-recipe "Permalink to this headline")
 

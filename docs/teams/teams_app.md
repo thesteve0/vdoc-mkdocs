@@ -23,7 +23,7 @@ Note
 You can return to the homepage from any page of the Teams App by clicking on
 the Voxel51 logo in the upper left corner.
 
-![app-homepage](../_images/homepage.png)
+![app-homepage](../_images/homepage.webp)
 
 ### Pinned datasets [¶](\#pinned-datasets "Permalink to this headline")
 
@@ -39,7 +39,7 @@ To unpin a dataset, click the pin icon next to the dataset name in the “Your
 pinned datasets” widget or the pin next to the dataset’s name in the main
 table.
 
-[![pin-datasets](../_images/pinned_datasets.png)](../_images/pinned_datasets.png)
+[![pin-datasets](../_images/pinned_datasets.webp)](../_images/pinned_datasets.webp)
 
 ### Sorting datasets [¶](\#sorting-datasets "Permalink to this headline")
 
@@ -47,20 +47,20 @@ You can use the drop-down menu in the upper left of the main table to sort your
 datasets by various criteria, including size, creation date, recently used, and
 alphabetically by name:
 
-[![order-datasets](../_images/ordering_datasets.png)](../_images/ordering_datasets.png)
+[![order-datasets](../_images/ordering_datasets.webp)](../_images/ordering_datasets.webp)
 
 ### Filtering datasets [¶](\#filtering-datasets "Permalink to this headline")
 
 You can use the search bar (with the magnifying glass icon) in the upper right
 corner of the dataset table to filter datasets by name, tags, and media type:
 
-[![dataset-search-bar](../_images/dataset_search_bar.png)](../_images/dataset_search_bar.png)
+[![dataset-search-bar](../_images/dataset_search_bar.webp)](../_images/dataset_search_bar.webp)
 
 By default, datasets that match across any supported field are returned, but
 you can narrow the search to specific fields by selecting the relevant option
 in the search dropdown:
 
-[![dataset-search-fields](../_images/dataset_search_fields.png)](../_images/dataset_search_fields.png)
+[![dataset-search-fields](../_images/dataset_search_fields.webp)](../_images/dataset_search_fields.webp)
 
 ## Creating datasets [¶](\#creating-datasets "Permalink to this headline")
 
@@ -87,7 +87,7 @@ Note
 A dataset’s name, description, and tags can be edited later from the
 dataset’s [Manage tab](#teams-managing-datasets).
 
-![create-dataset](../_images/create_dataset.png)
+![create-dataset](../_images/create_dataset.webp)
 
 Note
 
@@ -102,7 +102,7 @@ Click on a dataset from the homepage to open the dataset’s “Samples” tab.
 From the Samples tab you can visualize, tag, filter, and explore your dataset
 just as you would via the [FiftyOne App](../fiftyone_concepts/app.md#fiftyone-app).
 
-![samples-page](../_images/samples_page.png)
+![samples-page](../_images/samples_page.webp)
 
 Note
 
@@ -138,7 +138,7 @@ edit the name, description, and tags of a dataset from this page.
 Additionally, members can create a copy of the dataset by clicking on the
 “Clone this dataset” button.
 
-![dataset-basic-info](../_images/dataset_basic_info.png)
+![dataset-basic-info](../_images/dataset_basic_info.webp)
 
 ### Access [¶](\#access "Permalink to this headline")
 
@@ -149,7 +149,7 @@ From this tab, users can add, remove, edit, or invite users to the dataset.
 Refer to [this page](roles_and_permissions.md#teams-permissions) for more information about the
 available dataset-level permissions that you can grant.
 
-![dataset-access](../_images/dataset_access.png)
+![dataset-access](../_images/dataset_access.webp)
 
 ### Danger zone [¶](\#danger-zone "Permalink to this headline")
 
@@ -160,7 +160,7 @@ From this tab, you can select “Delete entire dataset” to permanently delete 
 dataset from your Teams deployment. You must type the dataset’s full name in
 the modal to confirm this action.
 
-![danger-zone](../_images/dataset_danger_zone.png)
+![danger-zone](../_images/dataset_danger_zone.webp)
 
 Warning
 

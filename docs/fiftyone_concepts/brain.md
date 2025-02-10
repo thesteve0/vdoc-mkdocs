@@ -106,7 +106,7 @@ These representations can be visualized natively in the App’s
 select points of interest and view the corresponding samples/labels of interest
 in the [Samples panel](app.md#app-samples-panel), and vice versa.
 
-![mnist](../_images/brain-mnist.png)
+![mnist](../_images/brain-mnist.webp)
 
 There are two primary components to an embedding visualization: the method used
 to generate the embeddings, and the dimensionality reduction method used to
@@ -251,7 +251,7 @@ Note
 Did you know? You can [programmatically configure](app.md#app-spaces-python)
 your Spaces layout!
 
-![image-visualization](../_images/brain-image-visualization.gif)
+![image-visualization](../_images/brain-image-visualization.webp)
 
 The GIF shows the variety of insights that are revealed by running this simple
 protocol:
@@ -311,7 +311,7 @@ Note
 Did you know? You can [programmatically configure](app.md#app-spaces-python)
 your Spaces layout!
 
-![object-visualization](../_images/brain-object-visualization.gif)
+![object-visualization](../_images/brain-object-visualization.webp)
 
 As you can see, the coloring of the scatterpoints allows you to discover
 natural clusters of objects, such as visually similar carrots or kites in the
@@ -524,7 +524,7 @@ In the example above, we specify a [zoo model](../models/model_zoo/index.md#mode
 to generate embeddings, but you can also provide
 [precomputed embeddings](#brain-similarity-api).
 
-![image-similarity](../_images/brain-image-similarity.gif)
+![image-similarity](../_images/brain-image-similarity.webp)
 
 Alternatively, you can use the
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
@@ -619,7 +619,7 @@ In the example above, we specify a [zoo model](../models/model_zoo/index.md#mode
 to generate embeddings, but you can also provide
 [precomputed embeddings](#brain-similarity-api).
 
-![object-similarity](../_images/brain-object-similarity.gif)
+![object-similarity](../_images/brain-object-similarity.webp)
 
 Alternatively, you can directly use the
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
@@ -664,7 +664,7 @@ When you create a similarity index powered by the
 arbitrary natural language queries
 [natively in the App](app.md#app-text-similarity)!
 
-![text-similarity](../_images/brain-text-similarity.gif)
+![text-similarity](../_images/brain-text-similarity.webp)
 
 You can also perform text queries via the SDK by passing a prompt directly to
 [`sort_by_similarity()`](../api/fiftyone.core.collections.html#fiftyone.core.collections.SampleCollection.sort_by_similarity "fiftyone.core.collections.SampleCollection.sort_by_similarity")
@@ -1008,7 +1008,7 @@ Performance on the clean test set will can be closer to the performance of the
 model in the wild. If you found some leaks in your dataset, consider comparing
 performance on the base test set against the clean test set.
 
-![leaky-splits](../_images/brain-leaky-splits.png)
+![leaky-splits](../_images/brain-leaky-splits.webp)
 
 ## Near duplicates [¶](\#near-duplicates "Permalink to this headline")
 
@@ -1151,7 +1151,7 @@ session = fo.launch_app(duplicates_view)
 
 ```
 
-![cifar10-duplicate-view](../_images/brain-cifar10-duplicate-view.png)
+![cifar10-duplicate-view](../_images/brain-cifar10-duplicate-view.webp)
 
 Note
 
@@ -1191,7 +1191,7 @@ plot.show(height=800, yaxis_scaleanchor="x")
 
 ```
 
-![cifar10-unique-viz](../_images/brain-cifar10-unique-viz.png)
+![cifar10-unique-viz](../_images/brain-cifar10-unique-viz.webp)
 
 And of course we can load a view containing the unique samples in the App to
 explore the results in detail:
@@ -1203,7 +1203,7 @@ session = fo.launch_app(view=unique_view)
 
 ```
 
-![cifar10-unique-view](../_images/brain-cifar10-unique-view.png)
+![cifar10-unique-view](../_images/brain-cifar10-unique-view.webp)
 
 ## Exact duplicates [¶](\#exact-duplicates "Permalink to this headline")
 
@@ -1302,14 +1302,14 @@ Check out the [uniqueness tutorial](tutorials/uniqueness.md) to see
 an example use case of the Brain’s uniqueness method to detect
 near-duplicate images in a dataset.
 
-![uniqueness](../_images/brain-uniqueness.gif)
+![uniqueness](../_images/brain-uniqueness.webp)
 
 ## Label mistakes [¶](\#label-mistakes "Permalink to this headline")
 
 Label mistakes can be calculated for both classification and detection
 datasets.
 
-![mistakenness](../_images/brain-mistakenness.png)
+![mistakenness](../_images/brain-mistakenness.webp)
 
 ## Sample hardness [¶](\#sample-hardness "Permalink to this headline")
 
@@ -1354,7 +1354,7 @@ Check out the
 to see example uses of the Brain’s hardness method to uncover annotation
 mistakes in a dataset.
 
-![hardness](../_images/brain-hardness.png)
+![hardness](../_images/brain-hardness.webp)
 
 ## Image representativeness [¶](\#image-representativeness "Permalink to this headline")
 
@@ -1410,7 +1410,7 @@ argument to
 which contains [`Detections`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Detections "fiftyone.core.labels.Detections") or [`Polylines`](../api/fiftyone.core.labels.html#fiftyone.core.labels.Polylines "fiftyone.core.labels.Polylines") that define the ROI for each
 sample.
 
-![representativeness](../_images/brain-representativeness.png)
+![representativeness](../_images/brain-representativeness.webp)
 
 ## Managing brain runs [¶](\#managing-brain-runs "Permalink to this headline")
 

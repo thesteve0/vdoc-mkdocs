@@ -213,7 +213,7 @@ plt.show(block=False)
 
 ```
 
-![histogram-values](../_images/histogram_values_uniqueness.png)
+![histogram-values](../_images/histogram_values_uniqueness.webp)
 
 ## Schema [¶](\#schema "Permalink to this headline")
 

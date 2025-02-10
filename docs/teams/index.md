@@ -9,7 +9,7 @@ FiftyOne Teams is fully backwards-compatible with the
 [open source project](https://github.com/voxel51/fiftyone), so all other
 pages on this site apply to Teams deployments as well.
 
-![teams-hero](../_images/hero.png)
+![teams-hero](../_images/hero.webp)
 
 ### Overview
 

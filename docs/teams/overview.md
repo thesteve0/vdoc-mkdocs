@@ -50,7 +50,7 @@ would with open source FiftyOne:
 FiftyOne Teams is implemented as a set of interoperable services, as described
 in the figure below.
 
-![teams-architecture](../_images/teams_architecture.png)
+![teams-architecture](../_images/teams_architecture.webp)
 
 FiftyOne Teams is strictly a software offering. All relevant hardware is owned
 and managed by your organization, whether on-premises or in your virtual

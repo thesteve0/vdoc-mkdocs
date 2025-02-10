@@ -9,7 +9,7 @@ Note
 Check out [this tutorial](../tutorials/evaluate_detections.md) to see how
 you can use FiftyOne to evaluate a model on COCO.
 
-![coco-2017-validation](../_images/coco-2017-validation.png)
+![coco-2017-validation](../_images/coco-2017-validation.webp)
 
 ## Loading the COCO dataset [¶](\#loading-the-coco-dataset "Permalink to this headline")
 
@@ -469,7 +469,7 @@ traffic light       0.22      0.54      0.31        24
 
 ```
 
-![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.png)
+![quickstart-evaluate-detections](../_images/quickstart_evaluate_detections.webp)
 
 ### mAP and PR curves [¶](\#map-and-pr-curves "Permalink to this headline")
 
@@ -509,7 +509,7 @@ plot.show()
 
 ```
 
-![coco-pr-curves](../_images/coco_pr_curves.png)
+![coco-pr-curves](../_images/coco_pr_curves.webp)
 
 ### Confusion matrices [¶](\#confusion-matrices "Permalink to this headline")
 
@@ -542,7 +542,7 @@ plot.show()
 
 ```
 
-![coco-confusion-matrix](../_images/coco_confusion_matrix.png)
+![coco-confusion-matrix](../_images/coco_confusion_matrix.webp)
 
 Note
 
